@@ -83,7 +83,7 @@ As shown in the :download:`Sparse Data Prediction </_assets/recipes/engine_spars
 large percentages of the data are replaced with missing values.  
 
 .. image:: /_assets/recipes/sparse_data_plot.png
-  :alt: A plot showing the accuracy, precision, and recall as sparsity increases fro 0 to 100%.
+  :alt: A plot showing the accuracy, precision, and recall as sparsity increases from 0 to 100%.
 
 
 Outputing Missing Values
