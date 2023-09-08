@@ -47,7 +47,18 @@ Examples:
 ```{py:attribute} data_type
 :type: Optional[str]
 
-Specify the data type to output for nominal features. Defaults to string.
+Specify the data type for features with a type of nominal or continuous. Default is `string` for nominals and
+`number` for continuous.
+
+Valid values include:
+
+- `string`, `number`, `json`, `amalgam`, `yaml`: Valid for both nominal and continuous.
+
+- `string_mixable`: Valid only when type is continuous (predicted values may result in interpolated strings
+  containing a combination of characters from multiple original values).
+
+- `boolean`: Valid only for nominals.
+
 ```
 
 ```{py:attribute} date_time_format
