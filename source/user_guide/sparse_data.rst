@@ -82,6 +82,9 @@ How Well are Sparse Data Handled
 As shown in the :download:`Sparse Data Prediction </_assets/recipes/engine_sparse_data.ipynb>` recipe, we maintain high degrees of accuracy even as 
 large percentages of the data are replaced with missing values.  
 
+.. image:: /_assets/recipes/sparse_data_plot.png
+  :alt: A plot showing how good Howso is.
+
 
 Outputting Missing Values
 ^^^^^^^^^^^^^^^^^^^^^^^^^
