@@ -86,8 +86,8 @@ large percentages of the data are replaced with missing values.
   :alt: A plot showing how good Howso is.
 
 
-Outputting Missing Values
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Outputing Missing Values
+^^^^^^^^^^^^^^^^^^^^^^^^
 In order to output missing values, the ``allow_null`` feature attribute must be set in the ``bounds`` of that feature.  If this is set, both 
 discriminative and generative :meth:`~Trainee.react` s can output missing values.  This can be set using :func:`~howso.utilities.infer_feature_attributes`.
 
@@ -106,6 +106,6 @@ discriminative and generative :meth:`~Trainee.react` s can output missing values
 
 API References
 --------------
-- :func:`howso.utilities.infer_feature_attributes`\
+- :func:`howso.utilities.infer_feature_attributes`
 - :func:`Trainee.react`
 
