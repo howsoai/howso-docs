@@ -79,6 +79,7 @@ copy_recipes(){
   cp -f "$source_dir/4-audit_edit.ipynb" "$target_dir"
   cp -f "$source_dir/5-bias_mitigation.ipynb" "$target_dir"
   cp -f "$source_dir/6-validation.ipynb" "$target_dir"
+  cp -f "$source_dir/data/sparse_data_plot.png" "$target_dir"
 }
 
 
