@@ -1,6 +1,5 @@
 # Howso packages are needed only to generate documentation
 howso-engine
-howso-engine-api
 # Sphinx dependencies
 jinja2
 myst-parser>=1.0,<2

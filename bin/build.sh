@@ -23,7 +23,7 @@ gen_requirements() {
 
 # Build docker container for local testing.
 build_local() {
-   docker build -f Dockerfile.local -t howso-docs-local --build-arg PIP_EXTRA_INDEX_URL=$PIP_EXTRA_INDEX_URL .
+   docker build -f Dockerfile.local -t howso-docs-local .
 }
 
 run_local() {
