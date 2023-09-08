@@ -1,0 +1,14 @@
+**/.DS_Store
+.idea
+.vscode
+build/**
+local/**
+.env/**
+.direnv
+.envrc
+.python-version
+.nvmrc
+
+source/examples
+**/*.trace
+node_modules

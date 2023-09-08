@@ -1,0 +1,3 @@
+[submodule "submodules/howso-engine-recipes"]
+	path = submodules/howso-engine-recipes
+	url = https://github.com/howsoai/howso-engine-recipes.git

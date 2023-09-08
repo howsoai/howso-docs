@@ -1,0 +1,16 @@
+# Howso packages are needed only to generate documentation
+howso-engine
+howso-engine-api
+# Sphinx dependencies
+jinja2
+myst-parser>=1.0,<2
+sphinx-copybutton>=0.5,<0.6
+sphinx-gallery>=0.12,<0.13
+sphinx-design>=0.4.1,<0.5
+sphinx>=6.1,<7
+sphinxcontrib-images>=0.9.4,<1.0
+pydata-sphinx-theme>=0.13.3,<0.14
+# Misc dependencies
+matplotlib
+seaborn
+numpy

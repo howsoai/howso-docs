@@ -1,0 +1,16 @@
+**/*_allOf.md
+**/*.md
+**/*.py
+**/*.pyi
+
+# Explicitly include target files
+
+# Feature Attributes
+!**/FeatureAttributes.md
+!**/FeatureOriginalType.md
+!**/FeatureBounds.md
+!**/FeatureTimeSeries.md
+!**/FeatureAutoDeriveOnTrain*.md
+
+# Misc
+!**/Cases.md

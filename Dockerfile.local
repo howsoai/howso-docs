@@ -1,0 +1,88 @@
+################################
+# Howso Open Source Docs      ##
+# Builder image               ##
+################################
+FROM python:3.11-bullseye as builder
+# make is used by the sphinx build - git is used to bring in the sub-components.
+RUN apt-get update &&  apt-get -y install make git libgomp1\
+      && rm -rf /var/lib/apt/lists/*
+## Set app directory
+RUN mkdir -p /app
+WORKDIR /app
+## Use venv to make copying dists simple
+RUN python -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
+# Credentials needed to access packages
+ARG PIP_EXTRA_INDEX_URL
+ENV PIP_EXTRA_INDEX_URL=$PIP_EXTRA_INDEX_URL
+# The URL for the home page (this page redirects to the install's HOWSO_UI_URL)
+ENV HOWSO_HOME_URL="/howso.html"
+# Install the requirements
+COPY requirements-3.11.txt ./
+RUN pip install --no-cache-dir -r requirements-3.11.txt
+# The file includes the versions of the client, synthesizer and validator - it will be sourced -
+# - using . notation - to avoid use of base syntax in the remainder of this Dockerfile
+COPY versions.properties ./versions.properties
+
+################################
+# Howso Open Source Docs      ##
+# Main Docs Builder image     ##
+################################
+FROM builder as doc-builder
+RUN mkdir -p /build
+# Prepare the workspace
+WORKDIR /build
+# Copy source and build docs
+COPY Makefile ./
+COPY source ./source
+COPY examples ./examples
+COPY examples-howso.yml ./examples/howso.yml
+# Build docs
+RUN make html
+
+###############################
+# Howso Open Source UI       ##
+# Prod image                 ##
+###############################
+FROM nginx:stable-alpine3.17-slim
+# Remove scripts that may alter the config
+RUN rm  /docker-entrypoint.d/*
+# version number of built artifact - adding as metadata, and env variable - for tracability
+ARG HOWSO_VERSION=local
+LABEL com.howso.version=${HOWSO_VERSION}
+ENV HOWSO_VERSION=${HOWSO_VERSION}
+# Startup script and config files
+COPY container_files/ /container_files/
+RUN chmod +x /container_files/bin/*.sh
+# Use custom nginx conf
+RUN cp /container_files/templates/default.conf /etc/nginx/conf.d/default.conf
+RUN cp /container_files/templates/nginx.conf /etc/nginx/nginx.conf
+# Copy the built static sphinx documentation from the build containers
+COPY --from=doc-builder /app/build/html /usr/share/nginx/html
+# Fix up the readthedocs specific links - to work in the container
+RUN /container_files/bin/setup_container.sh
+EXPOSE 8080
+## add permissions for nobody user
+##
+## Note - OpenShift will run as a random user id & group id.
+## As such file permissions are set for the user/group 'nobody' but the user/group the container
+## executes as is not the one set with 'USER nobody', but a random uid.  As such, it has no access.
+## However, OpenShift assigns the root group (0) to the executing user, so their documented 'solution'
+## is to add permissions to the root group to file systems it may have to alter.
+## https://docs.openshift.com/container-platform/4.8/openshift_images/create-images.html#images-create-guide-openshift_create-images
+## Note.  This is not increasing permissions for non OpenShift, as in that case, the group that is used will not
+## be root, so the extra permissions will not be relevent.
+## Note.  OpenShift are forcing a best practice, but only when compared to the 'default' of running as root.
+## If the container doesn't run as root, OpenShift, by always running with the root group, is adding unrequired priviledge.
+## It is still locked down with SELinux etc, but I want to make this clear, since it was confusing to me.
+RUN chown -R nobody:root /usr/share/nginx && chmod -R 755 /usr/share/nginx && \
+        chown -R nobody:root /var/cache/nginx && \
+        chown -R nobody:root /container_files && \
+        chown -R nobody:root /var/log/nginx && \
+        chown -R nobody:root /etc/nginx/conf.d && \
+        chmod -R g=u /usr/share && \
+        chmod -R g=u /etc/nginx && \
+        chmod -R g=u /var/log/nginx && \
+        chmod -R g=u /var/cache
+USER nobody
+CMD /container_files/bin/start_server.sh

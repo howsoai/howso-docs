@@ -1,0 +1,11 @@
+variables:
+  # major - incompatible changes, of any size
+  # minor - new noteworthy features
+  # patch will automatically increment - for all smaller changes/bug-fixes
+  major: 1 
+  minor: 0 
+  # Build logic variables
+  primaryPythonVersion: 3.11 # The python version to use for tracking module dependencies in jfrog
+  mirrorSourceGitRepositoryUri: 'https://diveplane.visualstudio.com/dp/_git/howso-docs'
+  mirrorDestinationGitRepositoryUri: 'https://github.com/howsoai/howso-docs.git'
+
