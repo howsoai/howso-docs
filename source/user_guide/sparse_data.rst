@@ -82,9 +82,12 @@ How Well are Sparse Data Handled
 As shown in the :download:`Sparse Data Prediction </_assets/recipes/engine_sparse_data.ipynb>` recipe, we maintain high degrees of accuracy even as 
 large percentages of the data are replaced with missing values.  
 
+.. image:: /_assets/recipes/sparse_data_plot.png
+  :alt: A plot showing the accuracy, precision, and recall as sparsity increases from 0 to 100%.
 
-Outputting Missing Values
-^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Outputing Missing Values
+^^^^^^^^^^^^^^^^^^^^^^^^
 In order to output missing values, the ``allow_null`` feature attribute must be set in the ``bounds`` of that feature.  If this is set, both 
 discriminative and generative :meth:`~Trainee.react` s can output missing values.  This can be set using :func:`~howso.utilities.infer_feature_attributes`.
 
@@ -103,6 +106,6 @@ discriminative and generative :meth:`~Trainee.react` s can output missing values
 
 API References
 --------------
-- :func:`howso.utilities.infer_feature_attributes`\
+- :func:`howso.utilities.infer_feature_attributes`
 - :func:`Trainee.react`
 
