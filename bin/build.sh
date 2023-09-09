@@ -23,6 +23,7 @@ gen_requirements() {
 
 # Build docker container for local testing.
 build_local() {
+   copy_recipes
    docker build -f Dockerfile.local -t howso-docs-local .
 }
 
@@ -86,7 +87,7 @@ copy_recipes(){
 update_submodules() {
   git submodule foreach git fetch
   git submodule update --init --recursive
-  git submodule foreach git checkout master
+  git submodule foreach git checkout main
   git submodule foreach git rev-parse HEAD
   git submodule foreach git describe
 }
