@@ -24,10 +24,7 @@ Prerequisites
 
 Notebook Recipe
 ---------------
-There is a RL recipe which supplement the content this guide will cover and provide a complete example using the
-`Cartpole <https://gymnasium.farama.org/environments/classic_control/cart_pole/>`__ RL game. 
-
-.. - :download:`Reinforcement Learning </_assets/recipes/Howso-recipes-engine-rl>`
+There is a `RL recipe <https://github.com/howsoai/howso-engine-rl-recipes>`__ which supplements the content this guide will cover and provide a complete example using several RL games.
 
 Concepts & Terminology
 ----------------------
@@ -41,8 +38,9 @@ To understand this guide, we recommend being familiar with the following concept
 - :ref:`Action Features <user_guide/terminology:action features>`
 - :ref:`Context Features <user_guide/terminology:context features>`
 
-Additional concepts to be familiar with are `Gymnasium RL Framework <https://gymnasium.farama.org/>`_ and 
-`Cartpole <https://gymnasium.farama.org/environments/classic_control/cart_pole/>`_.
+Additional concepts to be familiar with include the `Gymnasium RL Framework <https://gymnasium.farama.org/>`_ and the RL games in the recipes,
+`Cartpole <https://gymnasium.farama.org/environments/classic_control/cart_pole/>`_ and 
+`Wafer Thin Mints (PDF Download Link) <https://www.aaai.org/ojs/index.php/AIIDE/article/download/5218/5074>`__.
 
 How-To-Guide
 ------------
