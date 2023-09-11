@@ -44,6 +44,15 @@ may be projected into the future and lead to missed opportunities to create true
 This potentially harms various groups of people and reduces the overall utility of the data. Because analytics and modeling results that use biased 
 data are increasingly falling under regulations, decisions that are based on insights gained from biased data might lead to breaches of these regulations.
 
+In addition to understanding bias, we recommend being familiar with the following concepts:
+
+- :ref:`Trainee <user_guide/terminology:trainee>`
+- :ref:`React <user_guide/terminology:react>`
+- :ref:`Training Session <user_guide/terminology:Training Session>`
+- :ref:`Feature Contribution <user_guide/terminology:Contribution>`
+- :ref:`Feature MDA <user_guide/terminology:MDA>`
+
+
 How-To Guide
 ------------
 There are two ways to use Engine to understand and mitigate data bias.
@@ -96,6 +105,5 @@ Within the `react` call, specificy only the context features that do not contrib
 API References
 --------------  
 - :meth:`Trainee.react`
-
 - :meth:`Trainee.get_cases`
 

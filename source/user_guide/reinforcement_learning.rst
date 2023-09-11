@@ -2,14 +2,14 @@
 
 
 Reinforcement Learning
-===================================
+======================
 .. topic:: What is covered in this user guide
 
     In this guide, you will learn the basics of how to incorporate Howso Engine into a Reinforcement Learning (RL) framework. 
 
 
 Objectives: what you will take away
------------------------------------s
+-----------------------------------
 - **Definitions & Understanding** How :py:class:`~Trainee` s fits into a RL framework.
 - **How-To** Train and retrain a :py:class:`~Trainee` during RL.
 - **API References** :py:meth:`Trainee.set_auto_analyze_params`, :py:meth:`Trainee.train`, and :py:meth:`Trainee.react`.

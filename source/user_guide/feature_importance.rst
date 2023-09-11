@@ -58,9 +58,8 @@ In order to calculate feature importance, Howso Engine measures the impact on th
 may include any number of other features. Non-robust calculations use a leave-one-out approach to calculate these metrics, thus the metrics reflect the results when all features expect the feature of interest is used. Robust feature contributions instead sample from
 the power set set of all combinations of features without the feature of interest. Robust metrics are recommended as they encompass a greater variety of feature sets, and they include a calculation performance boost as the number of features increases.
 
-How-To-Guide
+How-To Guide
 ------------
-
 
 Global Feature Importance
 ^^^^^^^^^^^^^^^^^^^^^^^^^

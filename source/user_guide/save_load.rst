@@ -6,14 +6,14 @@ Saving and Loading
 
    In this guide, you will learn how to save and load :py:class:`~Trainee` s using the built-in Howso Engine's file operations.
 
-Objectives
-----------
+Objectives: what you will take away
+-----------------------------------
 - **Definitions & Understanding** of different saving and loading operations based on platform.
 - **How-To** Save and load a :py:class:`~Trainee`.
 - **API References** How to use, :meth:`Trainee.save`, :py:meth:`Engine.load_trainee`, :py:meth:`Trainee.persist`, and :py:meth:`Trainee.acquire_resources`.
 
-Prerequisites
--------------
+Prerequisites: before you begin 
+-------------------------------
 - You have successfully :doc:`installed Howso Engine <installing>`
 - You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
 

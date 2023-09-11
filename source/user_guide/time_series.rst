@@ -1,3 +1,5 @@
+.. currentmodule:: howso.engine
+
 Time Series and Sequential Data Analysis
 ========================================
 .. topic:: What is covered in this user guide.
@@ -25,6 +27,7 @@ The following recipe will supplement the content this guide will cover:
 
 Concepts & Terminology
 ----------------------
+To understand this guide, we recommend being familiar with the following concepts:
 
 - :ref:`Trainee <user_guide/terminology:trainee>`
 - :ref:`React <user_guide/terminology:react>`

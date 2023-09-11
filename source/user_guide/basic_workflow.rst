@@ -14,10 +14,8 @@ Objectives: what you will take away
 
 Prerequisites: before you begin 
 -------------------------------
-**Installation** - you have successfully :doc:`installed  Howso Engine <installing>`
-
+- You have successfully :doc:`installed Howso Engine <installing>`
 - You've installed these libraries: 
-
   - `pandas <https://pandas.pydata.org/>`__
   - `pmlb <https://github.com/EpistasisLab/pmlb>`__
 
@@ -29,7 +27,7 @@ Notebook Recipe
 ---------------
 The following recipe will supplement the content this guide will cover:
 
-- :download:`Engine Intro </_assets/recipes/1-engine-intro.ipynb>` download a sample notebook to run the code yourself. 
+- :download:`Engine Intro </_assets/recipes/1-engine-intro.ipynb>`
 
 Concepts & Terminology
 ----------------------
