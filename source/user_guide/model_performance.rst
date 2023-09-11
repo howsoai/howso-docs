@@ -14,17 +14,18 @@ Objectives: what you will take away
 - **How-To** - retrieve the performance statistics that describe the Trainee's performance.
 - **API References** - where to find references to APIs used in this user guide. 
 
-Prerequisites
--------------
+Prerequisites: before you begin 
+-------------------------------
 - You have successfully :doc:`installed Howso Engine <installing>`
 - You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
 
 Notebook Recipe
 ---------------
-The content of this user guide is outlined in more detail in :download:`Engine Intro </_assets/recipes/1-engine-intro.ipynb>`
+The following recipe will supplement the content this guide will cover:
+- :download:`Engine Intro </_assets/recipes/1-engine-intro.ipynb>`
 
-Concepts & terminology to understand
-------------------------------------
+Concepts & Terminology
+----------------------
 
 - :ref:`Trainee <user_guide/terminology:Trainee>`
 - :ref:`Feature <user_guide/terminology:Feature>`

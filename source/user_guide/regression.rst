@@ -26,10 +26,12 @@ Data
 
 Notebook Recipe
 ---------------
-   :download:`Engine Intro </_assets/recipes/1-engine-intro.ipynb>` download a sample notebook to run code using the engine for regression yourself. 
+The following recipe will supplement the content this guide will cover:
 
-Concepts & terminology to understand
-------------------------------------
+- :download:`Engine Intro </_assets/recipes/1-engine-intro.ipynb>` download a sample notebook to run code using the engine for regression yourself. 
+
+Concepts & Terminology
+----------------------
 **Regression** - is used to describe the relationship between one or more Context Features and a continuous numeric Action Feature, as in this guide predicting the **Highway MPG** of a vehicle based on it's physical characteristics and year manufactured.  
 
 **Trainee and React** In this simple example, we will be creating a :ref:`Trainee <user_guide/terminology:trainee>` that we can be used :ref:`React <user_guide/terminology:react>` to new case data, such as a new car we might be looking to build.  

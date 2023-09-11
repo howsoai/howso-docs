@@ -9,8 +9,8 @@ Feature Importance
     provides information about which features are useful for predicting a target or :ref:`action <user_guide/terminology:Action Features>` feature. In addition to learning informative metrics about the data and the model, these insights can be used as guidance for further action such as feature selection or feature engineering.
 
 
-Objectives
-----------
+Objectives: what you will take away
+-----------------------------------
 - **Definitions & Understanding** Difference between global vs local, and robust vs non-robust :ref:`Feature Contributions <user_guide/terminology:Contribution>` and :ref:`Feature MDA <user_guide/terminology:MDA>`.
 - **How-To** obtain both feature importance metrics.
 - **API References** How to use :meth:`Trainee.get_prediction_stats`, :py:meth:`Trainee.react`.

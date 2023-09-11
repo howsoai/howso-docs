@@ -20,7 +20,7 @@ Prerequisites: before you begin
 
 Notebook Recipe
 ---------------
-There is one recipe to supplement the content this guide will cover: 
+The following recipe will supplement the content this guide will cover:
 
 - :download:`Bias Mitigation </_assets/recipes/5-bias_mitigation.ipynb>`
 

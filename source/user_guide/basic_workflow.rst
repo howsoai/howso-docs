@@ -27,7 +27,9 @@ Our example dataset for this recipe is the well known ``Adult`` dataset. It is a
 
 Notebook Recipe
 ---------------
-   :download:`Engine Intro </_assets/recipes/1-engine-intro.ipynb>` download a sample notebook to run the code yourself. 
+The following recipe will supplement the content this guide will cover:
+
+- :download:`Engine Intro </_assets/recipes/1-engine-intro.ipynb>` download a sample notebook to run the code yourself. 
 
 Concepts & Terminology
 ----------------------

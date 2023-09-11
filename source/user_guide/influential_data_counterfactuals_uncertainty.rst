@@ -22,7 +22,7 @@ Prerequisites: before you begin
 
 Notebook Recipe
 ---------------
-There is one recipe to supplement the content this guide will cover: 
+The following recipe will supplement the content this guide will cover:
 
 - :download:`Interpretability </_assets/recipes/2-interpretability.ipynb>`
 
@@ -68,7 +68,7 @@ After building, training, and analyzing a `Trainee`, you can obtain the influent
 
 
 Task 2 - Obtain uncertainty information
-^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Feature residuals are calculated by holding out each individual feature, and then using the other features to predict the holdout feature. 
 This is similiar to the leave-one-out validation technique used in traditional machine learning. The results represent the `Trainee`'s uncertainty for that feature. 
 We will use the local feature residual to examine the uncertainity for a specific case and the global feature residual as a baseline.
@@ -103,5 +103,5 @@ We will use the local feature residual to examine the uncertainity for a specifi
 
 
 API References
---------------------   
+--------------
 - :meth:`Trainee.react`

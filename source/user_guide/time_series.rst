@@ -14,25 +14,27 @@ Objectives: what you will take away
 
 Prerequisites: before you begin 
 -------------------------------
-**Installation** 
-
-    - You have succesfully :doc:`installed Howso Engine <installing>`
-
-    - You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
+- You have succesfully :doc:`installed Howso Engine <installing>`
+- You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
 
 Notebook Recipe
 ---------------
-You should be familiar with two recipes and one utility: 
-
-- :download:`Reactor Intro </_assets/recipes/1-reactor-intro>`
+The following recipe will supplement the content this guide will cover:
 
 - :download:`Time Series Predictions </_assets/recipes/engine_timeseries.ipynb>`
 
+Concepts & Terminology
+----------------------
+
+- :ref:`Trainee <user_guide/terminology:trainee>`
+- :ref:`React <user_guide/terminology:react>`
+- :ref:`Feature <user_guide/terminology:feature>`
+- :ref:`Action Features <user_guide/terminology:action features>`
+- :ref:`Context Features <user_guide/terminology:context features>`
 - :doc:`Feature Attributes <feature_attributes>`
 
-Concepts & terminology to understand
-------------------------------------
-
+How-To Guide
+------------
 *Why are time series and sequential data predictions important?*
 
 A significant amount of data is recorded at specific times. Utilizing this information can provide a wealth of insight
@@ -40,8 +42,6 @@ for future predictions, such as knowledge of whether events happen at certain in
 Engine handles time series data using :func:`howso.utilities.infer_feature_attributes` and by using :meth:`Trainee.train` and :meth:`Trainee.react` to caculate and utilize information 
 about intervals within a dataset to make a prediction.
 
-How-To Guide
-------------
 There are two key differences in the Howso Engine basic prediction workflow when dealing with time series and sequential data:
 
     - :func:`howso.utilities.infer_feature_attributes` must be configured to include time series and sequential data information

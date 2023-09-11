@@ -20,7 +20,9 @@ Prerequisites: before you begin
 
 Notebook Recipe
 ---------------
-The content of this user guide is outlined in more detail in :download:`Anomaly Detection </_assets/recipes/3-anomaly_detection.ipynb>`
+The following recipe will supplement the content this guide will cover:
+
+- :download:`Anomaly Detection </_assets/recipes/3-anomaly_detection.ipynb>`
 
 Concepts & Terminology
 ----------------------

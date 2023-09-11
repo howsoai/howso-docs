@@ -18,12 +18,10 @@ Prerequisites: before you begin
 
 Notebook Recipe
 ---------------
-You should be familiar with three recipes, which will supplement the content of this user guide:
+The following recipes will supplement the content this guide will cover:
 
 - :download:`Engine Intro </_assets/recipes/1-intro.ipynb>`
-
 - :download:`Interpretability </_assets/recipes/2-interpretability.ipynb>`
-
 - :download:`Generative AI and Synthesis </_assets/recipes/generative_react_and_synth.ipynb>`
 
 Concepts & Terminology
