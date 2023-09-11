@@ -29,8 +29,8 @@ Notebook Recipe
 ---------------
    :download:`Engine Intro </_assets/recipes/1-engine-intro.ipynb>` download a sample notebook to run the code yourself. 
 
-Concepts & terminology to understand
-------------------------------------
+Concepts & Terminology
+----------------------
 Howso Engine is a generalized Machine Learning (ML) and Artificial Intelligence platform that creates powerful decision-making models that are fully explainable, auditable, and editable. Howso Engine uses Instance-Based Machine Learning which stores instances, i.e., data points, in memory and makes predictions about new instances given their relationship to existing instances. This technology harnesses a fast spatial query system and information theory for performance and accuracy.
 
 - :ref:`Trainee <user_guide/terminology:trainee>`

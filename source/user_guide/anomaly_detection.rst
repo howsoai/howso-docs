@@ -1,6 +1,5 @@
 .. currentmodule:: howso.engine
 
-
 Anomaly Detection
 =================
 .. topic:: What is covered in this user guide
@@ -9,15 +8,14 @@ Anomaly Detection
     a :class:`~Trainee`
 
 
-Objectives
-----------
+Objectives: what you will take away
+-----------------------------------
 - **Definitions & Understanding** of various :class:`~Trainee` metrics that be used to evaluate anomalies.
 - **How-To** perform anomaly detection using a :class:`~Trainee`.
 - **API References** How to use, :meth:`Trainee.react`, :meth:`Trainee.react_into_features`, and :meth:`Trainee.get_cases`.
 
-
-Prerequisites
--------------
+Prerequisites: before you begin 
+-------------------------------
 - You have successfully :doc:`installed Howso Engine <installing>`
 - You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
 
@@ -25,8 +23,7 @@ Notebook Recipe
 ---------------
 The content of this user guide is outlined in more detail in :download:`Anomaly Detection </_assets/recipes/3-anomaly_detection.ipynb>`
 
-
-Concepts & Terminology
+Concepts & terminology 
 ----------------------
 In order to perform anomaly detection, we utilize a few new metrics that are exposed through the :class:`~Trainee`.
 To understand this, we recommend being familiar with the following concepts:
@@ -40,7 +37,7 @@ To understand this, we recommend being familiar with the following concepts:
 
 We also recommend being familiar with the concept of `anomaly detection <https://en.wikipedia.org/wiki/Anomaly_detection>`_.
 
-How-To-Guide
+How-To Guide
 ------------
 Anomaly detection, is one of the most significant domains of artificial intelligence and machine learning. Some of the most
 common use cases of anomaly detection are fraud detection, health monitoring, and attack detection in cybersecurity. The
