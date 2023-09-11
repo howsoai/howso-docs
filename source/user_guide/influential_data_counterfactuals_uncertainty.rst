@@ -28,13 +28,7 @@ There is one recipe to supplement the content this guide will cover:
 
 Concepts & Terminology
 ----------------------
-
-- **Influential Cases**
-
 :ref:`Influential cases <user_guide/terminology:influential cases>` are the records that were directly used to make a prediction or to derive a result.
-
-- **Counterfactuals** 
-
 :ref:`Counterfactuals <user_guide/terminology:boundary cases>`, or boundary cases, are the records that have similar Context Features to that of a 
 prediction's Context Features, but instead have different Action Feature values. In other words, these are records with similar information that contain a different
 result. For example, if the prediction for fruit type was "peach", a boundary case might be a very peach-looking "nectarine".
@@ -48,7 +42,7 @@ How-To Guide
 ------------
 
 Task 1 - Obtain influential cases and counterfactuals (boundary cases)
-^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 After building, training, and analyzing a `Trainee`, you can obtain the influential cases and counterfactuals for a prediction on a test case in a `react()` call.
 
