@@ -10,7 +10,7 @@ Reinforcement Learning
 
 Objectives
 ----------
-- **Definitions & Understanding** How :py:class:`~Trainee`s fits into a RL framework.
+- **Definitions & Understanding** How :py:class:`~Trainee` s fits into a RL framework.
 - **How-To** Train and retrain a :py:class:`~Trainee` during RL.
 - **API References** :py:meth:`Trainee.set_auto_analyze_params`, :py:meth:`Trainee.train`, and :py:meth:`Trainee.react`.
 
