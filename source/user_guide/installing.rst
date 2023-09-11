@@ -6,7 +6,7 @@ Installing from PyPi
 
 .. code-block:: bash
 
-    pip install -U hosw-engine
+    pip install -U howso-engine
 
 
 Verification
