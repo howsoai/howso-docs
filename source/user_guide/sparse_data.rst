@@ -71,10 +71,10 @@ to unseen data**.  As such, we recommend performing no preprocessing if possible
 
 What a Missing Value Means
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-When computing similarity between cases, a missing value is considered to be of maximal uncertainty for that feature.  This is true even if both cases 
-have missing values in the same place.  After all, :math:`NaN \neq NaN`.  As mentioned above, if the data you are working with contain missing values 
-that represent something specific, those should be changed from missing values to something else.  If we were to treat those values as missing, matches 
-would not be considered similar and may therefore harm predictions in that instance.
+When computing similarity between cases, a missing value is considered to be of maximal :ref:`uncertainty <user_guide/terminology:uncertainty>` 
+for that feature.  This is true even if both cases have missing values in the same place.  After all, :math:`NaN \neq NaN`.  As mentioned above, 
+if the data you are working with contain missing values that represent something specific, those should be changed from missing values to something 
+else.  If we were to treat those values as missing, matches would not be considered similar and may therefore harm predictions in that instance.
 
 
 How Well are Sparse Data Handled
