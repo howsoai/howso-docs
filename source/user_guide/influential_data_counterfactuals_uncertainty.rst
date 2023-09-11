@@ -42,7 +42,7 @@ How-To Guide
 ------------
 
 Task 1 - Obtain influential cases and counterfactuals (boundary cases)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 After building, training, and analyzing a `Trainee`, you can obtain the influential cases and counterfactuals for a prediction on a test case in a `react()` call.
 
