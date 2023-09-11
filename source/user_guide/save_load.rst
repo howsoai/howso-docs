@@ -1,10 +1,10 @@
 .. currentmodule:: howso.engine
 
 Saving and Loading
-============
+==================
 .. topic:: What is covered in this user guide.
 
-   In this guide, you will learn how to save and load :py:class:`~Trainee` s using the built in Howso file operations.
+   In this guide, you will learn how to save and load :py:class:`~Trainee` s using the built-in Howso Engine's file operations.
 
 Objectives
 ----------
@@ -73,7 +73,7 @@ Saving Trainees to your local file system can be done using the :meth:`Trainee.s
     t.save(filepath='example_location/example_trainee.caml')
 
 Loading
-^^^^^^^^^^^^^^^
+^^^^^^^
 
 The  :meth:`Engine.load_trainee` function has one parameter, ``filename``, which lets the user specify where to load the file. The ``filename`` parameter can consist of either:
 
