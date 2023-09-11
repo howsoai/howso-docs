@@ -24,7 +24,6 @@ Download and run introductory recipes (sample notebooks)
     :hidden:
 
     installing
-    terminology
-    datasets
+ 
 
 

@@ -113,14 +113,6 @@ Influential Cases
 
 The cases used to make a prediction or to derive a result.
 
-Uncertainty
------------
-
-`Uncertainty <https://en.wikipedia.org/wiki/Measurement_uncertainty>`_ is an expression of the measurement error of 
-a particular feature.  One example of an uncertainty measure is the standard deviation of a distribution.  When Howso 
-Engine computes distances between one or more missing values, they are treated as having maximal uncertainty for 
-the feature.
-
 
 Operations
 ^^^^^^^^^^
@@ -245,3 +237,4 @@ Distance Ratio
 --------------
 
 The ratio of distance between a prediction and its nearest case to the minimum distance in between the closest two cases in the local area.
+

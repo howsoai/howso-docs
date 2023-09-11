@@ -14,7 +14,7 @@ Prerequisites: before you begin
 --------------------
 **Installation** 
 
-    - You have succesfully :doc:`installed Howso Engine <installing>`
+    - You have succesfully :doc:`installed Howso Engine <../getting_started/installing>`
 
     - You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`  
 

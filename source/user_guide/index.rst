@@ -34,4 +34,6 @@ To get started, be sure and start with these guides:
     feature_importance
     save_load
     reinforcement_learning
-    sparse_data
+    sparse_data   
+    terminology
+    datasets
