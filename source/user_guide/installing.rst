@@ -6,31 +6,7 @@ Installing from PyPi
 
 .. code-block:: bash
 
-    pip install -U diveplane-reactor-community
-
-
-License Acceptance
-------------------
-
-In order to use **Diveplane Reactor** you must first accept the :download:`end user license agreement </_static/eula/Diveplane Reactor Community Edition Agreement 2023-06-02.pdf>`.
-
-To accept this license, you may either run the following command in your python environment terminal:
-
-.. code-block:: bash
-
-    diveplane_eula_helper
-
-Or set an environment variable:
-
-.. code-block:: bash
-    :caption: Bash
-
-    export DIVEPLANE_EULA_ACCEPTED=TRUE
-
-.. code-block:: powershell
-    :caption: Powershell
-
-    $Env:DIVEPLANE_EULA_ACCEPTED = "TRUE"
+    pip install -U howso-engine
 
 
 Verification
@@ -40,13 +16,13 @@ You can verify your installation is working by running the following command in 
 
 .. code-block:: bash
 
-    verify_diveplane_install
+    verify_howso_install
 
 
 Time Zone Data
 --------------
 
-If the ``verify_diveplane_install`` command fails due to missing time zone data on the operating system you are using,
+If the ``verify_howso_install`` command fails due to missing time zone data on the operating system you are using,
 you can download the requisite **data only distribution** at `iana.org <https://www.iana.org/time-zones>`_.
 
 Step 1 - Download:
@@ -57,7 +33,7 @@ Step 2 - Unpack Files:
 
     Extract the compressed files into a folder at the following location on your filesystem:
 
-    ~/.diveplane/tzdata
+    ~/.howso/tzdata
 
 Step 3 - Supplemental File (Microsoft Windows Only):
 
@@ -74,7 +50,7 @@ Step 3 - Supplemental File (Microsoft Windows Only):
 
     .. code-block:: bash
 
-        ls ~/.diveplane/tzdata
+        ls ~/.howso/tzdata
 
         ... CONTRIBUTING
         ... LICENSE
