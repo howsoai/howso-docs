@@ -7,48 +7,39 @@ Influential Data, Counterfactuals, and Uncertainties of Predictions
     if there were any **counterfactuals** to the prediction in the data, and the **uncertainty** it has in the prediction. 
 
 Objectives: what you will take away
---------------------
+-----------------------------------
 - **Definitions & an understanding** of influential data, counterfactuals, and uncertainty within Engine.  
 - **How-To** obtain influential data, counterfactuals, and uncertainties using Engine.
 - **API References** - where to find references to APIs used in this guide. 
 
 Prerequisites: before you begin 
---------------------
-**Installation**
+-------------------------------
 
     - You have succesfully :doc:`installed Howso Engine <../getting_started/installing>`
-
     - You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
 
 Notebook Recipe
---------------------
-There is one recipe to supplement the content this guide will cover: 
+---------------
+The following recipe will supplement the content this guide will cover:
 
 - :download:`Interpretability </_assets/recipes/2-interpretability.ipynb>`
 
-Concepts & terminology to understand
---------------------
+Concepts & Terminology
+----------------------
 
-- **Influential Cases**
-
-:ref:`Influential cases <user_guide/terminology:influential cases>` are the records that were directly used to make a prediction or to derive a result.
-
-- **Counterfactuals** 
-
-:ref:`Counterfactuals <user_guide/terminology:boundary cases>`, or boundary cases, are the records that have similar Context Features to that of a 
+- :ref:`Uncertainty <user_guide/terminology:Uncertainty>` is the amount of information that is unknown about a prediction, and is characterized by a prediction's residual. The :ref:`residual <user_guide/terminology:residual>` is the
+mean absolute error between a predicted and actual value.  
+- :ref:`Influential cases <user_guide/terminology:influential cases>` are the records that were directly used to make a prediction or to derive a result.
+- :ref:`Counterfactuals <user_guide/terminology:boundary cases>`, or boundary cases, are the records that have similar Context Features to that of a 
 prediction's Context Features, but instead have different Action Feature values. In other words, these are records with similar information that contain a different
 result. For example, if the prediction for fruit type was "peach", a boundary case might be a very peach-looking "nectarine".
 
-- **Uncertainty** 
-
-Uncertainty is the amount of information that is unknown about a prediction, and is characterized by a prediction's residual. The :ref:`residual <user_guide/terminology:residual>` is the
-mean absolute error between a predicted and actual value.  
 
 How-To Guide
 ------------
 
 Task 1 - Obtain influential cases and counterfactuals (boundary cases)
-^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 After building, training, and analyzing a `Trainee`, you can obtain the influential cases and counterfactuals for a prediction on a test case in a `react()` call.
 
@@ -74,7 +65,7 @@ After building, training, and analyzing a `Trainee`, you can obtain the influent
 
 
 Task 2 - Obtain uncertainty information
-^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Feature residuals are calculated by holding out each individual feature, and then using the other features to predict the holdout feature. 
 This is similiar to the leave-one-out validation technique used in traditional machine learning. The results represent the `Trainee`'s uncertainty for that feature. 
 We will use the local feature residual to examine the uncertainity for a specific case and the global feature residual as a baseline.
@@ -109,5 +100,5 @@ We will use the local feature residual to examine the uncertainity for a specifi
 
 
 API References
---------------------   
+--------------
 - :meth:`Trainee.react`

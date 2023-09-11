@@ -5,7 +5,7 @@ Generative Output and Data Synthesis
    In this guide, you will learn the basics of using the Howso Engine for obtaining **generative output** and performing **data synthesis**.  
 
 Objectives: what you will take away
---------------------
+-----------------------------------
 
 - **Definitions & an understanding** of the Howso Engine's underlying instance-based learning (IBL) technology, which enables its generative capabilities.  
 - **How-To** perform generative analysis and generate synthetic data using Engine.
@@ -15,23 +15,19 @@ Prerequisites:
 --------------------
 **Installation**
     
-    - You have succesfully :doc:`installed Howso Engine <../getting_started/installing>`
-    
+    - You have succesfully :doc:`installed Howso Engine <../getting_started/installing>`    
     - You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
 
-
 Notebook Recipe
---------------------
-You should be familiar with three recipes, which will supplement the content of this user guide:
+---------------
+The following recipes will supplement the content this guide will cover:
 
 - :download:`Engine Intro </_assets/recipes/1-intro.ipynb>`
-
 - :download:`Interpretability </_assets/recipes/2-interpretability.ipynb>`
-
 - :download:`Generative AI and Synthesis </_assets/recipes/generative_react_and_synth.ipynb>`
 
-Concepts & terminology to understand
---------------------
+Concepts & Terminology
+----------------------
 
 *How does Engine's underlying IBL technology make it capable of generative output?*
 
@@ -61,11 +57,11 @@ Concepts & terminology to understand
     synthetic data is from your original data. 
 
 How-To Guide
---------------------
+------------
 Here, we will review the basic steps need to obtain generative output and for creating synthetic data.
 
 Task 1 - Generative Output
-^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 This code is designed to make a generative prediction on a test case. This is very similar to making a discriminative prediction, except the `desired_conviction` is set.
 After building, training, and analyzing a `Trainee`, you can obtain the generative prediction for a test case in a `react()` call.
 
@@ -84,7 +80,7 @@ After building, training, and analyzing a `Trainee`, you can obtain the generati
 
 
 Task 2 - Create Synthetic Data
-^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Synthetic data is very similar to Task 1, but uses targetless analysis. Additionally, you will set two new parameters `generate_new_cases`, which indicates whether a completely
 new case is or is not generated, and `num_cases_to_generate`, which indicates the number of synthetic cases you will create.
 
@@ -106,5 +102,5 @@ new case is or is not generated, and `num_cases_to_generate`, which indicates th
 
 
 API References
---------------------   
+--------------  
 - :meth:`Trainee.react` 

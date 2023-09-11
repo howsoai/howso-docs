@@ -21,14 +21,18 @@ Prerequisites
 
 Notebook Recipe
 ---------------
-The content of this user guide is outlined in more detail in :download:`Engine Intro </_assets/recipes/1-engine-intro.ipynb>`
+The following recipe will supplement the content this guide will cover:
 
-Concepts & terminology to understand
-------------------------------------
+- :download:`Engine Intro </_assets/recipes/1-engine-intro.ipynb>`
+
+Concepts & Terminology
+----------------------
+
+To understand this guide, we recommend being familiar with the following concepts:
 
 - :ref:`Trainee <user_guide/terminology:Trainee>`
 - :ref:`Feature <user_guide/terminology:Feature>`
-- :ref:`Residual <user_guide/terminology:Residual>`
+- :ref:`Residuals <user_guide/terminology:Residual>`
 
 How-To Guide
 ------------

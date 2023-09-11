@@ -1,15 +1,15 @@
 .. currentmodule:: howso.engine
 
-Regression
-==========
+Regression and Classification
+=============================
 .. topic:: What is covered in this user guide.
 
-   In this guide, you will learn the basics of using the Howso Engine for **Regression** in order to predict outcomes such as taxi fares, stock prices, health metrics such as body fat percentages, or as in this example, the average miles per gallon (MPG) of a vehicle based on capabilties and physical attributes of the vehicle.  
+   In this guide, you will learn the basics of using the Howso Engine for **Regression** and  **Classification** in order to predict outcomes such as taxi fares, stock prices, health metrics such as body fat percentages, or as in this example, the average miles per gallon (MPG) of a vehicle based on capabilties and physical attributes of the vehicle.  
 
 Objectives: what you will take away
 -----------------------------------
-- **Definitions & an understanding** of basic regression, :class:`Trainee`, :meth:`~Trainee.react`, continous Action Features, :meth:`~Trainee.react_into_trainee`, and :meth:`~Trainee.get_prediction_stats`.  
-- **How-To** perform a basic regression analysis using the Howso Engine to predict the Highway MPG based on vehicle Context Features.
+- **Definitions & an understanding** of basic regression, classification, :class:`Trainee`, :meth:`~Trainee.react`, continuous Action Features, :meth:`~Trainee.react_into_trainee`, and :meth:`~Trainee.get_prediction_stats`.  
+- **How-To** perform a basic regression or classification analysis using the Howso Engine to predict the Highway MPG based on vehicle Context Features.
 - **API References** of where to find more details of APIs used in this guide.
 
 Prerequisites: before you begin 
@@ -26,10 +26,12 @@ Data
 
 Notebook Recipe
 ---------------
-   :download:`Engine Intro </_assets/recipes/1-engine-intro.ipynb>` download a sample notebook to run code using the engine for regression yourself. 
+The following recipe will supplement the content this guide will cover:
 
-Concepts & terminology to understand
-------------------------------------
+- :download:`Engine Intro </_assets/recipes/1-engine-intro.ipynb>` download a sample notebook to run code using the engine for regression yourself. 
+
+Concepts & Terminology
+----------------------
 **Regression** - is used to describe the relationship between one or more Context Features and a continuous numeric Action Feature, as in this guide predicting the **Highway MPG** of a vehicle based on it's physical characteristics and year manufactured.  
 
 **Trainee and React** In this simple example, we will be creating a :ref:`Trainee <user_guide/terminology:trainee>` that we can be used :ref:`React <user_guide/terminology:react>` to new case data, such as a new car we might be looking to build.  
