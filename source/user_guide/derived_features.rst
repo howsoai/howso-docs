@@ -9,24 +9,21 @@ Derived Features
     generated directly, but are instead derived using the supplied code and values from other features.
 
 
-Objectives
-----------
+Objectives: what you will take away
+-----------------------------------
 - **Definitions & Understanding** of how derived features work and how they can be used to accomplish novel
   tasks for both time-series and non time-series tasks
 - **How-To** use derived features in and out of time-series workflows
 
-
-Prerequisites
--------------
+Prerequisites: before you begin 
+-------------------------------
 - You have successfully :doc:`installed Howso Engine <installing>`
 - You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
-
 
 Data
 ----
 Our example dataset for this guide is the well-known ``Adult`` dataset, accessible via the ``pmlb`` package installed
 in the prerequisites using the ``fetch_data()`` function.
-
 
 Concepts & Terminology
 ----------------------

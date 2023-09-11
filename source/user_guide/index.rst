@@ -15,7 +15,6 @@ problems, with examples throughout.
     terminology
     feature_attributes
     datasets
-    basic_workflow
     model_performance
     editing_case_weighting
     influential_data_counterfactuals_uncertainty
