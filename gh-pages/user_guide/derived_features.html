@@ -1,0 +1,674 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Derived Features &#8212; Howso Engine Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/derived_features';</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Anomaly Detection" href="anomaly_detection.html" />
+    <link rel="prev" title="Influential Data, Counterfactuals, and Uncertainties of Predictions" href="influential_data_counterfactuals_uncertainty.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/howso_logo_icon.svg" class="logo__image only-light" alt="Howso"/>
+    <script>document.write(`<img src="../_static/howso_logo_icon_white.svg" class="logo__image only-dark" alt="Howso"/>`);</script>
+  
+  
+    <p class="title logo__title">Howso</p>
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../api_reference/index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../examples/index.html">
+                        Examples
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://howso.com/" title="Howso Home" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-solid fa-house"></i></span>
+            <label class="sr-only">Howso Home</label></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../api_reference/index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../examples/index.html">
+                        Examples
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://howso.com/" title="Howso Home" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-solid fa-house"></i></span>
+            <label class="sr-only">Howso Home</label></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="installing.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_workflow.html">Basic Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regression.html">Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_attributes.html">Feature Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basic_workflow.html">Basic Workflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model_performance.html">Model Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="influential_data_counterfactuals_uncertainty.html">Influential Data, Counterfactuals, and Uncertainties of Predictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Derived Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="anomaly_detection.html">Anomaly Detection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_AI_synth.html">Generative Output and Data Synthesis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time_series.html">Time Series and Sequential Data Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bias_mitigation.html">Bias Mitigation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_importance.html">Feature Importance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load.html">Saving and Loading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reinforcement_learning.html">Reinforcement Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sparse_data.html">Handling Sparse Data</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">User Guide</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Derived Features</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="derived-features">
+<h1>Derived Features<a class="headerlink" href="#derived-features" title="Permalink to this heading">#</a></h1>
+<aside class="topic">
+<p class="topic-title">What is covered in this user guide</p>
+<p>In this guide, you will learn the basics of derived features.  These features are not predicted or
+generated directly, but are instead derived using the supplied code and values from other features.</p>
+</aside>
+<section id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Definitions &amp; Understanding</strong> of how derived features work and how they can be used to accomplish novel
+tasks for both time-series and non time-series tasks</p></li>
+<li><p><strong>How-To</strong> use derived features in and out of time-series workflows</p></li>
+</ul>
+</section>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>You have successfully <a class="reference internal" href="installing.html"><span class="doc">installed Howso Engine</span></a></p></li>
+<li><p>You have <a class="reference internal" href="basic_workflow.html"><span class="doc">loaded, configured, trained, and analyzed data</span></a></p></li>
+</ul>
+</section>
+<section id="data">
+<h2>Data<a class="headerlink" href="#data" title="Permalink to this heading">#</a></h2>
+<p>Our example dataset for this guide is the well-known <code class="docutils literal notranslate"><span class="pre">Adult</span></code> dataset, accessible via the <code class="docutils literal notranslate"><span class="pre">pmlb</span></code> package installed
+in the prerequisites using the <code class="docutils literal notranslate"><span class="pre">fetch_data()</span></code> function.</p>
+</section>
+<section id="concepts-terminology">
+<h2>Concepts &amp; Terminology<a class="headerlink" href="#concepts-terminology" title="Permalink to this heading">#</a></h2>
+<p>This guide will explain the concept of <strong>derived features</strong>, which include both <strong>derived action features</strong> and <strong>derived context
+features</strong>.  To follow along, you should be familiar with the following concepts:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="terminology.html#trainee"><span class="std std-ref">Trainee</span></a></p></li>
+<li><p><a class="reference internal" href="terminology.html#react"><span class="std std-ref">React</span></a></p></li>
+<li><p><a class="reference internal" href="terminology.html#case"><span class="std std-ref">Case</span></a></p></li>
+<li><p><a class="reference internal" href="terminology.html#feature"><span class="std std-ref">Feature</span></a></p></li>
+<li><p><a class="reference internal" href="terminology.html#action-features"><span class="std std-ref">Action Features</span></a></p></li>
+<li><p><a class="reference internal" href="terminology.html#context-features"><span class="std std-ref">Context Features</span></a></p></li>
+<li><p><a class="reference internal" href="feature_attributes.html"><span class="doc">Feature Attributes</span></a></p></li>
+</ul>
+<section id="derived-feature-codes">
+<h3>Derived Feature Codes<a class="headerlink" href="#derived-feature-codes" title="Permalink to this heading">#</a></h3>
+<p>The way in which each derived feature is derived is determined by what is called a <strong>derived feature code</strong>.  This is a snippet of
+<a class="reference external" href="https://github.com/howsoai/amalgam">Amalgam</a> -style code that determines how the derivation should be performed.  One such example
+of a derived feature code is:</p>
+<p>This would use the multiplication opcode (<code class="docutils literal notranslate"><span class="pre">*</span></code>) to derive a feature that is 52 times the <code class="docutils literal notranslate"><span class="pre">&quot;hours-per-week&quot;</span></code> feature for each case.
+For a full list of opcodes that are available for derived feature codes, refer to the <span class="xref std std-doc">Amalgam Language Documentation</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When referencing feature values in a derived feature code (e.g., <code class="docutils literal notranslate"><span class="pre">#hours-per-week</span> <span class="pre">0</span></code>) the value returned is offset by the number
+which follows the reference.  When not using a time-series Trainee, this value can only be 0.  If you are using a time-series Trainee,
+however, this value can be larger which will then refer to that many cases previously in the time-series (e.g., <code class="docutils literal notranslate"><span class="pre">#hours-per-week</span> <span class="pre">1</span></code>
+would refer to the previous case in a time-series, if it were part of a time-series).</p>
+</div>
+</section>
+</section>
+<section id="how-to-guide">
+<h2>How-To Guide<a class="headerlink" href="#how-to-guide" title="Permalink to this heading">#</a></h2>
+<p>For this guide, we will add a feature called <code class="docutils literal notranslate"><span class="pre">&quot;hours-per-year&quot;</span></code> to the <code class="docutils literal notranslate"><span class="pre">Adult</span></code> dataset.  This dataset already contains a feature
+called <code class="docutils literal notranslate"><span class="pre">&quot;hours-per-week&quot;</span></code>, so the relationship between the feature we have and the feature we want is mathematical in nature, and
+so should not be broken when making predictions.  Adding derived features to a <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> can be done either before or after
+training.</p>
+<section id="adding-derived-features-before-training">
+<h3>Adding Derived Features Before Training<a class="headerlink" href="#adding-derived-features-before-training" title="Permalink to this heading">#</a></h3>
+<p>To add a derived feature to a <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> before training, simply modify the feature attributes:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">features</span> <span class="o">=</span> <span class="n">infer_feature_attributes</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">hpy_features</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;continuous&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;auto_derive_on_train&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;derived_feature_code&quot;</span><span class="p">:</span> <span class="s2">&quot;(* #hours-per-week 0 52)&quot;</span>
+<span class="p">}</span>
+<span class="n">features</span><span class="p">[</span><span class="s2">&quot;hours-per-year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">hpy_features</span>
+<span class="n">t</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="n">features</span><span class="p">)</span>
+<span class="n">t</span><span class="o">.</span><span class="n">analyze</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>That’s quite a lot of code, so let’s break it down.  After inferring feature attributes, we set up the feature attributes for our derived feature.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">hpy_features</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;continuous&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;auto_derive_on_train&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;derived_feature_code&quot;</span><span class="p">:</span> <span class="s2">&quot;(* #hours-per-week 0 52)&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>First, we note that this feature is continuous.  Second, we set this feature to be auto-derived on train.  This means that the feature will be computed
+using its derived feature code as soon as cases are trained into the model.  If we did not do this, we would have to manually specify it in the <code class="docutils literal notranslate"><span class="pre">derived_features</span></code>
+parameter to <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.train" title="howso.engine.Trainee.train"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.train()</span></code></a> to ensure that the feature is created by the <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a>.  Finally, we set the derived feature code.  This is a
+small piece of Amalgam-like code which determines how to derive the feature.  In this case, we use the multiplication opcode (<code class="docutils literal notranslate"><span class="pre">*</span></code>) to multiply each case’s
+value of hours-per-week (<code class="docutils literal notranslate"><span class="pre">#hours-per-week</span> <span class="pre">0</span></code>, where the 0 is an offset and means the current case) by 52, the number of weeks in a year.</p>
+</section>
+<section id="adding-derived-features-after-training">
+<h3>Adding Derived Features After Training<a class="headerlink" href="#adding-derived-features-after-training" title="Permalink to this heading">#</a></h3>
+<p>The process of adding a derived feature to a <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> that has already been trained is quite simple.  It can be handled with a single call to
+<a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.add_feature" title="howso.engine.Trainee.add_feature"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.add_feature()</span></code></a>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># t has already been trained and analyzed</span>
+<span class="n">hpy_features</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;continuous&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;auto_derive_on_train&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;derived_feature_code&quot;</span><span class="p">:</span> <span class="s2">&quot;(* #hours-per-week 0 52)&quot;</span>
+<span class="p">}</span>
+<span class="n">t</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="s2">&quot;hours-per-year&quot;</span><span class="p">,</span> <span class="n">feature_attributes</span><span class="o">=</span><span class="n">hpy_features</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="using-derived-features-in-reacts">
+<h3>Using Derived Features in Reacts<a class="headerlink" href="#using-derived-features-in-reacts" title="Permalink to this heading">#</a></h3>
+<p>Once a model has one or more derived features, they can be used in reacts:</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Using a derived feature as an action feature</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">reaction</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
+    <span class="n">contexts</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">features</span><span class="o">.</span><span class="n">get_names</span><span class="p">(</span><span class="n">without</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;hours-per-week&quot;</span><span class="p">,</span> <span class="s2">&quot;hours-per-year&quot;</span><span class="p">])],</span>
+    <span class="n">action_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;hours-per-week&quot;</span><span class="p">,</span> <span class="s2">&quot;hours-per-year&quot;</span><span class="p">],</span>
+    <span class="n">derived_action_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;hours-per-year&quot;</span><span class="p">],</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">reaction</span><span class="p">[</span><span class="s2">&quot;action&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Using a derived feature as a context feature</span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">reaction</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
+    <span class="n">contexts</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">features</span><span class="o">.</span><span class="n">get_names</span><span class="p">(</span><span class="n">without</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">])],</span>
+    <span class="n">derived_context_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;hours-per-year&quot;</span><span class="p">],</span>
+    <span class="n">action_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">reaction</span><span class="p">[</span><span class="s2">&quot;action&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<p>Note that both <code class="docutils literal notranslate"><span class="pre">derived_action_features</span></code> and <code class="docutils literal notranslate"><span class="pre">derived_context_features</span></code> must be a subset of <code class="docutils literal notranslate"><span class="pre">action_features</span></code> and <code class="docutils literal notranslate"><span class="pre">context_features</span></code>, respectively.
+A derived context feature is derived from the contexts that are being input to a <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react()</span></code></a>, while a derived action feature is derived from the
+actions that are output from a <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react()</span></code></a>.</p>
+</section>
+<section id="derived-features-for-time-series">
+<h3>Derived Features for Time-Series<a class="headerlink" href="#derived-features-for-time-series" title="Permalink to this heading">#</a></h3>
+<p>Derived features are used in time-series <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> s and are automatically created by <a class="reference internal" href="../api_reference/utilities.html#howso.utilities.infer_feature_attributes" title="howso.utilities.infer_feature_attributes"><code class="xref py py-func docutils literal notranslate"><span class="pre">infer_feature_attributes()</span></code></a> when the
+<code class="docutils literal notranslate"><span class="pre">time_feature_name</span></code> and <code class="docutils literal notranslate"><span class="pre">id_feature_name</span></code> parameters are supplied.  When <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react_series" title="howso.engine.Trainee.react_series"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_series()</span></code></a> is used, the lag features are used as derived
+context features and the delta/rate features are used as derived action features.  Since <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a> supports more explainability details than
+<a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react_series" title="howso.engine.Trainee.react_series"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_series()</span></code></a>, this can be useful to replicate the behavior of <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react_series" title="howso.engine.Trainee.react_series"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react_series()</span></code></a> using <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react()</span></code></a>.</p>
+<p>For more information on time-series, see the API Reference and the <a class="reference internal" href="time_series.html"><span class="doc">time-series user guide</span></a></p>
+</section>
+</section>
+<section id="api-references">
+<h2>API References<a class="headerlink" href="#api-references" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../api_reference/utilities.html#howso.utilities.infer_feature_attributes" title="howso.utilities.infer_feature_attributes"><code class="xref py py-func docutils literal notranslate"><span class="pre">howso.utilities.infer_feature_attributes()</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react_series" title="howso.engine.Trainee.react_series"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_series()</span></code></a></p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="influential_data_counterfactuals_uncertainty.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Influential Data, Counterfactuals, and Uncertainties of Predictions</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="anomaly_detection.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Anomaly Detection</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts-terminology">Concepts &amp; Terminology</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derived-feature-codes">Derived Feature Codes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-guide">How-To Guide</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-derived-features-before-training">Adding Derived Features Before Training</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-derived-features-after-training">Adding Derived Features After Training</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-derived-features-in-reacts">Using Derived Features in Reacts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derived-features-for-time-series">Derived Features for Time-Series</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#api-references">API References</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2019-2023, Howso Incorporated.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

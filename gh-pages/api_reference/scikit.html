@@ -1,0 +1,1574 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Scikit Package &#8212; Howso Engine Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api_reference/scikit';</script>
+    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Utilities Package" href="utilities.html" />
+    <link rel="prev" title="Reactor Package" href="engine.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/howso_logo_icon.svg" class="logo__image only-light" alt="Howso"/>
+    <script>document.write(`<img src="../_static/howso_logo_icon_white.svg" class="logo__image only-dark" alt="Howso"/>`);</script>
+  
+  
+    <p class="title logo__title">Howso</p>
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../user_guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../examples/index.html">
+                        Examples
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://howso.com/" title="Howso Home" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-solid fa-house"></i></span>
+            <label class="sr-only">Howso Home</label></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav class="navbar-nav">
+  <p class="sidebar-header-items__title"
+     role="heading"
+     aria-level="1"
+     aria-label="Site Navigation">
+    Site Navigation
+  </p>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../user_guide/index.html">
+                        User Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../examples/index.html">
+                        Examples
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://howso.com/" title="Howso Home" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-solid fa-house"></i></span>
+            <label class="sr-only">Howso Home</label></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="engine.html">Reactor Package</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Scikit Package</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="utilities.html">Utilities Package</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="types.html">Types</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../openapi/types/Cases.html">Cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../openapi/types/FeatureAttributes.html">FeatureAttributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../openapi/types/FeatureAutoDeriveOnTrain.html">FeatureAutoDeriveOnTrain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../openapi/types/FeatureAutoDeriveOnTrainCustom.html">FeatureAutoDeriveOnTrainCustom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../openapi/types/FeatureAutoDeriveOnTrainProgress.html">FeatureAutoDeriveOnTrainProgress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../openapi/types/FeatureBounds.html">FeatureBounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../openapi/types/FeatureOriginalType.html">FeatureOriginalType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../openapi/types/FeatureTimeSeries.html">FeatureTimeSeries</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">API Reference</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Scikit Package</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="scikit-package">
+<h1>Scikit Package<a class="headerlink" href="#scikit-package" title="Permalink to this heading">#</a></h1>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">howso.scikit</span> <span class="kn">import</span> <span class="o">...</span>
+</pre></div>
+</div>
+<span class="target" id="module-howso.scikit"></span><p>The Python API for the Howso Scikit Client.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="howso.scikit.HowsoClassifier">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">howso.scikit.</span></span><span class="sig-name descname"><span class="pre">HowsoClassifier</span></span><a class="headerlink" href="#howso.scikit.HowsoClassifier" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#howso.scikit.HowsoEstimator" title="howso.scikit.scikit.HowsoEstimator"><code class="xref py py-class docutils literal notranslate"><span class="pre">HowsoEstimator</span></code></a></p>
+<p>A HowsoEstimator for classification analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>features</strong> (<em>dict</em><em> of </em><em>str: dict</em><em>, </em><em>default None</em>) – <p>The features that will predict the targets(s). Will be generated
+automatically if not specified.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;feature_name&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;parameter1&quot;</span> <span class="p">:</span> <span class="s2">&quot;value1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;parameter2&quot;</span> <span class="p">:</span> <span class="s2">&quot;value2&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;length&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;continuous&quot;</span><span class="p">,</span> <span class="s2">&quot;decimal_places&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="p">},</span>
+    <span class="s2">&quot;width&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;continuous&quot;</span><span class="p">,</span> <span class="s2">&quot;significant_digits&quot;</span><span class="p">:</span> <span class="mi">4</span> <span class="p">},</span>
+    <span class="s2">&quot;degrees&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;continuous&quot;</span><span class="p">,</span> <span class="s2">&quot;cycle_length&quot;</span><span class="p">:</span> <span class="mi">360</span> <span class="p">},</span>
+    <span class="s2">&quot;class&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;nominal&quot;</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p></li>
+<li><p><strong>targets</strong> (<em>dict</em><em> of </em><em>str: dict</em><em>, </em><em>default None</em>) – <p>The target(s) to be predicted. Will be generated automatically if not
+specified.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;target_name&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;parameter1&quot;</span> <span class="p">:</span> <span class="s2">&quot;value1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;parameter2&quot;</span> <span class="p">:</span> <span class="s2">&quot;value2&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;klass&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;nominal&quot;</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p></li>
+<li><p><strong>client</strong> (<em>AbstractHowsoClient</em><em>, </em><em>default None</em>) – A subclass of AbstractHowsoClient used to interface with Howso.</p></li>
+<li><p><strong>verbose</strong> (<em>boolean</em><em>, </em><em>default False</em>) – A flag for verbose output.</p></li>
+<li><p><strong>debug</strong> (<em>boolean</em><em>, </em><em>default False</em>) – A flag for debug output.</p></li>
+<li><p><strong>ttl</strong> (<em>int</em><em>, </em><em>in milliseconds</em>) – The maximum time a server should maintain a connection open for a
+trainee when processing requests.</p></li>
+<li><p><strong>client_params</strong> (<em>dict</em><em>, </em><em>default None</em>) – The parameters with which to instantiate the client.</p></li>
+<li><p><strong>trainee_params</strong> (<em>dict</em><em>, </em><em>default None</em>) – The parameters with which to instantiate the client. Intended for use by <cite>HowsoEstimator.get_params</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object sig-wrap py" id="howso.scikit.HowsoClassifier.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ttl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">43200000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trainee_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.scikit.HowsoClassifier.__init__" title="Permalink to this definition">#</a></dt>
+<dd><p>Initialize HowsoClassifier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client</strong> (<em>AbstractHowsoClient</em><em> | </em><em>None</em>) – </p></li>
+<li><p><strong>features</strong> (<em>Dict</em><em> | </em><em>None</em>) – </p></li>
+<li><p><strong>targets</strong> (<em>Dict</em><em> | </em><em>None</em>) – </p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – </p></li>
+<li><p><strong>debug</strong> (<em>bool</em>) – </p></li>
+<li><p><strong>ttl</strong> (<em>int</em>) – </p></li>
+<li><p><strong>client_params</strong> (<em>Dict</em><em> | </em><em>None</em>) – </p></li>
+<li><p><strong>trainee_params</strong> (<em>Dict</em><em> | </em><em>None</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="howso.scikit.HowsoClassifier.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analyze</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.scikit.HowsoClassifier.fit" title="Permalink to this definition">#</a></dt>
+<dd><p>Fit a model with Howso.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>numpy.ndarray</em><em>, </em><em>shape</em><em> (</em><em>n_samples</em><em>, </em><em>n_features</em><em>)</em>) – Data</p></li>
+<li><p><strong>y</strong> (<em>numpy.ndarray</em><em>, </em><em>shape</em><em> (</em><em>n_samples</em><em>,</em><em>)</em>) – Target. Will be cast to X’s dtype if necessary</p></li>
+<li><p><strong>analyze</strong> (<em>bool</em><em>, </em><em>default=True</em>) – <p>(Optional) If trainee should be analyzed.</p>
+<blockquote>
+<div><ul>
+<li><p>a user may plan to call analyze themselves after fit() to specify parameters</p></li>
+</ul>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>self</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#howso.scikit.HowsoEstimator" title="howso.scikit.HowsoEstimator">HowsoEstimator</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="howso.scikit.HowsoClassifier.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.scikit.HowsoClassifier.load" title="Permalink to this definition">#</a></dt>
+<dd><p>Load the trainee and re-populates the <cite>classes_</cite> variable.</p>
+<p>This is based on the available classes in the loaded trainee.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>trainee_id</strong> (<em>str</em>) – The id of the trainee.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="howso.scikit.HowsoClassifier.partial_fit">
+<span class="sig-name descname"><span class="pre">partial_fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.scikit.HowsoClassifier.partial_fit" title="Permalink to this definition">#</a></dt>
+<dd><p>Adds data to an existing Howso model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>numpy.ndarray</em><em>, </em><em>shape</em><em> (</em><em>n_samples</em><em>, </em><em>n_features</em><em>)</em>) – Data</p></li>
+<li><p><strong>y</strong> (<em>numpy.ndarray</em><em>, </em><em>shape</em><em> (</em><em>n_samples</em><em>,</em><em>)</em>) – Target. Will be cast to X’s dtype if necessary</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="howso.scikit.HowsoClassifier.predict_proba">
+<span class="sig-name descname"><span class="pre">predict_proba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.scikit.HowsoClassifier.predict_proba" title="Permalink to this definition">#</a></dt>
+<dd><p>Probability estimates.</p>
+<p>The returned estimates for all classes are ordered by the label
+of classes.</p>
+<p>For a multi_class problem, if multi_class is set to be “multinomial”
+the softmax function is used to find the predicted probability of each
+class. Else use a one-vs-rest approach, i.e calculate the probability
+of each class assuming it to be positive using the logistic function
+and normalize these values across all the classes.</p>
+<p>NOTE: Only works with single target models at this time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>X</strong> (<em>numpy.ndarray</em><em>, </em><em>shape</em><em> (</em><em>n_samples</em><em>, </em><em>n_features</em><em>)</em>) – Data</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The probabilities of the classes for the given prediction.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray, shape (n_samples, n_classes)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="howso.scikit.HowsoClassifier.set_fit_request">
+<span class="sig-name descname"><span class="pre">set_fit_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analyze</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'$UNCHANGED$'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.scikit.HowsoClassifier.set_fit_request" title="Permalink to this definition">#</a></dt>
+<dd><p>Request metadata passed to the <code class="docutils literal notranslate"><span class="pre">fit</span></code> method.</p>
+<p>Note that this method is only relevant if
+<code class="docutils literal notranslate"><span class="pre">enable_metadata_routing=True</span></code> (see <code class="xref py py-func docutils literal notranslate"><span class="pre">sklearn.set_config()</span></code>).
+Please see <span class="xref std std-ref">User Guide</span> on how the routing
+mechanism works.</p>
+<p>The options for each parameter are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span></code>: metadata is requested, and passed to <code class="docutils literal notranslate"><span class="pre">fit</span></code> if provided. The request is ignored if metadata is not provided.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span></code>: metadata is not requested and the meta-estimator will not pass it to <code class="docutils literal notranslate"><span class="pre">fit</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">None</span></code>: metadata is not requested, and the meta-estimator will raise an error if the user provides it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str</span></code>: metadata should be passed to the meta-estimator with this given alias instead of the original name.</p></li>
+</ul>
+<p>The default (<code class="docutils literal notranslate"><span class="pre">sklearn.utils.metadata_routing.UNCHANGED</span></code>) retains the
+existing request. This allows you to change the request for some
+parameters and not others.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.3.</span></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method is only relevant if this estimator is used as a
+sub-estimator of a meta-estimator, e.g. used inside a
+<code class="xref py py-class docutils literal notranslate"><span class="pre">pipeline.Pipeline</span></code>. Otherwise it has no effect.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>analyze</strong> (<em>str</em><em>, </em><em>True</em><em>, </em><em>False</em><em>, or </em><em>None</em><em>,                     </em><em>default=sklearn.utils.metadata_routing.UNCHANGED</em>) – Metadata routing for <code class="docutils literal notranslate"><span class="pre">analyze</span></code> parameter in <code class="docutils literal notranslate"><span class="pre">fit</span></code>.</p></li>
+<li><p><strong>self</strong> (<a class="reference internal" href="#howso.scikit.HowsoClassifier" title="howso.scikit.scikit.HowsoClassifier"><em>HowsoClassifier</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>self</strong> – The updated object.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>object</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="howso.scikit.HowsoEstimator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">howso.scikit.</span></span><span class="sig-name descname"><span class="pre">HowsoEstimator</span></span><a class="headerlink" href="#howso.scikit.HowsoEstimator" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseEstimator</span></code></p>
+<p>This class is intended for use within scikit-learn only.</p>
+<p>This Estimator follows scikit-learn’s conventions. For access to a wider
+range of Howso capabilities, please use the client specified in the
+howso.client module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>features</strong> (<em>dict</em><em> of </em><em>str: dict</em><em>, </em><em>default None</em>) – <p>The features that will predict the targets(s). Will be generated
+automatically if not specified.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;feature_name&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;parameter1&quot;</span> <span class="p">:</span> <span class="s2">&quot;value1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;parameter2&quot;</span> <span class="p">:</span> <span class="s2">&quot;value2&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;length&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;continuous&quot;</span><span class="p">,</span> <span class="s2">&quot;decimal_places&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="p">},</span>
+    <span class="s2">&quot;width&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;continuous&quot;</span><span class="p">,</span> <span class="s2">&quot;significant_digits&quot;</span><span class="p">:</span> <span class="mi">4</span> <span class="p">},</span>
+    <span class="s2">&quot;degrees&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;continuous&quot;</span><span class="p">,</span> <span class="s2">&quot;cycle_length&quot;</span><span class="p">:</span> <span class="mi">360</span> <span class="p">},</span>
+    <span class="s2">&quot;class&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;nominal&quot;</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p></li>
+<li><p><strong>targets</strong> (<em>dict</em><em> of </em><em>str: dict</em><em>, </em><em>default None</em>) – <p>The target(s) to be predicted. Will be generated automatically if not
+specified.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;`target_name`&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;parameter1&quot;</span> <span class="p">:</span> <span class="s2">&quot;value1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;parameter2&quot;</span> <span class="p">:</span> <span class="s2">&quot;value2&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;klass&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;nominal&quot;</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p></li>
+<li><p><strong>client</strong> (<em>AbstractHowsoClient</em><em>, </em><em>default None</em>) – A subclass of AbstractHowsoClient used to interface with Howso.</p></li>
+<li><p><strong>method</strong> (<em>str</em>) – One of ‘classification’ or ‘regression’.</p></li>
+<li><p><strong>verbose</strong> (<em>boolean</em><em>, </em><em>default False</em>) – A flag for verbose output.</p></li>
+<li><p><strong>debug</strong> (<em>boolean</em><em>, </em><em>default False</em>) – A flag for debug output.</p></li>
+<li><p><strong>ttl</strong> (<em>int</em><em>, </em><em>in milliseconds</em>) – The maximum time a server should maintain a connection open for a
+trainee when processing requests.</p></li>
+<li><p><strong>client_params</strong> (<em>dict</em><em>, </em><em>default None</em>) – The parameters with which to instantiate the client.</p></li>
+<li><p><strong>trainee_params</strong> (<em>dict</em><em>, </em><em>default None</em>) – The parameters with which to instantiate the trainee.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">howso.scikit</span> <span class="kn">import</span> <span class="n">HowsoClassifier</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Read in the data.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;iris.csv&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Split the dataset into the feature (X) and targets (y) and convert</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># the string targets into integer hashes.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">hash</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Split the dataset into an 80/20 train/test set.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Create a classifier.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">howso</span> <span class="o">=</span> <span class="n">HowsoClassifier</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Fit the training data.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">howso</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Test against the reserved test data.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">score</span> <span class="o">=</span> <span class="n">howso</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Print the resulting accuracy.</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+<span class="go">0.9666666666666667</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object sig-wrap py" id="howso.scikit.HowsoEstimator.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ttl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">43200000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trainee_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.scikit.HowsoEstimator.__init__" title="Permalink to this definition">#</a></dt>
+<dd><p>Initialize HowsoEstimator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client</strong> (<em>AbstractHowsoClient</em><em> | </em><em>None</em>) – </p></li>
+<li><p><strong>features</strong> (<em>Dict</em><em> | </em><em>None</em>) – </p></li>
+<li><p><strong>targets</strong> (<em>Dict</em>) – </p></li>
+<li><p><strong>method</strong> (<em>str</em><em> | </em><em>None</em>) – </p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – </p></li>
+<li><p><strong>debug</strong> (<em>bool</em>) – </p></li>
+<li><p><strong>ttl</strong> (<em>int</em>) – </p></li>
+<li><p><strong>trainee_params</strong> (<em>Dict</em><em> | </em><em>None</em>) – </p></li>
+<li><p><strong>client_params</strong> (<em>Dict</em><em> | </em><em>None</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="howso.scikit.HowsoEstimator.analyze">
+<span class="sig-name descname"><span class="pre">analyze</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.scikit.HowsoEstimator.analyze" title="Permalink to this definition">#</a></dt>
+<dd><p>Analyze a trainee.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>seed</strong> (<em>int</em><em>, </em><em>optional</em>) – A random seed.</p></li>
+<li><p><strong>**kwargs</strong> – Refer to docstring in howso.client.analyze method for complete
+reference of all parameters</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="howso.scikit.HowsoEstimator.delete">
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#howso.scikit.HowsoEstimator.delete" title="Permalink to this definition">#</a></dt>
+<dd><p>Delete this trainee from the howso cloud service.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="howso.scikit.HowsoEstimator.describe_prediction">
+<span class="sig-name descname"><span class="pre">describe_prediction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.scikit.HowsoEstimator.describe_prediction" title="Permalink to this definition">#</a></dt>
+<dd><p>Describe a prediction in detail.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>numpy.ndarray</em>) – Feature values.</p></li>
+<li><p><strong>details</strong> (<em>dict</em><em>, </em><em>default None</em>) – <p>(Optional) If details are specified, the response will
+contain the requested explanation data along with the reaction.
+Below are the valid keys and data types for the different audit
+details. Omitted keys, values set to None, or False values for
+Booleans will not be included in the audit data returned.</p>
+<ul>
+<li><dl class="simple">
+<dt>boundary_cases<span class="classifier">bool, optional</span></dt><dd><p>If True, outputs an automatically determined (when
+‘num_boundary_cases’ is not specified) relevant number of
+boundary cases. Uses both context and action features of the
+reacted case to determine the counterfactual boundary based on
+action features, which maximize the dissimilarity of action
+features while maximizing the similarity of context features.
+If action features aren’t specified, uses familiarity conviction
+to determine the boundary instead.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>boundary_cases_familiarity_convictions<span class="classifier">bool, optional</span></dt><dd><p>If True, outputs familiarity conviction of addition for each of
+the boundary cases.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>case_contributions<span class="classifier">bool, optional</span></dt><dd><p>If True, outputs each influential case’s differences between the
+predicted action feature value and the predicted action feature
+value if each individual case were not included. Uses only the
+context features of the reacted case to determine that area.
+Relies on ‘robust_computation’ parameter to determine whether
+to do standard or robust computation.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>case_feature_residuals<span class="classifier">bool, optional</span></dt><dd><p>If True, outputs feature residuals for all (context and action)
+features for just the specified case. Uses leave-one-out for
+each feature, while using the others to predict the left out
+feature with their corresponding values from this case. Relies
+on ‘robust_computation’ parameter to determine whether to do
+standard or robust computation.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>case_mda<span class="classifier">bool, optional</span></dt><dd><p>If True, outputs each influential case’s mean decrease in
+accuracy of predicting the action feature in the local model
+area, as if each individual case were included versus not
+included. Uses only the context features of the reacted case to
+determine that area. Relies on ‘robust_computation’ parameter
+to determine whether to do standard or robust computation.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>categorical_action_probabilities<span class="classifier">bool, optional</span></dt><dd><p>If True, outputs probabilities for each class for the action.
+Applicable only to categorical action features.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>distance_contribution<span class="classifier">bool, optional</span></dt><dd><p>If True, outputs the distance contribution (expected total
+surprisal contribution) for the reacted case. Uses both context
+and action feature values.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>distance_ratio<span class="classifier">bool, optional</span></dt><dd><p>If True, outputs the ratio of distance (relative surprisal)
+between this reacted case and its nearest case to the minimum
+distance (relative surprisal) in between the closest two cases
+in the local area. All distances are computed using only the
+specified context features.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>feature_contributions<span class="classifier">bool, optional</span></dt><dd><p>If True, outputs each context feature’s differences between the
+predicted action feature value and the predicted action feature
+value if each context were not in the model for all context
+features in the local model area. Relies ‘robust_computation’
+parameter to determine whether to do standard or robust
+computation.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>feature_mda<span class="classifier">bool, optional</span></dt><dd><p>If True, outputs each context feature’s mean decrease in
+accuracy of predicting the action feature given the context.
+Uses only the context features of the reacted case to determine
+that area. Relies on ‘robust_computation’ parameter to
+determine whether to do standard or robust computation.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>feature_mda_ex_post<span class="classifier">bool, optional</span></dt><dd><p>If True, outputs each context feature’s mean decrease in
+accuracy of predicting the action feature as an explanation
+given that the specified prediction was already made as
+specified by the action value. Uses both context and action
+features of the reacted case to determine that area. Relies on
+‘robust_computation’ parameter to determine whether to do
+standard or robust computation.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>feature_residuals<span class="classifier">bool, optional</span></dt><dd><p>If True, outputs feature residuals for all (context and action)
+features locally around the prediction. Uses only the context
+features of the reacted case to determine that area. Relies on
+‘robust_computation’ parameter to determine whether to do
+standard or robust computation.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>global_case_feature_residual_convictions<span class="classifier">bool, optional</span></dt><dd><p>If True, outputs this case’s feature residual convictions for
+the global model. Computed as: global model feature residual
+divided by case feature residual. Relies on
+‘robust_computation’ parameter to determine whether to do
+standard or robust computation.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>hypothetical_values<span class="classifier">dict, optional</span></dt><dd><p>A dictionary of feature name to feature value. If specified,
+shows how a prediction could change in a what-if scenario where
+the influential cases’ context feature values are replaced with
+the specified values.  Iterates over all influential cases,
+predicting the action features each one using the updated
+hypothetical values. Outputs the predicted arithmetic over the
+influential cases for each action feature.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>influential_cases<span class="classifier">bool, optional</span></dt><dd><p>If True, outputs the most influential cases and their influence
+weights based on the surprisal of each case relative to the
+context being predicted among the cases. Uses only the context
+features of the reacted case.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>influential_cases_familiarity_convictions<span class="classifier">bool, optional</span></dt><dd><p>If True, outputs familiarity conviction of addition for each of
+the influential cases.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>influential_cases_raw_weights<span class="classifier">bool, optional</span></dt><dd><p>If True, outputs the surprisal for each of the influential
+cases.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>local_case_feature_residual_convictions<span class="classifier">bool, optional</span></dt><dd><p>If True, outputs this case’s feature residual convictions for
+the region around the prediction. Uses only the context
+features of the reacted case to determine that region.
+Computed as: region feature residual divided by case feature
+residual. Relies on ‘robust_computation’ parameter to determine
+whether to do standard or robust computation.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>most_similar_cases<span class="classifier">bool, optional</span></dt><dd><p>If True, outputs an automatically determined (when
+‘num_most_similar_cases’ is not specified) relevant number of
+similar cases, which will first include the influential cases.
+Uses only the context features of the reacted case.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>num_boundary_cases<span class="classifier">int, optional</span></dt><dd><p>Outputs this manually specified number of boundary cases.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>num_most_similar_cases<span class="classifier">int, optional</span></dt><dd><p>Outputs this manually specified number of most similar cases,
+which will first include the influential cases.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>num_most_similar_case_indices: int, optional</dt><dd><p>Outputs this specified number of most similar case indices when
+‘distance_ratio’ is also set to True.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>observational_errors<span class="classifier">bool, optional</span></dt><dd><p>If True, outputs observational errors for all features as
+defined in feature attributes.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>outlying_feature_values<span class="classifier">bool, optional</span></dt><dd><p>If True, outputs the reacted case’s context feature values that
+are outside the min or max of the corresponding feature values
+of all the cases in the local model area. Uses only the context
+features of the reacted case to determine that area.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>prediction_residual_conviction: bool, optional</dt><dd><p>If True, outputs residual conviction for the reacted case’s
+action features by computing the prediction residual for the
+action features in the local model area. Uses both context and
+action features to determine that area. This is defined as the
+expected (global) model residual divided by computed local
+residual.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>similarity_conviction<span class="classifier">bool, optional</span></dt><dd><p>If True, outputs similarity conviction for the reacted case.
+Uses both context and action feature values as the case values
+for all computations. This is defined as expected (local)
+distance contribution divided by reacted case distance
+contribution.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>robust_computation<span class="classifier">bool, optional</span></dt><dd><p>Default is False, uses leave-one-out for features (or cases,
+as needed) for all relevant computations. If True, uses
+uniform sampling from the power set of all combinations of
+features (or cases, as needed) instead.</p>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">details</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;num_most_similar_cases&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+<span class="gp">... </span>           <span class="s1">&#39;feature_residuals&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+</pre></div>
+</div>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Format of:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s1">&#39;action&#39;</span><span class="p">:</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">dicts</span> <span class="n">of</span> <span class="n">action_features</span> <span class="o">-&gt;</span> <span class="n">action_values</span><span class="p">,</span>
+    <span class="s1">&#39;explanation&#39;</span><span class="p">:</span> <span class="nb">dict</span> <span class="k">with</span> <span class="n">requested</span> <span class="n">audit</span> <span class="n">data</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="howso.scikit.HowsoEstimator.feature_add">
+<span class="sig-name descname"><span class="pre">feature_add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.scikit.HowsoEstimator.feature_add" title="Permalink to this definition">#</a></dt>
+<dd><p>Add a feature to a trainee.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>feature</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the feature. Will be generated automatically
+if not specified.</p></li>
+<li><p><strong>value</strong> (<em>int</em><em> or </em><em>float</em><em> or </em><em>str</em><em>, </em><em>optional</em>) – The value to populate the feature with.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="howso.scikit.HowsoEstimator.feature_remove">
+<span class="sig-name descname"><span class="pre">feature_remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.scikit.HowsoEstimator.feature_remove" title="Permalink to this definition">#</a></dt>
+<dd><p>Remove a feature from a trainee.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>feature</strong> (<em>str</em><em>, </em><em>default None</em>) – Optional. The name of the feature to remove. Will quietly do
+nothing if the feature was not found.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="howso.scikit.HowsoEstimator.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analyze</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.scikit.HowsoEstimator.fit" title="Permalink to this definition">#</a></dt>
+<dd><p>Fit a model with Howso.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>numpy.ndarray</em><em>, </em><em>shape</em><em> (</em><em>n_samples</em><em>, </em><em>n_features</em><em>)</em>) – Data</p></li>
+<li><p><strong>y</strong> (<em>numpy.ndarray</em><em>, </em><em>shape</em><em> (</em><em>n_samples</em><em>,</em><em>)</em>) – Target. Will be cast to X’s dtype if necessary</p></li>
+<li><p><strong>analyze</strong> (<em>bool</em><em>, </em><em>default=True</em>) – <p>A flag to not analyze the trainee by default</p>
+<blockquote>
+<div><ul>
+<li><p>A user may plan to call analyze themselves after fit() to specify parameters</p></li>
+</ul>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>self</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#howso.scikit.HowsoEstimator" title="howso.scikit.HowsoEstimator">HowsoEstimator</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="howso.scikit.HowsoEstimator.get_case_conviction">
+<span class="sig-name descname"><span class="pre">get_case_conviction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.scikit.HowsoEstimator.get_case_conviction" title="Permalink to this definition">#</a></dt>
+<dd><p>Return case conviction.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>numpy.ndarray</em><em>, </em><em>shape</em><em> (</em><em>n_samples</em><em>, </em><em>n_features</em><em>)</em>) – Data</p></li>
+<li><p><strong>features</strong> (<em>str</em><em> or </em><em>list</em><em> of </em><em>str</em>) – A list of feature names to calculate convictions.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The conviction of the cases. Ex: [1.0, 3.2, 0.4]</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="howso.scikit.HowsoEstimator.get_feature_conviction">
+<span class="sig-name descname"><span class="pre">get_feature_conviction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.scikit.HowsoEstimator.get_feature_conviction" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets the conviction of the features in a model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>features</strong> (<em>str</em><em> or </em><em>list</em><em> of </em><em>str</em>) – Features to return conviction values for.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A map of feature convictions and contributions.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="howso.scikit.HowsoEstimator.get_params">
+<span class="sig-name descname"><span class="pre">get_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.scikit.HowsoEstimator.get_params" title="Permalink to this definition">#</a></dt>
+<dd><p>Get parameters for this estimator.</p>
+<p>This code is taken from the source of <cite>sklearn.base.BaseEstimator</cite> and
+lightly modified to avoid calling the <cite>get_params</cite> method
+of <cite>self.trainee</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>deep</strong> (<em>bool</em><em>, </em><em>default=True</em>) – If True, will return the parameters for this estimator and
+contained subobjects that are estimators.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>params</strong> – Parameter names mapped to their values.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>mapping of string to any</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="howso.scikit.HowsoEstimator.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.scikit.HowsoEstimator.load" title="Permalink to this definition">#</a></dt>
+<dd><p>Load a model from the server.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>trainee_id</strong> (<em>str</em>) – Id of the trainee. (can be obtained from this class).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="howso.scikit.HowsoEstimator.partial_fit">
+<span class="sig-name descname"><span class="pre">partial_fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.scikit.HowsoEstimator.partial_fit" title="Permalink to this definition">#</a></dt>
+<dd><p>Add data to an existing Howso model.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>numpy.ndarray</em><em>, </em><em>shape</em><em> (</em><em>n_samples</em><em>, </em><em>n_features</em><em>)</em>) – Data</p></li>
+<li><p><strong>y</strong> (<em>numpy.ndarray</em><em>, </em><em>shape</em><em> (</em><em>n_samples</em><em>,</em><em>)</em>) – Target. Will be cast to X’s dtype if necessary</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="howso.scikit.HowsoEstimator.partial_unfit">
+<span class="sig-name descname"><span class="pre">partial_unfit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">precision</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cases</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">criteria</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.scikit.HowsoEstimator.partial_unfit" title="Permalink to this definition">#</a></dt>
+<dd><p>Remove a training case from a trainee.</p>
+<p>The training case will be completely purged from the model and the
+model will behave as if it had never been trained with this training
+case.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>precision</strong> (<em>str</em>) – The precision to use when removing the case. Options are ‘exact’ or
+‘similar’.</p></li>
+<li><p><strong>num_cases</strong> (<em>int</em>) – The number of cases to remove; minimum 1 case must be removed.</p></li>
+<li><p><strong>criteria</strong> (<em>dict</em><em>, </em><em>default None</em>) – The condition map to select the cases to remove that meet all the
+provided conditions. Keys - features, values - one of | null (must
+have the feature) | a value (must match exactly) | an array of two
+values (a range, feature values must be between)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="howso.scikit.HowsoEstimator.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.scikit.HowsoEstimator.predict" title="Permalink to this definition">#</a></dt>
+<dd><p>Make predictions using Howso.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>X</strong> (<em>numpy.ndarray</em><em>, </em><em>shape</em><em> (</em><em>n_samples</em><em>, </em><em>n_features</em><em>)</em>) – Data</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The predicted values based on the feature values provided.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>numpy.ndarray, shape (n_samples,)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object sig-wrap py" id="howso.scikit.HowsoEstimator.react_into_features">
+<span class="sig-name descname"><span class="pre">react_into_features</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_contribution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">familiarity_conviction_addition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">familiarity_conviction_removal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p_value_of_addition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p_value_of_removal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">similarity_conviction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_case_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.scikit.HowsoEstimator.react_into_features" title="Permalink to this definition">#</a></dt>
+<dd><p>Calculate conviction and other data and stores them into features.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>features</strong> (<em>list</em><em> of </em><em>str</em>) – A list of the feature names to use when calculating conviction.</p></li>
+<li><p><strong>distance_contribution</strong> (<em>bool</em><em> or </em><em>str</em><em>, </em><em>default False</em>) – The name of the feature to store distance contribution. If set to
+True the values will be stored to the feature
+‘distance_contribution’.</p></li>
+<li><p><strong>familiarity_conviction_addition</strong> (<em>bool</em><em> or </em><em>str</em><em>, </em><em>default False</em>) – The name of the feature to store conviction of addition values. If
+set to True the values will be stored to the feature
+‘familiarity_conviction_addition’.</p></li>
+<li><p><strong>familiarity_conviction_removal</strong> (<em>bool</em><em> or </em><em>str</em><em>, </em><em>default False</em>) – The name of the feature to store conviction of removal values. If
+set to True the values will be stored to the feature
+‘familiarity_conviction_removal’.</p></li>
+<li><p><strong>p_value_of_addition</strong> (<em>bool</em><em> or </em><em>str</em><em>, </em><em>default False</em>) – The name of the feature to store p value of addition values. If set
+to True the values will be stored to the feature
+‘p_value_of_addition’.</p></li>
+<li><p><strong>p_value_of_removal</strong> (<em>bool</em><em> or </em><em>str</em><em>, </em><em>default False</em>) – The name of the feature to store p value of removal values. If set
+to True the values will be stored to the feature
+‘p_value_of_removal’.</p></li>
+<li><p><strong>similarity_conviction</strong> (<em>bool</em><em> or </em><em>str</em><em>, </em><em>default False</em>) – The name of the feature to store similarity conviction
+values. If set to True the values will be stored to the feature
+‘similarity_conviction’.</p></li>
+<li><p><strong>use_case_weights</strong> (<em>bool</em><em>, </em><em>default False</em>) – When True, will scale influence weights by each case’s
+<cite>weight_feature</cite> weight.</p></li>
+<li><p><strong>weight_feature</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of feature whose values to use as case weights.
+When left unspecified uses the internally managed case weight.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="howso.scikit.HowsoEstimator.release_resources">
+<span class="sig-name descname"><span class="pre">release_resources</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#howso.scikit.HowsoEstimator.release_resources" title="Permalink to this definition">#</a></dt>
+<dd><p>Release trainee resources created by this estimator.</p>
+<p>If this estimator’s trainee is named (self._trainee_name is not None)
+then we’ll make an effort to persist the trainee to disk and release
+it’s resources. If the data persistence policy forbids this, that call
+will return an error. Upon error, <cite>delete_trainee()</cite> instead.</p>
+<dl class="simple">
+<dt>NOTE: Errors are handled immediately because this is the instance’s</dt><dd><p>destructor. There is no further recourse at this point.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="howso.scikit.HowsoEstimator.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#howso.scikit.HowsoEstimator.save" title="Permalink to this definition">#</a></dt>
+<dd><p>Persist the trainee.</p>
+<p>By default model resources are released after a short period of time.
+This method saves the model persistently to allow releasing trainee
+resources while keeping the model available for use later.</p>
+<p>If this trainee has not already been named, then this method will set
+a randomly generated one.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>HowsoNotUniqueError:</strong> – If unable to set the trainee name w/up to RENAME_RETRIES retries.</p></li>
+<li><p><strong>Exception:</strong> – if unable to persist the trainee.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="howso.scikit.HowsoEstimator.score">
+<span class="sig-name descname"><span class="pre">score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.scikit.HowsoEstimator.score" title="Permalink to this definition">#</a></dt>
+<dd><p>Score Howso.</p>
+<p>For classifiers, accuracy is calculated.
+For regressors, R^2 is calculated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>X</strong> (<em>numpy.ndarray</em><em>, </em><em>shape</em><em> (</em><em>n_samples</em><em>, </em><em>n_features</em><em>)</em>) – Test samples.</p></li>
+<li><p><strong>y</strong> (<em>numpy.ndarray</em><em>, </em><em>shape</em><em> (</em><em>n_samples</em><em>) or </em><em>(</em><em>n_samples</em><em>, </em><em>n_outputs</em><em>)</em>) – True values for X.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The mean squared error or accuracy</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="howso.scikit.HowsoEstimator.set_fit_request">
+<span class="sig-name descname"><span class="pre">set_fit_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analyze</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'$UNCHANGED$'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.scikit.HowsoEstimator.set_fit_request" title="Permalink to this definition">#</a></dt>
+<dd><p>Request metadata passed to the <code class="docutils literal notranslate"><span class="pre">fit</span></code> method.</p>
+<p>Note that this method is only relevant if
+<code class="docutils literal notranslate"><span class="pre">enable_metadata_routing=True</span></code> (see <code class="xref py py-func docutils literal notranslate"><span class="pre">sklearn.set_config()</span></code>).
+Please see <span class="xref std std-ref">User Guide</span> on how the routing
+mechanism works.</p>
+<p>The options for each parameter are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span></code>: metadata is requested, and passed to <code class="docutils literal notranslate"><span class="pre">fit</span></code> if provided. The request is ignored if metadata is not provided.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span></code>: metadata is not requested and the meta-estimator will not pass it to <code class="docutils literal notranslate"><span class="pre">fit</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">None</span></code>: metadata is not requested, and the meta-estimator will raise an error if the user provides it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str</span></code>: metadata should be passed to the meta-estimator with this given alias instead of the original name.</p></li>
+</ul>
+<p>The default (<code class="docutils literal notranslate"><span class="pre">sklearn.utils.metadata_routing.UNCHANGED</span></code>) retains the
+existing request. This allows you to change the request for some
+parameters and not others.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.3.</span></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method is only relevant if this estimator is used as a
+sub-estimator of a meta-estimator, e.g. used inside a
+<code class="xref py py-class docutils literal notranslate"><span class="pre">pipeline.Pipeline</span></code>. Otherwise it has no effect.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>analyze</strong> (<em>str</em><em>, </em><em>True</em><em>, </em><em>False</em><em>, or </em><em>None</em><em>,                     </em><em>default=sklearn.utils.metadata_routing.UNCHANGED</em>) – Metadata routing for <code class="docutils literal notranslate"><span class="pre">analyze</span></code> parameter in <code class="docutils literal notranslate"><span class="pre">fit</span></code>.</p></li>
+<li><p><strong>self</strong> (<a class="reference internal" href="#howso.scikit.HowsoEstimator" title="howso.scikit.scikit.HowsoEstimator"><em>HowsoEstimator</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>self</strong> – The updated object.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="howso.scikit.HowsoEstimator.trainee_id">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">trainee_id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#howso.scikit.HowsoEstimator.trainee_id" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the trainee’s ID, if possible.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="howso.scikit.HowsoEstimator.trainee_name">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">trainee_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#howso.scikit.HowsoEstimator.trainee_name" title="Permalink to this definition">#</a></dt>
+<dd><p>Return the trainee name (getter).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="howso.scikit.HowsoRegressor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">howso.scikit.</span></span><span class="sig-name descname"><span class="pre">HowsoRegressor</span></span><a class="headerlink" href="#howso.scikit.HowsoRegressor" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#howso.scikit.HowsoEstimator" title="howso.scikit.scikit.HowsoEstimator"><code class="xref py py-class docutils literal notranslate"><span class="pre">HowsoEstimator</span></code></a></p>
+<p>A HowsoEstimator for regression analysis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>features</strong> (<em>dict</em><em> of </em><em>str: dict</em><em>, </em><em>default None</em>) – <p>The features that will predict the targets(s). Will be generated
+automatically if not specified.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;feature_name&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;parameter1&quot;</span> <span class="p">:</span> <span class="s2">&quot;value1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;parameter2&quot;</span> <span class="p">:</span> <span class="s2">&quot;value2&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;length&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;continuous&quot;</span><span class="p">,</span> <span class="s2">&quot;decimal_places&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="p">},</span>
+    <span class="s2">&quot;width&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;continuous&quot;</span><span class="p">,</span> <span class="s2">&quot;significant_digits&quot;</span><span class="p">:</span> <span class="mi">4</span> <span class="p">},</span>
+    <span class="s2">&quot;degrees&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;continuous&quot;</span><span class="p">,</span> <span class="s2">&quot;cycle_length&quot;</span><span class="p">:</span> <span class="mi">360</span> <span class="p">},</span>
+    <span class="s2">&quot;class&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;nominal&quot;</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p></li>
+<li><p><strong>targets</strong> (<em>dict</em><em> of </em><em>str: dict</em><em>, </em><em>default None</em>) – <p>The target(s) to be predicted. Will be generated automatically if not
+specified.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;target_name&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;parameter1&quot;</span> <span class="p">:</span> <span class="s2">&quot;value1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;parameter2&quot;</span> <span class="p">:</span> <span class="s2">&quot;value2&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;klass&quot;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;nominal&quot;</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</p></li>
+<li><p><strong>client</strong> (<em>AbstractHowsoClient</em><em>, </em><em>default None</em>) – A subclass of AbstractHowsoClient used to interface with Howso.</p></li>
+<li><p><strong>verbose</strong> (<em>boolean</em><em>, </em><em>default False</em>) – A flag for verbose output.</p></li>
+<li><p><strong>debug</strong> (<em>boolean</em><em>, </em><em>default False</em>) – A flag for debug output.</p></li>
+<li><p><strong>ttl</strong> (<em>int</em><em>, </em><em>in milliseconds</em>) – The maximum time a server should maintain a connection open for a
+trainee when processing requests.</p></li>
+<li><p><strong>client_params</strong> (<em>dict</em><em>, </em><em>default None</em>) – The parameters with which to instantiate the client.</p></li>
+<li><p><strong>trainee_params</strong> (<em>dict</em><em>, </em><em>default None</em>) – The parameters with which to instantiate the client. Intended for use
+by <cite>HowsoEstimator.get_params</cite>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object sig-wrap py" id="howso.scikit.HowsoRegressor.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targets</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ttl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">43200000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trainee_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.scikit.HowsoRegressor.__init__" title="Permalink to this definition">#</a></dt>
+<dd><p>Initialize a HowsoRegressor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>features</strong> (<em>Dict</em><em> | </em><em>None</em>) – </p></li>
+<li><p><strong>targets</strong> (<em>Dict</em><em> | </em><em>None</em>) – </p></li>
+<li><p><strong>verbose</strong> (<em>bool</em>) – </p></li>
+<li><p><strong>debug</strong> (<em>bool</em>) – </p></li>
+<li><p><strong>ttl</strong> (<em>int</em>) – </p></li>
+<li><p><strong>client_params</strong> (<em>Dict</em><em> | </em><em>None</em>) – </p></li>
+<li><p><strong>trainee_params</strong> (<em>Dict</em><em> | </em><em>None</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="howso.scikit.HowsoRegressor.set_fit_request">
+<span class="sig-name descname"><span class="pre">set_fit_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analyze</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'$UNCHANGED$'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.scikit.HowsoRegressor.set_fit_request" title="Permalink to this definition">#</a></dt>
+<dd><p>Request metadata passed to the <code class="docutils literal notranslate"><span class="pre">fit</span></code> method.</p>
+<p>Note that this method is only relevant if
+<code class="docutils literal notranslate"><span class="pre">enable_metadata_routing=True</span></code> (see <code class="xref py py-func docutils literal notranslate"><span class="pre">sklearn.set_config()</span></code>).
+Please see <span class="xref std std-ref">User Guide</span> on how the routing
+mechanism works.</p>
+<p>The options for each parameter are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span></code>: metadata is requested, and passed to <code class="docutils literal notranslate"><span class="pre">fit</span></code> if provided. The request is ignored if metadata is not provided.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span></code>: metadata is not requested and the meta-estimator will not pass it to <code class="docutils literal notranslate"><span class="pre">fit</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">None</span></code>: metadata is not requested, and the meta-estimator will raise an error if the user provides it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">str</span></code>: metadata should be passed to the meta-estimator with this given alias instead of the original name.</p></li>
+</ul>
+<p>The default (<code class="docutils literal notranslate"><span class="pre">sklearn.utils.metadata_routing.UNCHANGED</span></code>) retains the
+existing request. This allows you to change the request for some
+parameters and not others.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.3.</span></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This method is only relevant if this estimator is used as a
+sub-estimator of a meta-estimator, e.g. used inside a
+<code class="xref py py-class docutils literal notranslate"><span class="pre">pipeline.Pipeline</span></code>. Otherwise it has no effect.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>analyze</strong> (<em>str</em><em>, </em><em>True</em><em>, </em><em>False</em><em>, or </em><em>None</em><em>,                     </em><em>default=sklearn.utils.metadata_routing.UNCHANGED</em>) – Metadata routing for <code class="docutils literal notranslate"><span class="pre">analyze</span></code> parameter in <code class="docutils literal notranslate"><span class="pre">fit</span></code>.</p></li>
+<li><p><strong>self</strong> (<a class="reference internal" href="#howso.scikit.HowsoRegressor" title="howso.scikit.scikit.HowsoRegressor"><em>HowsoRegressor</em></a>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>self</strong> – The updated object.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>object</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="engine.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Reactor Package</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="utilities.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Utilities Package</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.scikit.HowsoClassifier"><code class="docutils literal notranslate"><span class="pre">HowsoClassifier</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.scikit.HowsoClassifier.__init__"><code class="docutils literal notranslate"><span class="pre">HowsoClassifier.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.scikit.HowsoClassifier.fit"><code class="docutils literal notranslate"><span class="pre">HowsoClassifier.fit()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.scikit.HowsoClassifier.load"><code class="docutils literal notranslate"><span class="pre">HowsoClassifier.load()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.scikit.HowsoClassifier.partial_fit"><code class="docutils literal notranslate"><span class="pre">HowsoClassifier.partial_fit()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.scikit.HowsoClassifier.predict_proba"><code class="docutils literal notranslate"><span class="pre">HowsoClassifier.predict_proba()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.scikit.HowsoClassifier.set_fit_request"><code class="docutils literal notranslate"><span class="pre">HowsoClassifier.set_fit_request()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.scikit.HowsoEstimator"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.scikit.HowsoEstimator.__init__"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.scikit.HowsoEstimator.analyze"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.analyze()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.scikit.HowsoEstimator.delete"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.delete()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.scikit.HowsoEstimator.describe_prediction"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.describe_prediction()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.scikit.HowsoEstimator.feature_add"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.feature_add()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.scikit.HowsoEstimator.feature_remove"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.feature_remove()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.scikit.HowsoEstimator.fit"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.fit()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.scikit.HowsoEstimator.get_case_conviction"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.get_case_conviction()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.scikit.HowsoEstimator.get_feature_conviction"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.get_feature_conviction()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.scikit.HowsoEstimator.get_params"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.get_params()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.scikit.HowsoEstimator.load"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.load()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.scikit.HowsoEstimator.partial_fit"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.partial_fit()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.scikit.HowsoEstimator.partial_unfit"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.partial_unfit()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.scikit.HowsoEstimator.predict"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.predict()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.scikit.HowsoEstimator.react_into_features"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.react_into_features()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.scikit.HowsoEstimator.release_resources"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.release_resources()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.scikit.HowsoEstimator.save"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.save()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.scikit.HowsoEstimator.score"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.score()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.scikit.HowsoEstimator.set_fit_request"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.set_fit_request()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.scikit.HowsoEstimator.trainee_id"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.trainee_id</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.scikit.HowsoEstimator.trainee_name"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.trainee_name</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.scikit.HowsoRegressor"><code class="docutils literal notranslate"><span class="pre">HowsoRegressor</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.scikit.HowsoRegressor.__init__"><code class="docutils literal notranslate"><span class="pre">HowsoRegressor.__init__()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.scikit.HowsoRegressor.set_fit_request"><code class="docutils literal notranslate"><span class="pre">HowsoRegressor.set_fit_request()</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2019-2023, Howso Incorporated.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

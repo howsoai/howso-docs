@@ -24,7 +24,7 @@ Notebook Recipe
 --------------------
 You should be familiar with two recipes and one utility: 
 
-- :download:`Reactor Intro </_assets/recipes/1-reactor-intro>`
+- :download:`Reactor Intro </_assets/recipes/1-engine-intro.ipynb>`
 
 - :download:`Time Series Predictions </_assets/recipes/timeseries.ipynb>`
 
