@@ -90,7 +90,7 @@ a prediction.
 Step 2 - Control predictions for data bias
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Easily update which features are used in predictions, so features that contribute to bias can be omitted. 
-Within the `react` call, specificy only the context features that do not contribute to prediction bias.
+Within the `react` call, specify only the context features that do not contribute to prediction bias.
 
 .. code-block:: python
 

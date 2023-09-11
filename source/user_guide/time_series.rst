@@ -16,7 +16,7 @@ Objectives: what you will take away
 
 Prerequisites: before you begin 
 -------------------------------
-- You have succesfully :doc:`installed Howso Engine <installing>`
+- You have successfully :doc:`installed Howso Engine <installing>`
 - You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
 
 Notebook Recipe
@@ -42,7 +42,7 @@ How-To Guide
 
 A significant amount of data is recorded at specific times. Utilizing this information can provide a wealth of insight
 for future predictions, such as knowledge of whether events happen at certain intervals or how intervals between certain events influence other events. 
-Engine handles time series data using :func:`howso.utilities.infer_feature_attributes` and by using :meth:`Trainee.train` and :meth:`Trainee.react` to caculate and utilize information 
+Engine handles time series data using :func:`howso.utilities.infer_feature_attributes` and by using :meth:`Trainee.train` and :meth:`Trainee.react` to calculate and utilize information 
 about intervals within a dataset to make a prediction.
 
 There are two key differences in the Howso Engine basic prediction workflow when dealing with time series and sequential data:
