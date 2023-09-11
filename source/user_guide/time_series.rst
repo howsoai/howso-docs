@@ -6,14 +6,14 @@ Time Series and Sequential Data Analysis
    This will enable you to easily capture and utilize temporal information and trends within data. 
 
 Objectives: what you will take away
---------------------
+-----------------------------------
 
 - **Definitions & an understanding** of how time series and sequential data tools within the Howso Engine provide enhanced insight into your data. 
 - **How-To** use Engine's :func:`howso.utilities.infer_feature_attributes` tool to configure your time series and sequential data, and make time series predictions.
 - **API References** - where to find references to APIs used in this user guide. 
 
 Prerequisites: before you begin 
---------------------
+-------------------------------
 **Installation** 
 
     - You have succesfully :doc:`installed Howso Engine <installing>`
@@ -21,17 +21,17 @@ Prerequisites: before you begin
     - You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
 
 Notebook Recipe
---------------------
+---------------
 You should be familiar with two recipes and one utility: 
 
 - :download:`Reactor Intro </_assets/recipes/1-reactor-intro>`
 
-- :download:`Time Series Predictions </_assets/recipes/timeseries.ipynb>`
+- :download:`Time Series Predictions </_assets/recipes/engine_timeseries.ipynb>`
 
-- :ref:`Infer Feature Attributes <user_guide/feature attributes>`
+- :doc:`Feature Attributes <feature_attributes>`
 
 Concepts & terminology to understand
---------------------
+------------------------------------
 
 *Why are time series and sequential data predictions important?*
 
@@ -41,7 +41,7 @@ Engine handles time series data using :func:`howso.utilities.infer_feature_attri
 about intervals within a dataset to make a prediction.
 
 How-To Guide
---------------------
+------------
 There are two key differences in the Howso Engine basic prediction workflow when dealing with time series and sequential data:
 
     - :func:`howso.utilities.infer_feature_attributes` must be configured to include time series and sequential data information
@@ -51,7 +51,7 @@ There are two key differences in the Howso Engine basic prediction workflow when
 
 
 Task 1 - Infer Feature Attributes
-^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: python
 
@@ -66,7 +66,7 @@ Task 1 - Infer Feature Attributes
     )
 
 Task 2 - Make a time series prediction
-^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: python
 
@@ -100,7 +100,6 @@ Task 2 - Make a time series prediction
 
 
 API References
---------------------   
-- :func:`howso.utilities.infer_feature_attributes`
-
+--------------   
 - :meth:`Trainee.react`
+- :func:`howso.utilities.infer_feature_attributes`

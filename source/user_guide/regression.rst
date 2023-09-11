@@ -70,7 +70,7 @@ Using a pandas dataframe, load the vehicles dataset from the csv file. We are go
 
 Step 3 - Define Features
 ^^^^^^^^^^^^^^^^^^^^^^^^
-Howso can auto-detect features from data, using :meth:`infer_feature_attributes` but it is a best practice to review and configure.  In this tutorial, features were not detected as we want them to be, so we will make necessary adjustments.  
+Howso can auto-detect features from data, using :meth:`~howso.utilities.infer_feature_attributes` but it is a best practice to review and configure.  In this tutorial, features were not detected as we want them to be, so we will make necessary adjustments.  
 
 .. code-block:: python
 
@@ -121,7 +121,7 @@ Review the accuracy of the :class:`Trainee` by using the built-in :meth:`~Traine
 
 Step 7 - Review Accuracy Metrics
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-We see the :class:`Trainee` has a very good fit for predicting **Highway MPG** with an :math:`R^2` of 0.99, which shows the :class:`~trainee` should be effective at predicting new cases of **Highway MPG**, let's move onto that next.
+We see the :class:`Trainee` has a very good fit for predicting **Highway MPG** with an :math:`R^2` of 0.99, which shows the :class:`Trainee` should be effective at predicting new cases of **Highway MPG**, let's move onto that next.
 
 .. code-block:: python
 
@@ -166,7 +166,7 @@ Reviewing the prediction shows **HighwayMPG** of 29.
     result['action']
 
     HighwayMPG
-    0          29,
+    29
 
 What's Next?
 ------------  
