@@ -11,7 +11,7 @@ problems, with examples throughout.
 
     installing
     basic_workflow
-    regression
+    predictions
     terminology
     feature_attributes
     datasets
