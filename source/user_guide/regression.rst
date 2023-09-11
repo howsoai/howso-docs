@@ -14,7 +14,7 @@ Objectives: what you will take away
 
 Prerequisites: before you begin 
 -------------------------------
-- **Installation** - you have succesfully installed :doc:`Howso Engine <installing>` 
+- **Installation** - you have succesfully installed :doc:`Howso Engine <../getting_started/installing>` 
 - **Additional Libraries** - you have installed these libraries:
 
     - `pandas <https://pandas.pydata.org/>`__

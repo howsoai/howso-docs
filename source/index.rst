@@ -55,6 +55,9 @@ achievable using other state-of-the-art AI and machine learning techniques.
 .. |tmk|    unicode:: U+02122 .. TRADEMARK SIGN
 
 
+.. toctree:: getting_started/index
+   :hidden:
+
 .. toctree:: user_guide/index
    :hidden:
 
