@@ -7,13 +7,13 @@ Influential Data, Counterfactuals, and Uncertainties of Predictions
     if there were any **counterfactuals** to the prediction in the data, and the **uncertainty** it has in the prediction. 
 
 Objectives: what you will take away
---------------------
+-----------------------------------
 - **Definitions & an understanding** of influential data, counterfactuals, and uncertainty within Engine.  
 - **How-To** obtain influential data, counterfactuals, and uncertainties using Engine.
 - **API References** - where to find references to APIs used in this guide. 
 
 Prerequisites: before you begin 
---------------------
+-------------------------------
 **Installation**
 
     - You have succesfully :doc:`installed Howso Engine <installing>`
@@ -21,13 +21,13 @@ Prerequisites: before you begin
     - You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
 
 Notebook Recipe
---------------------
+---------------
 There is one recipe to supplement the content this guide will cover: 
 
 - :download:`Interpretability </_assets/recipes/2-interpretability.ipynb>`
 
-Concepts & terminology to understand
---------------------
+Concepts & Terminology
+----------------------
 
 - **Influential Cases**
 

@@ -2,7 +2,7 @@
 
 
 Feature Importance
-===================================
+==================
 .. topic:: What is covered in this user guide
 
     In this guide, you will learn how to retrieve the feature importance metrics, :ref:`Feature Contributions <user_guide/terminology:Contribution>` and :ref:`Feature Mean Decrease in Accuracy (MDA) <user_guide/terminology:MDA>` from a Trainee. Feature importance metrics
@@ -16,8 +16,8 @@ Objectives
 - **API References** How to use :meth:`Trainee.get_prediction_stats`, :py:meth:`Trainee.react`.
 
 
-Prerequisites
--------------
+Prerequisites: before you begin 
+-------------------------------
 - You have successfully :doc:`installed Howso Engine <installing>`
 - You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
 

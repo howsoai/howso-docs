@@ -7,7 +7,6 @@ Anomaly Detection
     In this guide, you will learn the basics of anomaly detection using
     a :class:`~Trainee`
 
-
 Objectives: what you will take away
 -----------------------------------
 - **Definitions & Understanding** of various :class:`~Trainee` metrics that be used to evaluate anomalies.
@@ -23,7 +22,7 @@ Notebook Recipe
 ---------------
 The content of this user guide is outlined in more detail in :download:`Anomaly Detection </_assets/recipes/3-anomaly_detection.ipynb>`
 
-Concepts & terminology 
+Concepts & Terminology
 ----------------------
 In order to perform anomaly detection, we utilize a few new metrics that are exposed through the :class:`~Trainee`.
 To understand this, we recommend being familiar with the following concepts:

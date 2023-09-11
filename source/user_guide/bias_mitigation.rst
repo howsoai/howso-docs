@@ -1,34 +1,31 @@
+.. currentmodule:: howso.engine
+
 Bias Mitigation
-==============
+===============
 .. topic:: What is covered in this user guide.
 
     In this guide, you will learn how to use Howso Engine for **Bias Mitigation**.
 
 Objectives: what you will take away
---------------------
-- **An understanding** of data bias and why it occurs.  
+-----------------------------------
+- **Definitions & Understanding** of data bias and why it occurs.  
 - **How-To** perform bias mitigation using Howso Engine.
 - **API References** - where to find references to APIs used in this user guide. 
 
 Prerequisites: before you begin 
---------------------
-**Installation** 
-
-    - You have succesfully :doc:`installed Howso Engine <installing>`
-
-    - You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`  
-
-    - You are familiar with :doc:`feature contributions <feature contributions>`
+-------------------------------
+- You have succesfully :doc:`installed Howso Engine <installing>`
+- You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`  
+- You are familiar with :doc:`feature contributions <feature contributions>`
 
 Notebook Recipe
---------------------
+---------------
 There is one recipe to supplement the content this guide will cover: 
 
 - :download:`Bias Mitigation </_assets/recipes/5-bias_mitigation.ipynb>`
 
-
-Concepts & terminology to understand
---------------------
+Concepts & Terminology
+----------------------
 
 - **What is biased data?** 
 
@@ -48,11 +45,11 @@ This potentially harms various groups of people and reduces the overall utility 
 data are increasingly falling under regulations, decisions that are based on insights gained from biased data might lead to breaches of these regulations.
 
 How-To Guide
---------------------
+------------
 There are two ways to use Engine to understand and mitigate data bias.
 
 Method 1 - Explore data for bias
-^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Detect which protected attributes in a dataset contribute the most to model predictions, showing biases users may or may not have recognized.
 
 After building, training, and analyzing a `Trainee`, you can use the `details` argument of `react` to obtain the mean decrease in accuracy of
@@ -82,7 +79,7 @@ a prediction.
 
 
 Step 2 - Control predictions for data bias
-^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Easily update which features are used in predictions, so features that contribute to bias can be omitted. 
 Within the `react` call, specificy only the context features that do not contribute to prediction bias.
 
@@ -97,7 +94,7 @@ Within the `react` call, specificy only the context features that do not contrib
 
 
 API References
---------------------   
+--------------  
 - :meth:`Trainee.react`
 
 - :meth:`Trainee.get_cases`

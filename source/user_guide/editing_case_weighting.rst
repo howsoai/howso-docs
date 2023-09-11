@@ -9,16 +9,16 @@ Editing Trainees and Case Weighting
     weights to data contained within the Trainee.
 
 
-Objectives
-----------
+Objectives: what you will take away
+-----------------------------------
 - **Definitions & Understanding** of how :py:class:`~Trainee` s can be edited without re-training and what effects case-
   weighting can have on prediction.
 - **How-To** remove, edit, and weigh cases in a :py:class:`~Trainee` .
 - **API References** How to use, :meth:`Trainee.add_feature`, :py:meth:`Trainee.remove_cases`, and :py:meth:`Trainee.edit_cases` .
 
 
-Prerequisites
--------------
+Prerequisites: before you begin 
+-------------------------------
 - You have successfully :doc:`installed Howso Engine <installing>`
 - You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
 
@@ -84,7 +84,7 @@ In the above plot, the right side of the second distribution is weighted to be 2
 reflected in the density of the distribution.
 
 
-How-To-Guide
+How-To Guide
 ------------
 
 .. warning::
