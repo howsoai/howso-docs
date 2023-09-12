@@ -38,4 +38,3 @@ To get started, be sure and start with these guides:
     sparse_data   
     terminology
     datasets
-    json_features
