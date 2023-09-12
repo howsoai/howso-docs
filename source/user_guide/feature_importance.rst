@@ -63,7 +63,7 @@ How-To Guide
 
 Global Feature Importance
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-To get global feature importance metrics, :py:meth:`Trainee.react_into_trainee`, is first called on a trained and analyzed Trainee. :py:meth:`Trainee.react_into_trainee` calls react internally on the cases already trained into the Trainee and calculates the metrics. In this method, the desired metrics can be selected as parameters. These parameters are named indivdiually
+To get global feature importance metrics, :py:meth:`Trainee.react_into_trainee`, is first called on a trained and analyzed Trainee. :py:meth:`Trainee.react_into_trainee` calls react internally on the cases already trained into the Trainee and calculates the metrics. In this method, the desired metrics can be selected as parameters. These parameters are named individually
 and setting them to ``True`` will cache the desired metrics. For example, ``mda_robust`` and ``contributions_robust`` will calculate the robust versions of MDA and Feature Contributions, while ``mda`` and ``contributions`` will calculate the non-robust versions.
 
 .. code-block:: python
@@ -126,7 +126,7 @@ Example Use-Cases
 In addition to the examples above, here are a few example use-cases for feature importance.
 
 - Bias Determination
-    - e.g., determing which features are important to your model to gauge the possibility of bias in the model.
+    - e.g., determining which features are important to your model to gauge the possibility of bias in the model.
 - Reducing :class:`~Trainee` size
     - By strategically removing unimportant features, information can be maintained while the size of the :class:`~Trainee`
       is decreased

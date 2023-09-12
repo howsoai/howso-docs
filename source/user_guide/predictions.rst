@@ -94,7 +94,7 @@ Step 1 - Load Libraries
 
 Step 2 - Load Data
 ^^^^^^^^^^^^^^^^^^
-Using a pandas dataframe, load the vehicles dataset from the csv file. We are going to drop make/model features because that is kinda cheating... Make sure it's what you expect, take a quick look at some of the data and use describe to make sure it has the shape you'd expect.
+Using a pandas DataFrame, load the vehicles dataset from the csv file. We are going to drop make/model features because that is kinda cheating... Make sure it's what you expect, take a quick look at some of the data and use describe to make sure it has the shape you'd expect.
 
 .. code-block:: python
 
@@ -131,7 +131,7 @@ Howso can auto-detect features from data, using :meth:`~howso.utilities.infer_fe
 
 Step 4 - Create a Trainee and Train
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Next we will create a :class:`Trainee` and :meth:`~Trainee.train` based on data we have loaded into the dataframe from the vehicles.csv.
+Next we will create a :class:`Trainee` and :meth:`~Trainee.train` based on data we have loaded into the DataFrame from the vehicles.csv.
 
 .. code-block:: python
 
@@ -143,7 +143,7 @@ Next we will create a :class:`Trainee` and :meth:`~Trainee.train` based on data 
 
 Step 5 - Analyze Trainee, Set Context & Action Features
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-We know a specific task we want our :class:`Trainee` to :meth:`~Trainee.react` to, that is, to predict **Highway MPG** (the action feature) - using the context features: Year, DriveType, FuelType, CityMPG, PassengerVolume, LuggageVolume, and VehicleClass.  We can use :meth:`~Trainee.analyze` to improve peformance of our model by analyzing for this specific target.
+We know a specific task we want our :class:`Trainee` to :meth:`~Trainee.react` to, that is, to predict **Highway MPG** (the action feature) - using the context features: Year, DriveType, FuelType, CityMPG, PassengerVolume, LuggageVolume, and VehicleClass.  We can use :meth:`~Trainee.analyze` to improve performance of our model by analyzing for this specific target.
 
 .. code-block:: python
 

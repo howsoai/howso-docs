@@ -85,8 +85,8 @@ large percentages of the data are replaced with missing values.
   :alt: A plot showing the accuracy, precision, and recall as sparsity increases from 0 to 100%.
 
 
-Outputing Missing Values
-^^^^^^^^^^^^^^^^^^^^^^^^
+Outputting Missing Values
+^^^^^^^^^^^^^^^^^^^^^^^^^
 In order to output missing values, the ``allow_null`` feature attribute must be set in the ``bounds`` of that feature.  If this is set, both
 discriminative and generative :meth:`~Trainee.react` s can output missing values.  This can be set using :func:`~howso.utilities.infer_feature_attributes`.
 

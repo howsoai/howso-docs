@@ -42,7 +42,7 @@ How-To Guide
 ------------
 Anomaly detection, is one of the most significant domains of artificial intelligence and machine learning. Some of the most
 common use cases of anomaly detection are fraud detection, health monitoring, and attack detection in cybersecurity. The
-idea is to be able to detect datathat doesn't seem to fit in with the rest of the observed data.
+idea is to be able to detect data that doesn't seem to fit in with the rest of the observed data.
 
 Detecting anomalies
 ^^^^^^^^^^^^^^^^^^^
@@ -74,7 +74,7 @@ values into each case. To then view all of the similarity conviction values, we 
 
     t.get_cases(['similarity_conviction'])
 
-Then with the simiarity conviction values for each case, users can determine what thresholds are appropriate
+Then with the similarity conviction values for each case, users can determine what thresholds are appropriate
 to use for anomaly detection and begin classifying each case as anomalous or not.
 
 
@@ -106,7 +106,7 @@ predetermined thresholds that will determine if the case is classified as an ano
 
 Determining the threshold of conviction
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Since conviction values are a ratio of surprisals, these values must be interpretted carefully.
+Since conviction values are a ratio of surprisals, these values must be interpreted carefully.
 Conviction values below 1.0 indicate cases that are more surprising than expected while values
 above 1.0 indicate cases that are less surprising than expected.
 

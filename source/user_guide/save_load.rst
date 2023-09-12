@@ -41,7 +41,7 @@ saving and loading functions that is intended for different types of operations.
 
 - **File Operations** - A set of functions that allows a user to save and load to a specific file location. Trainees are saved as ``.caml`` files, which stands for Compressed `Amalgam <https://github.com/howsoai/amalgam/>`__. This is the method that will most likely be used by non enterprise users.
 
-- **Database Operations** The database set of operations provides better integration with databases and the Howso Platform. These methods abstract away some of the specifics of saving and loading and allows users to refer to Trainees by name only. Database operations revolves around the terminology, ``persist`` and ``acquire resources``, as opposed to save and load to better reflect the nature of what is occuring.
+- **Database Operations** The database set of operations provides better integration with databases and the Howso Platform. These methods abstract away some of the specifics of saving and loading and allows users to refer to Trainees by name only. Database operations revolves around the terminology, ``persist`` and ``acquire resources``, as opposed to save and load to better reflect the nature of what is occurring.
 
 
 File Operations

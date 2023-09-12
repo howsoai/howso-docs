@@ -18,7 +18,7 @@ ENV HOWSO_HOME_URL="/howso.html"
 # Install the requirements
 COPY requirements-3.11.txt ./
 RUN pip install --no-cache-dir -r requirements-3.11.txt
-# The file includes the versions of the client, synthesizer and validator - it will be sourced -
+# The file includes the versions of the client - it will be sourced -
 # - using . notation - to avoid use of base syntax in the remainder of this Dockerfile
 COPY versions.properties ./versions.properties
 

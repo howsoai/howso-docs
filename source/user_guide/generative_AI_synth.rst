@@ -91,7 +91,7 @@ new case is or is not generated, and `num_cases_to_generate`, which indicates th
 
     # Synthesize
     synth = t.react(action_features=df.columns.tolist(), # What features to generate? In this case, the same features as the original data
-                    desired_conviction=10, # Set at GeminAI's default desired conviction value
+                    desired_conviction=10, # Set at synthesizer's default desired conviction value
                     generate_new_cases='always', # Indicates that we always want to create entirely new cases from the original data
                     num_cases_to_generate=len(df) # Number of new points to generate? In this case, the same number as the original data
     )
