@@ -20,14 +20,13 @@ jobs:
           python-version: '3.x'
 
       - name: Install Dependencies
-        run: pip install sphinx
+        run: pip install -r requirements-3.11.txt 
 
       - name: Run Custom Script
         run: ./bin/build.sh copy_recipes  # Executing your custom script
 
       - name: Build Docs
         run: |
-          cd source
           make html
 
       - name: Deploy to GitHub Pages
