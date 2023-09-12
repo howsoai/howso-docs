@@ -28,7 +28,8 @@ This user guide has its content outlined in the
 
 Concepts & Terminology
 ----------------------
-This guide focuses primarily on the concept of sparse data.  We additionally recommend being familiar with the following concepts:
+This guide focuses primarily on the concept of JSON/YAML objects as features.  We additionally recommend 
+being familiar with the following concepts:
 
 - :ref:`Trainee <user_guide/terminology:trainee>`
 - :ref:`React <user_guide/terminology:react>`
