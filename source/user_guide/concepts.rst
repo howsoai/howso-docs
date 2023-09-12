@@ -21,23 +21,23 @@ Targeted vs. Targetless Analysis
 - **Targeted**
 
     Most modeling workflows require a set of one or more independent input variables (or features) and output a set of one or more variables that depend on the input. Often, these outputs, which are the 
-    values you want to generate or predict, are called "target" variables or features. Workflows which predict target features are a type of *targeted*, or supervised, analysis. 
+    values you want to generate or predict, are called "target" features. Workflows which predict target features are a type of *targeted*, or supervised, analysis. 
     An example of targeted analysis would be if you are a doctor building a model to predict whether or not your patient has heart disease. For this analysis, your model would learn information
     on heart disease diagnoses (the target feature), based on previous patient data, and then make predictions for new patients. Your target feature, or output of the model, would be a positive or negative heart disease 
     diagnosis prediction value. This target feature would depend on the input variables to the model,
     which may include a patient's age, weight, gender, and cholesterol levels. 
     
-    Howso handles targeted analysis when the user specifies `context features`, or input features, and `action features`, or target features, in the `analyze()` call. When a targeted analysis is specified, Howso specifically optimizes its
-    underlying IBL algorithm to perform well at predicting the action features, enabling excellent model performance via low error predictions.
+    Howso performs targeted analysis when the user specifies `context features`, or input features, and `action features`, or target features, in the `analyze()` call. When a targeted analysis is specified, Howso specifically optimizes its
+    underlying IBL algorithm to perform well at predicting the action features, enabling excellent model performance and low error predictions.
 
 - **Targetless**
 
     In contrast to targeted predictions, because of Howso's IBL data-centric nature, context (input) and action (output/target) features do not need to be specified, and *targetless* analysis can be performed. Targetless
-    analysis means that predictions can be made about *any* features, given the other features; this allows the user to easily predict a variety of features without specifying new inputs and outputs. For example,
+    analysis means that predictions can be made about any features, given the other features; this allows the user to easily predict a variety of features without specifying new inputs and outputs. For example,
     using the heart disease analysis described above, instead of always predicting a positive or negative diagnosis for a patient, you may instead want to predict other features, like cholesterol levels or weight,
-    given a subset of features including a patient's diagnosis, age, and gender. Targetless analysis enables you to quickly switch between output features instead of re-training an entire model with these features as outputs.
+    given a subset of features including a patient's diagnosis, age, and gender. Targetless analysis enables you to quickly switch between output features instead of re-optimizing an entire model with these features as outputs.
 
-    Howso performs targetless analsysis by default for all predictions.
+    Howso performs targetless analysis by default for all predictions.
 
 Fully Understandable Predictions
 --------------------------------
