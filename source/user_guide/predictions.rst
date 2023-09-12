@@ -40,8 +40,8 @@ Concepts & Terminology
 
 **Train and Analyze** To create a :class:`Trainee`, we will first load data, define :doc:`Feature Attributes <feature_attributes>` of the data and :ref:`Train <user_guide/terminology:train>` the :class:`Trainee`.  The :class:`Trainee` can be used for many tasks, but because we know exactly what we want to do, we will :ref:`Analyze <user_guide/terminology:analyze>` to improve the performance of our trainee by defining the specific set of :ref:`Context Features <user_guide/terminology:context features>`that we know we want to use to predict an :ref:`Action Feature <user_guide/terminology:action features>`. The action feature in this example will be **Highway MPG**.
 
-**Evaluating the Trainee** To understand the accuracy of the trainee for our tasks, we can use the built-in :meth:`Trainee.react_into_trainee`. Since we are not using a train-test split approach in this example, we will use the :meth:`~Trainee.react_into_trainee` method, which performs a :meth:`~Trainee.react` on each of the cases that is trained into the model. 
-That method allows us to use :meth:`~Trainee.get_prediction_stats` to evaluate regression accuracy statistics using a leave-one-out approach such as:
+**Evaluating the Trainee** To understand the accuracy of the trainee for our tasks, we can use the built-in :meth:`Trainee.react_into_trainee`. Since we are not using a train-test split approach in this example, we will use the :meth:`~Trainee.react_into_trainee` method, which performs a :meth:`~Trainee.react` on each of the cases that is trained into the model using a leave-one-out approach. 
+That method allows us to use :meth:`~Trainee.get_prediction_stats` to evaluate regression accuracy statistics such as:
 
     - **R-Squared** - :math:`R^2` is a value that represents how well the predictions fit the data, the closer to 1.0 the better the fit 
     - **Mean Absolute Error (MAE)** average absolute error between actual and predicted values over the whole dataset, and relative to the scale of what is being measured
