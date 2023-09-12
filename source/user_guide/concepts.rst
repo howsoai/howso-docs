@@ -7,11 +7,11 @@ Instance-Based Learning (IBL)
 In a typical data-driven modeling workflow, such as a deep neural network, a model is an abstraction of relationships within data used to make predictions on new information. 
 By nature, these models are very complicated (“black box”), and their predictions cannot be mapped back to original data, making them inherently unexplainable. 
 
-By contrast, Howso’s Understandable AI is rooted in instance-based learning (IBL), so the data is the model. Howso stores data in memory and makes predictions 
+By contrast, Howso’s Understandable AI is rooted in instance-based learning (IBL), so the data is the model. Howso stores your data in memory and makes predictions 
 from the similarities and differences between data points, not an underlying black box model, leading to fully transparent decisions.
 
 Howso utilizes cutting edge advances in spatial query systems and information probability theory to make IBL practical, accurate, and robust to adversarial attacks. These technological 
-advances enable insight into a prediction’s reliability and rigorous analysis of which features contribute most to a decision from the data itself, not just a model which may have abstracted
+advances enable insight including a prediction’s reliability and rigorous analysis of which features contribute most to a decision from the data itself, not just a model which may have abstracted
 away relationships. Additionally, because IBL is data-centric, it can perform multiple tasks a priori, including supervised, reinforcement, and online learning, anomaly detection, and missing
 and sparse data imputation, among others. 
 
@@ -20,10 +20,10 @@ Targeted vs. Targetless Analysis
 
 - **Targeted**
 
-    Most modeling workflows require a set of one or more input independent variables (or features) and output a set of one or more variables that depend on the input. Often, these outputs, which are the 
+    Most modeling workflows require a set of one or more independent input variables (or features) and output a set of one or more variables that depend on the input. Often, these outputs, which are the 
     values you want to generate or predict, are called "target" variables or features. Workflows which predict target features are a type of *targeted*, or supervised, analysis. 
     An example of targeted analysis would be if you are a doctor building a model to predict whether or not your patient has heart disease. For this analysis, your model would learn information
-    on heart disease diagnoses (target feature), based on previous patient data, and then make predictions for new patients. Your target feature, or output of the model, would be a positive or negative heart disease 
+    on heart disease diagnoses (the target feature), based on previous patient data, and then make predictions for new patients. Your target feature, or output of the model, would be a positive or negative heart disease 
     diagnosis prediction value. This target feature would depend on the input variables to the model,
     which may include a patient's age, weight, gender, and cholesterol levels. 
     
@@ -50,7 +50,7 @@ specific data influencing your decisions, how individual features drive outcomes
     Unlike other machine learning tools, Howso calculates how much influence each original data point has on a prediction. This influence is related to the probability that the data point is representative of
     the prediction. Influence weights are computed across all features and then aggregated per data point; the most influential data have the highest total influence weights. Being able to see the influence of each data point
     on a decision provides direct evidence for why a decision was made. Using the heart disease prediction example above, if Howso provided a positive heart disease prediction for a patient, you as a doctor would be 
-    able to print out the original data points that had the highest influence on the prediction. Then, you might see that these high influence data points showed similar health history to the patient for whom you whether
+    able to print out the original data points that had the highest influence on the prediction. Then, you might see that these high influence data points showed similar health history to the patient for whom you are
     making a decision, providing confidence in your prediction. 
 
 - Feature contribution analyses outperform other commonly used metrics, including SHAP. ​ 
@@ -76,15 +76,20 @@ specific data influencing your decisions, how individual features drive outcomes
 Conviction
 ----------
 
-The connection between IBL and information theory becomes apparent in the concept of **conviction**, which is a measure of surprisal. Conviction is the computed ratio of actual information to expected information, with
-a range of zero to infinity. A conviction value of one is average, as the actual information is equal to the expected information. Convictions less than one indicate higher surprisal, as the actual information
+The connection between IBL and information theory becomes apparent in the concept of **conviction**, which is a measure of surprisal. Surprisal is a concept of information theory that describes how likely an event 
+will be. For example, if an event A has a smaller probability of occurring than event B, you would be surprised if event A occurs. Howso's surprisal metric (conviction) is the computed ratio of actual information to 
+expected information, i.e., a measure of how surprising an event is given what is expected to occur. Conviction has a range of zero to infinity. A conviction value of one is average, as the actual information is 
+equal to the expected information. Convictions less than one indicate higher surprisal, as the actual information
 iss less than the expected information, while convictions greater than one indicate lower surprisal, since the actual information is higher than the expected information. 
 
 Actual information is the amount of information that a data point actually adds when it is evaluated. Expected information is what the value of a new data point should be on average, given
-all knowledge of the data around it. For example, say you are again trying to make heart disease predictions, given historical heart disease data and a new patient's data is being analyzed.
-This patient has features very similar to historical data with positive prediction status. Thus, its expected heart disease prediction value is positive. Its actual information, though, is the true information
-about whether the patient has heart disease. If the patient does, in fact, have heart disease, then its conviction value would be around one, as its actual information is similar to its expected information.
-However, if the patient actually does not have heart disease, its actual value is not what was expected, so the conviction would be low, indicating a surprising outcome. While this is an example, the concept of surprisal,
+all knowledge of the data. For example, say you are again trying to make heart disease predictions, given historical heart disease data, and a new patient's data is being analyzed.
+This patient's health history is very similar to other patients who had positive heart disease predictions. Thus, the patient would be expected to also have a positive heart disease prediction. 
+The actual information, though, is the true information
+about whether the patient has heart disease in real life. If the patient does, in fact, have heart disease, then the conviction value of the positive prediction would be around one,
+as the patient's actual health information and diagnosis status are similar to what is expected.
+However, if the patient actually does not have heart disease, the actual heart disease diagnosis prediction is not what was expected, so the conviction would be low, indicating a surprising outcome. 
+While this is an example, the concept of surprisal,
 quantified by conviction, is prevalent throughout many of Howso's analysis capabilities and can be adapted for a variety of tools and use cases.
 
 Basic Workflows
@@ -109,7 +114,7 @@ React
 
 Finally, after building the `Trainee` and `analyzing`, Howso Engine can be used for a variety of data-driven analysis applications. Often, these applications involve
 `reacting` to new data, which involves exposing the Trainee to new information and using the underlying IBL algorithm to make a prediction about that new information.
-This is equivalent to predicting or labeling in many traditional machine learning workflows, although `reacting` can be used for a variety of analyses, in addition to supervised
+This is equivalent to predicting or labeling in many traditional machine learning workflows, although `reacting` can be used to analyze data already added to the Trainee, in addition to supervised
 learning workflows.
 
 
