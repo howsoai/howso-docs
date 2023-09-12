@@ -20,6 +20,7 @@ To get started, be sure and start with these guides:
 
 
     basic_workflow
+    predictions
     feature_attributes
     regression
     model_performance
