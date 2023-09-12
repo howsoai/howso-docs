@@ -17,16 +17,15 @@ Objectives
 
 Prerequisites
 -------------
-- You have successfully :doc:`installed Howso Engine <installing>`
+- You have successfully :doc:`installed Howso Engine <../getting_started/installing>`
 - You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
 
 
 Notebook Recipe
 ---------------
-There is one recipe that goes into the efficacy of predicting increasingly sparse data:
+The following recipe will supplement the content this guide will cover and details the efficacy of predicting increasingly sparse data:
 
 - :download:`Sparse Data Prediction </_assets/recipes/engine_sparse_data.ipynb>`
-
 
 Concepts & Terminology
 ----------------------
@@ -57,7 +56,7 @@ are sparse in that the data contain **missing values**.  For example,
   \end{bmatrix}.
 
 
-How-To guide
+How-To Guide
 ------------
 Howso Engine handles sparse and missing data without any extra setup.  Simply :meth:`~Trainee.train` your data, with or without missing values, and the 
 Engine will handle them.  There is no need to preprocess missing data and, in fact, preprocessing missing data may **harm predictive power or robustness 
@@ -71,10 +70,10 @@ to unseen data**.  As such, we recommend performing no preprocessing if possible
 
 What a Missing Value Means
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-When computing similarity between cases, a missing value is considered to be of maximal uncertainty for that feature.  This is true even if both cases 
-have missing values in the same place.  After all, :math:`NaN \neq NaN`.  As mentioned above, if the data you are working with contain missing values 
-that represent something specific, those should be changed from missing values to something else.  If we were to treat those values as missing, matches 
-would not be considered similar and may therefore harm predictions in that instance.
+When computing similarity between cases, a missing value is considered to be of maximal :ref:`uncertainty <user_guide/terminology:uncertainty>` 
+for that feature.  This is true even if both cases have missing values in the same place.  After all, :math:`NaN \neq NaN`.  As mentioned above, 
+if the data you are working with contain missing values that represent something specific, those should be changed from missing values to something 
+else.  If we were to treat those values as missing, matches would not be considered similar and may therefore harm predictions in that instance.
 
 
 How Well are Sparse Data Handled

@@ -14,10 +14,10 @@ Objectives: what you will take away
 
 Prerequisites: before you begin 
 -------------------------------
-**Installation** - you have successfully :doc:`installed  Howso Engine <installing>`
+**Installation** 
 
+- you have successfully :doc:`installed  Howso Engine <../getting_started/installing>`
 - You've installed these libraries: 
-
   - `pandas <https://pandas.pydata.org/>`__
   - `pmlb <https://github.com/EpistasisLab/pmlb>`__
 
@@ -27,10 +27,12 @@ Our example dataset for this recipe is the well known ``Adult`` dataset. It is a
 
 Notebook Recipe
 ---------------
-   :download:`Engine Intro </_assets/recipes/1-engine-intro.ipynb>` download a sample notebook to run the code yourself. 
+The following recipe will supplement the content this guide will cover:
 
-Concepts & terminology to understand
-------------------------------------
+- :download:`Engine Intro </_assets/recipes/1-engine-intro.ipynb>`
+
+Concepts & Terminology
+----------------------
 Howso Engine is a generalized Machine Learning (ML) and Artificial Intelligence platform that creates powerful decision-making models that are fully explainable, auditable, and editable. Howso Engine uses Instance-Based Machine Learning which stores instances, i.e., data points, in memory and makes predictions about new instances given their relationship to existing instances. This technology harnesses a fast spatial query system and information theory for performance and accuracy.
 
 - :ref:`Trainee <user_guide/terminology:trainee>`
