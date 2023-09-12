@@ -15,7 +15,7 @@ Explore Introductory User Guides
 
  - :doc:`Learn the Basic Workflow <../user_guide/basic_workflow>`
  - :doc:`Learn Feature Attributes <../user_guide/feature_attributes>`
- - :doc:`Learn Regression and Classification <../user_guide/regression>`
+ - :doc:`Learn Regression and Classification <../user_guide/predictions>`
 
 .. |reg|    unicode:: U+000AE .. REGISTERED SIGN
 .. |tmk|    unicode:: U+02122 .. TRADEMARK SIGN

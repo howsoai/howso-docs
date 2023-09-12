@@ -10,7 +10,7 @@ To get started, be sure and start with these guides:
 
  - :doc:`Basic Workflow <basic_workflow>`
  - :doc:`Feature Attributes <feature_attributes>`
- - :doc:`Regression <regression>`
+ - :doc:`Regression and Classification<predictions>`
 
 
 .. toctree::
@@ -22,7 +22,6 @@ To get started, be sure and start with these guides:
     basic_workflow
     predictions
     feature_attributes
-    regression
     model_performance
     editing_case_weighting
     influential_data_counterfactuals_uncertainty
@@ -35,6 +34,6 @@ To get started, be sure and start with these guides:
     feature_importance
     save_load
     reinforcement_learning
-    sparse_data   
+    sparse_data
     terminology
     datasets
