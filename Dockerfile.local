@@ -33,7 +33,6 @@ WORKDIR /build
 # Copy source and build docs
 COPY Makefile ./
 COPY source ./source
-COPY examples ./examples
 # Build docs
 RUN make html
 
@@ -73,13 +72,13 @@ EXPOSE 8080
 ## If the container doesn't run as root, OpenShift, by always running with the root group, is adding unrequired priviledge.
 ## It is still locked down with SELinux etc, but I want to make this clear, since it was confusing to me.
 RUN chown -R nobody:root /usr/share/nginx && chmod -R 755 /usr/share/nginx && \
-        chown -R nobody:root /var/cache/nginx && \
-        chown -R nobody:root /container_files && \
-        chown -R nobody:root /var/log/nginx && \
-        chown -R nobody:root /etc/nginx/conf.d && \
-        chmod -R g=u /usr/share && \
-        chmod -R g=u /etc/nginx && \
-        chmod -R g=u /var/log/nginx && \
-        chmod -R g=u /var/cache
+      chown -R nobody:root /var/cache/nginx && \
+      chown -R nobody:root /container_files && \
+      chown -R nobody:root /var/log/nginx && \
+      chown -R nobody:root /etc/nginx/conf.d && \
+      chmod -R g=u /usr/share && \
+      chmod -R g=u /etc/nginx && \
+      chmod -R g=u /var/log/nginx && \
+      chmod -R g=u /var/cache
 USER nobody
 CMD /container_files/bin/start_server.sh
