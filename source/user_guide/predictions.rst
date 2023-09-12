@@ -8,8 +8,8 @@ Predictions
 
 Objectives: what you will take away
 -----------------------------------
-- **Definitions & an understanding** of basic regression, classification, :class:`Trainee`, :meth:`~Trainee.react`, continuous vs categorical Action Features, :meth:`~Trainee.react_into_trainee`, and :meth:`~Trainee.get_prediction_stats`.  
-- **How-To** perform a basic regression or classification analysis using the Howso Engine to predict the Highway MPG based on vehicle Context Features.
+- **Definitions & an understanding** of basic regression, classification,continuous vs categorical/nominal Action Features, :class:`Trainee`, :meth:`~Trainee.react`,  :meth:`~Trainee.react_into_trainee`, and :meth:`~Trainee.get_prediction_stats`.  
+- **How-To** perform a basic regression or classification analysis using the Howso Engine to predict the Highway MPG or Fuel Type based on vehicle Context Features.
 - **API References** of where to find more details of APIs used in this guide.
 
 Prerequisites: before you begin 
@@ -63,7 +63,7 @@ Or classification metrics including those derived from the `true positive (TP), 
 How-To Guide
 ------------
 We want to predict the **Highway MPG** and the **Fuel Type** of a new vehicle based on a :class:`Trainee` we create from the vehicles dataset. In this guide, we will directly
-show the prediction code for **Highway MPG** while including the code for **Fuel Type** as comments wherever the code differs.
+show the code for **Highway MPG** prediction while including the code for **Fuel Type** as comments wherever the code differs.
 
 Step 1 - Load Libraries
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -92,7 +92,7 @@ Howso can auto-detect features from data, using :meth:`~howso.utilities.infer_fe
 .. note:: 
 
     Howso automatically determines whether to perform a **regression** or **classification** task by the feature attributes of the action feature you are trying to
-    predict, specifically the feature `type` as shown below, thus is **very important** to make sure that the feature types are correct.
+    predict, specifically the feature `type` as shown below, thus it is **very important** to make sure that the feature types are correct.
 
 .. code-block:: python
 
@@ -139,7 +139,7 @@ We know a specific task we want our :class:`Trainee` to :meth:`~Trainee.react` t
 
 Step 6 - Generate Accuracy Metrics
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Review the accuracy of the :class:`Trainee` by using the built-in :meth:`~Trainee.react_into_trainee` method, which performs a :meth:`~Trainee.react` on each of the cases that is trained into the model.  Then we can evaluate accuracy using :meth:`~Trainee.get_prediction_stats` which will give us R-Squared (:math:`R^2`), Mean Absolute Error (MAE) and Root Mean Square Error (RMSE). 
+Review the accuracy of the :class:`Trainee` by using the built-in :meth:`~Trainee.react_into_trainee` method, which performs a :meth:`~Trainee.react` on each of the cases that is trained into the model.  Then we can evaluate accuracy using :meth:`~Trainee.get_prediction_stats` which will give us R-Squared (:math:`R^2`), Mean Absolute Error (MAE) and Root Mean Square Error (RMSE) since this is a regression task. 
 
 .. code-block:: python
 
