@@ -17,16 +17,15 @@ Objectives
 
 Prerequisites
 -------------
-- You have successfully :doc:`installed Howso Engine <installing>`
+- You have successfully :doc:`installed Howso Engine <../getting_started/installing>`
 - You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
 
 
 Notebook Recipe
 ---------------
-There is one recipe that goes into the efficacy of predicting increasingly sparse data:
+The following recipe will supplement the content this guide will cover and details the efficacy of predicting increasingly sparse data:
 
 - :download:`Sparse Data Prediction </_assets/recipes/engine_sparse_data.ipynb>`
-
 
 Concepts & Terminology
 ----------------------
@@ -57,7 +56,7 @@ are sparse in that the data contain **missing values**.  For example,
   \end{bmatrix}.
 
 
-How-To guide
+How-To Guide
 ------------
 Howso Engine handles sparse and missing data without any extra setup.  Simply :meth:`~Trainee.train` your data, with or without missing values, and the 
 Engine will handle them.  There is no need to preprocess missing data and, in fact, preprocessing missing data may **harm predictive power or robustness 

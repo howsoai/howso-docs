@@ -1,5 +1,5 @@
 # Feature Attributes
-Understanding and properly utilizing **Feature Attributes** is the most important step for successful use of Diveplane. Feature attributes can be specified manually but are often built using the infer feature attributes (IFA) utility function. This section will answer common questions related to both IFA and the feature attributes in general.
+Understanding and properly utilizing **Feature Attributes** is the most important step for successful use of Howso ™. Feature attributes can be specified manually but are often built using the infer feature attributes (IFA) utility function. This section will answer common questions related to both IFA and the feature attributes in general.
 
 Related api reference pages for feature attributes:
   - [FeatureAttributes type](howso.openapi.models.FeatureAttributes)

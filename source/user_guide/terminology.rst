@@ -4,8 +4,8 @@ Terminology
 Concepts
 ^^^^^^^^
 
-Diveplane's technology operates a little differently than traditional machine learning (ML) systems and thus certain terminology is
-specific to Diveplane.
+Howso's |tmk| technology operates a little differently than traditional machine learning (ML) systems and thus certain terminology is
+specific to Howso.
 
 Included below are some core concepts and details on how to use them.
 
@@ -113,14 +113,6 @@ Influential Cases
 
 The cases used to make a prediction or to derive a result.
 
-Uncertainty
------------
-
-`Uncertainty <https://en.wikipedia.org/wiki/Measurement_uncertainty>`_ is an expression of the measurement error of 
-a particular feature.  One example of an uncertainty measure is the standard deviation of a distribution.  When Howso 
-Engine computes distances between one or more missing values, they are treated as having maximal uncertainty for 
-the feature.
-
 
 Operations
 ^^^^^^^^^^
@@ -156,7 +148,7 @@ Generate synthetic cases from an existing Trainee using react.
 Conviction
 ^^^^^^^^^^
 
-Diveplane's algorithms can measure the "conviction" of different measures by using the computed ratio of the expected
+Howso's algorithms can measure the "conviction" of different measures by using the computed ratio of the expected
 surprisal over the actual surprisal. The range is 0 to infinity. A value of 1 is average - therefore a conviction of
 less than 1 means it is more surprising than typical data. The higher the number above one, the less surprising it is.
 
@@ -189,7 +181,7 @@ Prediction Residual Conviction
 
 The amount of surprisal in the uncertainty of a prediction. This is the ratio of the expected model residual divided by
 the computed prediction residual that, due to some unique properties of the underlying uncertainty mathematics, ends up
-being a ratio of surprisal values. Diveplane computes the prediction residual via approximation by computing the actual
+being a ratio of surprisal values. Howso computes the prediction residual via approximation by computing the actual
 residuals for the cases in the local area around that prediction.
 
 
@@ -245,3 +237,5 @@ Distance Ratio
 --------------
 
 The ratio of distance between a prediction and its nearest case to the minimum distance in between the closest two cases in the local area.
+
+.. |tmk|    unicode:: U+02122 .. TRADEMARK SIGN
