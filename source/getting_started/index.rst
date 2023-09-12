@@ -7,7 +7,7 @@ To get started, install the Howso Engine
 
 Learn Howso key concepts and terminology  
 
-  - :doc:`Key Concepts (TODO: Update link) <concepts>`
+  - :doc:`Key Concepts <concepts>`
 
 Explore basic user guides to perform your first tasks
 
@@ -24,6 +24,7 @@ Download and run introductory recipes (sample notebooks)
     :hidden:
 
     installing
+    concepts
  
 
 
