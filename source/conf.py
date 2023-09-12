@@ -32,7 +32,6 @@ extensions = [
     'sphinx.ext.autosummary',
     'sphinx.ext.doctest',
     'sphinx.ext.ifconfig',
-    'sphinx_gallery.gen_gallery',
     'sphinx.ext.napoleon',
     'sphinx_copybutton',
     'sphinx_design',
@@ -136,15 +135,6 @@ nb_execution_timeout = 600
 autodoc_typehints = 'description'
 autodoc_class_signature = "separated"
 
-# Sphinx Gallery
-# https://sphinx-gallery.github.io/stable/index.html
-sphinx_gallery_conf = {
-    'examples_dirs': '../examples',   # path to your example scripts
-    'gallery_dirs': 'examples',  # path to where to save gallery generated output
-    'filename_pattern': '/example_',  # examples that will be executed
-    'copyfile_regex': r'.+\.csv'  # copy all datasets
-}
-
 # Sphinx Contrib Images
 # https://sphinxcontrib-images.readthedocs.io/en/latest/
 images_config = {
@@ -177,4 +167,5 @@ def _wrap_signatures(app, domain, objtype, content) -> None:
 
 
 def setup(app):
-    app.connect("object-description-transform", _wrap_signatures, priority=1000)
+    app.connect("object-description-transform",
+                _wrap_signatures, priority=1000)
