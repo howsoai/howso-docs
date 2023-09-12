@@ -6,7 +6,7 @@ Examples
 Jupyter Notebook Recipes
 ------------------------
 
-1. :download:`Reactor Intro </_assets/recipes/1-reactor-intro.ipynb>`
+1. :download:`Reactor Intro </_assets/recipes/1-engine-intro.ipynb>`
 2. :download:`Interpretability </_assets/recipes/2-interpretability.ipynb>`
 3. :download:`Anomaly Detection </_assets/recipes/3-anomaly_detection.ipynb>`
 4. :download:`Audit Edit </_assets/recipes/4-audit_edit.ipynb>`
