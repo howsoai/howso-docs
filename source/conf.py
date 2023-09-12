@@ -58,7 +58,7 @@ html_logo = '_static/howso_logo_icon.svg'
 html_show_sourcelink = False
 html_theme_options = {
     "logo": {
-        "text": "Howso",
+        "text": "",
         "alt_text": "Howso",
         "image_dark": '_static/howso_logo_icon_white.svg',
     },

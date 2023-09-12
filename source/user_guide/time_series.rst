@@ -16,8 +16,10 @@ Objectives: what you will take away
 
 Prerequisites: before you begin 
 -------------------------------
-- You have successfully :doc:`installed Howso Engine <installing>`
-- You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
+**Installation** 
+
+    - You have succesfully :doc:`installed Howso Engine <../getting_started/installing>`
+    - You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
 
 Notebook Recipe
 ---------------

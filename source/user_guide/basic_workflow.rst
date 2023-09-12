@@ -14,7 +14,9 @@ Objectives: what you will take away
 
 Prerequisites: before you begin 
 -------------------------------
-- You have successfully :doc:`installed Howso Engine <installing>`
+**Installation** 
+
+- you have successfully :doc:`installed  Howso Engine <../getting_started/installing>`
 - You've installed these libraries: 
   - `pandas <https://pandas.pydata.org/>`__
   - `pmlb <https://github.com/EpistasisLab/pmlb>`__

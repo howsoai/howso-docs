@@ -13,10 +13,12 @@ Objectives: what you will take away
 - **API References** - where to find references to APIs used in this user guide. 
 
 Prerequisites: before you begin 
--------------------------------
-- You have succesfully :doc:`installed Howso Engine <installing>`
-- You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`  
-- You are familiar with :doc:`feature contributions <feature contributions>`
+--------------------
+**Installation** 
+
+    - You have succesfully :doc:`installed Howso Engine <../getting_started/installing>`
+    - You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`  
+    - You are familiar with :doc:`feature contributions <feature contributions>`
 
 Notebook Recipe
 ---------------
