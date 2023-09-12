@@ -52,45 +52,45 @@ example covers the basic steps in a typical Howso workflow:
     Analyzing the trainee.
     Reacting to 20% reserve test data.
     Prediction stats:
-    Accuracy: 95.5%
-    Mean Absolute Error: 0.05936196654396081
+    Accuracy: 96.1%
+    Mean Absolute Error: 0.052220125582376244
     Printing details for most similar cases from the first prediction:
-    [{'.distance': 2.920825567036715,
-      '.session': '81cbdcc7-a8c6-4317-b993-dc869f846884',
-      '.session_training_index': 186,
-      'x1': 3,
+    [{'.distance': 1.2254007542432144e+95,
+      '.session': 'eb083333-5832-4169-870b-3be0e20b3c5a',
+      '.session_training_index': 0,
+      'x1': 4,
       'x2': 1,
-      'x3': 4,
-      'x4': 1,
-      'x5': 2,
-      'x6': 1,
-      'x7': 1,
-      'x8': 1,
-      'x9': 1,
-      'y': 0},
-     {'.distance': 2.929102798168178,
-      '.session': '81cbdcc7-a8c6-4317-b993-dc869f846884',
-      '.session_training_index': 42,
-      'x1': 8,
-      'x2': 2,
-      'x3': 4,
-      'x4': 1,
-      'x5': 5,
-      'x6': 1,
-      'x7': 5,
-      'x8': 4,
-      'x9': 4,
-      'y': 1},
-     {'.distance': 2.9509538532039903,
-      '.session': '81cbdcc7-a8c6-4317-b993-dc869f846884',
-      '.session_training_index': 272,
-      'x1': 1,
-      'x2': 1,
-      'x3': 4,
-      'x4': 1,
+      'x3': 1,
+      'x4': 2,
       'x5': 2,
       'x6': 1,
       'x7': 2,
+      'x8': 1,
+      'x9': 1,
+      'y': 0},
+     {'.distance': 1.2293122681705687e+95,
+      '.session': 'eb083333-5832-4169-870b-3be0e20b3c5a',
+      '.session_training_index': 377,
+      'x1': 1,
+      'x2': 1,
+      'x3': 1,
+      'x4': 2,
+      'x5': 2,
+      'x6': 1,
+      'x7': 2,
+      'x8': 1,
+      'x9': 1,
+      'y': 0},
+     {'.distance': 1.2311960404084026e+95,
+      '.session': 'eb083333-5832-4169-870b-3be0e20b3c5a',
+      '.session_training_index': 368,
+      'x1': 4,
+      'x2': 1,
+      'x3': 1,
+      'x4': 2,
+      'x5': 2,
+      'x6': 1,
+      'x7': 1,
       'x8': 1,
       'x9': 1,
       'y': 0}]
@@ -179,7 +179,7 @@ example covers the basic steps in a typical Howso workflow:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  32.121 seconds)
+   **Total running time of the script:** ( 0 minutes  26.792 seconds)
 
 
 .. _sphx_glr_download_examples_example_engine.py:
