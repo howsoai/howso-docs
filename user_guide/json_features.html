@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Time Series and Sequential Data Analysis &#8212; Howso Engine Documentation</title>
+    <title>JSON/YAML as Features &#8212; Howso Engine Documentation</title>
   
   
   
@@ -52,12 +52,12 @@
     <script src="../_static/design-tabs.js"></script>
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/time_series';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/json_features';</script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Bias Mitigation" href="bias_mitigation.html" />
-    <link rel="prev" title="Generative Output and Data Synthesis" href="generative_AI_synth.html" />
+    <link rel="next" title="API Reference" href="../api_reference/index.html" />
+    <link rel="prev" title="Datasets" href="datasets.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -347,7 +347,7 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="derived_features.html">Derived Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anomaly_detection.html">Anomaly Detection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_AI_synth.html">Generative Output and Data Synthesis</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Time Series and Sequential Data Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time_series.html">Time Series and Sequential Data Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bias_mitigation.html">Bias Mitigation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="feature_importance.html">Feature Importance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="save_load.html">Saving and Loading</a></li>
@@ -355,7 +355,7 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="sparse_data.html">Handling Sparse Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
-<li class="toctree-l1"><a class="reference internal" href="json_features.html">JSON/YAML as Features</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">JSON/YAML as Features</a></li>
 </ul>
 </div>
 </nav></div>
@@ -396,7 +396,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">User Guides</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Time Series and Sequential Data Analysis</li>
+    <li class="breadcrumb-item active" aria-current="page">JSON/YAML as Features</li>
   </ul>
 </nav>
 </div>
@@ -413,44 +413,39 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="time-series-and-sequential-data-analysis">
-<h1>Time Series and Sequential Data Analysis<a class="headerlink" href="#time-series-and-sequential-data-analysis" title="Permalink to this heading">#</a></h1>
+  <section id="json-yaml-as-features">
+<h1>JSON/YAML as Features<a class="headerlink" href="#json-yaml-as-features" title="Permalink to this heading">#</a></h1>
 <aside class="topic">
-<p class="topic-title">What is covered in this user guide.</p>
-<p>In this guide, you will learn the basics of using Howso Engine for <strong>time series and sequential data</strong> analysis.
-This will enable you to easily capture and utilize temporal information and trends within data.</p>
+<p class="topic-title">What is covered in this user guide</p>
+<p>In this guide, you will learn the basics of using JSON/YAML as features in your <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> s.</p>
 </aside>
-<section id="objectives-what-you-will-take-away">
-<h2>Objectives: what you will take away<a class="headerlink" href="#objectives-what-you-will-take-away" title="Permalink to this heading">#</a></h2>
+<section id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Definitions &amp; an understanding</strong> of how time series and sequential data tools within the Howso Engine provide enhanced insight into your data.</p></li>
-<li><p><strong>How-To</strong> use Engine’s <a class="reference internal" href="../api_reference/utilities.html#howso.utilities.infer_feature_attributes" title="howso.utilities.infer_feature_attributes"><code class="xref py py-func docutils literal notranslate"><span class="pre">howso.utilities.infer_feature_attributes()</span></code></a> tool to configure your time series and sequential data, and make time series predictions.</p></li>
-<li><p><strong>API References</strong> - where to find references to APIs used in this user guide.</p></li>
+<li><p><strong>Definitions &amp; Understanding</strong> of what JSON (JavaScript Object Notation) and YAML (Yet Another Markup
+Language) features are and how they can be used.</p></li>
 </ul>
 </section>
-<section id="prerequisites-before-you-begin">
-<h2>Prerequisites: before you begin<a class="headerlink" href="#prerequisites-before-you-begin" title="Permalink to this heading">#</a></h2>
-<p><strong>Installation</strong></p>
-<blockquote>
-<div><ul class="simple">
-<li><p>You have succesfully <a class="reference internal" href="../getting_started/installing.html"><span class="doc">installed Howso Engine</span></a></p></li>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>You have successfully <a class="reference internal" href="../getting_started/installing.html"><span class="doc">installed Howso Engine</span></a></p></li>
 <li><p>You have <a class="reference internal" href="basic_workflow.html"><span class="doc">loaded, configured, trained, and analyzed data</span></a></p></li>
 </ul>
-</div></blockquote>
 </section>
 <section id="notebook-recipe">
 <h2>Notebook Recipe<a class="headerlink" href="#notebook-recipe" title="Permalink to this heading">#</a></h2>
-<p>The following recipe will supplement the content this guide will cover:</p>
-<ul class="simple">
-<li><p><code class="xref download docutils literal notranslate"><span class="pre">Time</span> <span class="pre">Series</span> <span class="pre">Predictions</span></code></p></li>
-</ul>
+<p>This user guide has its content outlined in the
+<a class="reference external" href="https://github.com/howsoai/howso-engine-recipes/blob/main/1-engine-intro.ipynb">JSON as a Feature Notebook</a></p>
 </section>
 <section id="concepts-terminology">
 <h2>Concepts &amp; Terminology<a class="headerlink" href="#concepts-terminology" title="Permalink to this heading">#</a></h2>
-<p>To understand this guide, we recommend being familiar with the following concepts:</p>
+<p>This guide focuses primarily on the concept of JSON/YAML objects as features.  We additionally recommend
+being familiar with the following concepts:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="terminology.html#trainee"><span class="std std-ref">Trainee</span></a></p></li>
 <li><p><a class="reference internal" href="terminology.html#react"><span class="std std-ref">React</span></a></p></li>
+<li><p><a class="reference internal" href="terminology.html#case"><span class="std std-ref">Case</span></a></p></li>
 <li><p><a class="reference internal" href="terminology.html#feature"><span class="std std-ref">Feature</span></a></p></li>
 <li><p><a class="reference internal" href="terminology.html#action-features"><span class="std std-ref">Action Features</span></a></p></li>
 <li><p><a class="reference internal" href="terminology.html#context-features"><span class="std std-ref">Context Features</span></a></p></li>
@@ -459,71 +454,70 @@ This will enable you to easily capture and utilize temporal information and tren
 </section>
 <section id="how-to-guide">
 <h2>How-To Guide<a class="headerlink" href="#how-to-guide" title="Permalink to this heading">#</a></h2>
-<p><em>Why are time series and sequential data predictions important?</em></p>
-<p>A significant amount of data is recorded at specific times. Utilizing this information can provide a wealth of insight
-for future predictions, such as knowledge of whether events happen at certain intervals or how intervals between certain events influence other events.
-Engine handles time series data using <a class="reference internal" href="../api_reference/utilities.html#howso.utilities.infer_feature_attributes" title="howso.utilities.infer_feature_attributes"><code class="xref py py-func docutils literal notranslate"><span class="pre">howso.utilities.infer_feature_attributes()</span></code></a> and by using <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.train" title="howso.engine.Trainee.train"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.train()</span></code></a> and <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a> to calculate and utilize information
-about intervals within a dataset to make a prediction.</p>
-<p>There are two key differences in the Howso Engine basic prediction workflow when dealing with time series and sequential data:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><a class="reference internal" href="../api_reference/utilities.html#howso.utilities.infer_feature_attributes" title="howso.utilities.infer_feature_attributes"><code class="xref py py-func docutils literal notranslate"><span class="pre">howso.utilities.infer_feature_attributes()</span></code></a> must be configured to include time series and sequential data information</p></li>
-<li><p>Context Features must be specified <strong>after</strong> the data is trained, as the time series context information is calculated during training</p></li>
-</ul>
-<p>and must be specified before the <cite>analyze()</cite> call to be utilized in a <cite>react</cite></p>
-</div></blockquote>
-<section id="task-1-infer-feature-attributes">
-<h3>Task 1 - Infer Feature Attributes<a class="headerlink" href="#task-1-infer-feature-attributes" title="Permalink to this heading">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Identify id-feature and time-feature</span>
-<span class="n">id_feature_name</span> <span class="o">=</span> <span class="s2">&quot;ID&quot;</span>
-<span class="n">time_feature_name</span> <span class="o">=</span> <span class="s2">&quot;date&quot;</span>
-<span class="n">features</span> <span class="o">=</span> <span class="n">guess_time_series_attributes</span><span class="p">(</span>
-    <span class="n">df</span><span class="p">,</span>
-    <span class="n">time_feature_name</span><span class="o">=</span><span class="n">time_feature_name</span><span class="p">,</span>
-    <span class="n">id_feature_name</span><span class="o">=</span><span class="n">id_feature_name</span><span class="p">,</span>
-    <span class="n">datetime_feature_formats</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">},</span>
+<p>Howso Engine can accept JSON and YAML objects as feature values, treating them like any other feature.  This can allow
+more complex objects to be represented than just numbers or strings.</p>
+<section id="declaring-a-feature-as-json-yaml">
+<h3>Declaring a Feature as JSON/YAML<a class="headerlink" href="#declaring-a-feature-as-json-yaml" title="Permalink to this heading">#</a></h3>
+<p>When calling <a class="reference internal" href="../api_reference/utilities.html#howso.utilities.infer_feature_attributes" title="howso.utilities.infer_feature_attributes"><code class="xref py py-func docutils literal notranslate"><span class="pre">howso.utilities.infer_feature_attributes()</span></code></a>, a feature can be declared as JSON or YAML by setting
+its <code class="docutils literal notranslate"><span class="pre">data_type</span></code> attribute.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">Replace <code class="docutils literal notranslate"><span class="pre">&quot;json&quot;</span></code> with <code class="docutils literal notranslate"><span class="pre">&quot;yaml&quot;</span></code> to use YAML for your feature.</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">features</span> <span class="o">=</span> <span class="n">infer_feature_attributes</span><span class="p">(</span>
+    <span class="n">data</span><span class="p">,</span>
+    <span class="n">features</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;inventory&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;continuous&quot;</span><span class="p">,</span> <span class="s2">&quot;data_type&quot;</span><span class="p">:</span> <span class="s2">&quot;json&quot;</span><span class="p">}}</span>
 <span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<p>Note that the feature’s <code class="docutils literal notranslate"><span class="pre">type</span></code> attribute is set normally to either <code class="docutils literal notranslate"><span class="pre">&quot;continuous&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;nominal&quot;</span></code>.  For ones
+marked as continuous, distance will be computed using a form of edit distance.  Otherwise, the normal nominal distance
+computation is used.</p>
+<p>Once a feature is set as JSON properly, it can be used as if it were any other feature.</p>
 </section>
-<section id="task-2-make-a-time-series-prediction">
-<h3>Task 2 - Make a time series prediction<a class="headerlink" href="#task-2-make-a-time-series-prediction" title="Permalink to this heading">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create the Trainee</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">Trainee</span><span class="p">(</span>
-    <span class="n">features</span><span class="o">=</span><span class="n">features</span><span class="p">,</span>
-    <span class="n">overwrite_existing</span><span class="o">=</span><span class="kc">True</span>
+<section id="reacting-to-json-yaml-features">
+<h3>Reacting to JSON/YAML Features<a class="headerlink" href="#reacting-to-json-yaml-features" title="Permalink to this heading">#</a></h3>
+<p>Below are a few code snippets that show how JSON/YAML features can be used in a react:</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">Using <cite>level</cite> and <cite>class</cite>, predict <cite>inventory</cite> (a JSON feature).</span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
+    <span class="n">contexts</span><span class="o">=</span><span class="p">[[</span><span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;Warlock&quot;</span><span class="p">]],</span> <span class="n">context_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;level&quot;</span><span class="p">,</span> <span class="s2">&quot;class&quot;</span><span class="p">],</span>
+    <span class="n">action_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;inventory&quot;</span><span class="p">],</span>
 <span class="p">)</span>
-
-<span class="n">session1</span> <span class="o">=</span> <span class="n">Session</span><span class="p">(</span><span class="s1">&#39;train_session_1&#39;</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="s1">&#39;training data&#39;</span><span class="p">})</span>
-
-<span class="c1"># Train</span>
-<span class="n">t</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-
-<span class="c1"># Store actual record data which includes all of the ts information</span>
-<span class="n">cases_df</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">get_cases</span><span class="p">(</span>
-    <span class="n">session</span><span class="o">=</span><span class="n">session1</span>
-<span class="p">)</span>
-
-<span class="c1"># Specify Context and Action Features</span>
-<span class="n">action_features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">]</span>
-<span class="n">context_features</span> <span class="o">=</span> <span class="n">cases_df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">action_features</span><span class="p">)</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
-
-<span class="c1"># Targeted Analysis</span>
-<span class="n">t</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">context_features</span><span class="o">=</span><span class="n">context_features</span><span class="p">,</span> <span class="n">action_features</span><span class="o">=</span><span class="n">action_features</span><span class="p">)</span>
-
-<span class="c1"># Calculate overall error metrics</span>
-<span class="n">results</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">react_into_trainee</span><span class="p">(</span><span class="n">action_feature</span><span class="o">=</span><span class="n">action_features</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">residuals</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">results</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">get_prediction_stats</span><span class="p">()</span>
-<span class="n">results</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">]</span>
 </pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Using <cite>level</cite> and <cite>class</cite>, generate <cite>inventory</cite> (a JSON feature).</span><a class="headerlink" href="#id3" title="Permalink to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
+    <span class="n">contexts</span><span class="o">=</span><span class="p">[[</span><span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;Warlock&quot;</span><span class="p">]],</span> <span class="n">context_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;level&quot;</span><span class="p">,</span> <span class="s2">&quot;class&quot;</span><span class="p">],</span>
+    <span class="n">action_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;inventory&quot;</span><span class="p">],</span>
+    <span class="n">desired_conviction</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">Using <cite>inventory</cite> (a JSON feature) and <cite>level</cite>, predict <cite>class</cite>.</span><a class="headerlink" href="#id4" title="Permalink to this code">#</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
+    <span class="n">contexts</span><span class="o">=</span><span class="p">[[</span><span class="s2">&quot;{</span><span class="se">\&quot;</span><span class="s2">sword</span><span class="se">\&quot;</span><span class="s2">: 1, </span><span class="se">\&quot;</span><span class="s2">lute</span><span class="se">\&quot;</span><span class="s2">: 1, </span><span class="se">\&quot;</span><span class="s2">potion</span><span class="se">\&quot;</span><span class="s2">: 2}&quot;</span><span class="p">,</span> <span class="mi">15</span><span class="p">]],</span>
+    <span class="n">context_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;inventory&quot;</span><span class="p">,</span> <span class="s2">&quot;level&quot;</span><span class="p">],</span>
+    <span class="n">action_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;class&quot;</span><span class="p">],</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that, in the above example, the entire JSON is contained within a string and contained quotes within that are
+escaped.</p>
 </div>
 </section>
 </section>
 <section id="api-references">
 <h2>API References<a class="headerlink" href="#api-references" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a></p></li>
 <li><p><a class="reference internal" href="../api_reference/utilities.html#howso.utilities.infer_feature_attributes" title="howso.utilities.infer_feature_attributes"><code class="xref py py-func docutils literal notranslate"><span class="pre">howso.utilities.infer_feature_attributes()</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-func docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a></p></li>
 </ul>
 </section>
 </section>
@@ -540,20 +534,20 @@ about intervals within a dataset to make a prediction.</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="generative_AI_synth.html"
+       href="datasets.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Generative Output and Data Synthesis</p>
+        <p class="prev-next-title">Datasets</p>
       </div>
     </a>
     <a class="right-next"
-       href="bias_mitigation.html"
+       href="../api_reference/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Bias Mitigation</p>
+        <p class="prev-next-title">API Reference</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -575,13 +569,13 @@ about intervals within a dataset to make a prediction.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives-what-you-will-take-away">Objectives: what you will take away</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites-before-you-begin">Prerequisites: before you begin</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-recipe">Notebook Recipe</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts-terminology">Concepts &amp; Terminology</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-guide">How-To Guide</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-infer-feature-attributes">Task 1 - Infer Feature Attributes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-make-a-time-series-prediction">Task 2 - Make a time series prediction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#declaring-a-feature-as-json-yaml">Declaring a Feature as JSON/YAML</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reacting-to-json-yaml-features">Reacting to JSON/YAML Features</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#api-references">API References</a></li>
