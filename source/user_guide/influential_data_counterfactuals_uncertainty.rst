@@ -3,36 +3,37 @@ Influential Data, Counterfactuals, and Uncertainties of Predictions
 .. topic:: What is covered in this user guide.
 
     At its heart, Howso’s Engine is data-centric, Understandable AI. Engine directly uses the data
-    to gain insights and make predictions. In this guide, you will learn how Engine interrogates the data to determine the **influence** of each data point on a prediction, 
-    if there were any **counterfactuals** to the prediction in the data, and the **uncertainty** it has in the prediction. 
+    to gain insights and make predictions. In this guide, you will learn how Engine interrogates the data to determine the **influence** of each data point on a prediction,
+    if there were any **counterfactuals** to the prediction in the data, and the **uncertainty** it has in the prediction.
 
 Objectives: what you will take away
 -----------------------------------
-- **Definitions & an understanding** of influential data, counterfactuals, and uncertainty within Engine.  
+- **Definitions & an understanding** of influential data, counterfactuals, and uncertainty within Engine.
 - **How-To** obtain influential data, counterfactuals, and uncertainties using Engine.
-- **API References** - where to find references to APIs used in this guide. 
+- **API References** - where to find references to APIs used in this guide.
 
-Prerequisites: before you begin 
+Prerequisites: before you begin
 -------------------------------
 
-    - You have succesfully :doc:`installed Howso Engine <../getting_started/installing>`
+    - You have successfully :doc:`installed Howso Engine <../getting_started/installing>`
     - You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
 
 Notebook Recipe
 ---------------
 The following recipe will supplement the content this guide will cover:
 
-- :download:`Interpretability </_assets/recipes/2-interpretability.ipynb>`
+- :download:`Interpretability <https://github.com/howsoai/howso-engine-recipes/blob/main/2-interpretability.ipynb>`
 
 Concepts & Terminology
 ----------------------
 
-- :ref:`Uncertainty <user_guide/terminology:Uncertainty>` is the amount of information that is unknown about a prediction, and is characterized by a prediction's residual. The :ref:`residual <user_guide/terminology:residual>` is the
-mean absolute error between a predicted and actual value.  
+- :ref:`Uncertainty <user_guide/terminology:uncertainty>` is the amount of information that is unknown about a prediction,
+  and is characterized by a prediction's residual. The :ref:`residual <user_guide/terminology:residual>` is the mean absolute
+  error between a predicted and actual value.
 - :ref:`Influential cases <user_guide/terminology:influential cases>` are the records that were directly used to make a prediction or to derive a result.
-- :ref:`Counterfactuals <user_guide/terminology:boundary cases>`, or boundary cases, are the records that have similar Context Features to that of a 
-prediction's Context Features, but instead have different Action Feature values. In other words, these are records with similar information that contain a different
-result. For example, if the prediction for fruit type was "peach", a boundary case might be a very peach-looking "nectarine".
+- :ref:`Counterfactuals <user_guide/terminology:boundary cases>`, or boundary cases, are the records that have similar Context Features to that of a
+  prediction's Context Features, but instead have different Action Feature values. In other words, these are records with similar information that contain a different
+  result. For example, if the prediction for fruit type was "peach", a boundary case might be a very peach-looking "nectarine".
 
 
 How-To Guide
@@ -51,8 +52,8 @@ After building, training, and analyzing a `Trainee`, you can obtain the influent
         'boundary_cases': True
     }
 
-    results = t.react(contexts=test_case[context_features], # Input values for which you want a prediction 
-                    context_features=context_features, 
+    results = t.react(contexts=test_case[context_features], # Input values for which you want a prediction
+                    context_features=context_features,
                     action_features=action_features,
                     details=details
     )
@@ -66,21 +67,21 @@ After building, training, and analyzing a `Trainee`, you can obtain the influent
 
 Task 2 - Obtain uncertainty information
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Feature residuals are calculated by holding out each individual feature, and then using the other features to predict the holdout feature. 
-This is similiar to the leave-one-out validation technique used in traditional machine learning. The results represent the `Trainee`'s uncertainty for that feature. 
-We will use the local feature residual to examine the uncertainity for a specific case and the global feature residual as a baseline.
+Feature residuals are calculated by holding out each individual feature, and then using the other features to predict the holdout feature.
+This is similar to the leave-one-out validation technique used in traditional machine learning. The results represent the `Trainee`'s uncertainty for that feature.
+We will use the local feature residual to examine the uncertainty for a specific case and the global feature residual as a baseline.
 
 .. code-block:: python
 
-    ## Compute local feature resiudals
+    ## Compute local feature residuals
     # Details describe the information we are getting from a given react call
     details = {
         'robust_computation': True,
         'feature_residuals': True,
     }
 
-    results = t.react(contexts=test_case[context_features], # Input values for which you want a prediction 
-                    context_features=context_features, 
+    results = t.react(contexts=test_case[context_features], # Input values for which you want a prediction
+                    context_features=context_features,
                     action_features=action_features,
                     details=details
     )

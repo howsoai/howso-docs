@@ -75,7 +75,11 @@ html_context = {
 }
 html_static_path = ['_static', ]
 html_css_files = [
+    'css/theme.css',
     'css/custom.css',
+]
+html_js_files = [
+    'js/icon.js'
 ]
 
 master_doc = 'index'

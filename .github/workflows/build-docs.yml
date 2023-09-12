@@ -3,7 +3,7 @@ name: Build and Deploy Sphinx Docs
 on:
   push:
     branches:
-      - main 
+      - main
 
 jobs:
   build:
@@ -13,17 +13,14 @@ jobs:
         uses: actions/checkout@v2
         with:
           submodules: 'recursive'  # Checkout submodules
-  
+
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: '3.x'
 
       - name: Install Dependencies
-        run: pip install -r requirements-3.11.txt 
-
-      - name: Run Custom Script
-        run: ./bin/build.sh copy_recipes  # Executing your custom script
+        run: pip install -r requirements-3.11.txt
 
       - name: Build Docs
         run: |

@@ -1,9 +1,9 @@
-Reactor Package
-===============
+Engine Package
+==============
 
 .. code-block:: python
 
-   from howso import reactor
+   from howso import engine
 
 
 .. automodule:: howso.engine
