@@ -113,3 +113,8 @@ As explained earlier, database operations is designed to be used with the Howso 
         t.delete()
 
 These methods can be used locally as well, but you do not have control over the exact naming and location of the saved Trainee. File operations are recommended when loading and saving to disk.
+
+API References
+--------------
+- :meth:`Trainee.save`
+- :meth:`howso.engine.load_trainee`
