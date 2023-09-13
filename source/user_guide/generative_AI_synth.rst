@@ -11,8 +11,8 @@ Objectives: what you will take away
 - **How-To** perform generative analysis and generate synthetic data using Engine.
 - **API References** - where to find references to APIs used in this user guide.
 
-Prerequisites:
---------------------
+Prerequisites: before you begin
+-------------------------------
 **Installation**
 
     - You have successfully :doc:`installed Howso Engine <../getting_started/installing>`

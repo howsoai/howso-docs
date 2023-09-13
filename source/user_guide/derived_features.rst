@@ -15,8 +15,8 @@ Objectives: what you will take away
   tasks for both time-series and non time-series tasks
 - **How-To** use derived features in and out of time-series workflows
 
-Prerequisites
--------------
+Prerequisites: before you begin
+-------------------------------
 - You have successfully :doc:`installed Howso Engine <../getting_started/installing>`
 - You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
 
