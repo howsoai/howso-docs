@@ -16,8 +16,8 @@ Objectives: what you will take away
 - **API References** How to use :meth:`Trainee.get_prediction_stats`, :py:meth:`Trainee.react`.
 
 
-Prerequisites
--------------
+Prerequisites: before you begin
+-------------------------------
 - You have successfully :doc:`installed Howso Engine <../getting_started/installing>`
 - You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
 
@@ -67,7 +67,6 @@ To get global feature importance metrics, :py:meth:`Trainee.react_into_trainee`,
 and setting them to ``True`` will cache the desired metrics. For example, ``mda_robust`` and ``contributions_robust`` will calculate the robust versions of MDA and Feature Contributions, while ``mda`` and ``contributions`` will calculate the non-robust versions.
 
 .. code-block:: python
-    :caption: Global Feature Importance Calculation Example:
 
     t.react_into_trainee(
         context_features=context_features,
@@ -80,7 +79,6 @@ In order to extract the metrics, :py:meth:`Trainee.get_prediction_stats` is call
 metrics may be specified together, but for this example they are separated. If robust metrics are calculated, then the ``robust`` parameter must be set to ``True`` to retrieve these metrics. If non-robust metrics are calculated, then the ``robust`` parameter can be set to the default value.
 
 .. code-block:: python
-    :caption: Global Feature Importance Extraction Example:
 
     robust_feature_contributions = t.get_prediction_stats(action_feature=action_features[0], robust=True, stats=['contribution'])
     robust_feature_mda = t.get_prediction_stats(action_feature=action_features[0], robust=True, stats=['mda'])
@@ -91,7 +89,6 @@ To get local feature importance metrics, :py:meth:`Trainee.react`, is first call
 and setting them to ``True`` will calculate the desired metrics. To calculate the robust versions, ``robust_computation`` is set to True.
 
 .. code-block:: python
-    :caption: Local Feature Importance Calculation Example:
 
     details = {
         'robust_computation':True,
@@ -110,7 +107,6 @@ In order to retrieve the calculated stats, they can be retrieved from the :py:me
 are calculated in :py:meth:`Trainee.react` from the previous step.
 
 .. code-block:: python
-    :caption: Global Feature Importance Extraction Example:
 
     robust_feature_contributions = results['explanation']['feature_contributions']
     robust_feature_contributions = results['explanation']['feature_mda']

@@ -425,8 +425,8 @@ provides information about which features are useful for predicting a target or 
 <li><p><strong>API References</strong> How to use <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.get_prediction_stats" title="howso.engine.Trainee.get_prediction_stats"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.get_prediction_stats()</span></code></a>, <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a>.</p></li>
 </ul>
 </section>
-<section id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
+<section id="prerequisites-before-you-begin">
+<h2>Prerequisites: before you begin<a class="headerlink" href="#prerequisites-before-you-begin" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>You have successfully <a class="reference internal" href="../getting_started/installing.html"><span class="doc">installed Howso Engine</span></a></p></li>
 <li><p>You have <a class="reference internal" href="basic_workflow.html"><span class="doc">loaded, configured, trained, and analyzed data</span></a></p></li>
@@ -474,8 +474,6 @@ the power set set of all combinations of features without the feature of interes
 <h3>Global Feature Importance<a class="headerlink" href="#global-feature-importance" title="Permalink to this heading">#</a></h3>
 <p>To get global feature importance metrics, <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_into_trainee()</span></code></a>, is first called on a trained and analyzed Trainee. <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_into_trainee()</span></code></a> calls react internally on the cases already trained into the Trainee and calculates the metrics. In this method, the desired metrics can be selected as parameters. These parameters are named individually
 and setting them to <code class="docutils literal notranslate"><span class="pre">True</span></code> will cache the desired metrics. For example, <code class="docutils literal notranslate"><span class="pre">mda_robust</span></code> and <code class="docutils literal notranslate"><span class="pre">contributions_robust</span></code> will calculate the robust versions of MDA and Feature Contributions, while <code class="docutils literal notranslate"><span class="pre">mda</span></code> and <code class="docutils literal notranslate"><span class="pre">contributions</span></code> will calculate the non-robust versions.</p>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">Global Feature Importance Calculation Example:</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">react_into_trainee</span><span class="p">(</span>
     <span class="n">context_features</span><span class="o">=</span><span class="n">context_features</span><span class="p">,</span>
     <span class="n">action_feature</span><span class="o">=</span><span class="n">action_features</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
@@ -484,23 +482,17 @@ and setting them to <code class="docutils literal notranslate"><span class="pre"
 <span class="p">)</span>
 </pre></div>
 </div>
-</div>
 <p>In order to extract the metrics, <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.get_prediction_stats" title="howso.engine.Trainee.get_prediction_stats"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.get_prediction_stats()</span></code></a> is called. An action feature must be specified, and the <code class="docutils literal notranslate"><span class="pre">stats</span></code> parameter is used determine which metrics to return. The <code class="docutils literal notranslate"><span class="pre">stats</span></code> parameter takes a list, so multiple
 metrics may be specified together, but for this example they are separated. If robust metrics are calculated, then the <code class="docutils literal notranslate"><span class="pre">robust</span></code> parameter must be set to <code class="docutils literal notranslate"><span class="pre">True</span></code> to retrieve these metrics. If non-robust metrics are calculated, then the <code class="docutils literal notranslate"><span class="pre">robust</span></code> parameter can be set to the default value.</p>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">Global Feature Importance Extraction Example:</span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">robust_feature_contributions</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">get_prediction_stats</span><span class="p">(</span><span class="n">action_feature</span><span class="o">=</span><span class="n">action_features</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">robust</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stats</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;contribution&#39;</span><span class="p">])</span>
 <span class="n">robust_feature_mda</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">get_prediction_stats</span><span class="p">(</span><span class="n">action_feature</span><span class="o">=</span><span class="n">action_features</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">robust</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stats</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mda&#39;</span><span class="p">])</span>
 </pre></div>
-</div>
 </div>
 </section>
 <section id="local-feature-importance">
 <h3>Local Feature Importance<a class="headerlink" href="#local-feature-importance" title="Permalink to this heading">#</a></h3>
 <p>To get local feature importance metrics, <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a>, is first called on a trained and analyzed Trainee. In this method, the desired metrics, <code class="docutils literal notranslate"><span class="pre">feature_contributions</span></code> and <code class="docutils literal notranslate"><span class="pre">feature_mda</span></code>, can be selected as inputs to the <code class="docutils literal notranslate"><span class="pre">details</span></code> parameters as key value pairs from a dictionary. These parameters are named individually
 and setting them to <code class="docutils literal notranslate"><span class="pre">True</span></code> will calculate the desired metrics. To calculate the robust versions, <code class="docutils literal notranslate"><span class="pre">robust_computation</span></code> is set to True.</p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">Local Feature Importance Calculation Example:</span><a class="headerlink" href="#id3" title="Permalink to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">details</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;robust_computation&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
     <span class="s1">&#39;feature_contributions&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
@@ -515,15 +507,11 @@ and setting them to <code class="docutils literal notranslate"><span class="pre"
 <span class="p">)</span>
 </pre></div>
 </div>
-</div>
 <p>In order to retrieve the calculated stats, they can be retrieved from the <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a> output dictionary. They are stored under the <code class="docutils literal notranslate"><span class="pre">explanation</span></code> key under the name of the metric. Whether these metrics are robust or non-robust is determined when the metrics
 are calculated in <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a> from the previous step.</p>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">Global Feature Importance Extraction Example:</span><a class="headerlink" href="#id4" title="Permalink to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">robust_feature_contributions</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;explanation&#39;</span><span class="p">][</span><span class="s1">&#39;feature_contributions&#39;</span><span class="p">]</span>
 <span class="n">robust_feature_contributions</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;explanation&#39;</span><span class="p">][</span><span class="s1">&#39;feature_mda&#39;</span><span class="p">]</span>
 </pre></div>
-</div>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -610,7 +598,7 @@ is decreased</p></li>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives-what-you-will-take-away">Objectives: what you will take away</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites-before-you-begin">Prerequisites: before you begin</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-recipe">Notebook Recipe</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts-terminology">Concepts &amp; Terminology</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-vs-global">Local vs Global</a></li>

@@ -424,8 +424,8 @@ document.write(`
 <li><p><strong>API References</strong> How to use, <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.save" title="howso.engine.Trainee.save"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.save()</span></code></a>, <code class="xref py py-meth docutils literal notranslate"><span class="pre">Engine.load_trainee()</span></code>, <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.persist" title="howso.engine.Trainee.persist"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.persist()</span></code></a>, and <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.acquire_resources" title="howso.engine.Trainee.acquire_resources"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.acquire_resources()</span></code></a>.</p></li>
 </ul>
 </section>
-<section id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
+<section id="prerequisites-before-you-begin">
+<h2>Prerequisites: before you begin<a class="headerlink" href="#prerequisites-before-you-begin" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>You have successfully <a class="reference internal" href="../getting_started/installing.html"><span class="doc">installed Howso Engine</span></a></p></li>
 <li><p>You have <a class="reference internal" href="basic_workflow.html"><span class="doc">loaded, configured, trained, and analyzed data</span></a></p></li>
@@ -469,8 +469,6 @@ saving and loading functions that is intended for different types of operations.
 <li><p><strong>File name only</strong> Just the trainee filename may be provided, in which case the Trainee will be saved to the default location which is the current working directory.</p></li>
 <li><p><strong>None</strong> If the <code class="docutils literal notranslate"><span class="pre">filename</span></code> parameter is not used, then the Trainee will be saved to the default location using the Trainee ID.</p></li>
 </ul>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">Saving Example:</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a Trainee Object.</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">Trainee</span><span class="p">()</span>
 
@@ -481,7 +479,6 @@ saving and loading functions that is intended for different types of operations.
 <span class="n">t</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">filepath</span><span class="o">=</span><span class="s1">&#39;example_location/example_trainee.caml&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
 </section>
 <section id="loading">
 <h3>Loading<a class="headerlink" href="#loading" title="Permalink to this heading">#</a></h3>
@@ -491,8 +488,6 @@ saving and loading functions that is intended for different types of operations.
 <li><p><strong>Relative path</strong> A file path may also be a relative path to the current working directory, with a Trainee filename ending with <code class="docutils literal notranslate"><span class="pre">.caml</span></code>.</p></li>
 <li><p><strong>File name only</strong> Just the trainee filename may be provided, in which case the Trainee will be retrieved from the default location which is the current working directory.</p></li>
 </ul>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">Loading Example:</span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the `load_trainee` function</span>
 <span class="kn">from</span> <span class="nn">howso.engine</span> <span class="kn">import</span> <span class="n">load_trainee</span>
 
@@ -500,15 +495,12 @@ saving and loading functions that is intended for different types of operations.
 <span class="n">t</span> <span class="o">=</span> <span class="n">load_trainee</span><span class="p">(</span><span class="n">file_path</span><span class="o">=</span><span class="s1">&#39;example_location/example_trainee.caml&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
 </section>
 </section>
 <section id="database-operations">
 <h2>Database Operations<a class="headerlink" href="#database-operations" title="Permalink to this heading">#</a></h2>
 <p>As explained earlier, database operations is designed to be used with the Howso Platform, a cloud based service for enterprise users. In this set of operations,
 <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.persist" title="howso.engine.Trainee.persist"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.persist()</span></code></a> saves the trainee while <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.acquire_resources" title="howso.engine.Trainee.acquire_resources"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.acquire_resources()</span></code></a> then loads the trainee resources back. All of this can be handled using the same Trainee, with the Trainee name used as the identifier behind the scenes to save and load.</p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">Saving and Loading using Database Operations Example:</span><a class="headerlink" href="#id3" title="Permalink to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">engine</span><span class="o">.</span><span class="n">Trainee</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">trainee_name</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="n">features</span><span class="p">)</span> <span class="k">as</span> <span class="n">t</span><span class="p">:</span>
     <span class="c1"># Save the trainee.</span>
     <span class="n">t</span><span class="o">.</span><span class="n">persist</span><span class="p">()</span>
@@ -522,7 +514,6 @@ saving and loading functions that is intended for different types of operations.
     <span class="c1"># Delete the trainee to cleanup.</span>
     <span class="n">t</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
 </pre></div>
-</div>
 </div>
 <p>These methods can be used locally as well, but you do not have control over the exact naming and location of the saved Trainee. File operations are recommended when loading and saving to disk.</p>
 </section>
@@ -576,7 +567,7 @@ saving and loading functions that is intended for different types of operations.
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives-what-you-will-take-away">Objectives: what you will take away</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites-before-you-begin">Prerequisites: before you begin</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-recipe">Notebook Recipe</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts-terminology">Concepts &amp; Terminology</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-guide">How-To Guide</a></li>
