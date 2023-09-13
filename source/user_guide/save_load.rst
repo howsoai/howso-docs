@@ -61,7 +61,6 @@ Saving Trainees to your local file system can be done using the :meth:`Trainee.s
 - **None** If the ``filename`` parameter is not used, then the Trainee will be saved to the default location using the Trainee ID.
 
 .. code-block:: python
-    :caption: Saving Example:
 
     # Create a Trainee Object.
     t = Trainee()
@@ -84,7 +83,6 @@ The  :meth:`Engine.load_trainee` function has one parameter, ``filename``, which
 - **File name only** Just the trainee filename may be provided, in which case the Trainee will be retrieved from the default location which is the current working directory.
 
 .. code-block:: python
-    :caption: Loading Example:
 
     # Import the `load_trainee` function
     from howso.engine import load_trainee
@@ -100,7 +98,6 @@ As explained earlier, database operations is designed to be used with the Howso 
 :py:meth:`Trainee.persist` saves the trainee while :py:meth:`Trainee.acquire_resources` then loads the trainee resources back. All of this can be handled using the same Trainee, with the Trainee name used as the identifier behind the scenes to save and load.
 
 .. code-block:: python
-    :caption: Saving and Loading using Database Operations Example:
 
     with engine.Trainee(name=trainee_name, features=features) as t:
         # Save the trainee.
