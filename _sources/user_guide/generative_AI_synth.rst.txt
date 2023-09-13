@@ -51,7 +51,7 @@ Concepts & Terminology
     For example, using conviction, Engine
     can generate points that are more surprising, i.e., different, than the original data, and vice versa.
 
-*What is a common use cases for Engine's generative AI capabilities?*
+*What is a common use case for Engine's generative AI capabilities?*
 
     Synthetic Data Generation: Propose new data points that follow the patterns of your original data, but are completely distinct. Use conviction to tune how similar or dissimilar the
     synthetic data is from your original data.
