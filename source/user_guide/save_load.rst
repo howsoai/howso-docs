@@ -12,8 +12,8 @@ Objectives: what you will take away
 - **How-To** Save and load a :py:class:`~Trainee`.
 - **API References** How to use, :meth:`Trainee.save`, :py:meth:`Engine.load_trainee`, :py:meth:`Trainee.persist`, and :py:meth:`Trainee.acquire_resources`.
 
-Prerequisites
--------------
+Prerequisites: before you begin
+-------------------------------
 - You have successfully :doc:`installed Howso Engine <../getting_started/installing>`
 - You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
 

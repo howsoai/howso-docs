@@ -16,8 +16,8 @@ Objectives: what you will take away
 - **API References** How to use :meth:`Trainee.get_prediction_stats`, :py:meth:`Trainee.react`.
 
 
-Prerequisites
--------------
+Prerequisites: before you begin
+-------------------------------
 - You have successfully :doc:`installed Howso Engine <../getting_started/installing>`
 - You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
 
