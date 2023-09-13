@@ -5,7 +5,7 @@ Reinforcement Learning
 ======================
 .. topic:: What is covered in this user guide
 
-    In this guide, you will learn the basics of how to incorporate Howso Engine into a Reinforcement Learning (RL) framework. 
+    In this guide, you will learn the basics of how to incorporate Howso Engine into a Reinforcement Learning (RL) framework.
 
 
 Objectives: what you will take away
@@ -26,7 +26,7 @@ Notebook Recipe
 ---------------
 The following recipe will supplement the content this guide will cover and provide a complete example using several RL games:
 
-- `RL recipe <https://github.com/howsoai/howso-engine-rl-recipes>`__  
+- `RL recipe <https://github.com/howsoai/howso-engine-rl-recipes>`__
 
 Concepts & Terminology
 ----------------------
@@ -41,21 +41,21 @@ To understand this guide, we recommend being familiar with the following concept
 - :ref:`Context Features <user_guide/terminology:context features>`
 
 Additional concepts to be familiar with include the `Gymnasium RL Framework <https://gymnasium.farama.org/>`_ and the RL games in the recipes,
-`Cartpole <https://gymnasium.farama.org/environments/classic_control/cart_pole/>`_ and 
+`Cartpole <https://gymnasium.farama.org/environments/classic_control/cart_pole/>`_ and
 `Wafer Thin Mints (PDF Download Link) <https://www.aaai.org/ojs/index.php/AIIDE/article/download/5218/5074>`__.
 
 How-To Guide
 ------------
-In the learning cycle of RL as shown below, Howso Engine acts as the Agent. As an Agent, Howso Engine both outputs an action value as well as intakes the observation and resulting reward. 
-Once the reward and observations are processed, the Howso Engine is trained again based on the results and another action is output. 
+In the learning cycle of RL as shown below, Howso Engine acts as the Agent. As an Agent, Howso Engine both outputs an action value as well as intakes the observation and resulting reward.
+Once the reward and observations are processed, the Howso Engine is trained again based on the results and another action is output.
 
 .. image:: /_images/RL.png
 
 Image Source: `https://gymnasium.farama.org/content/basic_usage/ <https://gymnasium.farama.org/content/basic_usage/>`__
 
-Setup 
+Setup
 ^^^^^
-The Howso Engine Trainee must be initalized in the RL framework before the learning loop. As part of the setup process, enabling :py:meth:`Trainee.set_auto_analyze_params`
+The Howso Engine Trainee must be initialized in the RL framework before the learning loop. As part of the setup process, enabling :py:meth:`Trainee.set_auto_analyze_params`
 can help the user analyze the Trainee after all training steps. This methods eliminates the need to manually analyze after training, which can be done.
 
 .. code-block:: python
@@ -84,12 +84,12 @@ as part of a series.  The parameter ``into_series_store`` allows the user to lab
                 details=details,
             )
     action = react['action']['action'][0]
-    
+
     return action
 
 Environment, Reward, and Observation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This step processes the action from Action phase and outputs a observation and reward. The reward and observation is sent back to the Trainee where 
+This step processes the action from Action phase and outputs a observation and reward. The reward and observation is sent back to the Trainee where
 it can be used to train the Trainee. These steps are generally handled by your RL framework.
 
 Agent

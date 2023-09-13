@@ -1,6 +1,6 @@
-==========
+===============
 Getting Started
-==========
+===============
 To get started, install the Howso Engine
 
   - :doc:`Installing the Howso Engine <installing>`

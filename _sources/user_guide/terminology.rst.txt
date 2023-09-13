@@ -1,3 +1,5 @@
+.. _terminology:
+
 Terminology
 ===========
 
@@ -49,14 +51,14 @@ or labels, and in generative ML, Action Features are the resulting data.
 Derived Features
 ----------------
 
-A feature that is derived via a function which operates on one or more other features rather than something that is measured 
-directly.  Derived features are described by a type and a derived feature code, which is a snippet of Amalgam-like code that 
-will be used to derive the feature values.  For example, if a dataset contains `mass`, `acceleration`, and `force` features, 
-the force feature may be derived from the product of `mass` and `acceleration`.  Time-series features, particular deltas, rates, 
+A feature that is derived via a function which operates on one or more other features rather than something that is measured
+directly.  Derived features are described by a type and a derived feature code, which is a snippet of Amalgam-like code that
+will be used to derive the feature values.  For example, if a dataset contains `mass`, `acceleration`, and `force` features,
+the force feature may be derived from the product of `mass` and `acceleration`.  Time-series features, particular deltas, rates,
 and lags, are also derived features.
 
-For more information, see :doc:`Feature Attributes <feature_attributes>`, 
-the `Amalgam Language documentation <https://htmlpreview.github.io/?https://github.com/howsoai/amalgam/blob/main/doc/Language.html>`_ , 
+For more information, see :doc:`Feature Attributes <feature_attributes>`,
+the `Amalgam Language documentation <https://htmlpreview.github.io/?https://github.com/howsoai/amalgam/blob/main/doc/Language.html>`_ ,
 and the `Derived Features user guide <derived_features>`_ .
 
 Case
@@ -108,10 +110,18 @@ Relevant Features
 Features whose values were important in determining prediction value(s). Generally, this refers to feature MDA or
 contribution, which yield similar but complementary insights.
 
-Influential Cases
------------------
+Contexts
+--------
 
 The cases used to make a prediction or to derive a result.
+
+Uncertainty
+-----------
+
+`Uncertainty <https://en.wikipedia.org/wiki/Measurement_uncertainty>`_ is an expression of the measurement error of
+a particular feature.  One example of an uncertainty measure is the standard deviation of a distribution.  When Howso
+Engine computes distances between one or more missing values, they are treated as having maximal uncertainty for
+the feature.
 
 
 Operations

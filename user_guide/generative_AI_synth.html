@@ -34,6 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -49,13 +50,15 @@
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/generative_AI_synth';</script>
+    <script src="../_static/js/icon.js"></script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Time Series and Sequential Data Analysis" href="time_series.html" />
     <link rel="prev" title="Anomaly Detection" href="anomaly_detection.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+    <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg">
+    <link rel="mask-icon" href="/favicons/favicon.svg">
+
   </head>
   
   
@@ -339,7 +342,6 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="model_performance.html">Model Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="influential_data_counterfactuals_uncertainty.html">Influential Data, Counterfactuals, and Uncertainties of Predictions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="derived_features.html">Derived Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anomaly_detection.html">Anomaly Detection</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Generative Output and Data Synthesis</a></li>
@@ -427,7 +429,7 @@ document.write(`
 <p><strong>Installation</strong></p>
 <blockquote>
 <div><ul class="simple">
-<li><p>You have succesfully <a class="reference internal" href="../getting_started/installing.html"><span class="doc">installed Howso Engine</span></a></p></li>
+<li><p>You have successfully <a class="reference internal" href="../getting_started/installing.html"><span class="doc">installed Howso Engine</span></a></p></li>
 <li><p>You have <a class="reference internal" href="basic_workflow.html"><span class="doc">loaded, configured, trained, and analyzed data</span></a></p></li>
 </ul>
 </div></blockquote>
@@ -436,9 +438,9 @@ document.write(`
 <h2>Notebook Recipe<a class="headerlink" href="#notebook-recipe" title="Permalink to this heading">#</a></h2>
 <p>The following recipes will supplement the content this guide will cover:</p>
 <ul class="simple">
-<li><p><code class="xref download docutils literal notranslate"><span class="pre">Engine</span> <span class="pre">Intro</span></code></p></li>
-<li><p><a class="reference download internal" download="" href="../_downloads/b00221ee8f60a71989f47e327eb7508a/2-interpretability.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Interpretability</span></code></a></p></li>
-<li><p><code class="xref download docutils literal notranslate"><span class="pre">Generative</span> <span class="pre">AI</span> <span class="pre">and</span> <span class="pre">Synthesis</span></code></p></li>
+<li><p><a class="reference download external" download="" href="https://github.com/howsoai/howso-engine-recipes/blob/main/1-engine-intro.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Engine</span> <span class="pre">Intro</span></code></a></p></li>
+<li><p><a class="reference download external" download="" href="https://github.com/howsoai/howso-engine-recipes/blob/main/2-interpretability.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Interpretability</span></code></a></p></li>
+<li><p><a class="reference download external" download="" href="https://github.com/howsoai/howso-engine-recipes/blob/main/engine_generative_react.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Generative</span> <span class="pre">AI</span> <span class="pre">and</span> <span class="pre">Synthesis</span></code></a></p></li>
 </ul>
 </section>
 <section id="concepts-terminology">
@@ -499,7 +501,7 @@ new case is or is not generated, and <cite>num_cases_to_generate</cite>, which i
 
 <span class="c1"># Synthesize</span>
 <span class="n">synth</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">react</span><span class="p">(</span><span class="n">action_features</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span> <span class="c1"># What features to generate? In this case, the same features as the original data</span>
-                <span class="n">desired_conviction</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="c1"># Set at GeminAI&#39;s default desired conviction value</span>
+                <span class="n">desired_conviction</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="c1"># Set at synthesizer&#39;s default desired conviction value</span>
                 <span class="n">generate_new_cases</span><span class="o">=</span><span class="s1">&#39;always&#39;</span><span class="p">,</span> <span class="c1"># Indicates that we always want to create entirely new cases from the original data</span>
                 <span class="n">num_cases_to_generate</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span> <span class="c1"># Number of new points to generate? In this case, the same number as the original data</span>
 <span class="p">)</span>

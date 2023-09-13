@@ -1,6 +1,6 @@
-==========
+===========
 User Guides
-==========
+===========
 
 The user guides will cover the basics of using the Howso Engine for machine learning tasks.
 In these guides, you will learn about terminology that is unique to Howso, and see how Howso approaches some ML
@@ -17,15 +17,12 @@ To get started, be sure and start with these guides:
     :maxdepth: 2
     :hidden:
 
-
-
     basic_workflow
     predictions
     feature_attributes
     model_performance
     editing_case_weighting
     influential_data_counterfactuals_uncertainty
-    editing_case_weighting
     derived_features
     anomaly_detection
     generative_AI_synth

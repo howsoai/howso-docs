@@ -34,6 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -49,13 +50,15 @@
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/time_series';</script>
+    <script src="../_static/js/icon.js"></script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Bias Mitigation" href="bias_mitigation.html" />
     <link rel="prev" title="Generative Output and Data Synthesis" href="generative_AI_synth.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+    <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg">
+    <link rel="mask-icon" href="/favicons/favicon.svg">
+
   </head>
   
   
@@ -339,7 +342,6 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="model_performance.html">Model Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="influential_data_counterfactuals_uncertainty.html">Influential Data, Counterfactuals, and Uncertainties of Predictions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="derived_features.html">Derived Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anomaly_detection.html">Anomaly Detection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_AI_synth.html">Generative Output and Data Synthesis</a></li>
@@ -428,7 +430,7 @@ This will enable you to easily capture and utilize temporal information and tren
 <p><strong>Installation</strong></p>
 <blockquote>
 <div><ul class="simple">
-<li><p>You have succesfully <a class="reference internal" href="../getting_started/installing.html"><span class="doc">installed Howso Engine</span></a></p></li>
+<li><p>You have successfully <a class="reference internal" href="../getting_started/installing.html"><span class="doc">installed Howso Engine</span></a></p></li>
 <li><p>You have <a class="reference internal" href="basic_workflow.html"><span class="doc">loaded, configured, trained, and analyzed data</span></a></p></li>
 </ul>
 </div></blockquote>
@@ -437,7 +439,7 @@ This will enable you to easily capture and utilize temporal information and tren
 <h2>Notebook Recipe<a class="headerlink" href="#notebook-recipe" title="Permalink to this heading">#</a></h2>
 <p>The following recipe will supplement the content this guide will cover:</p>
 <ul class="simple">
-<li><p><code class="xref download docutils literal notranslate"><span class="pre">Time</span> <span class="pre">Series</span> <span class="pre">Predictions</span></code></p></li>
+<li><p><a class="reference download external" download="" href="https://github.com/howsoai/howso-engine-recipes/blob/main/engine_timeseries.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Time</span> <span class="pre">Series</span> <span class="pre">Predictions</span></code></a></p></li>
 </ul>
 </section>
 <section id="concepts-terminology">
@@ -463,9 +465,9 @@ about intervals within a dataset to make a prediction.</p>
 <blockquote>
 <div><ul class="simple">
 <li><p><a class="reference internal" href="../api_reference/utilities.html#howso.utilities.infer_feature_attributes" title="howso.utilities.infer_feature_attributes"><code class="xref py py-func docutils literal notranslate"><span class="pre">howso.utilities.infer_feature_attributes()</span></code></a> must be configured to include time series and sequential data information</p></li>
-<li><p>Context Features must be specified <strong>after</strong> the data is trained, as the time series context information is calculated during training</p></li>
+<li><p>Context Features must be specified <strong>after</strong> the data is trained, as the time series context information is calculated during training
+and must be specified before the <cite>analyze()</cite> call to be utilized in a <cite>react</cite></p></li>
 </ul>
-<p>and must be specified before the <cite>analyze()</cite> call to be utilized in a <cite>react</cite></p>
 </div></blockquote>
 <section id="task-1-infer-feature-attributes">
 <h3>Task 1 - Infer Feature Attributes<a class="headerlink" href="#task-1-infer-feature-attributes" title="Permalink to this heading">#</a></h3>

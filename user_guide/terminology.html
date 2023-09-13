@@ -34,6 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -49,13 +50,15 @@
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/terminology';</script>
+    <script src="../_static/js/icon.js"></script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Datasets" href="datasets.html" />
     <link rel="prev" title="Handling Sparse Data" href="sparse_data.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+    <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg">
+    <link rel="mask-icon" href="/favicons/favicon.svg">
+
   </head>
   
   
@@ -339,7 +342,6 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="model_performance.html">Model Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="influential_data_counterfactuals_uncertainty.html">Influential Data, Counterfactuals, and Uncertainties of Predictions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="derived_features.html">Derived Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anomaly_detection.html">Anomaly Detection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_AI_synth.html">Generative Output and Data Synthesis</a></li>
@@ -409,7 +411,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="terminology">
-<h1>Terminology<a class="headerlink" href="#terminology" title="Permalink to this heading">#</a></h1>
+<span id="id1"></span><h1>Terminology<a class="headerlink" href="#terminology" title="Permalink to this heading">#</a></h1>
 <section id="concepts">
 <h2>Concepts<a class="headerlink" href="#concepts" title="Permalink to this heading">#</a></h2>
 <p>Howso’s ™ technology operates a little differently than traditional machine learning (ML) systems and thus certain terminology is
@@ -498,9 +500,16 @@ it is an approximation to the well-known SHAP values.</p>
 <p>Features whose values were important in determining prediction value(s). Generally, this refers to feature MDA or
 contribution, which yield similar but complementary insights.</p>
 </section>
-<section id="influential-cases">
-<h3>Influential Cases<a class="headerlink" href="#influential-cases" title="Permalink to this heading">#</a></h3>
+<section id="contexts">
+<h3>Contexts<a class="headerlink" href="#contexts" title="Permalink to this heading">#</a></h3>
 <p>The cases used to make a prediction or to derive a result.</p>
+</section>
+<section id="uncertainty">
+<h3>Uncertainty<a class="headerlink" href="#uncertainty" title="Permalink to this heading">#</a></h3>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Measurement_uncertainty">Uncertainty</a> is an expression of the measurement error of
+a particular feature.  One example of an uncertainty measure is the standard deviation of a distribution.  When Howso
+Engine computes distances between one or more missing values, they are treated as having maximal uncertainty for
+the feature.</p>
 </section>
 </section>
 <section id="operations">
@@ -580,8 +589,8 @@ example, a value of 2 for a feature called “degrees”, which references tempe
 <h3>Most Similar Cases<a class="headerlink" href="#most-similar-cases" title="Permalink to this heading">#</a></h3>
 <p>The cases which are most similar to another case or a prediction.</p>
 </section>
-<section id="id1">
-<h3>Influential Cases<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<section id="influential-cases">
+<h3>Influential Cases<a class="headerlink" href="#influential-cases" title="Permalink to this heading">#</a></h3>
 <p>The cases which were identified as most influential during a prediction, along with their weights when predicting the
 expected value or drawing a value from the distribution of expected values for generative outputs.</p>
 </section>
@@ -668,7 +677,8 @@ feature values are replaced with the specified values.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mda">MDA</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robust">Robust</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relevant-features">Relevant Features</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#influential-cases">Influential Cases</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#contexts">Contexts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uncertainty">Uncertainty</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operations">Operations</a><ul class="nav section-nav flex-column">
@@ -689,7 +699,7 @@ feature values are replaced with the specified values.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outlying-feature-values">Outlying Feature Values</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#observational-errors">Observational Errors</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#most-similar-cases">Most Similar Cases</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Influential Cases</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#influential-cases">Influential Cases</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boundary-cases">Boundary Cases</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#categorical-action-probabilities">Categorical Action Probabilities</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hypothetical-values">Hypothetical Values</a></li>

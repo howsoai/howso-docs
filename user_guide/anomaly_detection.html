@@ -34,6 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -49,13 +50,15 @@
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/anomaly_detection';</script>
+    <script src="../_static/js/icon.js"></script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Generative Output and Data Synthesis" href="generative_AI_synth.html" />
     <link rel="prev" title="Derived Features" href="derived_features.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+    <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg">
+    <link rel="mask-icon" href="/favicons/favicon.svg">
+
   </head>
   
   
@@ -339,7 +342,6 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="model_performance.html">Model Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="influential_data_counterfactuals_uncertainty.html">Influential Data, Counterfactuals, and Uncertainties of Predictions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="derived_features.html">Derived Features</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Anomaly Detection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_AI_synth.html">Generative Output and Data Synthesis</a></li>
@@ -434,7 +436,7 @@ a <a class="reference internal" href="../api_reference/engine.html#howso.engine.
 <h2>Notebook Recipe<a class="headerlink" href="#notebook-recipe" title="Permalink to this heading">#</a></h2>
 <p>The following recipe will supplement the content this guide will cover:</p>
 <ul class="simple">
-<li><p><a class="reference download internal" download="" href="../_downloads/b5e66de3cce9ecede661241df659a7ce/3-anomaly_detection.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Anomaly</span> <span class="pre">Detection</span></code></a></p></li>
+<li><p><a class="reference download external" download="" href="https://github.com/howsoai/howso-engine-recipes/blob/main/3-anomaly_detection.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Anomaly</span> <span class="pre">Detection</span></code></a></p></li>
 </ul>
 </section>
 <section id="concepts-terminology">
@@ -454,7 +456,7 @@ To understand this, we recommend being familiar with the following concepts:</p>
 <h2>How-To Guide<a class="headerlink" href="#how-to-guide" title="Permalink to this heading">#</a></h2>
 <p>Anomaly detection, is one of the most significant domains of artificial intelligence and machine learning. Some of the most
 common use cases of anomaly detection are fraud detection, health monitoring, and attack detection in cybersecurity. The
-idea is to be able to detect datathat doesn’t seem to fit in with the rest of the observed data.</p>
+idea is to be able to detect data that doesn’t seem to fit in with the rest of the observed data.</p>
 <section id="detecting-anomalies">
 <h3>Detecting anomalies<a class="headerlink" href="#detecting-anomalies" title="Permalink to this heading">#</a></h3>
 <p>To detect anomalies using the Howso Engine, we recommend the use of either Familiarity Conviction or Similarity Conviction.
@@ -479,7 +481,7 @@ values into each case. To then view all of the similarity conviction values, we 
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">get_cases</span><span class="p">([</span><span class="s1">&#39;similarity_conviction&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>Then with the simiarity conviction values for each case, users can determine what thresholds are appropriate
+<p>Then with the similarity conviction values for each case, users can determine what thresholds are appropriate
 to use for anomaly detection and begin classifying each case as anomalous or not.</p>
 </section>
 <section id="determining-anomalies-among-unseen-data">
@@ -506,7 +508,7 @@ predetermined thresholds that will determine if the case is classified as an ano
 </section>
 <section id="determining-the-threshold-of-conviction">
 <h3>Determining the threshold of conviction<a class="headerlink" href="#determining-the-threshold-of-conviction" title="Permalink to this heading">#</a></h3>
-<p>Since conviction values are a ratio of surprisals, these values must be interpretted carefully.
+<p>Since conviction values are a ratio of surprisals, these values must be interpreted carefully.
 Conviction values below 1.0 indicate cases that are more surprising than expected while values
 above 1.0 indicate cases that are less surprising than expected.</p>
 <p>However, these two sides are asymmetric. For example, a conviction of 0.5 is more anomalous than

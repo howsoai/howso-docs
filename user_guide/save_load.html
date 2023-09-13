@@ -34,6 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -49,13 +50,15 @@
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/save_load';</script>
+    <script src="../_static/js/icon.js"></script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Reinforcement Learning" href="reinforcement_learning.html" />
     <link rel="prev" title="Feature Importance" href="feature_importance.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+    <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg">
+    <link rel="mask-icon" href="/favicons/favicon.svg">
+
   </head>
   
   
@@ -339,7 +342,6 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="model_performance.html">Model Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="influential_data_counterfactuals_uncertainty.html">Influential Data, Counterfactuals, and Uncertainties of Predictions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="derived_features.html">Derived Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anomaly_detection.html">Anomaly Detection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_AI_synth.html">Generative Output and Data Synthesis</a></li>
@@ -433,7 +435,7 @@ document.write(`
 <h2>Notebook Recipe<a class="headerlink" href="#notebook-recipe" title="Permalink to this heading">#</a></h2>
 <p>The following recipe will supplement the content this guide will cover:</p>
 <ul class="simple">
-<li><p><code class="xref download docutils literal notranslate"><span class="pre">Saving</span> <span class="pre">and</span> <span class="pre">Loading</span></code></p></li>
+<li><p><a class="reference download external" download="" href="https://github.com/howsoai/howso-engine-recipes/blob/main/1-engine-intro.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Engine</span> <span class="pre">Intro</span></code></a></p></li>
 </ul>
 </section>
 <section id="concepts-terminology">
@@ -449,11 +451,11 @@ recommend being familiar with the Trainees:</p>
 </section>
 <section id="methods-for-saving-and-loading">
 <h2>Methods for Saving and Loading<a class="headerlink" href="#methods-for-saving-and-loading" title="Permalink to this heading">#</a></h2>
-<p>Howso Engine can be operated locally or through the Howso Platform as part of an enterprise License. In order to accomodate both sets configurations, the Trainee has two sets of
+<p>Howso Engine can be operated locally or through the Howso Platform as part of an enterprise License. In order to accommodate both sets configurations, the Trainee has two sets of
 saving and loading functions that is intended for different types of operations.</p>
 <ul class="simple">
 <li><p><strong>File Operations</strong> - A set of functions that allows a user to save and load to a specific file location. Trainees are saved as <code class="docutils literal notranslate"><span class="pre">.caml</span></code> files, which stands for Compressed <a class="reference external" href="https://github.com/howsoai/amalgam/">Amalgam</a>. This is the method that will most likely be used by non enterprise users.</p></li>
-<li><p><strong>Database Operations</strong> The database set of operations provides better integration with databases and the Howso Platform. These methods abstract away some of the specifics of saving and loading and allows users to refer to Trainees by name only. Database operations revolves around the terminology, <code class="docutils literal notranslate"><span class="pre">persist</span></code> and <code class="docutils literal notranslate"><span class="pre">acquire</span> <span class="pre">resources</span></code>, as opposed to save and load to better reflect the nature of what is occuring.</p></li>
+<li><p><strong>Database Operations</strong> The database set of operations provides better integration with databases and the Howso Platform. These methods abstract away some of the specifics of saving and loading and allows users to refer to Trainees by name only. Database operations revolves around the terminology, <code class="docutils literal notranslate"><span class="pre">persist</span></code> and <code class="docutils literal notranslate"><span class="pre">acquire</span> <span class="pre">resources</span></code>, as opposed to save and load to better reflect the nature of what is occurring.</p></li>
 </ul>
 </section>
 <section id="file-operations">
@@ -507,7 +509,7 @@ saving and loading functions that is intended for different types of operations.
 <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.persist" title="howso.engine.Trainee.persist"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.persist()</span></code></a> saves the trainee while <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.acquire_resources" title="howso.engine.Trainee.acquire_resources"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.acquire_resources()</span></code></a> then loads the trainee resources back. All of this can be handled using the same Trainee, with the Trainee name used as the identifier behind the scenes to save and load.</p>
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text">Saving and Loading using Database Operations Example:</span><a class="headerlink" href="#id3" title="Permalink to this code">#</a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">reactor</span><span class="o">.</span><span class="n">Trainee</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">trainee_name</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="n">features</span><span class="p">)</span> <span class="k">as</span> <span class="n">t</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">engine</span><span class="o">.</span><span class="n">Trainee</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">trainee_name</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="n">features</span><span class="p">)</span> <span class="k">as</span> <span class="n">t</span><span class="p">:</span>
     <span class="c1"># Save the trainee.</span>
     <span class="n">t</span><span class="o">.</span><span class="n">persist</span><span class="p">()</span>
 

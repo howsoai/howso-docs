@@ -34,6 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -49,13 +50,15 @@
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/basic_workflow';</script>
+    <script src="../_static/js/icon.js"></script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Predictions" href="predictions.html" />
     <link rel="prev" title="User Guides" href="index.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+    <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg">
+    <link rel="mask-icon" href="/favicons/favicon.svg">
+
   </head>
   
   
@@ -339,7 +342,6 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="model_performance.html">Model Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="influential_data_counterfactuals_uncertainty.html">Influential Data, Counterfactuals, and Uncertainties of Predictions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="derived_features.html">Derived Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anomaly_detection.html">Anomaly Detection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_AI_synth.html">Generative Output and Data Synthesis</a></li>
@@ -418,7 +420,7 @@ document.write(`
 <h2>Objectives: what you will take away<a class="headerlink" href="#objectives-what-you-will-take-away" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Definitions &amp; an understanding</strong> of terminology unique to Howso Engine and what the basic workflow of using the Howso Engine looks.</p></li>
-<li><p><strong>How-To</strong> - Importing data, mapping features, training, analyzing, and making infrances using the Howso Engine.</p></li>
+<li><p><strong>How-To</strong> - Importing data, mapping features, training, analyzing, and making inferences using the Howso Engine.</p></li>
 <li><p><strong>API References</strong> - where to find references to APIs used in this user guide.</p></li>
 </ul>
 </section>
@@ -440,7 +442,7 @@ document.write(`
 <h2>Notebook Recipe<a class="headerlink" href="#notebook-recipe" title="Permalink to this heading">#</a></h2>
 <p>The following recipe will supplement the content this guide will cover:</p>
 <ul class="simple">
-<li><p><a class="reference download internal" download="" href="../_downloads/8ccb6e36321ef2bcfb1eb11ec6d4fd3d/1-engine-intro.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Engine</span> <span class="pre">Intro</span></code></a></p></li>
+<li><p><a class="reference download external" download="" href="https://github.com/howsoai/howso-engine-recipes/blob/main/1-engine-intro.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Engine</span> <span class="pre">Intro</span></code></a></p></li>
 </ul>
 </section>
 <section id="concepts-terminology">
@@ -460,7 +462,7 @@ document.write(`
 </section>
 <section id="how-to-guide">
 <h2>How-To Guide<a class="headerlink" href="#how-to-guide" title="Permalink to this heading">#</a></h2>
-<p>Here we will walk through the steps of what a basic workflow might look like when using Howso Engine. First, we will load data into a pandas dataframe for use with Howso Engine. Then, we will use the Howso Engine to map attributes of the features, train a trainee, analyze, and react.</p>
+<p>Here we will walk through the steps of what a basic workflow might look like when using Howso Engine. First, we will load data into a pandas DataFrame for use with Howso Engine. Then, we will use the Howso Engine to map attributes of the features, train a trainee, analyze, and react.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">pmlb</span> <span class="kn">import</span> <span class="n">fetch_data</span>
 
@@ -481,7 +483,7 @@ document.write(`
 <section id="step-2-map-data">
 <h3>Step 2 - Map Data<a class="headerlink" href="#step-2-map-data" title="Permalink to this heading">#</a></h3>
 <p>Typically, an exploratory analysis is done on the data to get a general feel of the descriptive statistics and data attributes.</p>
-<p>Methods like <code class="docutils literal notranslate"><span class="pre">describe</span></code> from a Pandas dataframe often automatically present these types of information of interest to a user, as shown below. While informative, these descriptive statistics are often used as a sanity check pre- and post-modeling and a model typically doesn’t actually use any of these feature attributes.</p>
+<p>Methods like <code class="docutils literal notranslate"><span class="pre">describe</span></code> from a Pandas DataFrame often automatically present these types of information of interest to a user, as shown below. While informative, these descriptive statistics are often used as a sanity check pre- and post-modeling and a model typically doesn’t actually use any of these feature attributes.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>

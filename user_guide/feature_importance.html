@@ -34,6 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -49,13 +50,15 @@
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/feature_importance';</script>
+    <script src="../_static/js/icon.js"></script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Saving and Loading" href="save_load.html" />
     <link rel="prev" title="Bias Mitigation" href="bias_mitigation.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+    <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg">
+    <link rel="mask-icon" href="/favicons/favicon.svg">
+
   </head>
   
   
@@ -339,7 +342,6 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="model_performance.html">Model Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="influential_data_counterfactuals_uncertainty.html">Influential Data, Counterfactuals, and Uncertainties of Predictions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="derived_features.html">Derived Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anomaly_detection.html">Anomaly Detection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_AI_synth.html">Generative Output and Data Synthesis</a></li>
@@ -434,7 +436,7 @@ provides information about which features are useful for predicting a target or 
 <h2>Notebook Recipe<a class="headerlink" href="#notebook-recipe" title="Permalink to this heading">#</a></h2>
 <p>The following recipe will supplement the content this guide will cover:</p>
 <ul class="simple">
-<li><p><a class="reference download internal" download="" href="../_downloads/b00221ee8f60a71989f47e327eb7508a/2-interpretability.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Interpretability</span></code></a></p></li>
+<li><p><a class="reference download external" download="" href="https://github.com/howsoai/howso-engine-recipes/blob/main/2-interpretability.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Interpretability</span></code></a></p></li>
 </ul>
 </section>
 <section id="concepts-terminology">
@@ -470,7 +472,7 @@ the power set set of all combinations of features without the feature of interes
 <h2>How-To Guide<a class="headerlink" href="#how-to-guide" title="Permalink to this heading">#</a></h2>
 <section id="global-feature-importance">
 <h3>Global Feature Importance<a class="headerlink" href="#global-feature-importance" title="Permalink to this heading">#</a></h3>
-<p>To get global feature importance metrics, <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_into_trainee()</span></code></a>, is first called on a trained and analyzed Trainee. <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_into_trainee()</span></code></a> calls react internally on the cases already trained into the Trainee and calculates the metrics. In this method, the desired metrics can be selected as parameters. These parameters are named indivdiually
+<p>To get global feature importance metrics, <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_into_trainee()</span></code></a>, is first called on a trained and analyzed Trainee. <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_into_trainee()</span></code></a> calls react internally on the cases already trained into the Trainee and calculates the metrics. In this method, the desired metrics can be selected as parameters. These parameters are named individually
 and setting them to <code class="docutils literal notranslate"><span class="pre">True</span></code> will cache the desired metrics. For example, <code class="docutils literal notranslate"><span class="pre">mda_robust</span></code> and <code class="docutils literal notranslate"><span class="pre">contributions_robust</span></code> will calculate the robust versions of MDA and Feature Contributions, while <code class="docutils literal notranslate"><span class="pre">mda</span></code> and <code class="docutils literal notranslate"><span class="pre">contributions</span></code> will calculate the non-robust versions.</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">Global Feature Importance Calculation Example:</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
@@ -534,7 +536,7 @@ are calculated in <a class="reference internal" href="../api_reference/engine.ht
 <ul class="simple">
 <li><dl class="simple">
 <dt>Bias Determination</dt><dd><ul>
-<li><p>e.g., determing which features are important to your model to gauge the possibility of bias in the model.</p></li>
+<li><p>e.g., determining which features are important to your model to gauge the possibility of bias in the model.</p></li>
 </ul>
 </dd>
 </dl>

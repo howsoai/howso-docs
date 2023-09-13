@@ -34,6 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -49,13 +50,15 @@
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/reinforcement_learning';</script>
+    <script src="../_static/js/icon.js"></script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Handling Sparse Data" href="sparse_data.html" />
     <link rel="prev" title="Saving and Loading" href="save_load.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+    <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg">
+    <link rel="mask-icon" href="/favicons/favicon.svg">
+
   </head>
   
   
@@ -339,7 +342,6 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="model_performance.html">Model Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="influential_data_counterfactuals_uncertainty.html">Influential Data, Counterfactuals, and Uncertainties of Predictions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="derived_features.html">Derived Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anomaly_detection.html">Anomaly Detection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_AI_synth.html">Generative Output and Data Synthesis</a></li>
@@ -458,7 +460,7 @@ document.write(`
 <p>In the learning cycle of RL as shown below, Howso Engine acts as the Agent. As an Agent, Howso Engine both outputs an action value as well as intakes the observation and resulting reward.
 Once the reward and observations are processed, the Howso Engine is trained again based on the results and another action is output.</p>
 <a class=""
-               data-lightbox="group-fbbf3227-ac6b-4209-b834-6505db836b73"
+               data-lightbox="group-37eafbe8-a218-414e-8847-48f61acd322f"
                href="../_images/RL1.png"
                title=""
                data-title=""
@@ -471,7 +473,7 @@ Once the reward and observations are processed, the Howso Engine is trained agai
                 </a><p>Image Source: <a class="reference external" href="https://gymnasium.farama.org/content/basic_usage/">https://gymnasium.farama.org/content/basic_usage/</a></p>
 <section id="setup">
 <h3>Setup<a class="headerlink" href="#setup" title="Permalink to this heading">#</a></h3>
-<p>The Howso Engine Trainee must be initalized in the RL framework before the learning loop. As part of the setup process, enabling <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.set_auto_analyze_params" title="howso.engine.Trainee.set_auto_analyze_params"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.set_auto_analyze_params()</span></code></a>
+<p>The Howso Engine Trainee must be initialized in the RL framework before the learning loop. As part of the setup process, enabling <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.set_auto_analyze_params" title="howso.engine.Trainee.set_auto_analyze_params"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.set_auto_analyze_params()</span></code></a>
 can help the user analyze the Trainee after all training steps. This methods eliminates the need to manually analyze after training, which can be done.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trainee</span><span class="o">.</span><span class="n">set_auto_analyze_params</span><span class="p">(</span>
     <span class="n">auto_analyze_enabled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>

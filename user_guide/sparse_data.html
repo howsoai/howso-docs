@@ -34,6 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -50,13 +51,15 @@
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/sparse_data';</script>
+    <script src="../_static/js/icon.js"></script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Terminology" href="terminology.html" />
     <link rel="prev" title="Reinforcement Learning" href="reinforcement_learning.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+    <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg">
+    <link rel="mask-icon" href="/favicons/favicon.svg">
+
   </head>
   
   
@@ -340,7 +343,6 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="model_performance.html">Model Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="influential_data_counterfactuals_uncertainty.html">Influential Data, Counterfactuals, and Uncertainties of Predictions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="derived_features.html">Derived Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anomaly_detection.html">Anomaly Detection</a></li>
 <li class="toctree-l1"><a class="reference internal" href="generative_AI_synth.html">Generative Output and Data Synthesis</a></li>
@@ -434,7 +436,7 @@ how prediction performance changes as data sparsity increases.</p></li>
 <h2>Notebook Recipe<a class="headerlink" href="#notebook-recipe" title="Permalink to this heading">#</a></h2>
 <p>The following recipe will supplement the content this guide will cover and details the efficacy of predicting increasingly sparse data:</p>
 <ul class="simple">
-<li><p><a class="reference download internal" download="" href="../_downloads/6f60493535db01d36e4e816b1ba719e1/engine_sparse_data.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Sparse</span> <span class="pre">Data</span> <span class="pre">Prediction</span></code></a></p></li>
+<li><p><a class="reference download external" download="" href="https://github.com/howsoai/howso-engine-recipes/blob/main/engine_sparse_data.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Sparse</span> <span class="pre">Data</span> <span class="pre">Prediction</span></code></a></p></li>
 </ul>
 </section>
 <section id="concepts-terminology">
@@ -451,7 +453,7 @@ how prediction performance changes as data sparsity increases.</p></li>
 </ul>
 <section id="sparse-data">
 <h3>Sparse Data<a class="headerlink" href="#sparse-data" title="Permalink to this heading">#</a></h3>
-<p>The term <span class="xref std std-ref">sparse data</span> usually refers to data which consist of primarily zeroes, with
+<p>The term <a class="reference external" href="https://en.wikipedia.org/wiki/Sparse_matrix">sparse data</a> usually refers to data which consist of primarily zeroes, with
 few values being nonzero.  While Howso Engine has no trouble with these sorts of data, this article is primarily concerned with data that
 are sparse in that the data contain <strong>missing values</strong>.  For example,</p>
 <div class="math notranslate nohighlight">
@@ -475,17 +477,17 @@ best to replace missing values that abide by this representation with a non-miss
 </div>
 <section id="what-a-missing-value-means">
 <h3>What a Missing Value Means<a class="headerlink" href="#what-a-missing-value-means" title="Permalink to this heading">#</a></h3>
-<p>When computing similarity between cases, a missing value is considered to be of maximal <span class="xref std std-ref">uncertainty</span>
+<p>When computing similarity between cases, a missing value is considered to be of maximal <a class="reference internal" href="terminology.html#uncertainty"><span class="std std-ref">uncertainty</span></a>
 for that feature.  This is true even if both cases have missing values in the same place.  After all, <span class="math notranslate nohighlight">\(NaN \neq NaN\)</span>.  As mentioned above,
 if the data you are working with contain missing values that represent something specific, those should be changed from missing values to something
 else.  If we were to treat those values as missing, matches would not be considered similar and may therefore harm predictions in that instance.</p>
 </section>
 <section id="how-well-are-sparse-data-handled">
 <h3>How Well are Sparse Data Handled<a class="headerlink" href="#how-well-are-sparse-data-handled" title="Permalink to this heading">#</a></h3>
-<p>As shown in the <a class="reference download internal" download="" href="../_downloads/6f60493535db01d36e4e816b1ba719e1/engine_sparse_data.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Sparse</span> <span class="pre">Data</span> <span class="pre">Prediction</span></code></a> recipe, we maintain high degrees of accuracy even as
+<p>As shown in the <a class="reference download external" download="" href="https://github.com/howsoai/howso-engine-recipes/blob/main/engine_sparse_data.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Sparse</span> <span class="pre">Data</span> <span class="pre">Prediction</span></code></a> recipe, we maintain high degrees of accuracy even as
 large percentages of the data are replaced with missing values.</p>
 <a class=""
-               data-lightbox="group-c09e73c8-1882-40d1-8331-a43e0a749ca6"
+               data-lightbox="group-5477d3bf-97a9-43a2-8a20-e1648f45acd7"
                href="../_images/sparse_data_plot1.png"
                title=""
                data-title=""
@@ -496,8 +498,8 @@ large percentages of the data are replaced with missing values.</p>
                      height="auto"
                      alt="A plot showing the accuracy, precision, and recall as sparsity increases from 0 to 100%."/>
                 </a></section>
-<section id="outputing-missing-values">
-<h3>Outputing Missing Values<a class="headerlink" href="#outputing-missing-values" title="Permalink to this heading">#</a></h3>
+<section id="outputting-missing-values">
+<h3>Outputting Missing Values<a class="headerlink" href="#outputting-missing-values" title="Permalink to this heading">#</a></h3>
 <p>In order to output missing values, the <code class="docutils literal notranslate"><span class="pre">allow_null</span></code> feature attribute must be set in the <code class="docutils literal notranslate"><span class="pre">bounds</span></code> of that feature.  If this is set, both
 discriminative and generative <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react()</span></code></a> s can output missing values.  This can be set using <a class="reference internal" href="../api_reference/utilities.html#howso.utilities.infer_feature_attributes" title="howso.utilities.infer_feature_attributes"><code class="xref py py-func docutils literal notranslate"><span class="pre">infer_feature_attributes()</span></code></a>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">features</span> <span class="o">=</span> <span class="n">infer_feature_attributes</span><span class="p">(</span>
@@ -579,7 +581,7 @@ discriminative and generative <a class="reference internal" href="../api_referen
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-guide">How-To Guide</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-a-missing-value-means">What a Missing Value Means</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-well-are-sparse-data-handled">How Well are Sparse Data Handled</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outputing-missing-values">Outputing Missing Values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outputting-missing-values">Outputting Missing Values</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#api-references">API References</a></li>

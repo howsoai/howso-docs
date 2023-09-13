@@ -5,7 +5,7 @@ Derived Features
 ================
 .. topic:: What is covered in this user guide
 
-    In this guide, you will learn the basics of derived features.  These features are not predicted or 
+    In this guide, you will learn the basics of derived features.  These features are not predicted or
     generated directly, but are instead derived using the supplied code and values from other features.
 
 
@@ -27,7 +27,7 @@ in the prerequisites using the ``fetch_data()`` function.
 
 Concepts & Terminology
 ----------------------
-This guide will explain the concept of **derived features**, which include both **derived action features** and **derived context 
+This guide will explain the concept of **derived features**, which include both **derived action features** and **derived context
 features**.  To follow along, you should be familiar with the following concepts:
 
 - :ref:`Trainee <user_guide/terminology:trainee>`
@@ -41,30 +41,31 @@ features**.  To follow along, you should be familiar with the following concepts
 
 Derived Feature Codes
 ^^^^^^^^^^^^^^^^^^^^^
-The way in which each derived feature is derived is determined by what is called a **derived feature code**.  This is a snippet of 
-`Amalgam <https://github.com/howsoai/amalgam>`_ -style code that determines how the derivation should be performed.  One such example 
+The way in which each derived feature is derived is determined by what is called a **derived feature code**.  This is a snippet of
+`Amalgam <https://github.com/howsoai/amalgam>`_ style code that determines how the derivation should be performed.  One such example
 of a derived feature code is:
 
 .. code-block::
+
     (* #hours-per-week 0 52)
 
 
-This would use the multiplication opcode (``*``) to derive a feature that is 52 times the ``"hours-per-week"`` feature for each case.  
-For a full list of opcodes that are available for derived feature codes, refer to the :doc:`Amalgam Language Documentation <TODO>`.
+This would use the multiplication opcode (``*``) to derive a feature that is 52 times the ``"hours-per-week"`` feature for each case.
+For a full list of opcodes that are available for derived feature codes, refer to the `Amalgam Language Documentation <https://howsoai.github.io/amalgam/>`_.
 
 .. note::
-    
-    When referencing feature values in a derived feature code (e.g., ``#hours-per-week 0``) the value returned is offset by the number 
-    which follows the reference.  When not using a time-series Trainee, this value can only be 0.  If you are using a time-series Trainee, 
-    however, this value can be larger which will then refer to that many cases previously in the time-series (e.g., ``#hours-per-week 1`` 
+
+    When referencing feature values in a derived feature code (e.g., ``#hours-per-week 0``) the value returned is offset by the number
+    which follows the reference.  When not using a time-series Trainee, this value can only be 0.  If you are using a time-series Trainee,
+    however, this value can be larger which will then refer to that many cases previously in the time-series (e.g., ``#hours-per-week 1``
     would refer to the previous case in a time-series, if it were part of a time-series).
 
 
 How-To Guide
 ------------
-For this guide, we will add a feature called ``"hours-per-year"`` to the ``Adult`` dataset.  This dataset already contains a feature 
-called ``"hours-per-week"``, so the relationship between the feature we have and the feature we want is mathematical in nature, and 
-so should not be broken when making predictions.  Adding derived features to a :class:`~Trainee` can be done either before or after 
+For this guide, we will add a feature called ``"hours-per-year"`` to the ``Adult`` dataset.  This dataset already contains a feature
+called ``"hours-per-week"``, so the relationship between the feature we have and the feature we want is mathematical in nature, and
+so should not be broken when making predictions.  Adding derived features to a :class:`~Trainee` can be done either before or after
 training.
 
 
@@ -73,7 +74,7 @@ Adding Derived Features Before Training
 To add a derived feature to a :class:`~Trainee` before training, simply modify the feature attributes:
 
 .. code-block:: python
-    
+
     features = infer_feature_attributes(df)
     hpy_features = {
         "type": "continuous",
@@ -95,17 +96,17 @@ That's quite a lot of code, so let's break it down.  After inferring feature att
         "derived_feature_code": "(* #hours-per-week 0 52)"
     }
 
-First, we note that this feature is continuous.  Second, we set this feature to be auto-derived on train.  This means that the feature will be computed 
-using its derived feature code as soon as cases are trained into the model.  If we did not do this, we would have to manually specify it in the ``derived_features`` 
-parameter to :meth:`Trainee.train` to ensure that the feature is created by the :class:`~Trainee`.  Finally, we set the derived feature code.  This is a 
-small piece of Amalgam-like code which determines how to derive the feature.  In this case, we use the multiplication opcode (``*``) to multiply each case's 
+First, we note that this feature is continuous.  Second, we set this feature to be auto-derived on train.  This means that the feature will be computed
+using its derived feature code as soon as cases are trained into the model.  If we did not do this, we would have to manually specify it in the ``derived_features``
+parameter to :meth:`Trainee.train` to ensure that the feature is created by the :class:`~Trainee`.  Finally, we set the derived feature code.  This is a
+small piece of Amalgam-like code which determines how to derive the feature.  In this case, we use the multiplication opcode (``*``) to multiply each case's
 value of hours-per-week (``#hours-per-week 0``, where the 0 is an offset and means the current case) by 52, the number of weeks in a year.
 
 
 Adding Derived Features After Training
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The process of adding a derived feature to a :class:`~Trainee` that has already been trained is quite simple.  It can be handled with a single call to 
+The process of adding a derived feature to a :class:`~Trainee` that has already been trained is quite simple.  It can be handled with a single call to
 :meth:`Trainee.add_feature`:
 
 .. code-block:: python
@@ -145,16 +146,16 @@ Once a model has one or more derived features, they can be used in reacts:
     print(reaction["action"])
 
 
-Note that both ``derived_action_features`` and ``derived_context_features`` must be a subset of ``action_features`` and ``context_features``, respectively.  
-A derived context feature is derived from the contexts that are being input to a :meth:`~Trainee.react`, while a derived action feature is derived from the 
+Note that both ``derived_action_features`` and ``derived_context_features`` must be a subset of ``action_features`` and ``context_features``, respectively.
+A derived context feature is derived from the contexts that are being input to a :meth:`~Trainee.react`, while a derived action feature is derived from the
 actions that are output from a :meth:`~Trainee.react`.
 
 
 Derived Features for Time-Series
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Derived features are used in time-series :class:`~Trainee` s and are automatically created by :func:`~howso.utilities.infer_feature_attributes` when the 
-``time_feature_name`` and ``id_feature_name`` parameters are supplied.  When :meth:`Trainee.react_series` is used, the lag features are used as derived 
-context features and the delta/rate features are used as derived action features.  Since :meth:`Trainee.react` supports more explainability details than 
+Derived features are used in time-series :class:`~Trainee` s and are automatically created by :func:`~howso.utilities.infer_feature_attributes` when the
+``time_feature_name`` and ``id_feature_name`` parameters are supplied.  When :meth:`Trainee.react_series` is used, the lag features are used as derived
+context features and the delta/rate features are used as derived action features.  Since :meth:`Trainee.react` supports more explainability details than
 :meth:`Trainee.react_series`, this can be useful to replicate the behavior of :meth:`~Trainee.react_series` using :meth:`~Trainee.react`.
 
 For more information on time-series, see the API Reference and the :doc:`time-series user guide <time_series>`
