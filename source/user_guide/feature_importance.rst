@@ -26,7 +26,7 @@ Notebook Recipe
 ---------------
 The following recipe will supplement the content this guide will cover:
 
-- :download:`Interpretability </_assets/recipes/2-interpretability.ipynb>`
+- :download:`Interpretability <https://github.com/howsoai/howso-engine-recipes/blob/main/2-interpretability.ipynb>`
 
 
 Concepts & Terminology
@@ -46,7 +46,7 @@ recommend being familiar with the following concepts:
 
 Local vs Global
 ^^^^^^^^^^^^^^^
-Feature Contributions and Feature MDA can be calculated and retrieved both locally and globally. Conceptually, global metrics are measured using all of the cases in the Trainee, while local metrics use either a specific subset of those cases or a set of new cases and calculates the metrics using cases most similar to those specified cases.  
+Feature Contributions and Feature MDA can be calculated and retrieved both locally and globally. Conceptually, global metrics are measured using all of the cases in the Trainee, while local metrics use either a specific subset of those cases or a set of new cases and calculates the metrics using cases most similar to those specified cases.
 
 - **Local** :py:meth:`Trainee.react` along with the ``details`` parameter can be used for local metrics.
 - **Global**  :py:meth:`Trainee.react_into_trainee` along with :py:meth:`Trainee.get_prediction_stats` are used for global metrics.
@@ -54,7 +54,7 @@ Feature Contributions and Feature MDA can be calculated and retrieved both local
 
 Robust vs Non-Robust
 ^^^^^^^^^^^^^^^^^^^^
-In order to calculate feature importance, Howso Engine measures the impact on the prediction by comparing predictions with and without the feature. The feature set without the feature of interest may include either all of the other features, or a combination of features that 
+In order to calculate feature importance, Howso Engine measures the impact on the prediction by comparing predictions with and without the feature. The feature set without the feature of interest may include either all of the other features, or a combination of features that
 may include any number of other features. Non-robust calculations use a leave-one-out approach to calculate these metrics, thus the metrics reflect the results when all features expect the feature of interest is used. Robust feature contributions instead sample from
 the power set set of all combinations of features without the feature of interest. Robust metrics are recommended as they encompass a greater variety of feature sets, and they include a calculation performance boost as the number of features increases.
 
@@ -63,8 +63,8 @@ How-To Guide
 
 Global Feature Importance
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-To get global feature importance metrics, :py:meth:`Trainee.react_into_trainee`, is first called on a trained and analyzed Trainee. :py:meth:`Trainee.react_into_trainee` calls react internally on the cases already trained into the Trainee and calculates the metrics. In this method, the desired metrics can be selected as parameters. These parameters are named indivdiually
-and setting them to ``True`` will cache the desired metrics. For example, ``mda_robust`` and ``contributions_robust`` will calculate the robust versions of MDA and Feature Contributions, while ``mda`` and ``contributions`` will calculate the non-robust versions. 
+To get global feature importance metrics, :py:meth:`Trainee.react_into_trainee`, is first called on a trained and analyzed Trainee. :py:meth:`Trainee.react_into_trainee` calls react internally on the cases already trained into the Trainee and calculates the metrics. In this method, the desired metrics can be selected as parameters. These parameters are named individually
+and setting them to ``True`` will cache the desired metrics. For example, ``mda_robust`` and ``contributions_robust`` will calculate the robust versions of MDA and Feature Contributions, while ``mda`` and ``contributions`` will calculate the non-robust versions.
 
 .. code-block:: python
     :caption: Global Feature Importance Calculation Example:
@@ -88,7 +88,7 @@ metrics may be specified together, but for this example they are separated. If r
 Local Feature Importance
 ^^^^^^^^^^^^^^^^^^^^^^^^
 To get local feature importance metrics, :py:meth:`Trainee.react`, is first called on a trained and analyzed Trainee. In this method, the desired metrics, ``feature_contributions`` and ``feature_mda``, can be selected as inputs to the ``details`` parameters as key value pairs from a dictionary. These parameters are named individually
-and setting them to ``True`` will calculate the desired metrics. To calculate the robust versions, ``robust_computation`` is set to True.  
+and setting them to ``True`` will calculate the desired metrics. To calculate the robust versions, ``robust_computation`` is set to True.
 
 .. code-block:: python
     :caption: Local Feature Importance Calculation Example:
@@ -100,8 +100,8 @@ and setting them to ``True`` will calculate the desired metrics. To calculate th
     }
 
     results = t.react(
-        df, 
-        context_features=context_features, 
+        df,
+        context_features=context_features,
         action_features=action_features,
         details=details
     )
@@ -126,7 +126,7 @@ Example Use-Cases
 In addition to the examples above, here are a few example use-cases for feature importance.
 
 - Bias Determination
-    - e.g., determing which features are important to your model to gauge the possibility of bias in the model.
+    - e.g., determining which features are important to your model to gauge the possibility of bias in the model.
 - Reducing :class:`~Trainee` size
     - By strategically removing unimportant features, information can be maintained while the size of the :class:`~Trainee`
       is decreased

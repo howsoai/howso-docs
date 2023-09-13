@@ -23,7 +23,6 @@ gen_requirements() {
 
 # Build docker container for local testing.
 build_local() {
-   copy_recipes
    docker build -f Dockerfile.local -t howso-docs-local .
 }
 
@@ -55,7 +54,6 @@ gen_licenses() {
 
   # Removing our own - since they aren't 3rd party
   pip uninstall -y howso-engine
-  pip uninstall -y howso-engine-api
   pip uninstall -y amalgam-lang
   pip uninstall -y howso-openapi-client
   pip install pip-licenses
@@ -69,21 +67,6 @@ gen_licenses() {
 gen_versions(){
   pip-compile -U versions.in --no-annotate --no-emit-index-url --no-header --allow-unsafe --resolver=backtracking --dry-run --quiet 2>&1 | grep -f versions.in | sed 's/==/=/g' | sed 's/-/_/g' > versions.properties
 }
-
-# Copy recipes to documentation source assets for download links
-copy_recipes(){
-  local source_dir="$root_dir/submodules/howso-engine-recipes"
-  local target_dir="$root_dir/source/_assets/recipes/"
-  cp -f "$source_dir/1-engine-intro.ipynb" "$target_dir"
-  cp -f "$source_dir/2-interpretability.ipynb" "$target_dir"
-  cp -f "$source_dir/3-anomaly_detection.ipynb" "$target_dir"
-  cp -f "$source_dir/4-audit_edit.ipynb" "$target_dir"
-  cp -f "$source_dir/5-bias_mitigation.ipynb" "$target_dir"
-  cp -f "$source_dir/6-validation.ipynb" "$target_dir"
-  cp -f "$source_dir/data/sparse_data_plot.png" "$target_dir"
-  cp -f "$source_dir/engine_sparse_data.ipynb" "$target_dir"
-}
-
 
 # Update the submodules
 update_submodules() {

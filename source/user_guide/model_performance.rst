@@ -10,9 +10,9 @@ Model Performance
 
 Objectives: what you will take away
 -----------------------------------
-- **Definitions & an understanding** of Residuals, MAE, and, Conditions using the Howso Engine.  
+- **Definitions & an understanding** of Residuals, MAE, and, Conditions using the Howso Engine.
 - **How-To** - retrieve the performance statistics that describe the Trainee's performance.
-- **API References** - where to find references to APIs used in this user guide. 
+- **API References** - where to find references to APIs used in this user guide.
 
 Prerequisites
 -------------
@@ -23,7 +23,7 @@ Notebook Recipe
 ---------------
 The following recipe will supplement the content this guide will cover:
 
-- :download:`Engine Intro </_assets/recipes/1-engine-intro.ipynb>`
+- :download:`Engine Intro <https://github.com/howsoai/howso-engine-recipes/blob/main/1-engine-intro.ipynb>`
 
 Concepts & Terminology
 ----------------------
@@ -87,7 +87,7 @@ Trainee, so the call to :meth:`~Trainee.react_into_trainee` is unnecessary. Inst
 The user from the example would want to do the following:
 
 .. code-block:: python
-    
+
     # Conditions for continuous features take a tuple
     # that represents the range of the condition.
     performance_stats = trainee.get_prediction_stats(condition={"age": [40, 9999]})

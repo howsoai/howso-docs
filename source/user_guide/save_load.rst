@@ -21,7 +21,7 @@ Notebook Recipe
 ---------------
 The following recipe will supplement the content this guide will cover:
 
-- :download:`Saving and Loading </_assets/recipes/save_load.ipynb>`
+- :download:`Engine Intro <https://github.com/howsoai/howso-engine-recipes/blob/main/1-engine-intro.ipynb>`
 
 Concepts & Terminology
 ----------------------
@@ -36,12 +36,12 @@ How-To Guide
 Methods for Saving and Loading
 ------------------------------
 
-Howso Engine can be operated locally or through the Howso Platform as part of an enterprise License. In order to accomodate both sets configurations, the Trainee has two sets of 
-saving and loading functions that is intended for different types of operations. 
+Howso Engine can be operated locally or through the Howso Platform as part of an enterprise License. In order to accommodate both sets configurations, the Trainee has two sets of
+saving and loading functions that is intended for different types of operations.
 
 - **File Operations** - A set of functions that allows a user to save and load to a specific file location. Trainees are saved as ``.caml`` files, which stands for Compressed `Amalgam <https://github.com/howsoai/amalgam/>`__. This is the method that will most likely be used by non enterprise users.
 
-- **Database Operations** The database set of operations provides better integration with databases and the Howso Platform. These methods abstract away some of the specifics of saving and loading and allows users to refer to Trainees by name only. Database operations revolves around the terminology, ``persist`` and ``acquire resources``, as opposed to save and load to better reflect the nature of what is occuring.
+- **Database Operations** The database set of operations provides better integration with databases and the Howso Platform. These methods abstract away some of the specifics of saving and loading and allows users to refer to Trainees by name only. Database operations revolves around the terminology, ``persist`` and ``acquire resources``, as opposed to save and load to better reflect the nature of what is occurring.
 
 
 File Operations
@@ -88,7 +88,7 @@ The  :meth:`Engine.load_trainee` function has one parameter, ``filename``, which
 
     # Import the `load_trainee` function
     from howso.engine import load_trainee
-    
+
     # Load the trainee
     t = load_trainee(file_path='example_location/example_trainee.caml')
 
@@ -102,7 +102,7 @@ As explained earlier, database operations is designed to be used with the Howso 
 .. code-block:: python
     :caption: Saving and Loading using Database Operations Example:
 
-    with reactor.Trainee(name=trainee_name, features=features) as t:
+    with engine.Trainee(name=trainee_name, features=features) as t:
         # Save the trainee.
         t.persist()
 

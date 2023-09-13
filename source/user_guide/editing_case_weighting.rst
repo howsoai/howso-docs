@@ -33,8 +33,8 @@ Notebook Recipe
 ---------------
 There are two recipes which supplement the content this guide will cover:
 
-- :download:`Auditing and Editing </_assets/recipes/4-audit_edit.ipynb>`
-- :download:`Bias Mitigation </_assets/recipes/5-bias_mitigation.ipynb>`
+- :download:`Auditing and Editing <https://github.com/howsoai/howso-engine-recipes/blob/main/4-audit_edit.ipynb>`
+- :download:`Bias Mitigation <https://github.com/howsoai/howso-engine-recipes/blob/main/5-bias_mitigation.ipynb>`
 
 
 Concepts & Terminology
@@ -50,7 +50,7 @@ recommend being familiar with the following concepts:
 - :ref:`Context Features <user_guide/terminology:context features>`
 - :doc:`Feature Attributes <feature_attributes>`
 
-Additional concepts to be familiar with are `classification <https://en.wikipedia.org/wiki/Statistical_classification>`_ and 
+Additional concepts to be familiar with are `classification <https://en.wikipedia.org/wiki/Statistical_classification>`_ and
 `overfitting <https://en.wikipedia.org/wiki/Overfitting>`_.
 
 
@@ -80,7 +80,7 @@ Similar to how feature weights determine how important a particular feature is, 
     plt.show()
 
 
-In the above plot, the right side of the second distribution is weighted to be 2.5 times as important as the left side.  This is 
+In the above plot, the right side of the second distribution is weighted to be 2.5 times as important as the left side.  This is
 reflected in the density of the distribution.
 
 
@@ -102,8 +102,8 @@ Adding features to a :class:`~Trainee` can be done with a single call to :meth:`
     t.add_feature("gender", feature_value="nb", feature_attributes={"type": "nominal"})
 
 
-In this example, we use it to add a nominal feature to each case in the model with a default value of ``"nb"``.  In addition, 
-features can also be added to only certain cases, or without updating the :class:`~Trainee`'s metadata.  For more information on 
+In this example, we use it to add a nominal feature to each case in the model with a default value of ``"nb"``.  In addition,
+features can also be added to only certain cases, or without updating the :class:`~Trainee`'s metadata.  For more information on
 the capabilities of :meth:`~Trainee.add_feature`, see the :ref:`API Reference <api-reference>`.
 
 
@@ -116,15 +116,15 @@ Adding & Using Case Weights
     t.add_feature("my_case_weight", feature_value=1.0)
 
 
-Note that we do not add any feature attributes here, since they are assumed to be continuous by default.  Once added, the case 
+Note that we do not add any feature attributes here, since they are assumed to be continuous by default.  Once added, the case
 weight feature can be used with :meth:`~Trainee.react` and other methods, e.g.:
 
 .. code-block:: python
-    
+
     t.react(contexts, action_features=["target"], use_case_weights=True, weight_feature="my_case_weight")
 
 
-Which will predict ``"target"`` while using the case weights stored in that feature.  Features which are already in the model may 
+Which will predict ``"target"`` while using the case weights stored in that feature.  Features which are already in the model may
 similarly be used as case weights. For example, the ``"fnlwgt"`` feature:
 
 .. code-block:: python
@@ -134,8 +134,8 @@ similarly be used as case weights. For example, the ``"fnlwgt"`` feature:
 
 Editing Cases
 ^^^^^^^^^^^^^
-Like adding features, editing cases is done with calls to :meth:`Trainee.edit_cases`.  Let's say we've consulted an expert and they 
-have determined that cases in the adult dataset with a ``workclass`` of ``0`` (an unknown work class) have universally been mis-classified.  
+Like adding features, editing cases is done with calls to :meth:`Trainee.edit_cases`.  Let's say we've consulted an expert and they
+have determined that cases in the adult dataset with a ``workclass`` of ``0`` (an unknown work class) have universally been mis-classified.
 We can edit cases that meet this condition with the following code:
 
 .. code-block:: python
@@ -143,13 +143,13 @@ We can edit cases that meet this condition with the following code:
     t.edit_cases([1], condition={"workclass": 0}, features=["target"])
 
 
-This will set the target for all cases that meet that condition to 1.  Cases may also be edited using their indices or on non-exact matches 
+This will set the target for all cases that meet that condition to 1.  Cases may also be edited using their indices or on non-exact matches
 of conditions.  For more information on :meth:`~Trainee.edit_cases`, see the :ref:`API Reference <api-reference>`.
 
 Manually Updating Case Weights
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-:meth:`~Trainee.edit_cases` can also be used to manually update case weights. Say we want to address some bias in the data by weighing women 
-who have high salaries more highly than those who don't, so that the :class:`~Trainee` is more likely to make balanced predictions.  That can 
+:meth:`~Trainee.edit_cases` can also be used to manually update case weights. Say we want to address some bias in the data by weighing women
+who have high salaries more highly than those who don't, so that the :class:`~Trainee` is more likely to make balanced predictions.  That can
 be done with the following code:
 
 .. code-block:: python
@@ -161,9 +161,9 @@ Of course, this is a surface-level attempt at addressing bias.  For more informa
 
 Removing Cases
 ^^^^^^^^^^^^^^
-Using an API that is very similar to that of :meth:`~Trainee.edit_cases`, :meth:`Trainee.remove_cases` can be used to remove cases from the 
-model.  If one or more cases are found to be invalid after they have been trained, they can be removed to ensure the model stays up-to-date 
-without needing to train or analyze again.  Let's say that it is discovered that the cases with a ``workclass`` of ``6`` (self-employed, not 
+Using an API that is very similar to that of :meth:`~Trainee.edit_cases`, :meth:`Trainee.remove_cases` can be used to remove cases from the
+model.  If one or more cases are found to be invalid after they have been trained, they can be removed to ensure the model stays up-to-date
+without needing to train or analyze again.  Let's say that it is discovered that the cases with a ``workclass`` of ``6`` (self-employed, not
 incorporated) were not reported correctly by the dataset creators.  We can remove those cases with the following code:
 
 .. code-block:: python
@@ -178,7 +178,7 @@ see the :ref:`API Reference <api-reference>`.
 
 Automatically Updating Case Weights
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-When using :meth:`~Trainee.remove_cases`, the weights from removed cases can be automatically distributed to their neighbors upon 
+When using :meth:`~Trainee.remove_cases`, the weights from removed cases can be automatically distributed to their neighbors upon
 removal using the ``distribute_weight_feature`` parameter. For example,
 
 .. code-block:: python
@@ -186,7 +186,7 @@ removal using the ``distribute_weight_feature`` parameter. For example,
     num_workclass_6 = len(df[df.workclass == 6])
     t.remove_cases(num_workclass_6, condition={"workclass": 6}, distribute_weight_feature="my_weight_feature")
 
-will remove the cases that satisfy the condition and distribute their weight to their neighbors, allowing cases which are similar 
+will remove the cases that satisfy the condition and distribute their weight to their neighbors, allowing cases which are similar
 to increase in importance as these are removed.
 
 

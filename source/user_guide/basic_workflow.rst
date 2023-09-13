@@ -9,15 +9,15 @@ Basic Workflow
 Objectives: what you will take away
 -----------------------------------
 - **Definitions & an understanding** of terminology unique to Howso Engine and what the basic workflow of using the Howso Engine looks.
-- **How-To** - Importing data, mapping features, training, analyzing, and making infrances using the Howso Engine.
-- **API References** - where to find references to APIs used in this user guide. 
+- **How-To** - Importing data, mapping features, training, analyzing, and making inferences using the Howso Engine.
+- **API References** - where to find references to APIs used in this user guide.
 
-Prerequisites: before you begin 
+Prerequisites: before you begin
 -------------------------------
-**Installation** 
+**Installation**
 
 - you have successfully :doc:`installed  Howso Engine <../getting_started/installing>`
-- You've installed these libraries: 
+- You've installed these libraries:
   - `pandas <https://pandas.pydata.org/>`__
   - `pmlb <https://github.com/EpistasisLab/pmlb>`__
 
@@ -29,7 +29,7 @@ Notebook Recipe
 ---------------
 The following recipe will supplement the content this guide will cover:
 
-- :download:`Engine Intro </_assets/recipes/1-engine-intro.ipynb>`
+- :download:`Engine Intro <https://github.com/howsoai/howso-engine-recipes/blob/main/1-engine-intro.ipynb>`
 
 Concepts & Terminology
 ----------------------
@@ -47,7 +47,7 @@ Howso Engine is a generalized Machine Learning (ML) and Artificial Intelligence 
 
 How-To Guide
 ------------
-Here we will walk through the steps of what a basic workflow might look like when using Howso Engine. First, we will load data into a pandas dataframe for use with Howso Engine. Then, we will use the Howso Engine to map attributes of the features, train a trainee, analyze, and react.
+Here we will walk through the steps of what a basic workflow might look like when using Howso Engine. First, we will load data into a pandas DataFrame for use with Howso Engine. Then, we will use the Howso Engine to map attributes of the features, train a trainee, analyze, and react.
 
 .. code-block:: python
 
@@ -71,16 +71,16 @@ This dataset consists of 14 Context Features and 1 Action Feature. The Action Fe
 
 Step 2 - Map Data
 ^^^^^^^^^^^^^^^^^
-Typically, an exploratory analysis is done on the data to get a general feel of the descriptive statistics and data attributes. 
+Typically, an exploratory analysis is done on the data to get a general feel of the descriptive statistics and data attributes.
 
-Methods like ``describe`` from a Pandas dataframe often automatically present these types of information of interest to a user, as shown below. While informative, these descriptive statistics are often used as a sanity check pre- and post-modeling and a model typically doesn't actually use any of these feature attributes.
+Methods like ``describe`` from a Pandas DataFrame often automatically present these types of information of interest to a user, as shown below. While informative, these descriptive statistics are often used as a sanity check pre- and post-modeling and a model typically doesn't actually use any of these feature attributes.
 
 .. code-block:: python
 
     df.describe()
 
 
-In the Howso Engine workflow, feature attributes are an essential part of model building and usage. By incorporating certain feature attributes into training process itself, Howso Engine gains another layer of information that will help in fine-tuning the results. 
+In the Howso Engine workflow, feature attributes are an essential part of model building and usage. By incorporating certain feature attributes into training process itself, Howso Engine gains another layer of information that will help in fine-tuning the results.
 
 In order to assist the user with defining the feature attributes, Howso has an :py:meth:`~howso.utilities.infer_feature_attributes` tool that automatically processes the dataset for the user.
 

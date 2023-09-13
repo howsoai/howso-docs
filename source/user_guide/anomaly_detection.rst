@@ -22,7 +22,7 @@ Notebook Recipe
 ---------------
 The following recipe will supplement the content this guide will cover:
 
-- :download:`Anomaly Detection </_assets/recipes/3-anomaly_detection.ipynb>`
+- :download:`Anomaly Detection <https://github.com/howsoai/howso-engine-recipes/blob/main/3-anomaly_detection.ipynb>`
 
 Concepts & Terminology
 ----------------------
@@ -42,17 +42,17 @@ How-To Guide
 ------------
 Anomaly detection, is one of the most significant domains of artificial intelligence and machine learning. Some of the most
 common use cases of anomaly detection are fraud detection, health monitoring, and attack detection in cybersecurity. The
-idea is to be able to detect datathat doesn't seem to fit in with the rest of the observed data. 
+idea is to be able to detect data that doesn't seem to fit in with the rest of the observed data.
 
 Detecting anomalies
 ^^^^^^^^^^^^^^^^^^^
 To detect anomalies using the Howso Engine, we recommend the use of either Familiarity Conviction or Similarity Conviction.
 Both of these metrics are forms of conviction, which makes them a ratio of surprisal. This ratio being an expected surprisal
-divided by an observed surprisal. 
+divided by an observed surprisal.
 
 These ratios are well designed for anomaly detection because cases which are not anomalous should have surprisals that are
 close to the expected. Consequently, non-anomalies should be expected to have conviction values of around ~1.0. Any values
-that deviate too far below or above 1.0 can be deemed as anomalies.     
+that deviate too far below or above 1.0 can be deemed as anomalies.
 
 
 Determining anomalies among trained data
@@ -60,7 +60,7 @@ Determining anomalies among trained data
 Computing conviction values for each case that has been trained in the model is very simple. To do this,
 use :meth:`Trainee.react_into_features`. This method takes parameters for each feature the user can compute
 and cache into each case. In the context of anomaly detection, the relevant parameters are
-`similarity_conviction`, `familiarity_conviction_addition`, and `familiarity_conviction_removal`. 
+`similarity_conviction`, `familiarity_conviction_addition`, and `familiarity_conviction_removal`.
 
 .. code-block:: python
 
@@ -74,7 +74,7 @@ values into each case. To then view all of the similarity conviction values, we 
 
     t.get_cases(['similarity_conviction'])
 
-Then with the simiarity conviction values for each case, users can determine what thresholds are appropriate
+Then with the similarity conviction values for each case, users can determine what thresholds are appropriate
 to use for anomaly detection and begin classifying each case as anomalous or not.
 
 
@@ -88,7 +88,7 @@ keywords as keys with 'True' values.
 .. code-block:: python
 
     reaction = t.react(
-        context_values, 
+        context_values,
         context_features=context_features,
         details={'similarity_conviction': True}
     )
@@ -106,7 +106,7 @@ predetermined thresholds that will determine if the case is classified as an ano
 
 Determining the threshold of conviction
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Since conviction values are a ratio of surprisals, these values must be interpretted carefully.
+Since conviction values are a ratio of surprisals, these values must be interpreted carefully.
 Conviction values below 1.0 indicate cases that are more surprising than expected while values
 above 1.0 indicate cases that are less surprising than expected.
 

@@ -36,13 +36,6 @@ Dependencies required for this project are kept in `requirements.in`. If
 you change the requirements, rerun the command shown in the top of
 the `requirements-<python version>.txt` file.
 
-## Recipe Notebooks
-
-Recipes are sourced from the submodule for reactor recipes. These files must be copied into the source directory
-so they are available when building sphinx. To copy them run the following command:
-
-    > ./bin/build.sh copy_recipes
-
 ## Building the Project
 
 To build the html of the docs use the Sphinx Makefile or make.bat commands
