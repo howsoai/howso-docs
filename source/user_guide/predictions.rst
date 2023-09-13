@@ -217,3 +217,11 @@ Reviewing the prediction shows **HighwayMPG** of 29.
 
     HighwayMPG
     29
+
+
+API References
+--------------
+- :meth:`Trainee.react`
+- :meth:`Trainee.react_into_trainee`
+- :meth:`Trainee.get_prediction_stats`
+- :meth:`Trainee.predict`
