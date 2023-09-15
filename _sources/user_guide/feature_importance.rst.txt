@@ -55,8 +55,8 @@ Feature Contributions and Feature MDA can be calculated and retrieved both local
 Robust vs Non-Robust
 ^^^^^^^^^^^^^^^^^^^^
 In order to calculate feature importance, Howso Engine measures the impact on the prediction by comparing predictions with and without the feature. The feature set without the feature of interest may include either all of the other features, or a combination of features that
-may include any number of other features. Non-robust calculations use a leave-one-out approach to calculate these metrics, thus the metrics reflect the results when all features expect the feature of interest is used. Robust feature contributions instead sample from
-the power set set of all combinations of features without the feature of interest. Robust metrics are recommended as they encompass a greater variety of feature sets, and they include a calculation performance boost as the number of features increases.
+may include any number of other features. Non-robust calculations use a leave-one-out approach to calculate these metrics, thus the metrics reflect the results when all features expect the feature of interest is used. Robust feature contributions compares the results from sampling from
+the power set of all combinations with and without the feature of interest. Robust metrics are recommended as they encompass a greater variety of feature sets, and they include a calculation performance boost as the number of features increases.
 
 How-To Guide
 ------------

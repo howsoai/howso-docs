@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Handling Sparse Data &#8212; Howso Engine Documentation</title>
+    <title>Prediction Auditing &#8212; Howso Engine Documentation</title>
   
   
   
@@ -49,14 +49,11 @@
     <script src="../_static/design-tabs.js"></script>
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/sparse_data';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/understanding_predictions';</script>
     <script src="../_static/js/icon.js"></script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Terminology" href="terminology.html" />
-    <link rel="prev" title="Reinforcement Learning" href="reinforcement_learning.html" />
     <link rel="icon" type="image/svg+xml" href="/favicons/favicon.svg">
     <link rel="mask-icon" href="/favicons/favicon.svg">
 
@@ -152,7 +149,7 @@
                     </li>
                 
 
-                    <li class="nav-item current active">
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="index.html">
                         User Guides
                       </a>
@@ -247,7 +244,7 @@ document.write(`
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
         
 
   
@@ -272,7 +269,7 @@ document.write(`
                     </li>
                 
 
-                    <li class="nav-item current active">
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="index.html">
                         User Guides
                       </a>
@@ -332,33 +329,6 @@ document.write(`
     
   </div>
   
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
-     aria-label="Section Navigation">
-  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="basic_workflow.html">Basic Workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="predictions.html">Predictions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="feature_attributes.html">Feature Attributes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model_performance.html">Model Performance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="influential_data_counterfactuals_uncertainty.html">Influential Data, Counterfactuals, and Uncertainties of Predictions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="derived_features.html">Derived Features</a></li>
-<li class="toctree-l1"><a class="reference internal" href="anomaly_detection.html">Anomaly Detection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="generative_AI_synth.html">Generative Output and Data Synthesis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="time_series.html">Time Series and Sequential Data Analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bias_mitigation.html">Bias Mitigation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="feature_importance.html">Feature Importance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="save_load.html">Saving and Loading</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reinforcement_learning.html">Reinforcement Learning</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Handling Sparse Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
-<li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
-</ul>
-</div>
-</nav></div>
-    </div>
-  
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
@@ -391,10 +361,7 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    
-    <li class="breadcrumb-item"><a href="index.html" class="nav-link">User Guides</a></li>
-    
-    <li class="breadcrumb-item active" aria-current="page">Handling Sparse Data</li>
+    <li class="breadcrumb-item active" aria-current="page">Prediction Auditing</li>
   </ul>
 </nav>
 </div>
@@ -411,22 +378,22 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="handling-sparse-data">
-<h1>Handling Sparse Data<a class="headerlink" href="#handling-sparse-data" title="Permalink to this heading">#</a></h1>
+  <section id="prediction-auditing">
+<h1>Prediction Auditing<a class="headerlink" href="#prediction-auditing" title="Permalink to this heading">#</a></h1>
 <aside class="topic">
 <p class="topic-title">What is covered in this user guide</p>
-<p>In this guide, you will learn the basics of using sparse data in your <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> s as well as
-understand some of the prediction performance characteristics around data of increasing sparsity.</p>
+<p>In this guide, you will learn how to audit the cases in your Trainee, including determining which cases influence a specific prediction, as well as which cases influence the <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> ‘s predictions as a whole.</p>
 </aside>
-<section id="objectives">
-<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this heading">#</a></h2>
+<section id="objectives-what-you-will-take-away">
+<h2>Objectives: what you will take away<a class="headerlink" href="#objectives-what-you-will-take-away" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Definitions &amp; Understanding</strong> of what sparse data are, how to use them with a <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a>, and
-how prediction performance changes as data sparsity increases.</p></li>
+<li><p><strong>Definitions &amp; Understanding</strong> Difference between similar/influential cases vs case importance and robust vs non-robust <a class="reference internal" href="terminology.html#contribution"><span class="std std-ref">Case Contributions</span></a> and <a class="reference internal" href="terminology.html#mda"><span class="std std-ref">Case MDA</span></a>.</p></li>
+<li><p><strong>How-To</strong> audit specific cases as well as determine which cases impact Trainee predictions.</p></li>
+<li><p><strong>API References</strong> How to use <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a>.</p></li>
 </ul>
 </section>
-<section id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
+<section id="prerequisites-before-you-begin">
+<h2>Prerequisites: before you begin<a class="headerlink" href="#prerequisites-before-you-begin" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>You have successfully <a class="reference internal" href="../getting_started/installing.html"><span class="doc">installed Howso Engine</span></a></p></li>
 <li><p>You have <a class="reference internal" href="basic_workflow.html"><span class="doc">loaded, configured, trained, and analyzed data</span></a></p></li>
@@ -434,92 +401,115 @@ how prediction performance changes as data sparsity increases.</p></li>
 </section>
 <section id="notebook-recipe">
 <h2>Notebook Recipe<a class="headerlink" href="#notebook-recipe" title="Permalink to this heading">#</a></h2>
-<p>The following recipe will supplement the content this guide will cover and details the efficacy of predicting increasingly sparse data:</p>
+<p>The following recipe will supplement the content this guide will cover:</p>
 <ul class="simple">
-<li><p><a class="reference download external" download="" href="https://github.com/howsoai/howso-engine-recipes/blob/main/engine_sparse_data.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Sparse</span> <span class="pre">Data</span> <span class="pre">Prediction</span></code></a></p></li>
+<li><p><a class="reference download external" download="" href="https://github.com/howsoai/howso-engine-recipes/blob/main/2-interpretability.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Interpretability</span></code></a></p></li>
 </ul>
 </section>
 <section id="concepts-terminology">
 <h2>Concepts &amp; Terminology<a class="headerlink" href="#concepts-terminology" title="Permalink to this heading">#</a></h2>
-<p>This guide focuses primarily on the concept of sparse data.  We additionally recommend being familiar with the following concepts:</p>
+<p>The main piece of terminology this guide introduces is the concept of case auditing. To understand this, we
+recommend being familiar with the following concepts:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="terminology.html#trainee"><span class="std std-ref">Trainee</span></a></p></li>
 <li><p><a class="reference internal" href="terminology.html#react"><span class="std std-ref">React</span></a></p></li>
-<li><p><a class="reference internal" href="terminology.html#case"><span class="std std-ref">Case</span></a></p></li>
-<li><p><a class="reference internal" href="terminology.html#feature"><span class="std std-ref">Feature</span></a></p></li>
-<li><p><a class="reference internal" href="terminology.html#action-features"><span class="std std-ref">Action Features</span></a></p></li>
-<li><p><a class="reference internal" href="terminology.html#context-features"><span class="std std-ref">Context Features</span></a></p></li>
-<li><p><a class="reference internal" href="feature_attributes.html"><span class="doc">Feature Attributes</span></a></p></li>
+<li><p><a class="reference internal" href="terminology.html#influential-cases"><span class="std std-ref">Influential Cases</span></a></p></li>
+<li><p><a class="reference internal" href="terminology.html#most-similar-cases"><span class="std std-ref">Most Similar Cases</span></a></p></li>
+<li><p><a class="reference internal" href="terminology.html#mda"><span class="std std-ref">Case MDA</span></a></p></li>
+<li><p><a class="reference internal" href="terminology.html#contribution"><span class="std std-ref">Case Contributions</span></a></p></li>
 </ul>
-<section id="sparse-data">
-<h3>Sparse Data<a class="headerlink" href="#sparse-data" title="Permalink to this heading">#</a></h3>
-<p>The term <a class="reference external" href="https://en.wikipedia.org/wiki/Sparse_matrix">sparse data</a> usually refers to data which consist of primarily zeroes, with
-few values being nonzero.  While Howso Engine has no trouble with these sorts of data, this article is primarily concerned with data that
-are sparse in that the data contain <strong>missing values</strong>.  For example,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{bmatrix}
-  1   &amp; NaN &amp; a      &amp; 5\\
-  2   &amp; -2  &amp; (null) &amp; 6\\
-  NaN &amp; -3  &amp; c      &amp; NaN\\
-  4   &amp; -4  &amp; d      &amp; 8\\
-\end{bmatrix}.\end{split}\]</div>
-</section>
 </section>
 <section id="how-to-guide">
 <h2>How-To Guide<a class="headerlink" href="#how-to-guide" title="Permalink to this heading">#</a></h2>
-<p>Howso Engine handles sparse and missing data without any extra setup.  Simply <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.train" title="howso.engine.Trainee.train"><code class="xref py py-meth docutils literal notranslate"><span class="pre">train()</span></code></a> your data, with or without missing values, and the
-Engine will handle them.  There is no need to preprocess missing data and, in fact, preprocessing missing data may <strong>harm predictive power or robustness
-to unseen data</strong>.  As such, we recommend performing no preprocessing if possible.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Preprocessing may be warranted if missing values are used to represent something with specific meaning in your dataset.  In that instance, it would be
-best to replace missing values that abide by this representation with a non-missing value and leave any values which are truly missing as they are.</p>
-</div>
-<section id="what-a-missing-value-means">
-<h3>What a Missing Value Means<a class="headerlink" href="#what-a-missing-value-means" title="Permalink to this heading">#</a></h3>
-<p>When computing similarity between cases, a missing value is considered to be of maximal <a class="reference internal" href="terminology.html#uncertainty"><span class="std std-ref">uncertainty</span></a>
-for that feature.  This is true even if both cases have missing values in the same place.  After all, <span class="math notranslate nohighlight">\(NaN \neq NaN\)</span>.  As mentioned above,
-if the data you are working with contain missing values that represent something specific, those should be changed from missing values to something
-else.  If we were to treat those values as missing, matches would not be considered similar and may therefore harm predictions in that instance.</p>
 </section>
-<section id="how-well-are-sparse-data-handled">
-<h3>How Well are Sparse Data Handled<a class="headerlink" href="#how-well-are-sparse-data-handled" title="Permalink to this heading">#</a></h3>
-<p>As shown in the <a class="reference download external" download="" href="https://github.com/howsoai/howso-engine-recipes/blob/main/engine_sparse_data.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Sparse</span> <span class="pre">Data</span> <span class="pre">Prediction</span></code></a> recipe, we maintain high degrees of accuracy even as
-large percentages of the data are replaced with missing values.</p>
-<a class=""
-               data-lightbox="group-9206a823-e2c5-42a9-9cc5-c7bdab8db05d"
-               href="../_images/sparse_data_plot1.png"
-               title=""
-               data-title=""
-               
-               ><img src="../_images/sparse_data_plot1.png"
-                     class=""
-                     width="100%"
-                     height="auto"
-                     alt="A plot showing the accuracy, precision, and recall as sparsity increases from 0 to 100%."/>
-                </a></section>
-<section id="outputting-missing-values">
-<h3>Outputting Missing Values<a class="headerlink" href="#outputting-missing-values" title="Permalink to this heading">#</a></h3>
-<p>In order to output missing values, the <code class="docutils literal notranslate"><span class="pre">allow_null</span></code> feature attribute must be set in the <code class="docutils literal notranslate"><span class="pre">bounds</span></code> of that feature.  If this is set, both
-discriminative and generative <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react()</span></code></a> s can output missing values.  This can be set using <a class="reference internal" href="../api_reference/utilities.html#howso.utilities.infer_feature_attributes" title="howso.utilities.infer_feature_attributes"><code class="xref py py-func docutils literal notranslate"><span class="pre">infer_feature_attributes()</span></code></a>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">features</span> <span class="o">=</span> <span class="n">infer_feature_attributes</span><span class="p">(</span>
-  <span class="n">df</span><span class="p">,</span>
-  <span class="n">features</span><span class="o">=</span><span class="p">{</span>
-    <span class="s2">&quot;Clump_Thickness&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;bounds&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;allow_null&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}}</span>
-  <span class="p">}</span>
+<section id="influential-cases-and-most-similar-cases">
+<h2>Influential Cases and Most Similar Cases<a class="headerlink" href="#influential-cases-and-most-similar-cases" title="Permalink to this heading">#</a></h2>
+<p>Howso allows the user to audit individual cases to determine the closest cases that may influence a prediction. <strong>Most Similar Cases</strong> allows the user to return a designated number of most similar cases,
+while the <strong>Most Influential Cases</strong> only returns cases that have an influence on the prediction. If the desired number of most similar cases is greater than the number of most influential cases, then the most influential
+cases is a subset of the most similar cases.</p>
+<p>The parameters to get the most similar cases or influential cases can be accessed in the <code class="docutils literal notranslate"><span class="pre">details</span></code> parameter as a key value pair shown below. <code class="docutils literal notranslate"><span class="pre">num_most_similar_cases</span></code> allows the user to specify exactly how many similar cases to return.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">details</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;influential_cases&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;most_similar_cases&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;num_most_similar_cases&#39;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">reaction</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">,</span>
+    <span class="n">context_features</span><span class="o">=</span><span class="n">context_features</span><span class="p">,</span>
+    <span class="n">action_features</span><span class="o">=</span><span class="n">action_features</span><span class="p">,</span>
+    <span class="n">details</span><span class="o">=</span><span class="n">details</span>
 <span class="p">)</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">Trainee</span><span class="p">(</span><span class="n">features</span><span class="o">=</span><span class="n">features</span><span class="p">)</span>
-<span class="n">t</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-<span class="n">t</span><span class="o">.</span><span class="n">react</span><span class="p">(</span><span class="n">contexts</span><span class="o">=</span><span class="n">contexts</span><span class="p">,</span> <span class="n">action_features</span><span class="o">=</span><span class="n">action_features</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>In order to retrieve the calculated stats, they can be retrieved from the <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a> output dictionary. They are stored under the <code class="docutils literal notranslate"><span class="pre">explanation</span></code> key under the name of the metric.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">influential</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">reaction</span><span class="p">[</span><span class="s1">&#39;explanation&#39;</span><span class="p">][</span><span class="s1">&#39;influential_cases&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">most_similar_cases</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">reaction</span><span class="p">[</span><span class="s1">&#39;explanation&#39;</span><span class="p">][</span><span class="s1">&#39;most_similar_cases&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="case-importance">
+<h2>Case Importance<a class="headerlink" href="#case-importance" title="Permalink to this heading">#</a></h2>
+<p>As opposed to influential and similar cases which examines the influence of cases on a single case or prediction, case importance examines how important a case is in regards to the overall predictions on a group of cases. Case importance share the same underlying methodology with  <a class="reference internal" href="feature_importance.html"><span class="doc">Feature Importance</span></a>.
+Unlike feature contributions, case contributions are calculated just locally. Conceptually, local metrics use either a specific subset of the cases that are trained into the Trainee or a set of new cases.</p>
+<section id="robust-vs-non-robust">
+<h3>Robust vs Non-Robust<a class="headerlink" href="#robust-vs-non-robust" title="Permalink to this heading">#</a></h3>
+<p>In order to calculate case importance, Howso Engine measures the impact on the prediction by comparing predictions with and without the case. The case set without the case of interest may include either all of the other cases, or a combination of cases that
+may include any number of other cases. Non-robust calculations use a leave-one-out approach to calculate these metrics, thus the metrics reflect the results when all cases except the case of interest is used. Robust case contributions compares the results from sampling from
+the power set of all combinations with and without the case of interest. Robust metrics are recommended as they encompass a greater variety of case sets, and they include a calculation performance boost as the number of cases increases.</p>
+<p>To get the case importance metrics, <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a>, is first called on a trained and analyzed Trainee. In this method, the desired metrics, <code class="docutils literal notranslate"><span class="pre">case_contributions</span></code> and <code class="docutils literal notranslate"><span class="pre">case_mda</span></code>, can be selected as inputs to the <code class="docutils literal notranslate"><span class="pre">details</span></code> parameters as key value pairs from a dictionary. These parameters are named individually
+and setting them to <code class="docutils literal notranslate"><span class="pre">True</span></code> will calculate the desired metrics. To calculate the robust versions, <code class="docutils literal notranslate"><span class="pre">robust_computation</span></code> is set to True.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">details</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;robust_computation&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;case_contributions&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;case_mda&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">reaction</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">,</span>
+    <span class="n">context_features</span><span class="o">=</span><span class="n">context_features</span><span class="p">,</span>
+    <span class="n">action_features</span><span class="o">=</span><span class="n">action_features</span><span class="p">,</span>
+    <span class="n">details</span><span class="o">=</span><span class="n">details</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>These metrics can be retrieved the same way as the method to retrieve the most similar cases. Whether these metrics are robust or non-robust is determined when the metrics
+are calculated in <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a> from the previous step.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">robust_case_contributions</span> <span class="o">=</span> <span class="n">reaction</span><span class="p">[</span><span class="s1">&#39;explanation&#39;</span><span class="p">][</span><span class="s1">&#39;case_contributions&#39;</span><span class="p">]</span>
+<span class="n">robust_case_contributions</span> <span class="o">=</span> <span class="n">reaction</span><span class="p">[</span><span class="s1">&#39;explanation&#39;</span><span class="p">][</span><span class="s1">&#39;case_mda&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Contributions and MDA are also metrics for features and not just cases, so please be aware when reading other guides that may use those terms.</p>
+</div>
+</section>
+<section id="example-use-cases">
+<h3>Example Use-Cases<a class="headerlink" href="#example-use-cases" title="Permalink to this heading">#</a></h3>
+<p>In addition to the examples above, here are a few example use-cases for for similar cases and case importance.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Auditability and Tracing</dt><dd><ul>
+<li><p>e.g., determining which cases are important to the prediction to manually audit the prediction and learn why a prediction was made.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Reducing <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> size</dt><dd><ul>
+<li><p>By strategically removing unimportant cases, information can be maintained while the size of the <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a>
+is decreased</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
 </section>
 </section>
 <section id="api-references">
 <h2>API References<a class="headerlink" href="#api-references" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="../api_reference/utilities.html#howso.utilities.infer_feature_attributes" title="howso.utilities.infer_feature_attributes"><code class="xref py py-func docutils literal notranslate"><span class="pre">howso.utilities.infer_feature_attributes()</span></code></a></p></li>
-<li><p><a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-func docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a></p></li>
+<li><p><a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a></p></li>
 </ul>
 </section>
 </section>
@@ -535,24 +525,6 @@ discriminative and generative <a class="reference internal" href="../api_referen
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="reinforcement_learning.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Reinforcement Learning</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="terminology.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Terminology</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -571,17 +543,15 @@ discriminative and generative <a class="reference internal" href="../api_referen
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives-what-you-will-take-away">Objectives: what you will take away</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites-before-you-begin">Prerequisites: before you begin</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-recipe">Notebook Recipe</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts-terminology">Concepts &amp; Terminology</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sparse-data">Sparse Data</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-guide">How-To Guide</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-a-missing-value-means">What a Missing Value Means</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-well-are-sparse-data-handled">How Well are Sparse Data Handled</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#outputting-missing-values">Outputting Missing Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts-terminology">Concepts &amp; Terminology</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-guide">How-To Guide</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#influential-cases-and-most-similar-cases">Influential Cases and Most Similar Cases</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-importance">Case Importance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robust-vs-non-robust">Robust vs Non-Robust</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-use-cases">Example Use-Cases</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#api-references">API References</a></li>
