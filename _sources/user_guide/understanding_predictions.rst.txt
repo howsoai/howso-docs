@@ -1,8 +1,8 @@
 .. currentmodule:: howso.engine
 
 
-Prediction Auditing
-===================
+Understanding Predictions
+=========================
 .. topic:: What is covered in this user guide
 
     In this guide, you will learn how to audit the cases in your Trainee, including determining which cases influence a specific prediction, as well as which cases influence the :class:`~Trainee` 's predictions as a whole.
