@@ -28,6 +28,7 @@ To get started, be sure and start with these guides:
     generative_AI_synth
     time_series
     bias_mitigation
+    understand_predictions
     feature_importance
     save_load
     reinforcement_learning
