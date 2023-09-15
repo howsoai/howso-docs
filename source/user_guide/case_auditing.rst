@@ -35,8 +35,6 @@ recommend being familiar with the following concepts:
 
 - :ref:`Trainee <user_guide/terminology:trainee>`
 - :ref:`React <user_guide/terminology:react>`
-- :ref:`Action Features <user_guide/terminology:action features>`
-- :ref:`Context Features <user_guide/terminology:context features>`
 - :ref:`Influential Cases <user_guide/terminology:Influential Cases>`
 - :ref:`Most Similar Cases <user_guide/terminology:Most Similar Cases>`
 - :ref:`Case MDA <user_guide/terminology:MDA>`
@@ -138,5 +136,3 @@ In addition to the examples above, here are a few example use-cases for for simi
 API References
 --------------
 - :meth:`Trainee.react`
-
-
