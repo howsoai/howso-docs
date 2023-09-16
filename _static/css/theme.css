@@ -1,3 +1,9 @@
+html {
+    --pst-font-family-base: "Inter", var(--pst-font-family-base-system);
+    --pst-font-family-heading: "Inter", var(--pst-font-family-base-system);
+    --pst-font-weight-heading: 300;
+}
+
 html[data-theme="light"] {
     --pst-color-primary: #3E63DD;
     --pst-color-secondary: #0091FF;
