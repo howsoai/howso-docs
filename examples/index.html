@@ -236,6 +236,10 @@ document.write(`
   
 
   
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
 </div>
 
     </nav>
@@ -423,6 +427,75 @@ document.write(`
 </dd>
 </dl>
 </li>
+<li><dl class="simple">
+<dt><a class="reference download external" download="" href="https://github.com/howsoai/howso-engine-recipes/blob/main/engine_sparse_data.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Sparse</span> <span class="pre">Data</span> <span class="pre">and</span> <span class="pre">Null</span> <span class="pre">Handling</span></code></a></dt><dd><ul class="simple">
+<li><p>Sparse data and nulls (missing data) typically need preprocessing in most models, but not Howso. In fact, Howso has notable robustness when it comes to working with data that contain them. Use this example as proof for why you don’t need to impute missing values with Howso!</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><a class="reference download external" download="" href="https://github.com/howsoai/howso-engine-recipes/blob/main/engine_timeseries.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Time</span> <span class="pre">Series</span></code></a></dt><dd><ul class="simple">
+<li><p>Time series analysis can provided additional insight into trends within your data. Use this example for your Time Series use-cases!</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><a class="reference download external" download="" href="https://github.com/howsoai/howso-engine-recipes/blob/main/engine_clustering.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Clustering:</span> <span class="pre">Pairwise-Distance</span> <span class="pre">Calculation</span></code></a></dt><dd><ul class="simple">
+<li><p>This example demonstrates Howso’s ability to calculate pairwise distances between training cases. Distances can be used for a variety of use cases, including clustering algorithms. Use this recipe for your Clustering use-cases!</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><a class="reference download external" download="" href="https://github.com/howsoai/howso-engine-recipes/blob/main/engine_fuzzy_matching.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Population</span> <span class="pre">Segmentation</span></code></a></dt><dd><ul class="simple">
+<li><p>This example demonstrates Howso’s ability to use <cite>case_mda</cite> to identify centroids in the data, then use the <cite>influential_cases</cite> of each centroid to find its corresponding members. Use this recipe for learning more about the Population Segments in your data!</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><a class="reference download external" download="" href="https://github.com/howsoai/howso-engine-recipes/blob/main/engine_drift_monitoring.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Model</span> <span class="pre">Drift</span> <span class="pre">Monitoring</span></code></a></dt><dd><ul class="simple">
+<li><p>Drift occurs when a trained model no longer reflects the desired aspects of reality, leading to poor predictions. Howso Engine can be used to monitor any potential drift by evaluating bias in both new and ongoing models using online learning and interpretability. Use this example to build your Drift Monitoring use-cases!</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><a class="reference download external" download="" href="https://github.com/howsoai/howso-engine-recipes/blob/main/engine_generative_react.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Generative</span> <span class="pre">React</span> <span class="pre">and</span> <span class="pre">Synthetic</span> <span class="pre">Data</span> <span class="pre">Generation</span></code></a></dt><dd><ul class="simple">
+<li><p>A defining feature of Howso is that it can perform <cite>generative analysis</cite> as well as <cite>discriminative analysis</cite>. This example shows how <cite>generative analysis</cite> can be used for synthetic data creation, which is the foundation for our enterprise product <a class="reference external" href="https://www.howso.com/synthesizer">Howso Synthesizer</a> ™ !</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</section>
+<section id="applied-use-cases">
+<h1>Applied Use-Cases<a class="headerlink" href="#applied-use-cases" title="Permalink to this heading">#</a></h1>
+<p>These notebooks provide an overview of applying Howso to make predictions based on historical data, and harnessing Howso’s interpretability to understand why the predictions were made. Here, we demonstrate these capabilities on different datasets, and they explore concepts such as anomalies analysis, reviewing the data that contributed to the predictions, understanding the uncertainty of the predictions, and more. These are powerful tools for gaining insights from your data, so follow along and generate ideas for your own projects!</p>
+<ol class="arabic simple" start="13">
+<li><dl class="simple">
+<dt><a class="reference download external" download="" href="https://github.com/howsoai/howso-engine-recipes/blob/main/engine_interpret_react.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Asteroids</span></code></a></dt><dd><ul class="simple">
+<li><p>This example uses Asteroid data to demonstrate Howso’s interpretability to understand why the predictions were made. We build a Howso Engine Trainee to predict various information about different asteroids, understand the influential cases on the predictions, and understand the uncertainty of the predictions.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><a class="reference download external" download="" href="https://github.com/howsoai/howso-engine-recipes/blob/main/engine_car_type_demo.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Cars</span></code></a></dt><dd><ul class="simple">
+<li><p>This example uses Car data to demonstrate Howso’s interpretability to understand why the predictions were made. We train Howso Engine to predict classes of vehicles, understand potential anomalies, investigate vehicles on a case-by-case basis, and review the data that contributed to the predictions.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><a class="reference download external" download="" href="https://github.com/howsoai/howso-engine-recipes/blob/main/engine_predict_explain_show.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Census</span></code></a></dt><dd><ul class="simple">
+<li><p>This example uses the Adult data set to demonstrate which cases and features contribute to predictions, anomalies analysis, and potential improvements to gain more insight into the data.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
 </ol>
 </section>
 
@@ -455,6 +528,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Examples</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#applied-use-cases">Applied Use-Cases</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
