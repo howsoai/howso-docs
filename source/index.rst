@@ -1,9 +1,9 @@
-Howso Engine |tmk|
+Howso Engine™
 ==================
 
-The **Howso Engine** |tmk| is a natively and fully explainable ML engine, serving as an alternative to black box AI
+The **Howso Engine™** is a natively and fully explainable ML engine, serving as an alternative to black box AI
 neural networks. It’s core features give users data exploration and machine learning capabilities through the creation
-and use of Trainees that help users store, explore, and analyze the relationships in their data. **Howso** |tmk| leverages
+and use of Trainees that help users store, explore, and analyze the relationships in their data. **Howso™** leverages
 an instance-based learning approach with strong ties to the `k-nearest neighbors algorithm <https://en.wikipedia.org/wiki/K-nearest_neighbors_algorithm>`__
 and `information theory <https://en.wikipedia.org/wiki/Information_theory>`__ to scale for real world applications.
 
