@@ -14,7 +14,7 @@ Use these Jupyter Notebook examples as "recipes" for building your own use-cases
 5. :download:`Bias Mitigation <https://github.com/howsoai/howso-engine-recipes/blob/main/5-bias_mitigation.ipynb>`
     - Does your historical data contain bias such as men making more money than women? In traditional ML, this pattern will be used for any future predictions. Learn how to mitigate these biases in this example!
 6. :download:`Validation <https://github.com/howsoai/howso-engine-recipes/blob/main/6-validation.ipynb>`
-    - You may have noticed we don't use the traditional ML approach of `train-test-split <https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html>`_ in our example workflows. There are use-cases, especially in small datasets, where a user cannot afford to further cut their data away from training the model. Use this example as proof for why train-test-splits are no longer needed when using Howso |tmk| !
+    - You may have noticed we don't use the traditional ML approach of `train-test-split <https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html>`_ in our example workflows. There are use-cases, especially in small datasets, where a user cannot afford to further cut their data away from training the model. Use this example as proof for why train-test-splits are no longer needed when using Howso™ !
 7. :download:`Sparse Data and Null Handling <https://github.com/howsoai/howso-engine-recipes/blob/main/engine_sparse_data.ipynb>`
     - Sparse data and nulls (missing data) typically need preprocessing in most models, but not Howso. In fact, Howso has notable robustness when it comes to working with data that contain them. Use this example as proof for why you don't need to impute missing values with Howso!
 8. :download:`Time Series <https://github.com/howsoai/howso-engine-recipes/blob/main/engine_timeseries.ipynb>`
@@ -26,7 +26,7 @@ Use these Jupyter Notebook examples as "recipes" for building your own use-cases
 11. :download:`Model Drift Monitoring <https://github.com/howsoai/howso-engine-recipes/blob/main/engine_drift_monitoring.ipynb>`
         - Drift occurs when a trained model no longer reflects the desired aspects of reality, leading to poor predictions. Howso Engine can be used to monitor any potential drift by evaluating bias in both new and ongoing models using online learning and interpretability. Use this example to build your Drift Monitoring use-cases!
 12. :download:`Generative React and Synthetic Data Generation <https://github.com/howsoai/howso-engine-recipes/blob/main/engine_generative_react.ipynb>`
-        - A defining feature of Howso is that it can perform `generative analysis` as well as `discriminative analysis`. This example shows how `generative analysis` can be used for synthetic data creation, which is the foundation for our enterprise product `Howso Synthesizer <https://www.howso.com/synthesizer>`_ |tmk| !
+        - A defining feature of Howso is that it can perform `generative analysis` as well as `discriminative analysis`. This example shows how `generative analysis` can be used for synthetic data creation, which is the foundation for our enterprise product `Howso Synthesizer <https://www.howso.com/synthesizer>`_™ !
 
 Applied Use-Cases
 ========

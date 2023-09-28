@@ -6,7 +6,7 @@ Terminology
 Concepts
 ^^^^^^^^
 
-Howso's |tmk| technology operates a little differently than traditional machine learning (ML) systems and thus certain terminology is
+Howso's™ technology operates a little differently than traditional machine learning (ML) systems and thus certain terminology is
 specific to Howso.
 
 Included below are some core concepts and details on how to use them.
