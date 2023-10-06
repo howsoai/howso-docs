@@ -454,7 +454,7 @@ recommend being familiar with the Trainees:</p>
 </section>
 <section id="methods-for-saving-and-loading">
 <h2>Methods for Saving and Loading<a class="headerlink" href="#methods-for-saving-and-loading" title="Permalink to this heading">#</a></h2>
-<p>Howso Engine can be operated locally or through the Howso Platform as part of an enterprise License. In order to accommodate both sets configurations, the Trainee has two sets of
+<p>Howso Engine can be operated locally or through the Howso Platform™ as part of an enterprise License. In order to accommodate both sets configurations, the Trainee has two sets of
 saving and loading functions that is intended for different types of operations.</p>
 <ul class="simple">
 <li><p><strong>File Operations</strong> - A set of functions that allows a user to save and load to a specific file location. Trainees are saved as <code class="docutils literal notranslate"><span class="pre">.caml</span></code> files, which stands for Compressed <a class="reference external" href="https://github.com/howsoai/amalgam/">Amalgam</a>. This is the method that will most likely be used by non enterprise users.</p></li>
@@ -463,6 +463,7 @@ saving and loading functions that is intended for different types of operations.
 </section>
 <section id="file-operations">
 <h2>File Operations<a class="headerlink" href="#file-operations" title="Permalink to this heading">#</a></h2>
+<p>By default, Howso Engine loads Trainees from and saves Trainees to your current working directory.</p>
 <section id="saving">
 <h3>Saving<a class="headerlink" href="#saving" title="Permalink to this heading">#</a></h3>
 <p>Saving Trainees to your local file system can be done using the <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.save" title="howso.engine.Trainee.save"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.save()</span></code></a> function. The  <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.save" title="howso.engine.Trainee.save"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.save()</span></code></a> function has one optional parameter, <code class="docutils literal notranslate"><span class="pre">filename</span></code>, which lets the user specify where to save the file and what to name the saved file. The <code class="docutils literal notranslate"><span class="pre">filename</span></code> parameter can consist of:</p>
