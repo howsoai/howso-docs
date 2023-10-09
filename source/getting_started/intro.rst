@@ -1,4 +1,4 @@
-Concepts
+Howso's Trustworthy AI
 ========
 
 Instance-Based Learning (IBL)
