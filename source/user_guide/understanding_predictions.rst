@@ -10,7 +10,7 @@ Understanding Predictions
 
 Objectives: what you will take away
 -----------------------------------
-- **Definitions & Understanding** Difference between similar/influential cases vs case importance and robust vs non-robust :ref:`Case Contributions <user_guide/terminology:Contribution>` and :ref:`Case MDA <user_guide/terminology:MDA>`.
+- **Definitions & Understanding** Difference between similar/influential cases vs case importance and robust vs non-robust :ref:`Case Contributions <../getting_started/terminology:Contribution>` and :ref:`Case MDA <../getting_started/terminology:MDA>`.
 - **How-To** audit specific cases as well as determine which cases impact Trainee predictions.
 - **API References** How to use :py:meth:`Trainee.react`.
 
@@ -33,12 +33,12 @@ Concepts & Terminology
 The main piece of terminology this guide introduces is the concept of case auditing. To understand this, we
 recommend being familiar with the following concepts:
 
-- :ref:`Trainee <user_guide/terminology:trainee>`
-- :ref:`React <user_guide/terminology:react>`
-- :ref:`Influential Cases <user_guide/terminology:Influential Cases>`
-- :ref:`Most Similar Cases <user_guide/terminology:Most Similar Cases>`
-- :ref:`Case MDA <user_guide/terminology:MDA>`
-- :ref:`Case Contributions <user_guide/terminology:Contribution>`
+- :ref:`Trainee <../getting_started/terminology:trainee>`
+- :ref:`React <../getting_started/terminology:react>`
+- :ref:`Influential Cases <../getting_started/terminology:Influential Cases>`
+- :ref:`Most Similar Cases <../getting_started/terminology:Most Similar Cases>`
+- :ref:`Case MDA <../getting_started/terminology:MDA>`
+- :ref:`Case Contributions <../getting_started/terminology:Contribution>`
 
 
 How-To Guide

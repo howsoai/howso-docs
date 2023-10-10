@@ -29,11 +29,11 @@ Concepts & Terminology
 In order to perform anomaly detection, we utilize a few new metrics that are exposed through the :class:`~Trainee`.
 To understand this, we recommend being familiar with the following concepts:
 
-- :ref:`Trainee <user_guide/terminology:trainee>`
-- :ref:`React <user_guide/terminology:react>`
-- :ref:`Conviction <user_guide/terminology:Conviction>`
-- :ref:`Familiarity Conviction <user_guide/terminology:Familiarity Conviction>`
-- :ref:`Similarity Conviction <user_guide/terminology:Similarity Conviction>`
+- :ref:`Trainee <../getting_started/terminology:trainee>`
+- :ref:`React <../getting_started/terminology:react>`
+- :ref:`Conviction <../getting_started/terminology:Conviction>`
+- :ref:`Familiarity Conviction <../getting_started/terminology:Familiarity Conviction>`
+- :ref:`Similarity Conviction <../getting_started/terminology:Similarity Conviction>`
 
 
 We also recommend being familiar with the concept of `anomaly detection <https://en.wikipedia.org/wiki/Anomaly_detection>`_.

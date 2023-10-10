@@ -33,5 +33,4 @@ To get started, be sure and start with these guides:
     save_load
     reinforcement_learning
     sparse_data
-    terminology
     datasets

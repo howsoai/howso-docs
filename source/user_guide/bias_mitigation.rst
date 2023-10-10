@@ -18,7 +18,7 @@ Prerequisites: before you begin
 
     - You have successfully :doc:`installed Howso Engine <../getting_started/installing>`
     - You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
-    - You are familiar with :ref:`feature contributions <user_guide/terminology:Contribution>`
+    - You are familiar with :ref:`feature contributions <../getting_started/terminology:Contribution>`
 
 Notebook Recipe
 ---------------
@@ -48,11 +48,11 @@ data are increasingly falling under regulations, decisions that are based on ins
 
 In addition to understanding bias, we recommend being familiar with the following concepts:
 
-- :ref:`Trainee <user_guide/terminology:trainee>`
-- :ref:`React <user_guide/terminology:react>`
-- :ref:`Training Session <user_guide/terminology:Training Session>`
-- :ref:`Feature Contribution <user_guide/terminology:Contribution>`
-- :ref:`Feature MDA <user_guide/terminology:MDA>`
+- :ref:`Trainee <../getting_started/terminology:trainee>`
+- :ref:`React <../getting_started/terminology:react>`
+- :ref:`Training Session <../getting_started/terminology:Training Session>`
+- :ref:`Feature Contribution <../getting_started/terminology:Contribution>`
+- :ref:`Feature MDA <../getting_started/terminology:MDA>`
 
 
 How-To Guide

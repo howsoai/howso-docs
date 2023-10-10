@@ -32,13 +32,13 @@ Concepts & Terminology
 ----------------------
 To understand this guide, we recommend being familiar with the following concepts:
 
-- :ref:`Trainee <user_guide/terminology:trainee>`
-- :ref:`Conviction <user_guide/terminology:conviction>`
-- :ref:`React <user_guide/terminology:react>`
-- :ref:`Case <user_guide/terminology:case>`
-- :ref:`Feature <user_guide/terminology:feature>`
-- :ref:`Action Features <user_guide/terminology:action features>`
-- :ref:`Context Features <user_guide/terminology:context features>`
+- :ref:`Trainee <../getting_started/terminology:trainee>`
+- :ref:`Conviction <../getting_started/terminology:conviction>`
+- :ref:`React <../getting_started/terminology:react>`
+- :ref:`Case <../getting_started/terminology:case>`
+- :ref:`Feature <../getting_started/terminology:feature>`
+- :ref:`Action Features <../getting_started/terminology:action features>`
+- :ref:`Context Features <../getting_started/terminology:context features>`
 
 Additional concepts to be familiar with include the `Gymnasium RL Framework <https://gymnasium.farama.org/>`_ and the RL games in the recipes,
 `Cartpole <https://gymnasium.farama.org/environments/classic_control/cart_pole/>`_ and

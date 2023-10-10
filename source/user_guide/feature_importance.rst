@@ -5,13 +5,13 @@ Feature Importance
 ==================
 .. topic:: What is covered in this user guide
 
-    In this guide, you will learn how to retrieve the feature importance metrics, :ref:`Feature Contributions <user_guide/terminology:Contribution>` and :ref:`Feature Mean Decrease in Accuracy (MDA) <user_guide/terminology:MDA>` from a Trainee. Feature importance metrics
-    provides information about which features are useful for predicting a target or :ref:`action <user_guide/terminology:Action Features>` feature. In addition to learning informative metrics about the data and the model, these insights can be used as guidance for further action such as feature selection or feature engineering.
+    In this guide, you will learn how to retrieve the feature importance metrics, :ref:`Feature Contributions <../getting_started/terminology:Contribution>` and :ref:`Feature Mean Decrease in Accuracy (MDA) <../getting_started/terminology:MDA>` from a Trainee. Feature importance metrics
+    provides information about which features are useful for predicting a target or :ref:`action <../getting_started/terminology:Action Features>` feature. In addition to learning informative metrics about the data and the model, these insights can be used as guidance for further action such as feature selection or feature engineering.
 
 
 Objectives: what you will take away
 -----------------------------------
-- **Definitions & Understanding** Difference between global vs local, and robust vs non-robust :ref:`Feature Contributions <user_guide/terminology:Contribution>` and :ref:`Feature MDA <user_guide/terminology:MDA>`.
+- **Definitions & Understanding** Difference between global vs local, and robust vs non-robust :ref:`Feature Contributions <../getting_started/terminology:Contribution>` and :ref:`Feature MDA <../getting_started/terminology:MDA>`.
 - **How-To** obtain both feature importance metrics.
 - **API References** How to use :meth:`Trainee.get_prediction_stats`, :py:meth:`Trainee.react`.
 
@@ -34,13 +34,13 @@ Concepts & Terminology
 The main piece of terminology this guide introduces is the concept of Feature Importance. To understand this, we
 recommend being familiar with the following concepts:
 
-- :ref:`Trainee <user_guide/terminology:trainee>`
-- :ref:`React <user_guide/terminology:react>`
-- :ref:`Feature <user_guide/terminology:feature>`
-- :ref:`Action Features <user_guide/terminology:action features>`
-- :ref:`Context Features <user_guide/terminology:context features>`
-- :ref:`Feature Contributions <user_guide/terminology:Contribution>`
-- :ref:`Feature MDA <user_guide/terminology:MDA>`
+- :ref:`Trainee <../getting_started/terminology:trainee>`
+- :ref:`React <../getting_started/terminology:react>`
+- :ref:`Feature <../getting_started/terminology:feature>`
+- :ref:`Action Features <../getting_started/terminology:action features>`
+- :ref:`Context Features <../getting_started/terminology:context features>`
+- :ref:`Feature Contributions <../getting_started/terminology:Contribution>`
+- :ref:`Feature MDA <../getting_started/terminology:MDA>`
 - :doc:`Feature Attributes <feature_attributes>`
 
 
