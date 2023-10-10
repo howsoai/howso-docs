@@ -1,17 +1,24 @@
 ===============
 Getting Started
 ===============
+
 To get started, install the Howso Engine
 
 - :doc:`Installing the Howso Engine <installing>`
 
-Familiarize yourself with the Howso Engine so you understand why you should ask... how so? 
+Then, familiarize yourself with the Howso Engine so you understand why you should ask... how so? 
 
 <<<<<<< HEAD
 - :doc:`Key Concepts <concepts>`
 =======
   - :doc:`Howso Overview <intro>`
 >>>>>>> 73e8d59 (Initial edits to the Getting Started)
+
+Next, learn about key technological differentiators of the Howso Engine and gain a better
+understanding of frequently used terminology
+
+  - :doc:`Key Concepts <concepts>`
+  - :doc:`Terminology <terminology>`
 
 Explore basic user guides to perform your first tasks
 
@@ -32,6 +39,8 @@ Download and run introductory recipes (sample notebooks)
     concepts
 =======
     intro
+    concepts
+    terminology
 
 
 
