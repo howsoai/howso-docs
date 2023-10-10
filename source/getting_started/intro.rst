@@ -1,31 +1,31 @@
 Howso's Trustworthy AI
 ========
 
-Whether you are an individual or a large enterprise, AI has likely already impacted your daily life. Although this has opened up many exciting new opportunities, 
-you may have a nagging suspicion that the AI available today cannot be trusted. 
-Because this AI is inherently “black box”, you likely have no idea how it made its decisions, what data it used, and how reliable its findings are.  
+Whether you are an individual or a large enterprise, AI has likely already impacted your daily life. While AI has likely opened up many exciting new opportunities, you have probably 
+heard stories of AI generating "hallucinations" and grossly biased predictions. Understandably, you might have a nagging suspicion that the AI available today cannot be trusted. 
+And because this AI is inherently “black box”, you cannot trust, understand, or control why its decisions were made, the data it used, or its reliability.  
 
 Enter Howso. Howso is the result of years of research and innovation to solve the problem of trustworthy AI. 
-Howso is based on instance-based learning, so all of its decisions are made directly from the data. Howso stores your data in memory and makes predictions from the 
-similarities and differences between data points, not an underlying black box model, leading to fully transparent decisions. 
-Howso utilizes cutting edge advances in fast spatial query systems and information probability theory to make IBL understandable, performant, versatile, and trustworthy. 
+Howso is rooted in instance-based learning, so all of its decisions are made directly from the data. Howso stores information in memory and makes predictions from the 
+similarities and differences between data points, not an underlying black box model, leading to fully transparent decisions with perfect attribution back to the source data. 
+Howso utilizes cutting edge advances in the fields of statistics, physics, game theory, and information theory to make IBL understandable, performant, versatile, and trustworthy. 
 
 In the spirit of providing trustworthy AI to all, Howso has open sourced its Engine platform. Engine enables you to... 
 
 - Make accurate predictions and avoid hallucinations
 
-- Perfectly cite the data used to make the predictions
+- Perfectly cite the data used to make predictions
 
-- Utilize state of the art interpretability tools, to identify the artifacts of your dataset that influenced the prediction
+- Utilize state of the art interpretability tools, to identify how your dataset influenced predictions
 
-- Perform a variety of data science tasks, *a priori*
+- Automatically poerform a variety of data science tasks
 
 - Identify and maintain integretity during adversarial attacks on your data
 
 - And more!
 
-So, how can you use Howso's trustworthy AI, without sacrificing the ease of use, speed, and performance of the status quo black box AI? Our docs are purpose 
-built to provide you that understanding and more, so you can confidently use Engine to make trustworthy decisions. Join us and learn... how so? 
+So, how can you use Howso Engine, to harness the power of AI without sacrificing trust, understanding, and control? Our docs are purpose 
+built to provide you the tools and resources to confidently harness Engine to make important, human-centric decisions. Join us and learn... how so? 
 
 Key Features of the Howso Engine
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -49,13 +49,13 @@ Understandability
 Performance
 -----------
 
-On average, Howso outperforms LightGBM classification and regression accuracy and demonstrates notable success with small datasets. Additionally, Howso intelligently handles and 
+On average, Howso outperforms LightGBM classification and regression accuracy, and demonstrates notable success with small datasets. Additionally, Howso intelligently handles and 
 imputes sparse and missing data.
 
 Versatility
 -----------
 
-- Perform multiple tasks *a priori*, including...
+- Perform multiple tasks automatically, including...
 
     - Supervised and unsupervised learning
 
@@ -80,7 +80,7 @@ Trustworthiness
 
     Avoid hallucinations with complete and accurate knowledge of uncertainties so you can deliver accountability and know when there is not enough information to make good decisions. 
 
-- Remain robust to adversarial attacks that exploit AI in action and reliably detect them 
+- Remain robust to adversarial attacks that exploit AI in action, and reliably detect them 
 
     Howso outperforms other AI methdos and maintaining the integrity of your data and decisions, even after an attack. 
 
@@ -154,7 +154,7 @@ Targeted *and* Targetless Analysis
 Limitations
 -----------
 
-Howso values gracious intellectual honesty. In that spirit, we will tell you up front where we struggle and how we are planning to improve.
+Howso values gracious intellectual honesty. In that spirit, we're telling you up front where we struggle and how we are planning to improve.
 
 - Additional data types
 
