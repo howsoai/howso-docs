@@ -139,6 +139,19 @@ Analyze
 Evaluate and update uncertainties about the data for use in future queries, as well as tune internal parameters to
 improve performance and accuracy of predictions and analysis.
 
+    - **Targeted**
+
+        Most modeling workflows require a set of one or more independent input variables (or features) and output a set of one or more variables that depend on the input. Often, these outputs, which are the
+        values you want to generate or predict, are called "target" features. Workflows which predict target features are a type of *targeted*, or supervised, analysis. Howso performs targeted analysis when the user specifies `context features`, or input features, and `action features`, or target features, in the `analyze()` call. 
+        When a targeted analysis is specified, Howso specifically optimizes its
+        underlying IBL algorithm to perform well at predicting the action features, enabling excellent model performance and low error predictions.
+
+    - **Targetless**
+
+        In contrast to targeted predictions, because of Howso's data-centric nature, context (input) and action (output/target) features do not need to be specified, and *targetless* analysis can be performed. Targetless
+        analysis means that predictions can be made about any features, given the other features; this allows the user to easily predict a variety of features without specifying new inputs and outputs. 
+        Howso performs targetless analysis by default for all predictions.
+
 React
 -----
 
@@ -157,11 +170,16 @@ Generate synthetic cases from an existing Trainee using react.
 
 Conviction
 ^^^^^^^^^^
+Howso bridges IBL and information theory and the link becomes apparent in the concept of **conviction**, which is a measure of surprisal. Surprisal is a concept of information theory that describes how likely an event
+will be. For example, if event A has a smaller probability of occurring than event B, you would be surprised if event A occurs. Howso's surprisal metric (conviction) is the computed ratio of actual information to
+expected information, i.e., a measure of how surprising an event is given what is expected to occur. Conviction has a range of zero to infinity. A conviction value of one is average, as the actual information is
+equal to the expected information. Convictions less than one indicate higher surprisal, as the actual information
+is less than the expected information, while convictions greater than one indicate lower surprisal, since the actual information is higher than the expected information.
 
-Howso's algorithms can measure the "conviction" of different measures by using the computed ratio of the expected
-surprisal over the actual surprisal. The range is 0 to infinity. A value of 1 is average - therefore a conviction of
-less than 1 means it is more surprising than typical data. The higher the number above one, the less surprising it is.
-
+Actual information is the amount of information that a data point actually adds when it is evaluated. Expected information is what the value of a new data point should be on average, given
+all knowledge of the data. 
+The concept of surprisal,
+quantified by conviction, is prevalent throughout many of Howso's analysis capabilities. Howso's algorithms can assess the "conviction" of different measures, as discussed below.
 
 Familiarity Conviction
 ----------------------
