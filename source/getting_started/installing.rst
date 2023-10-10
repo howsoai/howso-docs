@@ -9,6 +9,14 @@ Installing from PyPi
     pip install -U howso-engine
 
 
+Client Configuration
+--------------------
+
+The Howso Engine determines very sensible defaults out-of-the-box making this
+step optional. However, it may be useful to change certain aspects or behaviors
+of operation. See: :doc:`Client Configuration <client_configuration>` for further information.
+
+
 Verification
 ------------
 
@@ -83,3 +91,9 @@ Step 3 - Supplemental File (Microsoft Windows Only):
         ... zishrink.awk
         ... zone.tab
         ... zone1970.tab
+
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+
+    client_configuration
