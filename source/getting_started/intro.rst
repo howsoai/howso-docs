@@ -109,6 +109,6 @@ If you have not already installed Howso Engine, that's your first step! You can 
 Once you're installed, you can try out Howso using a variety of pre-built :doc:`jupyter notebook examples <../examples>`. These notebooks will provide "recipes" for how to utilize
 Understandable AI in many applications.
 
-Additionally, you can gain insight into Howso's capabilities by exploring our :doc:`user guides <../user_guide>` and digging into our python code :doc:`API references <../api_reference>`.
+Additionally, you can gain insight into Howso's capabilities by exploring our :doc:`key concepts <concepts>`, :doc:`terminology <terminology>`, and :doc:`user guides <../user_guide>` or by digging into our python code :doc:`API references <../api_reference>`.
 
 And, as always, we welcome your participation and feedback on our `github page <https://github.com/howsoai>`_!
