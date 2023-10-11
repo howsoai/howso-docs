@@ -1,13 +1,13 @@
 Key Concepts
 ========
 
-Why is Howso Engine AI that you can understand, trust, and control?  Howso is built on fundamentally different technology from today's black box AI, which enables a variety of new capabilities. Below, we review some of
+What makes the Howso Engine AI you can understand, trust, and control?  Howso is built on fundamentally different technology from today's black box AI, which enables a variety of new capabilities. Below, we review some of
 our key technological differentiators. 
 
 Instance-Based Learning (IBL)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Howso Engine is rooted in instance-based learning (IBL), which is truly data-centric analysis. As an IBL platform, Howso stores your data in memory and makes predictions
-from the similarities and differences between data points, not an underlying black box model, leading to fully transparent decisions.
+from the similarities and differences between data points, not an underlying black box model, leading to fully transparen and attributable decisions.
 
 This is very different from today's typical AI workflows. Most AI today, such as deep neural networks, use models, or abstractions of relationships within data, to make predictions on new information.
 By nature, these models are not human interpretable (“black box”), and their predictions cannot be mapped back to original data, making them inherently unexplainable.
@@ -31,7 +31,7 @@ advances enable all of Engine's insight and analysis capabilites, including stat
 - Know Engine's confidence in each decision.​
 
     Popular AI that are based on deep learning are often found to confidently predict and present patently false information as though it were true (informally known as "hallucinating")
-    becasue they cannot accurately calculate uncertainty in their predictions. In contrast, Howso accurately measures the confidence levels of all the predictions it makes, and provides
+    because they cannot accurately calculate uncertainty in their predictions. In contrast, Howso accurately measures the confidence levels of all the predictions it makes, and provides
     these metrics as part of its mission of transparency and understandability. In other words, Howso understands what it should know about the uncertainty of the data, and uses
     that to inform what it actually does know about the data.
 
