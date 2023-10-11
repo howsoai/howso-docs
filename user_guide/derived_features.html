@@ -55,7 +55,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Anomaly Detection" href="anomaly_detection.html" />
-    <link rel="prev" title="Influential Data, Counterfactuals, and Uncertainties of Predictions" href="influential_data_counterfactuals_uncertainty.html" />
+    <link rel="prev" title="Saving and Loading" href="save_load.html" />
     <link rel="icon" type="image/svg+xml" href="/_static/favicon.svg">
     <link rel="mask-icon" href="/_static/favicon.svg">
     <link rel="stylesheet" href="https://cdn.howso.com/fonts/inter/3.19/typeface.css">
@@ -161,15 +161,15 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../api_reference/index.html">
-                        API Reference
+                      <a class="nav-link nav-internal" href="../examples/index.html">
+                        Recipes
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../examples/index.html">
-                        Examples
+                      <a class="nav-link nav-internal" href="../api_reference/index.html">
+                        API Reference
                       </a>
                     </li>
                 
@@ -281,15 +281,15 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../api_reference/index.html">
-                        API Reference
+                      <a class="nav-link nav-internal" href="../examples/index.html">
+                        Recipes
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../examples/index.html">
-                        Examples
+                      <a class="nav-link nav-internal" href="../api_reference/index.html">
+                        API Reference
                       </a>
                     </li>
                 
@@ -339,22 +339,21 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="basic_workflow.html">Basic Workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="predictions.html">Predictions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="feature_attributes.html">Feature Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="predictions.html">Predictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="understanding_predictions.html">Understanding Predictions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="model_performance.html">Model Performance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="influential_data_counterfactuals_uncertainty.html">Influential Data, Counterfactuals, and Uncertainties of Predictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_importance.html">Feature Importance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load.html">Saving and Loading</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Derived Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anomaly_detection.html">Anomaly Detection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="generative_AI_synth.html">Generative Output and Data Synthesis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="time_series.html">Time Series and Sequential Data Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bias_mitigation.html">Bias Mitigation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="understanding_predictions.html">Understanding Predictions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="feature_importance.html">Feature Importance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="save_load.html">Saving and Loading</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reinforcement_learning.html">Reinforcement Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_AI_synth.html">Generative Output and Data Synthesis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sparse_data.html">Handling Sparse Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reinforcement_learning.html">Reinforcement Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time_series.html">Time Series and Sequential Data Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
 </ul>
 </div>
@@ -445,12 +444,12 @@ in the prerequisites using the <code class="docutils literal notranslate"><span 
 <p>This guide will explain the concept of <strong>derived features</strong>, which include both <strong>derived action features</strong> and <strong>derived context
 features</strong>.  To follow along, you should be familiar with the following concepts:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="terminology.html#trainee"><span class="std std-ref">Trainee</span></a></p></li>
-<li><p><a class="reference internal" href="terminology.html#react"><span class="std std-ref">React</span></a></p></li>
-<li><p><a class="reference internal" href="terminology.html#case"><span class="std std-ref">Case</span></a></p></li>
-<li><p><a class="reference internal" href="terminology.html#feature"><span class="std std-ref">Feature</span></a></p></li>
-<li><p><a class="reference internal" href="terminology.html#action-features"><span class="std std-ref">Action Features</span></a></p></li>
-<li><p><a class="reference internal" href="terminology.html#context-features"><span class="std std-ref">Context Features</span></a></p></li>
+<li><p><span class="xref std std-ref">Trainee</span></p></li>
+<li><p><span class="xref std std-ref">React</span></p></li>
+<li><p><span class="xref std std-ref">Case</span></p></li>
+<li><p><span class="xref std std-ref">Feature</span></p></li>
+<li><p><span class="xref std std-ref">Action Features</span></p></li>
+<li><p><span class="xref std std-ref">Context Features</span></p></li>
 <li><p><a class="reference internal" href="feature_attributes.html"><span class="doc">Feature Attributes</span></a></p></li>
 </ul>
 <section id="derived-feature-codes">
@@ -580,12 +579,12 @@ context features and the delta/rate features are used as derived action features
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="influential_data_counterfactuals_uncertainty.html"
+       href="save_load.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Influential Data, Counterfactuals, and Uncertainties of Predictions</p>
+        <p class="prev-next-title">Saving and Loading</p>
       </div>
     </a>
     <a class="right-next"

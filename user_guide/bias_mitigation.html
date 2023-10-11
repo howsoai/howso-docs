@@ -54,8 +54,8 @@
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Understanding Predictions" href="understanding_predictions.html" />
-    <link rel="prev" title="Time Series and Sequential Data Analysis" href="time_series.html" />
+    <link rel="next" title="Generative Output and Data Synthesis" href="generative_AI_synth.html" />
+    <link rel="prev" title="Anomaly Detection" href="anomaly_detection.html" />
     <link rel="icon" type="image/svg+xml" href="/_static/favicon.svg">
     <link rel="mask-icon" href="/_static/favicon.svg">
     <link rel="stylesheet" href="https://cdn.howso.com/fonts/inter/3.19/typeface.css">
@@ -161,15 +161,15 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../api_reference/index.html">
-                        API Reference
+                      <a class="nav-link nav-internal" href="../examples/index.html">
+                        Recipes
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../examples/index.html">
-                        Examples
+                      <a class="nav-link nav-internal" href="../api_reference/index.html">
+                        API Reference
                       </a>
                     </li>
                 
@@ -281,15 +281,15 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../api_reference/index.html">
-                        API Reference
+                      <a class="nav-link nav-internal" href="../examples/index.html">
+                        Recipes
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../examples/index.html">
-                        Examples
+                      <a class="nav-link nav-internal" href="../api_reference/index.html">
+                        API Reference
                       </a>
                     </li>
                 
@@ -339,22 +339,21 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="basic_workflow.html">Basic Workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="predictions.html">Predictions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="feature_attributes.html">Feature Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="predictions.html">Predictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="understanding_predictions.html">Understanding Predictions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="model_performance.html">Model Performance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="influential_data_counterfactuals_uncertainty.html">Influential Data, Counterfactuals, and Uncertainties of Predictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_importance.html">Feature Importance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load.html">Saving and Loading</a></li>
 <li class="toctree-l1"><a class="reference internal" href="derived_features.html">Derived Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anomaly_detection.html">Anomaly Detection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="generative_AI_synth.html">Generative Output and Data Synthesis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="time_series.html">Time Series and Sequential Data Analysis</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Bias Mitigation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="understanding_predictions.html">Understanding Predictions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="feature_importance.html">Feature Importance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="save_load.html">Saving and Loading</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reinforcement_learning.html">Reinforcement Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_AI_synth.html">Generative Output and Data Synthesis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sparse_data.html">Handling Sparse Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reinforcement_learning.html">Reinforcement Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time_series.html">Time Series and Sequential Data Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
 </ul>
 </div>
@@ -424,7 +423,6 @@ document.write(`
 <ul class="simple">
 <li><p><strong>Definitions &amp; Understanding</strong> of data bias and why it occurs.</p></li>
 <li><p><strong>How-To</strong> perform bias mitigation using Howso Engine.</p></li>
-<li><p><strong>API References</strong> - where to find references to APIs used in this user guide.</p></li>
 </ul>
 </section>
 <section id="prerequisites-before-you-begin">
@@ -434,7 +432,7 @@ document.write(`
 <div><ul class="simple">
 <li><p>You have successfully <a class="reference internal" href="../getting_started/installing.html"><span class="doc">installed Howso Engine</span></a></p></li>
 <li><p>You have <a class="reference internal" href="basic_workflow.html"><span class="doc">loaded, configured, trained, and analyzed data</span></a></p></li>
-<li><p>You are familiar with <a class="reference internal" href="terminology.html#contribution"><span class="std std-ref">feature contributions</span></a></p></li>
+<li><p>You are familiar with <span class="xref std std-ref">feature contributions</span></p></li>
 </ul>
 </div></blockquote>
 </section>
@@ -465,11 +463,11 @@ This potentially harms various groups of people and reduces the overall utility 
 data are increasingly falling under regulations, decisions that are based on insights gained from biased data might lead to breaches of these regulations.</p>
 <p>In addition to understanding bias, we recommend being familiar with the following concepts:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="terminology.html#trainee"><span class="std std-ref">Trainee</span></a></p></li>
-<li><p><a class="reference internal" href="terminology.html#react"><span class="std std-ref">React</span></a></p></li>
-<li><p><a class="reference internal" href="terminology.html#training-session"><span class="std std-ref">Training Session</span></a></p></li>
-<li><p><a class="reference internal" href="terminology.html#contribution"><span class="std std-ref">Feature Contribution</span></a></p></li>
-<li><p><a class="reference internal" href="terminology.html#mda"><span class="std std-ref">Feature MDA</span></a></p></li>
+<li><p><span class="xref std std-ref">Trainee</span></p></li>
+<li><p><span class="xref std std-ref">React</span></p></li>
+<li><p><span class="xref std std-ref">Training Session</span></p></li>
+<li><p><span class="xref std std-ref">Feature Contribution</span></p></li>
+<li><p><span class="xref std std-ref">Feature MDA</span></p></li>
 </ul>
 </section>
 <section id="how-to-guide">
@@ -536,20 +534,20 @@ Within the <cite>react</cite> call, specify only the context features that do no
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="time_series.html"
+       href="anomaly_detection.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Time Series and Sequential Data Analysis</p>
+        <p class="prev-next-title">Anomaly Detection</p>
       </div>
     </a>
     <a class="right-next"
-       href="understanding_predictions.html"
+       href="generative_AI_synth.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Understanding Predictions</p>
+        <p class="prev-next-title">Generative Output and Data Synthesis</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

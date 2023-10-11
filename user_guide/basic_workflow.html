@@ -54,7 +54,7 @@
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Predictions" href="predictions.html" />
+    <link rel="next" title="Feature Attributes" href="feature_attributes.html" />
     <link rel="prev" title="User Guides" href="index.html" />
     <link rel="icon" type="image/svg+xml" href="/_static/favicon.svg">
     <link rel="mask-icon" href="/_static/favicon.svg">
@@ -161,15 +161,15 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../api_reference/index.html">
-                        API Reference
+                      <a class="nav-link nav-internal" href="../examples/index.html">
+                        Recipes
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../examples/index.html">
-                        Examples
+                      <a class="nav-link nav-internal" href="../api_reference/index.html">
+                        API Reference
                       </a>
                     </li>
                 
@@ -281,15 +281,15 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../api_reference/index.html">
-                        API Reference
+                      <a class="nav-link nav-internal" href="../examples/index.html">
+                        Recipes
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../examples/index.html">
-                        Examples
+                      <a class="nav-link nav-internal" href="../api_reference/index.html">
+                        API Reference
                       </a>
                     </li>
                 
@@ -339,22 +339,21 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Basic Workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="predictions.html">Predictions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="feature_attributes.html">Feature Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="predictions.html">Predictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="understanding_predictions.html">Understanding Predictions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="model_performance.html">Model Performance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="influential_data_counterfactuals_uncertainty.html">Influential Data, Counterfactuals, and Uncertainties of Predictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_importance.html">Feature Importance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load.html">Saving and Loading</a></li>
 <li class="toctree-l1"><a class="reference internal" href="derived_features.html">Derived Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anomaly_detection.html">Anomaly Detection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="generative_AI_synth.html">Generative Output and Data Synthesis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="time_series.html">Time Series and Sequential Data Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bias_mitigation.html">Bias Mitigation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="understanding_predictions.html">Understanding Predictions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="feature_importance.html">Feature Importance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="save_load.html">Saving and Loading</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reinforcement_learning.html">Reinforcement Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_AI_synth.html">Generative Output and Data Synthesis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sparse_data.html">Handling Sparse Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reinforcement_learning.html">Reinforcement Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time_series.html">Time Series and Sequential Data Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
 </ul>
 </div>
@@ -422,9 +421,8 @@ document.write(`
 <section id="objectives-what-you-will-take-away">
 <h2>Objectives: what you will take away<a class="headerlink" href="#objectives-what-you-will-take-away" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Definitions &amp; an understanding</strong> of terminology unique to Howso Engine and what the basic workflow of using the Howso Engine looks.</p></li>
-<li><p><strong>How-To</strong> - Importing data, mapping features, training, analyzing, and making inferences using the Howso Engine.</p></li>
-<li><p><strong>API References</strong> - where to find references to APIs used in this user guide.</p></li>
+<li><p><strong>Definitions &amp; an understanding</strong> of terminology unique to Howso Engine and what the basic workflow of using the Howso Engine looks like.</p></li>
+<li><p><strong>How-To</strong> import data, map features, train, analyze, and make inferences using the Howso Engine.</p></li>
 </ul>
 </section>
 <section id="prerequisites-before-you-begin">
@@ -455,14 +453,14 @@ document.write(`
 <h2>Concepts &amp; Terminology<a class="headerlink" href="#concepts-terminology" title="Permalink to this heading">#</a></h2>
 <p>Howso Engine is a generalized Machine Learning (ML) and Artificial Intelligence platform that creates powerful decision-making models that are fully explainable, auditable, and editable. Howso Engine uses Instance-Based Machine Learning which stores instances, i.e., data points, in memory and makes predictions about new instances given their relationship to existing instances. This technology harnesses a fast spatial query system and information theory for performance and accuracy.</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="terminology.html#trainee"><span class="std std-ref">Trainee</span></a></p></li>
-<li><p><a class="reference internal" href="terminology.html#train"><span class="std std-ref">Train</span></a></p></li>
-<li><p><a class="reference internal" href="terminology.html#analyze"><span class="std std-ref">Analyze</span></a></p></li>
-<li><p><a class="reference internal" href="terminology.html#react"><span class="std std-ref">React</span></a></p></li>
-<li><p><a class="reference internal" href="terminology.html#case"><span class="std std-ref">Case</span></a></p></li>
-<li><p><a class="reference internal" href="terminology.html#feature"><span class="std std-ref">Feature</span></a></p></li>
-<li><p><a class="reference internal" href="terminology.html#action-features"><span class="std std-ref">Action Features</span></a></p></li>
-<li><p><a class="reference internal" href="terminology.html#context-features"><span class="std std-ref">Context Features</span></a></p></li>
+<li><p><span class="xref std std-ref">Trainee</span></p></li>
+<li><p><span class="xref std std-ref">Train</span></p></li>
+<li><p><span class="xref std std-ref">Analyze</span></p></li>
+<li><p><span class="xref std std-ref">React</span></p></li>
+<li><p><span class="xref std std-ref">Case</span></p></li>
+<li><p><span class="xref std std-ref">Feature</span></p></li>
+<li><p><span class="xref std std-ref">Action Features</span></p></li>
+<li><p><span class="xref std std-ref">Context Features</span></p></li>
 <li><p><a class="reference internal" href="feature_attributes.html"><span class="doc">Feature Attributes</span></a></p></li>
 </ul>
 </section>
@@ -577,11 +575,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="predictions.html"
+       href="feature_attributes.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Predictions</p>
+        <p class="prev-next-title">Feature Attributes</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

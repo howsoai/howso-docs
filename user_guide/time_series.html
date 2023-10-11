@@ -54,8 +54,8 @@
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Bias Mitigation" href="bias_mitigation.html" />
-    <link rel="prev" title="Generative Output and Data Synthesis" href="generative_AI_synth.html" />
+    <link rel="next" title="Datasets" href="datasets.html" />
+    <link rel="prev" title="Reinforcement Learning" href="reinforcement_learning.html" />
     <link rel="icon" type="image/svg+xml" href="/_static/favicon.svg">
     <link rel="mask-icon" href="/_static/favicon.svg">
     <link rel="stylesheet" href="https://cdn.howso.com/fonts/inter/3.19/typeface.css">
@@ -161,15 +161,15 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../api_reference/index.html">
-                        API Reference
+                      <a class="nav-link nav-internal" href="../examples/index.html">
+                        Recipes
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../examples/index.html">
-                        Examples
+                      <a class="nav-link nav-internal" href="../api_reference/index.html">
+                        API Reference
                       </a>
                     </li>
                 
@@ -281,15 +281,15 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../api_reference/index.html">
-                        API Reference
+                      <a class="nav-link nav-internal" href="../examples/index.html">
+                        Recipes
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../examples/index.html">
-                        Examples
+                      <a class="nav-link nav-internal" href="../api_reference/index.html">
+                        API Reference
                       </a>
                     </li>
                 
@@ -339,22 +339,21 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="basic_workflow.html">Basic Workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="predictions.html">Predictions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="feature_attributes.html">Feature Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="predictions.html">Predictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="understanding_predictions.html">Understanding Predictions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="model_performance.html">Model Performance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="influential_data_counterfactuals_uncertainty.html">Influential Data, Counterfactuals, and Uncertainties of Predictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_importance.html">Feature Importance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load.html">Saving and Loading</a></li>
 <li class="toctree-l1"><a class="reference internal" href="derived_features.html">Derived Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anomaly_detection.html">Anomaly Detection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="generative_AI_synth.html">Generative Output and Data Synthesis</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Time Series and Sequential Data Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bias_mitigation.html">Bias Mitigation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="understanding_predictions.html">Understanding Predictions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="feature_importance.html">Feature Importance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="save_load.html">Saving and Loading</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reinforcement_learning.html">Reinforcement Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_AI_synth.html">Generative Output and Data Synthesis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sparse_data.html">Handling Sparse Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reinforcement_learning.html">Reinforcement Learning</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Time Series and Sequential Data Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
 </ul>
 </div>
@@ -425,7 +424,6 @@ This will enable you to easily capture and utilize temporal information and tren
 <ul class="simple">
 <li><p><strong>Definitions &amp; an understanding</strong> of how time series and sequential data tools within the Howso Engine provide enhanced insight into your data.</p></li>
 <li><p><strong>How-To</strong> use Engine’s <a class="reference internal" href="../api_reference/utilities.html#howso.utilities.infer_feature_attributes" title="howso.utilities.infer_feature_attributes"><code class="xref py py-func docutils literal notranslate"><span class="pre">howso.utilities.infer_feature_attributes()</span></code></a> tool to configure your time series and sequential data, and make time series predictions.</p></li>
-<li><p><strong>API References</strong> - where to find references to APIs used in this user guide.</p></li>
 </ul>
 </section>
 <section id="prerequisites-before-you-begin">
@@ -449,11 +447,11 @@ This will enable you to easily capture and utilize temporal information and tren
 <h2>Concepts &amp; Terminology<a class="headerlink" href="#concepts-terminology" title="Permalink to this heading">#</a></h2>
 <p>To understand this guide, we recommend being familiar with the following concepts:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="terminology.html#trainee"><span class="std std-ref">Trainee</span></a></p></li>
-<li><p><a class="reference internal" href="terminology.html#react"><span class="std std-ref">React</span></a></p></li>
-<li><p><a class="reference internal" href="terminology.html#feature"><span class="std std-ref">Feature</span></a></p></li>
-<li><p><a class="reference internal" href="terminology.html#action-features"><span class="std std-ref">Action Features</span></a></p></li>
-<li><p><a class="reference internal" href="terminology.html#context-features"><span class="std std-ref">Context Features</span></a></p></li>
+<li><p><span class="xref std std-ref">Trainee</span></p></li>
+<li><p><span class="xref std std-ref">React</span></p></li>
+<li><p><span class="xref std std-ref">Feature</span></p></li>
+<li><p><span class="xref std std-ref">Action Features</span></p></li>
+<li><p><span class="xref std std-ref">Context Features</span></p></li>
 <li><p><a class="reference internal" href="feature_attributes.html"><span class="doc">Feature Attributes</span></a></p></li>
 </ul>
 </section>
@@ -540,20 +538,20 @@ and must be specified before the <cite>analyze()</cite> call to be utilized in a
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="generative_AI_synth.html"
+       href="reinforcement_learning.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Generative Output and Data Synthesis</p>
+        <p class="prev-next-title">Reinforcement Learning</p>
       </div>
     </a>
     <a class="right-next"
-       href="bias_mitigation.html"
+       href="datasets.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Bias Mitigation</p>
+        <p class="prev-next-title">Datasets</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

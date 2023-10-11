@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Installation &#8212; Howso Engine Documentation</title>
+    <title>Overview of Howso’s Trustworthy AI &#8212; Howso Engine Documentation</title>
   
   
   
@@ -49,13 +49,13 @@
     <script src="../_static/design-tabs.js"></script>
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'getting_started/installing';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'getting_started/intro';</script>
     <script src="../_static/js/icon.js"></script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Client Configuration" href="client_configuration.html" />
-    <link rel="prev" title="Getting Started" href="index.html" />
+    <link rel="next" title="Key Concepts" href="concepts.html" />
+    <link rel="prev" title="Client Configuration" href="client_configuration.html" />
     <link rel="icon" type="image/svg+xml" href="/_static/favicon.svg">
     <link rel="mask-icon" href="/_static/favicon.svg">
     <link rel="stylesheet" href="https://cdn.howso.com/fonts/inter/3.19/typeface.css">
@@ -338,11 +338,11 @@ document.write(`
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Installation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="installing.html">Installation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="client_configuration.html">Client Configuration</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="intro.html">Overview of Howso’s Trustworthy AI</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Overview of Howso’s Trustworthy AI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="concepts.html">Key Concepts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
 </ul>
@@ -385,7 +385,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">Getting Started</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Installation</li>
+    <li class="breadcrumb-item active" aria-current="page">Overview of Howso’s Trustworthy AI</li>
   </ul>
 </nav>
 </div>
@@ -402,91 +402,99 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="installation">
-<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h1>
-<section id="installing-from-pypi">
-<h2>Installing from PyPi<a class="headerlink" href="#installing-from-pypi" title="Permalink to this heading">#</a></h2>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>howso-engine
-</pre></div>
-</div>
-</section>
-<section id="client-configuration">
-<h2>Client Configuration<a class="headerlink" href="#client-configuration" title="Permalink to this heading">#</a></h2>
-<p>The Howso Engine determines very sensible defaults automatically making this
-step optional. However, it may be useful to change certain aspects or behaviors
-of operation. See: <a class="reference internal" href="client_configuration.html"><span class="doc">Client Configuration</span></a> for further information.</p>
-</section>
-<section id="verification">
-<h2>Verification<a class="headerlink" href="#verification" title="Permalink to this heading">#</a></h2>
-<p>You can verify your installation is working by running the following command in your python environment terminal:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>verify_howso_install
-</pre></div>
-</div>
-</section>
-<section id="time-zone-data">
-<h2>Time Zone Data<a class="headerlink" href="#time-zone-data" title="Permalink to this heading">#</a></h2>
-<p>If the <code class="docutils literal notranslate"><span class="pre">verify_howso_install</span></code> command fails due to missing time zone data on the operating system you are using,
-you can download the requisite <strong>data only distribution</strong> at <a class="reference external" href="https://www.iana.org/time-zones">iana.org</a>.</p>
-<p>Step 1 - Download:</p>
+  <section id="overview-of-howso-s-trustworthy-ai">
+<h1>Overview of Howso’s Trustworthy AI<a class="headerlink" href="#overview-of-howso-s-trustworthy-ai" title="Permalink to this heading">#</a></h1>
+<section id="key-features-of-the-howso-engine">
+<h2>Key Features of the Howso Engine<a class="headerlink" href="#key-features-of-the-howso-engine" title="Permalink to this heading">#</a></h2>
+<section id="understandability">
+<h3>Understandability<a class="headerlink" href="#understandability" title="Permalink to this heading">#</a></h3>
+<ul>
+<li><p>Perfect attribution traces decisions directly back to the source data, enabling complete auditability</p></li>
+<li><p>Challenge misleading results from current interpretability approaches with breakthroughs in feature importance analysis</p>
 <blockquote>
-<div><p><a class="reference external" href="https://data.iana.org/time-zones/releases/tzdata2023c.tar.gz">https://data.iana.org/time-zones/releases/tzdata2023c.tar.gz</a></p>
+<div><p>Howso is robust against several common challenges (correlated features, redundant features, difference in scale between features, and multiple distinguishing features)
+faced by other feature importance tools, including the SHAP metric, which often lead to misleading results.</p>
 </div></blockquote>
-<p>Step 2 - Unpack Files:</p>
+</li>
+<li><p>Fix bias and debug</p>
 <blockquote>
-<div><p>Extract the compressed files into a folder at the following location on your filesystem:</p>
-<p>~/.howso/tzdata</p>
+<div><p>Easily add, edit, and remove data without spending more costly re-training time and computational resources.</p>
 </div></blockquote>
-<p>Step 3 - Supplemental File (Microsoft Windows Only):</p>
+</li>
+<li><p>Identify counterfactuals and perform “what if?” scenario analyses</p></li>
+</ul>
+</section>
+<section id="performance">
+<h3>Performance<a class="headerlink" href="#performance" title="Permalink to this heading">#</a></h3>
+<p>On average, Howso outperforms LightGBM classification and regression accuracy, and demonstrates notable success with small datasets. Additionally, Howso intelligently handles and
+imputes sparse and missing data.</p>
+</section>
+<section id="versatility">
+<h3>Versatility<a class="headerlink" href="#versatility" title="Permalink to this heading">#</a></h3>
+<ul>
+<li><p>Perform multiple tasks automatically, including…</p>
 <blockquote>
-<div><p>Place this supplemental <code class="docutils literal notranslate"><span class="pre">windowsZones.xml</span></code> alongside the previously downloaded and extracted time zone data files.</p>
-<a href="https://raw.githubusercontent.com/unicode-org/cldr/master/common/supplemental/windowsZones.xml" target="_blank">
-    https://raw.githubusercontent.com/unicode-org/cldr/master/common/supplemental/windowsZones.xml
-</a></div></blockquote>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
-<summary class="sd-summary-title sd-card-header">
-File Layout Preview<div class="sd-summary-down docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
-<div class="sd-summary-up docutils">
-<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
-</summary><div class="sd-summary-content sd-card-body docutils">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls<span class="w"> </span>~/.howso/tzdata
-
-...<span class="w"> </span>CONTRIBUTING
-...<span class="w"> </span>LICENSE
-...<span class="w"> </span>Makefile
-...<span class="w"> </span>NEWS
-...<span class="w"> </span>README
-...<span class="w"> </span>SECURITY
-...<span class="w"> </span>africa
-...<span class="w"> </span>antarctica
-...<span class="w"> </span>asia
-...<span class="w"> </span>australasia
-...<span class="w"> </span>backward
-...<span class="w"> </span>backzone
-...<span class="w"> </span>calendars
-...<span class="w"> </span>checklinks.awk
-...<span class="w"> </span>checktab.awk
-...<span class="w"> </span>etcetera
-...<span class="w"> </span>europe
-...<span class="w"> </span>factory
-...<span class="w"> </span>iso3166.tab
-...<span class="w"> </span>leap-seconds.list
-...<span class="w"> </span>leapseconds
-...<span class="w"> </span>leapseconds.awk
-...<span class="w"> </span>northamerica
-...<span class="w"> </span>southamerica
-...<span class="w"> </span>theory.html
-...<span class="w"> </span>version
-...<span class="w"> </span>windowsZones.xml
-...<span class="w"> </span>ziguard.awk
-...<span class="w"> </span>zishrink.awk
-...<span class="w"> </span>zone.tab
-...<span class="w"> </span>zone1970.tab
-</pre></div>
-</div>
-</div>
-</details><div class="toctree-wrapper compound">
-</div>
+<div><ul class="simple">
+<li><p>Supervised and unsupervised learning</p></li>
+<li><p>Online learning</p></li>
+<li><p>Reinforcement learning</p></li>
+<li><p>Generative and discriminative analysis</p></li>
+<li><p>Anomaly detection</p></li>
+<li><p>Bias detection and prediction monitoring</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Utilize structured and semi-structured data</p></li>
+<li><p>Flexibly handle a variety of data types, including time-series data and nominals</p></li>
+</ul>
+</section>
+<section id="trustworthiness">
+<h3>Trustworthiness<a class="headerlink" href="#trustworthiness" title="Permalink to this heading">#</a></h3>
+<ul>
+<li><p>Calculate reliable uncertainties for your predictions</p>
+<blockquote>
+<div><p>Avoid hallucinations with complete and accurate knowledge of uncertainties so you can deliver accountability and know when there is not enough information to make good decisions.</p>
+</div></blockquote>
+</li>
+<li><p>Remain robust to adversarial attacks that exploit AI in action, and reliably detect them</p>
+<blockquote>
+<div><p>Howso outperforms other AI methdos and maintaining the integrity of your data and decisions, even after an attack.</p>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="limitations">
+<h3>Limitations<a class="headerlink" href="#limitations" title="Permalink to this heading">#</a></h3>
+<p>Howso values gracious intellectual honesty. In that spirit, we’re telling you up front where we struggle and how we are planning to improve.</p>
+<ul>
+<li><p>Additional data types</p>
+<blockquote>
+<div><p>Currently, we only work with structured data. We are in beta testing for semi-structured data, tiptoeing toward generative language, and images handling is on the distant horizon.</p>
+</div></blockquote>
+</li>
+<li><p>Feature width</p>
+<blockquote>
+<div><p>We work well with hundreds of features, but we are not yet able to handle thousands of features in practical applications.</p>
+</div></blockquote>
+</li>
+<li><p>Very large datasets</p>
+<blockquote>
+<div><p>Handling very large datasets with subtle signals (e.g., datasets requiring tens of millions of records and/or thousands of features to capture the complex relationships within the data)
+currently requires manual work from engineering, data science, and subject matter expert teams. However, currently available Howso tools, including ablation and non-robust feature contribution calculations,
+can be used to help identify subsamples of large datasets that
+contain enough signal to be used for data science analysis.</p>
+</div></blockquote>
+</li>
+</ul>
+</section>
+</section>
+<section id="what-s-next-how-to-use-these-guides">
+<h2>What’s next? How to use these guides…<a class="headerlink" href="#what-s-next-how-to-use-these-guides" title="Permalink to this heading">#</a></h2>
+<p>If you have not already installed Howso Engine, that’s your first step! You can find our <a class="reference internal" href="installing.html"><span class="doc">installation guide here</span></a>.</p>
+<p>Once you’re installed, you can try out Howso using a variety of pre-built <span class="xref std std-doc">Jupyter notebook examples</span>. These notebooks will provide “recipes” for how to utilize
+Understandable AI in many applications.</p>
+<p>Additionally, you can gain insight into Howso’s capabilities by exploring our <a class="reference internal" href="concepts.html"><span class="doc">key concepts</span></a>, <a class="reference internal" href="terminology.html"><span class="doc">terminology</span></a>, and <span class="xref std std-doc">user guides</span> or by digging into our python code <span class="xref std std-doc">API references</span>.</p>
+<p>And, as always, we welcome your participation and feedback on our <a class="reference external" href="https://github.com/howsoai">github page</a>!</p>
 </section>
 </section>
 
@@ -502,20 +510,20 @@ File Layout Preview<div class="sd-summary-down docutils">
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="index.html"
+       href="client_configuration.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Getting Started</p>
+        <p class="prev-next-title">Client Configuration</p>
       </div>
     </a>
     <a class="right-next"
-       href="client_configuration.html"
+       href="concepts.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Client Configuration</p>
+        <p class="prev-next-title">Key Concepts</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -537,10 +545,15 @@ File Layout Preview<div class="sd-summary-down docutils">
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-from-pypi">Installing from PyPi</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#client-configuration">Client Configuration</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verification">Verification</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-zone-data">Time Zone Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-features-of-the-howso-engine">Key Features of the Howso Engine</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understandability">Understandability</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#performance">Performance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#versatility">Versatility</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trustworthiness">Trustworthiness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limitations">Limitations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-s-next-how-to-use-these-guides">What’s next? How to use these guides…</a></li>
 </ul>
   </nav></div>
 

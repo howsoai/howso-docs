@@ -10,7 +10,6 @@ Objectives: what you will take away
 -----------------------------------
 - **Definitions & Understanding** of different saving and loading operations based on platform.
 - **How-To** save and load a :py:class:`~Trainee`.
-- **API References** How to use, :meth:`Trainee.save`, :py:meth:`Engine.load_trainee`, :py:meth:`Trainee.persist`, and :py:meth:`Trainee.acquire_resources`.
 
 Prerequisites: before you begin
 -------------------------------
@@ -28,7 +27,7 @@ Concepts & Terminology
 The main concept of this guide is how to save and load a Trainee. To understand this better, we
 recommend being familiar with the Trainees:
 
-- :ref:`Trainee <user_guide/terminology:trainee>`
+- :ref:`Trainee <../getting_started/terminology:trainee>`
 
 How-To Guide
 ------------

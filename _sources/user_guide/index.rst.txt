@@ -10,7 +10,7 @@ To get started, be sure and start with these guides:
 
  - :doc:`Basic Workflow <basic_workflow>`
  - :doc:`Feature Attributes <feature_attributes>`
- - :doc:`Regression and Classification<predictions>`
+ - :doc:`Predictions<predictions>`
 
 
 .. toctree::
@@ -18,20 +18,19 @@ To get started, be sure and start with these guides:
     :hidden:
 
     basic_workflow
-    predictions
     feature_attributes
+    predictions
+    understanding_predictions
     model_performance
-    editing_case_weighting
     influential_data_counterfactuals_uncertainty
+    feature_importance
+    editing_case_weighting
+    save_load
     derived_features
     anomaly_detection
-    generative_AI_synth
-    time_series
     bias_mitigation
-    understanding_predictions
-    feature_importance
-    save_load
-    reinforcement_learning
+    generative_AI_synth
     sparse_data
-    terminology
+    reinforcement_learning
+    time_series
     datasets

@@ -54,8 +54,8 @@
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Time Series and Sequential Data Analysis" href="time_series.html" />
-    <link rel="prev" title="Anomaly Detection" href="anomaly_detection.html" />
+    <link rel="next" title="Handling Sparse Data" href="sparse_data.html" />
+    <link rel="prev" title="Bias Mitigation" href="bias_mitigation.html" />
     <link rel="icon" type="image/svg+xml" href="/_static/favicon.svg">
     <link rel="mask-icon" href="/_static/favicon.svg">
     <link rel="stylesheet" href="https://cdn.howso.com/fonts/inter/3.19/typeface.css">
@@ -161,15 +161,15 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../api_reference/index.html">
-                        API Reference
+                      <a class="nav-link nav-internal" href="../examples/index.html">
+                        Recipes
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../examples/index.html">
-                        Examples
+                      <a class="nav-link nav-internal" href="../api_reference/index.html">
+                        API Reference
                       </a>
                     </li>
                 
@@ -281,15 +281,15 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../api_reference/index.html">
-                        API Reference
+                      <a class="nav-link nav-internal" href="../examples/index.html">
+                        Recipes
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../examples/index.html">
-                        Examples
+                      <a class="nav-link nav-internal" href="../api_reference/index.html">
+                        API Reference
                       </a>
                     </li>
                 
@@ -339,22 +339,21 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="basic_workflow.html">Basic Workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="predictions.html">Predictions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="feature_attributes.html">Feature Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="predictions.html">Predictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="understanding_predictions.html">Understanding Predictions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="model_performance.html">Model Performance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="influential_data_counterfactuals_uncertainty.html">Influential Data, Counterfactuals, and Uncertainties of Predictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_importance.html">Feature Importance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load.html">Saving and Loading</a></li>
 <li class="toctree-l1"><a class="reference internal" href="derived_features.html">Derived Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anomaly_detection.html">Anomaly Detection</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Generative Output and Data Synthesis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="time_series.html">Time Series and Sequential Data Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bias_mitigation.html">Bias Mitigation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="understanding_predictions.html">Understanding Predictions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="feature_importance.html">Feature Importance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="save_load.html">Saving and Loading</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reinforcement_learning.html">Reinforcement Learning</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Generative Output and Data Synthesis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sparse_data.html">Handling Sparse Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reinforcement_learning.html">Reinforcement Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time_series.html">Time Series and Sequential Data Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
 </ul>
 </div>
@@ -424,7 +423,6 @@ document.write(`
 <ul class="simple">
 <li><p><strong>Definitions &amp; an understanding</strong> of the Howso Engine’s underlying instance-based learning (IBL) technology, which enables its generative capabilities.</p></li>
 <li><p><strong>How-To</strong> perform generative analysis and generate synthetic data using Engine.</p></li>
-<li><p><strong>API References</strong> - where to find references to APIs used in this user guide.</p></li>
 </ul>
 </section>
 <section id="prerequisites-before-you-begin">
@@ -460,7 +458,7 @@ likelihood estimate (MLE) to make predictions. In contrast, <strong>generative</
 </div></blockquote>
 <p><em>How does conviction enable Engine’s generative AI capabilities?</em></p>
 <blockquote>
-<div><p><a class="reference internal" href="terminology.html#conviction"><span class="std std-ref">Conviction</span></a> is a computed ratio of the expected surprisal to the actual surprisal.
+<div><p><span class="xref std std-ref">Conviction</span> is a computed ratio of the expected surprisal to the actual surprisal.
 Conviction is often used when making predictions to
 determine how closely a prediction for a new data point should adhere to the original data. A defining feature of
 Engine is that it utilizes the concept of conviction to condition its sample from the likelihood distribution to be more or less unusual (or surprising) during generative
@@ -536,20 +534,20 @@ new case is or is not generated, and <cite>num_cases_to_generate</cite>, which i
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="anomaly_detection.html"
+       href="bias_mitigation.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Anomaly Detection</p>
+        <p class="prev-next-title">Bias Mitigation</p>
       </div>
     </a>
     <a class="right-next"
-       href="time_series.html"
+       href="sparse_data.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Time Series and Sequential Data Analysis</p>
+        <p class="prev-next-title">Handling Sparse Data</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -13,7 +13,6 @@ Objectives: what you will take away
 -----------------------------------
 - **Definitions & an understanding** of basic regression, classification, continuous vs categorical/nominal Action Features, :class:`Trainee`, :meth:`~Trainee.react`,  :meth:`~Trainee.react_into_trainee`, and :meth:`~Trainee.get_prediction_stats`.
 - **How-To** perform a basic regression or classification analysis using the Howso Engine to predict the Highway MPG or Fuel Type based on vehicle Context Features.
-- **API References** of where to find more details of APIs used in this guide.
 
 Prerequisites: before you begin
 -------------------------------
@@ -43,14 +42,14 @@ year manufactured.
 Action Feature, as in this guide predicting the **FuelType** of a vehicle based on its physical characteristics and year
 manufactured. For Howso Engine, the action feature may be left in string format and does not need to be converted to numeric format.
 
-**Trainee and React** - In this simple example, we will be creating a :ref:`Trainee <user_guide/terminology:trainee>`
-that we can be used :ref:`React <user_guide/terminology:react>` to new case data, such as a new car we might be looking to build.
+**Trainee and React** - In this simple example, we will be creating a :ref:`Trainee <../getting_started/terminology:trainee>`
+that we can be used :ref:`React <../getting_started/terminology:react>` to new case data, such as a new car we might be looking to build.
 
 **Train and Analyze** - To create a :class:`Trainee`, we will first load data, define :doc:`Feature Attributes <feature_attributes>`
-of the data and :ref:`Train <user_guide/terminology:train>` the :class:`Trainee`.  The :class:`Trainee` can be used for many tasks,
-but because we know exactly what we want to do, we will :ref:`Analyze <user_guide/terminology:analyze>` to improve the
-performance of our trainee by defining the specific set of :ref:`Context Features <user_guide/terminology:context features>`
-that we know we want to use to predict an :ref:`Action Feature <user_guide/terminology:action features>`. The action
+of the data and :ref:`Train <../getting_started/terminology:train>` the :class:`Trainee`.  The :class:`Trainee` can be used for many tasks,
+but because we know exactly what we want to do, we will :ref:`Analyze <../getting_started/terminology:analyze>` to improve the
+performance of our trainee by defining the specific set of :ref:`Context Features <../getting_started/terminology:context features>`
+that we know we want to use to predict an :ref:`Action Feature <../getting_started/terminology:action features>`. The action
 feature in this example will be **Highway MPG**.
 
 **Evaluating the Trainee** - To understand the accuracy of the trainee for our tasks, we can use the built-in :meth:`Trainee.react_into_trainee`.

@@ -10,9 +10,8 @@ Model Performance
 
 Objectives: what you will take away
 -----------------------------------
-- **Definitions & an understanding** of Residuals, MAE, and, Conditions using the Howso Engine.
-- **How-To** - retrieve the performance statistics that describe the Trainee's performance.
-- **API References** - where to find references to APIs used in this user guide.
+- **Definitions & an understanding** of residuals, MAE, and, Conditions using the Howso Engine.
+- **How-To** retrieve the performance statistics that describe the Trainee's performance.
 
 Prerequisites: before you begin
 -------------------------------
@@ -30,9 +29,9 @@ Concepts & Terminology
 
 To understand this guide, we recommend being familiar with the following concepts:
 
-- :ref:`Trainee <user_guide/terminology:Trainee>`
-- :ref:`Feature <user_guide/terminology:Feature>`
-- :ref:`Residuals <user_guide/terminology:Residual>`
+- :ref:`Trainee <../getting_started/terminology:Trainee>`
+- :ref:`Feature <../getting_started/terminology:Feature>`
+- :ref:`Residuals <../getting_started/terminology:Residual>`
 
 How-To Guide
 ------------
@@ -44,7 +43,7 @@ Step 1 - Global Model Performance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The most basic and quintessential measure of model performance and uncertainty within a :class:`~Trainee` are the feature residuals.
-The :any:`residual <user_guide/terminology:Residual>` is described in more detail in the terminology section, but in this
+The :any:`residual <../getting_started/terminology:Residual>` is described in more detail in the terminology section, but in this
 context, the feature residuals describe the average difference between the models prediction for a feature and the
 true value. These values are also called the Mean Absolute Error (MAE).
 

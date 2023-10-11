@@ -55,8 +55,8 @@
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Feature Attributes" href="feature_attributes.html" />
-    <link rel="prev" title="Basic Workflow" href="basic_workflow.html" />
+    <link rel="next" title="Understanding Predictions" href="understanding_predictions.html" />
+    <link rel="prev" title="Feature Attributes" href="feature_attributes.html" />
     <link rel="icon" type="image/svg+xml" href="/_static/favicon.svg">
     <link rel="mask-icon" href="/_static/favicon.svg">
     <link rel="stylesheet" href="https://cdn.howso.com/fonts/inter/3.19/typeface.css">
@@ -162,15 +162,15 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../api_reference/index.html">
-                        API Reference
+                      <a class="nav-link nav-internal" href="../examples/index.html">
+                        Recipes
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../examples/index.html">
-                        Examples
+                      <a class="nav-link nav-internal" href="../api_reference/index.html">
+                        API Reference
                       </a>
                     </li>
                 
@@ -282,15 +282,15 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../api_reference/index.html">
-                        API Reference
+                      <a class="nav-link nav-internal" href="../examples/index.html">
+                        Recipes
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../examples/index.html">
-                        Examples
+                      <a class="nav-link nav-internal" href="../api_reference/index.html">
+                        API Reference
                       </a>
                     </li>
                 
@@ -340,22 +340,21 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="basic_workflow.html">Basic Workflow</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Predictions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="feature_attributes.html">Feature Attributes</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Predictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="understanding_predictions.html">Understanding Predictions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="model_performance.html">Model Performance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="influential_data_counterfactuals_uncertainty.html">Influential Data, Counterfactuals, and Uncertainties of Predictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_importance.html">Feature Importance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load.html">Saving and Loading</a></li>
 <li class="toctree-l1"><a class="reference internal" href="derived_features.html">Derived Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anomaly_detection.html">Anomaly Detection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="generative_AI_synth.html">Generative Output and Data Synthesis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="time_series.html">Time Series and Sequential Data Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bias_mitigation.html">Bias Mitigation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="understanding_predictions.html">Understanding Predictions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="feature_importance.html">Feature Importance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="save_load.html">Saving and Loading</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reinforcement_learning.html">Reinforcement Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_AI_synth.html">Generative Output and Data Synthesis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sparse_data.html">Handling Sparse Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reinforcement_learning.html">Reinforcement Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time_series.html">Time Series and Sequential Data Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
 </ul>
 </div>
@@ -428,7 +427,6 @@ attributes of the vehicle.</p>
 <ul class="simple">
 <li><p><strong>Definitions &amp; an understanding</strong> of basic regression, classification, continuous vs categorical/nominal Action Features, <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a>, <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react()</span></code></a>,  <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react_into_trainee()</span></code></a>, and <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.get_prediction_stats" title="howso.engine.Trainee.get_prediction_stats"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_prediction_stats()</span></code></a>.</p></li>
 <li><p><strong>How-To</strong> perform a basic regression or classification analysis using the Howso Engine to predict the Highway MPG or Fuel Type based on vehicle Context Features.</p></li>
-<li><p><strong>API References</strong> of where to find more details of APIs used in this guide.</p></li>
 </ul>
 </section>
 <section id="prerequisites-before-you-begin">
@@ -466,13 +464,13 @@ year manufactured.</p>
 <p><strong>Classification</strong> - is used to describe the relationship between one or more Context Features and a <strong>categorical/nominal</strong>
 Action Feature, as in this guide predicting the <strong>FuelType</strong> of a vehicle based on its physical characteristics and year
 manufactured. For Howso Engine, the action feature may be left in string format and does not need to be converted to numeric format.</p>
-<p><strong>Trainee and React</strong> - In this simple example, we will be creating a <a class="reference internal" href="terminology.html#trainee"><span class="std std-ref">Trainee</span></a>
-that we can be used <a class="reference internal" href="terminology.html#react"><span class="std std-ref">React</span></a> to new case data, such as a new car we might be looking to build.</p>
+<p><strong>Trainee and React</strong> - In this simple example, we will be creating a <span class="xref std std-ref">Trainee</span>
+that we can be used <span class="xref std std-ref">React</span> to new case data, such as a new car we might be looking to build.</p>
 <p><strong>Train and Analyze</strong> - To create a <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a>, we will first load data, define <a class="reference internal" href="feature_attributes.html"><span class="doc">Feature Attributes</span></a>
-of the data and <a class="reference internal" href="terminology.html#train"><span class="std std-ref">Train</span></a> the <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a>.  The <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> can be used for many tasks,
-but because we know exactly what we want to do, we will <a class="reference internal" href="terminology.html#analyze"><span class="std std-ref">Analyze</span></a> to improve the
-performance of our trainee by defining the specific set of <a class="reference internal" href="terminology.html#context-features"><span class="std std-ref">Context Features</span></a>
-that we know we want to use to predict an <a class="reference internal" href="terminology.html#action-features"><span class="std std-ref">Action Feature</span></a>. The action
+of the data and <span class="xref std std-ref">Train</span> the <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a>.  The <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> can be used for many tasks,
+but because we know exactly what we want to do, we will <span class="xref std std-ref">Analyze</span> to improve the
+performance of our trainee by defining the specific set of <span class="xref std std-ref">Context Features</span>
+that we know we want to use to predict an <span class="xref std std-ref">Action Feature</span>. The action
 feature in this example will be <strong>Highway MPG</strong>.</p>
 <p><strong>Evaluating the Trainee</strong> - To understand the accuracy of the trainee for our tasks, we can use the built-in <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_into_trainee()</span></code></a>.
 Since we are not using a train-test split approach in this example, we will use the <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react_into_trainee()</span></code></a> method, which
@@ -677,20 +675,20 @@ predict, specifically the feature <cite>type</cite> as shown below, thus it is <
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="basic_workflow.html"
+       href="feature_attributes.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Basic Workflow</p>
+        <p class="prev-next-title">Feature Attributes</p>
       </div>
     </a>
     <a class="right-next"
-       href="feature_attributes.html"
+       href="understanding_predictions.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Feature Attributes</p>
+        <p class="prev-next-title">Understanding Predictions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

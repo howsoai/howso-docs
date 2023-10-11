@@ -14,7 +14,6 @@ Objectives: what you will take away
 - **Definitions & Understanding** of how :py:class:`~Trainee` s can be edited without re-training and what effects case-
   weighting can have on prediction.
 - **How-To** remove, edit, and weigh cases in a :py:class:`~Trainee` .
-- **API References** How to use, :meth:`Trainee.add_feature`, :py:meth:`Trainee.remove_cases`, and :py:meth:`Trainee.edit_cases` .
 
 
 Prerequisites: before you begin
@@ -42,12 +41,12 @@ Concepts & Terminology
 The main piece of terminology this guide introduces is the concept of case weights.  To understand this, we
 recommend being familiar with the following concepts:
 
-- :ref:`Trainee <user_guide/terminology:trainee>`
-- :ref:`React <user_guide/terminology:react>`
-- :ref:`Case <user_guide/terminology:case>`
-- :ref:`Feature <user_guide/terminology:feature>`
-- :ref:`Action Features <user_guide/terminology:action features>`
-- :ref:`Context Features <user_guide/terminology:context features>`
+- :ref:`Trainee <../getting_started/terminology:trainee>`
+- :ref:`React <../getting_started/terminology:react>`
+- :ref:`Case <../getting_started/terminology:case>`
+- :ref:`Feature <../getting_started/terminology:feature>`
+- :ref:`Action Features <../getting_started/terminology:action features>`
+- :ref:`Context Features <../getting_started/terminology:context features>`
 - :doc:`Feature Attributes <feature_attributes>`
 
 Additional concepts to be familiar with are `classification <https://en.wikipedia.org/wiki/Statistical_classification>`_ and

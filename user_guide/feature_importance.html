@@ -54,8 +54,8 @@
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Saving and Loading" href="save_load.html" />
-    <link rel="prev" title="Understanding Predictions" href="understanding_predictions.html" />
+    <link rel="next" title="Editing Trainees and Case Weighting" href="editing_case_weighting.html" />
+    <link rel="prev" title="Influential Data, Counterfactuals, and Uncertainties of Predictions" href="influential_data_counterfactuals_uncertainty.html" />
     <link rel="icon" type="image/svg+xml" href="/_static/favicon.svg">
     <link rel="mask-icon" href="/_static/favicon.svg">
     <link rel="stylesheet" href="https://cdn.howso.com/fonts/inter/3.19/typeface.css">
@@ -161,15 +161,15 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../api_reference/index.html">
-                        API Reference
+                      <a class="nav-link nav-internal" href="../examples/index.html">
+                        Recipes
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../examples/index.html">
-                        Examples
+                      <a class="nav-link nav-internal" href="../api_reference/index.html">
+                        API Reference
                       </a>
                     </li>
                 
@@ -281,15 +281,15 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../api_reference/index.html">
-                        API Reference
+                      <a class="nav-link nav-internal" href="../examples/index.html">
+                        Recipes
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../examples/index.html">
-                        Examples
+                      <a class="nav-link nav-internal" href="../api_reference/index.html">
+                        API Reference
                       </a>
                     </li>
                 
@@ -339,22 +339,21 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="basic_workflow.html">Basic Workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="predictions.html">Predictions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="feature_attributes.html">Feature Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="predictions.html">Predictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="understanding_predictions.html">Understanding Predictions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="model_performance.html">Model Performance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="influential_data_counterfactuals_uncertainty.html">Influential Data, Counterfactuals, and Uncertainties of Predictions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Feature Importance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load.html">Saving and Loading</a></li>
 <li class="toctree-l1"><a class="reference internal" href="derived_features.html">Derived Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anomaly_detection.html">Anomaly Detection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="generative_AI_synth.html">Generative Output and Data Synthesis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="time_series.html">Time Series and Sequential Data Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bias_mitigation.html">Bias Mitigation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="understanding_predictions.html">Understanding Predictions</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Feature Importance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="save_load.html">Saving and Loading</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reinforcement_learning.html">Reinforcement Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_AI_synth.html">Generative Output and Data Synthesis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sparse_data.html">Handling Sparse Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reinforcement_learning.html">Reinforcement Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time_series.html">Time Series and Sequential Data Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
 </ul>
 </div>
@@ -417,15 +416,14 @@ document.write(`
 <h1>Feature Importance<a class="headerlink" href="#feature-importance" title="Permalink to this heading">#</a></h1>
 <aside class="topic">
 <p class="topic-title">What is covered in this user guide</p>
-<p>In this guide, you will learn how to retrieve the feature importance metrics, <a class="reference internal" href="terminology.html#contribution"><span class="std std-ref">Feature Contributions</span></a> and <a class="reference internal" href="terminology.html#mda"><span class="std std-ref">Feature Mean Decrease in Accuracy (MDA)</span></a> from a Trainee. Feature importance metrics
-provides information about which features are useful for predicting a target or <a class="reference internal" href="terminology.html#action-features"><span class="std std-ref">action</span></a> feature. In addition to learning informative metrics about the data and the model, these insights can be used as guidance for further action such as feature selection or feature engineering.</p>
+<p>In this guide, you will learn how to compute the feature importance metrics, <span class="xref std std-ref">Feature Contributions</span> and <span class="xref std std-ref">Feature Mean Decrease in Accuracy (MDA)</span> from a Trainee. Feature importance metrics
+provides information about which features are useful for predicting a target or <span class="xref std std-ref">action</span> feature. In addition to learning informative metrics about the data and the model, these insights can be used as guidance for further action such as feature selection or feature engineering.</p>
 </aside>
 <section id="objectives-what-you-will-take-away">
 <h2>Objectives: what you will take away<a class="headerlink" href="#objectives-what-you-will-take-away" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Definitions &amp; Understanding</strong> Difference between global vs local, and robust vs non-robust <a class="reference internal" href="terminology.html#contribution"><span class="std std-ref">Feature Contributions</span></a> and <a class="reference internal" href="terminology.html#mda"><span class="std std-ref">Feature MDA</span></a>.</p></li>
+<li><p><strong>Definitions &amp; Understanding</strong> Difference between global vs local, and robust vs non-robust <span class="xref std std-ref">Feature Contributions</span> and <span class="xref std std-ref">Feature MDA</span>.</p></li>
 <li><p><strong>How-To</strong> obtain both feature importance metrics.</p></li>
-<li><p><strong>API References</strong> How to use <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.get_prediction_stats" title="howso.engine.Trainee.get_prediction_stats"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.get_prediction_stats()</span></code></a>, <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a>.</p></li>
 </ul>
 </section>
 <section id="prerequisites-before-you-begin">
@@ -447,13 +445,13 @@ provides information about which features are useful for predicting a target or 
 <p>The main piece of terminology this guide introduces is the concept of Feature Importance. To understand this, we
 recommend being familiar with the following concepts:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="terminology.html#trainee"><span class="std std-ref">Trainee</span></a></p></li>
-<li><p><a class="reference internal" href="terminology.html#react"><span class="std std-ref">React</span></a></p></li>
-<li><p><a class="reference internal" href="terminology.html#feature"><span class="std std-ref">Feature</span></a></p></li>
-<li><p><a class="reference internal" href="terminology.html#action-features"><span class="std std-ref">Action Features</span></a></p></li>
-<li><p><a class="reference internal" href="terminology.html#context-features"><span class="std std-ref">Context Features</span></a></p></li>
-<li><p><a class="reference internal" href="terminology.html#contribution"><span class="std std-ref">Feature Contributions</span></a></p></li>
-<li><p><a class="reference internal" href="terminology.html#mda"><span class="std std-ref">Feature MDA</span></a></p></li>
+<li><p><span class="xref std std-ref">Trainee</span></p></li>
+<li><p><span class="xref std std-ref">React</span></p></li>
+<li><p><span class="xref std std-ref">Feature</span></p></li>
+<li><p><span class="xref std std-ref">Action Features</span></p></li>
+<li><p><span class="xref std std-ref">Context Features</span></p></li>
+<li><p><span class="xref std std-ref">Feature Contributions</span></p></li>
+<li><p><span class="xref std std-ref">Feature MDA</span></p></li>
 <li><p><a class="reference internal" href="feature_attributes.html"><span class="doc">Feature Attributes</span></a></p></li>
 </ul>
 <section id="local-vs-global">
@@ -565,20 +563,20 @@ is decreased</p></li>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="understanding_predictions.html"
+       href="influential_data_counterfactuals_uncertainty.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Understanding Predictions</p>
+        <p class="prev-next-title">Influential Data, Counterfactuals, and Uncertainties of Predictions</p>
       </div>
     </a>
     <a class="right-next"
-       href="save_load.html"
+       href="editing_case_weighting.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Saving and Loading</p>
+        <p class="prev-next-title">Editing Trainees and Case Weighting</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

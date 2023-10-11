@@ -54,8 +54,8 @@
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Derived Features" href="derived_features.html" />
-    <link rel="prev" title="Editing Trainees and Case Weighting" href="editing_case_weighting.html" />
+    <link rel="next" title="Feature Importance" href="feature_importance.html" />
+    <link rel="prev" title="Model Performance" href="model_performance.html" />
     <link rel="icon" type="image/svg+xml" href="/_static/favicon.svg">
     <link rel="mask-icon" href="/_static/favicon.svg">
     <link rel="stylesheet" href="https://cdn.howso.com/fonts/inter/3.19/typeface.css">
@@ -161,15 +161,15 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../api_reference/index.html">
-                        API Reference
+                      <a class="nav-link nav-internal" href="../examples/index.html">
+                        Recipes
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../examples/index.html">
-                        Examples
+                      <a class="nav-link nav-internal" href="../api_reference/index.html">
+                        API Reference
                       </a>
                     </li>
                 
@@ -281,15 +281,15 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../api_reference/index.html">
-                        API Reference
+                      <a class="nav-link nav-internal" href="../examples/index.html">
+                        Recipes
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../examples/index.html">
-                        Examples
+                      <a class="nav-link nav-internal" href="../api_reference/index.html">
+                        API Reference
                       </a>
                     </li>
                 
@@ -339,22 +339,21 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="basic_workflow.html">Basic Workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="predictions.html">Predictions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="feature_attributes.html">Feature Attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="predictions.html">Predictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="understanding_predictions.html">Understanding Predictions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="model_performance.html">Model Performance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Influential Data, Counterfactuals, and Uncertainties of Predictions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_importance.html">Feature Importance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="save_load.html">Saving and Loading</a></li>
 <li class="toctree-l1"><a class="reference internal" href="derived_features.html">Derived Features</a></li>
 <li class="toctree-l1"><a class="reference internal" href="anomaly_detection.html">Anomaly Detection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="generative_AI_synth.html">Generative Output and Data Synthesis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="time_series.html">Time Series and Sequential Data Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bias_mitigation.html">Bias Mitigation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="understanding_predictions.html">Understanding Predictions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="feature_importance.html">Feature Importance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="save_load.html">Saving and Loading</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reinforcement_learning.html">Reinforcement Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="generative_AI_synth.html">Generative Output and Data Synthesis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sparse_data.html">Handling Sparse Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reinforcement_learning.html">Reinforcement Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time_series.html">Time Series and Sequential Data Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
 </ul>
 </div>
@@ -426,7 +425,6 @@ if there were any <strong>counterfactuals</strong> to the prediction in the data
 <ul class="simple">
 <li><p><strong>Definitions &amp; an understanding</strong> of influential data, counterfactuals, and uncertainty within Engine.</p></li>
 <li><p><strong>How-To</strong> obtain influential data, counterfactuals, and uncertainties using Engine.</p></li>
-<li><p><strong>API References</strong> - where to find references to APIs used in this guide.</p></li>
 </ul>
 </section>
 <section id="prerequisites-before-you-begin">
@@ -448,11 +446,11 @@ if there were any <strong>counterfactuals</strong> to the prediction in the data
 <section id="concepts-terminology">
 <h2>Concepts &amp; Terminology<a class="headerlink" href="#concepts-terminology" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="terminology.html#uncertainty"><span class="std std-ref">Uncertainty</span></a> is the amount of information that is unknown about a prediction,
-and is characterized by a prediction’s residual. The <a class="reference internal" href="terminology.html#residual"><span class="std std-ref">residual</span></a> is the mean absolute
+<li><p><span class="xref std std-ref">Uncertainty</span> is the amount of information that is unknown about a prediction,
+and is characterized by a prediction’s residual. The <span class="xref std std-ref">residual</span> is the mean absolute
 error between a predicted and actual value.</p></li>
-<li><p><a class="reference internal" href="terminology.html#influential-cases"><span class="std std-ref">Influential cases</span></a> are the records that were directly used to make a prediction or to derive a result.</p></li>
-<li><p><a class="reference internal" href="terminology.html#boundary-cases"><span class="std std-ref">Counterfactuals</span></a>, or boundary cases, are the records that have similar Context Features to that of a
+<li><p><span class="xref std std-ref">Influential cases</span> are the records that were directly used to make a prediction or to derive a result.</p></li>
+<li><p><span class="xref std std-ref">Counterfactuals</span>, or boundary cases, are the records that have similar Context Features to that of a
 prediction’s Context Features, but instead have different Action Feature values. In other words, these are records with similar information that contain a different
 result. For example, if the prediction for fruit type was “peach”, a boundary case might be a very peach-looking “nectarine”.</p></li>
 </ul>
@@ -536,20 +534,20 @@ We will use the local feature residual to examine the uncertainty for a specific
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="editing_case_weighting.html"
+       href="model_performance.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Editing Trainees and Case Weighting</p>
+        <p class="prev-next-title">Model Performance</p>
       </div>
     </a>
     <a class="right-next"
-       href="derived_features.html"
+       href="feature_importance.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Derived Features</p>
+        <p class="prev-next-title">Feature Importance</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -1,5 +1,5 @@
-Examples
-========
+Recipes
+=======
 
 Use these Jupyter Notebook examples as "recipes" for building your own use-cases!
 
@@ -29,7 +29,7 @@ Use these Jupyter Notebook examples as "recipes" for building your own use-cases
         - A defining feature of Howso is that it can perform `generative analysis` as well as `discriminative analysis`. This example shows how `generative analysis` can be used for synthetic data creation, which is the foundation for our enterprise product `Howso Synthesizer <https://www.howso.com/synthesizer>`_ ™ !
 
 Applied Use-Cases
-========
+=================
 
 These notebooks provide an overview of applying Howso to make predictions based on historical data, and harnessing Howso's interpretability to understand why the predictions were made. Here, we demonstrate these capabilities on different datasets, and they explore concepts such as anomalies analysis, reviewing the data that contributed to the predictions, understanding the uncertainty of the predictions, and more. These are powerful tools for gaining insights from your data, so follow along and generate ideas for your own projects!
 
