@@ -100,9 +100,9 @@ Howso values gracious intellectual honesty. In that spirit, we're telling you up
 - Very large datasets
 
     Handling very large datasets with subtle signals (e.g., datasets requiring tens of millions of records and/or thousands of features to capture the complex relationships within the data)
-     currently requires manual work from engineering, data science, and subject matter expert teams. However, currently available Howso tools, including ablation and non-robust feature contribution calculations,
-      can be used to help identify subsamples of large datasets that
-     contain enough signal to be used for data science analysis.
+    currently requires manual work from engineering, data science, and subject matter expert teams. However, currently available Howso tools, including ablation and non-robust feature contribution calculations,
+    can be used to help identify subsamples of large datasets that
+    contain enough signal to be used for data science analysis.
 
 What's next? How to use these guides...
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
