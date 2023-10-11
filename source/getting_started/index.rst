@@ -8,11 +8,7 @@ To get started, install the Howso Engine
 
 Then, familiarize yourself with the Howso Engine so you understand why you should ask... how so? 
 
-<<<<<<< HEAD
-- :doc:`Key Concepts <concepts>`
-=======
   - :doc:`Howso Overview <intro>`
->>>>>>> 73e8d59 (Initial edits to the Getting Started)
 
 Next, learn about key technological differentiators of the Howso Engine and gain a better
 understanding of frequently used terminology
@@ -35,13 +31,9 @@ Download and run introductory recipes (sample notebooks)
     :hidden:
 
     installing
-<<<<<<< HEAD
-    concepts
-=======
     intro
     concepts
     terminology
 
 
 
->>>>>>> 73e8d59 (Initial edits to the Getting Started)
