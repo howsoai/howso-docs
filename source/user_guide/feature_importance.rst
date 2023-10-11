@@ -5,7 +5,7 @@ Feature Importance
 ==================
 .. topic:: What is covered in this user guide
 
-    In this guide, you will learn how to retrieve the feature importance metrics, :ref:`Feature Contributions <../getting_started/terminology:Contribution>` and :ref:`Feature Mean Decrease in Accuracy (MDA) <../getting_started/terminology:MDA>` from a Trainee. Feature importance metrics
+    In this guide, you will learn how to compute the feature importance metrics, :ref:`Feature Contributions <../getting_started/terminology:Contribution>` and :ref:`Feature Mean Decrease in Accuracy (MDA) <../getting_started/terminology:MDA>` from a Trainee. Feature importance metrics
     provides information about which features are useful for predicting a target or :ref:`action <../getting_started/terminology:Action Features>` feature. In addition to learning informative metrics about the data and the model, these insights can be used as guidance for further action such as feature selection or feature engineering.
 
 

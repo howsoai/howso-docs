@@ -16,11 +16,11 @@ In the spirit of providing trustworthy AI to all, Howso has open sourced its Eng
 
 - Perfectly cite the data used to make predictions
 
-- Utilize state of the art interpretability tools, to identify how your dataset influenced predictions
+- Utilize state of the art interpretability tools to identify how your dataset influenced predictions
 
-- Automatically poerform a variety of data science tasks
+- Automatically perform a variety of data science tasks
 
-- Identify and maintain integretity during adversarial attacks on your data
+- Identify and maintain integrity during adversarial attacks on your data
 
 - And more!
 
