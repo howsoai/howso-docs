@@ -57,41 +57,17 @@ The top-level of the file is the ``howso`` section:
       This section holds options that are specific to the usage of `Amalgam`
       and/or the Python client: `amalgam-lang`. The options here are as follows:
 
-      - ``library_postfix``
-
-        The Amalgam shared libraries are compiled for different modes of
-        operation. Each of the valid values for this option are:
-
-        - ``-mt`` for Multithreaded operation. This is almost always the best
-          option (and is thus the default on most systems).
-        - ``-st`` for Singlethreaded operation. In rare cases usually involving
-          small Trainee models, this may be the best option.
-        - ``-openmp`` for Multi Processing using the `OpenMP <https://openmp.org>`_ library.
-          This option may be useful when latency is paramount.
-        - ``-pgc`` for "Pedantic Garbage Collection". This is exclusively used
-          by developers in Amalgam debugging scenarios.
-
       - ``debug``
 
         - ``false`` (the default)
         - ``true`` Use this option for additional debugging information in the
           Amalgam trace files.
 
-      - ``trace``
+      - ``library_path``
 
-        - ``false`` (default) - No trace files are written.
-        - ``true`` - Use this option to generate tracefiles.
-
-      - ``execution_trace_dir``
-
-        Set the desired path where tracefiles should be written. The path
-        must be a valid directory with write permission for the
-        operating user. The default value is the current working directory.
-
-        - ``execution_trace_file``
-
-          Set the desired file name for the trace files. Default value is
-          ``<trainee_name>.trace``.
+        Specify a full path to an Amalgam shared library (DLL, SO, DyLib). This
+        is an advanced setting for developers who compile their own Amalgam
+        shared object binaries.
 
         - ``arch``
 
@@ -107,15 +83,43 @@ The top-level of the file is the ``howso`` section:
             generation 1 ``aarch64`` instruction sets such as early Raspberry
             Pi's and some early Graviton processors.
 
+      - ``execution_trace_dir``
+
+        Set the desired path where tracefiles should be written. The path
+        must be a valid directory with write permission for the
+        operating user. The default value is the current working directory.
+
+      - ``execution_trace_file``
+
+        Set the desired file name for the trace files. Default value is
+        ``<trainee_name>.trace``.
+
+      - ``library_postfix``
+
+        The Amalgam shared libraries are compiled for different modes of
+        operation. Each of the valid values for this option are:
+
+        - ``-mt`` for Multithreaded operation. This is almost always the best
+          option (and is thus the default on most systems).
+        - ``-st`` for Singlethreaded operation. In rare cases usually involving
+          small Trainee models, this may be the best option.
+        - ``-openmp`` for Multi Processing using the `OpenMP <https://openmp.org>`_ library.
+          This option may be useful when latency is paramount.
+        - ``-pgc`` for "Pedantic Garbage Collection". This is exclusively used
+          by developers in Amalgam debugging scenarios.
+
         - ``os``
 
-          Target operating system of the amalgam library.
-
-          Valid values are:
+          Target operating system of the amalgam library. Valid values are:
 
           - ``linux``
           - ``darwin``
           - ``windows``
+
+      - ``trace``
+
+        - ``false`` (default) - No trace files are written.
+        - ``true`` - Use this option to generate tracefiles.
 
     - ``core``
 
@@ -127,6 +131,23 @@ The top-level of the file is the ``howso`` section:
         By default, persisted trainees are stored in the current working directory.
         Set this option to a valid path with sufficient write permissions to
         store all persisted trainees if so desired.
+
+    - ``howso_path``
+
+      Specify a specific location to look for the Howso Engine (core). This is
+      an advanced setting used by developers.
+
+    - ``howso_fname``
+
+      Specify a specific filename for the Howso Engine (core). This is an
+      advanced setting used by developers.
+
+    - ``trainee_template_path``
+
+      Specify the path to look for the howso-template trainee_template_fname -
+      Specify the filename to use for the howso-template. This is an advanced
+      setting used by developers.
+
 
 
 Example Configuration File
