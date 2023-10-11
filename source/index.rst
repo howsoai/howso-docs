@@ -75,8 +75,10 @@ And check out API References
 .. toctree:: user_guide/index
    :hidden:
 
+.. toctree:: examples/index
+   :hidden:
+
 .. toctree:: api_reference/index
    :hidden:
 
-.. toctree:: examples/index
-   :hidden:
+
