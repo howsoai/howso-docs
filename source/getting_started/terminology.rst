@@ -170,16 +170,15 @@ Generate synthetic cases from an existing Trainee using react.
 
 Conviction
 ^^^^^^^^^^
-Howso bridges IBL and information theory and the link becomes apparent in the concept of **conviction**, which is a measure of surprisal. Surprisal is a concept of information theory that describes how likely an event
-will be. For example, if event A has a smaller probability of occurring than event B, you would be surprised if event A occurs. Howso's surprisal metric (conviction) is the computed ratio of actual information to
-expected information, i.e., a measure of how surprising an event is given what is expected to occur. Conviction has a range of zero to infinity. A conviction value of one is average, as the actual information is
-equal to the expected information. Convictions less than one indicate higher surprisal, as the actual information
-is less than the expected information, while convictions greater than one indicate lower surprisal, since the actual information is higher than the expected information.
+Howso bridges instance-based learning with information theory by harnessing the concept of "surprisal", which quantifies the surprise of an event's outcome. More specifically, Howso
+calculates "conviction", or the ratio of an outcome's expected surprisal to actual surprisal. Conviction has a range of zero to infinity. A conviction value of one is average, as an outcome's actual surprisal is
+equal to its expected surprisal. Convictions less than one indicate higher surprisal, as the actual surprisal
+is more than the expected surprisal, while convictions greater than one indicate lower surprisal, since the actual surprisal is less than the expected surprisal. 
 
-Actual information is the amount of information that a data point actually adds when it is evaluated. Expected information is what the value of a new data point should be on average, given
-all knowledge of the data. 
-The concept of surprisal,
-quantified by conviction, is prevalent throughout many of Howso's analysis capabilities. Howso's algorithms can assess the "conviction" of different measures, as discussed below.
+Conviction is prevalent throughout many of Howso's analysis capabilities and the Howso Engine assesses the "conviction" of variety of different measures, which is discussed more below.
+If you are interested in learning more about information and 
+surprisal, we recommend this `wikipedia article <https://en.wikipedia.org/wiki/Information_content>`_ as a good starting reference. 
+
 
 Familiarity Conviction
 ----------------------
