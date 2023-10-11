@@ -1,7 +1,7 @@
 Client Configuration
 ====================
 
-The HowsoEngine's python client (``HowsoDirectClient``) is designed to work well
+Howso Engine's python client (``HowsoDirectClient``) is designed to work well
 without any special configuration. However, there may be circumstances where
 additional options may be useful.
 
@@ -9,8 +9,8 @@ additional options may be useful.
 How to Create a Configuration File
 ----------------------------------
 
-The configuration file is simple a text file with the name ``howso.yml`` and is
-located in one of these places:
+The configuration file is a simple YAML text file with the name ``howso.yml``
+and is located in one of these places:
 
 1. At any valid file path that is stored in an environment variable: ``HOWSO_CONFIG``,
 2. Within your current working directory,
@@ -39,7 +39,7 @@ The top-level of the file is the ``howso`` section:
 
   - ``client``
 
-    Specify the client to use by it's dotted Python path. The default value is
+    Set the client to use by it's dotted Python path. The default value is
     ``howso.direct.HowsoDirectClient``.
 
     This is an advanced user option can be used to define and use other clients
@@ -53,7 +53,7 @@ The top-level of the file is the ``howso`` section:
 
     - ``amalgam``
 
-      The Howso Engine is built upon `Amalgam <https://github.com/howsoai/amalgam>`_.
+      Howso Engine is built upon `Amalgam <https://github.com/howsoai/amalgam>`_.
       This section holds options that are specific to the usage of `Amalgam`
       and/or the Python client: `amalgam-lang`. The options here are as follows:
 
@@ -65,7 +65,7 @@ The top-level of the file is the ``howso`` section:
 
       - ``library_path``
 
-        Specify a full path to an Amalgam shared library (DLL, SO, DyLib). This
+        Set a full path to an Amalgam shared library (DLL, SO, DyLib). This
         is an advanced setting for developers who compile their own Amalgam
         shared object binaries.
 
@@ -134,19 +134,18 @@ The top-level of the file is the ``howso`` section:
 
     - ``howso_path``
 
-      Specify a specific location to look for the Howso Engine (core). This is
-      an advanced setting used by developers.
+      Sets the location to look for the Howso Engine (core). This is an
+      advanced setting used by developers.
 
     - ``howso_fname``
 
-      Specify a specific filename for the Howso Engine (core). This is an
-      advanced setting used by developers.
+      Sets the filename for the Howso Engine (core). This is an advanced
+      setting used by developers.
 
     - ``trainee_template_path``
 
-      Specify the path to look for the howso-template trainee_template_fname -
-      Specify the filename to use for the howso-template. This is an advanced
-      setting used by developers.
+      Sets the path to look for the howso-template howso-template.
+      This is an advanced setting used by developers.
 
 
 
@@ -156,7 +155,7 @@ Example Configuration File
 .. NOTE::
 
     By default, the Howso Engine will automatically choose sensible default
-    values for options making a configuration file entirely optional.
+    values making a configuration file entirely optional.
 
 This is an example ``howso.yml`` file which overrides a few options for an
 early model Raspberry Pi ::

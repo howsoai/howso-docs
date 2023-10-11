@@ -405,13 +405,13 @@ document.write(`
                   
   <section id="client-configuration">
 <h1>Client Configuration<a class="headerlink" href="#client-configuration" title="Permalink to this heading">#</a></h1>
-<p>The HowsoEngine’s python client (<code class="docutils literal notranslate"><span class="pre">HowsoDirectClient</span></code>) is designed to work well
+<p>Howso Engine’s python client (<code class="docutils literal notranslate"><span class="pre">HowsoDirectClient</span></code>) is designed to work well
 without any special configuration. However, there may be circumstances where
 additional options may be useful.</p>
 <section id="how-to-create-a-configuration-file">
 <h2>How to Create a Configuration File<a class="headerlink" href="#how-to-create-a-configuration-file" title="Permalink to this heading">#</a></h2>
-<p>The configuration file is simple a text file with the name <code class="docutils literal notranslate"><span class="pre">howso.yml</span></code> and is
-located in one of these places:</p>
+<p>The configuration file is a simple YAML text file with the name <code class="docutils literal notranslate"><span class="pre">howso.yml</span></code>
+and is located in one of these places:</p>
 <ol class="arabic simple">
 <li><p>At any valid file path that is stored in an environment variable: <code class="docutils literal notranslate"><span class="pre">HOWSO_CONFIG</span></code>,</p></li>
 <li><p>Within your current working directory,</p></li>
@@ -439,7 +439,7 @@ order and the first one found will be used.</p>
 <code class="docutils literal notranslate"><span class="pre">client</span></code> and <code class="docutils literal notranslate"><span class="pre">client_extra_params</span></code>:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">client</span></code></p>
-<p>Specify the client to use by it’s dotted Python path. The default value is
+<p>Set the client to use by it’s dotted Python path. The default value is
 <code class="docutils literal notranslate"><span class="pre">howso.direct.HowsoDirectClient</span></code>.</p>
 <p>This is an advanced user option can be used to define and use other clients
 which subclass <code class="docutils literal notranslate"><span class="pre">HowsoDirectClient</span></code> but provide alternate behavior. This may
@@ -450,7 +450,7 @@ be useful for adding additional authentication, for example.</p>
 Howso Engine (<code class="docutils literal notranslate"><span class="pre">core</span></code>):</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">amalgam</span></code></p>
-<p>The Howso Engine is built upon <a class="reference external" href="https://github.com/howsoai/amalgam">Amalgam</a>.
+<p>Howso Engine is built upon <a class="reference external" href="https://github.com/howsoai/amalgam">Amalgam</a>.
 This section holds options that are specific to the usage of <cite>Amalgam</cite>
 and/or the Python client: <cite>amalgam-lang</cite>. The options here are as follows:</p>
 <ul>
@@ -462,7 +462,7 @@ Amalgam trace files.</p></li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">library_path</span></code></p>
-<p>Specify a full path to an Amalgam shared library (DLL, SO, DyLib). This
+<p>Set a full path to an Amalgam shared library (DLL, SO, DyLib). This
 is an advanced setting for developers who compile their own Amalgam
 shared object binaries.</p>
 <ul>
@@ -532,17 +532,16 @@ store all persisted trainees if so desired.</p>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">howso_path</span></code></p>
-<p>Specify a specific location to look for the Howso Engine (core). This is
-an advanced setting used by developers.</p>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">howso_fname</span></code></p>
-<p>Specify a specific filename for the Howso Engine (core). This is an
+<p>Sets the location to look for the Howso Engine (core). This is an
 advanced setting used by developers.</p>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">trainee_template_path</span></code></p>
-<p>Specify the path to look for the howso-template trainee_template_fname -
-Specify the filename to use for the howso-template. This is an advanced
+<li><p><code class="docutils literal notranslate"><span class="pre">howso_fname</span></code></p>
+<p>Sets the filename for the Howso Engine (core). This is an advanced
 setting used by developers.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">trainee_template_path</span></code></p>
+<p>Sets the path to look for the howso-template howso-template.
+This is an advanced setting used by developers.</p>
 </li>
 </ul>
 </li>
@@ -555,7 +554,7 @@ setting used by developers.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>By default, the Howso Engine will automatically choose sensible default
-values for options making a configuration file entirely optional.</p>
+values making a configuration file entirely optional.</p>
 </div>
 <p>This is an example <code class="docutils literal notranslate"><span class="pre">howso.yml</span></code> file which overrides a few options for an
 early model Raspberry Pi</p>
