@@ -26,7 +26,7 @@ Use these Jupyter Notebook examples as "recipes" for building your own use-cases
 11. :download:`Model Drift Monitoring <https://github.com/howsoai/howso-engine-recipes/blob/main/engine_drift_monitoring.ipynb>`
         - Drift occurs when a trained model no longer reflects the desired aspects of reality, leading to poor predictions. Howso Engine can be used to monitor any potential drift by evaluating bias in both new and ongoing models using online learning and interpretability. Use this example to build your Drift Monitoring use-cases!
 12. :download:`Generative React and Synthetic Data Generation <https://github.com/howsoai/howso-engine-recipes/blob/main/engine_generative_react.ipynb>`
-        - A defining feature of Howso is that it can perform `generative analysis` as well as `discriminative analysis`. This example shows how `generative analysis` can be used for synthetic data creation, which is the foundation for our enterprise product `Howso Synthesizer <https://www.howso.com/synthesizer>`_™ !
+        - A defining feature of Howso is that it can perform `generative analysis` as well as `discriminative analysis`. This example shows how `generative analysis` can be used for synthetic data creation, which is the foundation for our enterprise product `Howso Synthesizer <https://www.howso.com/synthesizer>`_ ™ !
 
 Applied Use-Cases
 ========
