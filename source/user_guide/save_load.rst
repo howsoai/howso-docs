@@ -10,7 +10,7 @@ Objectives: what you will take away
 -----------------------------------
 - **Definitions & Understanding** of different saving and loading operations based on platform.
 - **How-To** save and load a :py:class:`~Trainee`.
-- **API References** How to use, :meth:`Trainee.save`, :py:meth:`Engine.load_trainee`, :py:meth:`Trainee.persist`, and :py:meth:`Trainee.acquire_resources`.
+- **API References** How to use, :meth:`Trainee.save`, :py:meth:`load_trainee`, :py:meth:`Trainee.persist`, and :py:meth:`Trainee.acquire_resources`.
 
 Prerequisites: before you begin
 -------------------------------
