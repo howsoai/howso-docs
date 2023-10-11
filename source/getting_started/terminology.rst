@@ -170,15 +170,17 @@ Generate synthetic cases from an existing Trainee using react.
 
 Conviction
 ^^^^^^^^^^
-Howso bridges instance-based learning with information theory by harnessing the concept of "surprisal", which quantifies the surprise of an event being observed. For example, if an event has a probability of one (i.e., it is certain to occur),
-the event is unsurprising and yields no new information. In contrast, as the probability of an event decreases, it becomes more surprising, yielding more information. 
+Howso bridges instance-based learning with information theory by harnessing the concept of "surprisal" which quantifies the surprise of an event being observed. For example, if an event has a probability of one
+ (i.e., it is certain to occur),
+the event is unsurprising and yields no new information. However, as the probability of an event decreases, it becomes more surprising and yields more information. 
 
 As an analogy, imagine you are watching a 
-professional magician's performance. The magician performs many tricks (or ~illusions~) that may seem impossible, but the reason you purchased a ticket was to be
-surprised, and therefore amused, by the outcome. In other words, magicians make the impossible, or tricks with an extremely low probability of occurring, reality, which is surprising.
+professional magician's show. The magician performs many tricks (or ~illusions~) that may seem impossible. You purchased a ticket to the show because the astonishment of each "big reveal" is
+amusing to you. In less exciting terms, the magician makes tricks with an extremely low probability of occurring in every day life and you are highly surprised!
 
-Instead of reporting exact surprisals, Howso calculates "conviction", or the ratio of an outcome's expected surprisal to actual surprisal. Conviction communicates surprisals of events relative to the 
-expected surprisal within the underlying data. Conviction has a range of zero to infinity. A conviction value of one is average, as an outcome's actual surprisal is
+In addition to reporting exact surprisals, Howso calculates "conviction", or the ratio of an outcome's expected surprisal to actual surprisal. Conviction communicates surprisals of events relative to the 
+expected surprisal within the underlying data. This is useful for overcoming differences in scale between the surprisals of different quantities. 
+Conviction has a range of zero to infinity. A conviction value of one is average, as an outcome's actual surprisal is
 equal to its expected surprisal. Convictions less than one indicate higher surprisal, as the actual surprisal
 is more than the expected surprisal, while convictions greater than one indicate lower surprisal, since the actual surprisal is less than the expected surprisal. 
 
