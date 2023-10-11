@@ -139,6 +139,19 @@ Analyze
 Evaluate and update uncertainties about the data for use in future queries, as well as tune internal parameters to
 improve performance and accuracy of predictions and analysis.
 
+    - **Targeted**
+
+        Most modeling workflows require a set of one or more independent input variables (or features) and output a set of one or more variables that depend on the input. Often, these outputs, which are the
+        values you want to generate or predict, are called "target" features. Workflows which predict target features are a type of *targeted*, or supervised, analysis. Howso performs targeted analysis when the user specifies `context features`, or input features, and `action features`, or target features, in the `analyze()` call. 
+        When a targeted analysis is specified, Howso specifically optimizes its
+        underlying IBL algorithm to perform well at predicting the action features, enabling excellent model performance and low error predictions.
+
+    - **Targetless**
+
+        In contrast to targeted predictions, because of Howso's data-centric nature, context (input) and action (output/target) features do not need to be specified, and *targetless* analysis can be performed. Targetless
+        analysis means that predictions can be made about any features, given the other features; this allows the user to easily predict a variety of features without specifying new inputs and outputs. 
+        Howso performs targetless analysis by default for all predictions.
+
 React
 -----
 
@@ -157,10 +170,28 @@ Generate synthetic cases from an existing Trainee using react.
 
 Conviction
 ^^^^^^^^^^
+Howso bridges instance-based learning with information theory by harnessing the concept of "surprisal" which quantifies the surprise of an event being observed. For example, if an event has a probability of one
+(i.e., it is certain to occur),
+the event is unsurprising and yields no new information. However, as the probability of an event decreases, it becomes more surprising and yields more information. 
 
-Howso's algorithms can measure the "conviction" of different measures by using the computed ratio of the expected
-surprisal over the actual surprisal. The range is 0 to infinity. A value of 1 is average - therefore a conviction of
-less than 1 means it is more surprising than typical data. The higher the number above one, the less surprising it is.
+As an analogy, imagine you are watching a 
+professional magician's show. The magician performs many tricks (or ~illusions~) that may seem impossible. You purchased a ticket to the show because the astonishment of each "big reveal" is
+amusing to you. In less exciting terms, the magician makes tricks with an extremely low probability of occurring in every day life and you are highly surprised!
+
+In addition to reporting exact surprisals, Howso calculates "conviction", or the ratio of an outcome's expected surprisal to actual surprisal. Conviction communicates surprisals of events relative to the 
+expected surprisal within the underlying data. This is useful for overcoming differences in scale between the surprisals of different quantities. 
+Conviction has a range of zero to infinity. A conviction value of one is average, as an outcome's actual surprisal is
+equal to its expected surprisal. Convictions less than one indicate higher surprisal, as the actual surprisal
+is more than the expected surprisal, while convictions greater than one indicate lower surprisal, since the actual surprisal is less than the expected surprisal. 
+
+Returning to our analogy, pretend now that you have now attended hundreds of magic shows and are familiar with pretty much all the tricks in the book. At this point, your expected surprisal is going to be very low because you've
+"seen it all", as they say. Now, if you attend your five-year-old kid's magic show, the actual amount you are surprised is very low. So if Howso were to assign you a conviction at your kid's show, it would definitely be greater than one.
+However, if you go to the show of the most outstanding magician in the world, who is an innovator constantly developing new tricks, you may actually still find yourself very surprised. In this case, your conviction
+would be less than one because your actual surprisal is much greater than your expected surprisal.
+
+Conviction is prevalent throughout many of Howso's analysis capabilities and the Howso Engine assesses the "conviction" of variety of different measures, which is discussed more below.
+If you are interested in learning more about information theory and 
+surprisal, we recommend this `wikipedia article <https://en.wikipedia.org/wiki/Information_content>`_ as a good starting reference. 
 
 
 Familiarity Conviction

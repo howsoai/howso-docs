@@ -12,7 +12,6 @@ Objectives: what you will take away
 
 - **Definitions & an understanding** of how time series and sequential data tools within the Howso Engine provide enhanced insight into your data.
 - **How-To** use Engine's :func:`howso.utilities.infer_feature_attributes` tool to configure your time series and sequential data, and make time series predictions.
-- **API References** - where to find references to APIs used in this user guide.
 
 Prerequisites: before you begin
 -------------------------------
@@ -31,11 +30,11 @@ Concepts & Terminology
 ----------------------
 To understand this guide, we recommend being familiar with the following concepts:
 
-- :ref:`Trainee <user_guide/terminology:trainee>`
-- :ref:`React <user_guide/terminology:react>`
-- :ref:`Feature <user_guide/terminology:feature>`
-- :ref:`Action Features <user_guide/terminology:action features>`
-- :ref:`Context Features <user_guide/terminology:context features>`
+- :ref:`Trainee <../getting_started/terminology:trainee>`
+- :ref:`React <../getting_started/terminology:react>`
+- :ref:`Feature <../getting_started/terminology:feature>`
+- :ref:`Action Features <../getting_started/terminology:action features>`
+- :ref:`Context Features <../getting_started/terminology:context features>`
 - :doc:`Feature Attributes <feature_attributes>`
 
 How-To Guide

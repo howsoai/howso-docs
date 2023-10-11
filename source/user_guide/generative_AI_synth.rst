@@ -9,7 +9,6 @@ Objectives: what you will take away
 
 - **Definitions & an understanding** of the Howso Engine's underlying instance-based learning (IBL) technology, which enables its generative capabilities.
 - **How-To** perform generative analysis and generate synthetic data using Engine.
-- **API References** - where to find references to APIs used in this user guide.
 
 Prerequisites: before you begin
 -------------------------------
@@ -42,7 +41,7 @@ Concepts & Terminology
 
 *How does conviction enable Engine's generative AI capabilities?*
 
-    :ref:`Conviction <user_guide/terminology:conviction>` is a computed ratio of the expected surprisal to the actual surprisal.
+    :ref:`Conviction <../getting_started/terminology:conviction>` is a computed ratio of the expected surprisal to the actual surprisal.
     Conviction is often used when making predictions to
     determine how closely a prediction for a new data point should adhere to the original data. A defining feature of
     Engine is that it utilizes the concept of conviction to condition its sample from the likelihood distribution to be more or less unusual (or surprising) during generative
@@ -103,4 +102,5 @@ new case is or is not generated, and `num_cases_to_generate`, which indicates th
 
 API References
 --------------
-- :meth:`Trainee.react`
+
+- :py:meth:`Trainee.react`
