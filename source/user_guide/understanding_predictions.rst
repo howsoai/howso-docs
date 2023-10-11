@@ -12,7 +12,6 @@ Objectives: what you will take away
 -----------------------------------
 - **Definitions & Understanding** Difference between similar/influential cases vs case importance and robust vs non-robust :ref:`Case Contributions <../getting_started/terminology:Contribution>` and :ref:`Case MDA <../getting_started/terminology:MDA>`.
 - **How-To** audit specific cases as well as determine which cases impact Trainee predictions.
-- **API References** How to use :py:meth:`Trainee.react`.
 
 
 Prerequisites: before you begin

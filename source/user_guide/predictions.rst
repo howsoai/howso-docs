@@ -13,7 +13,6 @@ Objectives: what you will take away
 -----------------------------------
 - **Definitions & an understanding** of basic regression, classification, continuous vs categorical/nominal Action Features, :class:`Trainee`, :meth:`~Trainee.react`,  :meth:`~Trainee.react_into_trainee`, and :meth:`~Trainee.get_prediction_stats`.
 - **How-To** perform a basic regression or classification analysis using the Howso Engine to predict the Highway MPG or Fuel Type based on vehicle Context Features.
-- **API References** of where to find more details of APIs used in this guide.
 
 Prerequisites: before you begin
 -------------------------------

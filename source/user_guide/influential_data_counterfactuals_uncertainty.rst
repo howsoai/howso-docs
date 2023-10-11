@@ -10,7 +10,6 @@ Objectives: what you will take away
 -----------------------------------
 - **Definitions & an understanding** of influential data, counterfactuals, and uncertainty within Engine.
 - **How-To** obtain influential data, counterfactuals, and uncertainties using Engine.
-- **API References** - where to find references to APIs used in this guide.
 
 Prerequisites: before you begin
 -------------------------------

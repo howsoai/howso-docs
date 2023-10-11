@@ -10,7 +10,6 @@ Objectives: what you will take away
 -----------------------------------
 - **Definitions & an understanding** of terminology unique to Howso Engine and what the basic workflow of using the Howso Engine looks.
 - **How-To** - Importing data, mapping features, training, analyzing, and making inferences using the Howso Engine.
-- **API References** - where to find references to APIs used in this user guide.
 
 Prerequisites: before you begin
 -------------------------------

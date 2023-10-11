@@ -12,7 +12,6 @@ Objectives: what you will take away
 -----------------------------------
 - **Definitions & an understanding** of Residuals, MAE, and, Conditions using the Howso Engine.
 - **How-To** - retrieve the performance statistics that describe the Trainee's performance.
-- **API References** - where to find references to APIs used in this user guide.
 
 Prerequisites: before you begin
 -------------------------------

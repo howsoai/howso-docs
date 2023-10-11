@@ -12,7 +12,6 @@ Objectives: what you will take away
 
 - **Definitions & an understanding** of how time series and sequential data tools within the Howso Engine provide enhanced insight into your data.
 - **How-To** use Engine's :func:`howso.utilities.infer_feature_attributes` tool to configure your time series and sequential data, and make time series predictions.
-- **API References** - where to find references to APIs used in this user guide.
 
 Prerequisites: before you begin
 -------------------------------

@@ -10,7 +10,6 @@ Objectives: what you will take away
 -----------------------------------
 - **Definitions & Understanding** of data bias and why it occurs.
 - **How-To** perform bias mitigation using Howso Engine.
-- **API References** - where to find references to APIs used in this user guide.
 
 Prerequisites: before you begin
 -------------------------------

@@ -9,7 +9,6 @@ Objectives: what you will take away
 
 - **Definitions & an understanding** of the Howso Engine's underlying instance-based learning (IBL) technology, which enables its generative capabilities.
 - **How-To** perform generative analysis and generate synthetic data using Engine.
-- **API References** - where to find references to APIs used in this user guide.
 
 Prerequisites: before you begin
 -------------------------------

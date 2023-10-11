@@ -13,7 +13,6 @@ Objectives: what you will take away
 -----------------------------------
 - **Definitions & Understanding** Difference between global vs local, and robust vs non-robust :ref:`Feature Contributions <../getting_started/terminology:Contribution>` and :ref:`Feature MDA <../getting_started/terminology:MDA>`.
 - **How-To** obtain both feature importance metrics.
-- **API References** How to use :meth:`Trainee.get_prediction_stats`, :py:meth:`Trainee.react`.
 
 
 Prerequisites: before you begin

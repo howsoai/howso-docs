@@ -11,7 +11,6 @@ Objectives: what you will take away
 -----------------------------------
 - **Definitions & Understanding** of various :class:`~Trainee` metrics that be used to evaluate anomalies.
 - **How-To** perform anomaly detection using a :class:`~Trainee`.
-- **API References** How to use, :meth:`Trainee.react`, :meth:`Trainee.react_into_features`, and :meth:`Trainee.get_cases`.
 
 Prerequisites: before you begin
 -------------------------------

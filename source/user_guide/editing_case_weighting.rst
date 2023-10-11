@@ -14,7 +14,6 @@ Objectives: what you will take away
 - **Definitions & Understanding** of how :py:class:`~Trainee` s can be edited without re-training and what effects case-
   weighting can have on prediction.
 - **How-To** remove, edit, and weigh cases in a :py:class:`~Trainee` .
-- **API References** How to use, :meth:`Trainee.add_feature`, :py:meth:`Trainee.remove_cases`, and :py:meth:`Trainee.edit_cases` .
 
 
 Prerequisites: before you begin

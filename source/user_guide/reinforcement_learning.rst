@@ -12,7 +12,6 @@ Objectives: what you will take away
 -----------------------------------
 - **Definitions & Understanding** How :py:class:`~Trainee` s fits into a RL framework.
 - **How-To** train and retrain a :py:class:`~Trainee` during RL.
-- **API References** :py:meth:`Trainee.set_auto_analyze_params`, :py:meth:`Trainee.train`, and :py:meth:`Trainee.react`.
 
 
 Prerequisites: before you begin
