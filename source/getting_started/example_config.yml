@@ -1,0 +1,8 @@
+howso:
+  client: howso.direct.HowsoDirectClient
+  client_extra_params:
+    amalgam:
+      arch: arm64_8a
+      library_postfix: -st
+    core:
+      persisted_trainees_dir: /home/jsmith/howso_trainees
