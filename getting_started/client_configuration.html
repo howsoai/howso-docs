@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>Getting Started &#8212; Howso Engine Documentation</title>
+    <title>Client Configuration &#8212; Howso Engine Documentation</title>
   
   
   
@@ -49,13 +49,13 @@
     <script src="../_static/design-tabs.js"></script>
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'getting_started/index';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'getting_started/client_configuration';</script>
     <script src="../_static/js/icon.js"></script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Installation" href="installing.html" />
-    <link rel="prev" title="Howso Engine™" href="../index.html" />
+    <link rel="next" title="Concepts" href="concepts.html" />
+    <link rel="prev" title="Installation" href="installing.html" />
     <link rel="icon" type="image/svg+xml" href="/_static/favicon.svg">
     <link rel="mask-icon" href="/_static/favicon.svg">
     <link rel="stylesheet" href="https://cdn.howso.com/fonts/inter/3.19/typeface.css">
@@ -147,7 +147,7 @@
   <ul class="bd-navbar-elements navbar-nav">
     
                     <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="#">
+                      <a class="nav-link nav-internal" href="index.html">
                         Getting Started
                       </a>
                     </li>
@@ -237,6 +237,10 @@ document.write(`
   
 
   
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
 </div>
 
     </nav>
@@ -263,7 +267,7 @@ document.write(`
   <ul class="bd-navbar-elements navbar-nav">
     
                     <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="#">
+                      <a class="nav-link nav-internal" href="index.html">
                         Getting Started
                       </a>
                     </li>
@@ -333,9 +337,9 @@ document.write(`
         <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="installing.html">Installation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="client_configuration.html">Client Configuration</a></li>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="installing.html">Installation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Client Configuration</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="concepts.html">Concepts</a></li>
@@ -376,7 +380,13 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">Getting Started</li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Getting Started</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="installing.html" class="nav-link">Installation</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Client Configuration</li>
   </ul>
 </nav>
 </div>
@@ -393,28 +403,173 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="getting-started">
-<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading">#</a></h1>
-<p>To get started, install the Howso Engine</p>
+  <section id="client-configuration">
+<h1>Client Configuration<a class="headerlink" href="#client-configuration" title="Permalink to this heading">#</a></h1>
+<p>The HowsoEngine’s python client (<code class="docutils literal notranslate"><span class="pre">HowsoDirectClient</span></code>) is designed to work well
+without any special configuration. However, there may be circumstances where
+additional options may be useful.</p>
+<section id="how-to-create-a-configuration-file">
+<h2>How to Create a Configuration File<a class="headerlink" href="#how-to-create-a-configuration-file" title="Permalink to this heading">#</a></h2>
+<p>The configuration file is simple a text file with the name <code class="docutils literal notranslate"><span class="pre">howso.yml</span></code> and is
+located in one of these places:</p>
+<ol class="arabic simple">
+<li><p>At any valid file path that is stored in an environment variable: <code class="docutils literal notranslate"><span class="pre">HOWSO_CONFIG</span></code>,</p></li>
+<li><p>Within your current working directory,</p></li>
+<li><p>Within your OS-specific “home” directory inside a directory called <code class="docutils literal notranslate"><span class="pre">.howso</span></code>,</p></li>
+</ol>
 <ul class="simple">
-<li><p><a class="reference internal" href="installing.html"><span class="doc">Installing the Howso Engine</span></a></p></li>
+<li><p>On Windows, the “home” directory is stored in the <code class="docutils literal notranslate"><span class="pre">%USERPROFILE%</span></code> environment variable.</p></li>
+<li><p>On MacOS or Linux, the “home” directory is the location stored in the <code class="docutils literal notranslate"><span class="pre">$USER</span></code> environment variable.</p></li>
 </ul>
-<p>Learn Howso key concepts and terminology</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="concepts.html"><span class="doc">Key Concepts</span></a></p></li>
-</ul>
-<p>Explore basic user guides to perform your first tasks</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="../user_guide/basic_workflow.html"><span class="doc">Basic Workflow</span></a></p></li>
-<li><p><a class="reference internal" href="../user_guide/feature_attributes.html"><span class="doc">Feature Attributes</span></a></p></li>
-<li><p><a class="reference internal" href="../user_guide/predictions.html"><span class="doc">Regression and Classification</span></a></p></li>
-</ul>
-<p>Download and run introductory recipes (sample notebooks)</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="../examples/index.html"><span class="doc">Recipes</span></a></p></li>
-</ul>
-<div class="toctree-wrapper compound">
+<ol class="arabic simple" start="4">
+<li><p>Within your configured <code class="docutils literal notranslate"><span class="pre">XDG_DIR_CONFIG_PATH</span></code> path (see documentation at <a class="reference external" href="https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html">freedesktop.org</a> for more information).</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If there are multiple <code class="docutils literal notranslate"><span class="pre">howso.yml</span></code> files, they will be searched for in the above
+order and the first one found will be used.</p>
 </div>
+</section>
+<section id="structure-of-the-configuration-file">
+<h2>Structure of the configuration file<a class="headerlink" href="#structure-of-the-configuration-file" title="Permalink to this heading">#</a></h2>
+<p>The top-level of the file is the <code class="docutils literal notranslate"><span class="pre">howso</span></code> section:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">howso</span></code></p>
+<p>This is the top-level for Howso Engine options. It has two primary sub-sections:
+<code class="docutils literal notranslate"><span class="pre">client</span></code> and <code class="docutils literal notranslate"><span class="pre">client_extra_params</span></code>:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">client</span></code></p>
+<p>Specify the client to use by it’s dotted Python path. The default value is
+<code class="docutils literal notranslate"><span class="pre">howso.direct.HowsoDirectClient</span></code>.</p>
+<p>This is an advanced user option can be used to define and use other clients
+which subclass <code class="docutils literal notranslate"><span class="pre">HowsoDirectClient</span></code> but provide alternate behavior. This may
+be useful for adding additional authentication, for example.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">client_extra_params</span></code></p>
+<p>This section is for providing options to Amalgam (<code class="docutils literal notranslate"><span class="pre">amalgam</span></code>) and the
+Howso Engine (<code class="docutils literal notranslate"><span class="pre">core</span></code>):</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">amalgam</span></code></p>
+<p>The Howso Engine is built upon <a class="reference external" href="https://github.com/howsoai/amalgam">Amalgam</a>.
+This section holds options that are specific to the usage of <cite>Amalgam</cite>
+and/or the Python client: <cite>amalgam-lang</cite>. The options here are as follows:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">debug</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">false</span></code> (the default)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">true</span></code> Use this option for additional debugging information in the
+Amalgam trace files.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">library_path</span></code></p>
+<p>Specify a full path to an Amalgam shared library (DLL, SO, DyLib). This
+is an advanced setting for developers who compile their own Amalgam
+shared object binaries.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">arch</span></code></p>
+<p>Target CPU architecture of the amalgam library. This is determined
+programmatically by default and should only be overridden here by
+advanced users.</p>
+<p>Valid values are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">x86_64</span></code> - Most Windows, older MacOS, and linux machines</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">arm64</span></code> - Modern MacOS and some Linux machines</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">arm64_8a</span></code> - Specifically compiled for CPUs compatible with
+generation 1 <code class="docutils literal notranslate"><span class="pre">aarch64</span></code> instruction sets such as early Raspberry
+Pi’s and some early Graviton processors.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">execution_trace_dir</span></code></p>
+<p>Set the desired path where tracefiles should be written. The path
+must be a valid directory with write permission for the
+operating user. The default value is the current working directory.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">execution_trace_file</span></code></p>
+<p>Set the desired file name for the trace files. Default value is
+<code class="docutils literal notranslate"><span class="pre">&lt;trainee_name&gt;.trace</span></code>.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">library_postfix</span></code></p>
+<p>The Amalgam shared libraries are compiled for different modes of
+operation. Each of the valid values for this option are:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">-mt</span></code> for Multithreaded operation. This is almost always the best
+option (and is thus the default on most systems).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-st</span></code> for Singlethreaded operation. In rare cases usually involving
+small Trainee models, this may be the best option.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-openmp</span></code> for Multi Processing using the <a class="reference external" href="https://openmp.org">OpenMP</a> library.
+This option may be useful when latency is paramount.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-pgc</span></code> for “Pedantic Garbage Collection”. This is exclusively used
+by developers in Amalgam debugging scenarios.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">os</span></code></p>
+<p>Target operating system of the amalgam library. Valid values are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">linux</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">darwin</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">windows</span></code></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">trace</span></code></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">false</span></code> (default) - No trace files are written.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">true</span></code> - Use this option to generate tracefiles.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">core</span></code></p>
+<p>This section is for changing the behavior of the Howso Engine (the Amalgam
+shared objects).</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">persisted_trainees_dir</span></code></p>
+<p>By default, persisted trainees are stored in the current working directory.
+Set this option to a valid path with sufficient write permissions to
+store all persisted trainees if so desired.</p>
+</li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">howso_path</span></code></p>
+<p>Specify a specific location to look for the Howso Engine (core). This is
+an advanced setting used by developers.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">howso_fname</span></code></p>
+<p>Specify a specific filename for the Howso Engine (core). This is an
+advanced setting used by developers.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">trainee_template_path</span></code></p>
+<p>Specify the path to look for the howso-template trainee_template_fname -
+Specify the filename to use for the howso-template. This is an advanced
+setting used by developers.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="example-configuration-file">
+<h2>Example Configuration File<a class="headerlink" href="#example-configuration-file" title="Permalink to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default, the Howso Engine will automatically choose sensible default
+values for options making a configuration file entirely optional.</p>
+</div>
+<p>This is an example <code class="docutils literal notranslate"><span class="pre">howso.yml</span></code> file which overrides a few options for an
+early model Raspberry Pi</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">howso</span><span class="p">:</span>
+    <span class="n">client</span><span class="p">:</span> <span class="n">howso</span><span class="o">.</span><span class="n">direct</span><span class="o">.</span><span class="n">HowsoDirectClient</span>
+    <span class="n">client_extra_params</span><span class="p">:</span>
+        <span class="n">amalgam</span><span class="p">:</span>
+            <span class="n">arch</span><span class="p">:</span> <span class="n">arm64_8a</span>
+            <span class="n">library_postfix</span><span class="p">:</span> <span class="o">-</span><span class="n">st</span>
+        <span class="n">core</span><span class="p">:</span>
+        <span class="n">persisted_trainees_dir</span><span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">jsmith</span><span class="o">/</span><span class="n">howso_trainees</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 
@@ -429,20 +584,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../index.html"
+       href="installing.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Howso Engine™</p>
+        <p class="prev-next-title">Installation</p>
       </div>
     </a>
     <a class="right-next"
-       href="installing.html"
+       href="concepts.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Installation</p>
+        <p class="prev-next-title">Concepts</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -455,6 +610,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-create-a-configuration-file">How to Create a Configuration File</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-the-configuration-file">Structure of the configuration file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-configuration-file">Example Configuration File</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
