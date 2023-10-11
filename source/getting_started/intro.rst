@@ -1,4 +1,4 @@
-An Overview of Howso's Trustworthy AI
+Overview of Howso's Trustworthy AI
 ========
 
 Key Features of the Howso Engine
@@ -12,7 +12,7 @@ Understandability
 - Challenge misleading results from current interpretability approaches with breakthroughs in feature importance analysis
 
     Howso is robust against several common challenges (correlated features, redundant features, difference in scale between features, and multiple distinguishing features)
-     faced by other feature importance tools, including the SHAP metric, which often lead to misleading results. 
+    faced by other feature importance tools, including the SHAP metric, which often lead to misleading results. 
 
 - Fix bias and debug
 
@@ -65,7 +65,7 @@ Howso values gracious intellectual honesty. In that spirit, we're telling you up
 
 - Additional data types
 
-    Currently, we only work with structured data. We are in beta testing for semi-structured data, tiptoeing toward generative language, and images are on the distant horizon.
+    Currently, we only work with structured data. We are in beta testing for semi-structured data, tiptoeing toward generative language, and images handling is on the distant horizon.
 
 - Feature width
 
@@ -83,7 +83,7 @@ What's next? How to use these guides...
 
 If you have not already installed Howso Engine, that's your first step! You can find our :doc:`installation guide here <installing>`.
 
-Once you're installed, you can try out Howso using a variety of pre-built :doc:`jupyter notebook examples <../examples>`. These notebooks will provide "recipes" for how to utilize
+Once you're installed, you can try out Howso using a variety of pre-built :doc:`Jupyter notebook examples <../examples>`. These notebooks will provide "recipes" for how to utilize
 Understandable AI in many applications.
 
 Additionally, you can gain insight into Howso's capabilities by exploring our :doc:`key concepts <concepts>`, :doc:`terminology <terminology>`, and :doc:`user guides <../user_guide>` or by digging into our python code :doc:`API references <../api_reference>`.

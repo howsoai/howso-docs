@@ -101,4 +101,5 @@ We will use the local feature residual to examine the uncertainty for a specific
 
 API References
 --------------
-- :meth:`Trainee.react`
+
+- :py:meth:`Trainee.react`

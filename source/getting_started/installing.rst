@@ -12,7 +12,7 @@ Installing from PyPi
 Client Configuration
 --------------------
 
-The Howso Engine determines very sensible defaults out-of-the-box making this
+The Howso Engine determines very sensible defaults automatically making this
 step optional. However, it may be useful to change certain aspects or behaviors
 of operation. See: :doc:`Client Configuration <client_configuration>` for further information.
 

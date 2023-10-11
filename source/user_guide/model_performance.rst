@@ -10,8 +10,8 @@ Model Performance
 
 Objectives: what you will take away
 -----------------------------------
-- **Definitions & an understanding** of Residuals, MAE, and, Conditions using the Howso Engine.
-- **How-To** - retrieve the performance statistics that describe the Trainee's performance.
+- **Definitions & an understanding** of residuals, MAE, and, Conditions using the Howso Engine.
+- **How-To** retrieve the performance statistics that describe the Trainee's performance.
 
 Prerequisites: before you begin
 -------------------------------

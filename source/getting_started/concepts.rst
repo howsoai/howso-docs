@@ -7,7 +7,7 @@ our key technological differentiators.
 Instance-Based Learning (IBL)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Howso Engine is rooted in instance-based learning (IBL), which is truly data-centric analysis. As an IBL platform, Howso stores your data in memory and makes predictions
-from the similarities and differences between data points, not an underlying black box model, leading to fully transparen and attributable decisions.
+from the similarities and differences between data points, not an underlying black box model, leading to fully transparent and attributable decisions.
 
 This is very different from today's typical AI workflows. Most AI today, such as deep neural networks, use models, or abstractions of relationships within data, to make predictions on new information.
 By nature, these models are not human interpretable (“black box”), and their predictions cannot be mapped back to original data, making them inherently unexplainable.
@@ -19,7 +19,7 @@ advances enable all of Engine's insight and analysis capabilites, including stat
 
     Unlike other AI tools, Howso calculates how much influence each original data point has on a prediction. This influence is related to the probability that the data point is representative of
     the prediction. Influence weights are computed across all features and then aggregated per data point; the most influential data have the highest total influence weights. Being able to see the
-     influence of each data point
+    influence of each data point
     on a decision provides direct evidence for why a decision was made. 
 
 - Outperform other commonly used feature importance metrics, including SHAP. ​

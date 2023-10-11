@@ -171,7 +171,7 @@ Generate synthetic cases from an existing Trainee using react.
 Conviction
 ^^^^^^^^^^
 Howso bridges instance-based learning with information theory by harnessing the concept of "surprisal" which quantifies the surprise of an event being observed. For example, if an event has a probability of one
- (i.e., it is certain to occur),
+(i.e., it is certain to occur),
 the event is unsurprising and yields no new information. However, as the probability of an event decreases, it becomes more surprising and yields more information. 
 
 As an analogy, imagine you are watching a 

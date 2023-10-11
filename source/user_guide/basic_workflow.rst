@@ -8,8 +8,8 @@ Basic Workflow
 
 Objectives: what you will take away
 -----------------------------------
-- **Definitions & an understanding** of terminology unique to Howso Engine and what the basic workflow of using the Howso Engine looks.
-- **How-To** - Importing data, mapping features, training, analyzing, and making inferences using the Howso Engine.
+- **Definitions & an understanding** of terminology unique to Howso Engine and what the basic workflow of using the Howso Engine looks like.
+- **How-To** import data, map features, train, analyze, and make inferences using the Howso Engine.
 
 Prerequisites: before you begin
 -------------------------------
