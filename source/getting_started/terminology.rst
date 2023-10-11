@@ -170,13 +170,25 @@ Generate synthetic cases from an existing Trainee using react.
 
 Conviction
 ^^^^^^^^^^
-Howso bridges instance-based learning with information theory by harnessing the concept of "surprisal", which quantifies the surprise of an event's outcome. More specifically, Howso
-calculates "conviction", or the ratio of an outcome's expected surprisal to actual surprisal. Conviction has a range of zero to infinity. A conviction value of one is average, as an outcome's actual surprisal is
+Howso bridges instance-based learning with information theory by harnessing the concept of "surprisal", which quantifies the surprise of an event being observed. For example, if an event has a probability of one (i.e., it is certain to occur),
+the event is unsurprising and yields no new information. In contrast, as the probability of an event decreases, it becomes more surprising, yielding more information. 
+
+As an analogy, imagine you are watching a 
+professional magician's performance. The magician performs many tricks (or ~illusions~) that may seem impossible, but the reason you purchased a ticket was to be
+surprised, and therefore amused, by the outcome. In other words, magicians make the impossible, or tricks with an extremely low probability of occurring, reality, which is surprising.
+
+Instead of reporting exact surprisals, Howso calculates "conviction", or the ratio of an outcome's expected surprisal to actual surprisal. Conviction communicates surprisals of events relative to the 
+expected surprisal within the underlying data. Conviction has a range of zero to infinity. A conviction value of one is average, as an outcome's actual surprisal is
 equal to its expected surprisal. Convictions less than one indicate higher surprisal, as the actual surprisal
 is more than the expected surprisal, while convictions greater than one indicate lower surprisal, since the actual surprisal is less than the expected surprisal. 
 
+Returning to our analogy, pretend now that you have now attended hundreds of magic shows and are familiar with pretty much all the tricks in the book. At this point, your expected surprisal is going to be very low because you've
+"seen it all", as they say. Now, if you attend your five-year-old kid's magic show, the actual amount you are surprised is very low. So if Howso were to assign you a conviction at your kid's show, it would definitely be greater than one.
+However, if you go to the show of the most outstanding magician in the world, who is an innovator constantly developing new tricks, you may actually still find yourself very surprised. In this case, your conviction
+would be less than one because your actual surprisal is much greater than your expected surprisal.
+
 Conviction is prevalent throughout many of Howso's analysis capabilities and the Howso Engine assesses the "conviction" of variety of different measures, which is discussed more below.
-If you are interested in learning more about information and 
+If you are interested in learning more about information theory and 
 surprisal, we recommend this `wikipedia article <https://en.wikipedia.org/wiki/Information_content>`_ as a good starting reference. 
 
 
