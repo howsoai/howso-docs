@@ -37,7 +37,7 @@ To get started, install the Howso Engine
 
    - :doc:`Installing the Howso Engine <../getting_started/installing>`
 
-Then, familiarize yourself with the Howso Engine so you understand why you should ask... how so? 
+Then, familiarize yourself with the Howso Engine's capabilities so you understand why you should ask... how so? 
 
   - :doc:`Howso Overview <../getting_started/intro>`
 
@@ -48,7 +48,7 @@ understanding of frequently used terminology
   - :doc:`Terminology <../getting_started/terminology>`
 
 =============================================================
-Explore Introductory User Guides, API References, And Recipes
+Explore Introductory User Guides, Recipes, and API References
 =============================================================
 
 Explore basic user guides to perform your first tasks
@@ -57,13 +57,13 @@ Explore basic user guides to perform your first tasks
    - :doc:`Feature Attributes <../user_guide/feature_attributes>`
    - :doc:`Predictions<../user_guide/predictions>`
 
-Check out API References
-
-   - :doc:`API Reference <../api_reference/index>`
-
 Download and run introductory recipes (sample notebooks)
 
    - :doc:`Recipes <../examples/index>`
+
+And check out API References
+
+   - :doc:`API Reference <../api_reference/index>`
 
 .. |reg|    unicode:: U+000AE .. REGISTERED SIGN
 .. |tmk|    unicode:: U+02122 .. TRADEMARK SIGN

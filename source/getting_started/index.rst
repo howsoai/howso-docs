@@ -6,7 +6,7 @@ To get started, install the Howso Engine
 
 - :doc:`Installing the Howso Engine <installing>`
 
-Then, familiarize yourself with the Howso Engine so you understand why you should ask... how so? 
+Then, familiarize yourself with the Howso Engine's capabilities so you understand why you should ask... how so? 
 
   - :doc:`Howso Overview <intro>`
 
@@ -25,6 +25,10 @@ Explore basic user guides to perform your first tasks
 Download and run introductory recipes (sample notebooks)
 
 - :doc:`Recipes <../examples/index>`
+
+And check out API References
+
+   - :doc:`API Reference <../api_reference/index>`
 
 .. toctree::
     :maxdepth: 2

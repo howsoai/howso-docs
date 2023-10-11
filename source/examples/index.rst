@@ -1,4 +1,4 @@
-Examples
+Recipes
 ========
 
 Use these Jupyter Notebook examples as "recipes" for building your own use-cases!
