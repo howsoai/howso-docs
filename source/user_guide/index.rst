@@ -10,7 +10,7 @@ To get started, be sure and start with these guides:
 
  - :doc:`Basic Workflow <basic_workflow>`
  - :doc:`Feature Attributes <feature_attributes>`
- - :doc:`Regression and Classification<predictions>`
+ - :doc:`Predictions<predictions>`
 
 
 .. toctree::
