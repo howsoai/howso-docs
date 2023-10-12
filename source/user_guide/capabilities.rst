@@ -2,8 +2,9 @@
 Advanced Capabilities
 =====================
 
-In the final section of these guides, you will be introduced to a variety of Howso Engine's built-in capabilities. These include anomaly detection, bias mitigation, and reinforcement 
-learning, as well as Howso's special techniques for handling sparse and time series data and generative analysis. Although these guides are fairly generic, they should be very easily
+These guides introduce you to a variety of capabilities that make the Howso Engine so versatile to use. This includes anomaly detection, 
+bias mitigation, and reinforcement 
+learning, as well as Howso's special techniques for handling json, sparse, and time series data and generative analysis. Although these guides are fairly generic, they should be very easily
 adapted to your specific dataset or application.
 
     - :doc:`Anomaly Detection <anomaly_detection>`

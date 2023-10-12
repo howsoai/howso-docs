@@ -2,7 +2,7 @@
 Intro to Understandability
 ==========================
 
-In the next section of user guides, you will learn how to use Howso's unique tools for understandability and trust. You will gain skills understanding Engine's predictions, including how
+With these guides, you will learn how to use Howso's unique tools for understandability and trust. You will gain skills understanding Engine's predictions, including how
 to identify the data that directly influenced your decisions, counterfactuals, and Engine's uncertainty. Additionally, these guides will show you how to understand and use
 Howso's feature importance tools.
 

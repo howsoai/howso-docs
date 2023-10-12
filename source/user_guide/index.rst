@@ -2,17 +2,17 @@
 User Guides
 ===========
 
-User guides are designed to be references for getting started using Howso Engine on your own. We will cover the basics of setting up the Engine for
-a variety of data science and analytics tasks, explore Howso's understandability toolkit, and then demonstrate advanced capabilities useful for particular applications
-of Howso Engine. Throughout these guides, you will learn about terminology that is unique to Howso, gain insight into how Howso approaches data science
-problems, and identify key API references. Additionally, we provide examples of how a particular tool might be used within the data science workflow. To help you decide which user guides
-is best for you, we split these out into three sections:
+User guides are designed to help you get started working with Howso Engine. These guides cover the basics of setting up the Engine for
+a variety of data science tasks, explore Howso's understandability toolkit, and demonstrate advanced capabilities useful for particular applications
+of Howso Engine. Additionaly, they teach you terminology that is unique to Howso, provide insight into how Howso approaches data science
+problems, and identify key API references. They also contain examples of how a particular tool might be used within a data science workflow. To help you decide which user guide
+is best for you, we have grouped them into three categories:
 
 The Basics
 ^^^^^^^^^^
 
-In this section of the user guides, you will gain insight into Howso Engine can be implemented so you have full trust and control of your data and decisions. 
-These guides will acquaint you with the basic workflow for building a :py:class:`~Trainee`, where Howso stores and analyzes your data, 
+Here, you will gain insight into Howso Engine can be implemented so you have full trust and control of your data and decisions. 
+These guides will acquaint you with the basic workflow for building a :py:class:`~Trainee`
 and making your first AI predictions. Additionally, we review the important step of setting up your - :py:meth:`~howso.utilities.infer_feature_attributes`, which helps the Engine
 understand the relationships between your data. Finally, we demonstrated the basics of editing your :py:class:`~Trainee`, and storing it for future use. 
 
@@ -26,7 +26,7 @@ understand the relationships between your data. Finally, we demonstrated the bas
 Intro to Understandability
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In the next section of user guides, you will learn how to use Howso's unique tools for understandability and trust. You will gain skills understanding Engine's predictions, including how
+With these guides, you will learn how to use Howso's unique tools for understandability and trust. You will gain skills understanding Engine's predictions, including how
 to identify the data that directly influenced your decisions, counterfactuals, and Engine's uncertainty. Additionally, these guides will show you how to understand and use
 Howso's feature importance tools.
 
@@ -38,8 +38,9 @@ Howso's feature importance tools.
 Advanced Capabilities
 ^^^^^^^^^^^^^^^^^^^^^
 
-In the final section of these guides, you will be introduced to a variety of Howso Engine's built-in capabilities. These include anomaly detection, bias mitigation, and reinforcement 
-learning, as well as Howso's special techniques for handling sparse and time series data and generative analysis. Although these guides are fairly generic, they should be very easily
+These guides introduce you to a variety of capabilities that make the Howso Engine so versatile to use. This includes anomaly detection, 
+bias mitigation, and reinforcement 
+learning, as well as Howso's special techniques for handling json, sparse, and time series data and generative analysis. Although these guides are fairly generic, they should be very easily
 adapted to your specific dataset or application.
 
     - :doc:`Anomaly Detection <anomaly_detection>`
