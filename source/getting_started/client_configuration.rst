@@ -69,19 +69,19 @@ The top-level of the file is the ``howso`` section:
         is an advanced setting for developers who compile their own Amalgam
         shared object binaries.
 
-        - ``arch``
+      - ``arch``
 
-          Target CPU architecture of the amalgam library. This is determined
-          programmatically by default and should only be overridden here by
-          advanced users.
+        Target CPU architecture of the amalgam library. This is determined
+        programmatically by default and should only be overridden here by
+        advanced users.
 
-          Valid values are:
+        Valid values are:
 
-          - ``x86_64`` - Most Windows, older MacOS, and linux machines
-          - ``arm64`` - Modern MacOS and some Linux machines
-          - ``arm64_8a`` - Specifically compiled for CPUs compatible with
-            generation 1 ``aarch64`` instruction sets such as early Raspberry
-            Pi's and some early Graviton processors.
+        - ``x86_64`` - Most Windows, older MacOS, and linux machines
+        - ``arm64`` - Modern MacOS and some Linux machines
+        - ``arm64_8a`` - Specifically compiled for CPUs compatible with
+          generation 1 ``aarch64`` instruction sets such as early Raspberry
+          Pi's and some early Graviton processors.
 
       - ``execution_trace_dir``
 
