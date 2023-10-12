@@ -12,8 +12,8 @@ The Basics
 ^^^^^^^^^^
 
 In this section of the user guides, you will gain insight into Howso Engine can be implemented so you have full trust and control of your data and decisions. 
-These guides will acquaint you with the basic workflow for building a :ref:`Trainee <../getting_started/terminology:trainee>`, where Howso stores and analyzes your data, 
-and making your first AI predictions. Additionally, we review the important step of setting up your :doc:`Feature Attributes <feature_attributes>`, which helps the Engine
+These guides will acquaint you with the basic workflow for building a :py:class:`~Trainee`, where Howso stores and analyzes your data, 
+and making your first AI predictions. Additionally, we review the important step of setting up your - :py:meth:`~howso.utilities.infer_feature_attributes`, which helps the Engine
 understand the relationships between your data. Finally, we demonstrated the basics of editing your :py:class:`~Trainee`, and storing it for future use. 
 
    - :doc:`Basic Workflow <basic_workflow>`
@@ -46,6 +46,7 @@ adapted to your specific dataset or application.
     - :doc:`Bias Mitigation <bias_mitigation>`
     - :doc:`Generative AI and Data Synthesis <generative_AI_synth>`
     - :doc:`Handling Sparse Data <sparse_data>`
+    - :doc:`JSON Features <json_features>`
     - :doc:`Reinforcement Learning <reinforcement_learning>`
     - :doc:`Time Series and Sequential Data Analysis <time_series>`
 

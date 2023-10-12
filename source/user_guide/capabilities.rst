@@ -10,6 +10,7 @@ adapted to your specific dataset or application.
     - :doc:`Bias Mitigation <bias_mitigation>`
     - :doc:`Generative AI and Data Synthesis <generative_AI_synth>`
     - :doc:`Handling Sparse Data <sparse_data>`
+    - :doc:`JSON Features <json_features>`
     - :doc:`Reinforcement Learning <reinforcement_learning>`
     - :doc:`Time Series and Sequential Data Analysis <time_series>`
 
@@ -21,5 +22,6 @@ adapted to your specific dataset or application.
     bias_mitigation
     generative_AI_synth
     sparse_data
+    json_features
     reinforcement_learning
     time_series
