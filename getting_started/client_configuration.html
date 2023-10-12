@@ -467,7 +467,7 @@ Amalgam trace files.</p></li>
 <p>Set a full path to an Amalgam shared library (DLL, SO, DyLib). This
 is an advanced setting for developers who compile their own Amalgam
 shared object binaries.</p>
-<ul>
+</li>
 <li><p><code class="docutils literal notranslate"><span class="pre">arch</span></code></p>
 <p>Target CPU architecture of the amalgam library. This is determined
 programmatically by default and should only be overridden here by
@@ -479,8 +479,6 @@ advanced users.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">arm64_8a</span></code> - Specifically compiled for CPUs compatible with
 generation 1 <code class="docutils literal notranslate"><span class="pre">aarch64</span></code> instruction sets such as early Raspberry
 Pi’s and some early Graviton processors.</p></li>
-</ul>
-</li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">execution_trace_dir</span></code></p>
@@ -495,7 +493,7 @@ operating user. The default value is the current working directory.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">library_postfix</span></code></p>
 <p>The Amalgam shared libraries are compiled for different modes of
 operation. Each of the valid values for this option are:</p>
-<ul>
+<ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">-mt</span></code> for Multithreaded operation. This is almost always the best
 option (and is thus the default on most systems).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">-st</span></code> for Singlethreaded operation. In rare cases usually involving
@@ -504,14 +502,14 @@ small Trainee models, this may be the best option.</p></li>
 This option may be useful when latency is paramount.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">-pgc</span></code> for “Pedantic Garbage Collection”. This is exclusively used
 by developers in Amalgam debugging scenarios.</p></li>
+</ul>
+</li>
 <li><p><code class="docutils literal notranslate"><span class="pre">os</span></code></p>
 <p>Target operating system of the amalgam library. Valid values are:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">linux</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">darwin</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">windows</span></code></p></li>
-</ul>
-</li>
 </ul>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">trace</span></code></p>
