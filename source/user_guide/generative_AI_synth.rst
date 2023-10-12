@@ -102,5 +102,4 @@ new case is or is not generated, and `num_cases_to_generate`, which indicates th
 
 API References
 --------------
-
 - :py:meth:`Trainee.react`
