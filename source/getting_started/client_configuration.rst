@@ -108,13 +108,13 @@ The top-level of the file is the ``howso`` section:
         - ``-pgc`` for "Pedantic Garbage Collection". This is exclusively used
           by developers in Amalgam debugging scenarios.
 
-        - ``os``
+      - ``os``
 
-          Target operating system of the amalgam library. Valid values are:
+        Target operating system of the amalgam library. Valid values are:
 
-          - ``linux``
-          - ``darwin``
-          - ``windows``
+        - ``linux``
+        - ``darwin``
+        - ``windows``
 
       - ``trace``
 
