@@ -1,0 +1,25 @@
+=====================
+Advanced Capabilities
+=====================
+
+In the final section of these guides, you will be introduced to a variety of Howso Engine's built-in capabilities. These include anomaly detection, bias mitigation, and reinforcement 
+learning, as well as Howso's special techniques for handling sparse and time series data and generative analysis. Although these guides are fairly generic, they should be very easily
+adapted to your specific dataset or application.
+
+    - :doc:`Anomaly Detection <anomaly_detection>`
+    - :doc:`Bias Mitigation <bias_mitigation>`
+    - :doc:`Generative AI and Data Synthesis <generative_AI_synth>`
+    - :doc:`Handling Sparse Data <sparse_data>`
+    - :doc:`Reinforcement Learning <reinforcement_learning>`
+    - :doc:`Time Series and Sequential Data Analysis <time_series>`
+
+.. toctree::
+    :maxdepth: 2
+    :hidden:
+
+    anomaly_detection
+    bias_mitigation
+    generative_AI_synth
+    sparse_data
+    reinforcement_learning
+    time_series
