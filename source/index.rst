@@ -71,7 +71,7 @@ Contribute
 
 The Howso team is constantly trying to improve documentation with new information and resources for a better user
 experience. If you have ideas for how we could improve our docs or would like to contribute to the Howso Engine, 
-we welcome your feedback on our`github page <https://github.com/howsoai>`_!
+we welcome your feedback on our`github page <https://github.com/howsoai>`!
 
 .. |reg|    unicode:: U+000AE .. REGISTERED SIGN
 .. |tmk|    unicode:: U+02122 .. TRADEMARK SIGN
