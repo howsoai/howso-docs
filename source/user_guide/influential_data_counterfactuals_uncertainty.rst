@@ -26,11 +26,11 @@ The following recipe will supplement the content this guide will cover:
 Concepts & Terminology
 ----------------------
 
-- :ref:`Uncertainty <../getting_started/terminology:uncertainty>` is the amount of information that is unknown about a prediction,
+- :doc:`Uncertainty <../getting_started/terminology:uncertainty>` is the amount of information that is unknown about a prediction,
   and is characterized by a prediction's residual. The :ref:`residual <../getting_started/terminology:residual>` is the mean absolute
   error between a predicted and actual value.
-- :ref:`Influential cases <../getting_started/terminology:influential cases>` are the records that were directly used to make a prediction or to derive a result.
-- :ref:`Counterfactuals <../getting_started/terminology:boundary cases>`, or boundary cases, are the records that have similar Context Features to that of a
+- :doc:`Influential cases <../getting_started/terminology:influential cases>` are the records that were directly used to make a prediction or to derive a result.
+- :doc:`Counterfactuals <../getting_started/terminology:boundary cases>`, or boundary cases, are the records that have similar Context Features to that of a
   prediction's Context Features, but instead have different Action Feature values. In other words, these are records with similar information that contain a different
   result. For example, if the prediction for fruit type was "peach", a boundary case might be a very peach-looking "nectarine".
 
