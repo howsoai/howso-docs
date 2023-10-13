@@ -58,8 +58,8 @@ the force feature may be derived from the product of `mass` and `acceleration`. 
 and lags, are also derived features.
 
 For more information, see :doc:`Feature Attributes <feature_attributes>`,
-the `Amalgam Language documentation <https://htmlpreview.github.io/?https://github.com/howsoai/amalgam/blob/main/doc/Language.html>`_ ,
-and the `Derived Features user guide <derived_features>`_ .
+the `Amalgam Language documentation <https://htmlpreview.github.io/?https://github.com/howsoai/amalgam/blob/main/doc/Language.html>`,
+and the `Derived Features user guide <derived_features>`.
 
 Case
 ----
