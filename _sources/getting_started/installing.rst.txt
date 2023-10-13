@@ -8,6 +8,8 @@ Installing from PyPi
 
     pip install -U howso-engine
 
+*Note*: :doc:`Recipes <../examples>` may have additional installation requirements, which can be found at this 
+`github link <https://github.com/howsoai/howso-engine-recipes/tree/main>`.
 
 Client Configuration
 --------------------
