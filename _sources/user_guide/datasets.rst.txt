@@ -1,7 +1,7 @@
 Datasets
 ========
 
-Below are datasets used throughout this documentation as well as in our examples for reference.
+Below are datasets used throughout these user guides as well as in our :doc:`Recipes <../examples/index>`, compiled here for reference.
 
 ====
 PMLB

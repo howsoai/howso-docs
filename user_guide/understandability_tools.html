@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>User Guides &#8212; Howso Engine Documentation</title>
+    <title>Intro to Understandability &#8212; Howso Engine Documentation</title>
   
   
   
@@ -49,13 +49,13 @@
     <script src="../_static/design-tabs.js"></script>
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/index';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/understandability_tools';</script>
     <script src="../_static/js/icon.js"></script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="The Basics" href="basic_tools.html" />
-    <link rel="prev" title="Terminology" href="../getting_started/terminology.html" />
+    <link rel="next" title="Understanding Predictions" href="understanding_predictions.html" />
+    <link rel="prev" title="Saving and Loading" href="save_load.html" />
     <link rel="icon" type="image/svg+xml" href="/_static/favicon.svg">
     <link rel="mask-icon" href="/_static/favicon.svg">
     <link rel="stylesheet" href="https://cdn.howso.com/fonts/inter/3.19/typeface.css">
@@ -154,7 +154,7 @@
                 
 
                     <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="#">
+                      <a class="nav-link nav-internal" href="index.html">
                         User Guides
                       </a>
                     </li>
@@ -237,10 +237,6 @@ document.write(`
   
 
   
-    <label class="sidebar-toggle secondary-toggle" for="__secondary">
-      <span class="fa-solid fa-outdent"></span>
-    </label>
-  
 </div>
 
     </nav>
@@ -274,7 +270,7 @@ document.write(`
                 
 
                     <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="#">
+                      <a class="nav-link nav-internal" href="index.html">
                         User Guides
                       </a>
                     </li>
@@ -337,7 +333,7 @@ document.write(`
         <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="basic_tools.html">The Basics</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="basic_workflow.html">Basic Workflow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="feature_attributes.html">Feature Attributes</a></li>
@@ -347,7 +343,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="save_load.html">Saving and Loading</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="understandability_tools.html">Intro to Understandability</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Intro to Understandability</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="understanding_predictions.html">Understanding Predictions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="model_performance.html">Model Performance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="influential_data_counterfactuals_uncertainty.html">Influential Data, Counterfactuals, and Uncertainties of Predictions</a></li>
@@ -402,7 +398,10 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">User Guides</li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">User Guides</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Intro to Understandability</li>
   </ul>
 </nav>
 </div>
@@ -419,32 +418,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="user-guides">
-<h1>User Guides<a class="headerlink" href="#user-guides" title="Permalink to this heading">#</a></h1>
-<p>User guides are designed to help you get started working with Howso Engine. These guides teach the basics of setting up the Engine for
-a variety of data science tasks, explore Howso’s understandability toolkit, and demonstrate advanced capabilities useful for particular applications
-of Howso Engine. Additionaly, they teach you terminology that is unique to Howso, provide insight into how Howso approaches data science
-problems, and identify key API references. They also contain examples for using each Howso tool within a data science workflow. To help you decide which user guide
-is best for you, we have grouped them into three categories:</p>
-<section id="the-basics">
-<h2>The Basics<a class="headerlink" href="#the-basics" title="Permalink to this heading">#</a></h2>
-<p>Here, you will gain insight into how Howso Engine provides full trust and control of your data and decisions.
-These guides will acquaint you with the basic workflow for building a <code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code>
-and making your first AI predictions. Additionally, we review the important step of setting up your - <a class="reference internal" href="../api_reference/utilities.html#howso.utilities.infer_feature_attributes" title="howso.utilities.infer_feature_attributes"><code class="xref py py-meth docutils literal notranslate"><span class="pre">infer_feature_attributes()</span></code></a>, which helps the Engine
-understand the relationships between your data. Finally, we demonstrated the basics of editing your <code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code>, and storing it for future use.</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><a class="reference internal" href="basic_workflow.html"><span class="doc">Basic Workflow</span></a></p></li>
-<li><p><a class="reference internal" href="feature_attributes.html"><span class="doc">Feature Attributes</span></a></p></li>
-<li><p><a class="reference internal" href="derived_features.html"><span class="doc">Derived Features</span></a></p></li>
-<li><p><a class="reference internal" href="predictions.html"><span class="doc">Predictions</span></a></p></li>
-<li><p><a class="reference internal" href="editing_case_weighting.html"><span class="doc">Editing Trainees and Case Weighting</span></a></p></li>
-<li><p><a class="reference internal" href="save_load.html"><span class="doc">Saving and Loading</span></a></p></li>
-</ul>
-</div></blockquote>
-</section>
-<section id="intro-to-understandability">
-<h2>Intro to Understandability<a class="headerlink" href="#intro-to-understandability" title="Permalink to this heading">#</a></h2>
+  <section id="intro-to-understandability">
+<h1>Intro to Understandability<a class="headerlink" href="#intro-to-understandability" title="Permalink to this heading">#</a></h1>
 <p>With these guides, you will learn how to use Howso’s unique tools for understandability and trust. You will gain skills understanding Engine’s predictions, including how
 to identify the data that directly influenced your decisions, counterfactuals, and Engine’s uncertainty. Additionally, these guides will show you how to understand and use
 Howso’s feature importance tools.</p>
@@ -456,36 +431,8 @@ Howso’s feature importance tools.</p>
 <li><p><a class="reference internal" href="feature_importance.html"><span class="doc">Feature Importance</span></a></p></li>
 </ul>
 </div></blockquote>
-</section>
-<section id="advanced-capabilities">
-<h2>Advanced Capabilities<a class="headerlink" href="#advanced-capabilities" title="Permalink to this heading">#</a></h2>
-<p>These guides introduce you to a variety of capabilities that make the Howso Engine versatile to use. This includes anomaly detection,
-bias mitigation, and reinforcement
-learning, as well as Howso’s special techniques for handling json, sparse, and time series data and generative analysis. Although these guides are fairly generic, they can be easily
-adapted to your specific dataset or application.</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><a class="reference internal" href="anomaly_detection.html"><span class="doc">Anomaly Detection</span></a></p></li>
-<li><p><a class="reference internal" href="bias_mitigation.html"><span class="doc">Bias Mitigation</span></a></p></li>
-<li><p><a class="reference internal" href="generative_AI_synth.html"><span class="doc">Generative AI and Data Synthesis</span></a></p></li>
-<li><p><a class="reference internal" href="sparse_data.html"><span class="doc">Handling Sparse Data</span></a></p></li>
-<li><p><a class="reference internal" href="json_features.html"><span class="doc">JSON Features</span></a></p></li>
-<li><p><a class="reference internal" href="reinforcement_learning.html"><span class="doc">Reinforcement Learning</span></a></p></li>
-<li><p><a class="reference internal" href="time_series.html"><span class="doc">Time Series and Sequential Data Analysis</span></a></p></li>
-</ul>
-</div></blockquote>
-</section>
-<section id="datasets">
-<h2>Datasets<a class="headerlink" href="#datasets" title="Permalink to this heading">#</a></h2>
-<p>Here, we provide references to all the datasets used throughout these user guides as well as in our <a class="reference internal" href="../examples/index.html"><span class="doc">Recipes</span></a>.</p>
-</section>
-<section id="now-it-s-time-to-start-exploring">
-<h2>Now it’s time to start exploring!<a class="headerlink" href="#now-it-s-time-to-start-exploring" title="Permalink to this heading">#</a></h2>
-<p>As a friendly reminder, Howso Engine is actively being developed and our team is constantly trying to improve documentation with new information and resources for a better user
-experience. If you have ideas for how we could improve these user guides or would like to contribute, we welcome any feedback on our <a class="reference external" href="https://github.com/howsoai">github page</a>!</p>
 <div class="toctree-wrapper compound">
 </div>
-</section>
 </section>
 
 
@@ -500,20 +447,20 @@ experience. If you have ideas for how we could improve these user guides or woul
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../getting_started/terminology.html"
+       href="save_load.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Terminology</p>
+        <p class="prev-next-title">Saving and Loading</p>
       </div>
     </a>
     <a class="right-next"
-       href="basic_tools.html"
+       href="understanding_predictions.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">The Basics</p>
+        <p class="prev-next-title">Understanding Predictions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -526,24 +473,6 @@ experience. If you have ideas for how we could improve these user guides or woul
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-basics">The Basics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#intro-to-understandability">Intro to Understandability</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-capabilities">Advanced Capabilities</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#datasets">Datasets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#now-it-s-time-to-start-exploring">Now it’s time to start exploring!</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>

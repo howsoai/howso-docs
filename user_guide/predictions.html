@@ -55,8 +55,8 @@
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Understanding Predictions" href="understanding_predictions.html" />
-    <link rel="prev" title="Feature Attributes" href="feature_attributes.html" />
+    <link rel="next" title="Editing Trainees and Case Weighting" href="editing_case_weighting.html" />
+    <link rel="prev" title="Derived Features" href="derived_features.html" />
     <link rel="icon" type="image/svg+xml" href="/_static/favicon.svg">
     <link rel="mask-icon" href="/_static/favicon.svg">
     <link rel="stylesheet" href="https://cdn.howso.com/fonts/inter/3.19/typeface.css">
@@ -339,22 +339,32 @@ document.write(`
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="basic_workflow.html">Basic Workflow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="feature_attributes.html">Feature Attributes</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Predictions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="understanding_predictions.html">Understanding Predictions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="model_performance.html">Model Performance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="influential_data_counterfactuals_uncertainty.html">Influential Data, Counterfactuals, and Uncertainties of Predictions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="feature_importance.html">Feature Importance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="save_load.html">Saving and Loading</a></li>
-<li class="toctree-l1"><a class="reference internal" href="derived_features.html">Derived Features</a></li>
-<li class="toctree-l1"><a class="reference internal" href="anomaly_detection.html">Anomaly Detection</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bias_mitigation.html">Bias Mitigation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="generative_AI_synth.html">Generative Output and Data Synthesis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sparse_data.html">Handling Sparse Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="reinforcement_learning.html">Reinforcement Learning</a></li>
-<li class="toctree-l1"><a class="reference internal" href="time_series.html">Time Series and Sequential Data Analysis</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="basic_tools.html">The Basics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basic_workflow.html">Basic Workflow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feature_attributes.html">Feature Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="derived_features.html">Derived Features</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Predictions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="editing_case_weighting.html">Editing Trainees and Case Weighting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="save_load.html">Saving and Loading</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="understandability_tools.html">Intro to Understandability</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="understanding_predictions.html">Understanding Predictions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_performance.html">Model Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="influential_data_counterfactuals_uncertainty.html">Influential Data, Counterfactuals, and Uncertainties of Predictions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feature_importance.html">Feature Importance</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="capabilities.html">Advanced Capabilities</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="anomaly_detection.html">Anomaly Detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bias_mitigation.html">Bias Mitigation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generative_AI_synth.html">Generative Output and Data Synthesis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sparse_data.html">Handling Sparse Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="json_features.html">JSON/YAML as Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reinforcement_learning.html">Reinforcement Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="time_series.html">Time Series and Sequential Data Analysis</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="datasets.html">Datasets</a></li>
 </ul>
 </div>
@@ -395,6 +405,9 @@ document.write(`
     </li>
     
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">User Guides</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="basic_tools.html" class="nav-link">The Basics</a></li>
     
     <li class="breadcrumb-item active" aria-current="page">Predictions</li>
   </ul>
@@ -675,20 +688,20 @@ predict, specifically the feature <cite>type</cite> as shown below, thus it is <
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="feature_attributes.html"
+       href="derived_features.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Feature Attributes</p>
+        <p class="prev-next-title">Derived Features</p>
       </div>
     </a>
     <a class="right-next"
-       href="understanding_predictions.html"
+       href="editing_case_weighting.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Understanding Predictions</p>
+        <p class="prev-next-title">Editing Trainees and Case Weighting</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
