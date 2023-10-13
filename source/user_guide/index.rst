@@ -2,16 +2,16 @@
 User Guides
 ===========
 
-User guides are designed to help you get started working with Howso Engine. These guides cover the basics of setting up the Engine for
+User guides are designed to help you get started working with Howso Engine. These guides teach the basics of setting up the Engine for
 a variety of data science tasks, explore Howso's understandability toolkit, and demonstrate advanced capabilities useful for particular applications
 of Howso Engine. Additionaly, they teach you terminology that is unique to Howso, provide insight into how Howso approaches data science
-problems, and identify key API references. They also contain examples of how a particular tool might be used within a data science workflow. To help you decide which user guide
+problems, and identify key API references. They also contain examples for using each Howso tool within a data science workflow. To help you decide which user guide
 is best for you, we have grouped them into three categories:
 
 The Basics
 ^^^^^^^^^^
 
-Here, you will gain insight into Howso Engine can be implemented so you have full trust and control of your data and decisions. 
+Here, you will gain insight into how Howso Engine provides full trust and control of your data and decisions. 
 These guides will acquaint you with the basic workflow for building a :py:class:`~Trainee`
 and making your first AI predictions. Additionally, we review the important step of setting up your - :py:meth:`~howso.utilities.infer_feature_attributes`, which helps the Engine
 understand the relationships between your data. Finally, we demonstrated the basics of editing your :py:class:`~Trainee`, and storing it for future use. 
@@ -38,9 +38,9 @@ Howso's feature importance tools.
 Advanced Capabilities
 ^^^^^^^^^^^^^^^^^^^^^
 
-These guides introduce you to a variety of capabilities that make the Howso Engine so versatile to use. This includes anomaly detection, 
+These guides introduce you to a variety of capabilities that make the Howso Engine versatile to use. This includes anomaly detection, 
 bias mitigation, and reinforcement 
-learning, as well as Howso's special techniques for handling json, sparse, and time series data and generative analysis. Although these guides are fairly generic, they should be very easily
+learning, as well as Howso's special techniques for handling json, sparse, and time series data and generative analysis. Although these guides are fairly generic, they can be easily
 adapted to your specific dataset or application.
 
     - :doc:`Anomaly Detection <anomaly_detection>`
