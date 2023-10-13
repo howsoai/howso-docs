@@ -24,7 +24,7 @@ In the spirit of providing trustworthy AI to all, Howso has open sourced its **E
 
 - And more!
 
-**So, how can you use the Howso Engine™, to harness the power of AI without sacrificing understanding, trust, and control?** 
+**So, how can you use the Howso Engine™ to harness the power of AI without sacrificing understanding, trust, and control?** 
 
 Our docs are purpose 
 built to provide you the tools and resources to confidently implement Engine to make important, human-centric decisions. Join us and learn... how so? 
@@ -71,7 +71,7 @@ Contribute
 
 The Howso team is constantly trying to improve documentation with new information and resources for a better user
 experience. If you have ideas for how we could improve our docs or would like to contribute to the Howso Engine, 
-we welcome your feedback on our`github page <https://github.com/howsoai>`!
+we welcome your feedback on our `github page <https://github.com/howsoai>`!
 
 .. |reg|    unicode:: U+000AE .. REGISTERED SIGN
 .. |tmk|    unicode:: U+02122 .. TRADEMARK SIGN
