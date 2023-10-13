@@ -2,8 +2,8 @@ Howso Engine™
 ==================
 
 Whether you are an individual or a large enterprise, AI has likely already impacted your daily life. While AI has likely opened up many exciting new opportunities, you have probably 
-heard stories of AI generating "hallucinations" and grossly biased predictions. Understandably, you might have a nagging suspicion that the AI available today cannot be trusted. 
-And because this AI is inherently “black box”, you cannot understand, trust, or control why its decisions were made, the data it used, or its reliability.  
+heard stories of AI generating "hallucinations" and grossly biased predictions. You might have a nagging suspicion that the AI available today is unreliable or misleading. 
+And because it is inherently “black box”, you cannot understand, trust, or control why its decisions were made, the data it used, or its reliability.  
 
 Enter **Howso™**. Howso is the result of years of research and innovation to solve the problem of trustworthy AI. 
 Howso is rooted in instance-based learning (IBL), so all of its decisions are made directly from the data. Howso stores information in memory and makes predictions from the 
