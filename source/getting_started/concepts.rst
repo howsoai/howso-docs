@@ -1,7 +1,7 @@
 Key Concepts
 ========
 
-What makes the Howso Engine AI you can understand, trust, and control?  Howso is built on fundamentally different technology from today's black box AI, which enables a variety of new capabilities. Below, we review some of
+What makes the Howso™ Engine AI you can understand, trust, and control?  Howso is built on fundamentally different technology from today's black box AI, which enables a variety of new capabilities. Below, we review some of
 our key technological differentiators. 
 
 Instance-Based Learning (IBL)

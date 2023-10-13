@@ -26,7 +26,7 @@ which is generally a mnemonic string or phrase. Features are often numbers, but 
 data. The feature may be described by feature attributes, which may include ranges, whether it is cyclic, allowed
 values, etc. In database and spreadsheet terms, features are often referred to as columns.
 
-For more information, see :doc:`Feature Attributes <feature_attributes>`
+For more information, see :doc:`Feature Attributes <../user_guide/feature_attributes>`
 
 Value
 -----
@@ -57,9 +57,9 @@ will be used to derive the feature values.  For example, if a dataset contains `
 the force feature may be derived from the product of `mass` and `acceleration`.  Time-series features, particular deltas, rates,
 and lags, are also derived features.
 
-For more information, see :doc:`Feature Attributes <feature_attributes>`,
-the `Amalgam Language documentation <https://htmlpreview.github.io/?https://github.com/howsoai/amalgam/blob/main/doc/Language.html>`,
-and the `Derived Features user guide <derived_features>`.
+For more information, see :doc:`Feature Attributes <../user_guide/feature_attributes>`,
+the `Amalgam Language documentation <https://howsoai.github.io/amalgam/>`_,
+and the `Derived Features user guide <../user_guide/derived_features>`_.
 
 Case
 ----
@@ -89,7 +89,7 @@ Contribution
 Feature contribution is the difference between a prediction in an action feature when each feature or case is
 considered versus not considered. Case contribution is the same but for a case rather than a feature. When applied in
 a robust fashion, this is an approximation of the commonly used SHAP feature importance measure. The difference being
-that SHAP is an exact value of a model (which itself is an approximation) whereas robust contribution is an
+that SHAP is an exact value of a model (which itself is just an approximation of the data) whereas robust contribution is an
 approximation of the feature importance of the relationships expressed in the data.
 
 MDA
