@@ -17,8 +17,8 @@ Prerequisites: before you begin
 -------------------------------
 **Installation**
 
-    - You have successfully :doc:`installed Howso Engine <../getting_started/installing>`
-    - You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
+- You have successfully :doc:`installed Howso Engine <../getting_started/installing>`
+- You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
 
 Notebook Recipe
 ---------------
@@ -30,11 +30,11 @@ Concepts & Terminology
 ----------------------
 To understand this guide, we recommend being familiar with the following concepts:
 
-- :ref:`Trainee <../getting_started/terminology:trainee>`
-- :ref:`React <../getting_started/terminology:react>`
-- :ref:`Feature <../getting_started/terminology:feature>`
-- :ref:`Action Features <../getting_started/terminology:action features>`
-- :ref:`Context Features <../getting_started/terminology:context features>`
+- :ref:`trainee`
+- :ref:`react`
+- :ref:`feature`
+- :ref:`action_features`
+- :ref:`context_features`
 - :doc:`Feature Attributes <feature_attributes>`
 
 How-To Guide
@@ -48,10 +48,10 @@ about intervals within a dataset to make a prediction.
 
 There are two key differences in the Howso Engine basic prediction workflow when dealing with time series and sequential data:
 
-    - :func:`howso.utilities.infer_feature_attributes` must be configured to include time series and sequential data information
+- :func:`howso.utilities.infer_feature_attributes` must be configured to include time series and sequential data information
 
-    - Context Features must be specified **after** the data is trained, as the time series context information is calculated during training
-      and must be specified before the `analyze()` call to be utilized in a `react`
+- Context Features must be specified **after** the data is trained, as the time series context information is calculated during training
+    and must be specified before the `analyze()` call to be utilized in a `react`
 
 
 Task 1 - Infer Feature Attributes
