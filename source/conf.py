@@ -37,7 +37,6 @@ extensions = [
     'sphinx_design',
     'sphinxcontrib.images',
     'matplotlib.sphinxext.plot_directive',
-    'sphinx.ext.autosectionlabel',
 ]
 
 templates_path = ['_templates']
@@ -153,7 +152,7 @@ napoleon_numpy_docstring = True
 
 # Autosectionlabel
 # https://www.sphinx-doc.org/en/master/usage/extensions/autosectionlabel.html#configuration
-autosectionlabel_prefix_document = True
+# autosectionlabel_prefix_document = True
 
 
 # -- Documentation Setup -----------------------------------------------------

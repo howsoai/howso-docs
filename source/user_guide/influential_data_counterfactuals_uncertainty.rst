@@ -2,9 +2,9 @@ Influential Data, Counterfactuals, and Uncertainties of Predictions
 ===================================================================
 .. topic:: What is covered in this user guide.
 
-    At its heart, Howso’s Engine is data-centric, Understandable AI. Engine directly uses the data
-    to gain insights and make predictions. In this guide, you will learn how Engine interrogates the data to determine the **influence** of each data point on a prediction,
-    if there were any **counterfactuals** to the prediction in the data, and the **uncertainty** it has in the prediction.
+   At its heart, Howso's Engine is data-centric, Understandable AI. Engine directly uses the data
+   to gain insights and make predictions. In this guide, you will learn how Engine interrogates the data to determine the **influence** of each data point on a prediction,
+   if there were any **counterfactuals** to the prediction in the data, and the **uncertainty** it has in the prediction.
 
 Objectives: what you will take away
 -----------------------------------
@@ -14,8 +14,8 @@ Objectives: what you will take away
 Prerequisites: before you begin
 -------------------------------
 
-    - You have successfully :doc:`installed Howso Engine <../getting_started/installing>`
-    - You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
+- You have successfully :doc:`installed Howso Engine <../getting_started/installing>`
+- You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
 
 Notebook Recipe
 ---------------
@@ -26,11 +26,11 @@ The following recipe will supplement the content this guide will cover:
 Concepts & Terminology
 ----------------------
 
-- :doc:`Uncertainty <../getting_started/terminology:Uncertainty>` is the amount of information that is unknown about a prediction,
-  and is characterized by a prediction's residual. The :ref:`residual <../getting_started/terminology:residual>` is the mean absolute
+- :ref:`uncertainty` is the amount of information that is unknown about a prediction,
+  and is characterized by a prediction's residual. The :ref:`residual` is the mean absolute
   error between a predicted and actual value.
-- :doc:`Influential cases <../getting_started/terminology:Influential Cases>` are the records that were directly used to make a prediction or to derive a result.
-- :doc:`Counterfactuals <../getting_started/terminology:Boundary Cases>`, or boundary cases, are the records that have similar Context Features to that of a
+- :ref:`influential_cases` are the records that were directly used to make a prediction or to derive a result.
+- :ref:`Counterfactuals <boundary_cases>`, or boundary cases, are the records that have similar Context Features to that of a
   prediction's Context Features, but instead have different Action Feature values. In other words, these are records with similar information that contain a different
   result. For example, if the prediction for fruit type was "peach", a boundary case might be a very peach-looking "nectarine".
 

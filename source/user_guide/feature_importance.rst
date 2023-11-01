@@ -5,13 +5,13 @@ Feature Importance
 ==================
 .. topic:: What is covered in this user guide
 
-    In this guide, you will learn how to compute the feature importance metrics, :ref:`Feature Contributions <../getting_started/terminology:Contribution>` and :ref:`Feature Mean Decrease in Accuracy (MDA) <../getting_started/terminology:MDA>` from a Trainee. Feature importance metrics
-    provides information about which features are useful for predicting a target or :ref:`action <../getting_started/terminology:Action Features>` feature. In addition to learning informative metrics about the data and the model, these insights can be used as guidance for further action such as feature selection or feature engineering.
+    In this guide, you will learn how to compute the feature importance metrics, :ref:`Feature Contributions <contribution>` and :ref:`Feature Mean Decrease in Accuracy (MDA) <mda>` from a Trainee. Feature importance metrics
+    provides information about which features are useful for predicting a target or :ref:`action <action_features>` feature. In addition to learning informative metrics about the data and the model, these insights can be used as guidance for further action such as feature selection or feature engineering.
 
 
 Objectives: what you will take away
 -----------------------------------
-- **Definitions & Understanding** Difference between global vs local, and robust vs non-robust :ref:`Feature Contributions <../getting_started/terminology:Contribution>` and :ref:`Feature MDA <../getting_started/terminology:MDA>`.
+- **Definitions & Understanding** Difference between global vs local, and robust vs non-robust :ref:`Feature Contributions <contribution>` and :ref:`Feature MDA <mda>`.
 - **How-To** obtain both feature importance metrics.
 
 
@@ -33,13 +33,13 @@ Concepts & Terminology
 The main piece of terminology this guide introduces is the concept of Feature Importance. To understand this, we
 recommend being familiar with the following concepts:
 
-- :ref:`Trainee <../getting_started/terminology:trainee>`
-- :ref:`React <../getting_started/terminology:react>`
-- :ref:`Feature <../getting_started/terminology:feature>`
-- :ref:`Action Features <../getting_started/terminology:action features>`
-- :ref:`Context Features <../getting_started/terminology:context features>`
-- :ref:`Feature Contributions <../getting_started/terminology:Contribution>`
-- :ref:`Feature MDA <../getting_started/terminology:MDA>`
+- :ref:`trainee`
+- :ref:`react`
+- :ref:`feature`
+- :ref:`action_features`
+- :ref:`context_features`
+- :ref:`Feature Contribution <contribution>`
+- :ref:`Feature MDA <mda>`
 - :doc:`Feature Attributes <feature_attributes>`
 
 
