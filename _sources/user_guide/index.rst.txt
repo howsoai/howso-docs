@@ -11,17 +11,17 @@ is best for you, we have grouped them into three categories:
 The Basics
 ^^^^^^^^^^
 
-Here, you will gain insight into how Howso Engine provides full trust and control of your data and decisions. 
-These guides will acquaint you with the basic workflow for building a :py:class:`~Trainee`
+Here, you will gain insight into how Howso Engine provides full trust and control of your data and decisions.
+These guides will acquaint you with the basic workflow for building a :py:class:`~howso.engine.trainee.Trainee`
 and making your first AI predictions. Additionally, we review the important step of setting up your - :py:meth:`~howso.utilities.infer_feature_attributes`, which helps the Engine
-understand the relationships between your data. Finally, we demonstrated the basics of editing your :py:class:`~Trainee`, and storing it for future use. 
+understand the relationships between your data. Finally, we demonstrated the basics of editing your :py:class:`~howso.engine.trainee.Trainee`, and storing it for future use.
 
-   - :doc:`Basic Workflow <basic_workflow>`
-   - :doc:`Feature Attributes <feature_attributes>`
-   - :doc:`Derived Features <derived_features>`
-   - :doc:`Predictions <predictions>`
-   - :doc:`Editing Trainees and Case Weighting <editing_case_weighting>`
-   - :doc:`Saving and Loading <save_load>`
+- :doc:`Basic Workflow <basic_workflow>`
+- :doc:`Feature Attributes <feature_attributes>`
+- :doc:`Derived Features <derived_features>`
+- :doc:`Predictions <predictions>`
+- :doc:`Editing Trainees and Case Weighting <editing_case_weighting>`
+- :doc:`Saving and Loading <save_load>`
 
 Intro to Understandability
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -30,26 +30,26 @@ With these guides, you will learn how to use Howso's unique tools for understand
 to identify the data that directly influenced your decisions, counterfactuals, and Engine's uncertainty. Additionally, these guides will show you how to understand and use
 Howso's feature importance tools.
 
-    - :doc:`Understanding Predictions <understanding_predictions>`
-    - :doc:`Model Performance <model_performance>`
-    - :doc:`Influential Data, Counterfactuals, and Uncertainties of Predictions <influential_data_counterfactuals_uncertainty>`
-    - :doc:`Feature Importance <feature_importance>`
+- :doc:`Understanding Predictions <understanding_predictions>`
+- :doc:`Model Performance <model_performance>`
+- :doc:`Influential Data, Counterfactuals, and Uncertainties of Predictions <influential_data_counterfactuals_uncertainty>`
+- :doc:`Feature Importance <feature_importance>`
 
 Advanced Capabilities
 ^^^^^^^^^^^^^^^^^^^^^
 
-These guides introduce you to a variety of capabilities that make the Howso Engine versatile to use. This includes anomaly detection, 
-bias mitigation, and reinforcement 
+These guides introduce you to a variety of capabilities that make the Howso Engine versatile to use. This includes anomaly detection,
+bias mitigation, and reinforcement
 learning, as well as Howso's special techniques for handling json, sparse, and time series data and generative analysis. Although these guides are fairly generic, they can be easily
 adapted to your specific dataset or application.
 
-    - :doc:`Anomaly Detection <anomaly_detection>`
-    - :doc:`Bias Mitigation <bias_mitigation>`
-    - :doc:`Generative AI and Data Synthesis <generative_AI_synth>`
-    - :doc:`Handling Sparse Data <sparse_data>`
-    - :doc:`JSON Features <json_features>`
-    - :doc:`Reinforcement Learning <reinforcement_learning>`
-    - :doc:`Time Series and Sequential Data Analysis <time_series>`
+- :doc:`Anomaly Detection <anomaly_detection>`
+- :doc:`Bias Mitigation <bias_mitigation>`
+- :doc:`Generative AI and Data Synthesis <generative_AI_synth>`
+- :doc:`Handling Sparse Data <sparse_data>`
+- :doc:`JSON Features <json_features>`
+- :doc:`Reinforcement Learning <reinforcement_learning>`
+- :doc:`Time Series and Sequential Data Analysis <time_series>`
 
 Datasets
 ^^^^^^^^
@@ -70,4 +70,4 @@ experience. If you have ideas for how we could improve these user guides or woul
     understandability_tools
     capabilities
     datasets
-    
+

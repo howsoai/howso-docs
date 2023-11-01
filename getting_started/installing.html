@@ -54,7 +54,7 @@
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Client Configuration" href="client_configuration.html" />
+    <link rel="next" title="Running in a Dev Container" href="dev_container.html" />
     <link rel="prev" title="Getting Started" href="index.html" />
     <link rel="icon" type="image/svg+xml" href="/_static/favicon.svg">
     <link rel="mask-icon" href="/_static/favicon.svg">
@@ -339,6 +339,7 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Installation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="dev_container.html">Running in a Dev Container</a></li>
 <li class="toctree-l2"><a class="reference internal" href="client_configuration.html">Client Configuration</a></li>
 </ul>
 </li>
@@ -409,8 +410,11 @@ document.write(`
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>howso-engine
 </pre></div>
 </div>
-<p><em>Note</em>: <span class="xref std std-doc">Recipes</span> may have additional installation requirements, which can be found at this
-<cite>github link &lt;https://github.com/howsoai/howso-engine-recipes/tree/main&gt;</cite>.</p>
+<p><em>Note</em>: <a class="reference internal" href="../examples/index.html#engine-recipes"><span class="std std-ref">Recipes</span></a> have additional installation requirements for data, presentation, etc. Instructions for installing those requirements can be found in the README for <a class="reference external" href="https://github.com/howsoai/howso-engine-recipes">Howso Engine Recipes</a>.</p>
+</section>
+<section id="howso-dev-containers">
+<h2>Howso Dev Containers<a class="headerlink" href="#howso-dev-containers" title="Permalink to this heading">#</a></h2>
+<p>An alternate approach to installing from PyPi is to use one of the <a class="reference external" href="https://github.com/howsoai/howso-devcontainers">Howso Dev Containers</a>. These are ready to use Docker containers that are built to include Howso Engine and all requirements needed to run the <a class="reference internal" href="../examples/index.html#engine-recipes"><span class="std std-ref">Recipes</span></a>. See <a class="reference internal" href="dev_container.html"><span class="doc">Running in a Dev Container</span></a> for additional information.</p>
 </section>
 <section id="client-configuration">
 <h2>Client Configuration<a class="headerlink" href="#client-configuration" title="Permalink to this heading">#</a></h2>
@@ -430,21 +434,15 @@ of operation. See: <a class="reference internal" href="client_configuration.html
 <p>If the <code class="docutils literal notranslate"><span class="pre">verify_howso_install</span></code> command fails due to missing time zone data on the operating system you are using,
 you can download the requisite <strong>data only distribution</strong> at <a class="reference external" href="https://www.iana.org/time-zones">iana.org</a>.</p>
 <p>Step 1 - Download:</p>
-<blockquote>
-<div><p><a class="reference external" href="https://data.iana.org/time-zones/releases/tzdata2023c.tar.gz">https://data.iana.org/time-zones/releases/tzdata2023c.tar.gz</a></p>
-</div></blockquote>
+<p><a class="reference external" href="https://data.iana.org/time-zones/releases/tzdata2023c.tar.gz">https://data.iana.org/time-zones/releases/tzdata2023c.tar.gz</a></p>
 <p>Step 2 - Unpack Files:</p>
-<blockquote>
-<div><p>Extract the compressed files into a folder at the following location on your filesystem:</p>
+<p>Extract the compressed files into a folder at the following location on your filesystem:</p>
 <p>~/.howso/tzdata</p>
-</div></blockquote>
 <p>Step 3 - Supplemental File (Microsoft Windows Only):</p>
-<blockquote>
-<div><p>Place this supplemental <code class="docutils literal notranslate"><span class="pre">windowsZones.xml</span></code> alongside the previously downloaded and extracted time zone data files.</p>
+<p>Place this supplemental <code class="docutils literal notranslate"><span class="pre">windowsZones.xml</span></code> alongside the previously downloaded and extracted time zone data files.</p>
 <a href="https://raw.githubusercontent.com/unicode-org/cldr/master/common/supplemental/windowsZones.xml" target="_blank">
     https://raw.githubusercontent.com/unicode-org/cldr/master/common/supplemental/windowsZones.xml
-</a></div></blockquote>
-<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+</a><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 File Layout Preview<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
@@ -513,11 +511,11 @@ File Layout Preview<div class="sd-summary-down docutils">
       </div>
     </a>
     <a class="right-next"
-       href="client_configuration.html"
+       href="dev_container.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Client Configuration</p>
+        <p class="prev-next-title">Running in a Dev Container</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -540,6 +538,7 @@ File Layout Preview<div class="sd-summary-down docutils">
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-from-pypi">Installing from PyPi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso-dev-containers">Howso Dev Containers</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#client-configuration">Client Configuration</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verification">Verification</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#time-zone-data">Time Zone Data</a></li>

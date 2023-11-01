@@ -442,12 +442,10 @@ This will enable you to easily capture and utilize temporal information and tren
 <section id="prerequisites-before-you-begin">
 <h2>Prerequisites: before you begin<a class="headerlink" href="#prerequisites-before-you-begin" title="Permalink to this heading">#</a></h2>
 <p><strong>Installation</strong></p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p>You have successfully <a class="reference internal" href="../getting_started/installing.html"><span class="doc">installed Howso Engine</span></a></p></li>
 <li><p>You have <a class="reference internal" href="basic_workflow.html"><span class="doc">loaded, configured, trained, and analyzed data</span></a></p></li>
 </ul>
-</div></blockquote>
 </section>
 <section id="notebook-recipe">
 <h2>Notebook Recipe<a class="headerlink" href="#notebook-recipe" title="Permalink to this heading">#</a></h2>
@@ -460,11 +458,11 @@ This will enable you to easily capture and utilize temporal information and tren
 <h2>Concepts &amp; Terminology<a class="headerlink" href="#concepts-terminology" title="Permalink to this heading">#</a></h2>
 <p>To understand this guide, we recommend being familiar with the following concepts:</p>
 <ul class="simple">
-<li><p><span class="xref std std-ref">Trainee</span></p></li>
-<li><p><span class="xref std std-ref">React</span></p></li>
-<li><p><span class="xref std std-ref">Feature</span></p></li>
-<li><p><span class="xref std std-ref">Action Features</span></p></li>
-<li><p><span class="xref std std-ref">Context Features</span></p></li>
+<li><p><a class="reference internal" href="../getting_started/terminology.html#trainee"><span class="std std-ref">Trainee</span></a></p></li>
+<li><p><a class="reference internal" href="../getting_started/terminology.html#react"><span class="std std-ref">React</span></a></p></li>
+<li><p><a class="reference internal" href="../getting_started/terminology.html#feature"><span class="std std-ref">Feature</span></a></p></li>
+<li><p><a class="reference internal" href="../getting_started/terminology.html#action-features"><span class="std std-ref">Action Features</span></a></p></li>
+<li><p><a class="reference internal" href="../getting_started/terminology.html#context-features"><span class="std std-ref">Context Features</span></a></p></li>
 <li><p><a class="reference internal" href="feature_attributes.html"><span class="doc">Feature Attributes</span></a></p></li>
 </ul>
 </section>
@@ -476,13 +474,14 @@ for future predictions, such as knowledge of whether events happen at certain in
 Engine handles time series data using <a class="reference internal" href="../api_reference/utilities.html#howso.utilities.infer_feature_attributes" title="howso.utilities.infer_feature_attributes"><code class="xref py py-func docutils literal notranslate"><span class="pre">howso.utilities.infer_feature_attributes()</span></code></a> and by using <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.train" title="howso.engine.Trainee.train"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.train()</span></code></a> and <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a> to calculate and utilize information
 about intervals within a dataset to make a prediction.</p>
 <p>There are two key differences in the Howso Engine basic prediction workflow when dealing with time series and sequential data:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p><a class="reference internal" href="../api_reference/utilities.html#howso.utilities.infer_feature_attributes" title="howso.utilities.infer_feature_attributes"><code class="xref py py-func docutils literal notranslate"><span class="pre">howso.utilities.infer_feature_attributes()</span></code></a> must be configured to include time series and sequential data information</p></li>
-<li><p>Context Features must be specified <strong>after</strong> the data is trained, as the time series context information is calculated during training
-and must be specified before the <cite>analyze()</cite> call to be utilized in a <cite>react</cite></p></li>
+<li><dl class="simple">
+<dt>Context Features must be specified <strong>after</strong> the data is trained, as the time series context information is calculated during training</dt><dd><p>and must be specified before the <cite>analyze()</cite> call to be utilized in a <cite>react</cite></p>
+</dd>
+</dl>
+</li>
 </ul>
-</div></blockquote>
 <section id="task-1-infer-feature-attributes">
 <h3>Task 1 - Infer Feature Attributes<a class="headerlink" href="#task-1-infer-feature-attributes" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Identify id-feature and time-feature</span>

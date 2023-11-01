@@ -458,12 +458,12 @@ how prediction performance changes as data sparsity increases.</p></li>
 <h2>Concepts &amp; Terminology<a class="headerlink" href="#concepts-terminology" title="Permalink to this heading">#</a></h2>
 <p>This guide focuses primarily on the concept of sparse data.  We additionally recommend being familiar with the following concepts:</p>
 <ul class="simple">
-<li><p><span class="xref std std-ref">Trainee</span></p></li>
-<li><p><span class="xref std std-ref">React</span></p></li>
-<li><p><span class="xref std std-ref">Case</span></p></li>
-<li><p><span class="xref std std-ref">Feature</span></p></li>
-<li><p><span class="xref std std-ref">Action Features</span></p></li>
-<li><p><span class="xref std std-ref">Context Features</span></p></li>
+<li><p><a class="reference internal" href="../getting_started/terminology.html#trainee"><span class="std std-ref">Trainee</span></a></p></li>
+<li><p><a class="reference internal" href="../getting_started/terminology.html#react"><span class="std std-ref">React</span></a></p></li>
+<li><p><a class="reference internal" href="../getting_started/terminology.html#case"><span class="std std-ref">Case</span></a></p></li>
+<li><p><a class="reference internal" href="../getting_started/terminology.html#feature"><span class="std std-ref">Feature</span></a></p></li>
+<li><p><a class="reference internal" href="../getting_started/terminology.html#action-features"><span class="std std-ref">Action Features</span></a></p></li>
+<li><p><a class="reference internal" href="../getting_started/terminology.html#context-features"><span class="std std-ref">Context Features</span></a></p></li>
 <li><p><a class="reference internal" href="feature_attributes.html"><span class="doc">Feature Attributes</span></a></p></li>
 </ul>
 <section id="sparse-data">
@@ -492,7 +492,7 @@ best to replace missing values that abide by this representation with a non-miss
 </div>
 <section id="what-a-missing-value-means">
 <h3>What a Missing Value Means<a class="headerlink" href="#what-a-missing-value-means" title="Permalink to this heading">#</a></h3>
-<p>When computing similarity between cases, a missing value is considered to be of maximal <span class="xref std std-ref">uncertainty</span>
+<p>When computing similarity between cases, a missing value is considered to be of maximal <a class="reference internal" href="../getting_started/terminology.html#uncertainty"><span class="std std-ref">Uncertainty</span></a>
 for that feature.  This is true even if both cases have missing values in the same place.  After all, <span class="math notranslate nohighlight">\(NaN \neq NaN\)</span>.  As mentioned above,
 if the data you are working with contain missing values that represent something specific, those should be changed from missing values to something
 else.  If we were to treat those values as missing, matches would not be considered similar and may therefore harm predictions in that instance.</p>
@@ -502,7 +502,7 @@ else.  If we were to treat those values as missing, matches would not be conside
 <p>As shown in the <a class="reference download external" download="" href="https://github.com/howsoai/howso-engine-recipes/blob/main/engine_sparse_data.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Sparse</span> <span class="pre">Data</span> <span class="pre">Prediction</span></code></a> recipe, we maintain high degrees of accuracy even as
 large percentages of the data are replaced with missing values.</p>
 <a class=""
-               data-lightbox="group-f89d1fa6-3d83-45f1-ac4c-05b9ff631106"
+               data-lightbox="group-9b526272-406f-48f0-967c-e57073f733fd"
                href="../_images/sparse_data_plot1.png"
                title=""
                data-title=""

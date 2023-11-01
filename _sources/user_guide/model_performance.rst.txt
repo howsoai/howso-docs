@@ -29,9 +29,9 @@ Concepts & Terminology
 
 To understand this guide, we recommend being familiar with the following concepts:
 
-- :ref:`Trainee <../getting_started/terminology:Trainee>`
-- :ref:`Feature <../getting_started/terminology:Feature>`
-- :ref:`Residuals <../getting_started/terminology:Residual>`
+- :ref:`trainee`
+- :ref:`feature`
+- :ref:`residual`
 
 How-To Guide
 ------------
@@ -43,7 +43,7 @@ Step 1 - Global Model Performance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The most basic and quintessential measure of model performance and uncertainty within a :class:`~Trainee` are the feature residuals.
-The :any:`residual <../getting_started/terminology:Residual>` is described in more detail in the terminology section, but in this
+The :ref:`residual` is described in more detail in the terminology section, but in this
 context, the feature residuals describe the average difference between the models prediction for a feature and the
 true value. These values are also called the Mean Absolute Error (MAE).
 

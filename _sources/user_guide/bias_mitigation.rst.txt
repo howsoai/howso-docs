@@ -15,9 +15,9 @@ Prerequisites: before you begin
 -------------------------------
 **Installation**
 
-    - You have successfully :doc:`installed Howso Engine <../getting_started/installing>`
-    - You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
-    - You are familiar with :ref:`feature contributions <../getting_started/terminology:Contribution>`
+- You have successfully :doc:`installed Howso Engine <../getting_started/installing>`
+- You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
+- You are familiar with :ref:`feature contributions <contribution>`
 
 Notebook Recipe
 ---------------
@@ -32,31 +32,38 @@ Concepts & Terminology
 
 Often, poor data quality and subsequent unequitable analysis results arise from biases in data. There are a variety of ways bias may affect your data:
 
-    - Sampling and representation bias - lack of diversity of the populations contained in the data
+- Sampling and representation bias - lack of diversity of the populations
+  contained in the data
 
-    - Measurement and omitted variables bias - choice of information contained in the dataset
+- Measurement and omitted variables bias - choice of information contained in
+  the dataset
 
-    - Aggregation bias - data is generalized across populations
+- Aggregation bias - data is generalized across populations
 
-    - Linking bias - various datasets are combined
+- Linking bias - various datasets are combined
 
-Biases in data may propagate through data analytics and AI/ML models, leading to biased results upon which predictions and decisions might be made. Additionally, biased results
-may be projected into the future and lead to missed opportunities to create true value.
-This potentially harms various groups of people and reduces the overall utility of the data. Because analytics and modeling results that use biased
-data are increasingly falling under regulations, decisions that are based on insights gained from biased data might lead to breaches of these regulations.
+Biases in data may propagate through data analytics and AI/ML models, leading
+to biased results upon which predictions and decisions might be made.
+Additionally, biased results may be projected into the future and lead to
+missed opportunities to create true value. This potentially harms various
+groups of people and reduces the overall utility of the data. Because analytics
+and modeling results that use biased data are increasingly falling under
+regulations, decisions that are based on insights gained from biased data might
+lead to breaches of these regulations.
 
 In addition to understanding bias, we recommend being familiar with the following concepts:
 
-- :ref:`Trainee <../getting_started/terminology:trainee>`
-- :ref:`React <../getting_started/terminology:react>`
-- :ref:`Training Session <../getting_started/terminology:Training Session>`
-- :ref:`Feature Contribution <../getting_started/terminology:Contribution>`
-- :ref:`Feature MDA <../getting_started/terminology:MDA>`
+- :ref:`trainee`
+- :ref:`react`
+- :ref:`training_session`
+- :ref:`Feature Contribution <contribution>`
+- :ref:`Feature MDA <mda>`
 
 
 How-To Guide
 ------------
 There are two ways to use Engine to understand and mitigate data bias.
+
 
 Method 1 - Explore data for bias
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -67,24 +74,24 @@ including a feature and feature contributions to understand which features are d
 
 .. code-block:: python
 
-    # Details describe the information we are getting from a given react call
-    details = {
-        'feature_mda': True,
-        'feature_contributions': True
-    }
+   # Details describe the information we are getting from a given react call
+   details = {
+       'feature_mda': True,
+       'feature_contributions': True
+   }
 
-    # Obtain indices and session ids
-    stored_data = t.get_cases(
-        session=t.active_session,
-        features=df.columns.tolist() + ['.session_training_index', '.session']
-    )
+   # Obtain indices and session ids
+   stored_data = t.get_cases(
+       session=t.active_session,
+       features=df.columns.tolist() + ['.session_training_index', '.session']
+   )
 
-    # React
-    results = t.react(test_case[context_features],
-                    context_features=context_features,
-                    action_features=action_features,
-                    details=details
-    )
+   # React
+   results = t.react(test_case[context_features],
+                   context_features=context_features,
+                   action_features=action_features,
+                   details=details
+   )
 
 
 Step 2 - Control predictions for data bias
@@ -94,12 +101,12 @@ Within the `react` call, specify only the context features that do not contribut
 
 .. code-block:: python
 
-    # React
-    results = t.react(test_case[context_features], # Input features - only those which do not include bias
-                    context_features=context_features, # Input features - only those which do not include bias
-                    action_features=action_features,
-                    details=details
-    )
+   # React
+   results = t.react(test_case[context_features], # Input features - only those which do not include bias
+                   context_features=context_features, # Input features - only those which do not include bias
+                   action_features=action_features,
+                   details=details
+   )
 
 
 API References

@@ -41,12 +41,12 @@ Concepts & Terminology
 The main piece of terminology this guide introduces is the concept of case weights.  To understand this, we
 recommend being familiar with the following concepts:
 
-- :ref:`Trainee <../getting_started/terminology:trainee>`
-- :ref:`React <../getting_started/terminology:react>`
-- :ref:`Case <../getting_started/terminology:case>`
-- :ref:`Feature <../getting_started/terminology:feature>`
-- :ref:`Action Features <../getting_started/terminology:action features>`
-- :ref:`Context Features <../getting_started/terminology:context features>`
+- :ref:`trainee`
+- :ref:`react`
+- :ref:`case`
+- :ref:`feature`
+- :ref:`action_features`
+- :ref:`context_features`
 - :doc:`Feature Attributes <feature_attributes>`
 
 Additional concepts to be familiar with are `classification <https://en.wikipedia.org/wiki/Statistical_classification>`_ and

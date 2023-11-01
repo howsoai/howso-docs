@@ -444,23 +444,19 @@ attributes of the vehicle.</p>
 </section>
 <section id="prerequisites-before-you-begin">
 <h2>Prerequisites: before you begin<a class="headerlink" href="#prerequisites-before-you-begin" title="Permalink to this heading">#</a></h2>
-<ul>
+<ul class="simple">
 <li><p><strong>Installation</strong> - you have successfully installed <a class="reference internal" href="../getting_started/installing.html"><span class="doc">Howso Engine</span></a></p></li>
 <li><p><strong>Additional Libraries</strong> - you have installed these libraries:</p>
-<blockquote>
-<div><ul class="simple">
+<ul>
 <li><p><a class="reference external" href="https://pandas.pydata.org/">pandas</a></p></li>
 <li><p><a class="reference external" href="https://matplotlib.org/stable/index.html">matplotlib</a></p></li>
 </ul>
-</div></blockquote>
 </li>
 </ul>
 </section>
 <section id="data">
 <h2>Data<a class="headerlink" href="#data" title="Permalink to this heading">#</a></h2>
-<blockquote>
-<div><p><a class="reference download internal" download="" href="../_downloads/5d0fc47fdcc264d59c82fe4652b54583/vehicles.csv"><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a> 23,606 vehicles from 1984 - 2022, including make, model, MPG, drive-type, size, class and fuel type.</p>
-</div></blockquote>
+<p><a class="reference download internal" download="" href="../_downloads/5d0fc47fdcc264d59c82fe4652b54583/vehicles.csv"><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a> 23,606 vehicles from 1984 - 2022, including make, model, MPG, drive-type, size, class and fuel type.</p>
 </section>
 <section id="notebook-recipe">
 <h2>Notebook Recipe<a class="headerlink" href="#notebook-recipe" title="Permalink to this heading">#</a></h2>
@@ -477,58 +473,34 @@ year manufactured.</p>
 <p><strong>Classification</strong> - is used to describe the relationship between one or more Context Features and a <strong>categorical/nominal</strong>
 Action Feature, as in this guide predicting the <strong>FuelType</strong> of a vehicle based on its physical characteristics and year
 manufactured. For Howso Engine, the action feature may be left in string format and does not need to be converted to numeric format.</p>
-<p><strong>Trainee and React</strong> - In this simple example, we will be creating a <span class="xref std std-ref">Trainee</span>
-that we can be used <span class="xref std std-ref">React</span> to new case data, such as a new car we might be looking to build.</p>
+<p><strong>Trainee and React</strong> - In this simple example, we will be creating a <a class="reference internal" href="../getting_started/terminology.html#trainee"><span class="std std-ref">Trainee</span></a>
+that we can be used <a class="reference internal" href="../getting_started/terminology.html#react"><span class="std std-ref">React</span></a> to new case data, such as a new car we might be looking to build.</p>
 <p><strong>Train and Analyze</strong> - To create a <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a>, we will first load data, define <a class="reference internal" href="feature_attributes.html"><span class="doc">Feature Attributes</span></a>
-of the data and <span class="xref std std-ref">Train</span> the <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a>.  The <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> can be used for many tasks,
-but because we know exactly what we want to do, we will <span class="xref std std-ref">Analyze</span> to improve the
-performance of our trainee by defining the specific set of <span class="xref std std-ref">Context Features</span>
-that we know we want to use to predict an <span class="xref std std-ref">Action Feature</span>. The action
+of the data and <a class="reference internal" href="../getting_started/terminology.html#train"><span class="std std-ref">Train</span></a> the <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a>.  The <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> can be used for many tasks,
+but because we know exactly what we want to do, we will <a class="reference internal" href="../getting_started/terminology.html#analyze"><span class="std std-ref">Analyze</span></a> to improve the
+performance of our trainee by defining the specific set of <a class="reference internal" href="../getting_started/terminology.html#context-features"><span class="std std-ref">Context Features</span></a>
+that we know we want to use to predict an <a class="reference internal" href="../getting_started/terminology.html#action-features"><span class="std std-ref">Action Features</span></a>. The action
 feature in this example will be <strong>Highway MPG</strong>.</p>
 <p><strong>Evaluating the Trainee</strong> - To understand the accuracy of the trainee for our tasks, we can use the built-in <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_into_trainee()</span></code></a>.
 Since we are not using a train-test split approach in this example, we will use the <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react_into_trainee()</span></code></a> method, which
 performs a <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react()</span></code></a> on each of the cases that is trained into the model using a leave-one-out approach.</p>
 <p>That method allows us to use <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.get_prediction_stats" title="howso.engine.Trainee.get_prediction_stats"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_prediction_stats()</span></code></a> to evaluate regression accuracy statistics such as:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p><strong>R-Squared</strong> - <span class="math notranslate nohighlight">\(R^2\)</span> is a value that represents how well the predictions fit the data, the closer to 1.0 the better the fit</p></li>
 <li><p><strong>Mean Absolute Error (MAE)</strong> average absolute error between actual and predicted values over the whole dataset, and relative to the scale of what is being measured</p></li>
 <li><p><strong>Root Mean Square Error (RMSE)</strong> mean square root of errors over whole dataset, similar to MAE and relative to scale of what is measured</p></li>
 </ul>
-</div></blockquote>
 <p>Or classification metrics including those derived from the <a class="reference external" href="https://en.wikipedia.org/wiki/Confusion_matrix">true positive (TP), true negative (TN), false positive (FP), false negative (FN)</a> metrics:</p>
-<blockquote>
-<div><ul class="simple">
-<li><dl class="simple">
-<dt><strong>Accuracy</strong> - Describes the model performance across all classes and is comprised of the ratio of number of correct predictions to the total number of predictions.</dt><dd><ul>
-<li><p>(TP+TN)/(TP+FP+FN+TN).</p></li>
+<ul class="simple">
+<li><p><strong>Accuracy</strong> - Describes the model performance across all classes and is comprised of the ratio of number of correct predictions to the total number of predictions.
+- (TP+TN)/(TP+FP+FN+TN).</p></li>
+<li><p><strong>Precision</strong> - Describes what proportion of positive predictions were correct.
+- (TP+TN)/(TP+FP+FN+TN).</p></li>
+<li><p><strong>Recall</strong> - Describes what proportion of actual positives were predicted correctly.
+- (TN)/(TN+FP).</p></li>
+<li><p><strong>Mean Absolute Error (MAE)</strong> average absolute error between actual and predicted Categorical Action Probabilities (CAP) over the whole dataset.
+- CAP is the prediction probability for each class of the action feature.</p></li>
 </ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Precision</strong> - Describes what proportion of positive predictions were correct.</dt><dd><ul>
-<li><p>(TP+TN)/(TP+FP+FN+TN).</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Recall</strong> - Describes what proportion of actual positives were predicted correctly.</dt><dd><ul>
-<li><p>(TN)/(TN+FP).</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Mean Absolute Error (MAE)</strong> average absolute error between actual and predicted Categorical Action Probabilities (CAP) over the whole dataset.</dt><dd><ul>
-<li><p>CAP is the prediction probability for each class of the action feature.</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</div></blockquote>
 <p><strong>React to New Cases</strong> - Lastly, we will simply request the <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> to <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react()</span></code></a> to new cases we
 present to it, giving us predictions of what the <strong>Highway MPG</strong> would be.</p>
 </section>

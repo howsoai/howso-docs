@@ -19,12 +19,13 @@ Prerequisites: before you begin
 - **Installation** - you have successfully installed :doc:`Howso Engine <../getting_started/installing>`
 - **Additional Libraries** - you have installed these libraries:
 
-    - `pandas <https://pandas.pydata.org/>`__
-    - `matplotlib <https://matplotlib.org/stable/index.html>`__
+  - `pandas <https://pandas.pydata.org/>`__
+  - `matplotlib <https://matplotlib.org/stable/index.html>`__
 
 Data
 ----
-   :download:`Download </_assets/vehicles.csv>` 23,606 vehicles from 1984 - 2022, including make, model, MPG, drive-type, size, class and fuel type.
+
+:download:`Download </_assets/vehicles.csv>` 23,606 vehicles from 1984 - 2022, including make, model, MPG, drive-type, size, class and fuel type.
 
 Notebook Recipe
 ---------------
@@ -42,14 +43,14 @@ year manufactured.
 Action Feature, as in this guide predicting the **FuelType** of a vehicle based on its physical characteristics and year
 manufactured. For Howso Engine, the action feature may be left in string format and does not need to be converted to numeric format.
 
-**Trainee and React** - In this simple example, we will be creating a :ref:`Trainee <../getting_started/terminology:trainee>`
-that we can be used :ref:`React <../getting_started/terminology:react>` to new case data, such as a new car we might be looking to build.
+**Trainee and React** - In this simple example, we will be creating a :ref:`trainee`
+that we can be used :ref:`react` to new case data, such as a new car we might be looking to build.
 
 **Train and Analyze** - To create a :class:`Trainee`, we will first load data, define :doc:`Feature Attributes <feature_attributes>`
-of the data and :ref:`Train <../getting_started/terminology:train>` the :class:`Trainee`.  The :class:`Trainee` can be used for many tasks,
-but because we know exactly what we want to do, we will :ref:`Analyze <../getting_started/terminology:analyze>` to improve the
-performance of our trainee by defining the specific set of :ref:`Context Features <../getting_started/terminology:context features>`
-that we know we want to use to predict an :ref:`Action Feature <../getting_started/terminology:action features>`. The action
+of the data and :ref:`train` the :class:`Trainee`.  The :class:`Trainee` can be used for many tasks,
+but because we know exactly what we want to do, we will :ref:`analyze` to improve the
+performance of our trainee by defining the specific set of :ref:`context_features`
+that we know we want to use to predict an :ref:`action_features`. The action
 feature in this example will be **Highway MPG**.
 
 **Evaluating the Trainee** - To understand the accuracy of the trainee for our tasks, we can use the built-in :meth:`Trainee.react_into_trainee`.
@@ -58,20 +59,20 @@ performs a :meth:`~Trainee.react` on each of the cases that is trained into the 
 
 That method allows us to use :meth:`~Trainee.get_prediction_stats` to evaluate regression accuracy statistics such as:
 
-    - **R-Squared** - :math:`R^2` is a value that represents how well the predictions fit the data, the closer to 1.0 the better the fit
-    - **Mean Absolute Error (MAE)** average absolute error between actual and predicted values over the whole dataset, and relative to the scale of what is being measured
-    - **Root Mean Square Error (RMSE)** mean square root of errors over whole dataset, similar to MAE and relative to scale of what is measured
+- **R-Squared** - :math:`R^2` is a value that represents how well the predictions fit the data, the closer to 1.0 the better the fit
+- **Mean Absolute Error (MAE)** average absolute error between actual and predicted values over the whole dataset, and relative to the scale of what is being measured
+- **Root Mean Square Error (RMSE)** mean square root of errors over whole dataset, similar to MAE and relative to scale of what is measured
 
 Or classification metrics including those derived from the `true positive (TP), true negative (TN), false positive (FP), false negative (FN) <https://en.wikipedia.org/wiki/Confusion_matrix>`__ metrics:
 
-    - **Accuracy** - Describes the model performance across all classes and is comprised of the ratio of number of correct predictions to the total number of predictions.
-        - (TP+TN)/(TP+FP+FN+TN).
-    - **Precision** - Describes what proportion of positive predictions were correct.
-        - (TP+TN)/(TP+FP+FN+TN).
-    - **Recall** - Describes what proportion of actual positives were predicted correctly.
-        - (TN)/(TN+FP).
-    - **Mean Absolute Error (MAE)** average absolute error between actual and predicted Categorical Action Probabilities (CAP) over the whole dataset.
-        - CAP is the prediction probability for each class of the action feature.
+- **Accuracy** - Describes the model performance across all classes and is comprised of the ratio of number of correct predictions to the total number of predictions.
+  - (TP+TN)/(TP+FP+FN+TN).
+- **Precision** - Describes what proportion of positive predictions were correct.
+  - (TP+TN)/(TP+FP+FN+TN).
+- **Recall** - Describes what proportion of actual positives were predicted correctly.
+  - (TN)/(TN+FP).
+- **Mean Absolute Error (MAE)** average absolute error between actual and predicted Categorical Action Probabilities (CAP) over the whole dataset.
+  - CAP is the prediction probability for each class of the action feature.
 
 **React to New Cases** - Lastly, we will simply request the :class:`Trainee` to :meth:`~Trainee.react` to new cases we
 present to it, giving us predictions of what the **Highway MPG** would be.
@@ -83,13 +84,14 @@ show the code for **Highway MPG** prediction while including the code for **Fuel
 
 Step 1 - Load Libraries
 ^^^^^^^^^^^^^^^^^^^^^^^
+
 .. code-block:: python
 
-    import pandas as pd
-    import matplotlib.pyplot as plt
+   import pandas as pd
+   import matplotlib.pyplot as plt
 
-    from howso.engine import Trainee
-    from howso.utilities import infer_feature_attributes
+   from howso.engine import Trainee
+   from howso.utilities import infer_feature_attributes
 
 Step 2 - Load Data
 ^^^^^^^^^^^^^^^^^^
@@ -97,9 +99,9 @@ Using a pandas DataFrame, load the vehicles dataset from the csv file. We are go
 
 .. code-block:: python
 
-    df = pd.read_csv("./data/vehicle_predict.csv")
-    df = df.drop(['Make', 'Model'], axis=1)
-    df.describe()
+   df = pd.read_csv("./data/vehicle_predict.csv")
+   df = df.drop(['Make', 'Model'], axis=1)
+   df.describe()
 
 Step 3 - Define Features
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -134,11 +136,11 @@ Next we will create a :class:`Trainee` and :meth:`~Trainee.train` based on data 
 
 .. code-block:: python
 
-    # Create a new Trainee, specify features
-    t = Trainee(features=features)
+   # Create a new Trainee, specify features
+   t = Trainee(features=features)
 
-    # Train trainee
-    t.train(df)
+   # Train trainee
+   t.train(df)
 
 Step 5 - Analyze Trainee, Set Context & Action Features
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -146,12 +148,12 @@ We know a specific task we want our :class:`Trainee` to :meth:`~Trainee.react` t
 
 .. code-block:: python
 
-    action_features = ['HighwayMPG']
-    # Code for `FuelType` prediction
-    # action_features = ['FuelType']
-    context_features = features.get_names(without=action_features)
+   action_features = ['HighwayMPG']
+   # Code for `FuelType` prediction
+   # action_features = ['FuelType']
+   context_features = features.get_names(without=action_features)
 
-    t.analyze(context_features=context_features, action_features=action_features)
+   t.analyze(context_features=context_features, action_features=action_features)
 
 Step 6 - Generate Accuracy Metrics
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -159,12 +161,13 @@ Review the accuracy of the :class:`Trainee` by using the built-in :meth:`~Traine
 
 .. code-block:: python
 
-    # Recommended metrics
-    t.react_into_trainee(action_feature=action_features[0], residuals=True)
-    stats = t.get_prediction_stats(stats=['rmse', 'spearman_coeff', 'r2', 'mae'])
-    # Code for `FuelType` metrics
-    # stats = t.get_prediction_stats(stats=['accuracy', 'precision', 'recall', 'mae'])
-    stats
+   # Recommended metrics
+   t.react_into_trainee(action_feature=action_features[0], residuals=True)
+   stats = t.get_prediction_stats(stats=['rmse', 'spearman_coeff', 'r2', 'mae'])
+   # Code for `FuelType` metrics
+   # stats = t.get_prediction_stats(stats=['accuracy', 'precision', 'recall', 'mae'])
+   stats
+
 
 Step 7 - Review Accuracy Metrics
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -172,11 +175,12 @@ We see the :class:`Trainee` has a very good fit for predicting **Highway MPG** w
 
 .. code-block:: python
 
-    rmse              1.20
-    spearman_coeff    0.96
-    r2                0.99
-    mae               0.72
-    Name: HighwayMPG, dtype: float64
+   rmse              1.20
+   spearman_coeff    0.96
+   r2                0.99
+   mae               0.72
+   Name: HighwayMPG, dtype: float64
+
 
 Step 8 - React to New Case
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -186,23 +190,23 @@ The :class:`Trainee` can :meth:`~Trainee.react` to this new case, and makes a pr
 
 .. code-block:: python
 
-    data = {
-        'Year': [2022],
-        'DriveType': ['All-Wheel Drive'],
-        'FuelType' : ['Premium'],
-        'VehicleClass': ['Midsize Cars'],
-        'CityMPG': [21],
-        'PassengerVolume': [95],
-        'LuggageVolume': [23]
-    }
+   data = {
+       'Year': [2022],
+       'DriveType': ['All-Wheel Drive'],
+       'FuelType' : ['Premium'],
+       'VehicleClass': ['Midsize Cars'],
+       'CityMPG': [21],
+       'PassengerVolume': [95],
+       'LuggageVolume': [23]
+   }
 
-    test_case = pd.DataFrame(data)
+   test_case = pd.DataFrame(data)
 
-    result = t.react(
-        test_case,
-        action_features=action_features,
-        context_features=context_features
-    )
+   result = t.react(
+       test_case,
+       action_features=action_features,
+       context_features=context_features
+   )
 
 .. note:: The method :meth:`Trainee.predict` can also be used for predictions instead of :meth:`Trainee.react`. :meth:`Trainee.predict` serves as a convenience functions that eliminates the extra output if all you want is the prediction.
 
@@ -212,10 +216,10 @@ Reviewing the prediction shows **HighwayMPG** of 29.
 
 .. code-block:: python
 
-    result['action']
+   result['action']
 
-    HighwayMPG
-    29
+   HighwayMPG
+   29
 
 
 API References

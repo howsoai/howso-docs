@@ -30,12 +30,12 @@ Concepts & Terminology
 This guide will explain the concept of **derived features**, which include both **derived action features** and **derived context
 features**.  To follow along, you should be familiar with the following concepts:
 
-- :ref:`Trainee <../getting_started/terminology:trainee>`
-- :ref:`React <../getting_started/terminology:react>`
-- :ref:`Case <../getting_started/terminology:case>`
-- :ref:`Feature <../getting_started/terminology:feature>`
-- :ref:`Action Features <../getting_started/terminology:action features>`
-- :ref:`Context Features <../getting_started/terminology:context features>`
+- :ref:`trainee`
+- :ref:`react`
+- :ref:`case`
+- :ref:`feature`
+- :ref:`action_features`
+- :ref:`context_features`
 - :doc:`Feature Attributes <feature_attributes>`
 
 
@@ -47,7 +47,7 @@ of a derived feature code is:
 
 .. code-block::
 
-    (* #hours-per-week 0 52)
+   (* #hours-per-week 0 52)
 
 
 This would use the multiplication opcode (``*``) to derive a feature that is 52 times the ``"hours-per-week"`` feature for each case.
@@ -75,15 +75,15 @@ To add a derived feature to a :class:`~Trainee` before training, simply modify t
 
 .. code-block:: python
 
-    features = infer_feature_attributes(df)
-    hpy_features = {
-        "type": "continuous",
-        "auto_derive_on_train": True,
-        "derived_feature_code": "(* #hours-per-week 0 52)"
-    }
-    features["hours-per-year"] = hpy_features
-    t.train(df, features=features)
-    t.analyze()
+   features = infer_feature_attributes(df)
+   hpy_features = {
+       "type": "continuous",
+       "auto_derive_on_train": True,
+       "derived_feature_code": "(* #hours-per-week 0 52)"
+   }
+   features["hours-per-year"] = hpy_features
+   t.train(df, features=features)
+   t.analyze()
 
 
 That's quite a lot of code, so let's break it down.  After inferring feature attributes, we set up the feature attributes for our derived feature.
@@ -111,13 +111,13 @@ The process of adding a derived feature to a :class:`~Trainee` that has already 
 
 .. code-block:: python
 
-    # t has already been trained and analyzed
-    hpy_features = {
-        "type": "continuous",
-        "auto_derive_on_train": True,
-        "derived_feature_code": "(* #hours-per-week 0 52)"
-    }
-    t.add_feature("hours-per-year", feature_attributes=hpy_features)
+   # trainee ``t`` has already been trained and analyzed
+   hpy_features = {
+       "type": "continuous",
+       "auto_derive_on_train": True,
+       "derived_feature_code": "(* #hours-per-week 0 52)"
+   }
+   t.add_feature("hours-per-year", feature_attributes=hpy_features)
 
 
 Using Derived Features in Reacts

@@ -10,7 +10,7 @@ JSON/YAML as Features
 
 Objectives
 ----------
-- **Definitions & Understanding** of what JSON (JavaScript Object Notation) and YAML (Yet Another Markup 
+- **Definitions & Understanding** of what JSON (JavaScript Object Notation) and YAML (Yet Another Markup
   Language) features are and how they can be used.
 
 
@@ -22,33 +22,33 @@ Prerequisites
 
 Notebook Recipe
 ---------------
-This user guide has its content outlined in the 
+This user guide has its content outlined in the
 `JSON as a Feature Notebook <https://github.com/howsoai/howso-engine-recipes/blob/main/1-engine-intro.ipynb>`_
 
 
 Concepts & Terminology
 ----------------------
-This guide focuses primarily on the concept of JSON/YAML objects as features.  We additionally recommend 
+This guide focuses primarily on the concept of JSON/YAML objects as features.  We additionally recommend
 being familiar with the following concepts:
 
-- :ref:`Trainee <../getting_started/terminology:trainee>`
-- :ref:`React <../getting_started/terminology:react>`
-- :ref:`Case <../getting_started/terminology:case>`
-- :ref:`Feature <../getting_started/terminology:feature>`
-- :ref:`Action Features <../getting_started/terminology:action features>`
-- :ref:`Context Features <../getting_started/terminology:context features>`
+- :ref:`trainee`
+- :ref:`react`
+- :ref:`case`
+- :ref:`feature`
+- :ref:`action_features`
+- :ref:`context_features`
 - :doc:`Feature Attributes <feature_attributes>`
 
 
 How-To Guide
 ------------
-Howso Engine can accept JSON and YAML objects as feature values, treating them like any other feature.  This can allow 
+Howso Engine can accept JSON and YAML objects as feature values, treating them like any other feature.  This can allow
 more complex objects to be represented than just numbers or strings.
 
 
 Declaring a Feature as JSON/YAML
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-When calling :func:`howso.utilities.infer_feature_attributes`, a feature can be declared as JSON or YAML by setting 
+When calling :func:`howso.utilities.infer_feature_attributes`, a feature can be declared as JSON or YAML by setting
 its ``data_type`` attribute.
 
 .. code-block:: python
@@ -59,8 +59,8 @@ its ``data_type`` attribute.
         features={"inventory": {"type": "continuous", "data_type": "json"}}
     )
 
-Note that the feature's ``type`` attribute is set normally to either ``"continuous"`` or ``"nominal"``.  For ones 
-marked as continuous, distance will be computed using a form of edit distance.  Otherwise, the normal nominal distance 
+Note that the feature's ``type`` attribute is set normally to either ``"continuous"`` or ``"nominal"``.  For ones
+marked as continuous, distance will be computed using a form of edit distance.  Otherwise, the normal nominal distance
 computation is used.
 
 Once a feature is set as JSON properly, it can be used as if it were any other feature.
@@ -99,7 +99,7 @@ Below are a few code snippets that show how JSON/YAML features can be used in a 
     )
 
 .. note::
-    Note that, in the above example, the entire JSON is contained within a string and contained quotes within that are 
+    Note that, in the above example, the entire JSON is contained within a string and contained quotes within that are
     escaped.
 
 

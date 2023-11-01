@@ -31,12 +31,12 @@ Concepts & Terminology
 ----------------------
 This guide focuses primarily on the concept of sparse data.  We additionally recommend being familiar with the following concepts:
 
-- :ref:`Trainee <../getting_started/terminology:trainee>`
-- :ref:`React <../getting_started/terminology:react>`
-- :ref:`Case <../getting_started/terminology:case>`
-- :ref:`Feature <../getting_started/terminology:feature>`
-- :ref:`Action Features <../getting_started/terminology:action features>`
-- :ref:`Context Features <../getting_started/terminology:context features>`
+- :ref:`trainee`
+- :ref:`react`
+- :ref:`case`
+- :ref:`feature`
+- :ref:`action_features`
+- :ref:`context_features`
 - :doc:`Feature Attributes <feature_attributes>`
 
 
@@ -70,7 +70,7 @@ to unseen data**.  As such, we recommend performing no preprocessing if possible
 
 What a Missing Value Means
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-When computing similarity between cases, a missing value is considered to be of maximal :ref:`uncertainty <../getting_started/terminology:uncertainty>`
+When computing similarity between cases, a missing value is considered to be of maximal :ref:`uncertainty`
 for that feature.  This is true even if both cases have missing values in the same place.  After all, :math:`NaN \neq NaN`.  As mentioned above,
 if the data you are working with contain missing values that represent something specific, those should be changed from missing values to something
 else.  If we were to treat those values as missing, matches would not be considered similar and may therefore harm predictions in that instance.

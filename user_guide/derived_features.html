@@ -457,12 +457,12 @@ in the prerequisites using the <code class="docutils literal notranslate"><span 
 <p>This guide will explain the concept of <strong>derived features</strong>, which include both <strong>derived action features</strong> and <strong>derived context
 features</strong>.  To follow along, you should be familiar with the following concepts:</p>
 <ul class="simple">
-<li><p><span class="xref std std-ref">Trainee</span></p></li>
-<li><p><span class="xref std std-ref">React</span></p></li>
-<li><p><span class="xref std std-ref">Case</span></p></li>
-<li><p><span class="xref std std-ref">Feature</span></p></li>
-<li><p><span class="xref std std-ref">Action Features</span></p></li>
-<li><p><span class="xref std std-ref">Context Features</span></p></li>
+<li><p><a class="reference internal" href="../getting_started/terminology.html#trainee"><span class="std std-ref">Trainee</span></a></p></li>
+<li><p><a class="reference internal" href="../getting_started/terminology.html#react"><span class="std std-ref">React</span></a></p></li>
+<li><p><a class="reference internal" href="../getting_started/terminology.html#case"><span class="std std-ref">Case</span></a></p></li>
+<li><p><a class="reference internal" href="../getting_started/terminology.html#feature"><span class="std std-ref">Feature</span></a></p></li>
+<li><p><a class="reference internal" href="../getting_started/terminology.html#action-features"><span class="std std-ref">Action Features</span></a></p></li>
+<li><p><a class="reference internal" href="../getting_started/terminology.html#context-features"><span class="std std-ref">Context Features</span></a></p></li>
 <li><p><a class="reference internal" href="feature_attributes.html"><span class="doc">Feature Attributes</span></a></p></li>
 </ul>
 <section id="derived-feature-codes">
@@ -522,7 +522,7 @@ value of hours-per-week (<code class="docutils literal notranslate"><span class=
 <h3>Adding Derived Features After Training<a class="headerlink" href="#adding-derived-features-after-training" title="Permalink to this heading">#</a></h3>
 <p>The process of adding a derived feature to a <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> that has already been trained is quite simple.  It can be handled with a single call to
 <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.add_feature" title="howso.engine.Trainee.add_feature"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.add_feature()</span></code></a>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># t has already been trained and analyzed</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># trainee ``t`` has already been trained and analyzed</span>
 <span class="n">hpy_features</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;continuous&quot;</span><span class="p">,</span>
     <span class="s2">&quot;auto_derive_on_train&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>

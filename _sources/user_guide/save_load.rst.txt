@@ -27,7 +27,7 @@ Concepts & Terminology
 The main concept of this guide is how to save and load a Trainee. To understand this better, we
 recommend being familiar with the Trainees:
 
-- :ref:`Trainee <../getting_started/terminology:trainee>`
+- :ref:`trainee`
 
 How-To Guide
 ------------

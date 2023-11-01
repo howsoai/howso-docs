@@ -6,12 +6,15 @@ Understanding Predictions
 .. topic:: What is covered in this user guide
 
     In this guide, you will learn how to audit the cases in your Trainee, including determining which cases influence a specific prediction, as well as which cases influence the :class:`~Trainee` 's predictions as a whole.
-    
+
 
 Objectives: what you will take away
 -----------------------------------
-- **Definitions & Understanding** Difference between similar/influential cases vs case importance and robust vs non-robust :ref:`Case Contributions <../getting_started/terminology:Contribution>` and :ref:`Case MDA <../getting_started/terminology:MDA>`.
-- **How-To** audit specific cases as well as determine which cases impact Trainee predictions.
+- **Definitions & Understanding** Difference between similar/influential cases
+  vs case importance and robust vs non-robust :ref:`Case Contributions
+  <contribution>` and :ref:`Case MDA <mda>`.
+- **How-To** audit specific cases as well as determine which cases impact
+  Trainee predictions.
 
 
 Prerequisites: before you begin
@@ -32,12 +35,12 @@ Concepts & Terminology
 The main piece of terminology this guide introduces is the concept of case auditing. To understand this, we
 recommend being familiar with the following concepts:
 
-- :ref:`Trainee <../getting_started/terminology:trainee>`
-- :ref:`React <../getting_started/terminology:react>`
-- :ref:`Influential Cases <../getting_started/terminology:Influential Cases>`
-- :ref:`Most Similar Cases <../getting_started/terminology:Most Similar Cases>`
-- :ref:`Case MDA <../getting_started/terminology:MDA>`
-- :ref:`Case Contributions <../getting_started/terminology:Contribution>`
+- :ref:`trainee`
+- :ref:`react`
+- :ref:`influential_cases`
+- :ref:`most_similar_cases`
+- :ref:`Case MDA <mda>`
+- :ref:`Case Contributions <contribution>`
 
 
 How-To Guide
@@ -47,9 +50,9 @@ How-To Guide
 Influential Cases and Most Similar Cases
 ----------------------------------------
 
-Howso allows the user to audit individual cases to determine the closest cases that may influence a prediction. **Most Similar Cases** allows the user to return a designated number of most similar cases, 
-while the **Most Influential Cases** only returns cases that have an influence on the prediction. If the desired number of most similar cases is greater than the number of most influential cases, then the most influential 
-cases is a subset of the most similar cases. 
+Howso allows the user to audit individual cases to determine the closest cases that may influence a prediction. **Most Similar Cases** allows the user to return a designated number of most similar cases,
+while the **Most Influential Cases** only returns cases that have an influence on the prediction. If the desired number of most similar cases is greater than the number of most influential cases, then the most influential
+cases is a subset of the most similar cases.
 
 The parameters to get the most similar cases or influential cases can be accessed in the ``details`` parameter as a key value pair shown below. ``num_most_similar_cases`` allows the user to specify exactly how many similar cases to return.
 
@@ -68,7 +71,7 @@ The parameters to get the most similar cases or influential cases can be accesse
         details=details
     )
 
-In order to retrieve the calculated stats, they can be retrieved from the :py:meth:`Trainee.react` output dictionary. They are stored under the ``explanation`` key under the name of the metric. 
+In order to retrieve the calculated stats, they can be retrieved from the :py:meth:`Trainee.react` output dictionary. They are stored under the ``explanation`` key under the name of the metric.
 
 .. code-block:: python
 
