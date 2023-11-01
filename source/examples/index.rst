@@ -1,3 +1,4 @@
+.. _engine_recipes:
 Recipes
 =======
 

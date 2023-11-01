@@ -8,8 +8,12 @@ Installing from PyPi
 
     pip install -U howso-engine
 
-*Note*: :doc:`Recipes <../examples>` may have additional installation requirements, which can be found at this 
-`github link <https://github.com/howsoai/howso-engine-recipes/tree/main>`.
+*Note*: :ref:`Recipes <engine_recipes>` have additional installation requirements for data, presentation, etc. Instructions for installing those requirements can be found in the README for `Howso Engine Recipes  <https://github.com/howsoai/howso-engine-recipes>`_.
+
+Howso Dev Containers
+--------------------
+
+An alternate approach to installing from PyPi is to use one of the `Howso Dev Containers <https://github.com/howsoai/howso-devcontainers>`_. These are ready to use Docker containers that are built to include Howso Engine and all requirements needed to run the :ref:`Recipes <engine_recipes>`. See :doc:`Running in a Dev Container <dev_container>` for additional information.
 
 Client Configuration
 --------------------
@@ -98,4 +102,5 @@ Step 3 - Supplemental File (Microsoft Windows Only):
     :maxdepth: 1
     :hidden:
 
+    dev_container
     client_configuration
