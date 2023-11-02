@@ -100,7 +100,7 @@ pandas==2.1.0
     # via
     #   howso-engine
     #   seaborn
-pillow==10.0.0
+pillow==10.0.1
     # via matplotlib
 pycparser==2.21
     # via cffi

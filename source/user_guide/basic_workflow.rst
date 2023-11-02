@@ -36,15 +36,15 @@ Concepts & Terminology
 ----------------------
 Howso Engine is a generalized Machine Learning (ML) and Artificial Intelligence platform that creates powerful decision-making models that are fully explainable, auditable, and editable. Howso Engine uses Instance-Based Machine Learning which stores instances, i.e., data points, in memory and makes predictions about new instances given their relationship to existing instances. This technology harnesses a fast spatial query system and information theory for performance and accuracy.
 
-- :ref:`Trainee <../getting_started/terminology:trainee>`
-- :ref:`Train <../getting_started/terminology:train>`
-- :ref:`Analyze <../getting_started/terminology:analyze>`
-- :ref:`React <../getting_started/terminology:react>`
-- :ref:`Case <../getting_started/terminology:case>`
-- :ref:`Feature <../getting_started/terminology:feature>`
-- :ref:`Action Features <../getting_started/terminology:action features>`
-- :ref:`Context Features <../getting_started/terminology:context features>`
-- :doc:`Feature Attributes <feature_attributes>`
+- :ref:`trainee`
+- :ref:`train`
+- :ref:`analyze`
+- :ref:`react`
+- :ref:`case`
+- :ref:`feature`
+- :ref:`action_features`
+- :ref:`context_features`
+- :doc:`feature_attributes`
 
 How-To Guide
 ------------
