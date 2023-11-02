@@ -106,7 +106,7 @@ Contribution
 Feature contribution is the difference between a prediction in an action feature when each feature or case is
 considered versus not considered. Case contribution is the same but for a case rather than a feature. When applied in
 a robust fashion, this is an approximation of the commonly used SHAP feature importance measure. The difference being
-that SHAP is an exact value of a model (which itself is an approximation) whereas robust contribution is an
+that SHAP is an exact value of a model (which itself is just an approximation of the data) whereas robust contribution is an
 approximation of the feature importance of the relationships expressed in the data.
 
 .. _mda:
