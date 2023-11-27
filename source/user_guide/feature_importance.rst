@@ -85,12 +85,11 @@ metrics may be specified together, but for this example they are separated. If r
 Local Feature Importance
 ^^^^^^^^^^^^^^^^^^^^^^^^
 To get local feature importance metrics, :py:meth:`Trainee.react`, is first called on a trained and analyzed Trainee. In this method, the desired metrics, ``feature_contributions`` and ``feature_mda``, can be selected as inputs to the ``details`` parameters as key value pairs from a dictionary. These parameters are named individually
-and setting them to ``True`` will calculate the desired metrics. To calculate the robust versions, ``robust_computation`` is set to True.
+and setting them to ``True`` will calculate the desired metrics. Robust calculations are performed by default.
 
 .. code-block:: python
 
     details = {
-        'robust_computation':True,
         'feature_contributions':True,
         'feature_mda':True,
     }

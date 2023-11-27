@@ -93,12 +93,11 @@ the power set of all combinations with and without the case of interest. Robust 
 
 
 To get the case importance metrics, :py:meth:`Trainee.react`, is first called on a trained and analyzed Trainee. In this method, the desired metrics, ``case_contributions`` and ``case_mda``, can be selected as inputs to the ``details`` parameters as key value pairs from a dictionary. These parameters are named individually
-and setting them to ``True`` will calculate the desired metrics. To calculate the robust versions, ``robust_computation`` is set to True.
+and setting them to ``True`` will calculate the desired metrics. Robust computation is performed by default.
 
 .. code-block:: python
 
     details = {
-        'robust_computation':True,
         'case_contributions':True,
         'case_mda':True,
     }
