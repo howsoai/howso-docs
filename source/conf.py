@@ -67,7 +67,7 @@ html_theme_options = {
         "icon": "fa-solid fa-house",
         "type": "fontawesome"
     }],
-    "show_toc_level": 1,
+    "show_toc_level": 2,
 }
 html_context = {
     'howso_home_url': os.environ.get('HOWSO_HOME_URL')
