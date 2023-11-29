@@ -506,9 +506,8 @@ metrics may be specified together, but for this example they are separated. If r
 <section id="local-feature-importance">
 <h3>Local Feature Importance<a class="headerlink" href="#local-feature-importance" title="Permalink to this heading">#</a></h3>
 <p>To get local feature importance metrics, <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a>, is first called on a trained and analyzed Trainee. In this method, the desired metrics, <code class="docutils literal notranslate"><span class="pre">feature_contributions</span></code> and <code class="docutils literal notranslate"><span class="pre">feature_mda</span></code>, can be selected as inputs to the <code class="docutils literal notranslate"><span class="pre">details</span></code> parameters as key value pairs from a dictionary. These parameters are named individually
-and setting them to <code class="docutils literal notranslate"><span class="pre">True</span></code> will calculate the desired metrics. To calculate the robust versions, <code class="docutils literal notranslate"><span class="pre">robust_computation</span></code> is set to True.</p>
+and setting them to <code class="docutils literal notranslate"><span class="pre">True</span></code> will calculate the desired metrics. Robust calculations are performed by default.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">details</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;robust_computation&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
     <span class="s1">&#39;feature_contributions&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
     <span class="s1">&#39;feature_mda&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">}</span>
