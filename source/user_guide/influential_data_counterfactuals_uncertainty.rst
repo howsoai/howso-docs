@@ -75,7 +75,6 @@ We will use the local feature residual to examine the uncertainty for a specific
     ## Compute local feature residuals
     # Details describe the information we are getting from a given react call
     details = {
-        'robust_computation': True,
         'feature_residuals': True,
     }
 
