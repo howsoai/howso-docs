@@ -132,20 +132,20 @@ The top-level of the file is the ``howso`` section:
         Set this option to a valid path with sufficient write permissions to
         store all persisted trainees if so desired.
 
-    - ``howso_path``
+      - ``howso_path``
 
-      Sets the location to look for the Howso Engine (core). This is an
-      advanced setting used by developers.
+        Sets the location to look for the Howso Engine (core). This is an
+        advanced setting used by developers.
 
-    - ``howso_fname``
+      - ``howso_fname``
 
-      Sets the filename for the Howso Engine (core). This is an advanced
-      setting used by developers.
+        Sets the filename for the Howso Engine (core). This is an advanced
+        setting used by developers.
 
-    - ``trainee_template_path``
+      - ``trainee_template_path``
 
-      Sets the path to look for the howso-template howso-template.
-      This is an advanced setting used by developers.
+        Sets the path to look for the howso-template howso-template.
+        This is an advanced setting used by developers.
 
 
 
