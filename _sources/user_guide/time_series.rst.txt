@@ -103,6 +103,30 @@ Task 2 - Make a time series prediction
     results['target']
 
 
+Task 3 - Forecast a time-series
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: python
+
+    # Use react_series with continue_series_values to forecast a series
+    series_reaction = t.react_series(
+        action_features=["ID", "date", "value"],
+        continue_series=True,
+        continue_series_features=["ID", "date", "value"],
+        continue_series_values=[
+            [
+                # A set of cases making up a series
+                ["A", "2000-07-30", 100.0],
+                ["A", "2000-07-31", 105.0]
+                ["A", "2000-08-01", 110.0]
+            ]
+        ]
+    )
+
+    # Displaying the set of cases that forecast the given series
+    print(series_reaction['series'])
+
+
 API References
 --------------
 - :meth:`Trainee.react`

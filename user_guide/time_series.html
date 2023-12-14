@@ -528,6 +528,28 @@ about intervals within a dataset to make a prediction.</p>
 </pre></div>
 </div>
 </section>
+<section id="task-3-forecast-a-time-series">
+<h3>Task 3 - Forecast a time-series<a class="headerlink" href="#task-3-forecast-a-time-series" title="Permalink to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use react_series with continue_series_values to forecast a series</span>
+<span class="n">series_reaction</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">react_series</span><span class="p">(</span>
+    <span class="n">action_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">,</span> <span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">],</span>
+    <span class="n">continue_series</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">continue_series_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">,</span> <span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">],</span>
+    <span class="n">continue_series_values</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">[</span>
+            <span class="c1"># A set of cases making up a series</span>
+            <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;2000-07-30&quot;</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">],</span>
+            <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;2000-07-31&quot;</span><span class="p">,</span> <span class="mf">105.0</span><span class="p">]</span>
+            <span class="p">[</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;2000-08-01&quot;</span><span class="p">,</span> <span class="mf">110.0</span><span class="p">]</span>
+        <span class="p">]</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Displaying the set of cases that forecast the given series</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">series_reaction</span><span class="p">[</span><span class="s1">&#39;series&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
 </section>
 <section id="api-references">
 <h2>API References<a class="headerlink" href="#api-references" title="Permalink to this heading">#</a></h2>
@@ -592,6 +614,7 @@ about intervals within a dataset to make a prediction.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-guide">How-To Guide</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-1-infer-feature-attributes">Task 1 - Infer Feature Attributes</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-2-make-a-time-series-prediction">Task 2 - Make a time series prediction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-3-forecast-a-time-series">Task 3 - Forecast a time-series</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#api-references">API References</a></li>
