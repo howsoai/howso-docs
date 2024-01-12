@@ -487,14 +487,19 @@ about intervals within a dataset to make a prediction.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Identify id-feature and time-feature</span>
 <span class="n">id_feature_name</span> <span class="o">=</span> <span class="s2">&quot;ID&quot;</span>
 <span class="n">time_feature_name</span> <span class="o">=</span> <span class="s2">&quot;date&quot;</span>
-<span class="n">features</span> <span class="o">=</span> <span class="n">guess_time_series_attributes</span><span class="p">(</span>
+<span class="n">features</span> <span class="o">=</span> <span class="n">infer_feature_attributes</span><span class="p">(</span>
     <span class="n">df</span><span class="p">,</span>
     <span class="n">time_feature_name</span><span class="o">=</span><span class="n">time_feature_name</span><span class="p">,</span>
     <span class="n">id_feature_name</span><span class="o">=</span><span class="n">id_feature_name</span><span class="p">,</span>
     <span class="n">datetime_feature_formats</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">},</span>
+    <span class="n">time_feature_is_universal</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
+<p>When calling <cite>infer_feature_attributes</cite> in time-series flows, it’s imperative that the user specifies the time feature name and the id feature name. While not required, another very significant
+parameter to consider is the <cite>time_feature_is_universal</cite> flag. This is a boolean flag that specifies to the Engine if the time feature should be considered “universal”.</p>
+<p>If the time feature is universal, then the Engine is not able to reference any future data when making a prediction. If the time feature is not universal, then the Engine could use future data
+from other series, but still not future data within the same series. It is recommended to set this flag to True if there is any possibility of global relevancy of time, which is the default behavior.</p>
 </section>
 <section id="task-2-make-a-time-series-prediction">
 <h3>Task 2 - Make a time series prediction<a class="headerlink" href="#task-2-make-a-time-series-prediction" title="Permalink to this heading">#</a></h3>
@@ -645,7 +650,7 @@ about intervals within a dataset to make a prediction.</p>
         <div class="footer-item">
   <p class="copyright">
     
-      © Copyright 2019-2023, Howso Incorporated.
+      © Copyright 2019-2024, Howso Incorporated.
       <br/>
     
   </p>

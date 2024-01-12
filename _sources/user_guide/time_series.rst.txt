@@ -62,12 +62,19 @@ Task 1 - Infer Feature Attributes
     # Identify id-feature and time-feature
     id_feature_name = "ID"
     time_feature_name = "date"
-    features = guess_time_series_attributes(
+    features = infer_feature_attributes(
         df,
         time_feature_name=time_feature_name,
         id_feature_name=id_feature_name,
         datetime_feature_formats={"date": "%Y-%m-%d"},
+        time_feature_is_universal=True,
     )
+
+When calling `infer_feature_attributes` in time-series flows, it's imperative that the user specifies the time feature name and the id feature name. While not required, another very significant
+parameter to consider is the `time_feature_is_universal` flag. This is a boolean flag that specifies to the Engine if the time feature should be considered "universal".
+
+If the time feature is universal, then the Engine is not able to reference any future data when making a prediction. If the time feature is not universal, then the Engine could use future data
+from other series, but still not future data within the same series. It is recommended to set this flag to True if there is any possibility of global relevancy of time, which is the default behavior.
 
 Task 2 - Make a time series prediction
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
