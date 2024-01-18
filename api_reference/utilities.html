@@ -709,6 +709,12 @@ returned. If the timer has not yet started, returns None.</p>
 </dl>
 </dd></dl>
 
+<dl class="py property">
+<dt class="sig sig-object py" id="howso.utilities.Timer.seconds">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">seconds</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#howso.utilities.Timer.seconds" title="Permalink to this definition">#</a></dt>
+<dd><p>The total seconds representing the duration of timer instance.</p>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="howso.utilities.Timer.start">
 <span class="sig-name descname"><span class="pre">start</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#howso.utilities.Timer.start" title="Permalink to this definition">#</a></dt>
@@ -1171,9 +1177,6 @@ that should be derived instead of synthesized. For example, for a
 feature with a 3rd order of derivative, setting its derived_orders
 to 2 will synthesize the 3rd order derivative value, and then use
 that synthed value to derive the 2nd and 1st order.</p></li>
-<li><p><strong>dropna</strong> (<em>bool</em><em>, </em><em>default False</em>) – (Optional) If True, all features will be populated with <cite>‘dropna’:
-True</cite> parameter. That would mean, rows containing NaNs will be
-automatically dropped when you train.</p></li>
 <li><p><strong>lags</strong> (<em>list</em><em> or </em><em>dict</em><em>, </em><em>default None</em>) – <p>(Optional) A list containing the specific indices of the desired lag
 features to derive for each feature (not including the series time
 feature). Specifying derived lag features for the feature specified by
@@ -1233,6 +1236,12 @@ specified in the Iterable.</p></li>
 <li><p><strong>tight_time_bounds</strong> (<em>bool</em><em>, </em><em>default False</em>) – (optional) If True, will set tight bounds on time_feature.
 This will cause the bounds for the start and end times set
 to the same bounds as observed in the original data.</p></li>
+<li><p><strong>time_feature_is_universal</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, the time feature will be treated as universal and future data
+is excluded while making predictions. If False, the time feature will
+not be treated as universal and only future data within the same series
+is excluded while making predictions. It is recommended to set this
+value to True if there is any possibility of global relevancy of time,
+which is the default behavior.</p></li>
 <li><p><strong>time_series_type_default</strong> (<em>str</em><em>, </em><em>default 'rate'</em>) – (Optional) Type specifying how time series is generated.
 One of ‘rate’ or ‘delta’, default is ‘rate’. If ‘rate’,
 it uses the difference of the current value from its
@@ -1346,7 +1355,7 @@ attributes and useful accessor methods.</p>
     <span class="p">}</span>
 <span class="c1"># Or can call methods to do other stuff</span>
 <span class="o">&gt;&gt;</span> <span class="n">attrs</span><span class="o">.</span><span class="n">get_parameters</span><span class="p">()</span>
-    <span class="p">{</span><span class="s1">&#39;dropna&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+    <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s2">&quot;continuous&quot;</span><span class="p">}</span>
 
 <span class="c1"># Now &#39;data&#39; is an object that implements SQLRelationalDatastoreProtocol</span>
 <span class="o">&gt;&gt;</span> <span class="n">attrs</span> <span class="o">=</span> <span class="n">infer_feature_attributes</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">tables</span><span class="p">)</span>
@@ -1743,6 +1752,7 @@ list will be considered as valid features.</p></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.Timer.has_ended"><code class="docutils literal notranslate"><span class="pre">Timer.has_ended</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.Timer.has_started"><code class="docutils literal notranslate"><span class="pre">Timer.has_started</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.Timer.reset"><code class="docutils literal notranslate"><span class="pre">Timer.reset()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.Timer.seconds"><code class="docutils literal notranslate"><span class="pre">Timer.seconds</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.Timer.start"><code class="docutils literal notranslate"><span class="pre">Timer.start()</span></code></a></li>
 </ul>
 </li>
