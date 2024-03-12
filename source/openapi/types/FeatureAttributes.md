@@ -93,12 +93,6 @@ Examples:
 
 ```
 
-```{py:attribute} dropna
-:type: Optional[bool]
-
-DEPRECATED - When true, samples where the feature value is NaN are removed.
-```
-
 ```{py:attribute} id_feature
 :type: Optional[bool]
 

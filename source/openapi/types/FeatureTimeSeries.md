@@ -93,5 +93,12 @@ When true, the feature will be treated as the time feature for time series model
 
 ```
 
+```{py:attribute} universal
+:type: Optional[bool]
+
+Controls whether future values of independent time series are considered. Applicable only to the time feature. When false, the time feature is not universal and allows using future data from other series in decisions; this is applicable when the time is not globally relevant and is independent for each time series. When true, universally excludes using any data with from the future from all series; this is applicable when time is globally relevant and there are events that may affect all time series. If there is any possibility of global relevancy of time, it is generally recommended to set this value to true, which is the default.
+
+```
+
 ````
 `````
