@@ -1,7 +1,16 @@
 Types
 =====
 
-Data structure types used by the client.
+Types used by Howso Engine.
+
+.. automodule:: howso.engine.typing
+    :members:
+
+
+Data Structures
+===============
+
+Data structures used by Howso Engine.
 
 .. toctree::
     :glob:
