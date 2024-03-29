@@ -1,5 +1,5 @@
 # Howso packages are needed only to generate documentation
-howso-engine
+howso-engine[scikit]
 # Sphinx dependencies
 jinja2
 myst-parser~=1.0
@@ -9,6 +9,8 @@ sphinx-design>=0.4.1,<0.5
 sphinx~=6.0
 sphinxcontrib-images~=0.0
 pydata-sphinx-theme>=0.13.3,<0.14
+sphinx-autodoc-typehints~=2.0
+scanpydoc~=0.0
 # Misc dependencies
 matplotlib
 seaborn

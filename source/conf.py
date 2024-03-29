@@ -11,9 +11,16 @@
 
 import datetime
 import os
+from types import NoneType
+from typing import Optional, Union, get_origin
 
 from sphinx.ext import autodoc
 from sphinx.addnodes import desc_signature
+
+import howso.engine
+import howso.engine.typing
+
+from sphinx_autodoc_typehints import format_annotation
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
@@ -27,12 +34,14 @@ html_title = 'Howso Engine Documentation'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
-    'myst_parser',
+    'sphinx.ext.napoleon',
+    'sphinx_autodoc_typehints',
+    'scanpydoc.elegant_typehints',
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
+    'myst_parser',
     'sphinx.ext.doctest',
     'sphinx.ext.ifconfig',
-    'sphinx.ext.napoleon',
     'sphinx_copybutton',
     'sphinx_design',
     'sphinxcontrib.images',
@@ -135,8 +144,10 @@ nb_execution_timeout = 600
 
 # Autodoc
 # https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html#configuration
-autodoc_typehints = 'description'
-autodoc_class_signature = "separated"
+autodoc_class_signature = "mixed"
+autodoc_inherit_docstrings = True
+autodoc_member_order = "groupwise"
+autodoc_typehints = "signature"
 
 # Sphinx Contrib Images
 # https://sphinxcontrib-images.readthedocs.io/en/latest/
@@ -149,10 +160,34 @@ images_config = {
 # https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html#configuration
 napoleon_google_docstring = False
 napoleon_numpy_docstring = True
+napoleon_use_param = True
+napoleon_use_keyword = True
+
+# Scanpydoc Elegant Typehints
+# https://github.com/theislab/scanpydoc
+
+typehints_use_rtype = False
+typehints_use_signature = True
+typehints_use_signature_return = True
 
 # Autosectionlabel
 # https://www.sphinx-doc.org/en/master/usage/extensions/autosectionlabel.html#configuration
 # autosectionlabel_prefix_document = True
+# def process_signature(annotation, config):    
+#     if not hasattr(annotation, "__args__") or not hasattr(annotation, "__origin__"):
+#         return None
+
+#     if (
+#         annotation.__module__ == "typing" and
+#         isinstance(annotation.__args__, tuple) and
+#         len(annotation.__args__) == 2 and
+#         annotation.__args__[1] == NoneType and
+#         annotation.__origin__ == Union
+#     ):
+#         new_annotation = annotation.__args__[0]
+#         formatted = format_annotation(new_annotation, config)
+#         formatted += ", optional"
+#         return formatted
 
 
 # -- Documentation Setup -----------------------------------------------------
