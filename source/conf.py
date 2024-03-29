@@ -149,13 +149,6 @@ autodoc_inherit_docstrings = True
 autodoc_member_order = "groupwise"
 autodoc_typehints = "signature"
 
-# Sphinx Contrib Images
-# https://sphinxcontrib-images.readthedocs.io/en/latest/
-images_config = {
-    "override_image_directive": True  # Force the `thumbnail` directive to override
-    # the `image` directive, allowing for zooming when an image is clicked on.
-}
-
 # Napoleon Conf
 # https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html#configuration
 napoleon_google_docstring = False
