@@ -142,6 +142,13 @@ texinfo_documents = [
 
 nb_execution_timeout = 600
 
+# Sphinx Contrib Images
+# https://sphinxcontrib-images.readthedocs.io/en/latest/
+images_config = {
+    "override_image_directive": True  # Force the `thumbnail` directive to override
+    # the `image` directive, allowing for zooming when an image is clicked on.
+}
+
 # Autodoc
 # https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html#configuration
 autodoc_class_signature = "mixed"
