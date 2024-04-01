@@ -1,12 +1,3 @@
-Types
-=====
-
-Types used by Howso Engine.
-
-.. automodule:: howso.engine.typing
-    :members:
-
-
 Data Structures
 ===============
 
