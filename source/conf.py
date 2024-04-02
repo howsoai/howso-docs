@@ -162,6 +162,12 @@ napoleon_numpy_docstring = True
 napoleon_use_param = True
 napoleon_use_keyword = True
 
+# Autosummary Conf
+# https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html#generating-stub-pages-automatically
+# autosummary_imported_members = True
+autosummary_generate = True
+autosummary_ignore_module_all = False
+
 # Autosectionlabel
 # https://www.sphinx-doc.org/en/master/usage/extensions/autosectionlabel.html#configuration
 # autosectionlabel_prefix_document = True
