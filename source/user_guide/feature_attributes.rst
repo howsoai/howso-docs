@@ -63,9 +63,13 @@ How do I map **ordinal** features?
 
 How do I map **cyclic** features?
 ---------------------------------
-Cyclic features start at 0 and end at the value specified exclusively. e.g. To
-specify days of the week provide a `cycle_length` of 7 and values in your data
-should be 0 to 6.
+Cyclic features are set by specifying a `cycle_length` value in the feature attributes.
+`cycle_length` requires a single value, which is the upper bound of the difference for
+the cycle range. For example, if `cycle_length` is 360,  then a value of 1 and 359 will
+have a difference of 2. Cyclic features have no restrictions in the input dataset, however,
+cyclic features will be outputted on a scale from 0 to `cycle_length`. To constrain the output
+to a different range, modify the `min` and `max` `bounds` feature attribute. 
+
 
 - Specify the `type` as `continuous` inside IFA.
 - Specify the maximum value (exclusive) as the `cycle_length` feature attribute.
