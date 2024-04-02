@@ -9,4 +9,6 @@ API Reference
 
 .. toctree:: utilities
 
+.. toctree:: data_structures
+
 .. toctree:: types
