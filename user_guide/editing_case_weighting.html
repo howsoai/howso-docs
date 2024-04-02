@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Editing Trainees and Case Weighting &#8212; Howso Engine Documentation</title>
   
@@ -29,28 +28,28 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=402959de" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=be2ede8c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/design-tabs.js"></script>
-    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
-    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/editing_case_weighting';</script>
-    <script src="../_static/js/icon.js"></script>
+    <script src="../_static/js/icon.js?v=88ae6932"></script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -426,14 +425,14 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="editing-trainees-and-case-weighting">
-<h1>Editing Trainees and Case Weighting<a class="headerlink" href="#editing-trainees-and-case-weighting" title="Permalink to this heading">#</a></h1>
+<h1>Editing Trainees and Case Weighting<a class="headerlink" href="#editing-trainees-and-case-weighting" title="Link to this heading">#</a></h1>
 <aside class="topic">
 <p class="topic-title">What is covered in this user guide</p>
 <p>In this guide, you will learn the basics of editing <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> s and applying case
 weights to data contained within the Trainee.</p>
 </aside>
 <section id="objectives-what-you-will-take-away">
-<h2>Objectives: what you will take away<a class="headerlink" href="#objectives-what-you-will-take-away" title="Permalink to this heading">#</a></h2>
+<h2>Objectives: what you will take away<a class="headerlink" href="#objectives-what-you-will-take-away" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Definitions &amp; Understanding</strong> of how <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> s can be edited without re-training and what effects case-
 weighting can have on prediction.</p></li>
@@ -441,19 +440,19 @@ weighting can have on prediction.</p></li>
 </ul>
 </section>
 <section id="prerequisites-before-you-begin">
-<h2>Prerequisites: before you begin<a class="headerlink" href="#prerequisites-before-you-begin" title="Permalink to this heading">#</a></h2>
+<h2>Prerequisites: before you begin<a class="headerlink" href="#prerequisites-before-you-begin" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>You have successfully <a class="reference internal" href="../getting_started/installing.html"><span class="doc">installed Howso Engine</span></a></p></li>
 <li><p>You have <a class="reference internal" href="basic_workflow.html"><span class="doc">loaded, configured, trained, and analyzed data</span></a></p></li>
 </ul>
 </section>
 <section id="data">
-<h2>Data<a class="headerlink" href="#data" title="Permalink to this heading">#</a></h2>
+<h2>Data<a class="headerlink" href="#data" title="Link to this heading">#</a></h2>
 <p>Our example dataset for this guide is the well-known <code class="docutils literal notranslate"><span class="pre">Adult</span></code> dataset, accessible via the <code class="docutils literal notranslate"><span class="pre">pmlb</span></code> package installed
 in the prerequisites using the <code class="docutils literal notranslate"><span class="pre">fetch_data()</span></code> function.</p>
 </section>
 <section id="notebook-recipe">
-<h2>Notebook Recipe<a class="headerlink" href="#notebook-recipe" title="Permalink to this heading">#</a></h2>
+<h2>Notebook Recipe<a class="headerlink" href="#notebook-recipe" title="Link to this heading">#</a></h2>
 <p>There are two recipes which supplement the content this guide will cover:</p>
 <ul class="simple">
 <li><p><a class="reference download external" download="" href="https://github.com/howsoai/howso-engine-recipes/blob/main/4-audit_edit.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Auditing</span> <span class="pre">and</span> <span class="pre">Editing</span></code></a></p></li>
@@ -461,7 +460,7 @@ in the prerequisites using the <code class="docutils literal notranslate"><span 
 </ul>
 </section>
 <section id="concepts-terminology">
-<h2>Concepts &amp; Terminology<a class="headerlink" href="#concepts-terminology" title="Permalink to this heading">#</a></h2>
+<h2>Concepts &amp; Terminology<a class="headerlink" href="#concepts-terminology" title="Link to this heading">#</a></h2>
 <p>The main piece of terminology this guide introduces is the concept of case weights.  To understand this, we
 recommend being familiar with the following concepts:</p>
 <ul class="simple">
@@ -476,13 +475,13 @@ recommend being familiar with the following concepts:</p>
 <p>Additional concepts to be familiar with are <a class="reference external" href="https://en.wikipedia.org/wiki/Statistical_classification">classification</a> and
 <a class="reference external" href="https://en.wikipedia.org/wiki/Overfitting">overfitting</a>.</p>
 <section id="case-weights">
-<h3>Case Weights<a class="headerlink" href="#case-weights" title="Permalink to this heading">#</a></h3>
+<h3>Case Weights<a class="headerlink" href="#case-weights" title="Link to this heading">#</a></h3>
 <p>Similar to how feature weights determine how important a particular feature is, case weights determine how important a particular case is:</p>
 <p>(<a class="reference download internal" download="" href="../_downloads/4e0c67e64f04c89225f3fb344c4d0547/editing_case_weighting-1.py"><code class="xref download docutils literal notranslate"><span class="pre">Source</span> <span class="pre">code</span></code></a>, <a class="reference download internal" download="" href="../_downloads/81f204239e5a69c8e1b6d2dc2f3592cf/editing_case_weighting-1.png"><code class="xref download docutils literal notranslate"><span class="pre">png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/876e2a0f693b7d7ac8a01b4ac57327d3/editing_case_weighting-1.hires.png"><code class="xref download docutils literal notranslate"><span class="pre">hires.png</span></code></a>, <a class="reference download internal" download="" href="../_downloads/3dad447c2c0ea461edc973c92876b9c5/editing_case_weighting-1.pdf"><code class="xref download docutils literal notranslate"><span class="pre">pdf</span></code></a>)</p>
 <figure class="align-default" id="id1">
 <img alt="../_images/editing_case_weighting-1.png" class="plot-directive" src="../_images/editing_case_weighting-1.png" />
 <figcaption>
-<p><span class="caption-text">A Demonstration of Case Weighting</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">A Demonstration of Case Weighting</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <p>In the above plot, the right side of the second distribution is weighted to be 2.5 times as important as the left side.  This is
@@ -490,14 +489,14 @@ reflected in the density of the distribution.</p>
 </section>
 </section>
 <section id="how-to-guide">
-<h2>How-To Guide<a class="headerlink" href="#how-to-guide" title="Permalink to this heading">#</a></h2>
+<h2>How-To Guide<a class="headerlink" href="#how-to-guide" title="Link to this heading">#</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Editing and removing cases without exercising the proper due-diligence can lead to overfitting or the introduction of biases
 that may affect downstream use-cases. Exercise caution and consult any necessary experts when editing a <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a>.</p>
 </div>
 <section id="adding-features">
-<h3>Adding Features<a class="headerlink" href="#adding-features" title="Permalink to this heading">#</a></h3>
+<h3>Adding Features<a class="headerlink" href="#adding-features" title="Link to this heading">#</a></h3>
 <p>Adding features to a <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> can be done with a single call to <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.add_feature" title="howso.engine.Trainee.add_feature"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.add_feature()</span></code></a>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="s2">&quot;gender&quot;</span><span class="p">,</span> <span class="n">feature_value</span><span class="o">=</span><span class="s2">&quot;nb&quot;</span><span class="p">,</span> <span class="n">feature_attributes</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;nominal&quot;</span><span class="p">})</span>
 </pre></div>
@@ -507,7 +506,7 @@ features can also be added to only certain cases, or without updating the <a cla
 the capabilities of <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.add_feature" title="howso.engine.Trainee.add_feature"><code class="xref py py-meth docutils literal notranslate"><span class="pre">add_feature()</span></code></a>, see the <a class="reference internal" href="../api_reference/index.html#api-reference"><span class="std std-ref">API Reference</span></a>.</p>
 </section>
 <section id="adding-using-case-weights">
-<h3>Adding &amp; Using Case Weights<a class="headerlink" href="#adding-using-case-weights" title="Permalink to this heading">#</a></h3>
+<h3>Adding &amp; Using Case Weights<a class="headerlink" href="#adding-using-case-weights" title="Link to this heading">#</a></h3>
 <p><a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.add_feature" title="howso.engine.Trainee.add_feature"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.add_feature()</span></code></a> can also be used to manually add case weights to a <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="s2">&quot;my_case_weight&quot;</span><span class="p">,</span> <span class="n">feature_value</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
 </pre></div>
@@ -524,7 +523,7 @@ similarly be used as case weights. For example, the <code class="docutils litera
 </div>
 </section>
 <section id="editing-cases">
-<h3>Editing Cases<a class="headerlink" href="#editing-cases" title="Permalink to this heading">#</a></h3>
+<h3>Editing Cases<a class="headerlink" href="#editing-cases" title="Link to this heading">#</a></h3>
 <p>Like adding features, editing cases is done with calls to <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.edit_cases" title="howso.engine.Trainee.edit_cases"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.edit_cases()</span></code></a>.  Let’s say we’ve consulted an expert and they
 have determined that cases in the adult dataset with a <code class="docutils literal notranslate"><span class="pre">workclass</span></code> of <code class="docutils literal notranslate"><span class="pre">0</span></code> (an unknown work class) have universally been mis-classified.
 We can edit cases that meet this condition with the following code:</p>
@@ -535,7 +534,7 @@ We can edit cases that meet this condition with the following code:</p>
 of conditions.  For more information on <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.edit_cases" title="howso.engine.Trainee.edit_cases"><code class="xref py py-meth docutils literal notranslate"><span class="pre">edit_cases()</span></code></a>, see the <a class="reference internal" href="../api_reference/index.html#api-reference"><span class="std std-ref">API Reference</span></a>.</p>
 </section>
 <section id="manually-updating-case-weights">
-<h3>Manually Updating Case Weights<a class="headerlink" href="#manually-updating-case-weights" title="Permalink to this heading">#</a></h3>
+<h3>Manually Updating Case Weights<a class="headerlink" href="#manually-updating-case-weights" title="Link to this heading">#</a></h3>
 <p><a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.edit_cases" title="howso.engine.Trainee.edit_cases"><code class="xref py py-meth docutils literal notranslate"><span class="pre">edit_cases()</span></code></a> can also be used to manually update case weights. Say we want to address some bias in the data by weighing women
 who have high salaries more highly than those who don’t, so that the <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> is more likely to make balanced predictions.  That can
 be done with the following code:</p>
@@ -545,7 +544,7 @@ be done with the following code:</p>
 <p>Of course, this is a surface-level attempt at addressing bias.  For more information on bias mitigation, see the <cite>5-bias_mitigation</cite> recipe.</p>
 </section>
 <section id="removing-cases">
-<h3>Removing Cases<a class="headerlink" href="#removing-cases" title="Permalink to this heading">#</a></h3>
+<h3>Removing Cases<a class="headerlink" href="#removing-cases" title="Link to this heading">#</a></h3>
 <p>Using an API that is very similar to that of <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.edit_cases" title="howso.engine.Trainee.edit_cases"><code class="xref py py-meth docutils literal notranslate"><span class="pre">edit_cases()</span></code></a>, <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.remove_cases" title="howso.engine.Trainee.remove_cases"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.remove_cases()</span></code></a> can be used to remove cases from the
 model.  If one or more cases are found to be invalid after they have been trained, they can be removed to ensure the model stays up-to-date
 without needing to train or analyze again.  Let’s say that it is discovered that the cases with a <code class="docutils literal notranslate"><span class="pre">workclass</span></code> of <code class="docutils literal notranslate"><span class="pre">6</span></code> (self-employed, not
@@ -558,7 +557,7 @@ incorporated) were not reported correctly by the dataset creators.  We can remov
 see the <a class="reference internal" href="../api_reference/index.html#api-reference"><span class="std std-ref">API Reference</span></a>.</p>
 </section>
 <section id="automatically-updating-case-weights">
-<h3>Automatically Updating Case Weights<a class="headerlink" href="#automatically-updating-case-weights" title="Permalink to this heading">#</a></h3>
+<h3>Automatically Updating Case Weights<a class="headerlink" href="#automatically-updating-case-weights" title="Link to this heading">#</a></h3>
 <p>When using <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.remove_cases" title="howso.engine.Trainee.remove_cases"><code class="xref py py-meth docutils literal notranslate"><span class="pre">remove_cases()</span></code></a>, the weights from removed cases can be automatically distributed to their neighbors upon
 removal using the <code class="docutils literal notranslate"><span class="pre">distribute_weight_feature</span></code> parameter. For example,</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num_workclass_6</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">workclass</span> <span class="o">==</span> <span class="mi">6</span><span class="p">])</span>
@@ -569,7 +568,7 @@ removal using the <code class="docutils literal notranslate"><span class="pre">d
 to increase in importance as these are removed.</p>
 </section>
 <section id="example-use-cases">
-<h3>Example Use-Cases<a class="headerlink" href="#example-use-cases" title="Permalink to this heading">#</a></h3>
+<h3>Example Use-Cases<a class="headerlink" href="#example-use-cases" title="Link to this heading">#</a></h3>
 <p>In addition to the examples above, here are a few example use-cases for case editing and case weighting:</p>
 <ul class="simple">
 <li><dl class="simple">
@@ -591,7 +590,7 @@ is decreased</p></li>
 </section>
 </section>
 <section id="api-references">
-<h2>API References<a class="headerlink" href="#api-references" title="Permalink to this heading">#</a></h2>
+<h2>API References<a class="headerlink" href="#api-references" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.add_feature" title="howso.engine.Trainee.add_feature"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.add_feature()</span></code></a></p></li>
 <li><p><a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.edit_cases" title="howso.engine.Trainee.edit_cases"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.edit_cases()</span></code></a></p></li>
@@ -701,7 +700,7 @@ is decreased</p></li>
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     <br/>
   </p>
 </div>

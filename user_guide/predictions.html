@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Predictions &#8212; Howso Engine Documentation</title>
   
@@ -29,29 +28,29 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=402959de" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=be2ede8c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/design-tabs.js"></script>
-    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
-    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/predictions';</script>
-    <script src="../_static/js/icon.js"></script>
+    <script src="../_static/js/icon.js?v=88ae6932"></script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -427,7 +426,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="predictions">
-<h1>Predictions<a class="headerlink" href="#predictions" title="Permalink to this heading">#</a></h1>
+<h1>Predictions<a class="headerlink" href="#predictions" title="Link to this heading">#</a></h1>
 <aside class="topic">
 <p class="topic-title">What is covered in this user guide.</p>
 <p>In this guide, you will learn the basics of using the Howso Engine for <strong>Regression</strong> and  <strong>Classification</strong> in
@@ -436,14 +435,14 @@ this example, the average miles per gallon (MPG) or Fuel Type of a vehicle based
 attributes of the vehicle.</p>
 </aside>
 <section id="objectives-what-you-will-take-away">
-<h2>Objectives: what you will take away<a class="headerlink" href="#objectives-what-you-will-take-away" title="Permalink to this heading">#</a></h2>
+<h2>Objectives: what you will take away<a class="headerlink" href="#objectives-what-you-will-take-away" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Definitions &amp; an understanding</strong> of basic regression, classification, continuous vs categorical/nominal Action Features, <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a>, <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react()</span></code></a>,  <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react_into_trainee()</span></code></a>, and <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.get_prediction_stats" title="howso.engine.Trainee.get_prediction_stats"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_prediction_stats()</span></code></a>.</p></li>
 <li><p><strong>How-To</strong> perform a basic regression or classification analysis using the Howso Engine to predict the Highway MPG or Fuel Type based on vehicle Context Features.</p></li>
 </ul>
 </section>
 <section id="prerequisites-before-you-begin">
-<h2>Prerequisites: before you begin<a class="headerlink" href="#prerequisites-before-you-begin" title="Permalink to this heading">#</a></h2>
+<h2>Prerequisites: before you begin<a class="headerlink" href="#prerequisites-before-you-begin" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Installation</strong> - you have successfully installed <a class="reference internal" href="../getting_started/installing.html"><span class="doc">Howso Engine</span></a></p></li>
 <li><p><strong>Additional Libraries</strong> - you have installed these libraries:</p>
@@ -455,18 +454,18 @@ attributes of the vehicle.</p>
 </ul>
 </section>
 <section id="data">
-<h2>Data<a class="headerlink" href="#data" title="Permalink to this heading">#</a></h2>
+<h2>Data<a class="headerlink" href="#data" title="Link to this heading">#</a></h2>
 <p><a class="reference download internal" download="" href="../_downloads/5d0fc47fdcc264d59c82fe4652b54583/vehicles.csv"><code class="xref download docutils literal notranslate"><span class="pre">Download</span></code></a> 23,606 vehicles from 1984 - 2022, including make, model, MPG, drive-type, size, class and fuel type.</p>
 </section>
 <section id="notebook-recipe">
-<h2>Notebook Recipe<a class="headerlink" href="#notebook-recipe" title="Permalink to this heading">#</a></h2>
+<h2>Notebook Recipe<a class="headerlink" href="#notebook-recipe" title="Link to this heading">#</a></h2>
 <p>The following recipe will supplement the content this guide will cover:</p>
 <ul class="simple">
 <li><p><a class="reference download external" download="" href="https://github.com/howsoai/howso-engine-recipes/blob/main/1-engine-intro.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Engine</span> <span class="pre">Intro</span></code></a> download a sample notebook to run code using the engine for regression yourself.</p></li>
 </ul>
 </section>
 <section id="concepts-terminology">
-<h2>Concepts &amp; Terminology<a class="headerlink" href="#concepts-terminology" title="Permalink to this heading">#</a></h2>
+<h2>Concepts &amp; Terminology<a class="headerlink" href="#concepts-terminology" title="Link to this heading">#</a></h2>
 <p><strong>Regression</strong> - is used to describe the relationship between one or more Context Features and a <strong>continuous</strong> numeric
 Action Feature, as in this guide predicting the <strong>Highway MPG</strong> of a vehicle based on its physical characteristics and
 year manufactured.</p>
@@ -505,11 +504,11 @@ performs a <a class="reference internal" href="../api_reference/engine.html#hows
 present to it, giving us predictions of what the <strong>Highway MPG</strong> would be.</p>
 </section>
 <section id="how-to-guide">
-<h2>How-To Guide<a class="headerlink" href="#how-to-guide" title="Permalink to this heading">#</a></h2>
+<h2>How-To Guide<a class="headerlink" href="#how-to-guide" title="Link to this heading">#</a></h2>
 <p>We want to predict the <strong>Highway MPG</strong> and the <strong>Fuel Type</strong> of a new vehicle based on a <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> we create from the vehicles dataset. In this guide, we will directly
 show the code for <strong>Highway MPG</strong> prediction while including the code for <strong>Fuel Type</strong> as comments wherever the code differs.</p>
 <section id="step-1-load-libraries">
-<h3>Step 1 - Load Libraries<a class="headerlink" href="#step-1-load-libraries" title="Permalink to this heading">#</a></h3>
+<h3>Step 1 - Load Libraries<a class="headerlink" href="#step-1-load-libraries" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
@@ -519,7 +518,7 @@ show the code for <strong>Highway MPG</strong> prediction while including the co
 </div>
 </section>
 <section id="step-2-load-data">
-<h3>Step 2 - Load Data<a class="headerlink" href="#step-2-load-data" title="Permalink to this heading">#</a></h3>
+<h3>Step 2 - Load Data<a class="headerlink" href="#step-2-load-data" title="Link to this heading">#</a></h3>
 <p>Using a pandas DataFrame, load the vehicles dataset from the csv file. We are going to drop make/model features because that is kinda cheating… Make sure it’s what you expect, take a quick look at some of the data and use describe to make sure it has the shape you’d expect.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;./data/vehicle_predict.csv&quot;</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Make&#39;</span><span class="p">,</span> <span class="s1">&#39;Model&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -528,7 +527,7 @@ show the code for <strong>Highway MPG</strong> prediction while including the co
 </div>
 </section>
 <section id="step-3-define-features">
-<h3>Step 3 - Define Features<a class="headerlink" href="#step-3-define-features" title="Permalink to this heading">#</a></h3>
+<h3>Step 3 - Define Features<a class="headerlink" href="#step-3-define-features" title="Link to this heading">#</a></h3>
 <p>Howso can auto-detect features from data, using <a class="reference internal" href="../api_reference/utilities.html#howso.utilities.infer_feature_attributes" title="howso.utilities.infer_feature_attributes"><code class="xref py py-meth docutils literal notranslate"><span class="pre">infer_feature_attributes()</span></code></a> but it is a best practice to review and configure.  In this tutorial, we will proceed as if the features were not detected as we want them to be, so we will make necessary adjustments.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -553,7 +552,7 @@ predict, specifically the feature <cite>type</cite> as shown below, thus it is <
 </div>
 </section>
 <section id="step-4-create-a-trainee-and-train">
-<h3>Step 4 - Create a Trainee and Train<a class="headerlink" href="#step-4-create-a-trainee-and-train" title="Permalink to this heading">#</a></h3>
+<h3>Step 4 - Create a Trainee and Train<a class="headerlink" href="#step-4-create-a-trainee-and-train" title="Link to this heading">#</a></h3>
 <p>Next we will create a <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> and <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.train" title="howso.engine.Trainee.train"><code class="xref py py-meth docutils literal notranslate"><span class="pre">train()</span></code></a> based on data we have loaded into the DataFrame from the vehicles.csv.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a new Trainee, specify features</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">Trainee</span><span class="p">(</span><span class="n">features</span><span class="o">=</span><span class="n">features</span><span class="p">)</span>
@@ -564,7 +563,7 @@ predict, specifically the feature <cite>type</cite> as shown below, thus it is <
 </div>
 </section>
 <section id="step-5-analyze-trainee-set-context-action-features">
-<h3>Step 5 - Analyze Trainee, Set Context &amp; Action Features<a class="headerlink" href="#step-5-analyze-trainee-set-context-action-features" title="Permalink to this heading">#</a></h3>
+<h3>Step 5 - Analyze Trainee, Set Context &amp; Action Features<a class="headerlink" href="#step-5-analyze-trainee-set-context-action-features" title="Link to this heading">#</a></h3>
 <p>We know a specific task we want our <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> to <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react()</span></code></a> to, that is, to predict <strong>Highway MPG</strong> (the action feature) - using the context features: Year, DriveType, FuelType, CityMPG, PassengerVolume, LuggageVolume, and VehicleClass.  We can use <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.analyze" title="howso.engine.Trainee.analyze"><code class="xref py py-meth docutils literal notranslate"><span class="pre">analyze()</span></code></a> to improve performance of our model by analyzing for this specific target.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">action_features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;HighwayMPG&#39;</span><span class="p">]</span>
 <span class="c1"># Code for `FuelType` prediction</span>
@@ -576,7 +575,7 @@ predict, specifically the feature <cite>type</cite> as shown below, thus it is <
 </div>
 </section>
 <section id="step-6-generate-accuracy-metrics">
-<h3>Step 6 - Generate Accuracy Metrics<a class="headerlink" href="#step-6-generate-accuracy-metrics" title="Permalink to this heading">#</a></h3>
+<h3>Step 6 - Generate Accuracy Metrics<a class="headerlink" href="#step-6-generate-accuracy-metrics" title="Link to this heading">#</a></h3>
 <p>Review the accuracy of the <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> by using the built-in <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react_into_trainee()</span></code></a> method, which performs a <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react()</span></code></a> on each of the cases that is trained into the model.  Then we can evaluate accuracy using <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.get_prediction_stats" title="howso.engine.Trainee.get_prediction_stats"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_prediction_stats()</span></code></a> which will give us R-Squared (<span class="math notranslate nohighlight">\(R^2\)</span>), Mean Absolute Error (MAE) and Root Mean Square Error (RMSE) since this is a regression task.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Recommended metrics</span>
 <span class="n">t</span><span class="o">.</span><span class="n">react_into_trainee</span><span class="p">(</span><span class="n">action_feature</span><span class="o">=</span><span class="n">action_features</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">residuals</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -588,7 +587,7 @@ predict, specifically the feature <cite>type</cite> as shown below, thus it is <
 </div>
 </section>
 <section id="step-7-review-accuracy-metrics">
-<h3>Step 7 - Review Accuracy Metrics<a class="headerlink" href="#step-7-review-accuracy-metrics" title="Permalink to this heading">#</a></h3>
+<h3>Step 7 - Review Accuracy Metrics<a class="headerlink" href="#step-7-review-accuracy-metrics" title="Link to this heading">#</a></h3>
 <p>We see the <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> has a very good fit for predicting <strong>Highway MPG</strong> with an <span class="math notranslate nohighlight">\(R^2\)</span> of 0.99, which shows the <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> should be effective at predicting new cases of <strong>Highway MPG</strong>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">rmse</span>              <span class="mf">1.20</span>
 <span class="n">spearman_coeff</span>    <span class="mf">0.96</span>
@@ -599,7 +598,7 @@ predict, specifically the feature <cite>type</cite> as shown below, thus it is <
 </div>
 </section>
 <section id="step-8-react-to-new-case">
-<h3>Step 8 - React to New Case<a class="headerlink" href="#step-8-react-to-new-case" title="Permalink to this heading">#</a></h3>
+<h3>Step 8 - React to New Case<a class="headerlink" href="#step-8-react-to-new-case" title="Link to this heading">#</a></h3>
 <p>We have a new vehicle we want to predict <strong>Highway MPG</strong> for. The test case is a 2022, All Wheel Drive, Mid-Sized Car, using Premium fuel, with a PassengerVolume of 95, LuggageVolume of 23 and  gets City MPG of 21.</p>
 <p>The <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> can <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react()</span></code></a> to this new case, and makes a prediction.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
@@ -627,7 +626,7 @@ predict, specifically the feature <cite>type</cite> as shown below, thus it is <
 </div>
 </section>
 <section id="step-9-review-prediction">
-<h3>Step 9 - Review Prediction<a class="headerlink" href="#step-9-review-prediction" title="Permalink to this heading">#</a></h3>
+<h3>Step 9 - Review Prediction<a class="headerlink" href="#step-9-review-prediction" title="Link to this heading">#</a></h3>
 <p>Reviewing the prediction shows <strong>HighwayMPG</strong> of 29.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;action&#39;</span><span class="p">]</span>
 
@@ -638,7 +637,7 @@ predict, specifically the feature <cite>type</cite> as shown below, thus it is <
 </section>
 </section>
 <section id="api-references">
-<h2>API References<a class="headerlink" href="#api-references" title="Permalink to this heading">#</a></h2>
+<h2>API References<a class="headerlink" href="#api-references" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a></p></li>
 <li><p><a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_into_trainee()</span></code></a></p></li>
@@ -748,7 +747,7 @@ predict, specifically the feature <cite>type</cite> as shown below, thus it is <
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     <br/>
   </p>
 </div>

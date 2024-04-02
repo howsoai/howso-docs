@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>JSON/YAML as Features &#8212; Howso Engine Documentation</title>
   
@@ -29,28 +28,28 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=402959de" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=be2ede8c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/design-tabs.js"></script>
-    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
-    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/json_features';</script>
-    <script src="../_static/js/icon.js"></script>
+    <script src="../_static/js/icon.js?v=88ae6932"></script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -426,32 +425,32 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="json-yaml-as-features">
-<h1>JSON/YAML as Features<a class="headerlink" href="#json-yaml-as-features" title="Permalink to this heading">#</a></h1>
+<h1>JSON/YAML as Features<a class="headerlink" href="#json-yaml-as-features" title="Link to this heading">#</a></h1>
 <aside class="topic">
 <p class="topic-title">What is covered in this user guide</p>
 <p>In this guide, you will learn the basics of using JSON/YAML as features in your <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> s.</p>
 </aside>
 <section id="objectives">
-<h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this heading">#</a></h2>
+<h2>Objectives<a class="headerlink" href="#objectives" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Definitions &amp; Understanding</strong> of what JSON (JavaScript Object Notation) and YAML (Yet Another Markup
 Language) features are and how they can be used.</p></li>
 </ul>
 </section>
 <section id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this heading">#</a></h2>
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>You have successfully <a class="reference internal" href="../getting_started/installing.html"><span class="doc">installed Howso Engine</span></a></p></li>
 <li><p>You have <a class="reference internal" href="basic_workflow.html"><span class="doc">loaded, configured, trained, and analyzed data</span></a></p></li>
 </ul>
 </section>
 <section id="notebook-recipe">
-<h2>Notebook Recipe<a class="headerlink" href="#notebook-recipe" title="Permalink to this heading">#</a></h2>
+<h2>Notebook Recipe<a class="headerlink" href="#notebook-recipe" title="Link to this heading">#</a></h2>
 <p>This user guide has its content outlined in the
 <a class="reference external" href="https://github.com/howsoai/howso-engine-recipes/blob/main/1-engine-intro.ipynb">JSON as a Feature Notebook</a></p>
 </section>
 <section id="concepts-terminology">
-<h2>Concepts &amp; Terminology<a class="headerlink" href="#concepts-terminology" title="Permalink to this heading">#</a></h2>
+<h2>Concepts &amp; Terminology<a class="headerlink" href="#concepts-terminology" title="Link to this heading">#</a></h2>
 <p>This guide focuses primarily on the concept of JSON/YAML objects as features.  We additionally recommend
 being familiar with the following concepts:</p>
 <ul class="simple">
@@ -465,15 +464,15 @@ being familiar with the following concepts:</p>
 </ul>
 </section>
 <section id="how-to-guide">
-<h2>How-To Guide<a class="headerlink" href="#how-to-guide" title="Permalink to this heading">#</a></h2>
+<h2>How-To Guide<a class="headerlink" href="#how-to-guide" title="Link to this heading">#</a></h2>
 <p>Howso Engine can accept JSON and YAML objects as feature values, treating them like any other feature.  This can allow
 more complex objects to be represented than just numbers or strings.</p>
 <section id="declaring-a-feature-as-json-yaml">
-<h3>Declaring a Feature as JSON/YAML<a class="headerlink" href="#declaring-a-feature-as-json-yaml" title="Permalink to this heading">#</a></h3>
+<h3>Declaring a Feature as JSON/YAML<a class="headerlink" href="#declaring-a-feature-as-json-yaml" title="Link to this heading">#</a></h3>
 <p>When calling <a class="reference internal" href="../api_reference/utilities.html#howso.utilities.infer_feature_attributes" title="howso.utilities.infer_feature_attributes"><code class="xref py py-func docutils literal notranslate"><span class="pre">howso.utilities.infer_feature_attributes()</span></code></a>, a feature can be declared as JSON or YAML by setting
 its <code class="docutils literal notranslate"><span class="pre">data_type</span></code> attribute.</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">Replace <code class="docutils literal notranslate"><span class="pre">&quot;json&quot;</span></code> with <code class="docutils literal notranslate"><span class="pre">&quot;yaml&quot;</span></code> to use YAML for your feature.</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">Replace <code class="docutils literal notranslate"><span class="pre">&quot;json&quot;</span></code> with <code class="docutils literal notranslate"><span class="pre">&quot;yaml&quot;</span></code> to use YAML for your feature.</span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">features</span> <span class="o">=</span> <span class="n">infer_feature_attributes</span><span class="p">(</span>
     <span class="n">data</span><span class="p">,</span>
     <span class="n">features</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;inventory&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;continuous&quot;</span><span class="p">,</span> <span class="s2">&quot;data_type&quot;</span><span class="p">:</span> <span class="s2">&quot;json&quot;</span><span class="p">}}</span>
@@ -487,10 +486,10 @@ computation is used.</p>
 <p>Once a feature is set as JSON properly, it can be used as if it were any other feature.</p>
 </section>
 <section id="reacting-to-json-yaml-features">
-<h3>Reacting to JSON/YAML Features<a class="headerlink" href="#reacting-to-json-yaml-features" title="Permalink to this heading">#</a></h3>
+<h3>Reacting to JSON/YAML Features<a class="headerlink" href="#reacting-to-json-yaml-features" title="Link to this heading">#</a></h3>
 <p>Below are a few code snippets that show how JSON/YAML features can be used in a react:</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">Using <cite>level</cite> and <cite>class</cite>, predict <cite>inventory</cite> (a JSON feature).</span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">Using <cite>level</cite> and <cite>class</cite>, predict <cite>inventory</cite> (a JSON feature).</span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
     <span class="n">contexts</span><span class="o">=</span><span class="p">[[</span><span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;Warlock&quot;</span><span class="p">]],</span> <span class="n">context_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;level&quot;</span><span class="p">,</span> <span class="s2">&quot;class&quot;</span><span class="p">],</span>
     <span class="n">action_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;inventory&quot;</span><span class="p">],</span>
@@ -499,7 +498,7 @@ computation is used.</p>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">Using <cite>level</cite> and <cite>class</cite>, generate <cite>inventory</cite> (a JSON feature).</span><a class="headerlink" href="#id3" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">Using <cite>level</cite> and <cite>class</cite>, generate <cite>inventory</cite> (a JSON feature).</span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
     <span class="n">contexts</span><span class="o">=</span><span class="p">[[</span><span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;Warlock&quot;</span><span class="p">]],</span> <span class="n">context_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;level&quot;</span><span class="p">,</span> <span class="s2">&quot;class&quot;</span><span class="p">],</span>
     <span class="n">action_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;inventory&quot;</span><span class="p">],</span>
@@ -509,7 +508,7 @@ computation is used.</p>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">Using <cite>inventory</cite> (a JSON feature) and <cite>level</cite>, predict <cite>class</cite>.</span><a class="headerlink" href="#id4" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">Using <cite>inventory</cite> (a JSON feature) and <cite>level</cite>, predict <cite>class</cite>.</span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
     <span class="n">contexts</span><span class="o">=</span><span class="p">[[</span><span class="s2">&quot;{</span><span class="se">\&quot;</span><span class="s2">sword</span><span class="se">\&quot;</span><span class="s2">: 1, </span><span class="se">\&quot;</span><span class="s2">lute</span><span class="se">\&quot;</span><span class="s2">: 1, </span><span class="se">\&quot;</span><span class="s2">potion</span><span class="se">\&quot;</span><span class="s2">: 2}&quot;</span><span class="p">,</span> <span class="mi">15</span><span class="p">]],</span>
     <span class="n">context_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;inventory&quot;</span><span class="p">,</span> <span class="s2">&quot;level&quot;</span><span class="p">],</span>
@@ -526,7 +525,7 @@ escaped.</p>
 </section>
 </section>
 <section id="api-references">
-<h2>API References<a class="headerlink" href="#api-references" title="Permalink to this heading">#</a></h2>
+<h2>API References<a class="headerlink" href="#api-references" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="../api_reference/utilities.html#howso.utilities.infer_feature_attributes" title="howso.utilities.infer_feature_attributes"><code class="xref py py-func docutils literal notranslate"><span class="pre">howso.utilities.infer_feature_attributes()</span></code></a></p></li>
 <li><p><a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-func docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a></p></li>
@@ -626,7 +625,7 @@ escaped.</p>
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     <br/>
   </p>
 </div>

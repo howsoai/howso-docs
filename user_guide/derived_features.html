@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Derived Features &#8212; Howso Engine Documentation</title>
   
@@ -29,28 +28,28 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=402959de" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=be2ede8c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/design-tabs.js"></script>
-    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
-    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/derived_features';</script>
-    <script src="../_static/js/icon.js"></script>
+    <script src="../_static/js/icon.js?v=88ae6932"></script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -426,14 +425,14 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="derived-features">
-<h1>Derived Features<a class="headerlink" href="#derived-features" title="Permalink to this heading">#</a></h1>
+<h1>Derived Features<a class="headerlink" href="#derived-features" title="Link to this heading">#</a></h1>
 <aside class="topic">
 <p class="topic-title">What is covered in this user guide</p>
 <p>In this guide, you will learn the basics of derived features.  These features are not predicted or
 generated directly, but are instead derived using the supplied code and values from other features.</p>
 </aside>
 <section id="objectives-what-you-will-take-away">
-<h2>Objectives: what you will take away<a class="headerlink" href="#objectives-what-you-will-take-away" title="Permalink to this heading">#</a></h2>
+<h2>Objectives: what you will take away<a class="headerlink" href="#objectives-what-you-will-take-away" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Definitions &amp; Understanding</strong> of how derived features work and how they can be used to accomplish novel
 tasks for both time-series and non time-series tasks</p></li>
@@ -441,19 +440,19 @@ tasks for both time-series and non time-series tasks</p></li>
 </ul>
 </section>
 <section id="prerequisites-before-you-begin">
-<h2>Prerequisites: before you begin<a class="headerlink" href="#prerequisites-before-you-begin" title="Permalink to this heading">#</a></h2>
+<h2>Prerequisites: before you begin<a class="headerlink" href="#prerequisites-before-you-begin" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>You have successfully <a class="reference internal" href="../getting_started/installing.html"><span class="doc">installed Howso Engine</span></a></p></li>
 <li><p>You have <a class="reference internal" href="basic_workflow.html"><span class="doc">loaded, configured, trained, and analyzed data</span></a></p></li>
 </ul>
 </section>
 <section id="data">
-<h2>Data<a class="headerlink" href="#data" title="Permalink to this heading">#</a></h2>
+<h2>Data<a class="headerlink" href="#data" title="Link to this heading">#</a></h2>
 <p>Our example dataset for this guide is the well-known <code class="docutils literal notranslate"><span class="pre">Adult</span></code> dataset, accessible via the <code class="docutils literal notranslate"><span class="pre">pmlb</span></code> package installed
 in the prerequisites using the <code class="docutils literal notranslate"><span class="pre">fetch_data()</span></code> function.</p>
 </section>
 <section id="concepts-terminology">
-<h2>Concepts &amp; Terminology<a class="headerlink" href="#concepts-terminology" title="Permalink to this heading">#</a></h2>
+<h2>Concepts &amp; Terminology<a class="headerlink" href="#concepts-terminology" title="Link to this heading">#</a></h2>
 <p>This guide will explain the concept of <strong>derived features</strong>, which include both <strong>derived action features</strong> and <strong>derived context
 features</strong>.  To follow along, you should be familiar with the following concepts:</p>
 <ul class="simple">
@@ -466,7 +465,7 @@ features</strong>.  To follow along, you should be familiar with the following c
 <li><p><a class="reference internal" href="feature_attributes.html"><span class="doc">Feature Attributes</span></a></p></li>
 </ul>
 <section id="derived-feature-codes">
-<h3>Derived Feature Codes<a class="headerlink" href="#derived-feature-codes" title="Permalink to this heading">#</a></h3>
+<h3>Derived Feature Codes<a class="headerlink" href="#derived-feature-codes" title="Link to this heading">#</a></h3>
 <p>The way in which each derived feature is derived is determined by what is called a <strong>derived feature code</strong>.  This is a snippet of
 <a class="reference external" href="https://github.com/howsoai/amalgam">Amalgam</a> style code that determines how the derivation should be performed.  One such example
 of a derived feature code is:</p>
@@ -485,13 +484,13 @@ would refer to the previous case in a time-series, if it were part of a time-ser
 </section>
 </section>
 <section id="how-to-guide">
-<h2>How-To Guide<a class="headerlink" href="#how-to-guide" title="Permalink to this heading">#</a></h2>
+<h2>How-To Guide<a class="headerlink" href="#how-to-guide" title="Link to this heading">#</a></h2>
 <p>For this guide, we will add a feature called <code class="docutils literal notranslate"><span class="pre">&quot;hours-per-year&quot;</span></code> to the <code class="docutils literal notranslate"><span class="pre">Adult</span></code> dataset.  This dataset already contains a feature
 called <code class="docutils literal notranslate"><span class="pre">&quot;hours-per-week&quot;</span></code>, so the relationship between the feature we have and the feature we want is mathematical in nature, and
 so should not be broken when making predictions.  Adding derived features to a <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> can be done either before or after
 training.</p>
 <section id="adding-derived-features-before-training">
-<h3>Adding Derived Features Before Training<a class="headerlink" href="#adding-derived-features-before-training" title="Permalink to this heading">#</a></h3>
+<h3>Adding Derived Features Before Training<a class="headerlink" href="#adding-derived-features-before-training" title="Link to this heading">#</a></h3>
 <p>To add a derived feature to a <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> before training, simply modify the feature attributes:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">features</span> <span class="o">=</span> <span class="n">infer_feature_attributes</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 <span class="n">hpy_features</span> <span class="o">=</span> <span class="p">{</span>
@@ -519,7 +518,7 @@ small piece of Amalgam-like code which determines how to derive the feature.  In
 value of hours-per-week (<code class="docutils literal notranslate"><span class="pre">#hours-per-week</span> <span class="pre">0</span></code>, where the 0 is an offset and means the current case) by 52, the number of weeks in a year.</p>
 </section>
 <section id="adding-derived-features-after-training">
-<h3>Adding Derived Features After Training<a class="headerlink" href="#adding-derived-features-after-training" title="Permalink to this heading">#</a></h3>
+<h3>Adding Derived Features After Training<a class="headerlink" href="#adding-derived-features-after-training" title="Link to this heading">#</a></h3>
 <p>The process of adding a derived feature to a <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> that has already been trained is quite simple.  It can be handled with a single call to
 <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.add_feature" title="howso.engine.Trainee.add_feature"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.add_feature()</span></code></a>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># trainee ``t`` has already been trained and analyzed</span>
@@ -533,10 +532,10 @@ value of hours-per-week (<code class="docutils literal notranslate"><span class=
 </div>
 </section>
 <section id="using-derived-features-in-reacts">
-<h3>Using Derived Features in Reacts<a class="headerlink" href="#using-derived-features-in-reacts" title="Permalink to this heading">#</a></h3>
+<h3>Using Derived Features in Reacts<a class="headerlink" href="#using-derived-features-in-reacts" title="Link to this heading">#</a></h3>
 <p>Once a model has one or more derived features, they can be used in reacts:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">Using a derived feature as an action feature</span><a class="headerlink" href="#id1" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">Using a derived feature as an action feature</span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">reaction</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
     <span class="n">contexts</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">features</span><span class="o">.</span><span class="n">get_names</span><span class="p">(</span><span class="n">without</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;hours-per-week&quot;</span><span class="p">,</span> <span class="s2">&quot;hours-per-year&quot;</span><span class="p">])],</span>
     <span class="n">action_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;hours-per-week&quot;</span><span class="p">,</span> <span class="s2">&quot;hours-per-year&quot;</span><span class="p">],</span>
@@ -547,7 +546,7 @@ value of hours-per-week (<code class="docutils literal notranslate"><span class=
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">Using a derived feature as a context feature</span><a class="headerlink" href="#id2" title="Permalink to this code">#</a></div>
+<div class="code-block-caption"><span class="caption-text">Using a derived feature as a context feature</span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">reaction</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
     <span class="n">contexts</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">features</span><span class="o">.</span><span class="n">get_names</span><span class="p">(</span><span class="n">without</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">])],</span>
     <span class="n">derived_context_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;hours-per-year&quot;</span><span class="p">],</span>
@@ -562,7 +561,7 @@ A derived context feature is derived from the contexts that are being input to a
 actions that are output from a <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react()</span></code></a>.</p>
 </section>
 <section id="derived-features-for-time-series">
-<h3>Derived Features for Time-Series<a class="headerlink" href="#derived-features-for-time-series" title="Permalink to this heading">#</a></h3>
+<h3>Derived Features for Time-Series<a class="headerlink" href="#derived-features-for-time-series" title="Link to this heading">#</a></h3>
 <p>Derived features are used in time-series <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> s and are automatically created by <a class="reference internal" href="../api_reference/utilities.html#howso.utilities.infer_feature_attributes" title="howso.utilities.infer_feature_attributes"><code class="xref py py-func docutils literal notranslate"><span class="pre">infer_feature_attributes()</span></code></a> when the
 <code class="docutils literal notranslate"><span class="pre">time_feature_name</span></code> and <code class="docutils literal notranslate"><span class="pre">id_feature_name</span></code> parameters are supplied.  When <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react_series" title="howso.engine.Trainee.react_series"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_series()</span></code></a> is used, the lag features are used as derived
 context features and the delta/rate features are used as derived action features.  Since <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a> supports more explainability details than
@@ -571,7 +570,7 @@ context features and the delta/rate features are used as derived action features
 </section>
 </section>
 <section id="api-references">
-<h2>API References<a class="headerlink" href="#api-references" title="Permalink to this heading">#</a></h2>
+<h2>API References<a class="headerlink" href="#api-references" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="../api_reference/utilities.html#howso.utilities.infer_feature_attributes" title="howso.utilities.infer_feature_attributes"><code class="xref py py-func docutils literal notranslate"><span class="pre">howso.utilities.infer_feature_attributes()</span></code></a></p></li>
 <li><p><a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a></p></li>
@@ -677,7 +676,7 @@ context features and the delta/rate features are used as derived action features
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     <br/>
   </p>
 </div>

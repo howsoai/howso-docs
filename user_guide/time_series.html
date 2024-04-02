@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Time Series and Sequential Data Analysis &#8212; Howso Engine Documentation</title>
   
@@ -29,28 +28,28 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=402959de" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=be2ede8c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/design-tabs.js"></script>
-    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
-    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/time_series';</script>
-    <script src="../_static/js/icon.js"></script>
+    <script src="../_static/js/icon.js?v=88ae6932"></script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -426,21 +425,21 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="time-series-and-sequential-data-analysis">
-<h1>Time Series and Sequential Data Analysis<a class="headerlink" href="#time-series-and-sequential-data-analysis" title="Permalink to this heading">#</a></h1>
+<h1>Time Series and Sequential Data Analysis<a class="headerlink" href="#time-series-and-sequential-data-analysis" title="Link to this heading">#</a></h1>
 <aside class="topic">
 <p class="topic-title">What is covered in this user guide.</p>
 <p>In this guide, you will learn the basics of using Howso Engine for <strong>time series and sequential data</strong> analysis.
 This will enable you to easily capture and utilize temporal information and trends within data.</p>
 </aside>
 <section id="objectives-what-you-will-take-away">
-<h2>Objectives: what you will take away<a class="headerlink" href="#objectives-what-you-will-take-away" title="Permalink to this heading">#</a></h2>
+<h2>Objectives: what you will take away<a class="headerlink" href="#objectives-what-you-will-take-away" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Definitions &amp; an understanding</strong> of how time series and sequential data tools within the Howso Engine provide enhanced insight into your data.</p></li>
 <li><p><strong>How-To</strong> use Engine’s <a class="reference internal" href="../api_reference/utilities.html#howso.utilities.infer_feature_attributes" title="howso.utilities.infer_feature_attributes"><code class="xref py py-func docutils literal notranslate"><span class="pre">howso.utilities.infer_feature_attributes()</span></code></a> tool to configure your time series and sequential data, and make time series predictions.</p></li>
 </ul>
 </section>
 <section id="prerequisites-before-you-begin">
-<h2>Prerequisites: before you begin<a class="headerlink" href="#prerequisites-before-you-begin" title="Permalink to this heading">#</a></h2>
+<h2>Prerequisites: before you begin<a class="headerlink" href="#prerequisites-before-you-begin" title="Link to this heading">#</a></h2>
 <p><strong>Installation</strong></p>
 <ul class="simple">
 <li><p>You have successfully <a class="reference internal" href="../getting_started/installing.html"><span class="doc">installed Howso Engine</span></a></p></li>
@@ -448,14 +447,14 @@ This will enable you to easily capture and utilize temporal information and tren
 </ul>
 </section>
 <section id="notebook-recipe">
-<h2>Notebook Recipe<a class="headerlink" href="#notebook-recipe" title="Permalink to this heading">#</a></h2>
+<h2>Notebook Recipe<a class="headerlink" href="#notebook-recipe" title="Link to this heading">#</a></h2>
 <p>The following recipe will supplement the content this guide will cover:</p>
 <ul class="simple">
 <li><p><a class="reference download external" download="" href="https://github.com/howsoai/howso-engine-recipes/blob/main/engine_timeseries.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Time</span> <span class="pre">Series</span> <span class="pre">Predictions</span></code></a></p></li>
 </ul>
 </section>
 <section id="concepts-terminology">
-<h2>Concepts &amp; Terminology<a class="headerlink" href="#concepts-terminology" title="Permalink to this heading">#</a></h2>
+<h2>Concepts &amp; Terminology<a class="headerlink" href="#concepts-terminology" title="Link to this heading">#</a></h2>
 <p>To understand this guide, we recommend being familiar with the following concepts:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../getting_started/terminology.html#trainee"><span class="std std-ref">Trainee</span></a></p></li>
@@ -467,7 +466,7 @@ This will enable you to easily capture and utilize temporal information and tren
 </ul>
 </section>
 <section id="how-to-guide">
-<h2>How-To Guide<a class="headerlink" href="#how-to-guide" title="Permalink to this heading">#</a></h2>
+<h2>How-To Guide<a class="headerlink" href="#how-to-guide" title="Link to this heading">#</a></h2>
 <p><em>Why are time series and sequential data predictions important?</em></p>
 <p>A significant amount of data is recorded at specific times. Utilizing this information can provide a wealth of insight
 for future predictions, such as knowledge of whether events happen at certain intervals or how intervals between certain events influence other events.
@@ -483,7 +482,7 @@ about intervals within a dataset to make a prediction.</p>
 </li>
 </ul>
 <section id="task-1-infer-feature-attributes">
-<h3>Task 1 - Infer Feature Attributes<a class="headerlink" href="#task-1-infer-feature-attributes" title="Permalink to this heading">#</a></h3>
+<h3>Task 1 - Infer Feature Attributes<a class="headerlink" href="#task-1-infer-feature-attributes" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Identify id-feature and time-feature</span>
 <span class="n">id_feature_name</span> <span class="o">=</span> <span class="s2">&quot;ID&quot;</span>
 <span class="n">time_feature_name</span> <span class="o">=</span> <span class="s2">&quot;date&quot;</span>
@@ -502,7 +501,7 @@ parameter to consider is the <cite>time_feature_is_universal</cite> flag. This i
 from other series, but still not future data within the same series. It is recommended to set this flag to True if there is any possibility of global relevancy of time, which is the default behavior.</p>
 </section>
 <section id="task-2-make-a-time-series-prediction">
-<h3>Task 2 - Make a time series prediction<a class="headerlink" href="#task-2-make-a-time-series-prediction" title="Permalink to this heading">#</a></h3>
+<h3>Task 2 - Make a time series prediction<a class="headerlink" href="#task-2-make-a-time-series-prediction" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create the Trainee</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">Trainee</span><span class="p">(</span>
     <span class="n">features</span><span class="o">=</span><span class="n">features</span><span class="p">,</span>
@@ -534,7 +533,7 @@ from other series, but still not future data within the same series. It is recom
 </div>
 </section>
 <section id="task-3-forecast-a-time-series">
-<h3>Task 3 - Forecast a time-series<a class="headerlink" href="#task-3-forecast-a-time-series" title="Permalink to this heading">#</a></h3>
+<h3>Task 3 - Forecast a time-series<a class="headerlink" href="#task-3-forecast-a-time-series" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use react_series with continue_series_values to forecast a series</span>
 <span class="n">series_reaction</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">react_series</span><span class="p">(</span>
     <span class="n">action_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ID&quot;</span><span class="p">,</span> <span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">],</span>
@@ -557,7 +556,7 @@ from other series, but still not future data within the same series. It is recom
 </section>
 </section>
 <section id="api-references">
-<h2>API References<a class="headerlink" href="#api-references" title="Permalink to this heading">#</a></h2>
+<h2>API References<a class="headerlink" href="#api-references" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a></p></li>
 <li><p><a class="reference internal" href="../api_reference/utilities.html#howso.utilities.infer_feature_attributes" title="howso.utilities.infer_feature_attributes"><code class="xref py py-func docutils literal notranslate"><span class="pre">howso.utilities.infer_feature_attributes()</span></code></a></p></li>
@@ -658,7 +657,7 @@ from other series, but still not future data within the same series. It is recom
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     <br/>
   </p>
 </div>

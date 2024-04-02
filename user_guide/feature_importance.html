@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Feature Importance &#8212; Howso Engine Documentation</title>
   
@@ -29,28 +28,28 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=402959de" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=be2ede8c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/design-tabs.js"></script>
-    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
-    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    <script src="../_static/documentation_options.js?v=8a448e45"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+    <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/feature_importance';</script>
-    <script src="../_static/js/icon.js"></script>
+    <script src="../_static/js/icon.js?v=88ae6932"></script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -426,35 +425,35 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="feature-importance">
-<h1>Feature Importance<a class="headerlink" href="#feature-importance" title="Permalink to this heading">#</a></h1>
+<h1>Feature Importance<a class="headerlink" href="#feature-importance" title="Link to this heading">#</a></h1>
 <aside class="topic">
 <p class="topic-title">What is covered in this user guide</p>
 <p>In this guide, you will learn how to compute the feature importance metrics, <a class="reference internal" href="../getting_started/terminology.html#contribution"><span class="std std-ref">Feature Contributions</span></a> and <a class="reference internal" href="../getting_started/terminology.html#mda"><span class="std std-ref">Feature Mean Decrease in Accuracy (MDA)</span></a> from a Trainee. Feature importance metrics
 provides information about which features are useful for predicting a target or <a class="reference internal" href="../getting_started/terminology.html#action-features"><span class="std std-ref">action</span></a> feature. In addition to learning informative metrics about the data and the model, these insights can be used as guidance for further action such as feature selection or feature engineering.</p>
 </aside>
 <section id="objectives-what-you-will-take-away">
-<h2>Objectives: what you will take away<a class="headerlink" href="#objectives-what-you-will-take-away" title="Permalink to this heading">#</a></h2>
+<h2>Objectives: what you will take away<a class="headerlink" href="#objectives-what-you-will-take-away" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Definitions &amp; Understanding</strong> Difference between global vs local, and robust vs non-robust <a class="reference internal" href="../getting_started/terminology.html#contribution"><span class="std std-ref">Feature Contributions</span></a> and <a class="reference internal" href="../getting_started/terminology.html#mda"><span class="std std-ref">Feature MDA</span></a>.</p></li>
 <li><p><strong>How-To</strong> obtain both feature importance metrics.</p></li>
 </ul>
 </section>
 <section id="prerequisites-before-you-begin">
-<h2>Prerequisites: before you begin<a class="headerlink" href="#prerequisites-before-you-begin" title="Permalink to this heading">#</a></h2>
+<h2>Prerequisites: before you begin<a class="headerlink" href="#prerequisites-before-you-begin" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>You have successfully <a class="reference internal" href="../getting_started/installing.html"><span class="doc">installed Howso Engine</span></a></p></li>
 <li><p>You have <a class="reference internal" href="basic_workflow.html"><span class="doc">loaded, configured, trained, and analyzed data</span></a></p></li>
 </ul>
 </section>
 <section id="notebook-recipe">
-<h2>Notebook Recipe<a class="headerlink" href="#notebook-recipe" title="Permalink to this heading">#</a></h2>
+<h2>Notebook Recipe<a class="headerlink" href="#notebook-recipe" title="Link to this heading">#</a></h2>
 <p>The following recipe will supplement the content this guide will cover:</p>
 <ul class="simple">
 <li><p><a class="reference download external" download="" href="https://github.com/howsoai/howso-engine-recipes/blob/main/2-interpretability.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Interpretability</span></code></a></p></li>
 </ul>
 </section>
 <section id="concepts-terminology">
-<h2>Concepts &amp; Terminology<a class="headerlink" href="#concepts-terminology" title="Permalink to this heading">#</a></h2>
+<h2>Concepts &amp; Terminology<a class="headerlink" href="#concepts-terminology" title="Link to this heading">#</a></h2>
 <p>The main piece of terminology this guide introduces is the concept of Feature Importance. To understand this, we
 recommend being familiar with the following concepts:</p>
 <ul class="simple">
@@ -468,7 +467,7 @@ recommend being familiar with the following concepts:</p>
 <li><p><a class="reference internal" href="feature_attributes.html"><span class="doc">Feature Attributes</span></a></p></li>
 </ul>
 <section id="local-vs-global">
-<h3>Local vs Global<a class="headerlink" href="#local-vs-global" title="Permalink to this heading">#</a></h3>
+<h3>Local vs Global<a class="headerlink" href="#local-vs-global" title="Link to this heading">#</a></h3>
 <p>Feature Contributions and Feature MDA can be calculated and retrieved both locally and globally. Conceptually, global metrics are measured using all of the cases in the Trainee, while local metrics use either a specific subset of those cases or a set of new cases and calculates the metrics using cases most similar to those specified cases.</p>
 <ul class="simple">
 <li><p><strong>Local</strong> <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a> along with the <code class="docutils literal notranslate"><span class="pre">details</span></code> parameter can be used for local metrics.</p></li>
@@ -476,16 +475,16 @@ recommend being familiar with the following concepts:</p>
 </ul>
 </section>
 <section id="robust-vs-non-robust">
-<h3>Robust vs Non-Robust<a class="headerlink" href="#robust-vs-non-robust" title="Permalink to this heading">#</a></h3>
+<h3>Robust vs Non-Robust<a class="headerlink" href="#robust-vs-non-robust" title="Link to this heading">#</a></h3>
 <p>In order to calculate feature importance, Howso Engine measures the impact on the prediction by comparing predictions with and without the feature. The feature set without the feature of interest may include either all of the other features, or a combination of features that
 may include any number of other features. Non-robust calculations use a leave-one-out approach to calculate these metrics, thus the metrics reflect the results when all features expect the feature of interest is used. Robust feature contributions compares the results from sampling from
 the power set of all combinations with and without the feature of interest. Robust metrics are recommended as they encompass a greater variety of feature sets, and they include a calculation performance boost as the number of features increases.</p>
 </section>
 </section>
 <section id="how-to-guide">
-<h2>How-To Guide<a class="headerlink" href="#how-to-guide" title="Permalink to this heading">#</a></h2>
+<h2>How-To Guide<a class="headerlink" href="#how-to-guide" title="Link to this heading">#</a></h2>
 <section id="global-feature-importance">
-<h3>Global Feature Importance<a class="headerlink" href="#global-feature-importance" title="Permalink to this heading">#</a></h3>
+<h3>Global Feature Importance<a class="headerlink" href="#global-feature-importance" title="Link to this heading">#</a></h3>
 <p>To get global feature importance metrics, <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_into_trainee()</span></code></a>, is first called on a trained and analyzed Trainee. <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_into_trainee()</span></code></a> calls react internally on the cases already trained into the Trainee and calculates the metrics. In this method, the desired metrics can be selected as parameters. These parameters are named individually
 and setting them to <code class="docutils literal notranslate"><span class="pre">True</span></code> will cache the desired metrics. For example, <code class="docutils literal notranslate"><span class="pre">mda_robust</span></code> and <code class="docutils literal notranslate"><span class="pre">contributions_robust</span></code> will calculate the robust versions of MDA and Feature Contributions, while <code class="docutils literal notranslate"><span class="pre">mda</span></code> and <code class="docutils literal notranslate"><span class="pre">contributions</span></code> will calculate the non-robust versions.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">react_into_trainee</span><span class="p">(</span>
@@ -504,7 +503,7 @@ metrics may be specified together, but for this example they are separated. If r
 </div>
 </section>
 <section id="local-feature-importance">
-<h3>Local Feature Importance<a class="headerlink" href="#local-feature-importance" title="Permalink to this heading">#</a></h3>
+<h3>Local Feature Importance<a class="headerlink" href="#local-feature-importance" title="Link to this heading">#</a></h3>
 <p>To get local feature importance metrics, <a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a>, is first called on a trained and analyzed Trainee. In this method, the desired metrics, <code class="docutils literal notranslate"><span class="pre">feature_contributions</span></code> and <code class="docutils literal notranslate"><span class="pre">feature_mda</span></code>, can be selected as inputs to the <code class="docutils literal notranslate"><span class="pre">details</span></code> parameters as key value pairs from a dictionary. These parameters are named individually
 and setting them to <code class="docutils literal notranslate"><span class="pre">True</span></code> will calculate the desired metrics. Robust calculations are performed by default.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">details</span> <span class="o">=</span> <span class="p">{</span>
@@ -532,7 +531,7 @@ are calculated in <a class="reference internal" href="../api_reference/engine.ht
 </div>
 </section>
 <section id="example-use-cases">
-<h3>Example Use-Cases<a class="headerlink" href="#example-use-cases" title="Permalink to this heading">#</a></h3>
+<h3>Example Use-Cases<a class="headerlink" href="#example-use-cases" title="Link to this heading">#</a></h3>
 <p>In addition to the examples above, here are a few example use-cases for feature importance.</p>
 <ul class="simple">
 <li><dl class="simple">
@@ -554,7 +553,7 @@ is decreased</p></li>
 </section>
 </section>
 <section id="api-references">
-<h2>API References<a class="headerlink" href="#api-references" title="Permalink to this heading">#</a></h2>
+<h2>API References<a class="headerlink" href="#api-references" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a></p></li>
 <li><p><a class="reference internal" href="../api_reference/engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_into_trainee()</span></code></a></p></li>
@@ -660,7 +659,7 @@ is decreased</p></li>
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.1.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     <br/>
   </p>
 </div>

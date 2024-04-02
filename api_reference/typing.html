@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Running in a Dev Container &#8212; Howso Engine Documentation</title>
+    <title>Typing &#8212; Howso Engine Documentation</title>
   
   
   
@@ -48,13 +48,11 @@
     <script src="../_static/design-tabs.js?v=36754332"></script>
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
     <script src="../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'getting_started/dev_container';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api_reference/typing';</script>
     <script src="../_static/js/icon.js?v=88ae6932"></script>
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Client Configuration" href="client_configuration.html" />
-    <link rel="prev" title="Installation" href="installing.html" />
     <link rel="icon" type="image/svg+xml" href="/_static/favicon.svg">
     <link rel="mask-icon" href="/_static/favicon.svg">
     <link rel="stylesheet" href="https://cdn.howso.com/fonts/inter/3.19/typeface.css">
@@ -145,8 +143,8 @@
   </p>
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="index.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../getting_started/index.html">
                         Getting Started
                       </a>
                     </li>
@@ -167,7 +165,7 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../api_reference/index.html">
+                      <a class="nav-link nav-internal" href="index.html">
                         API Reference
                       </a>
                     </li>
@@ -247,7 +245,7 @@ document.write(`
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
         
 
   
@@ -265,8 +263,8 @@ document.write(`
   </p>
   <ul class="bd-navbar-elements navbar-nav">
     
-                    <li class="nav-item current active">
-                      <a class="nav-link nav-internal" href="index.html">
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../getting_started/index.html">
                         Getting Started
                       </a>
                     </li>
@@ -287,7 +285,7 @@ document.write(`
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../api_reference/index.html">
+                      <a class="nav-link nav-internal" href="index.html">
                         API Reference
                       </a>
                     </li>
@@ -332,24 +330,6 @@ document.write(`
     
   </div>
   
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
-     aria-label="Section Navigation">
-  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="installing.html">Installation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Running in a Dev Container</a></li>
-<li class="toctree-l2"><a class="reference internal" href="client_configuration.html">Client Configuration</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="intro.html">Overview of Howso’s Trustworthy AI</a></li>
-<li class="toctree-l1"><a class="reference internal" href="concepts.html">Key Concepts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="terminology.html">Terminology</a></li>
-</ul>
-</div>
-</nav></div>
-    </div>
-  
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
@@ -382,13 +362,7 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    
-    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Getting Started</a></li>
-    
-    
-    <li class="breadcrumb-item"><a href="installing.html" class="nav-link">Installation</a></li>
-    
-    <li class="breadcrumb-item active" aria-current="page">Running in a Dev Container</li>
+    <li class="breadcrumb-item active" aria-current="page">Typing</li>
   </ul>
 </nav>
 </div>
@@ -405,25 +379,100 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="running-in-a-dev-container">
-<h1>Running in a Dev Container<a class="headerlink" href="#running-in-a-dev-container" title="Link to this heading">#</a></h1>
-<p><a class="reference external" href="https://github.com/howsoai/howso-devcontainers">Howso Development Containers</a> are an easy, ready to use option for using Howso Engine. The dev container images are built to include Howso Engine and all dependencies so you can just load it and run Jupyter notebooks or python from VS Code. Using the dev containers require Docker and VS Code, but avoids setting up and maintaining your own python environment with Howso Engine installed.</p>
-<section id="benefits">
-<h2>Benefits<a class="headerlink" href="#benefits" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Lower installation requirements. General purpose development software like Docker and VS Code is needed, but Howso software is included in the dev container.</p></li>
-<li><p>Setup and maintenance of a python environment is not needed.</p></li>
-<li><p>Installing Howso Engine or dependencies isn’t needed, they’re all prepackaged and ready to use.</p></li>
-<li><p>No need to <cite>pip install</cite> any packages or to make sure compatible versions of python packages are installed.</p></li>
-<li><p>Switching between versions of the Howso Engine and/or python is as simple as restarting VS Code in a different container.</p></li>
-<li><p>Since nothing is installed, there’s nothing to maintain or clean up when finished. You can always jump to a newer version in the future just by starting with a new dev container image.</p></li>
-<li><p>It’s possible to extend the dev container to include additional packages by building a new container image with the Howso Development Container as a base.</p></li>
-</ul>
-</section>
-<section id="setup-instructions">
-<h2>Setup Instructions<a class="headerlink" href="#setup-instructions" title="Link to this heading">#</a></h2>
-<p>Full setup instructions can be found in the <a class="reference external" href="https://github.com/howsoai/howso-devcontainers">README for Howso Dev Containers</a>.</p>
-</section>
+  <section id="module-howso.engine.typing">
+<span id="typing"></span><h1>Typing<a class="headerlink" href="#module-howso.engine.typing" title="Link to this heading">#</a></h1>
+<p>Types and type aliases for objects used in Howso Engine.</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="howso.engine.typing.CaseIndices">
+<span class="sig-prename descclassname"><span class="pre">howso.engine.typing.</span></span><span class="sig-name descname"><span class="pre">CaseIndices</span></span><a class="headerlink" href="#howso.engine.typing.CaseIndices" title="Link to this definition">#</a></dt>
+<dd><p>Type alias for case indices.</p>
+<p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="howso.engine.typing.GenerateNewCases">
+<span class="sig-prename descclassname"><span class="pre">howso.engine.typing.</span></span><span class="sig-name descname"><span class="pre">GenerateNewCases</span></span><a class="headerlink" href="#howso.engine.typing.GenerateNewCases" title="Link to this definition">#</a></dt>
+<dd><p>Type alias for the valid values for <code class="docutils literal notranslate"><span class="pre">generate_new_cases</span></code> parameters.</p>
+<p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Literal</span></code>[‘always’, ‘attempt’, ‘no’]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="howso.engine.typing.Library">
+<span class="sig-prename descclassname"><span class="pre">howso.engine.typing.</span></span><span class="sig-name descname"><span class="pre">Library</span></span><a class="headerlink" href="#howso.engine.typing.Library" title="Link to this definition">#</a></dt>
+<dd><p>Type alias for the valid values for <code class="docutils literal notranslate"><span class="pre">library</span></code> parameters.</p>
+<p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Literal</span></code>[‘st’, ‘mt’]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="howso.engine.typing.Mode">
+<span class="sig-prename descclassname"><span class="pre">howso.engine.typing.</span></span><span class="sig-name descname"><span class="pre">Mode</span></span><a class="headerlink" href="#howso.engine.typing.Mode" title="Link to this definition">#</a></dt>
+<dd><p>Type alias for the valid values for <code class="docutils literal notranslate"><span class="pre">mode</span></code> parameters.</p>
+<p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Literal</span></code>[‘robust’, ‘full’]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="howso.engine.typing.NewCaseThreshold">
+<span class="sig-prename descclassname"><span class="pre">howso.engine.typing.</span></span><span class="sig-name descname"><span class="pre">NewCaseThreshold</span></span><a class="headerlink" href="#howso.engine.typing.NewCaseThreshold" title="Link to this definition">#</a></dt>
+<dd><p>Type alias for the valid values for <code class="docutils literal notranslate"><span class="pre">new_case_threshold</span></code> parameters.</p>
+<p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Literal</span></code>[‘max’, ‘min’, ‘most_similar’]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="howso.engine.typing.NormalizeMethod">
+<span class="sig-prename descclassname"><span class="pre">howso.engine.typing.</span></span><span class="sig-name descname"><span class="pre">NormalizeMethod</span></span><a class="headerlink" href="#howso.engine.typing.NormalizeMethod" title="Link to this definition">#</a></dt>
+<dd><p>Type alias for the valid values for <code class="docutils literal notranslate"><span class="pre">normalize_method</span></code> parameters.</p>
+<p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Literal</span></code>[‘feature_count’, ‘fractional’, ‘relative’]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="howso.engine.typing.PathLike">
+<span class="sig-prename descclassname"><span class="pre">howso.engine.typing.</span></span><span class="sig-name descname"><span class="pre">PathLike</span></span><a class="headerlink" href="#howso.engine.typing.PathLike" title="Link to this definition">#</a></dt>
+<dd><p>Type alias for objects which can be interpreted as paths.</p>
+<p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">PathLike</span></code>]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="howso.engine.typing.Persistence">
+<span class="sig-prename descclassname"><span class="pre">howso.engine.typing.</span></span><span class="sig-name descname"><span class="pre">Persistence</span></span><a class="headerlink" href="#howso.engine.typing.Persistence" title="Link to this definition">#</a></dt>
+<dd><p>Type alias for the valid values for <code class="docutils literal notranslate"><span class="pre">persistence</span></code> parameters.</p>
+<p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Literal</span></code>[‘allow’, ‘always’, ‘never’]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="howso.engine.typing.Precision">
+<span class="sig-prename descclassname"><span class="pre">howso.engine.typing.</span></span><span class="sig-name descname"><span class="pre">Precision</span></span><a class="headerlink" href="#howso.engine.typing.Precision" title="Link to this definition">#</a></dt>
+<dd><p>Type alias for the valid values for <code class="docutils literal notranslate"><span class="pre">precision</span></code> parameters.</p>
+<p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Literal</span></code>[‘exact’, ‘similar’]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="howso.engine.typing.SeriesIDTracking">
+<span class="sig-prename descclassname"><span class="pre">howso.engine.typing.</span></span><span class="sig-name descname"><span class="pre">SeriesIDTracking</span></span><a class="headerlink" href="#howso.engine.typing.SeriesIDTracking" title="Link to this definition">#</a></dt>
+<dd><p>Type alias for the valid values for <code class="docutils literal notranslate"><span class="pre">series_id_tracking</span></code> parameters.</p>
+<p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Literal</span></code>[‘fixed’, ‘dynamic’, ‘no’]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="howso.engine.typing.TabularData2D">
+<span class="sig-prename descclassname"><span class="pre">howso.engine.typing.</span></span><span class="sig-name descname"><span class="pre">TabularData2D</span></span><a class="headerlink" href="#howso.engine.typing.TabularData2D" title="Link to this definition">#</a></dt>
+<dd><p>Type alias for 2-dimensional tabular data.</p>
+<p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code>]]]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="howso.engine.typing.TabularData3D">
+<span class="sig-prename descclassname"><span class="pre">howso.engine.typing.</span></span><span class="sig-name descname"><span class="pre">TabularData3D</span></span><a class="headerlink" href="#howso.engine.typing.TabularData3D" title="Link to this definition">#</a></dt>
+<dd><p>Type alias for 3-dimensional tabular (i.e., time-series) data.</p>
+<p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code>]]]]</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="howso.engine.typing.TargetedModel">
+<span class="sig-prename descclassname"><span class="pre">howso.engine.typing.</span></span><span class="sig-name descname"><span class="pre">TargetedModel</span></span><a class="headerlink" href="#howso.engine.typing.TargetedModel" title="Link to this definition">#</a></dt>
+<dd><p>Type alias for the valid values for <code class="docutils literal notranslate"><span class="pre">targeted_model</span></code> parameters.</p>
+<p>alias of <code class="xref py py-obj docutils literal notranslate"><span class="pre">Literal</span></code>[‘single_targeted’, ‘omni_targeted’, ‘targetless’]</p>
+</dd></dl>
+
 </section>
 
 
@@ -437,24 +486,6 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="installing.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Installation</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="client_configuration.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Client Configuration</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -473,8 +504,19 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benefits">Benefits</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-instructions">Setup Instructions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.engine.typing.CaseIndices"><code class="docutils literal notranslate"><span class="pre">CaseIndices</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.engine.typing.GenerateNewCases"><code class="docutils literal notranslate"><span class="pre">GenerateNewCases</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.engine.typing.Library"><code class="docutils literal notranslate"><span class="pre">Library</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.engine.typing.Mode"><code class="docutils literal notranslate"><span class="pre">Mode</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.engine.typing.NewCaseThreshold"><code class="docutils literal notranslate"><span class="pre">NewCaseThreshold</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.engine.typing.NormalizeMethod"><code class="docutils literal notranslate"><span class="pre">NormalizeMethod</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.engine.typing.PathLike"><code class="docutils literal notranslate"><span class="pre">PathLike</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.engine.typing.Persistence"><code class="docutils literal notranslate"><span class="pre">Persistence</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.engine.typing.Precision"><code class="docutils literal notranslate"><span class="pre">Precision</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.engine.typing.SeriesIDTracking"><code class="docutils literal notranslate"><span class="pre">SeriesIDTracking</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.engine.typing.TabularData2D"><code class="docutils literal notranslate"><span class="pre">TabularData2D</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.engine.typing.TabularData3D"><code class="docutils literal notranslate"><span class="pre">TabularData3D</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.engine.typing.TargetedModel"><code class="docutils literal notranslate"><span class="pre">TargetedModel</span></code></a></li>
 </ul>
   </nav></div>
 
