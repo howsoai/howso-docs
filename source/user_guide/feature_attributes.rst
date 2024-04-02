@@ -29,19 +29,19 @@ How do I use Infer Feature Attributes?
   2. Audit the dictionary to ensure the mapping matches your data. Some common
      mappings that should be reviewed:
 
-     a. `type` being `nominal`, `ordinal`, or `continuous`.
-     b. `bounds`: `min` and `max` values.
-     c. `date_time_format` for specifying the dates/times correctly.
+     a. ``type`` being `nominal`, `ordinal`, or `continuous`.
+     b. ``bounds``: ``min`` and ``max`` values.
+     c. ``date_time_format`` for specifying the dates/times correctly.
 
   3. Pass in any changes as arguments to IFA and run it again. The following
      are some of the common arguments:
 
      a. Create a **partial feature dictionary** and pass it to the argument
-        `features`. This is common when specifying the `type`, for example when
+        ``features``. This is common when specifying the ``type``, for example when
         a feature is `nominal`.
      b. Pass in a dictionary that specifies the correct datetime format using
-        `datetime_feature_formats`.
-     c. The exception is specifying the `bounds`. Edit the dictionary after
+        ``datetime_feature_formats``.
+     c. The exception is specifying the ``bounds``. Edit the dictionary after
         it's been built by IFA.
 
   4. `print` the dictionary and audit.
@@ -55,38 +55,37 @@ What is the difference between **nominal**, **ordinal**, and **continuous** feat
 
 How do I map **ordinal** features?
 ----------------------------------
-- If the feature is `numeric`, all you must do is specify the `type` as
+- If the feature is `numeric`, all you must do is specify the ``type`` as
   `ordinal` inside IFA.
 - If the feature is `ordinal` but not `numeric`, pass a dictionary specifying
-  the order to IFA using the `ordinal_feature_values` argument. - An example
+  the order to IFA using the ``ordinal_feature_values`` argument. - An example
   is: `{ "size" : [ "small", "medium", "large", "huge" ] }`
 
 How do I map **cyclic** features?
 ---------------------------------
-Cyclic features are set by specifying a `cycle_length` value in the feature attributes.
-`cycle_length` requires a single value, which is the upper bound of the difference for
-the cycle range. For example, if `cycle_length` is 360,  then a value of 1 and 359 will
+Cyclic features are set by specifying a ``cycle_length`` value in the feature attributes.
+``cycle_length`` requires a single value, which is the upper bound of the difference for
+the cycle range. For example, if ``cycle_length`` is 360,  then a value of 1 and 359 will
 have a difference of 2. Cyclic features have no restrictions in the input dataset, however,
-cyclic features will be outputted on a scale from 0 to `cycle_length`. To constrain the output
-to a different range, modify the `min` and `max` `bounds` feature attribute. 
+cyclic features will be output on a scale from 0 to ``cycle_length``. To constrain the output
+to a different range, modify the ``min`` and ``max`` ``bounds`` feature attribute. 
 
-
-- Specify the `type` as `continuous` inside IFA.
-- Specify the maximum value (exclusive) as the `cycle_length` feature attribute.
+- Specify the ``type`` as `continuous` inside IFA.
+- Specify the maximum value (exclusive) as the ``cycle_length`` feature attribute.
 
 How do I specify dates?
 -----------------------
 - Often, IFA can intuit the proper date format especially if the dates are a
   Python `datetime` object.
 - They can also be specified by passing a dictionary to IFA using the
-  `datetime_feature_formats` argument.
+  ``datetime_feature_formats`` argument.
   - An example is: `{ "end_date" : "%Y-%m-%d" }`
 
 What are **partial features**?
 ------------------------------
 - **Partial features** is a term used to describe a partial dictionary from
   which IFA builds the rest of the feature mapping. It is also a variable-name
-  passed to the `features` argument inside IFA. Below is an example:
+  passed to the ``features`` argument inside IFA. Below is an example:
 
   .. code-block:: python
 
@@ -94,18 +93,18 @@ What are **partial features**?
     partial_features = {'education-num':{'type':'nominal'}, 'age':{'type':'continuous'}}
     features = infer_feature_attributes(df, features=partial_features)
 
-- `partial_features` are important because they allow IFA to correctly specify
+- ``partial_features`` are important because they allow IFA to correctly specify
   the bounds. For example, imagine a `nominal` feature of US zip codes (90016,
   91334, etc.). IFA may infer these values to be `continuous` and the resulting
-  dictionary will include `min` and `max` bounds. You can edit the `type` to be
+  dictionary will include ``min`` and ``max`` bounds. You can edit the ``type`` to be
   `nominal` post calling IFA, but the `continuous` bounds may cause an issue
   when reacting to the model. This is why it's often better to use
-  `partial_features` as a core to pass into IFA.
+  ``partial_features`` as a core to pass into IFA.
 
 What are **dependent features**?
 --------------------------------
 - Dependent features are those features which depend on each other. These
-  features are specified using the `dependent_features` feature attribute.
+  features are specified using the ``dependent_features`` feature attribute.
   Common examples include lab results and their units of measure. During
   synthesis, it's imperative the lab results match the units of measure like
   the original dataset.
@@ -116,12 +115,12 @@ Derived during-training features should have a feature attribute of
 [auto_derive_on_train](howso.openapi.models.FeatureAutoDeriveOnTrain),
 containing the configuration on how to derive the feature.
 
-A `derive_type` value is required to define the type of derivation, one of
+A ``derive_type`` value is required to define the type of derivation, one of
 [custom](howso.openapi.models.FeatureAutoDeriveOnTrainCustom) or
 [progress](howso.openapi.models.FeatureAutoDeriveOnTrainProgress) is allowed.
 Each type has its own attribute set.
 
-Allowed list of operations for `code` attributes. All operations use prefix notation:
+Allowed list of operations for ``code`` attributes. All operations use prefix notation:
 
     \+ - * / = != < <= > >= number string concat if and or xor not null min max
     mod sqrt pow abs log exp floor ceil round rand sin cos acos tan atan sinh
