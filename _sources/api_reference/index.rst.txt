@@ -11,4 +11,4 @@ API Reference
 
 .. toctree:: data_structures
 
-.. toctree:: types
+.. toctree:: typing
