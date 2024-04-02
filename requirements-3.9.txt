@@ -326,15 +326,12 @@ fonttools==4.50.0 \
     --hash=sha256:f849bd3c5c2249b49c98eca5aaebb920d2bfd92b3c69e84ca9bddf133e9f83f0 \
     --hash=sha256:fa5cf61058c7dbb104c2ac4e782bf1b2016a8cf2f69de6e4dd6a865d2c969bb5
     # via matplotlib
-get-annotations==0.1.2 \
-    --hash=sha256:788ba8aa2434ee34ffb985c4aea2f9e575204c884c0e0dd0f969be846470e527 \
-    --hash=sha256:da7b69b8043237cc7f7ce5919e9cc59bd18fc4e2704b43eb34e3ba4fa9374bab
-    # via scanpydoc
-howso-engine[scikit]==17.1.1 \
-    --hash=sha256:0ca2274fc98195823d61de39ab13e622fe7c1e3cf85c8bc4db206eb83ef6bab8 \
-    --hash=sha256:6e6579459fcac52770fd21cc268621beff1a8e120d59b8292457d2d2fbaaab83
+howso-engine[scikit]==18.0.0 \
+    --hash=sha256:1ecb953c2f0b0c5b6dc3922fbb74a4a6d9439e60ec9dd5c28b6b371f2b4e2e6a \
+    --hash=sha256:cfbcbc163abde5f8dc6b5807fc9de03e83c3faca2d3a2bf88cabcdf96e7fe2e7
     # via -r requirements.in
 howso-openapi-client==30.3.0 \
+    --hash=sha256:d953e31f6c36c996f5e978f6de300e1b7ba38133c3a55ee943792d89b35c1101 \
     --hash=sha256:e6db106b4b31f478f8f5c205396b678db80c7cb5d65f4f4c99327700664d4766
     # via howso-engine
 humanize==4.9.0 \
@@ -928,10 +925,6 @@ rich==13.7.1 \
     --hash=sha256:4edbae314f59eb482f54e9e30bf00d33350aaa94f4bfcd4e9e3110e64d0d7222 \
     --hash=sha256:9be308cb1fe2f1f57d67ce99e95af38a1e2bc71ad9813b0e247cf7ffbcc3a432
     # via howso-engine
-scanpydoc==0.13.4 \
-    --hash=sha256:6859ff5d7ebf237d6b51425ef95039bdb946265f93e8068ad5dbbc879d73c5a7 \
-    --hash=sha256:b46c080b6a3bac92448e6e50d5d454ff5d1abc895bfa1726a8487a353aefffa2
-    # via -r requirements.in
 scikit-learn==1.3.2 \
     --hash=sha256:0402638c9a7c219ee52c94cbebc8fcb5eb9fe9c773717965c1f4185588ad3107 \
     --hash=sha256:0ee107923a623b9f517754ea2f69ea3b62fc898a3641766cb7deb2f2ce450161 \
@@ -1016,7 +1009,6 @@ sphinx==7.2.6 \
     #   -r requirements.in
     #   myst-parser
     #   pydata-sphinx-theme
-    #   scanpydoc
     #   sphinx-autodoc-typehints
     #   sphinx-copybutton
     #   sphinx-design
