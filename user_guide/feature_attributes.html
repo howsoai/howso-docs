@@ -452,20 +452,20 @@ pass-in your data and <cite>print</cite> the dictionary:</p>
 <li><p>Audit the dictionary to ensure the mapping matches your data. Some common
 mappings that should be reviewed:</p>
 <ol class="loweralpha simple">
-<li><p><cite>type</cite> being <cite>nominal</cite>, <cite>ordinal</cite>, or <cite>continuous</cite>.</p></li>
-<li><p><cite>bounds</cite>: <cite>min</cite> and <cite>max</cite> values.</p></li>
-<li><p><cite>date_time_format</cite> for specifying the dates/times correctly.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code> being <cite>nominal</cite>, <cite>ordinal</cite>, or <cite>continuous</cite>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bounds</span></code>: <code class="docutils literal notranslate"><span class="pre">min</span></code> and <code class="docutils literal notranslate"><span class="pre">max</span></code> values.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">date_time_format</span></code> for specifying the dates/times correctly.</p></li>
 </ol>
 </li>
 <li><p>Pass in any changes as arguments to IFA and run it again. The following
 are some of the common arguments:</p>
 <ol class="loweralpha simple">
 <li><p>Create a <strong>partial feature dictionary</strong> and pass it to the argument
-<cite>features</cite>. This is common when specifying the <cite>type</cite>, for example when
+<code class="docutils literal notranslate"><span class="pre">features</span></code>. This is common when specifying the <code class="docutils literal notranslate"><span class="pre">type</span></code>, for example when
 a feature is <cite>nominal</cite>.</p></li>
 <li><p>Pass in a dictionary that specifies the correct datetime format using
-<cite>datetime_feature_formats</cite>.</p></li>
-<li><p>The exception is specifying the <cite>bounds</cite>. Edit the dictionary after
+<code class="docutils literal notranslate"><span class="pre">datetime_feature_formats</span></code>.</p></li>
+<li><p>The exception is specifying the <code class="docutils literal notranslate"><span class="pre">bounds</span></code>. Edit the dictionary after
 it’s been built by IFA.</p></li>
 </ol>
 </li>
@@ -486,31 +486,34 @@ it’s been built by IFA.</p></li>
 <section id="how-do-i-map-ordinal-features">
 <h2>How do I map <strong>ordinal</strong> features?<a class="headerlink" href="#how-do-i-map-ordinal-features" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>If the feature is <cite>numeric</cite>, all you must do is specify the <cite>type</cite> as
+<li><p>If the feature is <cite>numeric</cite>, all you must do is specify the <code class="docutils literal notranslate"><span class="pre">type</span></code> as
 <cite>ordinal</cite> inside IFA.</p></li>
 <li><p>If the feature is <cite>ordinal</cite> but not <cite>numeric</cite>, pass a dictionary specifying
-the order to IFA using the <cite>ordinal_feature_values</cite> argument. - An example
-is: <cite>{ “size” : [ “small”, “medium”, “large”, “huge” ] }</cite></p></li>
+the order to IFA using the <code class="docutils literal notranslate"><span class="pre">ordinal_feature_values</span></code> argument. - An example
+is: <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">&quot;size&quot;</span> <span class="pre">:</span> <span class="pre">[</span> <span class="pre">&quot;small&quot;,</span> <span class="pre">&quot;medium&quot;,</span> <span class="pre">&quot;large&quot;,</span> <span class="pre">&quot;huge&quot;</span> <span class="pre">]</span> <span class="pre">}</span></code></p></li>
 </ul>
 </section>
 <section id="how-do-i-map-cyclic-features">
 <h2>How do I map <strong>cyclic</strong> features?<a class="headerlink" href="#how-do-i-map-cyclic-features" title="Link to this heading">#</a></h2>
-<p>Cyclic features start at 0 and end at the value specified exclusively. e.g. To
-specify days of the week provide a <cite>cycle_length</cite> of 7 and values in your data
-should be 0 to 6.</p>
+<p>Cyclic features are set by specifying a <code class="docutils literal notranslate"><span class="pre">cycle_length</span></code> value in the feature attributes.
+<code class="docutils literal notranslate"><span class="pre">cycle_length</span></code> requires a single value, which is the upper bound of the difference for
+the cycle range. For example, if <code class="docutils literal notranslate"><span class="pre">cycle_length</span></code> is 360,  then a value of 1 and 359 will
+have a difference of 2. Cyclic features have no restrictions in the input dataset, however,
+cyclic features will be output on a scale from 0 to <code class="docutils literal notranslate"><span class="pre">cycle_length</span></code>. To constrain the output
+to a different range, modify the <code class="docutils literal notranslate"><span class="pre">min</span></code> and <code class="docutils literal notranslate"><span class="pre">max</span></code> <code class="docutils literal notranslate"><span class="pre">bounds</span></code> feature attribute.</p>
 <ul class="simple">
-<li><p>Specify the <cite>type</cite> as <cite>continuous</cite> inside IFA.</p></li>
-<li><p>Specify the maximum value (exclusive) as the <cite>cycle_length</cite> feature attribute.</p></li>
+<li><p>Specify the <code class="docutils literal notranslate"><span class="pre">type</span></code> as <cite>continuous</cite> inside IFA.</p></li>
+<li><p>Specify the maximum value (exclusive) as the <code class="docutils literal notranslate"><span class="pre">cycle_length</span></code> feature attribute.</p></li>
 </ul>
 </section>
 <section id="how-do-i-specify-dates">
 <h2>How do I specify dates?<a class="headerlink" href="#how-do-i-specify-dates" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Often, IFA can intuit the proper date format especially if the dates are a
-Python <cite>datetime</cite> object.</p></li>
+Python <code class="docutils literal notranslate"><span class="pre">datetime</span></code> object.</p></li>
 <li><p>They can also be specified by passing a dictionary to IFA using the
-<cite>datetime_feature_formats</cite> argument.
-- An example is: <cite>{ “end_date” : “%Y-%m-%d” }</cite></p></li>
+<code class="docutils literal notranslate"><span class="pre">datetime_feature_formats</span></code> argument.
+- An example is: <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">&quot;end_date&quot;</span> <span class="pre">:</span> <span class="pre">&quot;%Y-%m-%d&quot;</span> <span class="pre">}</span></code></p></li>
 </ul>
 </section>
 <section id="what-are-partial-features">
@@ -518,27 +521,27 @@ Python <cite>datetime</cite> object.</p></li>
 <ul>
 <li><p><strong>Partial features</strong> is a term used to describe a partial dictionary from
 which IFA builds the rest of the feature mapping. It is also a variable-name
-passed to the <cite>features</cite> argument inside IFA. Below is an example:</p>
+passed to the <code class="docutils literal notranslate"><span class="pre">features</span></code> argument inside IFA. Below is an example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Infer features using DataFrame format</span>
 <span class="n">partial_features</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;education-num&#39;</span><span class="p">:{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="s1">&#39;nominal&#39;</span><span class="p">},</span> <span class="s1">&#39;age&#39;</span><span class="p">:{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span><span class="s1">&#39;continuous&#39;</span><span class="p">}}</span>
 <span class="n">features</span> <span class="o">=</span> <span class="n">infer_feature_attributes</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="n">partial_features</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
-<li><p><cite>partial_features</cite> are important because they allow IFA to correctly specify
+<li><p><code class="docutils literal notranslate"><span class="pre">partial_features</span></code> are important because they allow IFA to correctly specify
 the bounds. For example, imagine a <cite>nominal</cite> feature of US zip codes (90016,
 91334, etc.). IFA may infer these values to be <cite>continuous</cite> and the resulting
-dictionary will include <cite>min</cite> and <cite>max</cite> bounds. You can edit the <cite>type</cite> to be
+dictionary will include <code class="docutils literal notranslate"><span class="pre">min</span></code> and <code class="docutils literal notranslate"><span class="pre">max</span></code> bounds. You can edit the <code class="docutils literal notranslate"><span class="pre">type</span></code> to be
 <cite>nominal</cite> post calling IFA, but the <cite>continuous</cite> bounds may cause an issue
 when reacting to the model. This is why it’s often better to use
-<cite>partial_features</cite> as a core to pass into IFA.</p></li>
+<code class="docutils literal notranslate"><span class="pre">partial_features</span></code> as a core to pass into IFA.</p></li>
 </ul>
 </section>
 <section id="what-are-dependent-features">
 <h2>What are <strong>dependent features</strong>?<a class="headerlink" href="#what-are-dependent-features" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Dependent features are those features which depend on each other. These
-features are specified using the <cite>dependent_features</cite> feature attribute.
+features are specified using the <code class="docutils literal notranslate"><span class="pre">dependent_features</span></code> feature attribute.
 Common examples include lab results and their units of measure. During
 synthesis, it’s imperative the lab results match the units of measure like
 the original dataset.</p></li>
@@ -549,11 +552,11 @@ the original dataset.</p></li>
 <p>Derived during-training features should have a feature attribute of
 [auto_derive_on_train](howso.openapi.models.FeatureAutoDeriveOnTrain),
 containing the configuration on how to derive the feature.</p>
-<p>A <cite>derive_type</cite> value is required to define the type of derivation, one of
+<p>A <code class="docutils literal notranslate"><span class="pre">derive_type</span></code> value is required to define the type of derivation, one of
 [custom](howso.openapi.models.FeatureAutoDeriveOnTrainCustom) or
 [progress](howso.openapi.models.FeatureAutoDeriveOnTrainProgress) is allowed.
 Each type has its own attribute set.</p>
-<p>Allowed list of operations for <cite>code</cite> attributes. All operations use prefix notation:</p>
+<p>Allowed list of operations for <code class="docutils literal notranslate"><span class="pre">code</span></code> attributes. All operations use prefix notation:</p>
 <blockquote>
 <div><p>+ - * / = != &lt; &lt;= &gt; &gt;= number string concat if and or xor not null min max
 mod sqrt pow abs log exp floor ceil round rand sin cos acos tan atan sinh
