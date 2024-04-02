@@ -59,7 +59,7 @@ How do I map **ordinal** features?
   `ordinal` inside IFA.
 - If the feature is `ordinal` but not `numeric`, pass a dictionary specifying
   the order to IFA using the ``ordinal_feature_values`` argument. - An example
-  is: `{ "size" : [ "small", "medium", "large", "huge" ] }`
+  is: ``{ "size" : [ "small", "medium", "large", "huge" ] }``
 
 How do I map **cyclic** features?
 ---------------------------------
@@ -76,10 +76,10 @@ to a different range, modify the ``min`` and ``max`` ``bounds`` feature attribut
 How do I specify dates?
 -----------------------
 - Often, IFA can intuit the proper date format especially if the dates are a
-  Python `datetime` object.
+  Python ``datetime`` object.
 - They can also be specified by passing a dictionary to IFA using the
   ``datetime_feature_formats`` argument.
-  - An example is: `{ "end_date" : "%Y-%m-%d" }`
+  - An example is: ``{ "end_date" : "%Y-%m-%d" }``
 
 What are **partial features**?
 ------------------------------
