@@ -36,7 +36,6 @@ html_title = 'Howso Engine Documentation'
 extensions = [
     'sphinx.ext.napoleon',
     'sphinx_autodoc_typehints',
-    'scanpydoc.elegant_typehints',
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'myst_parser',
@@ -162,13 +161,6 @@ napoleon_google_docstring = False
 napoleon_numpy_docstring = True
 napoleon_use_param = True
 napoleon_use_keyword = True
-
-# Scanpydoc Elegant Typehints
-# https://github.com/theislab/scanpydoc
-
-typehints_use_rtype = False
-typehints_use_signature = True
-typehints_use_signature_return = True
 
 # Autosectionlabel
 # https://www.sphinx-doc.org/en/master/usage/extensions/autosectionlabel.html#configuration
