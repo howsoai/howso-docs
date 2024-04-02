@@ -35,7 +35,7 @@ The type of the feature.
 ```{py:attribute} cycle_length
 :type: Optional[int]
 
-Cyclic features are set by specifying a `cycle_length` value in the feature attributes. `cycle_length` requires a single value, which is the upper bound of the difference for the cycle range. For example, if `cycle_length` is 360,  then a value of 1 and 359 will have a difference of 2. Cyclic features have no restrictions in the input dataset, however, cyclic features will be outputted on a scale from 0 to `cycle_length`. To constrain the output to a different range, modify the `min` and `max` `bounds` feature attribute. 
+Cyclic features start at 0 and have a range of [0, cycle_length). The `cycle_length` is the maximum value (exclusive) of the cycle. Values exceeding the cycle length are normalized to the original cycle (e.g., cycles with length 360 for degrees will evaluate a 370 as 10 and 360 as 0). Negative values are not supported in cyclic features. Only applicable to continuous or ordinal features.
 
 Examples:
 - degrees: values should be 0-359, cycle_length = 360
