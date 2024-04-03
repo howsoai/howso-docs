@@ -1,66 +1,58 @@
-{{ fullname | escape | underline}}
-
-.. automodule:: {{ fullname }}
-  
-   {% block attributes %}
-   {% if attributes %}
-   .. rubric:: Module Attributes
-
-   .. autosummary::
-      :toctree:                                          
-   {% for item in attributes %}
-      {{ item }}
-   {%- endfor %}
-   {% endif %}
-   {% endblock %}
-
-   {% block functions %}
-   {% if functions %}
-   .. rubric:: {{ _('Functions') }}
-
-   .. autosummary::
-      :toctree:                                          
-   {% for item in functions %}
-      {{ item }}
-   {%- endfor %}
-   {% endif %}
-   {% endblock %}
-
-   {% block classes %}
-   {% if classes %}
-   .. rubric:: {{ _('Classes') }}
-
-   .. autosummary::
-      :toctree:                                          
-      :template: custom-class-template.rst               
-   {% for item in classes %}
-      {{ item }}
-   {%- endfor %}
-   {% endif %}
-   {% endblock %}
-
-   {% block exceptions %}
-   {% if exceptions %}
-   .. rubric:: {{ _('Exceptions') }}
-
-   .. autosummary::
-      :toctree:                                          
-   {% for item in exceptions %}
-      {{ item }}
-   {%- endfor %}
-   {% endif %}
-   {% endblock %}
+{{ name | escape | underline}}
 
 {% block modules %}
 {% if modules %}
-.. rubric:: Modules
+.. rubric:: Submodules
 
 .. autosummary::
    :toctree:
-   :template: custom-module-template.rst                 
+   :template: custom_module_template.rst
    :recursive:
 {% for item in modules %}
+{% if not 'openapi.models' in item %}
    {{ item }}
+{%- endif %}
+{%- endfor %}
+{%- endif %}
+{% endblock %}
+
+{% block classes %}
+{% if classes %}
+.. rubric:: Classes
+
+.. autosummary::
+   :nosignatures:
+{% for item in classes %}
+   ~{{ fullname }}.{{ item }}
 {%- endfor %}
 {% endif %}
 {% endblock %}
+
+{% block functions %}
+{% if functions %}
+.. rubric:: Functions
+
+.. autosummary::
+   :nosignatures:
+{% for item in functions %}
+   ~{{ fullname }}.{{ item }}
+{%- endfor %}
+{% endif %}
+{% endblock %}
+
+{% block attributes %}
+{% if attributes %}
+.. rubric:: Attributes
+
+.. autosummary::
+   :nosignatures:
+{% for item in attributes %}
+   ~{{ fullname }}.{{ item }}
+{%- endfor %}
+{% endif %}
+{% endblock %}
+
+.. automodule:: {{ fullname }}
+   :members:
+   :no-undoc-members:
+   :show-inheritance:

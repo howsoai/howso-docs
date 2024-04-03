@@ -1,16 +1,24 @@
 API Reference
 =============
 
+This page and its children contain API documentation for Howso Engine and its submodules.
+
 .. autosummary::
-    :caption: API Reference
+    :caption: Howso Engine Package
     :toctree: _autosummary
     :recursive:
-    :template: custom_module_template_2.rst
+    :template: custom_module_template.rst
 
-    howso
-    .. howso.client
-    .. howso.direct
-    .. howso.engine
-    .. howso.scikit
-    .. howso.openapi
-    .. howso.utilities
+    howso.openapi
+    howso.client
+    howso.direct
+    howso.engine
+    howso.scikit
+    howso.utilities
+
+
+.. toctree::
+    :caption: Other Packages
+    :maxdepth: 2
+
+    data_structures
