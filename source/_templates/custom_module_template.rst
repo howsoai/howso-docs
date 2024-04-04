@@ -9,7 +9,9 @@
    :template: custom_module_template.rst
    :recursive:
 {% for item in modules %}
+{% if 'test' not in item %}
    {{ item }}
+{%- endif %}
 {%- endfor %}
 {%- endif %}
 {% endblock %}
