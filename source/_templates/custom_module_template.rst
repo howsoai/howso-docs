@@ -1,4 +1,8 @@
-{{ name | escape | underline}}
+.. {% if fullname.startswith('howso.') and fullname.count('.') < 2 %}
+{{ fullname | escape | underline }}
+.. {% else %}
+.. {{ name | escape | underline }}
+.. {%- endif %}
 
 {% block modules %}
 {% if modules %}
