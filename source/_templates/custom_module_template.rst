@@ -1,8 +1,4 @@
-.. {% if fullname.startswith('howso.') and fullname.count('.') < 2 %}
 {{ fullname | escape | underline }}
-.. {% else %}
-.. {{ name | escape | underline }}
-.. {%- endif %}
 
 {% block modules %}
 {% if modules %}
@@ -13,9 +9,7 @@
    :template: custom_module_template.rst
    :recursive:
 {% for item in modules %}
-{% if not 'openapi.models' in item %}
    {{ item }}
-{%- endif %}
 {%- endfor %}
 {%- endif %}
 {% endblock %}
