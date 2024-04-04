@@ -1,5 +1,5 @@
-Data Structures
-===============
+OpenAPI Data Structures
+=======================
 
 These data strucutres are used throughout the Howso stack and are automatically generated
 from the OpenAPI specification.
