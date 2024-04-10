@@ -17,8 +17,8 @@ Objectives: what you will take away
 
 Prerequisites: before you begin
 -------------------------------
-- You have successfully :doc:`installed Howso Engine <../getting_started/installing>`
-- You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
+- You have successfully :doc:`installed Howso Engine <../../getting_started/installing>`
+- You have :doc:`loaded, configured, trained, and analyzed data <../basics/basic_workflow>`
 
 
 Notebook Recipe
@@ -40,7 +40,7 @@ recommend being familiar with the following concepts:
 - :ref:`context_features`
 - :ref:`Feature Contribution <contribution>`
 - :ref:`Feature MDA <mda>`
-- :doc:`Feature Attributes <feature_attributes>`
+- :doc:`Feature Attributes <../basics/feature_attributes>`
 
 
 Local vs Global

@@ -15,7 +15,7 @@ Prerequisites: before you begin
 -------------------------------
 **Installation**
 
-- You've successfully :doc:`installed  Howso Engine <../getting_started/installing>`
+- You've successfully :doc:`installed  Howso Engine <../../getting_started/installing>`
 
 - You've installed these libraries:
 

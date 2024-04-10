@@ -17,8 +17,8 @@ Objectives
 
 Prerequisites
 -------------
-- You have successfully :doc:`installed Howso Engine <../getting_started/installing>`
-- You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
+- You have successfully :doc:`installed Howso Engine <../../getting_started/installing>`
+- You have :doc:`loaded, configured, trained, and analyzed data <../basics/basic_workflow>`
 
 
 Notebook Recipe
@@ -37,7 +37,7 @@ This guide focuses primarily on the concept of sparse data.  We additionally rec
 - :ref:`feature`
 - :ref:`action_features`
 - :ref:`context_features`
-- :doc:`Feature Attributes <feature_attributes>`
+- :doc:`Feature Attributes <../basics/feature_attributes>`
 
 
 Sparse Data
@@ -88,11 +88,11 @@ large percentages of the data are replaced with missing values.
 Outputting Missing Values
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 In order to output missing values, the ``allow_null`` feature attribute must be set in the ``bounds`` of that feature.  If this is set, both
-discriminative and generative :meth:`~Trainee.react` s can output missing values.  This can be set using :func:`~howso.utilities.infer_feature_attributes`.
+discriminative and generative :meth:`~Trainee.react` s can output missing values.  This can be set using :func:`~howso.utilities.infer_../basics/feature_attributes`.
 
 .. code-block:: python
 
-  features = infer_feature_attributes(
+  features = infer_../basics/feature_attributes(
     df,
     features={
       "Clump_Thickness": {"bounds": {"allow_null": True}}
@@ -105,6 +105,6 @@ discriminative and generative :meth:`~Trainee.react` s can output missing values
 
 API References
 --------------
-- :func:`howso.utilities.infer_feature_attributes`
+- :func:`howso.utilities.infer_../basics/feature_attributes`
 - :func:`Trainee.react`
 
