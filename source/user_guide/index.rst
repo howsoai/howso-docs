@@ -32,7 +32,7 @@ Howso's feature importance tools.
 
 - :doc:`Understanding Predictions <understandability/understanding_predictions>`
 - :doc:`Model Performance <understandability/model_performance>`
-- :doc:`Influential Data, Counterfactuals, and Uncertainties of Predictions <understandability/influential_data_counterfactuals_uncertainty>`
+- :doc:`Inference with Attribution and Uncertainty Estimation <understandability/inference_attribution_uncertainty>`
 - :doc:`Feature Importance <understandability/feature_importance>`
 
 Advanced Capabilities

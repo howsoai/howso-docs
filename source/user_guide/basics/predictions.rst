@@ -208,7 +208,7 @@ The :class:`Trainee` can :meth:`~Trainee.react` to this new case, and makes a pr
        context_features=context_features
    )
 
-.. note:: The method :meth:`Trainee.predict` can also be used for predictions instead of :meth:`Trainee.react`. :meth:`Trainee.predict` serves as a convenience functions that eliminates the extra output if all you want is the prediction.
+.. note:: The method :meth:`Trainee.predict` can also be used for predictions instead of :meth:`Trainee.react`. :meth:`Trainee.predict` serves as a convenience function that eliminates the extra output if all you want is the prediction.
 
 Step 9 - Review Prediction
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
