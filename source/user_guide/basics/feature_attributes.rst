@@ -68,7 +68,7 @@ Cyclic features are set by specifying a ``cycle_length`` value in the feature at
 the cycle range. For example, if ``cycle_length`` is 360,  then a value of 1 and 359 will
 have a difference of 2. Cyclic features have no restrictions in the input dataset, however,
 cyclic features will be output on a scale from 0 to ``cycle_length``. To constrain the output
-to a different range, modify the ``min`` and ``max`` ``bounds`` feature attribute. 
+to a different range, modify the ``min`` and ``max`` ``bounds`` feature attribute.
 
 - Specify the ``type`` as `continuous` inside IFA.
 - Specify the maximum value (exclusive) as the ``cycle_length`` feature attribute.
@@ -106,8 +106,22 @@ What are **dependent features**?
 - Dependent features are those features which depend on each other. These
   features are specified using the ``dependent_features`` feature attribute.
   Common examples include lab results and their units of measure. During
-  synthesis, it's imperative the lab results match the units of measure like
+  predictions, it's imperative the lab results match the units of measure like
   the original dataset.
+
+.. code:: python
+
+    # Specify the dependencies between the feature description, units, and value.
+    dependent_features={
+        "measurement": [ "measurement_amount" ]
+    }
+
+    # Pass in the dependent_features to infer_feature_attributes.
+    features = infer_feature_attributes(
+        df,
+        dependent_features=dependent_features,
+        features=features
+    )
 
 Derivation Attributes
 ---------------------
@@ -125,3 +139,53 @@ Allowed list of operations for ``code`` attributes. All operations use prefix no
     \+ - * / = != < <= > >= number string concat if and or xor not null min max
     mod sqrt pow abs log exp floor ceil round rand sin cos acos tan atan sinh
     asinh cosh acosh tanh atanh
+
+
+Advanced Configurations
+-----------------------
+
+Feature Bounds
+^^^^^^^^^^^^^^
+Feature values are generally given fuzzy bounds derived from the actual values. This allows for some variation in the data.
+If strict bounds are more appropriate for the feature, there are 3 ways to set this.
+
+The first is by passing through a list in the ``tight_bounds`` parameter of :py:func:`~howso.utilities.infer_feature_attributes`. The features
+specified in this list will use the exact bounds present in the original data.
+
+.. code:: python
+
+    features = infer_feature_attributes(df, tight_bounds=["feature_a", "feature_b"])
+
+The second method is to directly modify the features map created by :py:func:`~howso.utilities.infer_feature_attributes`.
+For numeric values, ``min`` and ``max`` can be set in ``bounds`` to set the minimum and maximum values.
+
+.. code:: python
+
+    features["Year"]["bounds"]["min"] = fuel_df["Year"].min()
+    features["Year"]["bounds"]["max"] = fuel_df["Year"].max()
+
+Lastly, these bounds can also be set directly through the ``feature_bounds_map`` parameter as shown below.
+
+.. code:: python
+
+    gen_df = s.synthesize_cases(
+        n_samples=n_samples,
+        desired_conviction=desired_conviction,
+        feature_bounds_map={"Year": {"min": 1970, "max": 2020}},
+        generate_new_cases="always",
+    )
+
+Further information about feature bounds as well as other custom constraints can be found in the :doc:`Custom Constraints <../adv_settings/business_rules/custom_constraints>` guide.
+
+.. _null_values_IFA:
+
+Nulls and Missing Values
+^^^^^^^^^^^^^^^^^^^^^^^^
+The feature attributes map produced by :py:func:`~howso.utilities.infer_feature_attributes` sets the ``allow_null`` parameter depending on whether the
+original data contains nulls. This controls whether predictions can also contains nulls. In order to override the inferred value,
+the ``allow_null`` parameter in the feature attributes map can be manually configured as shown below. Additionally, in the case of predictions,
+:py:meth:`Trainee.react` also supports an `allow_null` parameter.
+
+.. code:: python
+
+    features["Year"]["bounds"]["allow_null"] = False
