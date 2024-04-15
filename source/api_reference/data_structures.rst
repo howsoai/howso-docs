@@ -1,7 +1,7 @@
 OpenAPI Data Structures
 =======================
 
-These data strucutres are used throughout the Howso stack and are automatically generated
+These data structures are used throughout the Howso stack and are automatically generated
 from the OpenAPI specification.
 
 .. toctree::
