@@ -8,7 +8,7 @@ Howso's feature importance tools.
 
 - :doc:`Understanding Predictions <understanding_predictions>`
 - :doc:`Model Performance <model_performance>`
-- :doc:`Influential Data, Counterfactuals, and Uncertainties of Predictions <influential_data_counterfactuals_uncertainty>`
+- :doc:`Inference with Attribution and Uncertainty Estimation <inference_attribution_uncertainty>`
 - :doc:`Feature Importance <feature_importance>`
 
 .. toctree::
@@ -17,5 +17,5 @@ Howso's feature importance tools.
 
     understanding_predictions
     model_performance
-    influential_data_counterfactuals_uncertainty
+    inference_attribution_uncertainty
     feature_importance

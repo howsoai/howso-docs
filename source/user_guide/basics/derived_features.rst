@@ -17,7 +17,7 @@ Objectives: what you will take away
 
 Prerequisites: before you begin
 -------------------------------
-- You have successfully :doc:`installed Howso Engine <../getting_started/installing>`
+- You have successfully :doc:`installed Howso Engine <../../getting_started/installing>`
 - You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
 
 Data
@@ -158,7 +158,7 @@ Derived features are used in time-series :class:`~Trainee` s and are automatical
 context features and the delta/rate features are used as derived action features.  Since :meth:`Trainee.react` supports more explainability details than
 :meth:`Trainee.react_series`, this can be useful to replicate the behavior of :meth:`~Trainee.react_series` using :meth:`~Trainee.react`.
 
-For more information on time-series, see the API Reference and the :doc:`time-series user guide <time_series>`
+For more information on time-series, see the API Reference and the :doc:`time-series user guide <../adv_capabilities/time_series>`
 
 
 API References

@@ -11,14 +11,14 @@ Objectives: what you will take away
 -----------------------------------
 
 - **Definitions & an understanding** of how time series and sequential data tools within the Howso Engine provide enhanced insight into your data.
-- **How-To** use Engine's :func:`howso.utilities.infer_feature_attributes` tool to configure your time series and sequential data, and make time series predictions.
+- **How-To** use Engine's :func:`howso.utilities.infer_../basics/feature_attributes` tool to configure your time series and sequential data, and make time series predictions.
 
 Prerequisites: before you begin
 -------------------------------
 **Installation**
 
-- You have successfully :doc:`installed Howso Engine <../getting_started/installing>`
-- You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
+- You have successfully :doc:`installed Howso Engine <../../getting_started/installing>`
+- You have :doc:`loaded, configured, trained, and analyzed data <../basics/basic_workflow>`
 
 Notebook Recipe
 ---------------
@@ -35,7 +35,7 @@ To understand this guide, we recommend being familiar with the following concept
 - :ref:`feature`
 - :ref:`action_features`
 - :ref:`context_features`
-- :doc:`Feature Attributes <feature_attributes>`
+- :doc:`Feature Attributes <../basics/feature_attributes>`
 
 How-To Guide
 ------------
@@ -43,12 +43,12 @@ How-To Guide
 
 A significant amount of data is recorded at specific times. Utilizing this information can provide a wealth of insight
 for future predictions, such as knowledge of whether events happen at certain intervals or how intervals between certain events influence other events.
-Engine handles time series data using :func:`howso.utilities.infer_feature_attributes` and by using :meth:`Trainee.train` and :meth:`Trainee.react` to calculate and utilize information
+Engine handles time series data using :func:`howso.utilities.infer_../basics/feature_attributes` and by using :meth:`Trainee.train` and :meth:`Trainee.react` to calculate and utilize information
 about intervals within a dataset to make a prediction.
 
 There are two key differences in the Howso Engine basic prediction workflow when dealing with time series and sequential data:
 
-- :func:`howso.utilities.infer_feature_attributes` must be configured to include time series and sequential data information
+- :func:`howso.utilities.infer_../basics/feature_attributes` must be configured to include time series and sequential data information
 
 - Context Features must be specified **after** the data is trained, as the time series context information is calculated during training
     and must be specified before the `analyze()` call to be utilized in a `react`
@@ -62,7 +62,7 @@ Task 1 - Infer Feature Attributes
     # Identify id-feature and time-feature
     id_feature_name = "ID"
     time_feature_name = "date"
-    features = infer_feature_attributes(
+    features = infer_../basics/feature_attributes(
         df,
         time_feature_name=time_feature_name,
         id_feature_name=id_feature_name,
@@ -70,7 +70,7 @@ Task 1 - Infer Feature Attributes
         time_feature_is_universal=True,
     )
 
-When calling `infer_feature_attributes` in time-series flows, it's imperative that the user specifies the time feature name and the id feature name. While not required, another very significant
+When calling `infer_../basics/feature_attributes` in time-series flows, it's imperative that the user specifies the time feature name and the id feature name. While not required, another very significant
 parameter to consider is the `time_feature_is_universal` flag. This is a boolean flag that specifies to the Engine if the time feature should be considered "universal".
 
 If the time feature is universal, then the Engine is not able to reference any future data when making a prediction. If the time feature is not universal, then the Engine could use future data
@@ -137,4 +137,4 @@ Task 3 - Forecast a time-series
 API References
 --------------
 - :meth:`Trainee.react`
-- :func:`howso.utilities.infer_feature_attributes`
+- :func:`howso.utilities.infer_../basics/feature_attributes`
