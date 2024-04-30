@@ -18,9 +18,9 @@ understanding of frequently used terminology
 
 Explore basic user guides to perform your first tasks
 
-- :doc:`Basic Workflow <../user_guide/basic_workflow>`
-- :doc:`Feature Attributes <../user_guide/feature_attributes>`
-- :doc:`Predictions<../user_guide/predictions>`
+- :doc:`Basic Workflow <../user_guide/basics/basic_workflow>`
+- :doc:`Feature Attributes <../user_guide/basics/feature_attributes>`
+- :doc:`Predictions<../user_guide/basics/predictions>`
 
 Download and run introductory recipes (sample notebooks)
 

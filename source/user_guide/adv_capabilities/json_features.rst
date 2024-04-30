@@ -16,8 +16,8 @@ Objectives
 
 Prerequisites
 -------------
-- You have successfully :doc:`installed Howso Engine <../getting_started/installing>`
-- You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
+- You have successfully :doc:`installed Howso Engine <../../getting_started/installing>`
+- You have :doc:`loaded, configured, trained, and analyzed data <../basics/basic_workflow>`
 
 
 Notebook Recipe
@@ -37,7 +37,7 @@ being familiar with the following concepts:
 - :ref:`feature`
 - :ref:`action_features`
 - :ref:`context_features`
-- :doc:`Feature Attributes <feature_attributes>`
+- :doc:`Feature Attributes <../basics/feature_attributes>`
 
 
 How-To Guide
@@ -48,13 +48,13 @@ more complex objects to be represented than just numbers or strings.
 
 Declaring a Feature as JSON/YAML
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-When calling :func:`howso.utilities.infer_feature_attributes`, a feature can be declared as JSON or YAML by setting
+When calling :func:`howso.utilities.infer_../basics/feature_attributes`, a feature can be declared as JSON or YAML by setting
 its ``data_type`` attribute.
 
 .. code-block:: python
     :caption: Replace ``"json"`` with ``"yaml"`` to use YAML for your feature.
 
-    features = infer_feature_attributes(
+    features = infer_../basics/feature_attributes(
         data,
         features={"inventory": {"type": "continuous", "data_type": "json"}}
     )
@@ -105,6 +105,6 @@ Below are a few code snippets that show how JSON/YAML features can be used in a 
 
 API References
 --------------
-- :func:`howso.utilities.infer_feature_attributes`
+- :func:`howso.utilities.infer_../basics/feature_attributes`
 - :func:`Trainee.react`
 
