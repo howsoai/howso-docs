@@ -1,0 +1,69 @@
+﻿howso.utilities
+===============
+
+
+
+
+
+
+
+.. rubric:: Classes
+
+.. autosummary::
+   :nosignatures:
+
+   ~howso.utilities.FeatureType
+   ~howso.utilities.LocaleOverride
+   ~howso.utilities.ProgressTimer
+   ~howso.utilities.Timer
+   ~howso.utilities.UserFriendlyExit
+
+
+
+
+
+.. rubric:: Functions
+
+.. autosummary::
+   :nosignatures:
+
+   ~howso.utilities.align_data
+   ~howso.utilities.build_react_series_df
+   ~howso.utilities.check_feature_names
+   ~howso.utilities.date_format_is_iso
+   ~howso.utilities.date_to_epoch
+   ~howso.utilities.deserialize_cases
+   ~howso.utilities.determine_iso_format
+   ~howso.utilities.dprint
+   ~howso.utilities.epoch_to_date
+   ~howso.utilities.format_dataframe
+   ~howso.utilities.get_kwargs
+   ~howso.utilities.get_matrix_diff
+   ~howso.utilities.infer_feature_attributes
+   ~howso.utilities.is_valid_uuid
+   ~howso.utilities.matrix_processing
+   ~howso.utilities.num_list_dimensions
+   ~howso.utilities.replace_doublemax_with_infinity
+   ~howso.utilities.replace_nan_with_none
+   ~howso.utilities.replace_none_with_nan
+   ~howso.utilities.reshape_data
+   ~howso.utilities.seconds_to_time
+   ~howso.utilities.serialize_cases
+   ~howso.utilities.serialize_datetimes
+   ~howso.utilities.time_to_seconds
+   ~howso.utilities.trainee_from_df
+   ~howso.utilities.validate_case_indices
+   ~howso.utilities.validate_datetime_iso8061
+   ~howso.utilities.validate_features
+   ~howso.utilities.validate_list_shape
+
+
+
+
+
+
+
+.. automodule:: howso.utilities
+   :members:
+   :no-undoc-members:
+   :show-inheritance:

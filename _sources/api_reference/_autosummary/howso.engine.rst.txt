@@ -1,0 +1,51 @@
+﻿howso.engine
+============
+
+
+
+
+
+
+
+.. rubric:: Classes
+
+.. autosummary::
+   :nosignatures:
+
+   ~howso.engine.Project
+   ~howso.engine.Session
+   ~howso.engine.Trainee
+
+
+
+
+
+.. rubric:: Functions
+
+.. autosummary::
+   :nosignatures:
+
+   ~howso.engine.delete_project
+   ~howso.engine.delete_trainee
+   ~howso.engine.get_active_session
+   ~howso.engine.get_client
+   ~howso.engine.get_project
+   ~howso.engine.get_session
+   ~howso.engine.get_trainee
+   ~howso.engine.list_projects
+   ~howso.engine.list_sessions
+   ~howso.engine.list_trainees
+   ~howso.engine.load_trainee
+   ~howso.engine.switch_project
+   ~howso.engine.use_client
+
+
+
+
+
+
+
+.. automodule:: howso.engine
+   :members:
+   :no-undoc-members:
+   :show-inheritance:

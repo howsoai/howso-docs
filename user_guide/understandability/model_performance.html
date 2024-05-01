@@ -429,7 +429,7 @@ document.write(`
 <h1>Model Performance<a class="headerlink" href="#model-performance" title="Link to this heading">#</a></h1>
 <aside class="topic">
 <p class="topic-title">What is covered in this user guide.</p>
-<p>In this guide, you will learn the basics of evaluating the prediction performance of your <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> using the Howso Engine.</p>
+<p>In this guide, you will learn the basics of evaluating the prediction performance of your <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> using the Howso Engine.</p>
 </aside>
 <section id="objectives-what-you-will-take-away">
 <h2>Objectives: what you will take away<a class="headerlink" href="#objectives-what-you-will-take-away" title="Link to this heading">#</a></h2>
@@ -464,29 +464,29 @@ document.write(`
 <section id="how-to-guide">
 <h2>How-To Guide<a class="headerlink" href="#how-to-guide" title="Link to this heading">#</a></h2>
 <p>In any machine learning workflow, an important step is to evaluate the performance of the model. This remains
-true when using the Howso Engine, but we would like to highlight <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> functionality that helps gauge this
+true when using the Howso Engine, but we would like to highlight <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> functionality that helps gauge this
 performance while lessening the required effort of the user.</p>
 <section id="step-1-global-model-performance">
 <h3>Step 1 - Global Model Performance<a class="headerlink" href="#step-1-global-model-performance" title="Link to this heading">#</a></h3>
-<p>The most basic and quintessential measure of model performance and uncertainty within a <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> are the feature residuals.
+<p>The most basic and quintessential measure of model performance and uncertainty within a <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> are the feature residuals.
 The <a class="reference internal" href="../../getting_started/terminology.html#residual"><span class="std std-ref">Residual</span></a> is described in more detail in the terminology section, but in this
 context, the feature residuals describe the average difference between the models prediction for a feature and the
 true value. These values are also called the Mean Absolute Error (MAE).</p>
-<p>Alternatively, <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> s are also able to compute more traditional model performance statistics. Some of the most obvious
+<p>Alternatively, <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> s are also able to compute more traditional model performance statistics. Some of the most obvious
 of which include accuracy, precision, recall, and <span class="math notranslate nohighlight">\(R^2\)</span>. These performed on a per-feature basis just as residuals.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Metrics like accuracy, precision, and recall computed through <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react_into_trainee()</span></code></a> are
+<p>Metrics like accuracy, precision, and recall computed through <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react_into_trainee()</span></code></a> are
 computed using a leave-one-out approach. This is notably different from the more traditional train-test split
 that is commonly used in deep-learning paradigms. Evaluating a Trainee using a train-test split is possible,
-but will likely yield different results than using <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react_into_trainee()</span></code></a>.</p>
+but will likely yield different results than using <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react_into_trainee()</span></code></a>.</p>
 </div>
-<p>One important detail of how <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> s evaluate performance is that these performance statistics are computed once and
+<p>One important detail of how <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> s evaluate performance is that these performance statistics are computed once and
 cached. Of course, they can be computed as often as the user would like, but these operations are expensive due to
 the instance-based learning approach embraced by the Howso Engine. The computation and caching of these performance
-statistics take place through calls to <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_into_trainee()</span></code></a>, which takes boolean parameters indicating which
+statistics take place through calls to <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_into_trainee()</span></code></a>, which takes boolean parameters indicating which
 groups of statistics the user would like to compute and cache. Then to retrieve these statistics, the user makes a call to
-<a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.get_prediction_stats" title="howso.engine.Trainee.get_prediction_stats"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.get_prediction_stats()</span></code></a>.</p>
+<a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.get_prediction_stats" title="howso.engine.Trainee.get_prediction_stats"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.get_prediction_stats()</span></code></a>.</p>
 <p>So, for example, to see a collection of performance statistics about the accuracy of predictions on each feature,
 the user would do the following:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trainee</span><span class="o">.</span><span class="n">react_into_trainee</span><span class="p">(</span><span class="n">residuals</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -500,8 +500,8 @@ the user would do the following:</p>
 <p>The Trainee is also able to compute and return performance statistics on subsets of the trained data that match a
 certain set of conditions. For example, a user might want to investigate the performance of their Trainee on
 cases that represent individuals over the age of 40. These conditioned prediction stats are not cached in the
-Trainee, so the call to <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react_into_trainee()</span></code></a> is unnecessary. Instead, the user can directly call
-<a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.get_prediction_stats" title="howso.engine.Trainee.get_prediction_stats"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_prediction_stats()</span></code></a> while passing the <cite>condition</cite> parameter.</p>
+Trainee, so the call to <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react_into_trainee()</span></code></a> is unnecessary. Instead, the user can directly call
+<a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.get_prediction_stats" title="howso.engine.Trainee.get_prediction_stats"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_prediction_stats()</span></code></a> while passing the <cite>condition</cite> parameter.</p>
 <p>The user from the example would want to do the following:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Conditions for continuous features take a tuple</span>
 <span class="c1"># that represents the range of the condition.</span>
@@ -528,8 +528,8 @@ on cases that represent individuals over the age of 40, who are also married and
 <section id="api-references">
 <h2>API References<a class="headerlink" href="#api-references" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_into_trainee()</span></code></a></p></li>
-<li><p><a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.get_prediction_stats" title="howso.engine.Trainee.get_prediction_stats"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.get_prediction_stats()</span></code></a></p></li>
+<li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_into_trainee()</span></code></a></p></li>
+<li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.get_prediction_stats" title="howso.engine.Trainee.get_prediction_stats"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.get_prediction_stats()</span></code></a></p></li>
 </ul>
 </section>
 </section>

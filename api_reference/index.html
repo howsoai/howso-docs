@@ -53,7 +53,7 @@
     <link rel="icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Engine Package" href="engine.html" />
+    <link rel="next" title="howso.engine" href="_autosummary/howso.engine.html" />
     <link rel="prev" title="Recipes" href="../examples/index.html" />
     <link rel="icon" type="image/svg+xml" href="/_static/favicon.svg">
     <link rel="mask-icon" href="/_static/favicon.svg">
@@ -236,6 +236,10 @@ document.write(`
   
 
   
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
 </div>
 
     </nav>
@@ -332,17 +336,19 @@ document.write(`
         <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
-  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="engine.html">Engine Package</a></li>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Howso Engine Packages</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="_autosummary/howso.engine.html">howso.engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_autosummary/howso.utilities.html">howso.utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_autosummary/howso.scikit.html">howso.scikit</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Howso Internal Packages</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="_autosummary/howso.client.html">howso.client</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_autosummary/howso.direct.html">howso.direct</a></li>
 </ul>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="scikit.html">Scikit Package</a></li>
-</ul>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="utilities.html">Utilities Package</a></li>
-</ul>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="data_structures.html">Data Structures</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="data_structures.html">OpenAPI Data Structures</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../openapi/types/Cases.html">Cases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../openapi/types/FeatureAttributes.html">FeatureAttributes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../openapi/types/FeatureAutoDeriveOnTrain.html">FeatureAutoDeriveOnTrain</a></li>
@@ -353,9 +359,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../openapi/types/FeatureTimeSeries.html">FeatureTimeSeries</a></li>
 </ul>
 </li>
-</ul>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="typing.html">Typing</a></li>
 </ul>
 </div>
 </nav></div>
@@ -411,351 +414,57 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="api-reference">
-<span id="id1"></span><h1>API Reference<a class="headerlink" href="#api-reference" title="Link to this heading">#</a></h1>
+<h1>API Reference<a class="headerlink" href="#api-reference" title="Link to this heading">#</a></h1>
+<p>This page and its children contain API documentation for Howso Engine and its submodules.</p>
+<section id="howso-engine-packages">
+<h2>Howso Engine Packages<a class="headerlink" href="#howso-engine-packages" title="Link to this heading">#</a></h2>
+<p>These packages are the main ways to interact with Howso Engine.</p>
+<table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/howso.engine.html#module-howso.engine" title="howso.engine"><code class="xref py py-obj docutils literal notranslate"><span class="pre">howso.engine</span></code></a></p></td>
+<td><p>The Python API for the Howso Engine Client.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/howso.utilities.html#module-howso.utilities" title="howso.utilities"><code class="xref py py-obj docutils literal notranslate"><span class="pre">howso.utilities</span></code></a></p></td>
+<td><p>This module contains various utilities for the Howso clients.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/howso.scikit.html#module-howso.scikit" title="howso.scikit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">howso.scikit</span></code></a></p></td>
+<td><p>The Python API for the Howso Scikit Client.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="howso-internal-packages">
+<h2>Howso Internal Packages<a class="headerlink" href="#howso-internal-packages" title="Link to this heading">#</a></h2>
+<p>These packages are for internal use and are not recommended for inexperienced users.</p>
+<table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/howso.client.html#module-howso.client" title="howso.client"><code class="xref py py-obj docutils literal notranslate"><span class="pre">howso.client</span></code></a></p></td>
+<td><p>The Python API for the Howso Client.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/howso.direct.html#module-howso.direct" title="howso.direct"><code class="xref py py-obj docutils literal notranslate"><span class="pre">howso.direct</span></code></a></p></td>
+<td><p>The Python API for the Howso Direct Client.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="other-packages">
+<h2>Other Packages<a class="headerlink" href="#other-packages" title="Link to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="engine.html">Engine Package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="engine.html#howso.engine.Session"><code class="docutils literal notranslate"><span class="pre">Session</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Session.from_dict"><code class="docutils literal notranslate"><span class="pre">Session.from_dict()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Session.from_openapi"><code class="docutils literal notranslate"><span class="pre">Session.from_openapi()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Session.set_metadata"><code class="docutils literal notranslate"><span class="pre">Session.set_metadata()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Session.client"><code class="docutils literal notranslate"><span class="pre">Session.client</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Session.created_date"><code class="docutils literal notranslate"><span class="pre">Session.created_date</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Session.id"><code class="docutils literal notranslate"><span class="pre">Session.id</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Session.metadata"><code class="docutils literal notranslate"><span class="pre">Session.metadata</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Session.modified_date"><code class="docutils literal notranslate"><span class="pre">Session.modified_date</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Session.name"><code class="docutils literal notranslate"><span class="pre">Session.name</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Session.user"><code class="docutils literal notranslate"><span class="pre">Session.user</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="engine.html#howso.engine.Trainee"><code class="docutils literal notranslate"><span class="pre">Trainee</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.acquire_resources"><code class="docutils literal notranslate"><span class="pre">Trainee.acquire_resources()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.add_feature"><code class="docutils literal notranslate"><span class="pre">Trainee.add_feature()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.analyze"><code class="docutils literal notranslate"><span class="pre">Trainee.analyze()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.append_to_series_store"><code class="docutils literal notranslate"><span class="pre">Trainee.append_to_series_store()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.auto_analyze"><code class="docutils literal notranslate"><span class="pre">Trainee.auto_analyze()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.copy"><code class="docutils literal notranslate"><span class="pre">Trainee.copy()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.copy_subtrainee"><code class="docutils literal notranslate"><span class="pre">Trainee.copy_subtrainee()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.delete"><code class="docutils literal notranslate"><span class="pre">Trainee.delete()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.delete_session"><code class="docutils literal notranslate"><span class="pre">Trainee.delete_session()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.edit_cases"><code class="docutils literal notranslate"><span class="pre">Trainee.edit_cases()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.evaluate"><code class="docutils literal notranslate"><span class="pre">Trainee.evaluate()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.from_dict"><code class="docutils literal notranslate"><span class="pre">Trainee.from_dict()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.from_openapi"><code class="docutils literal notranslate"><span class="pre">Trainee.from_openapi()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.get_auto_ablation_params"><code class="docutils literal notranslate"><span class="pre">Trainee.get_auto_ablation_params()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.get_cases"><code class="docutils literal notranslate"><span class="pre">Trainee.get_cases()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.get_contribution_matrix"><code class="docutils literal notranslate"><span class="pre">Trainee.get_contribution_matrix()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.get_distances"><code class="docutils literal notranslate"><span class="pre">Trainee.get_distances()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.get_extreme_cases"><code class="docutils literal notranslate"><span class="pre">Trainee.get_extreme_cases()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.get_feature_contributions"><code class="docutils literal notranslate"><span class="pre">Trainee.get_feature_contributions()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.get_feature_conviction"><code class="docutils literal notranslate"><span class="pre">Trainee.get_feature_conviction()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.get_feature_mda"><code class="docutils literal notranslate"><span class="pre">Trainee.get_feature_mda()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.get_feature_residuals"><code class="docutils literal notranslate"><span class="pre">Trainee.get_feature_residuals()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.get_marginal_stats"><code class="docutils literal notranslate"><span class="pre">Trainee.get_marginal_stats()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.get_mda_matrix"><code class="docutils literal notranslate"><span class="pre">Trainee.get_mda_matrix()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.get_num_training_cases"><code class="docutils literal notranslate"><span class="pre">Trainee.get_num_training_cases()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.get_pairwise_distances"><code class="docutils literal notranslate"><span class="pre">Trainee.get_pairwise_distances()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.get_params"><code class="docutils literal notranslate"><span class="pre">Trainee.get_params()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.get_prediction_stats"><code class="docutils literal notranslate"><span class="pre">Trainee.get_prediction_stats()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.get_session_indices"><code class="docutils literal notranslate"><span class="pre">Trainee.get_session_indices()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.get_session_training_indices"><code class="docutils literal notranslate"><span class="pre">Trainee.get_session_training_indices()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.get_sessions"><code class="docutils literal notranslate"><span class="pre">Trainee.get_sessions()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.get_substitute_feature_values"><code class="docutils literal notranslate"><span class="pre">Trainee.get_substitute_feature_values()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.impute"><code class="docutils literal notranslate"><span class="pre">Trainee.impute()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.information"><code class="docutils literal notranslate"><span class="pre">Trainee.information()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.metrics"><code class="docutils literal notranslate"><span class="pre">Trainee.metrics()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.persist"><code class="docutils literal notranslate"><span class="pre">Trainee.persist()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.predict"><code class="docutils literal notranslate"><span class="pre">Trainee.predict()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.react"><code class="docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.react_group"><code class="docutils literal notranslate"><span class="pre">Trainee.react_group()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.react_into_features"><code class="docutils literal notranslate"><span class="pre">Trainee.react_into_features()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.react_into_trainee"><code class="docutils literal notranslate"><span class="pre">Trainee.react_into_trainee()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.react_series"><code class="docutils literal notranslate"><span class="pre">Trainee.react_series()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.release_resources"><code class="docutils literal notranslate"><span class="pre">Trainee.release_resources()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.remove_cases"><code class="docutils literal notranslate"><span class="pre">Trainee.remove_cases()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.remove_feature"><code class="docutils literal notranslate"><span class="pre">Trainee.remove_feature()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.remove_series_store"><code class="docutils literal notranslate"><span class="pre">Trainee.remove_series_store()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.save"><code class="docutils literal notranslate"><span class="pre">Trainee.save()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.set_auto_ablation_params"><code class="docutils literal notranslate"><span class="pre">Trainee.set_auto_ablation_params()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.set_auto_analyze_params"><code class="docutils literal notranslate"><span class="pre">Trainee.set_auto_analyze_params()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.set_default_features"><code class="docutils literal notranslate"><span class="pre">Trainee.set_default_features()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.set_feature_attributes"><code class="docutils literal notranslate"><span class="pre">Trainee.set_feature_attributes()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.set_metadata"><code class="docutils literal notranslate"><span class="pre">Trainee.set_metadata()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.set_params"><code class="docutils literal notranslate"><span class="pre">Trainee.set_params()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.set_random_seed"><code class="docutils literal notranslate"><span class="pre">Trainee.set_random_seed()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.set_substitute_feature_values"><code class="docutils literal notranslate"><span class="pre">Trainee.set_substitute_feature_values()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.train"><code class="docutils literal notranslate"><span class="pre">Trainee.train()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.unload"><code class="docutils literal notranslate"><span class="pre">Trainee.unload()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.update"><code class="docutils literal notranslate"><span class="pre">Trainee.update()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.active_session"><code class="docutils literal notranslate"><span class="pre">Trainee.active_session</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.calculated_matrices"><code class="docutils literal notranslate"><span class="pre">Trainee.calculated_matrices</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.client"><code class="docutils literal notranslate"><span class="pre">Trainee.client</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.default_action_features"><code class="docutils literal notranslate"><span class="pre">Trainee.default_action_features</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.default_context_features"><code class="docutils literal notranslate"><span class="pre">Trainee.default_context_features</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.features"><code class="docutils literal notranslate"><span class="pre">Trainee.features</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.id"><code class="docutils literal notranslate"><span class="pre">Trainee.id</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.metadata"><code class="docutils literal notranslate"><span class="pre">Trainee.metadata</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.name"><code class="docutils literal notranslate"><span class="pre">Trainee.name</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.needs_analyze"><code class="docutils literal notranslate"><span class="pre">Trainee.needs_analyze</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.persistence"><code class="docutils literal notranslate"><span class="pre">Trainee.persistence</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.project"><code class="docutils literal notranslate"><span class="pre">Trainee.project</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.project_id"><code class="docutils literal notranslate"><span class="pre">Trainee.project_id</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="engine.html#howso.engine.Trainee.save_location"><code class="docutils literal notranslate"><span class="pre">Trainee.save_location</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="engine.html#howso.engine.delete_trainee"><code class="docutils literal notranslate"><span class="pre">delete_trainee()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="engine.html#howso.engine.get_active_session"><code class="docutils literal notranslate"><span class="pre">get_active_session()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="engine.html#howso.engine.get_client"><code class="docutils literal notranslate"><span class="pre">get_client()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="engine.html#howso.engine.get_session"><code class="docutils literal notranslate"><span class="pre">get_session()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="engine.html#howso.engine.get_trainee"><code class="docutils literal notranslate"><span class="pre">get_trainee()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="engine.html#howso.engine.list_sessions"><code class="docutils literal notranslate"><span class="pre">list_sessions()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="engine.html#howso.engine.list_trainees"><code class="docutils literal notranslate"><span class="pre">list_trainees()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="engine.html#howso.engine.load_trainee"><code class="docutils literal notranslate"><span class="pre">load_trainee()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="engine.html#howso.engine.use_client"><code class="docutils literal notranslate"><span class="pre">use_client()</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_structures.html">OpenAPI Data Structures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../openapi/types/Cases.html">Cases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../openapi/types/FeatureAttributes.html">FeatureAttributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../openapi/types/FeatureAutoDeriveOnTrain.html">FeatureAutoDeriveOnTrain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../openapi/types/FeatureAutoDeriveOnTrainCustom.html">FeatureAutoDeriveOnTrainCustom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../openapi/types/FeatureAutoDeriveOnTrainProgress.html">FeatureAutoDeriveOnTrainProgress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../openapi/types/FeatureBounds.html">FeatureBounds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../openapi/types/FeatureOriginalType.html">FeatureOriginalType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../openapi/types/FeatureTimeSeries.html">FeatureTimeSeries</a></li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="scikit.html">Scikit Package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="scikit.html#howso.scikit.HowsoClassifier"><code class="docutils literal notranslate"><span class="pre">HowsoClassifier</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="scikit.html#howso.scikit.HowsoClassifier.fit"><code class="docutils literal notranslate"><span class="pre">HowsoClassifier.fit()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scikit.html#howso.scikit.HowsoClassifier.load"><code class="docutils literal notranslate"><span class="pre">HowsoClassifier.load()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scikit.html#howso.scikit.HowsoClassifier.partial_fit"><code class="docutils literal notranslate"><span class="pre">HowsoClassifier.partial_fit()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scikit.html#howso.scikit.HowsoClassifier.predict_proba"><code class="docutils literal notranslate"><span class="pre">HowsoClassifier.predict_proba()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scikit.html#howso.scikit.HowsoClassifier.set_fit_request"><code class="docutils literal notranslate"><span class="pre">HowsoClassifier.set_fit_request()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="scikit.html#howso.scikit.HowsoEstimator"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="scikit.html#howso.scikit.HowsoEstimator.analyze"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.analyze()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scikit.html#howso.scikit.HowsoEstimator.delete"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.delete()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scikit.html#howso.scikit.HowsoEstimator.describe_prediction"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.describe_prediction()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scikit.html#howso.scikit.HowsoEstimator.feature_add"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.feature_add()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scikit.html#howso.scikit.HowsoEstimator.feature_remove"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.feature_remove()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scikit.html#howso.scikit.HowsoEstimator.fit"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.fit()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scikit.html#howso.scikit.HowsoEstimator.get_case_conviction"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.get_case_conviction()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scikit.html#howso.scikit.HowsoEstimator.get_feature_conviction"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.get_feature_conviction()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scikit.html#howso.scikit.HowsoEstimator.get_params"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.get_params()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scikit.html#howso.scikit.HowsoEstimator.load"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.load()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scikit.html#howso.scikit.HowsoEstimator.partial_fit"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.partial_fit()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scikit.html#howso.scikit.HowsoEstimator.partial_unfit"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.partial_unfit()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scikit.html#howso.scikit.HowsoEstimator.predict"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.predict()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scikit.html#howso.scikit.HowsoEstimator.react_into_features"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.react_into_features()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scikit.html#howso.scikit.HowsoEstimator.release_resources"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.release_resources()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scikit.html#howso.scikit.HowsoEstimator.save"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.save()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scikit.html#howso.scikit.HowsoEstimator.score"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.score()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scikit.html#howso.scikit.HowsoEstimator.set_fit_request"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.set_fit_request()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scikit.html#howso.scikit.HowsoEstimator.trainee_id"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.trainee_id</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="scikit.html#howso.scikit.HowsoEstimator.trainee_name"><code class="docutils literal notranslate"><span class="pre">HowsoEstimator.trainee_name</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="scikit.html#howso.scikit.HowsoRegressor"><code class="docutils literal notranslate"><span class="pre">HowsoRegressor</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="scikit.html#howso.scikit.HowsoRegressor.set_fit_request"><code class="docutils literal notranslate"><span class="pre">HowsoRegressor.set_fit_request()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="utilities.html">Utilities Package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.StopExecution"><code class="docutils literal notranslate"><span class="pre">StopExecution</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.FeatureType"><code class="docutils literal notranslate"><span class="pre">FeatureType</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.LocaleOverride"><code class="docutils literal notranslate"><span class="pre">LocaleOverride</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="utilities.html#howso.utilities.LocaleOverride.restore"><code class="docutils literal notranslate"><span class="pre">LocaleOverride.restore()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="utilities.html#howso.utilities.LocaleOverride.setup"><code class="docutils literal notranslate"><span class="pre">LocaleOverride.setup()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.ProgressTimer"><code class="docutils literal notranslate"><span class="pre">ProgressTimer</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="utilities.html#howso.utilities.ProgressTimer.reset"><code class="docutils literal notranslate"><span class="pre">ProgressTimer.reset()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="utilities.html#howso.utilities.ProgressTimer.start"><code class="docutils literal notranslate"><span class="pre">ProgressTimer.start()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="utilities.html#howso.utilities.ProgressTimer.update"><code class="docutils literal notranslate"><span class="pre">ProgressTimer.update()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="utilities.html#howso.utilities.ProgressTimer.is_complete"><code class="docutils literal notranslate"><span class="pre">ProgressTimer.is_complete</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="utilities.html#howso.utilities.ProgressTimer.progress"><code class="docutils literal notranslate"><span class="pre">ProgressTimer.progress</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="utilities.html#howso.utilities.ProgressTimer.tick_duration"><code class="docutils literal notranslate"><span class="pre">ProgressTimer.tick_duration</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="utilities.html#howso.utilities.ProgressTimer.time_remaining"><code class="docutils literal notranslate"><span class="pre">ProgressTimer.time_remaining</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.Timer"><code class="docutils literal notranslate"><span class="pre">Timer</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="utilities.html#howso.utilities.Timer.end"><code class="docutils literal notranslate"><span class="pre">Timer.end()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="utilities.html#howso.utilities.Timer.reset"><code class="docutils literal notranslate"><span class="pre">Timer.reset()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="utilities.html#howso.utilities.Timer.start"><code class="docutils literal notranslate"><span class="pre">Timer.start()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="utilities.html#howso.utilities.Timer.duration"><code class="docutils literal notranslate"><span class="pre">Timer.duration</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="utilities.html#howso.utilities.Timer.has_ended"><code class="docutils literal notranslate"><span class="pre">Timer.has_ended</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="utilities.html#howso.utilities.Timer.has_started"><code class="docutils literal notranslate"><span class="pre">Timer.has_started</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="utilities.html#howso.utilities.Timer.seconds"><code class="docutils literal notranslate"><span class="pre">Timer.seconds</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.UserFriendlyExit"><code class="docutils literal notranslate"><span class="pre">UserFriendlyExit</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.align_data"><code class="docutils literal notranslate"><span class="pre">align_data()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.build_react_series_df"><code class="docutils literal notranslate"><span class="pre">build_react_series_df()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.check_feature_names"><code class="docutils literal notranslate"><span class="pre">check_feature_names()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.date_format_is_iso"><code class="docutils literal notranslate"><span class="pre">date_format_is_iso()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.date_to_epoch"><code class="docutils literal notranslate"><span class="pre">date_to_epoch()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.deserialize_cases"><code class="docutils literal notranslate"><span class="pre">deserialize_cases()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.determine_iso_format"><code class="docutils literal notranslate"><span class="pre">determine_iso_format()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.dprint"><code class="docutils literal notranslate"><span class="pre">dprint()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.epoch_to_date"><code class="docutils literal notranslate"><span class="pre">epoch_to_date()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.format_dataframe"><code class="docutils literal notranslate"><span class="pre">format_dataframe()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.get_kwargs"><code class="docutils literal notranslate"><span class="pre">get_kwargs()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.get_matrix_diff"><code class="docutils literal notranslate"><span class="pre">get_matrix_diff()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.infer_feature_attributes"><code class="docutils literal notranslate"><span class="pre">infer_feature_attributes()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.is_valid_uuid"><code class="docutils literal notranslate"><span class="pre">is_valid_uuid()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.matrix_processing"><code class="docutils literal notranslate"><span class="pre">matrix_processing()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.num_list_dimensions"><code class="docutils literal notranslate"><span class="pre">num_list_dimensions()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.replace_doublemax_with_infinity"><code class="docutils literal notranslate"><span class="pre">replace_doublemax_with_infinity()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.replace_nan_with_none"><code class="docutils literal notranslate"><span class="pre">replace_nan_with_none()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.replace_none_with_nan"><code class="docutils literal notranslate"><span class="pre">replace_none_with_nan()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.reshape_data"><code class="docutils literal notranslate"><span class="pre">reshape_data()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.seconds_to_time"><code class="docutils literal notranslate"><span class="pre">seconds_to_time()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.serialize_cases"><code class="docutils literal notranslate"><span class="pre">serialize_cases()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.serialize_datetimes"><code class="docutils literal notranslate"><span class="pre">serialize_datetimes()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.time_to_seconds"><code class="docutils literal notranslate"><span class="pre">time_to_seconds()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.trainee_from_df"><code class="docutils literal notranslate"><span class="pre">trainee_from_df()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.validate_case_indices"><code class="docutils literal notranslate"><span class="pre">validate_case_indices()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.validate_datetime_iso8061"><code class="docutils literal notranslate"><span class="pre">validate_datetime_iso8061()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.validate_features"><code class="docutils literal notranslate"><span class="pre">validate_features()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilities.html#howso.utilities.validate_list_shape"><code class="docutils literal notranslate"><span class="pre">validate_list_shape()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="data_structures.html">Data Structures</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../openapi/types/Cases.html">Cases</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../openapi/types/Cases.html#howso.openapi.models.Cases"><code class="docutils literal notranslate"><span class="pre">Cases</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/Cases.html#howso.openapi.models.Cases.features"><code class="docutils literal notranslate"><span class="pre">Cases.features</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/Cases.html#howso.openapi.models.Cases.cases"><code class="docutils literal notranslate"><span class="pre">Cases.cases</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../openapi/types/FeatureAttributes.html">FeatureAttributes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../openapi/types/FeatureAttributes.html#howso.openapi.models.FeatureAttributes"><code class="docutils literal notranslate"><span class="pre">FeatureAttributes</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureAttributes.html#howso.openapi.models.FeatureAttributes.type"><code class="docutils literal notranslate"><span class="pre">FeatureAttributes.type</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureAttributes.html#howso.openapi.models.FeatureAttributes.auto_derive_on_train"><code class="docutils literal notranslate"><span class="pre">FeatureAttributes.auto_derive_on_train</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureAttributes.html#howso.openapi.models.FeatureAttributes.bounds"><code class="docutils literal notranslate"><span class="pre">FeatureAttributes.bounds</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureAttributes.html#howso.openapi.models.FeatureAttributes.cycle_length"><code class="docutils literal notranslate"><span class="pre">FeatureAttributes.cycle_length</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureAttributes.html#howso.openapi.models.FeatureAttributes.data_type"><code class="docutils literal notranslate"><span class="pre">FeatureAttributes.data_type</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureAttributes.html#howso.openapi.models.FeatureAttributes.date_time_format"><code class="docutils literal notranslate"><span class="pre">FeatureAttributes.date_time_format</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureAttributes.html#howso.openapi.models.FeatureAttributes.decimal_places"><code class="docutils literal notranslate"><span class="pre">FeatureAttributes.decimal_places</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureAttributes.html#howso.openapi.models.FeatureAttributes.dependent_features"><code class="docutils literal notranslate"><span class="pre">FeatureAttributes.dependent_features</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureAttributes.html#howso.openapi.models.FeatureAttributes.derived_feature_code"><code class="docutils literal notranslate"><span class="pre">FeatureAttributes.derived_feature_code</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureAttributes.html#howso.openapi.models.FeatureAttributes.dropna"><code class="docutils literal notranslate"><span class="pre">FeatureAttributes.dropna</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureAttributes.html#howso.openapi.models.FeatureAttributes.id_feature"><code class="docutils literal notranslate"><span class="pre">FeatureAttributes.id_feature</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureAttributes.html#howso.openapi.models.FeatureAttributes.locale"><code class="docutils literal notranslate"><span class="pre">FeatureAttributes.locale</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureAttributes.html#howso.openapi.models.FeatureAttributes.non_sensitive"><code class="docutils literal notranslate"><span class="pre">FeatureAttributes.non_sensitive</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureAttributes.html#howso.openapi.models.FeatureAttributes.null_is_dependent"><code class="docutils literal notranslate"><span class="pre">FeatureAttributes.null_is_dependent</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureAttributes.html#howso.openapi.models.FeatureAttributes.observational_error"><code class="docutils literal notranslate"><span class="pre">FeatureAttributes.observational_error</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureAttributes.html#howso.openapi.models.FeatureAttributes.original_type"><code class="docutils literal notranslate"><span class="pre">FeatureAttributes.original_type</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureAttributes.html#howso.openapi.models.FeatureAttributes.original_format"><code class="docutils literal notranslate"><span class="pre">FeatureAttributes.original_format</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureAttributes.html#howso.openapi.models.FeatureAttributes.post_process"><code class="docutils literal notranslate"><span class="pre">FeatureAttributes.post_process</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureAttributes.html#howso.openapi.models.FeatureAttributes.significant_digits"><code class="docutils literal notranslate"><span class="pre">FeatureAttributes.significant_digits</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureAttributes.html#howso.openapi.models.FeatureAttributes.subtype"><code class="docutils literal notranslate"><span class="pre">FeatureAttributes.subtype</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureAttributes.html#howso.openapi.models.FeatureAttributes.time_delta_format"><code class="docutils literal notranslate"><span class="pre">FeatureAttributes.time_delta_format</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureAttributes.html#howso.openapi.models.FeatureAttributes.time_series"><code class="docutils literal notranslate"><span class="pre">FeatureAttributes.time_series</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureAttributes.html#howso.openapi.models.FeatureAttributes.unique"><code class="docutils literal notranslate"><span class="pre">FeatureAttributes.unique</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../openapi/types/FeatureAutoDeriveOnTrain.html">FeatureAutoDeriveOnTrain</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../openapi/types/FeatureAutoDeriveOnTrain.html#howso.openapi.models.FeatureAutoDeriveOnTrain"><code class="docutils literal notranslate"><span class="pre">FeatureAutoDeriveOnTrain</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureAutoDeriveOnTrain.html#howso.openapi.models.FeatureAutoDeriveOnTrain.derive_type"><code class="docutils literal notranslate"><span class="pre">FeatureAutoDeriveOnTrain.derive_type</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureAutoDeriveOnTrain.html#howso.openapi.models.FeatureAutoDeriveOnTrain.code"><code class="docutils literal notranslate"><span class="pre">FeatureAutoDeriveOnTrain.code</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureAutoDeriveOnTrain.html#howso.openapi.models.FeatureAutoDeriveOnTrain.series_id_features"><code class="docutils literal notranslate"><span class="pre">FeatureAutoDeriveOnTrain.series_id_features</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureAutoDeriveOnTrain.html#howso.openapi.models.FeatureAutoDeriveOnTrain.ordered_by_features"><code class="docutils literal notranslate"><span class="pre">FeatureAutoDeriveOnTrain.ordered_by_features</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../openapi/types/FeatureAutoDeriveOnTrainCustom.html">FeatureAutoDeriveOnTrainCustom</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../openapi/types/FeatureAutoDeriveOnTrainCustom.html#howso.openapi.models.FeatureAutoDeriveOnTrainCustom"><code class="docutils literal notranslate"><span class="pre">FeatureAutoDeriveOnTrainCustom</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureAutoDeriveOnTrainCustom.html#howso.openapi.models.FeatureAutoDeriveOnTrainCustom.derive_type"><code class="docutils literal notranslate"><span class="pre">FeatureAutoDeriveOnTrainCustom.derive_type</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureAutoDeriveOnTrainCustom.html#howso.openapi.models.FeatureAutoDeriveOnTrainCustom.code"><code class="docutils literal notranslate"><span class="pre">FeatureAutoDeriveOnTrainCustom.code</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureAutoDeriveOnTrainCustom.html#howso.openapi.models.FeatureAutoDeriveOnTrainCustom.series_id_features"><code class="docutils literal notranslate"><span class="pre">FeatureAutoDeriveOnTrainCustom.series_id_features</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureAutoDeriveOnTrainCustom.html#howso.openapi.models.FeatureAutoDeriveOnTrainCustom.ordered_by_features"><code class="docutils literal notranslate"><span class="pre">FeatureAutoDeriveOnTrainCustom.ordered_by_features</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../openapi/types/FeatureAutoDeriveOnTrainProgress.html">FeatureAutoDeriveOnTrainProgress</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../openapi/types/FeatureAutoDeriveOnTrainProgress.html#howso.openapi.models.FeatureAutoDeriveOnTrainProgress"><code class="docutils literal notranslate"><span class="pre">FeatureAutoDeriveOnTrainProgress</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureAutoDeriveOnTrainProgress.html#howso.openapi.models.FeatureAutoDeriveOnTrainProgress.derive_type"><code class="docutils literal notranslate"><span class="pre">FeatureAutoDeriveOnTrainProgress.derive_type</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureAutoDeriveOnTrainProgress.html#howso.openapi.models.FeatureAutoDeriveOnTrainProgress.series_id_features"><code class="docutils literal notranslate"><span class="pre">FeatureAutoDeriveOnTrainProgress.series_id_features</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../openapi/types/FeatureBounds.html">FeatureBounds</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../openapi/types/FeatureBounds.html#howso.openapi.models.FeatureBounds"><code class="docutils literal notranslate"><span class="pre">FeatureBounds</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureBounds.html#howso.openapi.models.FeatureBounds.min"><code class="docutils literal notranslate"><span class="pre">FeatureBounds.min</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureBounds.html#howso.openapi.models.FeatureBounds.max"><code class="docutils literal notranslate"><span class="pre">FeatureBounds.max</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureBounds.html#howso.openapi.models.FeatureBounds.allowed"><code class="docutils literal notranslate"><span class="pre">FeatureBounds.allowed</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureBounds.html#howso.openapi.models.FeatureBounds.allow_null"><code class="docutils literal notranslate"><span class="pre">FeatureBounds.allow_null</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../openapi/types/FeatureOriginalType.html">FeatureOriginalType</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../openapi/types/FeatureOriginalType.html#howso.openapi.models.FeatureOriginalType"><code class="docutils literal notranslate"><span class="pre">FeatureOriginalType</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureOriginalType.html#howso.openapi.models.FeatureOriginalType.data_type"><code class="docutils literal notranslate"><span class="pre">FeatureOriginalType.data_type</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureOriginalType.html#howso.openapi.models.FeatureOriginalType.length"><code class="docutils literal notranslate"><span class="pre">FeatureOriginalType.length</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureOriginalType.html#howso.openapi.models.FeatureOriginalType.encoding"><code class="docutils literal notranslate"><span class="pre">FeatureOriginalType.encoding</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureOriginalType.html#howso.openapi.models.FeatureOriginalType.format"><code class="docutils literal notranslate"><span class="pre">FeatureOriginalType.format</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureOriginalType.html#howso.openapi.models.FeatureOriginalType.size"><code class="docutils literal notranslate"><span class="pre">FeatureOriginalType.size</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureOriginalType.html#howso.openapi.models.FeatureOriginalType.unsigned"><code class="docutils literal notranslate"><span class="pre">FeatureOriginalType.unsigned</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureOriginalType.html#howso.openapi.models.FeatureOriginalType.timezone"><code class="docutils literal notranslate"><span class="pre">FeatureOriginalType.timezone</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureOriginalType.html#howso.openapi.models.FeatureOriginalType.unit"><code class="docutils literal notranslate"><span class="pre">FeatureOriginalType.unit</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../openapi/types/FeatureTimeSeries.html">FeatureTimeSeries</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../openapi/types/FeatureTimeSeries.html#howso.openapi.models.FeatureTimeSeries"><code class="docutils literal notranslate"><span class="pre">FeatureTimeSeries</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureTimeSeries.html#howso.openapi.models.FeatureTimeSeries.type"><code class="docutils literal notranslate"><span class="pre">FeatureTimeSeries.type</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureTimeSeries.html#howso.openapi.models.FeatureTimeSeries.order"><code class="docutils literal notranslate"><span class="pre">FeatureTimeSeries.order</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureTimeSeries.html#howso.openapi.models.FeatureTimeSeries.derived_orders"><code class="docutils literal notranslate"><span class="pre">FeatureTimeSeries.derived_orders</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureTimeSeries.html#howso.openapi.models.FeatureTimeSeries.delta_min"><code class="docutils literal notranslate"><span class="pre">FeatureTimeSeries.delta_min</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureTimeSeries.html#howso.openapi.models.FeatureTimeSeries.delta_max"><code class="docutils literal notranslate"><span class="pre">FeatureTimeSeries.delta_max</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureTimeSeries.html#howso.openapi.models.FeatureTimeSeries.lags"><code class="docutils literal notranslate"><span class="pre">FeatureTimeSeries.lags</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureTimeSeries.html#howso.openapi.models.FeatureTimeSeries.num_lags"><code class="docutils literal notranslate"><span class="pre">FeatureTimeSeries.num_lags</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureTimeSeries.html#howso.openapi.models.FeatureTimeSeries.rate_min"><code class="docutils literal notranslate"><span class="pre">FeatureTimeSeries.rate_min</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureTimeSeries.html#howso.openapi.models.FeatureTimeSeries.rate_max"><code class="docutils literal notranslate"><span class="pre">FeatureTimeSeries.rate_max</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureTimeSeries.html#howso.openapi.models.FeatureTimeSeries.series_has_terminators"><code class="docutils literal notranslate"><span class="pre">FeatureTimeSeries.series_has_terminators</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureTimeSeries.html#howso.openapi.models.FeatureTimeSeries.stop_on_terminator"><code class="docutils literal notranslate"><span class="pre">FeatureTimeSeries.stop_on_terminator</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../openapi/types/FeatureTimeSeries.html#howso.openapi.models.FeatureTimeSeries.time_feature"><code class="docutils literal notranslate"><span class="pre">FeatureTimeSeries.time_feature</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="typing.html">Typing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="typing.html#howso.engine.typing.CaseIndices"><code class="docutils literal notranslate"><span class="pre">CaseIndices</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="typing.html#howso.engine.typing.GenerateNewCases"><code class="docutils literal notranslate"><span class="pre">GenerateNewCases</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="typing.html#howso.engine.typing.Library"><code class="docutils literal notranslate"><span class="pre">Library</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="typing.html#howso.engine.typing.Mode"><code class="docutils literal notranslate"><span class="pre">Mode</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="typing.html#howso.engine.typing.NewCaseThreshold"><code class="docutils literal notranslate"><span class="pre">NewCaseThreshold</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="typing.html#howso.engine.typing.NormalizeMethod"><code class="docutils literal notranslate"><span class="pre">NormalizeMethod</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="typing.html#howso.engine.typing.PathLike"><code class="docutils literal notranslate"><span class="pre">PathLike</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="typing.html#howso.engine.typing.Persistence"><code class="docutils literal notranslate"><span class="pre">Persistence</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="typing.html#howso.engine.typing.Precision"><code class="docutils literal notranslate"><span class="pre">Precision</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="typing.html#howso.engine.typing.SeriesIDTracking"><code class="docutils literal notranslate"><span class="pre">SeriesIDTracking</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="typing.html#howso.engine.typing.TabularData2D"><code class="docutils literal notranslate"><span class="pre">TabularData2D</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="typing.html#howso.engine.typing.TabularData3D"><code class="docutils literal notranslate"><span class="pre">TabularData3D</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="typing.html#howso.engine.typing.TargetedModel"><code class="docutils literal notranslate"><span class="pre">TargetedModel</span></code></a></li>
-</ul>
-</li>
-</ul>
-</div>
+</section>
 </section>
 
 
@@ -779,11 +488,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="engine.html"
+       href="_autosummary/howso.engine.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Engine Package</p>
+        <p class="prev-next-title">howso.engine</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -796,6 +505,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso-engine-packages">Howso Engine Packages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso-internal-packages">Howso Internal Packages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-packages">Other Packages</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

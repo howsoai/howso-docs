@@ -88,5 +88,3 @@ we welcome your feedback on our `github page <https://github.com/howsoai>`_!
 
 .. toctree:: api_reference/index
    :hidden:
-
-

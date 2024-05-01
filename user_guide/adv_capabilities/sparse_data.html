@@ -429,13 +429,13 @@ document.write(`
 <h1>Handling Sparse Data<a class="headerlink" href="#handling-sparse-data" title="Link to this heading">#</a></h1>
 <aside class="topic">
 <p class="topic-title">What is covered in this user guide</p>
-<p>In this guide, you will learn the basics of using sparse data in your <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> s as well as
+<p>In this guide, you will learn the basics of using sparse data in your <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> s as well as
 understand some of the prediction performance characteristics around data of increasing sparsity.</p>
 </aside>
 <section id="objectives">
 <h2>Objectives<a class="headerlink" href="#objectives" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Definitions &amp; Understanding</strong> of what sparse data are, how to use them with a <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a>, and
+<li><p><strong>Definitions &amp; Understanding</strong> of what sparse data are, how to use them with a <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a>, and
 how prediction performance changes as data sparsity increases.</p></li>
 </ul>
 </section>
@@ -481,7 +481,7 @@ are sparse in that the data contain <strong>missing values</strong>.  For exampl
 </section>
 <section id="how-to-guide">
 <h2>How-To Guide<a class="headerlink" href="#how-to-guide" title="Link to this heading">#</a></h2>
-<p>Howso Engine handles sparse and missing data without any extra setup.  Simply <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.train" title="howso.engine.Trainee.train"><code class="xref py py-meth docutils literal notranslate"><span class="pre">train()</span></code></a> your data, with or without missing values, and the
+<p>Howso Engine handles sparse and missing data without any extra setup.  Simply <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.train" title="howso.engine.Trainee.train"><code class="xref py py-meth docutils literal notranslate"><span class="pre">train()</span></code></a> your data, with or without missing values, and the
 Engine will handle them.  There is no need to preprocess missing data and, in fact, preprocessing missing data may <strong>harm predictive power or robustness
 to unseen data</strong>.  As such, we recommend performing no preprocessing if possible.</p>
 <div class="admonition note">
@@ -501,7 +501,7 @@ else.  If we were to treat those values as missing, matches would not be conside
 <p>As shown in the <a class="reference download external" download="" href="https://github.com/howsoai/howso-engine-recipes/blob/main/engine_sparse_data.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Sparse</span> <span class="pre">Data</span> <span class="pre">Prediction</span></code></a> recipe, we maintain high degrees of accuracy even as
 large percentages of the data are replaced with missing values.</p>
 <a class=""
-               data-lightbox="group-c84c1b4a-fcdf-4422-b443-5e59866b8650"
+               data-lightbox="group-8735509b-fadc-4108-b36a-8e4e4457f888"
                href="../../_images/sparse_data_plot1.png"
                title=""
                data-title=""
@@ -515,7 +515,7 @@ large percentages of the data are replaced with missing values.</p>
 <section id="outputting-missing-values">
 <h3>Outputting Missing Values<a class="headerlink" href="#outputting-missing-values" title="Link to this heading">#</a></h3>
 <p>In order to output missing values, the <code class="docutils literal notranslate"><span class="pre">allow_null</span></code> feature attribute must be set in the <code class="docutils literal notranslate"><span class="pre">bounds</span></code> of that feature.  If this is set, both
-discriminative and generative <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react()</span></code></a> s can output missing values.  This can be set using <code class="xref py py-func docutils literal notranslate"><span class="pre">/basics/feature_attributes()</span></code>.</p>
+discriminative and generative <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react()</span></code></a> s can output missing values.  This can be set using <code class="xref py py-func docutils literal notranslate"><span class="pre">/basics/feature_attributes()</span></code>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">features</span> <span class="o">=</span> <span class="n">infer_</span><span class="o">../</span><span class="n">basics</span><span class="o">/</span><span class="n">feature_attributes</span><span class="p">(</span>
   <span class="n">df</span><span class="p">,</span>
   <span class="n">features</span><span class="o">=</span><span class="p">{</span>
@@ -533,7 +533,7 @@ discriminative and generative <a class="reference internal" href="../../api_refe
 <h2>API References<a class="headerlink" href="#api-references" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">howso.utilities.infer_../basics/feature_attributes()</span></code></p></li>
-<li><p><a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-func docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a></p></li>
+<li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-func docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a></p></li>
 </ul>
 </section>
 </section>

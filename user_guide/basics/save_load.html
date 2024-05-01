@@ -428,13 +428,13 @@ document.write(`
 <h1>Saving and Loading<a class="headerlink" href="#saving-and-loading" title="Link to this heading">#</a></h1>
 <aside class="topic">
 <p class="topic-title">What is covered in this user guide.</p>
-<p>In this guide, you will learn how to save and load <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> s using the built-in Howso Engine’s file operations.</p>
+<p>In this guide, you will learn how to save and load <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> s using the built-in Howso Engine’s file operations.</p>
 </aside>
 <section id="objectives-what-you-will-take-away">
 <h2>Objectives: what you will take away<a class="headerlink" href="#objectives-what-you-will-take-away" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Definitions &amp; Understanding</strong> of different saving and loading operations based on platform.</p></li>
-<li><p><strong>How-To</strong> save and load a <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a>.</p></li>
+<li><p><strong>How-To</strong> save and load a <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a>.</p></li>
 </ul>
 </section>
 <section id="prerequisites-before-you-begin">
@@ -476,7 +476,7 @@ saving and loading functions that is intended for different types of operations.
 <p>By default, Howso Engine loads Trainees from and saves Trainees to your current working directory.</p>
 <section id="saving">
 <h3>Saving<a class="headerlink" href="#saving" title="Link to this heading">#</a></h3>
-<p>Saving Trainees to your local file system can be done using the <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.save" title="howso.engine.Trainee.save"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.save()</span></code></a> function. The  <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.save" title="howso.engine.Trainee.save"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.save()</span></code></a> function has one optional parameter, <code class="docutils literal notranslate"><span class="pre">filename</span></code>, which lets the user specify where to save the file and what to name the saved file. The <code class="docutils literal notranslate"><span class="pre">filename</span></code> parameter can consist of:</p>
+<p>Saving Trainees to your local file system can be done using the <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.save" title="howso.engine.Trainee.save"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.save()</span></code></a> function. The  <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.save" title="howso.engine.Trainee.save"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.save()</span></code></a> function has one optional parameter, <code class="docutils literal notranslate"><span class="pre">filename</span></code>, which lets the user specify where to save the file and what to name the saved file. The <code class="docutils literal notranslate"><span class="pre">filename</span></code> parameter can consist of:</p>
 <ul class="simple">
 <li><p><strong>Absolute path</strong> A file path may be an absolute path, optionally with a Trainee filename ending with <code class="docutils literal notranslate"><span class="pre">.caml</span></code>.</p></li>
 <li><p><strong>Relative path</strong> A file path may also be a relative path to the current working directory, optionally with a Trainee filename ending with <code class="docutils literal notranslate"><span class="pre">.caml</span></code>.</p></li>
@@ -514,7 +514,7 @@ saving and loading functions that is intended for different types of operations.
 <section id="database-operations">
 <h2>Database Operations<a class="headerlink" href="#database-operations" title="Link to this heading">#</a></h2>
 <p>As explained earlier, database operations is designed to be used with the Howso Platform, a cloud based service for enterprise users. In this set of operations,
-<a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.persist" title="howso.engine.Trainee.persist"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.persist()</span></code></a> saves the trainee while <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.acquire_resources" title="howso.engine.Trainee.acquire_resources"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.acquire_resources()</span></code></a> then loads the trainee resources back. All of this can be handled using the same Trainee, with the Trainee name used as the identifier behind the scenes to save and load.</p>
+<a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.persist" title="howso.engine.Trainee.persist"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.persist()</span></code></a> saves the trainee while <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.acquire_resources" title="howso.engine.Trainee.acquire_resources"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.acquire_resources()</span></code></a> then loads the trainee resources back. All of this can be handled using the same Trainee, with the Trainee name used as the identifier behind the scenes to save and load.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">engine</span><span class="o">.</span><span class="n">Trainee</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">trainee_name</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="n">features</span><span class="p">)</span> <span class="k">as</span> <span class="n">t</span><span class="p">:</span>
     <span class="c1"># Save the trainee.</span>
     <span class="n">t</span><span class="o">.</span><span class="n">persist</span><span class="p">()</span>
@@ -534,8 +534,8 @@ saving and loading functions that is intended for different types of operations.
 <section id="api-references">
 <h2>API References<a class="headerlink" href="#api-references" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.save" title="howso.engine.Trainee.save"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.save()</span></code></a></p></li>
-<li><p><a class="reference internal" href="../../api_reference/engine.html#howso.engine.load_trainee" title="howso.engine.load_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">howso.engine.load_trainee()</span></code></a></p></li>
+<li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.save" title="howso.engine.Trainee.save"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.save()</span></code></a></p></li>
+<li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.load_trainee" title="howso.engine.load_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">howso.engine.load_trainee()</span></code></a></p></li>
 </ul>
 </section>
 </section>

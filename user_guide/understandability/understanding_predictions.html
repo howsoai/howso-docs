@@ -428,7 +428,7 @@ document.write(`
 <h1>Understanding Predictions<a class="headerlink" href="#understanding-predictions" title="Link to this heading">#</a></h1>
 <aside class="topic">
 <p class="topic-title">What is covered in this user guide</p>
-<p>In this guide, you will learn how to audit the cases in your Trainee, including determining which cases influence a specific prediction, as well as which cases influence the <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> ‘s predictions as a whole.</p>
+<p>In this guide, you will learn how to audit the cases in your Trainee, including determining which cases influence a specific prediction, as well as which cases influence the <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> ‘s predictions as a whole.</p>
 </aside>
 <section id="objectives-what-you-will-take-away">
 <h2>Objectives: what you will take away<a class="headerlink" href="#objectives-what-you-will-take-away" title="Link to this heading">#</a></h2>
@@ -489,7 +489,7 @@ cases is a subset of the most similar cases.</p>
 <span class="p">)</span>
 </pre></div>
 </div>
-<p>In order to retrieve the calculated stats, they can be retrieved from the <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a> output dictionary. They are stored under the <code class="docutils literal notranslate"><span class="pre">explanation</span></code> key under the name of the metric.</p>
+<p>In order to retrieve the calculated stats, they can be retrieved from the <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a> output dictionary. They are stored under the <code class="docutils literal notranslate"><span class="pre">explanation</span></code> key under the name of the metric.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">influential</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">reaction</span><span class="p">[</span><span class="s1">&#39;explanation&#39;</span><span class="p">][</span><span class="s1">&#39;influential_cases&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">most_similar_cases</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">reaction</span><span class="p">[</span><span class="s1">&#39;explanation&#39;</span><span class="p">][</span><span class="s1">&#39;most_similar_cases&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
@@ -504,7 +504,7 @@ Unlike feature contributions, case contributions are calculated just locally. Co
 <p>In order to calculate case importance, Howso Engine measures the impact on the prediction by comparing predictions with and without the case. The case set without the case of interest may include either all of the other cases, or a combination of cases that
 may include any number of other cases. Non-robust calculations use a leave-one-out approach to calculate these metrics, thus the metrics reflect the results when all cases except the case of interest is used. Robust case contributions compares the results from sampling from
 the power set of all combinations with and without the case of interest. Robust metrics are recommended as they encompass a greater variety of case sets, and they include a calculation performance boost as the number of cases increases.</p>
-<p>To get the case importance metrics, <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a>, is first called on a trained and analyzed Trainee. In this method, the desired metrics, <code class="docutils literal notranslate"><span class="pre">case_contributions</span></code> and <code class="docutils literal notranslate"><span class="pre">case_mda</span></code>, can be selected as inputs to the <code class="docutils literal notranslate"><span class="pre">details</span></code> parameters as key value pairs from a dictionary. These parameters are named individually
+<p>To get the case importance metrics, <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a>, is first called on a trained and analyzed Trainee. In this method, the desired metrics, <code class="docutils literal notranslate"><span class="pre">case_contributions</span></code> and <code class="docutils literal notranslate"><span class="pre">case_mda</span></code>, can be selected as inputs to the <code class="docutils literal notranslate"><span class="pre">details</span></code> parameters as key value pairs from a dictionary. These parameters are named individually
 and setting them to <code class="docutils literal notranslate"><span class="pre">True</span></code> will calculate the desired metrics. Robust computation is performed by default.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">details</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;case_contributions&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
@@ -520,7 +520,7 @@ and setting them to <code class="docutils literal notranslate"><span class="pre"
 </pre></div>
 </div>
 <p>These metrics can be retrieved the same way as the method to retrieve the most similar cases. Whether these metrics are robust or non-robust is determined when the metrics
-are calculated in <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a> from the previous step.</p>
+are calculated in <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a> from the previous step.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">robust_case_contributions</span> <span class="o">=</span> <span class="n">reaction</span><span class="p">[</span><span class="s1">&#39;explanation&#39;</span><span class="p">][</span><span class="s1">&#39;case_contributions&#39;</span><span class="p">]</span>
 <span class="n">robust_case_contributions</span> <span class="o">=</span> <span class="n">reaction</span><span class="p">[</span><span class="s1">&#39;explanation&#39;</span><span class="p">][</span><span class="s1">&#39;case_mda&#39;</span><span class="p">]</span>
 </pre></div>
@@ -542,8 +542,8 @@ are calculated in <a class="reference internal" href="../../api_reference/engine
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Reducing <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> size</dt><dd><ul>
-<li><p>By strategically removing unimportant cases, information can be maintained while the size of the <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a>
+<dt>Reducing <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> size</dt><dd><ul>
+<li><p>By strategically removing unimportant cases, information can be maintained while the size of the <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a>
 is decreased</p></li>
 </ul>
 </dd>
@@ -555,7 +555,7 @@ is decreased</p></li>
 <section id="api-references">
 <h2>API References<a class="headerlink" href="#api-references" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a></p></li>
+<li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a></p></li>
 </ul>
 </section>
 </section>

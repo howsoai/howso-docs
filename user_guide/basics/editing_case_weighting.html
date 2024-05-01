@@ -428,15 +428,15 @@ document.write(`
 <h1>Editing Trainees and Case Weighting<a class="headerlink" href="#editing-trainees-and-case-weighting" title="Link to this heading">#</a></h1>
 <aside class="topic">
 <p class="topic-title">What is covered in this user guide</p>
-<p>In this guide, you will learn the basics of editing <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> s and applying case
+<p>In this guide, you will learn the basics of editing <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> s and applying case
 weights to data contained within the Trainee.</p>
 </aside>
 <section id="objectives-what-you-will-take-away">
 <h2>Objectives: what you will take away<a class="headerlink" href="#objectives-what-you-will-take-away" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Definitions &amp; Understanding</strong> of how <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> s can be edited without re-training and what effects case-
+<li><p><strong>Definitions &amp; Understanding</strong> of how <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> s can be edited without re-training and what effects case-
 weighting can have on prediction.</p></li>
-<li><p><strong>How-To</strong> remove, edit, and weigh cases in a <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> .</p></li>
+<li><p><strong>How-To</strong> remove, edit, and weigh cases in a <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> .</p></li>
 </ul>
 </section>
 <section id="prerequisites-before-you-begin">
@@ -493,26 +493,26 @@ reflected in the density of the distribution.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Editing and removing cases without exercising the proper due-diligence can lead to overfitting or the introduction of biases
-that may affect downstream use-cases. Exercise caution and consult any necessary experts when editing a <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a>.</p>
+that may affect downstream use-cases. Exercise caution and consult any necessary experts when editing a <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a>.</p>
 </div>
 <section id="adding-features">
 <h3>Adding Features<a class="headerlink" href="#adding-features" title="Link to this heading">#</a></h3>
-<p>Adding features to a <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> can be done with a single call to <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.add_feature" title="howso.engine.Trainee.add_feature"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.add_feature()</span></code></a>:</p>
+<p>Adding features to a <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> can be done with a single call to <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.add_feature" title="howso.engine.Trainee.add_feature"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.add_feature()</span></code></a>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="s2">&quot;gender&quot;</span><span class="p">,</span> <span class="n">feature_value</span><span class="o">=</span><span class="s2">&quot;nb&quot;</span><span class="p">,</span> <span class="n">feature_attributes</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;nominal&quot;</span><span class="p">})</span>
 </pre></div>
 </div>
 <p>In this example, we use it to add a nominal feature to each case in the model with a default value of <code class="docutils literal notranslate"><span class="pre">&quot;nb&quot;</span></code>.  In addition,
-features can also be added to only certain cases, or without updating the <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a>’s metadata.  For more information on
-the capabilities of <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.add_feature" title="howso.engine.Trainee.add_feature"><code class="xref py py-meth docutils literal notranslate"><span class="pre">add_feature()</span></code></a>, see the <a class="reference internal" href="../../api_reference/index.html#api-reference"><span class="std std-ref">API Reference</span></a>.</p>
+features can also be added to only certain cases, or without updating the <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a>’s metadata.  For more information on
+the capabilities of <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.add_feature" title="howso.engine.Trainee.add_feature"><code class="xref py py-meth docutils literal notranslate"><span class="pre">add_feature()</span></code></a>, see the <span class="xref std std-ref">API Reference</span>.</p>
 </section>
 <section id="adding-using-case-weights">
 <h3>Adding &amp; Using Case Weights<a class="headerlink" href="#adding-using-case-weights" title="Link to this heading">#</a></h3>
-<p><a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.add_feature" title="howso.engine.Trainee.add_feature"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.add_feature()</span></code></a> can also be used to manually add case weights to a <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a>.</p>
+<p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.add_feature" title="howso.engine.Trainee.add_feature"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.add_feature()</span></code></a> can also be used to manually add case weights to a <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="s2">&quot;my_case_weight&quot;</span><span class="p">,</span> <span class="n">feature_value</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Note that we do not add any feature attributes here, since they are assumed to be continuous by default.  Once added, the case
-weight feature can be used with <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react()</span></code></a> and other methods, e.g.:</p>
+weight feature can be used with <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react()</span></code></a> and other methods, e.g.:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">react</span><span class="p">(</span><span class="n">contexts</span><span class="p">,</span> <span class="n">action_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">],</span> <span class="n">use_case_weights</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">weight_feature</span><span class="o">=</span><span class="s2">&quot;my_case_weight&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -524,19 +524,19 @@ similarly be used as case weights. For example, the <code class="docutils litera
 </section>
 <section id="editing-cases">
 <h3>Editing Cases<a class="headerlink" href="#editing-cases" title="Link to this heading">#</a></h3>
-<p>Like adding features, editing cases is done with calls to <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.edit_cases" title="howso.engine.Trainee.edit_cases"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.edit_cases()</span></code></a>.  Let’s say we’ve consulted an expert and they
+<p>Like adding features, editing cases is done with calls to <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.edit_cases" title="howso.engine.Trainee.edit_cases"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.edit_cases()</span></code></a>.  Let’s say we’ve consulted an expert and they
 have determined that cases in the adult dataset with a <code class="docutils literal notranslate"><span class="pre">workclass</span></code> of <code class="docutils literal notranslate"><span class="pre">0</span></code> (an unknown work class) have universally been mis-classified.
 We can edit cases that meet this condition with the following code:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">edit_cases</span><span class="p">([</span><span class="mi">1</span><span class="p">],</span> <span class="n">condition</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;workclass&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span> <span class="n">features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>This will set the target for all cases that meet that condition to 1.  Cases may also be edited using their indices or on non-exact matches
-of conditions.  For more information on <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.edit_cases" title="howso.engine.Trainee.edit_cases"><code class="xref py py-meth docutils literal notranslate"><span class="pre">edit_cases()</span></code></a>, see the <a class="reference internal" href="../../api_reference/index.html#api-reference"><span class="std std-ref">API Reference</span></a>.</p>
+of conditions.  For more information on <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.edit_cases" title="howso.engine.Trainee.edit_cases"><code class="xref py py-meth docutils literal notranslate"><span class="pre">edit_cases()</span></code></a>, see the <span class="xref std std-ref">API Reference</span>.</p>
 </section>
 <section id="manually-updating-case-weights">
 <h3>Manually Updating Case Weights<a class="headerlink" href="#manually-updating-case-weights" title="Link to this heading">#</a></h3>
-<p><a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.edit_cases" title="howso.engine.Trainee.edit_cases"><code class="xref py py-meth docutils literal notranslate"><span class="pre">edit_cases()</span></code></a> can also be used to manually update case weights. Say we want to address some bias in the data by weighing women
-who have high salaries more highly than those who don’t, so that the <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> is more likely to make balanced predictions.  That can
+<p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.edit_cases" title="howso.engine.Trainee.edit_cases"><code class="xref py py-meth docutils literal notranslate"><span class="pre">edit_cases()</span></code></a> can also be used to manually update case weights. Say we want to address some bias in the data by weighing women
+who have high salaries more highly than those who don’t, so that the <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> is more likely to make balanced predictions.  That can
 be done with the following code:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">edit_cases</span><span class="p">([</span><span class="mf">1.25</span><span class="p">],</span> <span class="n">condition</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;sex&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="n">features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;my_case_weight&quot;</span><span class="p">])</span>
 </pre></div>
@@ -545,7 +545,7 @@ be done with the following code:</p>
 </section>
 <section id="removing-cases">
 <h3>Removing Cases<a class="headerlink" href="#removing-cases" title="Link to this heading">#</a></h3>
-<p>Using an API that is very similar to that of <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.edit_cases" title="howso.engine.Trainee.edit_cases"><code class="xref py py-meth docutils literal notranslate"><span class="pre">edit_cases()</span></code></a>, <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.remove_cases" title="howso.engine.Trainee.remove_cases"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.remove_cases()</span></code></a> can be used to remove cases from the
+<p>Using an API that is very similar to that of <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.edit_cases" title="howso.engine.Trainee.edit_cases"><code class="xref py py-meth docutils literal notranslate"><span class="pre">edit_cases()</span></code></a>, <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.remove_cases" title="howso.engine.Trainee.remove_cases"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.remove_cases()</span></code></a> can be used to remove cases from the
 model.  If one or more cases are found to be invalid after they have been trained, they can be removed to ensure the model stays up-to-date
 without needing to train or analyze again.  Let’s say that it is discovered that the cases with a <code class="docutils literal notranslate"><span class="pre">workclass</span></code> of <code class="docutils literal notranslate"><span class="pre">6</span></code> (self-employed, not
 incorporated) were not reported correctly by the dataset creators.  We can remove those cases with the following code:</p>
@@ -553,12 +553,12 @@ incorporated) were not reported correctly by the dataset creators.  We can remov
 <span class="n">t</span><span class="o">.</span><span class="n">remove_cases</span><span class="p">(</span><span class="n">num_workclass_6</span><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;workclass&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">})</span>
 </pre></div>
 </div>
-<p>Cases can also be removed by index, just how cases can be edited in that fashion as well. For more information on <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.remove_cases" title="howso.engine.Trainee.remove_cases"><code class="xref py py-meth docutils literal notranslate"><span class="pre">remove_cases()</span></code></a>,
-see the <a class="reference internal" href="../../api_reference/index.html#api-reference"><span class="std std-ref">API Reference</span></a>.</p>
+<p>Cases can also be removed by index, just how cases can be edited in that fashion as well. For more information on <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.remove_cases" title="howso.engine.Trainee.remove_cases"><code class="xref py py-meth docutils literal notranslate"><span class="pre">remove_cases()</span></code></a>,
+see the <span class="xref std std-ref">API Reference</span>.</p>
 </section>
 <section id="automatically-updating-case-weights">
 <h3>Automatically Updating Case Weights<a class="headerlink" href="#automatically-updating-case-weights" title="Link to this heading">#</a></h3>
-<p>When using <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.remove_cases" title="howso.engine.Trainee.remove_cases"><code class="xref py py-meth docutils literal notranslate"><span class="pre">remove_cases()</span></code></a>, the weights from removed cases can be automatically distributed to their neighbors upon
+<p>When using <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.remove_cases" title="howso.engine.Trainee.remove_cases"><code class="xref py py-meth docutils literal notranslate"><span class="pre">remove_cases()</span></code></a>, the weights from removed cases can be automatically distributed to their neighbors upon
 removal using the <code class="docutils literal notranslate"><span class="pre">distribute_weight_feature</span></code> parameter. For example,</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">num_workclass_6</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">workclass</span> <span class="o">==</span> <span class="mi">6</span><span class="p">])</span>
 <span class="n">t</span><span class="o">.</span><span class="n">remove_cases</span><span class="p">(</span><span class="n">num_workclass_6</span><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;workclass&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">},</span> <span class="n">distribute_weight_feature</span><span class="o">=</span><span class="s2">&quot;my_weight_feature&quot;</span><span class="p">)</span>
@@ -579,8 +579,8 @@ to increase in importance as these are removed.</p>
 </dl>
 </li>
 <li><dl class="simple">
-<dt>Reducing <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> size</dt><dd><ul>
-<li><p>By strategically removing cases while retaining weights, information can be maintained while the size of the <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a>
+<dt>Reducing <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> size</dt><dd><ul>
+<li><p>By strategically removing cases while retaining weights, information can be maintained while the size of the <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a>
 is decreased</p></li>
 </ul>
 </dd>
@@ -592,9 +592,9 @@ is decreased</p></li>
 <section id="api-references">
 <h2>API References<a class="headerlink" href="#api-references" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.add_feature" title="howso.engine.Trainee.add_feature"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.add_feature()</span></code></a></p></li>
-<li><p><a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.edit_cases" title="howso.engine.Trainee.edit_cases"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.edit_cases()</span></code></a></p></li>
-<li><p><a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.remove_cases" title="howso.engine.Trainee.remove_cases"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.remove_cases()</span></code></a></p></li>
+<li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.add_feature" title="howso.engine.Trainee.add_feature"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.add_feature()</span></code></a></p></li>
+<li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.edit_cases" title="howso.engine.Trainee.edit_cases"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.edit_cases()</span></code></a></p></li>
+<li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.remove_cases" title="howso.engine.Trainee.remove_cases"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.remove_cases()</span></code></a></p></li>
 </ul>
 </section>
 </section>

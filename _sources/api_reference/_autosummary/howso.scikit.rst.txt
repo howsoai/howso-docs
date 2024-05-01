@@ -1,0 +1,32 @@
+﻿howso.scikit
+============
+
+
+
+
+
+
+
+.. rubric:: Classes
+
+.. autosummary::
+   :nosignatures:
+
+   ~howso.scikit.HowsoEstimator
+   ~howso.scikit.HowsoRegressor
+   ~howso.scikit.HowsoClassifier
+
+
+
+
+
+
+
+
+
+
+
+.. automodule:: howso.scikit
+   :members:
+   :no-undoc-members:
+   :show-inheritance:

@@ -433,8 +433,8 @@ document.write(`
 <section id="objectives-what-you-will-take-away">
 <h2>Objectives: what you will take away<a class="headerlink" href="#objectives-what-you-will-take-away" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Definitions &amp; Understanding</strong> How <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> s fits into a RL framework.</p></li>
-<li><p><strong>How-To</strong> train and retrain a <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> during RL.</p></li>
+<li><p><strong>Definitions &amp; Understanding</strong> How <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> s fits into a RL framework.</p></li>
+<li><p><strong>How-To</strong> train and retrain a <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> during RL.</p></li>
 </ul>
 </section>
 <section id="prerequisites-before-you-begin">
@@ -473,7 +473,7 @@ document.write(`
 <p>In the learning cycle of RL as shown below, Howso Engine acts as the Agent. As an Agent, Howso Engine both outputs an action value as well as intakes the observation and resulting reward.
 Once the reward and observations are processed, the Howso Engine is trained again based on the results and another action is output.</p>
 <a class=""
-               data-lightbox="group-a78d479c-6c83-4ffc-9d59-ff30c108d5d7"
+               data-lightbox="group-aa88f402-e6d2-4d5a-855e-c1b25923a4fc"
                href="../../_images/RL1.png"
                title=""
                data-title=""
@@ -486,7 +486,7 @@ Once the reward and observations are processed, the Howso Engine is trained agai
                 </a><p>Image Source: <a class="reference external" href="https://gymnasium.farama.org/content/basic_usage/">https://gymnasium.farama.org/content/basic_usage/</a></p>
 <section id="setup">
 <h3>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h3>
-<p>The Howso Engine Trainee must be initialized in the RL framework before the learning loop. As part of the setup process, enabling <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.set_auto_analyze_params" title="howso.engine.Trainee.set_auto_analyze_params"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.set_auto_analyze_params()</span></code></a>
+<p>The Howso Engine Trainee must be initialized in the RL framework before the learning loop. As part of the setup process, enabling <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.set_auto_analyze_params" title="howso.engine.Trainee.set_auto_analyze_params"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.set_auto_analyze_params()</span></code></a>
 can help the user analyze the Trainee after all training steps. This methods eliminates the need to manually analyze after training, which can be done.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trainee</span><span class="o">.</span><span class="n">set_auto_analyze_params</span><span class="p">(</span>
     <span class="n">auto_analyze_enabled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
@@ -498,7 +498,7 @@ can help the user analyze the Trainee after all training steps. This methods eli
 </section>
 <section id="action">
 <h3>Action<a class="headerlink" href="#action" title="Link to this heading">#</a></h3>
-<p>In the Action phase, a standard <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a> call will provide the resulting action. Most of the parameters have been covered in the other Howso Engine guides,
+<p>In the Action phase, a standard <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a> call will provide the resulting action. Most of the parameters have been covered in the other Howso Engine guides,
 however <code class="docutils literal notranslate"><span class="pre">into_series_store</span></code> may be new for most users. Since we are using the Trainee to learn a series of actions, underneath the hood Engine is treating the contexts and cases
 as part of a series.  The parameter <code class="docutils literal notranslate"><span class="pre">into_series_store</span></code> allows the user to label the series store, which in this case, is the round or loop number.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">react</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
@@ -523,7 +523,7 @@ it can be used to train the Trainee. These steps are generally handled by your R
 <section id="agent">
 <h3>Agent<a class="headerlink" href="#agent" title="Link to this heading">#</a></h3>
 <p>This is the step where Howso Engine learns from the previous loop, by training in the new reward value. The Trainee should be analyzed after every train step, which
-should be automated by the <a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.set_auto_analyze_params" title="howso.engine.Trainee.set_auto_analyze_params"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.set_auto_analyze_params()</span></code></a> method.</p>
+should be automated by the <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.set_auto_analyze_params" title="howso.engine.Trainee.set_auto_analyze_params"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.set_auto_analyze_params()</span></code></a> method.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trainee</span><span class="o">.</span><span class="n">train</span><span class="p">(</span>
     <span class="n">features</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">reward_features</span><span class="p">,</span>
     <span class="n">cases</span><span class="o">=</span><span class="p">[[</span><span class="n">score</span><span class="p">]],</span>
@@ -541,9 +541,9 @@ has now been trained and analyzed using Reinforcement Learning.</p>
 <section id="api-references">
 <h2>API References<a class="headerlink" href="#api-references" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.set_auto_analyze_params" title="howso.engine.Trainee.set_auto_analyze_params"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.set_auto_analyze_params()</span></code></a></p></li>
-<li><p><a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a></p></li>
-<li><p><a class="reference internal" href="../../api_reference/engine.html#howso.engine.Trainee.train" title="howso.engine.Trainee.train"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.train()</span></code></a></p></li>
+<li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.set_auto_analyze_params" title="howso.engine.Trainee.set_auto_analyze_params"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.set_auto_analyze_params()</span></code></a></p></li>
+<li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a></p></li>
+<li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.train" title="howso.engine.Trainee.train"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.train()</span></code></a></p></li>
 </ul>
 </section>
 </section>

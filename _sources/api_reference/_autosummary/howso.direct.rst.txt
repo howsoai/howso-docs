@@ -1,0 +1,31 @@
+﻿howso.direct
+============
+
+
+
+
+
+
+
+.. rubric:: Classes
+
+.. autosummary::
+   :nosignatures:
+
+   ~howso.direct.HowsoCore
+   ~howso.direct.HowsoDirectClient
+
+
+
+
+
+
+
+
+
+
+
+.. automodule:: howso.direct
+   :members:
+   :no-undoc-members:
+   :show-inheritance:

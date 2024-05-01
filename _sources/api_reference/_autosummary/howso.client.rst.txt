@@ -1,0 +1,40 @@
+﻿howso.client
+============
+
+
+
+
+
+
+
+.. rubric:: Classes
+
+.. autosummary::
+   :nosignatures:
+
+   ~howso.client.AbstractHowsoClient
+
+
+
+
+
+.. rubric:: Functions
+
+.. autosummary::
+   :nosignatures:
+
+   ~howso.client.get_configuration_path
+   ~howso.client.get_howso_client
+   ~howso.client.HowsoClient
+   ~howso.client.HowsoPandasClient
+
+
+
+
+
+
+
+.. automodule:: howso.client
+   :members:
+   :no-undoc-members:
+   :show-inheritance:
