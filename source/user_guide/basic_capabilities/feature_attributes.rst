@@ -6,8 +6,8 @@ Feature Attributes
 ==================
 
 Understanding and properly utilizing **Feature Attributes** is the most
-important step for successful use of Howso™. Feature attributes can be
-specified manually but are often built using the infer feature attributes (IFA)
+important step for successful use of Howso. Feature attributes can be
+specified manually but are often built using the :py:meth:`~howso.utilities.infer_feature_attributes` (IFA)
 utility function. This section will answer common questions related to both IFA
 and the feature attributes in general.
 
@@ -20,7 +20,7 @@ How do I use Infer Feature Attributes?
 - In general, IFA is an iterative process:
 
   1. If you're new to IFA or are not familiar with your data types, just
-     pass-in your data and `print` the dictionary:
+     pass-in your data and ``print`` the dictionary:
 
      .. code-block:: python
 
@@ -44,7 +44,7 @@ How do I use Infer Feature Attributes?
      c. The exception is specifying the ``bounds``. Edit the dictionary after
         it's been built by IFA.
 
-  4. `print` the dictionary and audit.
+  4. ``print`` the dictionary and audit.
   5. Repeat steps 2 - 3 until the **feature mapping** is built properly.
 
 What is the difference between **nominal**, **ordinal**, and **continuous** features?

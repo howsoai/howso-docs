@@ -1,8 +1,8 @@
 .. currentmodule:: howso.engine
 
 
-Handling Sparse Data
-====================
+Working with Null and Sparse Data
+=================================
 .. topic:: What is covered in this user guide
 
     In this guide, you will learn the basics of using sparse data in your :class:`~Trainee` s as well as
@@ -18,7 +18,7 @@ Objectives
 Prerequisites
 -------------
 - You have successfully :doc:`installed Howso Engine <../../getting_started/installing>`
-- You have :doc:`loaded, configured, trained, and analyzed data <../basics/basic_workflow>`
+- You have an understanding Howso's :doc:`basic workflow <../basic_capabilities/basic_workflow>`.
 
 
 Notebook Recipe

@@ -15,15 +15,7 @@ Prerequisites: before you begin
 **Installation**
 
 - You have successfully :doc:`installed Howso Engine <../../getting_started/installing>`
-- You have :doc:`loaded, configured, trained, and analyzed data <../basics/basic_workflow>`
-
-Notebook Recipe
----------------
-The following recipes will supplement the content this guide will cover:
-
-- :download:`Engine Intro <https://github.com/howsoai/howso-engine-recipes/blob/main/1-engine-intro.ipynb>`
-- :download:`Interpretability <https://github.com/howsoai/howso-engine-recipes/blob/main/2-interpretability.ipynb>`
-- :download:`Generative AI and Synthesis <https://github.com/howsoai/howso-engine-recipes/blob/main/engine_generative_react.ipynb>`
+- You have an understanding of Howso's :doc:`basic workflow <../basic_capabilities/basic_workflow>`.
 
 Concepts & Terminology
 ----------------------
@@ -62,35 +54,40 @@ How-To Guide
 Here, we will review the basic steps need to obtain generative output and for
 creating synthetic data.
 
+Setup
+^^^^^
+The user guide assumes you have create and setup a :class:`~Trainee` as demonstrated in :doc:`basic workflow <../basic_capabilities/basic_workflow>`.
+The :class:`~Trainee` will be referenced as ``trainee`` in the sections below.
 
-Task 1 - Generative Output
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Generative Output
+^^^^^^^^^^^^^^^^^
 This code is designed to make a generative prediction on a test case. This is
 very similar to making a discriminative prediction, except the
-`desired_conviction` is set. After building, training, and analyzing a
+``desired_conviction`` is set. After building, training, and analyzing a
 :py:class:`~howso.engine.trainee.Trainee`, you can obtain the generative
-prediction for a test case in a `react()` call.
+prediction for a test case in a :py:meth:`Trainee.react` call.
 
 .. code-block:: python
 
     # Perform generative react
     result =  trainee.react(
-                            contexts=test_case[context_features],
-                            context_features=context_features,
-                            action_features=action_feature,
-                            desired_conviction = 10 # Needed for generative analysis
+      contexts=test_case[context_features],
+      context_features=context_features,
+      action_features=action_feature,
+      desired_conviction = 10 # Needed for generative analysis
     )
 
     # Obtain result
     result['action']
 
 
-Task 2 - Create Synthetic Data
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Example - Creating Synthetic Data
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Synthetic data is very similar to Task 1, but uses targetless analysis.
-Additionally, you will set two new parameters `generate_new_cases`, which
+Additionally, you will set two new parameters ``generate_new_cases``, which
 indicates whether a completely new case is or is not generated, and
-`num_cases_to_generate`, which indicates the number of synthetic cases you will
+``num_cases_to_generate``, which indicates the number of synthetic cases you will
 create.
 
 .. code-block:: python
@@ -99,10 +96,65 @@ create.
     t.analyze()
 
     # Synthesize
-    synth = t.react(action_features=df.columns.tolist(), # What features to generate? In this case, the same features as the original data
-                    desired_conviction=10, # Set at synthesizer's default desired conviction value
-                    generate_new_cases='always', # Indicates that we always want to create entirely new cases from the original data
-                    num_cases_to_generate=len(df) # Number of new points to generate? In this case, the same number as the original data
+    synth = t.react(
+      action_features=df.columns.tolist(), # What features to generate? In this case, the same features as the original data
+      desired_conviction=10, # Set at synthesizer's default desired conviction value
+      generate_new_cases='always', # Indicates that we always want to create entirely new cases from the original data
+      num_cases_to_generate=len(df) # Number of new points to generate? In this case, the same number as the original data
+    )
+
+    # Print out synthetic dataset
+    synthetic_data = synth['action']
+    synthetic_data
+
+Complete Code
+^^^^^^^^^^^^^
+
+.. code-block:: python
+
+    import pandas as pd
+    from pmlb import fetch_data
+
+    from howso.engine import Trainee
+    from howso.utilities import infer_feature_attributes
+
+    # import data
+    df = fetch_data('adult')
+
+    # Subsample the data to ensure the example runs quickly
+    df = df.sample(1000)
+    test_case = df.iloc[[-1]].copy()
+    df.drop(df.index[-1], inplace=True)
+
+    features = infer_feature_attributes(df)
+
+    action_features = ['target']
+    context_features = features.get_names(without=action_features)
+
+    trainee = Trainee(features=features)
+
+    trainee.train(df)
+
+    # Targetless Analysis
+    trainee.analyze()
+
+    # Perform generative react
+    result = trainee.react(
+        test_case[context_features],
+        context_features=context_features,
+        action_features=action_features,
+        desired_conviction = 10 # Needed for generative analysis
+    )
+
+    # Obtain result
+    generative_result = result['action']
+
+    # Synthesize
+    synth = trainee.react(
+        action_features=df.columns.tolist(), # What features to generate? In this case, the same features as the original data
+        desired_conviction=10, # Set at synthesizer's default desired conviction value
+        generate_new_cases='always', # Indicates that we always want to create entirely new cases from the original data
+        num_cases_to_generate=len(df) # Number of new points to generate? In this case, the same number as the original data
     )
 
     # Print out synthetic dataset

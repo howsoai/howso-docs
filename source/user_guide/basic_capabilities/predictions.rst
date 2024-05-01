@@ -16,22 +16,14 @@ Objectives: what you will take away
 
 Prerequisites: before you begin
 -------------------------------
-- **Installation** - you have successfully installed :doc:`Howso Engine <../../getting_started/installing>`
-- **Additional Libraries** - you have installed these libraries:
+- You've successfully :doc:`installed  Howso Engine <../../getting_started/installing>`
+- You have an understanding of Howso's :doc:`basic workflow <../basic_capabilities/basic_workflow>`.
 
-  - `pandas <https://pandas.pydata.org/>`__
-  - `matplotlib <https://matplotlib.org/stable/index.html>`__
 
 Data
 ----
 
 :download:`Download </_assets/vehicles.csv>` 23,606 vehicles from 1984 - 2022, including make, model, MPG, drive-type, size, class and fuel type.
-
-Notebook Recipe
----------------
-The following recipe will supplement the content this guide will cover:
-
-- :download:`Engine Intro <https://github.com/howsoai/howso-engine-recipes/blob/main/1-engine-intro.ipynb>` download a sample notebook to run code using the engine for regression yourself.
 
 Concepts & Terminology
 ----------------------

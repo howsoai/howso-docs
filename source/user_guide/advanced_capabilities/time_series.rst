@@ -20,12 +20,6 @@ Prerequisites: before you begin
 - You have successfully :doc:`installed Howso Engine <../../getting_started/installing>`
 - You have :doc:`loaded, configured, trained, and analyzed data <../basics/basic_workflow>`
 
-Notebook Recipe
----------------
-The following recipe will supplement the content this guide will cover:
-
-- :download:`Time Series Predictions <https://github.com/howsoai/howso-engine-recipes/blob/main/engine_timeseries.ipynb>`
-
 Concepts & Terminology
 ----------------------
 To understand this guide, we recommend being familiar with the following concepts:

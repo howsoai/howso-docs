@@ -303,7 +303,8 @@ example, a value of 2 for a feature called "degrees", which references temperatu
 Most Similar Cases
 ------------------
 
-The cases which are most similar to another case or a prediction.
+The cases which are most similar to another case or a prediction. Returns cases that are similiar, regardless of their
+influence.
 
 .. _influential_cases:
 
@@ -311,7 +312,8 @@ Influential Cases
 -----------------
 
 The cases which were identified as most influential during a prediction, along with their weights when predicting the
-expected value or drawing a value from the distribution of expected values for generative outputs.
+expected value or drawing a value from the distribution of expected values for generative outputs. The influential
+cases are a subset of the :ref:`most_similar_cases`, returning only those cases that have an influence.
 
 .. _boundary_cases:
 

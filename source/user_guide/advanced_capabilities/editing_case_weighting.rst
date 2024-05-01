@@ -19,21 +19,13 @@ Objectives: what you will take away
 Prerequisites: before you begin
 -------------------------------
 - You have successfully :doc:`installed Howso Engine <../../getting_started/installing>`
-- You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
+- You have an understanding of Howso's :doc:`basic workflow <../basic_capabilities/basic_workflow>`.
 
 
 Data
 ----
 Our example dataset for this guide is the well-known ``Adult`` dataset, accessible via the ``pmlb`` package installed
 in the prerequisites using the ``fetch_data()`` function.
-
-
-Notebook Recipe
----------------
-There are two recipes which supplement the content this guide will cover:
-
-- :download:`Auditing and Editing <https://github.com/howsoai/howso-engine-recipes/blob/main/4-audit_edit.ipynb>`
-- :download:`Bias Mitigation <https://github.com/howsoai/howso-engine-recipes/blob/main/5-bias_mitigation.ipynb>`
 
 
 Concepts & Terminology
@@ -91,6 +83,11 @@ How-To Guide
     Editing and removing cases without exercising the proper due-diligence can lead to overfitting or the introduction of biases
     that may affect downstream use-cases. Exercise caution and consult any necessary experts when editing a :class:`~Trainee`.
 
+Setup
+^^^^^
+The user guide assumes you have create and setup a :class:`~Trainee` as demonstrated in :doc:`basic workflow <../basic_capabilities/basic_workflow>`.
+The :class:`~Trainee` will be referenced as ``trainee`` in the sections below.
+
 
 Adding Features
 ^^^^^^^^^^^^^^^
@@ -98,7 +95,7 @@ Adding features to a :class:`~Trainee` can be done with a single call to :meth:`
 
 .. code-block:: python
 
-    t.add_feature("gender", feature_value="nb", feature_attributes={"type": "nominal"})
+    trainee.add_feature("gender", feature_value="nb", feature_attributes={"type": "nominal"})
 
 
 In this example, we use it to add a nominal feature to each case in the model with a default value of ``"nb"``.  In addition,
@@ -112,7 +109,7 @@ Adding & Using Case Weights
 
 .. code-block:: python
 
-    t.add_feature("my_case_weight", feature_value=1.0)
+    trainee.add_feature("my_case_weight", feature_value=1.0)
 
 
 Note that we do not add any feature attributes here, since they are assumed to be continuous by default.  Once added, the case
@@ -120,15 +117,15 @@ weight feature can be used with :meth:`~Trainee.react` and other methods, e.g.:
 
 .. code-block:: python
 
-    t.react(contexts, action_features=["target"], use_case_weights=True, weight_feature="my_case_weight")
+    trainee.react(contexts, action_features=["target"], use_case_weights=True, weight_feature="my_case_weight")
 
 
-Which will predict ``"target"`` while using the case weights stored in that feature.  Features which are already in the model may
-similarly be used as case weights. For example, the ``"fnlwgt"`` feature:
+Which will predict ``target`` while using the case weights stored in that feature.  Features which are already in the model may
+similarly be used as case weights. For example, the ``fnlwgt`` feature:
 
 .. code-block:: python
 
-    t.react(contexts, action_features=["target"], uase_case_weights=True, weight_feature="fnlwgt")
+    trainee.react(contexts, action_features=["target"], uase_case_weights=True, weight_feature="fnlwgt")
 
 
 Editing Cases
@@ -139,7 +136,7 @@ We can edit cases that meet this condition with the following code:
 
 .. code-block:: python
 
-    t.edit_cases([1], condition={"workclass": 0}, features=["target"])
+    trainee.edit_cases([1], condition={"workclass": 0}, features=["target"])
 
 
 This will set the target for all cases that meet that condition to 1.  Cases may also be edited using their indices or on non-exact matches
@@ -153,7 +150,7 @@ be done with the following code:
 
 .. code-block:: python
 
-    t.edit_cases([1.25], condition={"sex": 0, "target": 1}, features=["my_case_weight"])
+    trainee.edit_cases([1.25], condition={"sex": 0, "target": 1}, features=["my_case_weight"])
 
 Of course, this is a surface-level attempt at addressing bias.  For more information on bias mitigation, see the `5-bias_mitigation` recipe.
 
@@ -167,8 +164,8 @@ incorporated) were not reported correctly by the dataset creators.  We can remov
 
 .. code-block:: python
 
-    num_workclass_6 = len(t.get_cases(condition={"workclass": 6}))
-    t.remove_cases(num_workclass_6, condition={"workclass": 6})
+    num_workclass_6 = len(trainee.get_cases(condition={"workclass": 6}))
+    trainee.remove_cases(num_workclass_6, condition={"workclass": 6})
 
 
 Cases can also be removed by index, just how cases can be edited in that fashion as well. For more information on :meth:`~Trainee.remove_cases`,
@@ -183,7 +180,7 @@ removal using the ``distribute_weight_feature`` parameter. For example,
 .. code-block:: python
 
     num_workclass_6 = len(df[df.workclass == 6])
-    t.remove_cases(num_workclass_6, condition={"workclass": 6}, distribute_weight_feature="my_weight_feature")
+    trainee.remove_cases(num_workclass_6, condition={"workclass": 6}, distribute_weight_feature="my_weight_feature")
 
 will remove the cases that satisfy the condition and distribute their weight to their neighbors, allowing cases which are similar
 to increase in importance as these are removed.

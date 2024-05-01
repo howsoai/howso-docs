@@ -27,10 +27,11 @@ in the prerequisites using the ``fetch_data()`` function.
 
 Concepts & Terminology
 ----------------------
-This guide will explain the concept of **derived features**, which include both **derived action features** and **derived context
+This guide will explain the concept of :ref:`derived_features`, which include both **derived action features** and **derived context
 features**.  To follow along, you should be familiar with the following concepts:
 
 - :ref:`trainee`
+- :ref:`derived_features`
 - :ref:`react`
 - :ref:`case`
 - :ref:`feature`

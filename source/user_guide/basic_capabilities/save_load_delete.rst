@@ -1,30 +1,24 @@
 .. currentmodule:: howso.engine
 
-Saving and Loading
-==================
+Saving, Loading, and Deleting
+=============================
 .. topic:: What is covered in this user guide.
 
-   In this guide, you will learn how to save and load :py:class:`~Trainee` s using the built-in Howso Engine's file operations.
+   In this guide, you will learn how to save, load, and delete :py:class:`~Trainee` s using the built-in Howso Engine's file operations.
 
 Objectives: what you will take away
 -----------------------------------
-- **Definitions & Understanding** of different saving and loading operations based on platform.
+- **Definitions & Understanding** of different saving, loading, and deleting operations based on platform.
 - **How-To** save and load a :py:class:`~Trainee`.
 
 Prerequisites: before you begin
 -------------------------------
 - You have successfully :doc:`installed Howso Engine <../../getting_started/installing>`
-- You have :doc:`loaded, configured, trained, and analyzed data <basic_workflow>`
-
-Notebook Recipe
----------------
-The following recipe will supplement the content this guide will cover:
-
-- :download:`Engine Intro <https://github.com/howsoai/howso-engine-recipes/blob/main/1-engine-intro.ipynb>`
+- You have an understanding Howso's :doc:`basic workflow <../basic_capabilities/basic_workflow>`.
 
 Concepts & Terminology
 ----------------------
-The main concept of this guide is how to save and load a Trainee. To understand this better, we
+The main concept of this guide is how to save, load, and delete a Trainee. To understand this better, we
 recommend being familiar with the Trainees:
 
 - :ref:`trainee`
@@ -74,7 +68,7 @@ Saving Trainees to your local file system can be done using the :meth:`Trainee.s
 Loading
 ^^^^^^^
 
-The  :meth:`Engine.load_trainee` function has one parameter, ``filename``, which lets the user specify where to load the file. The ``filename`` parameter can consist of either:
+The :meth:`howso.engine.load_trainee` function has one parameter, ``filename``, which lets the user specify where to load the file. The ``filename`` parameter can consist of either:
 
 - **Absolute path** A file path may be an absolute path with a Trainee filename ending with ``.caml``.
 
@@ -90,6 +84,16 @@ The  :meth:`Engine.load_trainee` function has one parameter, ``filename``, which
     # Load the trainee
     t = load_trainee(file_path='example_location/example_trainee.caml')
 
+Deleting
+^^^^^^^^
+When deleting a Trainee, the :meth:`Trainee.delete` method deletes the trainee from the last saved or loaded disk location, as well as memory. If the Trainee has not been saved, :meth:`Trainee.delete` can also be used to just remove a Trainee from memory.
+
+When Trainees are saved, a ``.caml`` file and a ``.txt`` version file is saved. The :meth:`Trainee.delete` method assumes that the prefix to the version filename is the same as the ``.caml`` trainee filename.
+
+.. code-block:: python
+
+    # Deleting
+    t.delete()
 
 Database Operations
 --------------------

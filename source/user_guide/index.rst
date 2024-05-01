@@ -8,48 +8,46 @@ of Howso Engine. Additionaly, they teach you terminology that is unique to Howso
 problems, and identify key API references. They also contain examples for using each Howso tool within a data science workflow. To help you decide which user guide
 is best for you, we have grouped them into three categories:
 
-The Basics
-^^^^^^^^^^
+Basic Capabilities
+^^^^^^^^^^^^^^^^^^
 
 Here, you will gain insight into how Howso Engine provides full trust and control of your data and decisions.
 These guides will acquaint you with the basic workflow for building a :py:class:`~howso.engine.trainee.Trainee`
 and making your first AI predictions. Additionally, we review the important step of setting up your - :py:meth:`~howso.utilities.infer_feature_attributes`, which helps the Engine
-understand the relationships between your data. Finally, we demonstrated the basics of editing your :py:class:`~howso.engine.trainee.Trainee`, and storing it for future use.
+understand the relationships between your data. 
 
-- :doc:`Basic Workflow <basics/basic_workflow>`
-- :doc:`Feature Attributes <basics/feature_attributes>`
-- :doc:`Derived Features <basics/derived_features>`
-- :doc:`Predictions <basics/predictions>`
-- :doc:`Editing Trainees and Case Weighting <basics/editing_case_weighting>`
-- :doc:`Saving and Loading <basics/save_load>`
-
-Intro to Understandability
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-With these guides, you will learn how to use Howso's unique tools for understandability and trust. You will gain skills understanding Engine's predictions, including how
-to identify the data that directly influenced your decisions, counterfactuals, and Engine's uncertainty. Additionally, these guides will show you how to understand and use
-Howso's feature importance tools.
-
-- :doc:`Understanding Predictions <understandability/understanding_predictions>`
-- :doc:`Model Performance <understandability/model_performance>`
-- :doc:`Inference with Attribution and Uncertainty Estimation <understandability/inference_attribution_uncertainty>`
-- :doc:`Feature Importance <understandability/feature_importance>`
+- :doc:`Basic Workflow <basic_capabilities/basic_workflow>`
+- :doc:`Feature Attributes <basic_capabilities/feature_attributes>`
+- :doc:`Derived Features <basic_capabilities/derived_features>`
+- :doc:`Predictions <basic_capabilities/predictions>`
+- :doc:`Saving, loading, and deleting <basic_capabilities/save_load_delete>`
 
 Advanced Capabilities
 ^^^^^^^^^^^^^^^^^^^^^
 
-These guides introduce you to a variety of capabilities that make the Howso Engine versatile to use. This includes anomaly detection,
-bias mitigation, and reinforcement
-learning, as well as Howso's special techniques for handling json, sparse, and time series data and generative analysis. Although these guides are fairly generic, they can be easily
-adapted to your specific dataset or application.
+With these guides, you will learn how to use Howso's unique tools for understandability and trust. You will gain skills for understanding Engine's predictions, including how
+to identify the data that directly influenced your decisions, counterfactuals, and Engine's uncertainty.
 
-- :doc:`Anomaly Detection <adv_capabilities/anomaly_detection>`
-- :doc:`Bias Mitigation <adv_capabilities/bias_mitigation>`
-- :doc:`Generative AI and Data Synthesis <adv_capabilities/generative_AI_synth>`
-- :doc:`Handling Sparse Data <adv_capabilities/sparse_data>`
-- :doc:`JSON Features <adv_capabilities/json_features>`
-- :doc:`Reinforcement Learning <adv_capabilities/reinforcement_learning>`
-- :doc:`Time Series and Sequential Data Analysis <adv_capabilities/time_series>`
+- :doc:`Bias Mitigation <advanced_capabilities/bias_mitigation>`
+- :doc:`Case Importance <advanced_capabilities/case_importance>`
+- :doc:`Feature Imprtance <advanced_capabilities/feature_importance>`
+- :doc:`Generative AI/Synth <advanced_capabilities/generative_AI_synth>`
+- :doc:`Influential Cases <advanced_capabilities/influential_cases>`
+- :doc:`JSON/YAML as features <advanced_capabilities/json_features>`
+- :doc:`Time Series <advanced_capabilities/time_series>`
+- :doc:`Editing Trainees and Case Weighting <advanced_capabilities/editing_case_weighting>`
+- :doc:`Reinforcement Learning <advanced_capabilities/reinforcement_learning>`
+
+Concepts
+^^^^^^^^
+
+There may be concepts that are new when exploring Howso's engine. This section goes over concepts that are unique to Howso and differ from other machine learning workflows as well as any other interesting pieces of information that may help you in your journey of using Howso.
+
+- :doc:`Reacting to existing vs new cases <concepts/existing_vs_new>`
+- :doc:`Global vs local <concepts/global_vs_local>`
+- :doc:`Model Performance <concepts/model_performance>`
+- :doc:`Working with Sparse or Null data<concepts/null_sparse_data>`
+
 
 Datasets
 ^^^^^^^^
@@ -66,8 +64,8 @@ experience. If you have ideas for how we could improve these user guides or woul
     :maxdepth: 2
     :hidden:
 
-    basics/index
-    understandability/index
-    adv_capabilities/index
+    basic_capabilities/index
+    advanced_capabilities/index
+    concepts/index
     datasets
 
