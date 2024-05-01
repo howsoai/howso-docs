@@ -11,3 +11,5 @@ local/**
 
 **/*.trace
 node_modules
+
+**/_autosummary/** 
