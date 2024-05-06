@@ -1,4 +1,5 @@
 <!-- Auto-generated do not edit -->
+
 # FeatureAttributes
 
 `````{py:module} howso.openapi.models
@@ -131,7 +132,7 @@ When false (default), the feature will be treated as a non-dependent context fea
 ```{py:attribute} observational_error
 :type: Optional[float]
 
-Specify the observed error value for this feature. Use when the error value is already known. Defaults to 0.
+Specify the observational mean absolute error for this feature. Use when the error value is already known. Defaults to 0.
 ```
 
 ```{py:attribute} original_type
