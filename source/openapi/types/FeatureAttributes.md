@@ -132,7 +132,7 @@ When false (default), the feature will be treated as a non-dependent context fea
 ```{py:attribute} observational_error
 :type: Optional[float]
 
-The observational mean absolute error for this feature. Use when the error value is already known. Defaults to 0.
+Specifies the observational mean absolute error for this feature. Use when the error value is already known. Defaults to 0.
 ```
 
 ```{py:attribute} original_type
@@ -165,13 +165,6 @@ Round to the specified significant digits, default is no rounding.
 :type: Optional[str]
 
 The type used in novel nominal substitution.
-```
-
-```{py:attribute} time_delta_format
-:type: Optional[str]
-
-Format of the delta for date time features, default is 'seconds'. Valid values are: milliseconds, seconds, minutes, hours, days, weeks, years.
-
 ```
 
 ```{py:attribute} time_series
