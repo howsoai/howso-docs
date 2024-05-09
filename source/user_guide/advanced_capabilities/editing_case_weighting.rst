@@ -39,7 +39,7 @@ recommend being familiar with the following concepts:
 - :ref:`feature`
 - :ref:`action_features`
 - :ref:`context_features`
-- :doc:`Feature Attributes <feature_attributes>`
+- :doc:`Feature Attributes <../basic_capabilities/feature_attributes>`
 
 Additional concepts to be familiar with are `classification <https://en.wikipedia.org/wiki/Statistical_classification>`_ and
 `overfitting <https://en.wikipedia.org/wiki/Overfitting>`_.

@@ -4,7 +4,8 @@ Residuals
 =========
 .. topic:: What is covered in this user guide.
 
-   In this guide, you will learn the basics of using the Howso Engine to retrieve the :ref:`residual` s.
+   In this guide, you will learn the basics of using the Howso Engine to retrieve the :ref:`residual` s, which is the core measurement of error in Howso. Residuals play an important
+   role in Howso, from determining uncertainties to gauging the accuracy of the predictions.
 
 Objectives: what you will take away
 -----------------------------------
@@ -26,7 +27,6 @@ Concepts & Terminology
 
 - :ref:`residual`
 - :ref:`robust`
-
 
 How-To Guide
 ------------
@@ -62,6 +62,7 @@ Local metrics are retrieved through using :py:meth:`Trainee.react`. Both :ref:`r
 Global Residuals
 ^^^^^^^^^^^^^^^^
 
+Howso has the ability to retrieve both :doc:`local vs global <../concepts//global_vs_local>` metrics.  
 Global metrics are retrieved through using :py:meth:`Trainee.react_into_trainee`.  Both :ref:`robust` and non-robust versions are also available.
 For global residuals, they are retrieved by selecting the mean absolute error, ``mae``, stat in :py:meth:`Trainee.get_prediction_stats`.
 
@@ -140,5 +141,8 @@ The code from all of the steps in this guide is combined below:
 API References
 --------------
 - :py:class:`~Trainee`
+- :py:meth:`Trainee.train`
+- :py:meth:`Trainee.analyze`
+- :py:meth:`Trainee.react`
 - :py:meth:`Trainee.react_into_features`
-- :py:meth:`Trainee.get_cases`
+- :py:meth:`Trainee.get_prediction_stats`

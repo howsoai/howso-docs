@@ -14,18 +14,10 @@ Objectives
 - **Definitions & Understanding** of what sparse data are, how to use them with a :class:`~Trainee`, and
   how prediction performance changes as data sparsity increases.
 
-
 Prerequisites
 -------------
 - You have successfully :doc:`installed Howso Engine <../../getting_started/installing>`
 - You have an understanding Howso's :doc:`basic workflow <../basic_capabilities/basic_workflow>`.
-
-
-Notebook Recipe
----------------
-The following recipe will supplement the content this guide will cover and details the efficacy of predicting increasingly sparse data:
-
-- :download:`Sparse Data Prediction <https://github.com/howsoai/howso-engine-recipes/blob/main/engine_sparse_data.ipynb>`
 
 Concepts & Terminology
 ----------------------
@@ -33,12 +25,9 @@ This guide focuses primarily on the concept of sparse data.  We additionally rec
 
 - :ref:`trainee`
 - :ref:`react`
-- :ref:`case`
-- :ref:`feature`
 - :ref:`action_features`
 - :ref:`context_features`
 - :doc:`Feature Attributes <../basics/feature_attributes>`
-
 
 Sparse Data
 ^^^^^^^^^^^
@@ -92,11 +81,9 @@ discriminative and generative :meth:`~Trainee.react` s can output missing values
 
 .. code-block:: python
 
-  features = infer_../basics/feature_attributes(
+  features = infer_feature_attributes(
     df,
-    features={
-      "Clump_Thickness": {"bounds": {"allow_null": True}}
-    }
+    features={"Clump_Thickness": {"bounds": {"allow_null": True}}}
   )
   t = Trainee(features=features)
   t.train(df)
@@ -105,6 +92,9 @@ discriminative and generative :meth:`~Trainee.react` s can output missing values
 
 API References
 --------------
+- :py:class:`~Trainee`
+- :py:meth:`Trainee.train`
+- :py:meth:`Trainee.analyze`
 - :func:`howso.utilities.infer_../basics/feature_attributes`
 - :func:`Trainee.react`
 

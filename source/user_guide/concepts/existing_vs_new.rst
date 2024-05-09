@@ -1,6 +1,6 @@
 .. currentmodule:: howso.engine
 
-Reacting to existing vs new cases
+Reacting to Existing vs New Cases
 =================================
 .. topic:: What is covered in this user guide.
 
@@ -15,7 +15,6 @@ Prerequisites: before you begin
 - You have successfully :doc:`installed Howso Engine <../../getting_started/installing>`
 - You have an understanding of Howso's :doc:`basic workflow <../basic_capabilities/basic_workflow>`.
 
-
 Data
 ----
 Our example dataset for this guide is the well-known ``Adult`` dataset, accessible via the ``pmlb`` package installed
@@ -23,7 +22,6 @@ in the prerequisites using the ``fetch_data()`` function.
 
 Concepts & Terminology
 ----------------------
-Howso Engine is a generalized Machine Learning (ML) and Artificial Intelligence platform that creates powerful decision-making models that are fully explainable, auditable, and editable. Howso Engine uses Instance-Based Machine Learning which stores instances, i.e., data points, in memory and makes predictions about new instances given their relationship to existing instances. This technology harnesses a fast spatial query system and information theory for performance and accuracy.
 
 - :ref:`trainee`
 - :ref:`react`
@@ -93,4 +91,6 @@ desired behavior because we don't want the react to be skewed by an identical ca
 API References
 --------------
 - :py:class:`~Trainee`
+- :py:meth:`Trainee.train`
+- :py:meth:`Trainee.analyze`
 - :py:meth:`Trainee.react`

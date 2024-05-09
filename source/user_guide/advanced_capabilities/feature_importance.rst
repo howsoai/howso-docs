@@ -34,7 +34,7 @@ The two metrics available for feature importance is feature :ref:`contribution` 
 
 Robust vs Non-Robust
 ^^^^^^^^^^^^^^^^^^^^
-:ref:`robust` metrics are recommended as they encompass a greater variety of feature sets, and they include a calculation performance boost as the number of features increases.
+:ref:`robust` metrics are recommended as they use a greater variety of feature combinations, and they include a calculation performance boost as the number of features increases.
 
 How-To Guide
 ------------
@@ -102,7 +102,10 @@ are calculated in :py:meth:`Trainee.react` from the previous step.
 Contribution and MDA matrices
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Howso also provides the two metrics in a matrix view, where the columns are the individual metrics for each row.
+Howso also provides the two metrics in a matrix view, where for each row which represent the action feature, you can identify the contributions of all
+the other context features to that prediction. Since these matrices may not be symmetrical, examining the differences between the upper and lower triangular matrices
+may reveal additional insights. Please see the linked recipe for more information.
+
 :meth:`Trainee.get_contribution_matrix` and :meth:`Trainee.get_mda_matrix` gets these matrices respectively.
 
 .. warning::
@@ -114,8 +117,6 @@ Howso also provides the two metrics in a matrix view, where the columns are the 
     contrib_matrix = t.get_contribution_matrix()
     mda_matrix = t.get_mda_matrix()
 
-
-
 Combined Code
 ^^^^^^^^^^^^^
 
@@ -126,7 +127,6 @@ Combined Code
 
     from howso.engine import Trainee
     from howso.utilities import infer_feature_attributes
-
 
     df = fetch_data('adult', local_cache_dir="data/adult")
 
@@ -146,9 +146,6 @@ Combined Code
 
     # Create a new Trainee, specify features
     trainee = Trainee(features=features)
-
-    # Train trainee
-    trainee.train(df)
 
     # Train and analyze
     trainee.train(df)
@@ -186,7 +183,12 @@ Combined Code
 
 API References
 --------------
-- :meth:`Trainee.react`
-- :meth:`Trainee.react_into_trainee`
-- :meth:`Trainee.get_prediction_stats`
+- :py:class:`~Trainee`
+- :py:meth:`Trainee.train`
+- :py:meth:`Trainee.analyze`
+- :py:meth:`Trainee.react`
+- :py:meth:`Trainee.react_into_trainee`
+- :py:meth:`Trainee.get_prediction_stats`
+- :py:meth:`Trainee.get_contribution_matrix`
+- :py:meth:`Trainee.get_mda_matrix`
 

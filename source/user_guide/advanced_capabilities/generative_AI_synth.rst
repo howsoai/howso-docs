@@ -1,3 +1,5 @@
+.. currentmodule:: howso.engine
+
 Generative Output and Data Synthesis
 ====================================
 .. topic:: What is covered in this user guide.
@@ -56,8 +58,8 @@ creating synthetic data.
 
 Setup
 ^^^^^
-The user guide assumes you have create and setup a :class:`~Trainee` as demonstrated in :doc:`basic workflow <../basic_capabilities/basic_workflow>`.
-The :class:`~Trainee` will be referenced as ``trainee`` in the sections below.
+The user guide assumes you have create and setup a - :py:class:`~Trainee` as demonstrated in :doc:`basic workflow <../basic_capabilities/basic_workflow>`.
+The :py:class:`~Trainee` will be referenced as ``trainee`` in the sections below.
 
 
 Generative Output
@@ -65,7 +67,7 @@ Generative Output
 This code is designed to make a generative prediction on a test case. This is
 very similar to making a discriminative prediction, except the
 ``desired_conviction`` is set. After building, training, and analyzing a
-:py:class:`~howso.engine.trainee.Trainee`, you can obtain the generative
+:class:`~Trainee`, you can obtain the generative
 prediction for a test case in a :py:meth:`Trainee.react` call.
 
 .. code-block:: python
@@ -164,4 +166,7 @@ Complete Code
 
 API References
 --------------
+- :py:class:`~Trainee`
+- :py:meth:`Trainee.train`
+- :py:meth:`Trainee.analyze`
 - :py:meth:`Trainee.react`

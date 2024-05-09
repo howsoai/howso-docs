@@ -7,9 +7,10 @@ JSON/YAML as Features
 
     In this guide, you will learn the basics of using JSON/YAML as features in your :class:`~Trainee` s.
 
-.. note::
-    This feature is experimental and is not universally recommended for production deployment.
+.. warning::
 
+    JSOM/YAML tools are still in beta development. Please note that while the core features are in place, they are still under development and thus you may encounter bugs or unexpected behavior.
+    If you have any feedback, please share your thoughts at `support@howso.com <support@howso.com>`_. 
 
 Objectives
 ----------

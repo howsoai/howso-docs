@@ -27,6 +27,7 @@ adapted to your specific dataset or application.
     editing_case_weighting
     feature_importance
     generative_AI_synth
+    generative_synth
     influential_cases
     json_features
     reinforcement_learning

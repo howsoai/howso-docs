@@ -18,8 +18,10 @@ understand the relationships between your data.
 
 - :doc:`Basic Workflow <basic_capabilities/basic_workflow>`
 - :doc:`Feature Attributes <basic_capabilities/feature_attributes>`
+- :doc:`Conviction <basic_capabilities/conviction>`
 - :doc:`Derived Features <basic_capabilities/derived_features>`
 - :doc:`Predictions <basic_capabilities/predictions>`
+- :doc:`Residuals <basic_capabilities/residuals>`
 - :doc:`Saving, loading, and deleting <basic_capabilities/save_load_delete>`
 
 Advanced Capabilities
@@ -28,7 +30,6 @@ Advanced Capabilities
 With these guides, you will learn how to use Howso's unique tools for understandability and trust. You will gain skills for understanding Engine's predictions, including how
 to identify the data that directly influenced your decisions, counterfactuals, and Engine's uncertainty.
 
-- :doc:`Bias Mitigation <advanced_capabilities/bias_mitigation>`
 - :doc:`Case Importance <advanced_capabilities/case_importance>`
 - :doc:`Feature Imprtance <advanced_capabilities/feature_importance>`
 - :doc:`Generative AI/Synth <advanced_capabilities/generative_AI_synth>`

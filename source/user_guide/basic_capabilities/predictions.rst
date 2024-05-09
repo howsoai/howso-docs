@@ -213,10 +213,71 @@ Reviewing the prediction shows **HighwayMPG** of 29.
    HighwayMPG
    29
 
+Combined Code
+^^^^^^^^^^^^^
+
+.. code-block:: python
+
+   import pandas as pd
+   import matplotlib.pyplot as plt
+
+   from howso.engine import Trainee
+   from howso.utilities import infer_feature_attributes
+
+   df = pd.read_csv("./data/vehicle_predict.csv")
+   df = df.drop(['Make', 'Model'], axis=1)
+
+   # Auto detect features
+   features = infer_feature_attributes(df)
+
+   # For Regression, we will set `HighwayMPG` feature type to continuous
+   features['HighwayMPG']['type'] = 'continuous'
+
+   # For Classification, we will set `FuelType` feature type to nominal
+   features['FuelType']['type'] = 'nominal'
+
+   # We will also set these context features to continuous
+   features['CityMPG']['type'] = 'continuous'
+   features['Year']['type'] = 'continuous'
+   features['PassengerVolume']['type'] = 'continuous'
+   features['LuggageVolume']['type'] = 'continuous'
+
+   # Create a new Trainee, specify features
+   t = Trainee(features=features)
+
+   # Train trainee
+   t.train(df)
+
+   action_features = ['HighwayMPG']
+   # Code for `FuelType` prediction
+   # action_features = ['FuelType']
+   context_features = features.get_names(without=action_features)
+
+   t.analyze(context_features=context_features, action_features=action_features)
+
+   data = {
+       'Year': [2022],
+       'DriveType': ['All-Wheel Drive'],
+       'FuelType' : ['Premium'],
+       'VehicleClass': ['Midsize Cars'],
+       'CityMPG': [21],
+       'PassengerVolume': [95],
+       'LuggageVolume': [23]
+   }
+
+   test_case = pd.DataFrame(data)
+
+   result = t.react(
+       test_case,
+       action_features=action_features,
+       context_features=context_features
+   )
 
 API References
 --------------
-- :meth:`Trainee.react`
-- :meth:`Trainee.react_into_trainee`
-- :meth:`Trainee.get_prediction_stats`
-- :meth:`Trainee.predict`
+- :py:class:`~Trainee`
+- :py:meth:`Trainee.train`
+- :py:meth:`Trainee.analyze`
+- :py:meth:`Trainee.react`
+- :py:meth:`Trainee.get_prediction_stats`
+- :py:meth:`Trainee.predict`

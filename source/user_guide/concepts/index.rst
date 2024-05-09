@@ -2,7 +2,7 @@
 Concepts
 ========
 
-Howso introduces many concepts that may be different compared to standard machine learning workflow. For example, Howso is able to operate effectively without imputing nulls as well as Howso can distinguish between local and global metrics. This section details some of the concepts that differentiates Howso.
+Howso introduces many concepts that may be different compared to standard machine learning workflow. This section details some of the concepts that differentiates Howso.
 
 - :doc:`Reacting to new vs existing data <existing_vs_new>`
 - :doc:`Global vs Local <global_vs_local>`

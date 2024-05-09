@@ -4,7 +4,7 @@ Saving, Loading, and Deleting
 =============================
 .. topic:: What is covered in this user guide.
 
-   In this guide, you will learn how to save, load, and delete :py:class:`~Trainee` s using the built-in Howso Engine's file operations.
+   In this guide, you will learn how to save, load, and delete :py:class:`~Trainee` s using the built-in Howso Engine's file operations. This allows for easy Trainee management on your local disk.
 
 Objectives: what you will take away
 -----------------------------------
@@ -120,5 +120,9 @@ These methods can be used locally as well, but you do not have control over the 
 
 API References
 --------------
-- :meth:`Trainee.save`
-- :meth:`howso.engine.load_trainee`
+- :py:meth:`Trainee.save`
+- :py:meth:`Trainee.delete`
+- :py:meth:`Trainee.persist`
+- :py:meth:`Trainee.release_resources`
+- :py:meth:`Trainee.acquire_resources`
+- :py:meth:`howso.engine.load_trainee`

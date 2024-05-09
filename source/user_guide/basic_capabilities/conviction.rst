@@ -33,6 +33,10 @@ Concepts & Terminology
 How-To Guide
 ------------
 
+:ref:`familiarity_conviction` and :ref:`similarity_conviction` are measurements of how surprising a case is. This can be useful for tasks such as anomaly detection.
+:ref:`prediction_residual_conviction` can be used to drill down into a specific case and examine its features. It measures how surprising each cases feature values is, thus
+it can reveal information such as why a case was anomalous. For example, if a NBA player's height was 3 foot tall, that value would be very surprising since most NBA players are very tall.
+
 Setup
 ^^^^^
 The user guide assumes you have created and setup a :class:`~Trainee` as demonstrated in :doc:`basic workflow <../basic_capabilities/basic_workflow>`.
@@ -164,6 +168,9 @@ The code from all of the steps in this guide is combined below:
 API References
 --------------
 - :py:class:`~Trainee`
+- :py:meth:`Trainee.train`
+- :py:meth:`Trainee.analyze`
+- :py:meth:`Trainee.react`
 - :py:meth:`Trainee.react_into_features`
 - :py:meth:`Trainee.get_cases`
 - :py:meth:`Trainee.active_session`

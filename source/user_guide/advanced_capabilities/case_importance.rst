@@ -23,18 +23,15 @@ Our example dataset for this recipe is the well known ``Adult`` dataset. It is a
 
 Concepts & Terminology
 ----------------------
-Case importance is similiar to feature importance in that it comprises of two metrics. Case mean decrease in accuracy (mda) and case contribution. 
-As opposed to influential and similar cases which examines the influence of cases on a single case or prediction, case importance examines how important a case is in regards to the overall predictions on a group of cases. Case importance share the same underlying methodology with  :doc:`Feature Importance <feature_importance>`.
-Unlike feature contributions, case contributions are calculated just locally. Conceptually, local metrics use either a specific subset of the cases that are trained into the Trainee or a set of new cases.
 
-Howso Engine is a generalized Machine Learning (ML) and Artificial Intelligence platform that creates powerful decision-making models that are fully explainable, auditable, and editable. Howso Engine uses Instance-Based Machine Learning which stores instances, i.e., data points, in memory and makes predictions about new instances given their relationship to existing instances. This technology harnesses a fast spatial query system and information theory for performance and accuracy.
-
-- :ref:`trainee`
-- :ref:`react`
 - :ref:`case`
+- :ref:`contribution`
 
 How-To Guide
 ------------
+Case importance is similiar to feature importance in that it comprises of two metrics, case mean decrease in accuracy (mda) and case contribution. 
+As opposed to influential and similar cases which examines the influence of cases on a single case or prediction, case importance examines how important a case is in regards to the overall predictions on a group of cases. Case importance share the same underlying methodology with  :doc:`Feature Importance <feature_importance>`.
+Unlike feature contributions, case contributions are calculated just locally. Conceptually, local metrics use either a specific subset of the cases that are trained into the Trainee or a set of new cases.
 
 Setup
 ^^^^^
@@ -53,7 +50,6 @@ Case contributions can be retrieved by setting ``case_contributions`` to ``True`
 Case MDA
 ^^^^^^^^
 Case MDA can be retrieved by setting ``case_mda`` to ``True``. 
-
 
 .. code-block:: python
 
@@ -129,7 +125,6 @@ The code from all of the steps in this guide is combined below:
 
 API References
 --------------
-- :py:meth:`~howso.utilities.infer_feature_attributes`
 - :py:class:`~Trainee`
 - :py:meth:`Trainee.train`
 - :py:meth:`Trainee.analyze`

@@ -22,7 +22,6 @@ Our example dataset for this recipe is the well known ``Adult`` dataset. It is a
 
 Concepts & Terminology
 ----------------------
-Howso Engine is a generalized Machine Learning (ML) and Artificial Intelligence platform that creates powerful decision-making models that are fully explainable, auditable, and editable. Howso Engine uses Instance-Based Machine Learning which stores instances, i.e., data points, in memory and makes predictions about new instances given their relationship to existing instances. This technology harnesses a fast spatial query system and information theory for performance and accuracy.
 
 - :ref:`trainee`
 - :ref:`react`
@@ -37,6 +36,8 @@ The :class:`~Trainee` will be referenced as ``trainee`` in the sections below.
 
 Global metrics
 ^^^^^^^^^^^^^^
+Global metrics in Howso refers to calculations done using all of the cases available. Sometimes they are sampled for efficiency, however they are still representative of
+the overall Trainee.
 
 Global metrics in Howso are calculated internally using a leave one out approach to the datapoints trained into the trainee that is 
 called by the :meth:`~Trainee.react_in_trainee` method. 
@@ -50,7 +51,9 @@ called by the :meth:`~Trainee.react_in_trainee` method.
 
 Local metrics
 ^^^^^^^^^^^^^
-Local metrics are calcluated using the local space of the provided case(s). These cases may either be new cases or existing cases.
+Local metrics in Howso refers to calculations done using all of the cases available. Local metrics are calcluated using the local space of the provided case(s). These cases may either be new cases or existing cases.
+The local space refers to the set of closest cases to the provided case(s). While the exact number of cases that consists of the local space varies depending on several factors, generally it includes at least 30 cases if there is enough cases.
+
 Local metrics are controlled through the ``details`` parameter in :py:meth:`Trainee.react`.
 
 .. code-block:: python
@@ -70,5 +73,8 @@ Local metrics are controlled through the ``details`` parameter in :py:meth:`Trai
 API References
 --------------
 - :py:class:`~Trainee`
-- :py:meth:`Trainee.react_into_trainee`
+- :py:meth:`Trainee.train`
+- :py:meth:`Trainee.analyze`
 - :py:meth:`Trainee.react`
+- :py:meth:`Trainee.react_into_trainee`
+- :py:meth:`Trainee.get_prediction_stats`

@@ -23,7 +23,6 @@ Our example dataset for this recipe is the well known ``Adult`` dataset. It is a
 
 Concepts & Terminology
 ----------------------
-Howso Engine is a generalized Machine Learning (ML) and Artificial Intelligence platform that creates powerful decision-making models that are fully explainable, auditable, and editable. Howso Engine uses Instance-Based Machine Learning which stores instances, i.e., data points, in memory and makes predictions about new instances given their relationship to existing instances. This technology harnesses a fast spatial query system and information theory for performance and accuracy.
 
 - :ref:`trainee`
 - :ref:`analyze`
@@ -47,7 +46,7 @@ performance stats.
 
 **Available Stats**
 
-- continuous features: mean absolute error ("mse"), root mean squared error ("rmse"), r2 ("r2"), spearman coefficient ("spearman_coeff")
+- continuous features: mean absolute error ("mae"), root mean squared error ("rmse"), r2 ("r2"), spearman coefficient ("spearman_coeff")
 - nominal features: Matthews correlation coefficient ("mcc"), accuracy ("accuracy"), precision ("precision"), recall ("recall"), the confusion matrix ("confusion_matrix")
 
 .. note::
@@ -96,5 +95,7 @@ on cases that represent individuals over the age of 40, who are also married and
 API References
 --------------
 - :py:class:`~Trainee`
+- :py:meth:`Trainee.train`
+- :py:meth:`Trainee.analyze`
 - :py:meth:`Trainee.react_into_trainee`
 - :py:meth:`Trainee.get_prediction_stats`
