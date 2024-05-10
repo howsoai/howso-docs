@@ -28,6 +28,13 @@ To understand this guide, we recommend being familiar with the following concept
 - :ref:`action_features`
 - :ref:`context_features`
 
+Notebook Recipe
+---------------
+The following recipes will supplement the content this guide will cover and go into some additional examples:
+
+- :download:`Time Series Overview <https://github.com/howsoai/howso-engine-recipes/blob/main/recipes/2-Workflows/time_series/timeseries_overview.ipynb>`
+- :download:`Time Series Forecasting <https://github.com/howsoai/howso-engine-recipes/blob/main/recipes/2-Workflows/time_series/timeseries_forecasting.ipynb>`
+
 How-To Guide
 ------------
 *Why are time series and sequential data predictions important?*

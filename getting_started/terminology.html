@@ -479,10 +479,11 @@ approximation of the feature importance of the relationships expressed in the da
 </section>
 <section id="mda">
 <span id="id11"></span><h3>MDA<a class="headerlink" href="#mda" title="Link to this heading">#</a></h3>
-<p>The <em>Mean Decrease in Accuracy</em> of an Action Feature when each feature or case is considered versus not considered.</p>
+<p>The <em>Mean Decrease in Accuracy</em> (MDA) of an Action Feature is mean decrease in accuracy of removing a feature.  MDA units are on the same scale as the Action feature(s), and will be probabilities for categorical features.
+.. _robust:</p>
 </section>
 <section id="robust">
-<span id="id12"></span><h3>Robust<a class="headerlink" href="#robust" title="Link to this heading">#</a></h3>
+<h3>Robust<a class="headerlink" href="#robust" title="Link to this heading">#</a></h3>
 <p>A feature or case contribution or MDA that is robust means that it is computed over the power set of possible
 combinations of features or cases, as approximated by a uniform distribution. For feature contributions, robust means
 it is an approximation to the well-known SHAP values.</p>
@@ -493,11 +494,11 @@ it is an approximation to the well-known SHAP values.</p>
 contribution, which yield similar but complementary insights.</p>
 </section>
 <section id="contexts">
-<span id="id13"></span><h3>Contexts<a class="headerlink" href="#contexts" title="Link to this heading">#</a></h3>
+<span id="id12"></span><h3>Contexts<a class="headerlink" href="#contexts" title="Link to this heading">#</a></h3>
 <p>The cases used to make a prediction or to derive a result.</p>
 </section>
 <section id="uncertainty">
-<span id="id14"></span><h3>Uncertainty<a class="headerlink" href="#uncertainty" title="Link to this heading">#</a></h3>
+<span id="id13"></span><h3>Uncertainty<a class="headerlink" href="#uncertainty" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Measurement_uncertainty">Measurement Uncertainty</a> is an expression of
 the measurement error of a particular feature.  One example of an uncertainty
 measure is the standard deviation of a distribution.  When Howso Engine
@@ -506,14 +507,14 @@ having maximal uncertainty for the feature.</p>
 </section>
 </section>
 <section id="operations">
-<span id="id15"></span><h2>Operations<a class="headerlink" href="#operations" title="Link to this heading">#</a></h2>
+<span id="id14"></span><h2>Operations<a class="headerlink" href="#operations" title="Link to this heading">#</a></h2>
 <section id="train">
-<span id="id16"></span><h3>Train<a class="headerlink" href="#train" title="Link to this heading">#</a></h3>
+<span id="id15"></span><h3>Train<a class="headerlink" href="#train" title="Link to this heading">#</a></h3>
 <p>Introduce one or more cases to the Trainee which may result in the Trainee being updated. It is a single training step;
 it may happen at each decision, at a certain sampling rate of observations per second, at certain events, or all at once.</p>
 </section>
 <section id="analyze">
-<span id="id17"></span><h3>Analyze<a class="headerlink" href="#analyze" title="Link to this heading">#</a></h3>
+<span id="id16"></span><h3>Analyze<a class="headerlink" href="#analyze" title="Link to this heading">#</a></h3>
 <p>Evaluate and update uncertainties about the data for use in future queries, as well as tune internal parameters to
 improve performance and accuracy of predictions and analysis.</p>
 <ul>
@@ -531,7 +532,7 @@ Howso performs targetless analysis by default for all predictions.</p>
 </ul>
 </section>
 <section id="react">
-<span id="id18"></span><h3>React<a class="headerlink" href="#react" title="Link to this heading">#</a></h3>
+<span id="id17"></span><h3>React<a class="headerlink" href="#react" title="Link to this heading">#</a></h3>
 <p>Querying the Trainee for some response, potentially for a given set of context feature values, whether to determine
 action features, or to determine other details. This is the primary verb that can encompass supervised learning
 (e.g., with context features being the input features and action features being the prediction), unsupervised learning
@@ -540,12 +541,12 @@ conviction value (e.g., specifying only action features, or doing conditioned ge
 features), and to determine various interpretations, explanations, and support data for any reaction.</p>
 </section>
 <section id="synthesize">
-<span id="id19"></span><h3>Synthesize<a class="headerlink" href="#synthesize" title="Link to this heading">#</a></h3>
+<span id="id18"></span><h3>Synthesize<a class="headerlink" href="#synthesize" title="Link to this heading">#</a></h3>
 <p>Generate synthetic cases from an existing Trainee using react.</p>
 </section>
 </section>
 <section id="conviction">
-<span id="id20"></span><h2>Conviction<a class="headerlink" href="#conviction" title="Link to this heading">#</a></h2>
+<span id="id19"></span><h2>Conviction<a class="headerlink" href="#conviction" title="Link to this heading">#</a></h2>
 <p>Howso bridges instance-based learning with information theory by harnessing the concept of “surprisal” which quantifies the surprise of an event being observed. For example, if an event has a probability of one
 (i.e., it is certain to occur),
 the event is unsurprising and yields no new information. However, as the probability of an event decreases, it becomes more surprising and yields more information.</p>
@@ -565,7 +566,7 @@ would be less than one because your actual surprisal is much greater than your e
 If you are interested in learning more about information theory and
 surprisal, we recommend this <a class="reference external" href="https://en.wikipedia.org/wiki/Information_content">wikipedia article</a> as a good starting reference.</p>
 <section id="familiarity-conviction">
-<span id="id21"></span><h3>Familiarity Conviction<a class="headerlink" href="#familiarity-conviction" title="Link to this heading">#</a></h3>
+<span id="id20"></span><h3>Familiarity Conviction<a class="headerlink" href="#familiarity-conviction" title="Link to this heading">#</a></h3>
 <p>How confident or familiar the Trainee is in some data that it has been trained on, as determined by the KL Divergence
 of how the particular data affects the probability density function of the data. The lower the conviction, the less
 familiar the system is with the result, so 0.01 corresponds to ‘no idea, but this is unusual’, 2 corresponds to
@@ -573,19 +574,19 @@ familiar the system is with the result, so 0.01 corresponds to ‘no idea, but t
 ability to provide accurate results.</p>
 </section>
 <section id="distance-contribution">
-<span id="id22"></span><h3>Distance Contribution<a class="headerlink" href="#distance-contribution" title="Link to this heading">#</a></h3>
+<span id="id21"></span><h3>Distance Contribution<a class="headerlink" href="#distance-contribution" title="Link to this heading">#</a></h3>
 <p>The expected total surprisal contribution for a case. How much distance (or knowledge) a case adds to the model where
 the distance is measured in surprisal.</p>
 </section>
 <section id="similarity-conviction">
-<span id="id23"></span><h3>Similarity Conviction<a class="headerlink" href="#similarity-conviction" title="Link to this heading">#</a></h3>
+<span id="id22"></span><h3>Similarity Conviction<a class="headerlink" href="#similarity-conviction" title="Link to this heading">#</a></h3>
 <p>How similar a case is in distance compared to other cases in the local model. For example, in a uniformly dense model a case
 that is very close to another case will have very high prediction similarity conviction, where a case that is far away
 will have lower prediction similarity conviction. For any given case, this is the ratio of the expected distance
 contribution of the local model divided by the actual case distance contribution.</p>
 </section>
 <section id="prediction-residual-conviction">
-<span id="id24"></span><h3>Prediction Residual Conviction<a class="headerlink" href="#prediction-residual-conviction" title="Link to this heading">#</a></h3>
+<span id="id23"></span><h3>Prediction Residual Conviction<a class="headerlink" href="#prediction-residual-conviction" title="Link to this heading">#</a></h3>
 <p>The amount of surprisal in the uncertainty of a prediction. This is the ratio of the expected model residual divided by
 the computed prediction residual that, due to some unique properties of the underlying uncertainty mathematics, ends up
 being a ratio of surprisal values. Howso computes the prediction residual via approximation by computing the actual
@@ -593,48 +594,48 @@ residuals for the cases in the local area around that prediction.</p>
 </section>
 </section>
 <section id="interpretability-explainability-and-auditability">
-<span id="id25"></span><h2>Interpretability, Explainability, and Auditability<a class="headerlink" href="#interpretability-explainability-and-auditability" title="Link to this heading">#</a></h2>
+<span id="id24"></span><h2>Interpretability, Explainability, and Auditability<a class="headerlink" href="#interpretability-explainability-and-auditability" title="Link to this heading">#</a></h2>
 <p>When reacting to a context, by setting the appropriate parameters, you can see exactly why decisions were made in the
 resulting explanation. Below are specific details about each set of information provided.</p>
 <section id="outlying-feature-values">
-<span id="id26"></span><h3>Outlying Feature Values<a class="headerlink" href="#outlying-feature-values" title="Link to this heading">#</a></h3>
+<span id="id25"></span><h3>Outlying Feature Values<a class="headerlink" href="#outlying-feature-values" title="Link to this heading">#</a></h3>
 <p>Feature values from the reaction case that are below the minimum or above the maximum value of similar cases that were
 identified during a prediction.</p>
 </section>
 <section id="observational-errors">
-<span id="id27"></span><h3>Observational Errors<a class="headerlink" href="#observational-errors" title="Link to this heading">#</a></h3>
+<span id="id26"></span><h3>Observational Errors<a class="headerlink" href="#observational-errors" title="Link to this heading">#</a></h3>
 <p>Known observational feature errors or uncertainties as defined by the user; errors in the input measurements. For
 example, a value of 2 for a feature called “degrees”, which references temperature taken by a thermometer.</p>
 </section>
 <section id="most-similar-cases">
-<span id="id28"></span><h3>Most Similar Cases<a class="headerlink" href="#most-similar-cases" title="Link to this heading">#</a></h3>
+<span id="id27"></span><h3>Most Similar Cases<a class="headerlink" href="#most-similar-cases" title="Link to this heading">#</a></h3>
 <p>The cases which are most similar to another case or a prediction as determined by the distance of the context features. Returns cases that are similiar, regardless of their
 influence.</p>
 </section>
 <section id="influential-cases">
-<span id="id29"></span><h3>Influential Cases<a class="headerlink" href="#influential-cases" title="Link to this heading">#</a></h3>
+<span id="id28"></span><h3>Influential Cases<a class="headerlink" href="#influential-cases" title="Link to this heading">#</a></h3>
 <p>The cases which were identified as most influential during a prediction, along with their weights when predicting the
 expected value or drawing a value from the distribution of expected values for generative outputs. The influential
 cases are a subset of the <a class="reference internal" href="#most-similar-cases"><span class="std std-ref">Most Similar Cases</span></a>, returning only those cases whose cumulative influence weights added in
 descending order is below the influential weight threshold.</p>
 </section>
 <section id="boundary-cases">
-<span id="id30"></span><h3>Boundary Cases<a class="headerlink" href="#boundary-cases" title="Link to this heading">#</a></h3>
+<span id="id29"></span><h3>Boundary Cases<a class="headerlink" href="#boundary-cases" title="Link to this heading">#</a></h3>
 <p>Cases that are the most similar to the Context Feature values that has maximally different values for Action Features.
 For example, if the prediction for a fruit type was a “peach”, a boundary case might be a very peach-looking “apple” or
 “nectarine”.</p>
 </section>
 <section id="categorical-action-probabilities">
-<span id="id31"></span><h3>Categorical Action Probabilities<a class="headerlink" href="#categorical-action-probabilities" title="Link to this heading">#</a></h3>
+<span id="id30"></span><h3>Categorical Action Probabilities<a class="headerlink" href="#categorical-action-probabilities" title="Link to this heading">#</a></h3>
 <p>For categorical features, shows the probability that each of the specified category values would be the correct prediction.</p>
 </section>
 <section id="hypothetical-values">
-<span id="id32"></span><h3>Hypothetical Values<a class="headerlink" href="#hypothetical-values" title="Link to this heading">#</a></h3>
+<span id="id31"></span><h3>Hypothetical Values<a class="headerlink" href="#hypothetical-values" title="Link to this heading">#</a></h3>
 <p>Values which are used to show how a prediction could change in a what-if scenario where the influential cases’ context
 feature values are replaced with the specified values.</p>
 </section>
 <section id="distance-ratio">
-<span id="id33"></span><h3>Distance Ratio<a class="headerlink" href="#distance-ratio" title="Link to this heading">#</a></h3>
+<span id="id32"></span><h3>Distance Ratio<a class="headerlink" href="#distance-ratio" title="Link to this heading">#</a></h3>
 <p>The ratio of distance between a prediction and its nearest case to the minimum distance in between the closest two cases in the local area.</p>
 </section>
 </section>
