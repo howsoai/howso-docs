@@ -41,6 +41,12 @@ Howso Engine is a generalized Machine Learning (ML) and Artificial Intelligence 
 - :ref:`context_features`
 - :doc:`feature_attributes`
 
+Notebook Recipe
+---------------
+The following recipe will demonstrate some of the capabilities demonstrated in this guide as well as a few additional capabilities.
+
+- :download:`Engine Intro <https://github.com/howsoai/howso-engine-recipes/blob/main/recipes/engine-intro.ipynb>`
+
 How-To Guide
 ------------
 Here we will walk through the steps of what a basic workflow might look like when using Howso Engine. First, we will load data into a pandas DataFrame for use with Howso Engine. Then, we will use the Howso Engine to map attributes of the features, train a trainee, analyze, and react.
