@@ -1,4 +1,5 @@
 <!-- Auto-generated do not edit -->
+
 # FeatureTimeSeries
 
 `````{py:module} howso.openapi.models
@@ -17,14 +18,14 @@ When `rate` is specified, uses the difference of the current value from its prev
 ```
 
 ```{py:attribute} order
-:type: Optional[float]
+:type: Optional[int]
 
 If provided, will generate the specified number of derivatives and boundary values.
 
 ```
 
 ```{py:attribute} derived_orders
-:type: Optional[float]
+:type: Optional[int]
 
 The number of orders of derivatives that should be derived instead of synthesized. Ignored if order is not provided.
 
@@ -52,7 +53,7 @@ If specified, generates lag features containing previous values using the enumer
 ```
 
 ```{py:attribute} num_lags
-:type: Optional[float]
+:type: Optional[int]
 
 If specified, generates the specified amount of lag features containing previous values. If `lags` is specified, then this parameter will be ignored. If neither `num_lags` nor `lags` is specified for a feature, then a single lag feature is generated.
 
@@ -61,14 +62,14 @@ If specified, generates the specified amount of lag features containing previous
 ```{py:attribute} rate_min
 :type: Optional[List[float]]
 
-If specified, ensures that the rate or delta (the difference quotient, the discrete version of derivative) for this feature won't be less than the value provided. A null value means no min boundary. The value must be in epoch format for the time feature. The length of the list must match the number of derivatives as specified by `order`. Only applicable when time series type is set to `rate`.
+If specified, ensures that the rate (the difference quotient, the discrete version of derivative) for this feature won't be less than the value provided. A null value means no min boundary. The value must be in epoch format for the time feature. The length of the list must match the number of derivatives as specified by `order`. Only applicable when time series type is set to `rate`.
 
 ```
 
 ```{py:attribute} rate_max
 :type: Optional[List[float]]
 
-If specified, ensures that the rate or delta (the difference quotient, the discrete version of derivative) for this feature won't be more than the value provided. A null value means no max boundary. The value must be in epoch format for the time feature. The length of the list must match the number of derivatives as specified by `order`. Only applicable when time series type is set to `rate`.
+If specified, ensures that the rate (the difference quotient, the discrete version of derivative) for this feature won't be more than the value provided. A null value means no max boundary. The value must be in epoch format for the time feature. The length of the list must match the number of derivatives as specified by `order`. Only applicable when time series type is set to `rate`.
 
 ```
 

@@ -433,13 +433,13 @@ document.write(`
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="howso.openapi.models.FeatureTimeSeries.order">
-<span class="sig-name descname"><span class="pre">order</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#howso.openapi.models.FeatureTimeSeries.order" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">order</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#howso.openapi.models.FeatureTimeSeries.order" title="Link to this definition">#</a></dt>
 <dd><p>If provided, will generate the specified number of derivatives and boundary values.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="howso.openapi.models.FeatureTimeSeries.derived_orders">
-<span class="sig-name descname"><span class="pre">derived_orders</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#howso.openapi.models.FeatureTimeSeries.derived_orders" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">derived_orders</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#howso.openapi.models.FeatureTimeSeries.derived_orders" title="Link to this definition">#</a></dt>
 <dd><p>The number of orders of derivatives that should be derived instead of synthesized. Ignored if order is not provided.</p>
 </dd></dl>
 
@@ -463,20 +463,20 @@ document.write(`
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="howso.openapi.models.FeatureTimeSeries.num_lags">
-<span class="sig-name descname"><span class="pre">num_lags</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#howso.openapi.models.FeatureTimeSeries.num_lags" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">num_lags</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#howso.openapi.models.FeatureTimeSeries.num_lags" title="Link to this definition">#</a></dt>
 <dd><p>If specified, generates the specified amount of lag features containing previous values. If <code class="docutils literal notranslate"><span class="pre">lags</span></code> is specified, then this parameter will be ignored. If neither <code class="docutils literal notranslate"><span class="pre">num_lags</span></code> nor <code class="docutils literal notranslate"><span class="pre">lags</span></code> is specified for a feature, then a single lag feature is generated.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="howso.openapi.models.FeatureTimeSeries.rate_min">
 <span class="sig-name descname"><span class="pre">rate_min</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#howso.openapi.models.FeatureTimeSeries.rate_min" title="Link to this definition">#</a></dt>
-<dd><p>If specified, ensures that the rate or delta (the difference quotient, the discrete version of derivative) for this feature won’t be less than the value provided. A null value means no min boundary. The value must be in epoch format for the time feature. The length of the list must match the number of derivatives as specified by <code class="docutils literal notranslate"><span class="pre">order</span></code>. Only applicable when time series type is set to <code class="docutils literal notranslate"><span class="pre">rate</span></code>.</p>
+<dd><p>If specified, ensures that the rate (the difference quotient, the discrete version of derivative) for this feature won’t be less than the value provided. A null value means no min boundary. The value must be in epoch format for the time feature. The length of the list must match the number of derivatives as specified by <code class="docutils literal notranslate"><span class="pre">order</span></code>. Only applicable when time series type is set to <code class="docutils literal notranslate"><span class="pre">rate</span></code>.</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="howso.openapi.models.FeatureTimeSeries.rate_max">
 <span class="sig-name descname"><span class="pre">rate_max</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#howso.openapi.models.FeatureTimeSeries.rate_max" title="Link to this definition">#</a></dt>
-<dd><p>If specified, ensures that the rate or delta (the difference quotient, the discrete version of derivative) for this feature won’t be more than the value provided. A null value means no max boundary. The value must be in epoch format for the time feature. The length of the list must match the number of derivatives as specified by <code class="docutils literal notranslate"><span class="pre">order</span></code>. Only applicable when time series type is set to <code class="docutils literal notranslate"><span class="pre">rate</span></code>.</p>
+<dd><p>If specified, ensures that the rate (the difference quotient, the discrete version of derivative) for this feature won’t be more than the value provided. A null value means no max boundary. The value must be in epoch format for the time feature. The length of the list must match the number of derivatives as specified by <code class="docutils literal notranslate"><span class="pre">order</span></code>. Only applicable when time series type is set to <code class="docutils literal notranslate"><span class="pre">rate</span></code>.</p>
 </dd></dl>
 
 <dl class="py attribute">

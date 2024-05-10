@@ -1,4 +1,5 @@
 <!-- Auto-generated do not edit -->
+
 # FeatureAttributes
 
 `````{py:module} howso.openapi.models
@@ -35,7 +36,7 @@ The type of the feature.
 ```{py:attribute} cycle_length
 :type: Optional[int]
 
-Cyclic features start at 0 and have a range of [0, cycle_length). The `cycle_length` is the maximum value (exclusive) of the cycle. Values exceeding the cycle length are normalized to the original cycle (e.g., cycles with length 360 for degrees will evaluate a 370 as 10 and 360 as 0). Negative values are not supported in cyclic features. Only applicable to continuous or ordinal features.
+Cyclic features start at 0 and have a range of [0, `cycle_length`]. The `cycle_length` is the maximum value (exclusive) of the cycle. Values exceeding the cycle length are normalized to the original cycle (e.g., cycles with length 360 for degrees will evaluate a 370 as 10 and 360 as 0). Negative values are not supported in cyclic features. Only applicable to continuous or ordinal features.
 
 Examples:
 - degrees: values should be 0-359, cycle_length = 360
@@ -131,7 +132,7 @@ When false (default), the feature will be treated as a non-dependent context fea
 ```{py:attribute} observational_error
 :type: Optional[float]
 
-Specify the observed error value for this feature. Use when the error value is already known. Defaults to 0.
+Specifies the observational mean absolute error for this feature. Use when the error value is already known. Defaults to 0.
 ```
 
 ```{py:attribute} original_type
@@ -164,13 +165,6 @@ Round to the specified significant digits, default is no rounding.
 :type: Optional[str]
 
 The type used in novel nominal substitution.
-```
-
-```{py:attribute} time_delta_format
-:type: Optional[str]
-
-Format of the delta for date time features, default is 'seconds'. Valid values are: milliseconds, seconds, minutes, hours, days, weeks, years.
-
 ```
 
 ```{py:attribute} time_series
