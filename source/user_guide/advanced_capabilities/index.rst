@@ -8,22 +8,28 @@ learning, as well as Howso's special techniques for handling json, sparse, and t
 can be easily
 adapted to your specific dataset or application.
 
-- :doc:`Anomaly Detection <anomaly_detection>`
 - :doc:`Bias Mitigation <bias_mitigation>`
+- :doc:`Case Importance <case_importance>`
+- :doc:`Editing Trainees and Case Weighting <editing_case_weighting>`
+- :doc:`Feature Importance <feature_importance>`
 - :doc:`Generative AI and Data Synthesis <generative_AI_synth>`
-- :doc:`Handling Sparse Data <sparse_data>`
-- :doc:`JSON Features <json_features>`
+- :doc:`Influential, Similiar, and Boundary Cases <influential_cases>`
 - :doc:`Reinforcement Learning <reinforcement_learning>`
 - :doc:`Time Series and Sequential Data Analysis <time_series>`
+- :doc:`JSON Features <json_features>`
 
 .. toctree::
     :maxdepth: 2
     :hidden:
 
-    anomaly_detection
+    case_importance
     bias_mitigation
+    editing_case_weighting
+    feature_importance
     generative_AI_synth
-    sparse_data
+    generative_synth
+    influential_cases
     json_features
     reinforcement_learning
     time_series
+    

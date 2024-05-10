@@ -27,10 +27,12 @@ in the prerequisites using the ``fetch_data()`` function.
 
 Concepts & Terminology
 ----------------------
-This guide will explain the concept of **derived features**, which include both **derived action features** and **derived context
-features**.  To follow along, you should be familiar with the following concepts:
+This guide will explain the concept of :ref:`derived_features`, which include both **derived action features** and **derived context
+features**. Derived features allow you extra control to create additional features based on existing features. This provides additional
+feature engineering flexiblity. To follow along, you should be familiar with the following concepts:
 
 - :ref:`trainee`
+- :ref:`derived_features`
 - :ref:`react`
 - :ref:`case`
 - :ref:`feature`
@@ -163,8 +165,10 @@ For more information on time-series, see the API Reference and the :doc:`time-se
 
 API References
 --------------
-
-- :func:`howso.utilities.infer_feature_attributes`
-- :meth:`Trainee.react`
-- :meth:`Trainee.react_series`
+- :py:class:`~Trainee`
+- :py:meth:`Trainee.train`
+- :py:meth:`Trainee.analyze`
+- :py:meth:`Trainee.react`
+- :py:meth:`~howso.utilities.infer_feature_attributes`
+- :py:meth:`Trainee.react_series`
 

@@ -26,11 +26,6 @@ Data
 ----
 Our example dataset for this recipe is the well known ``Adult`` dataset. It is accessible via the `pmlb <https://github.com/EpistasisLab/pmlb>`__ package installed earlier. We use the ``fetch_data()`` function to retrieve the dataset in Step 1 below.
 
-Notebook Recipe
----------------
-The following recipe will supplement the content this guide will cover:
-
-- :download:`Engine Intro <https://github.com/howsoai/howso-engine-recipes/blob/main/1-engine-intro.ipynb>`
 
 Concepts & Terminology
 ----------------------
@@ -64,10 +59,15 @@ This dataset consists of 14 Context Features and 1 Action Feature. The Action Fe
 
 .. code-block:: python
 
-    df = fetch_data('adult', local_cache_dir="data/adult")
+    df = fetch_data('adult')
 
     # Subsample the data to ensure the example runs quickly
-    df = df.sample(2000)
+    df = df.sample(1001)
+
+    # Split out the last row for a test case and drop the Action Feature
+    test_case = df.iloc[[-1]].copy()
+    df.drop(df.index[-1], inplace=True)
+    test_case = test_case.drop('target', axis=1)
 
 
 Step 2 - Map Data
@@ -111,10 +111,7 @@ To begin the Howso Engine workflow, a Trainee is created to act as a base for al
 
 .. code-block:: python
 
-    t = Trainee(
-        features=features,
-        overwrite_existing=True
-    )
+    t = Trainee(features=features)
 
 Step 5 - Train
 ^^^^^^^^^^^^^^
@@ -140,7 +137,51 @@ Once Howso Engine is trained and analyzed, it provides the user with a variety o
 
 .. code-block:: python
 
-    results = t.react()
+    results = t.react(
+        test_case[context_features],
+        context_features=context_features,
+        action_features=action_features,
+    )    
+    predictions = results['action'][action_features]
+
+Complete Code
+^^^^^^^^^^^^^
+The code from all of the steps in this guide is combined below:
+
+.. code-block:: python
+
+    import pandas as pd
+    from pmlb import fetch_data
+
+    from howso.engine import Trainee
+    from howso.utilities import infer_feature_attributes
+
+    # import data
+    df = fetch_data('adult')
+
+    # Subsample the data to ensure the example runs quickly
+    df = df.sample(1001)
+    # Split out the last row for a test case and drop the Action Feature
+    test_case = df.iloc[[-1]].copy()
+    df.drop(df.index[-1], inplace=True)
+    test_case = test_case.drop('target', axis=1)
+
+    features = infer_feature_attributes(df)
+
+    action_features = ['target']
+    context_features = features.get_names(without=action_features)
+
+    trainee = Trainee(features=features)
+    
+    trainee.train(df)
+
+    trainee.analyze(context_features=context_features, action_features=action_features)
+
+    results = trainee.react(
+        test_case[context_features],
+        context_features=context_features,
+        action_features=action_features,
+    )    
     predictions = results['action'][action_features]
 
 

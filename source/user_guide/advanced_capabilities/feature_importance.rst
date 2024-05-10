@@ -11,21 +11,13 @@ Feature Importance
 
 Objectives: what you will take away
 -----------------------------------
-- **Definitions & Understanding** Difference between global vs local, and robust vs non-robust :ref:`Feature Contributions <contribution>` and :ref:`Feature MDA <mda>`.
-- **How-To** obtain both feature importance metrics.
+- **How-To** Retrieve the different types of feature importance metrics across several different categories: :doc:`global vs local <../concepts/global_vs_local>`, and robust vs non-robust :ref:`Feature Contributions <contribution>` and :ref:`Feature MDA <mda>`.
 
 
 Prerequisites: before you begin
 -------------------------------
 - You have successfully :doc:`installed Howso Engine <../../getting_started/installing>`
-- You have :doc:`loaded, configured, trained, and analyzed data <../basics/basic_workflow>`
-
-
-Notebook Recipe
----------------
-The following recipe will supplement the content this guide will cover:
-
-- :download:`Interpretability <https://github.com/howsoai/howso-engine-recipes/blob/main/2-interpretability.ipynb>`
+- You have an understanding of Howso's :doc:`basic workflow <../basic_capabilities/basic_workflow>`.
 
 
 Concepts & Terminology
@@ -33,32 +25,24 @@ Concepts & Terminology
 The main piece of terminology this guide introduces is the concept of Feature Importance. To understand this, we
 recommend being familiar with the following concepts:
 
-- :ref:`trainee`
-- :ref:`react`
-- :ref:`feature`
-- :ref:`action_features`
-- :ref:`context_features`
-- :ref:`Feature Contribution <contribution>`
-- :ref:`Feature MDA <mda>`
-- :doc:`Feature Attributes <../basics/feature_attributes>`
+- :ref:`residual`
+- :ref:`robust`
+- :ref:`contribution`
+- :ref:`mda`
 
-
-Local vs Global
-^^^^^^^^^^^^^^^
-Feature Contributions and Feature MDA can be calculated and retrieved both locally and globally. Conceptually, global metrics are measured using all of the cases in the Trainee, while local metrics use either a specific subset of those cases or a set of new cases and calculates the metrics using cases most similar to those specified cases.
-
-- **Local** :py:meth:`Trainee.react` along with the ``details`` parameter can be used for local metrics.
-- **Global**  :py:meth:`Trainee.react_into_trainee` along with :py:meth:`Trainee.get_prediction_stats` are used for global metrics.
-
+The two metrics available for feature importance is feature :ref:`contribution` and feature :ref:`mda`. 
 
 Robust vs Non-Robust
 ^^^^^^^^^^^^^^^^^^^^
-In order to calculate feature importance, Howso Engine measures the impact on the prediction by comparing predictions with and without the feature. The feature set without the feature of interest may include either all of the other features, or a combination of features that
-may include any number of other features. Non-robust calculations use a leave-one-out approach to calculate these metrics, thus the metrics reflect the results when all features expect the feature of interest is used. Robust feature contributions compares the results from sampling from
-the power set of all combinations with and without the feature of interest. Robust metrics are recommended as they encompass a greater variety of feature sets, and they include a calculation performance boost as the number of features increases.
+:ref:`robust` metrics are recommended as they use a greater variety of feature combinations, and they include a calculation performance boost as the number of features increases.
 
 How-To Guide
 ------------
+
+Setup
+^^^^^
+The user guide assumes you have created and setup a :class:`~Trainee` as demonstrated in :doc:`basic workflow <../basic_capabilities/basic_workflow>`.
+The created :class:`~Trainee` will be referenced as ``trainee`` in the sections below.
 
 Global Feature Importance
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -70,9 +54,9 @@ and setting them to ``True`` will cache the desired metrics. For example, ``mda_
     t.react_into_trainee(
         context_features=context_features,
         action_feature=action_features[0],
-        mda_robust=True,
         contributions_robust=True
     )
+
 
 In order to extract the metrics, :py:meth:`Trainee.get_prediction_stats` is called. An action feature must be specified, and the ``stats`` parameter is used determine which metrics to return. The ``stats`` parameter takes a list, so multiple
 metrics may be specified together, but for this example they are separated. If robust metrics are calculated, then the ``robust`` parameter must be set to ``True`` to retrieve these metrics. If non-robust metrics are calculated, then the ``robust`` parameter can be set to the default value.
@@ -89,6 +73,7 @@ and setting them to ``True`` will calculate the desired metrics. Robust calculat
 
 .. code-block:: python
 
+    # Default is robust
     details = {
         'feature_contributions':True,
         'feature_mda':True,
@@ -114,21 +99,96 @@ are calculated in :py:meth:`Trainee.react` from the previous step.
 
     Contributions and MDA are also metrics for cases and not just features, so please be aware when reading other guides that may use those terms.
 
+Contribution and MDA matrices
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Example Use-Cases
-^^^^^^^^^^^^^^^^^
-In addition to the examples above, here are a few example use-cases for feature importance.
+Howso also provides the two metrics in a matrix view, where for each row which represent the action feature, you can identify the contributions of all
+the other context features to that prediction. Since these matrices may not be symmetrical, examining the differences between the upper and lower triangular matrices
+may reveal additional insights. Please see the linked recipe for more information.
 
-- Bias Determination
-    - e.g., determining which features are important to your model to gauge the possibility of bias in the model.
-- Reducing :class:`~Trainee` size
-    - By strategically removing unimportant features, information can be maintained while the size of the :class:`~Trainee`
-      is decreased
+:meth:`Trainee.get_contribution_matrix` and :meth:`Trainee.get_mda_matrix` gets these matrices respectively.
+
+.. warning::
+
+    Matrices may be computationally expensive.
+
+.. code-block:: python
+
+    contrib_matrix = t.get_contribution_matrix()
+    mda_matrix = t.get_mda_matrix()
+
+Combined Code
+^^^^^^^^^^^^^
+
+.. code-block:: python
+
+    import pandas as pd
+    from pmlb import fetch_data
+
+    from howso.engine import Trainee
+    from howso.utilities import infer_feature_attributes
+
+    df = fetch_data('adult', local_cache_dir="data/adult")
+
+    # Subsample the data to ensure the example runs quickly
+    df = df.sample(1000, random_state=0).reset_index(drop=True)
+
+    # Split out the last row for a prediction set and drop the Action Feature
+    test_case = df.iloc[[-1]].copy()
+    df.drop(df.index[-1], inplace=True)
+
+    # Auto detect features
+    features = infer_feature_attributes(df)
+
+    # Specify Context and Action Features
+    action_features = ['target']
+    context_features = features.get_names(without=action_features)
+
+    # Create a new Trainee, specify features
+    trainee = Trainee(features=features)
+
+    # Train and analyze
+    trainee.train(df)
+    trainee.analyze()
+
+    trainee.react_into_trainee(
+        context_features=context_features,
+        action_feature=action_features[0],
+        contributions_robust=True,
+        mda_robust=True
+    )
+
+    robust_feature_contributions = trainee.get_prediction_stats(action_feature=action_features[0], robust=True, stats=['contribution'])
+    robust_feature_mda = trainee.get_prediction_stats(action_feature=action_features[0], robust=True, stats=['mda'])
+
+    # Default is robust
+    details = {
+        'feature_contributions':True,
+        'feature_mda':True,
+    }
+
+    results = trainee.react(
+        test_case[context_features],
+        context_features=context_features,
+        action_features=action_features,
+        details=details
+    )
+
+    robust_feature_contributions = results['details']['feature_contributions']
+    robust_feature_mda = results['details']['feature_mda']
+
+    contrib_matrix = trainee.get_contribution_matrix()
+    mda_matrix = trainee.get_mda_matrix()
 
 
 API References
 --------------
-- :meth:`Trainee.react`
-- :meth:`Trainee.react_into_trainee`
-- :meth:`Trainee.get_prediction_stats`
+- :py:class:`~Trainee`
+- :py:meth:`Trainee.train`
+- :py:meth:`Trainee.analyze`
+- :py:meth:`Trainee.react`
+- :py:meth:`Trainee.react_into_trainee`
+- :py:meth:`Trainee.get_prediction_stats`
+- :py:meth:`Trainee.get_contribution_matrix`
+- :py:meth:`Trainee.get_mda_matrix`
 
