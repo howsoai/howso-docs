@@ -1,5 +1,5 @@
 Howso Engine™
-==================
+=============
 
 Whether you are an individual or a large enterprise, AI has likely already impacted your daily life. While AI has likely opened up many exciting new opportunities, you have probably
 heard stories of AI generating "hallucinations" and grossly biased predictions. You might have a nagging suspicion that the AI available today is unreliable or misleading.
@@ -53,9 +53,9 @@ Explore Introductory User Guides, Recipes, and API References
 
 Explore basic user guides to perform your first tasks
 
-- :doc:`Basic Workflow <../user_guide/basics/basic_workflow>`
-- :doc:`Feature Attributes <../user_guide/basics/feature_attributes>`
-- :doc:`Predictions<../user_guide/basics/predictions>`
+- :doc:`Basic Workflow <../user_guide/basic_capabilities>`
+- :doc:`Feature Attributes <../user_guide/basic_capabilities/feature_attributes>`
+- :doc:`Predictions<../user_guide/basic_capabilities/predictions>`
 
 Download and run introductory recipes (sample notebooks)
 

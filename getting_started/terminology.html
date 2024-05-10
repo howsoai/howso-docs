@@ -420,7 +420,7 @@ Trainee may additionally include metadata, parameters, details of feature attrib
 which is generally a mnemonic string or phrase. Features are often numbers, but can also be strings, dates, or other
 data. The feature may be described by feature attributes, which may include ranges, whether it is cyclic, allowed
 values, etc. In database and spreadsheet terms, features are often referred to as columns.</p>
-<p>For more information, see <a class="reference internal" href="../user_guide/basics/feature_attributes.html#feature-attributes"><span class="std std-ref">Feature Attributes</span></a></p>
+<p>For more information, see <a class="reference internal" href="../user_guide/basic_capabilities/feature_attributes.html#feature-attributes"><span class="std std-ref">Feature Attributes</span></a></p>
 </section>
 <section id="value">
 <span id="id3"></span><h3>Value<a class="headerlink" href="#value" title="Link to this heading">#</a></h3>
@@ -446,7 +446,7 @@ directly.  Derived features are described by a type and a derived feature code, 
 will be used to derive the feature values.  For example, if a dataset contains <cite>mass</cite>, <cite>acceleration</cite>, and <cite>force</cite> features,
 the force feature may be derived from the product of <cite>mass</cite> and <cite>acceleration</cite>.  Time-series features, particular deltas, rates,
 and lags, are also derived features.</p>
-<p>For more information, see <a class="reference internal" href="../user_guide/basics/feature_attributes.html#feature-attributes"><span class="std std-ref">Feature Attributes</span></a>,
+<p>For more information, see <a class="reference internal" href="../user_guide/basic_capabilities/feature_attributes.html#feature-attributes"><span class="std std-ref">Feature Attributes</span></a>,
 the <a class="reference external" href="https://htmlpreview.github.io/?https://github.com/howsoai/amalgam/blob/main/doc/Language.html">Amalgam Language documentation</a>,
 and the <a class="reference external" href="derived_features">Derived Features user guide</a>.</p>
 </section>
@@ -608,12 +608,15 @@ example, a value of 2 for a feature called “degrees”, which references tempe
 </section>
 <section id="most-similar-cases">
 <span id="id28"></span><h3>Most Similar Cases<a class="headerlink" href="#most-similar-cases" title="Link to this heading">#</a></h3>
-<p>The cases which are most similar to another case or a prediction.</p>
+<p>The cases which are most similar to another case or a prediction as determined by the distance of the context features. Returns cases that are similiar, regardless of their
+influence.</p>
 </section>
 <section id="influential-cases">
 <span id="id29"></span><h3>Influential Cases<a class="headerlink" href="#influential-cases" title="Link to this heading">#</a></h3>
 <p>The cases which were identified as most influential during a prediction, along with their weights when predicting the
-expected value or drawing a value from the distribution of expected values for generative outputs.</p>
+expected value or drawing a value from the distribution of expected values for generative outputs. The influential
+cases are a subset of the <a class="reference internal" href="#most-similar-cases"><span class="std std-ref">Most Similar Cases</span></a>, returning only those cases whose cumulative influence weights added in
+descending order is below the influential weight threshold.</p>
 </section>
 <section id="boundary-cases">
 <span id="id30"></span><h3>Boundary Cases<a class="headerlink" href="#boundary-cases" title="Link to this heading">#</a></h3>
