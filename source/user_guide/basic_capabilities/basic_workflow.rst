@@ -43,7 +43,7 @@ Howso Engine is a generalized Machine Learning (ML) and Artificial Intelligence 
 
 Notebook Recipe
 ---------------
-There following recipe will demonstrate some of the capabilities demonstrated in this guide as well as a few additional capabilities.
+The following recipe will demonstrate some of the capabilities demonstrated in this guide as well as a few additional capabilities.
 
 - :download:`Engine Intro <https://github.com/howsoai/howso-engine-recipes/blob/main/recipes/engine-intro.ipynb>`
 

@@ -21,7 +21,7 @@ Prerequisites: before you begin
 
 Notebook Recipe
 ---------------
-There following recipe will supplement the content this guide will cover and go into some additional functionality:
+The following recipe will supplement the content this guide will cover and go into some additional functionality:
 
 - :download:`Feature Importance <https://github.com/howsoai/howso-engine-recipes/blob/main/recipes/2-Workflows/feature_importance/feature_importance.ipynb>`
 

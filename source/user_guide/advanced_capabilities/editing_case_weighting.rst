@@ -23,7 +23,7 @@ Prerequisites: before you begin
 
 Notebook Recipe
 ---------------
-There following recipe will supplement the content this guide will cover:
+The following recipe will supplement the content this guide will cover:
 
 - `Auditing and Editing <https://github.com/howsoai/howso-engine-recipes/blob/main/4-audit_edit.ipynb>`
 
