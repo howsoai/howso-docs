@@ -114,8 +114,7 @@ approximation of the feature importance of the relationships expressed in the da
 MDA
 ---
 
-The *Mean Decrease in Accuracy* of an Action Feature when each feature or case is considered versus not considered.
-
+The *Mean Decrease in Accuracy* (MDA) of an Action Feature is mean decrease in accuracy of removing a feature.  MDA units are on the same scale as the Action feature(s), and will be probabilities for categorical features.
 .. _robust:
 
 Robust

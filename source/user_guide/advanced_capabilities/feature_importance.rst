@@ -19,6 +19,11 @@ Prerequisites: before you begin
 - You have successfully :doc:`installed Howso Engine <../../getting_started/installing>`
 - You have an understanding of Howso's :doc:`basic workflow <../basic_capabilities/basic_workflow>`.
 
+Notebook Recipe
+---------------
+There following recipe will supplement the content this guide will cover and go into some additional functionality:
+
+- :download:`Feature Importance <https://github.com/howsoai/howso-engine-recipes/blob/main/recipes/2-Workflows/feature_importance/feature_importance.ipynb>`
 
 Concepts & Terminology
 ----------------------
