@@ -2,7 +2,7 @@
 Recipes
 =======
 
-The Howso [Engine Recipes Github](https://github.com/howsoai/howso-engine-recipes/tree/main) page includes many "recipes" for building your own use-cases!
+The Howso Engine `Recipes Github <https://github.com/howsoai/howso-engine-recipes/tree/main>`_ page includes many "recipes" for building your own use-cases!
 They include an introduction recipe followed by several sections of different types of recipes.
 
 Introduction Recipe
@@ -13,7 +13,7 @@ Introduction Recipe
 
 Section 1-Insights
 ^^^^^^^^^^^^^^^^^^
-Explores the different types of insights that can be attained using Howso
+Explores the different types of insights that can be attained using Howso.
 
 **Noteable Recipes**
 
@@ -22,7 +22,7 @@ Explores the different types of insights that can be attained using Howso
 
 Section 2-Workflows
 ^^^^^^^^^^^^^^^^^^^
-Example use cases that combine different Howso insights and capabilities into practical workflows
+Example use cases that combine different Howso insights and capabilities into practical workflows.
 
 **Noteable Recipes**
 
@@ -44,6 +44,8 @@ Example use cases that combine different Howso insights and capabilities into pr
 
 Section 3-Integration
 ^^^^^^^^^^^^^^^^^^^^^
+How to connect and use Howso with a variety of outside platforms.
+
 Coming soon!
 
 Section 4-Examples
@@ -64,7 +66,7 @@ More Coming soon!
 
 Section 5-Technical_Validation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Demonstrations of certain Howso technical capabilities
+Demonstrations of certain Howso technical capabilities.
 
 **Noteable Recipes**
 
