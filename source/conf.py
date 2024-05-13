@@ -191,7 +191,7 @@ autosummary_ignore_module_all = False
 # Redirects
 # https://documatt.com/sphinx-reredirects/usage.html
 redirects = {
-    # "foo": "/bar.html" Creates a redirect from "/foo.html" to "/bar.html"
+    # "foo": "/bar.html" # Creates a redirect from "/foo.html" to "/bar.html"
 }
 
 # -- Documentation Setup -----------------------------------------------------
