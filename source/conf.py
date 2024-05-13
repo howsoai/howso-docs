@@ -44,6 +44,7 @@ extensions = [
     'sphinx_copybutton',
     'sphinx_design',
     'sphinxcontrib.images',
+    'sphinx_reredirects',
     'matplotlib.sphinxext.plot_directive',
 ]
 
