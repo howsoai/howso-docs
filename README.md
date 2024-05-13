@@ -43,9 +43,15 @@ Dependencies required for this project are kept in `requirements.in`. If
 you change the requirements, rerun the command shown in the top of
 the `requirements-<python version>.txt` file.
 
+```bash
+pip-compile --allow-unsafe --generate-hashes --no-emit-index-url --output-file=requirements-3.8.txt
+pip-compile --allow-unsafe --generate-hashes --no-emit-index-url --output-file=requirements-3.9.txt
+pip-compile --allow-unsafe --generate-hashes --no-emit-index-url --output-file=requirements-3.10.txt
+pip-compile --allow-unsafe --generate-hashes --no-emit-index-url --output-file=requirements-3.11.txt
+```
+
 ## Building the Project
 
-`
 To build the html of the docs use the Sphinx Makefile or make.bat commands
 
 ```bash
