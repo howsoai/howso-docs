@@ -44,6 +44,7 @@ extensions = [
     'sphinx_copybutton',
     'sphinx_design',
     'sphinxcontrib.images',
+    'sphinx_reredirects',
     'matplotlib.sphinxext.plot_directive',
 ]
 
@@ -187,6 +188,11 @@ autosummary_ignore_module_all = False
 #         formatted += ", optional"
 #         return formatted
 
+# Redirects
+# https://documatt.com/sphinx-reredirects/usage.html
+redirects = {
+    # "foo": "/bar.html" # Creates a redirect from "/foo.html" to "/bar.html"
+}
 
 # -- Documentation Setup -----------------------------------------------------
 
