@@ -105,7 +105,7 @@ Adding features to a :class:`~Trainee` can be done with a single call to :meth:`
 
 In this example, we use it to add a nominal feature to each case in the model with a default value of ``"nb"``.  In addition,
 features can also be added to only certain cases, or without updating the :class:`~Trainee`'s metadata.  For more information on
-the capabilities of :meth:`~Trainee.add_feature`, see the :ref:`API Reference <api-reference>`.
+the capabilities of :meth:`~Trainee.add_feature`, see the :ref:`API Reference <../../api_reference/index>`.
 
 
 Adding & Using Case Weights
@@ -145,7 +145,7 @@ We can edit cases that meet this condition with the following code:
 
 
 This will set the target for all cases that meet that condition to 1.  Cases may also be edited using their indices or on non-exact matches
-of conditions.  For more information on :meth:`~Trainee.edit_cases`, see the :ref:`API Reference <api-reference>`.
+of conditions.  For more information on :meth:`~Trainee.edit_cases`, see the :ref:`API Reference <../../api_reference/index>`.
 
 Manually Updating Case Weights
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -174,7 +174,7 @@ incorporated) were not reported correctly by the dataset creators.  We can remov
 
 
 Cases can also be removed by index, just how cases can be edited in that fashion as well. For more information on :meth:`~Trainee.remove_cases`,
-see the :ref:`API Reference <api-reference>`.
+see the :ref:`API Reference <../../api_reference/index>`.
 
 
 Automatically Updating Case Weights
