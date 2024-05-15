@@ -17,7 +17,7 @@ Objectives: what you will take away
 Prerequisites: before you begin
 -------------------------------
 - You have successfully :doc:`installed Howso Engine <../../getting_started/installing>`
-- You have a understanding of :doc:`Howso Engine workflow and concepts <../basics/basic_workflow>`
+- You have a understanding of :doc:`Howso Engine workflow and concepts <../basic_capabilities/basic_workflow>`
 - You have a basic understanding of the concepts of RL and a python RL framework, preferably `Gymnasium <https://gymnasium.farama.org/>`__.
 
 
