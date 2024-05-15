@@ -175,8 +175,6 @@ Lastly, these bounds can also be set directly through the ``feature_bounds_map``
         generate_new_cases="always",
     )
 
-Further information about feature bounds as well as other custom constraints can be found in the :doc:`Custom Constraints <../adv_settings/business_rules/custom_constraints>` guide.
-
 .. _null_values_IFA:
 
 Nulls and Missing Values

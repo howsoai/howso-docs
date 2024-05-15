@@ -27,7 +27,7 @@ This guide focuses primarily on the concept of sparse data.  We additionally rec
 - :ref:`react`
 - :ref:`action_features`
 - :ref:`context_features`
-- :doc:`Feature Attributes <../basics/feature_attributes>`
+- :doc:`Feature Attributes <../basic_capabilities/feature_attributes>`
 
 Sparse Data
 ^^^^^^^^^^^
