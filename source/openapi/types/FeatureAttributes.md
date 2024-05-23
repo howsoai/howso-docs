@@ -58,6 +58,8 @@ Valid values include:
 - `string_mixable`: Valid only when type is continuous (predicted values may result in interpolated strings
   containing a combination of characters from multiple original values).
 
+- `formatted_date_time`: Valid only when type is continuous. Use for string datetimes paired with `date_time_format`. Defaults to ISO8601 if no `date_time_format` is provided. For epoch datetimes, please specify `type: continuous` and `data_type: number`.
+
 - `boolean`: Valid only for nominals.
 
 ```
