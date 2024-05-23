@@ -469,6 +469,8 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">string</span></code>, <code class="docutils literal notranslate"><span class="pre">number</span></code>, <code class="docutils literal notranslate"><span class="pre">json</span></code>, <code class="docutils literal notranslate"><span class="pre">amalgam</span></code>, <code class="docutils literal notranslate"><span class="pre">yaml</span></code>: Valid for both nominal and continuous.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">string_mixable</span></code>: Valid only when type is continuous (predicted values may result in interpolated strings
 containing a combination of characters from multiple original values).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">formatted_date_time</span></code>: Valid only when type is continuous. Used for string datetimes and paired with <code class="docutils literal notranslate"><span class="pre">date_time_format</span></code>.
+Defaults to ISO8601 if no <code class="docutils literal notranslate"><span class="pre">date_time_format</span></code> is provided. For epoch datetimes, please specify <code class="docutils literal notranslate"><span class="pre">type:</span> <span class="pre">continuous</span></code> and <code class="docutils literal notranslate"><span class="pre">data_type:</span> <span class="pre">number</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">boolean</span></code>: Valid only for nominals.</p></li>
 </ul>
 </dd></dl>
