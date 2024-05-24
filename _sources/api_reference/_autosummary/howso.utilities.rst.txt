@@ -12,9 +12,12 @@
 .. autosummary::
    :nosignatures:
 
+   ~howso.utilities.FeatureAttributesBase
    ~howso.utilities.FeatureType
    ~howso.utilities.LocaleOverride
+   ~howso.utilities.MultiTableFeatureAttributes
    ~howso.utilities.ProgressTimer
+   ~howso.utilities.SingleTableFeatureAttributes
    ~howso.utilities.Timer
    ~howso.utilities.UserFriendlyExit
 
@@ -32,6 +35,7 @@
    ~howso.utilities.check_feature_names
    ~howso.utilities.date_format_is_iso
    ~howso.utilities.date_to_epoch
+   ~howso.utilities.deep_update
    ~howso.utilities.deserialize_cases
    ~howso.utilities.determine_iso_format
    ~howso.utilities.dprint

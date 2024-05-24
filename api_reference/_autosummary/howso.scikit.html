@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=402959de" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=be2ede8c" />
@@ -41,11 +41,11 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script src="../../_static/documentation_options.js?v=8a448e45"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
     <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'api_reference/_autosummary/howso.scikit';</script>
@@ -338,7 +338,10 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Howso Engine Packages</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="howso.engine.html">howso.engine</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="howso.engine.html">howso.engine</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="howso.engine.typing.html">howso.engine.typing</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="howso.utilities.html">howso.utilities</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">howso.scikit</a></li>
 </ul>
@@ -348,7 +351,7 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="howso.direct.html">howso.direct</a></li>
 </ul>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../data_structures.html">OpenAPI Data Structures</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data_structures.html">OpenAPI Data Structures</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../openapi/types/Cases.html">Cases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../openapi/types/FeatureAttributes.html">FeatureAttributes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../openapi/types/FeatureAutoDeriveOnTrain.html">FeatureAutoDeriveOnTrain</a></li>
@@ -577,7 +580,7 @@ mechanism works.</p>
 existing request. This allows you to change the request for some
 parameters and not others.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 1.3.</span></p>
+<p><span class="versionmodified added">Added in version 1.3.</span></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -961,6 +964,27 @@ features of the reacted case to determine that area.</p>
 </dl>
 </li>
 <li><dl class="simple">
+<dt>prediction_stats<span class="classifier">bool, optional</span></dt><dd><p>When true outputs feature prediction stats for all (context
+and action) features locally around the prediction. The stats
+returned  are (“r2”, “rmse”, “spearman_coeff”, “precision”,
+“recall”, “accuracy”, “mcc”). Confusion matrices may also be
+returned by setting ‘confusion_matrices’ to true. Uses only the
+context features of the reacted case to determine that area.
+Relies on ‘robust_residuals’ flag.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>confusion_matrices<span class="classifier">bool, optional</span></dt><dd><p>When true, will automatically set ‘prediction_stats’ to true and
+return the confusion matrices alongside all of the other prediction
+stats from ‘prediction_stats’ for all (context and action) features
+locally around the prediction. Uses only the context features of
+the reacted case to determine that area. Relies on ‘robust_residuals’
+flag.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
 <dt>similarity_conviction<span class="classifier">bool, optional</span></dt><dd><p>If True, outputs similarity conviction for the reacted case.
 Uses both context and action feature values as the case values
 for all computations. This is defined as expected (local)
@@ -1321,7 +1345,7 @@ mechanism works.</p>
 existing request. This allows you to change the request for some
 parameters and not others.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 1.3.</span></p>
+<p><span class="versionmodified added">Added in version 1.3.</span></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1423,7 +1447,7 @@ mechanism works.</p>
 existing request. This allows you to change the request for some
 parameters and not others.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 1.3.</span></p>
+<p><span class="versionmodified added">Added in version 1.3.</span></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1565,7 +1589,7 @@ sub-estimator of a meta-estimator, e.g. used inside a
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     <br/>
   </p>
 </div>

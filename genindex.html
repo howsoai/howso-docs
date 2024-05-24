@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
     <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=402959de" />
     <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=be2ede8c" />
@@ -40,11 +40,11 @@
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script src="_static/documentation_options.js?v=8a448e45"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script src="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
     <script src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
@@ -482,6 +482,8 @@ document.write(`
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.calculated_matrices">calculated_matrices (howso.engine.Trainee property)</a>
 </li>
+      <li><a href="api_reference/_autosummary/howso.engine.typing.html#howso.engine.typing.CaseIndices">CaseIndices (in module howso.engine.typing)</a>
+</li>
       <li><a href="openapi/types/Cases.html#howso.openapi.models.Cases">Cases (class in howso.openapi.models)</a>
 </li>
       <li><a href="openapi/types/Cases.html#howso.openapi.models.Cases.cases">cases (howso.openapi.models.Cases attribute)</a>
@@ -544,6 +546,8 @@ document.write(`
         <li><a href="api_reference/_autosummary/howso.direct.html#howso.direct.HowsoDirectClient.copy_trainee">(howso.direct.HowsoDirectClient method)</a>
 </li>
       </ul></li>
+      <li><a href="api_reference/_autosummary/howso.direct.html#howso.direct.HowsoCore.create_subtrainee">create_subtrainee() (howso.direct.HowsoCore method)</a>
+</li>
       <li><a href="api_reference/_autosummary/howso.client.html#howso.client.AbstractHowsoClient.create_trainee">create_trainee() (howso.client.AbstractHowsoClient method)</a>
 
       <ul>
@@ -582,11 +586,11 @@ document.write(`
 </li>
       <li><a href="openapi/types/FeatureAttributes.html#howso.openapi.models.FeatureAttributes.decimal_places">decimal_places (howso.openapi.models.FeatureAttributes attribute)</a>
 </li>
+      <li><a href="api_reference/_autosummary/howso.utilities.html#howso.utilities.deep_update">deep_update() (in module howso.utilities)</a>
+</li>
       <li><a href="api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.default_action_features">default_action_features (howso.engine.Trainee property)</a>
 </li>
       <li><a href="api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.default_context_features">default_context_features (howso.engine.Trainee property)</a>
-</li>
-      <li><a href="api_reference/_autosummary/howso.direct.html#howso.direct.HowsoDirectClient.DEFAULT_HANDLE">DEFAULT_HANDLE (howso.direct.HowsoDirectClient attribute)</a>
 </li>
       <li><a href="api_reference/_autosummary/howso.direct.html#howso.direct.HowsoCore.default_library_ext">default_library_ext() (howso.direct.HowsoCore static method)</a>
 </li>
@@ -603,6 +607,8 @@ document.write(`
       <li><a href="api_reference/_autosummary/howso.engine.html#howso.engine.delete_project">delete_project() (in module howso.engine)</a>
 </li>
       <li><a href="api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.delete_session">delete_session() (howso.engine.Trainee method)</a>
+</li>
+      <li><a href="api_reference/_autosummary/howso.direct.html#howso.direct.HowsoCore.delete_subtrainee">delete_subtrainee() (howso.direct.HowsoCore method)</a>
 </li>
       <li><a href="api_reference/_autosummary/howso.client.html#howso.client.AbstractHowsoClient.delete_trainee">delete_trainee() (howso.client.AbstractHowsoClient method)</a>
 
@@ -714,6 +720,8 @@ document.write(`
 </li>
       <li><a href="openapi/types/FeatureAttributes.html#howso.openapi.models.FeatureAttributes">FeatureAttributes (class in howso.openapi.models)</a>
 </li>
+      <li><a href="api_reference/_autosummary/howso.utilities.html#howso.utilities.FeatureAttributesBase">FeatureAttributesBase (class in howso.utilities)</a>
+</li>
       <li><a href="openapi/types/FeatureAutoDeriveOnTrain.html#howso.openapi.models.FeatureAutoDeriveOnTrain">FeatureAutoDeriveOnTrain (class in howso.openapi.models)</a>
 </li>
       <li><a href="openapi/types/FeatureAutoDeriveOnTrainCustom.html#howso.openapi.models.FeatureAutoDeriveOnTrainCustom">FeatureAutoDeriveOnTrainCustom (class in howso.openapi.models)</a>
@@ -730,10 +738,10 @@ document.write(`
         <li><a href="openapi/types/Cases.html#howso.openapi.models.Cases.features">(howso.openapi.models.Cases attribute)</a>
 </li>
       </ul></li>
-      <li><a href="openapi/types/FeatureTimeSeries.html#howso.openapi.models.FeatureTimeSeries">FeatureTimeSeries (class in howso.openapi.models)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="openapi/types/FeatureTimeSeries.html#howso.openapi.models.FeatureTimeSeries">FeatureTimeSeries (class in howso.openapi.models)</a>
+</li>
       <li><a href="api_reference/_autosummary/howso.utilities.html#howso.utilities.FeatureType">FeatureType (class in howso.utilities)</a>
 </li>
       <li><a href="api_reference/_autosummary/howso.scikit.html#howso.scikit.HowsoClassifier.fit">fit() (howso.scikit.HowsoClassifier method)</a>
@@ -768,6 +776,8 @@ document.write(`
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/_autosummary/howso.engine.typing.html#howso.engine.typing.GenerateNewCases">GenerateNewCases (in module howso.engine.typing)</a>
+</li>
       <li><a href="api_reference/_autosummary/howso.engine.html#howso.engine.get_active_session">get_active_session() (in module howso.engine)</a>
 </li>
       <li><a href="api_reference/_autosummary/howso.client.html#howso.client.AbstractHowsoClient.get_auto_ablation_params">get_auto_ablation_params() (howso.client.AbstractHowsoClient method)</a>
@@ -868,12 +878,6 @@ document.write(`
         <li><a href="api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.get_feature_residuals">(howso.engine.Trainee method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/_autosummary/howso.direct.html#howso.direct.HowsoCore.get_feature_weights_matrix">get_feature_weights_matrix() (howso.direct.HowsoCore method)</a>
-
-      <ul>
-        <li><a href="api_reference/_autosummary/howso.direct.html#howso.direct.HowsoDirectClient.get_feature_weights_matrix">(howso.direct.HowsoDirectClient method)</a>
-</li>
-      </ul></li>
       <li><a href="api_reference/_autosummary/howso.client.html#howso.client.AbstractHowsoClient.get_hierarchy">get_hierarchy() (howso.client.AbstractHowsoClient method)</a>
 
       <ul>
@@ -902,13 +906,15 @@ document.write(`
         <li><a href="api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.get_marginal_stats">(howso.engine.Trainee method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/_autosummary/howso.utilities.html#howso.utilities.get_matrix_diff">get_matrix_diff() (in module howso.utilities)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.get_mda_matrix">get_mda_matrix() (howso.engine.Trainee method)</a>
 </li>
       <li><a href="api_reference/_autosummary/howso.direct.html#howso.direct.HowsoCore.get_metadata">get_metadata() (howso.direct.HowsoCore method)</a>
+</li>
+      <li><a href="api_reference/_autosummary/howso.utilities.html#howso.utilities.FeatureAttributesBase.get_names">get_names() (howso.utilities.FeatureAttributesBase method)</a>
 </li>
       <li><a href="api_reference/_autosummary/howso.client.html#howso.client.AbstractHowsoClient.get_num_training_cases">get_num_training_cases() (howso.client.AbstractHowsoClient method)</a>
 
@@ -928,6 +934,8 @@ document.write(`
         <li><a href="api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.get_pairwise_distances">(howso.engine.Trainee method)</a>
 </li>
       </ul></li>
+      <li><a href="api_reference/_autosummary/howso.utilities.html#howso.utilities.FeatureAttributesBase.get_parameters">get_parameters() (howso.utilities.FeatureAttributesBase method)</a>
+</li>
       <li><a href="api_reference/_autosummary/howso.client.html#howso.client.AbstractHowsoClient.get_params">get_params() (howso.client.AbstractHowsoClient method)</a>
 
       <ul>
@@ -1056,6 +1064,8 @@ document.write(`
 </li>
       <li><a href="api_reference/_autosummary/howso.utilities.html#howso.utilities.Timer.has_started">has_started (howso.utilities.Timer property)</a>
 </li>
+      <li><a href="api_reference/_autosummary/howso.utilities.html#howso.utilities.SingleTableFeatureAttributes.has_unsupported_data">has_unsupported_data() (howso.utilities.SingleTableFeatureAttributes method)</a>
+</li>
       <li>
     howso.client
 
@@ -1078,14 +1088,21 @@ document.write(`
 </li>
       </ul></li>
       <li>
+    howso.engine.typing
+
+      <ul>
+        <li><a href="api_reference/_autosummary/howso.engine.typing.html#module-howso.engine.typing">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
     howso.scikit
 
       <ul>
         <li><a href="api_reference/_autosummary/howso.scikit.html#module-howso.scikit">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     howso.utilities
 
@@ -1157,6 +1174,8 @@ document.write(`
 </li>
       <li><a href="openapi/types/FeatureOriginalType.html#howso.openapi.models.FeatureOriginalType.length">length (howso.openapi.models.FeatureOriginalType attribute)</a>
 </li>
+      <li><a href="api_reference/_autosummary/howso.engine.typing.html#howso.engine.typing.Library">Library (in module howso.engine.typing)</a>
+</li>
       <li><a href="api_reference/_autosummary/howso.engine.html#howso.engine.list_projects">list_projects() (in module howso.engine)</a>
 </li>
       <li><a href="api_reference/_autosummary/howso.engine.html#howso.engine.list_sessions">list_sessions() (in module howso.engine)</a>
@@ -1173,6 +1192,8 @@ document.write(`
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/_autosummary/howso.direct.html#howso.direct.HowsoCore.load_subtrainee">load_subtrainee() (howso.direct.HowsoCore method)</a>
+</li>
       <li><a href="api_reference/_autosummary/howso.direct.html#howso.direct.HowsoDirectClient.load_trainee">load_trainee() (howso.direct.HowsoDirectClient method)</a>
 
       <ul>
@@ -1203,14 +1224,14 @@ document.write(`
 </li>
       <li><a href="openapi/types/FeatureBounds.html#howso.openapi.models.FeatureBounds.min">min (howso.openapi.models.FeatureBounds attribute)</a>
 </li>
+      <li><a href="api_reference/_autosummary/howso.engine.typing.html#howso.engine.typing.Mode">Mode (in module howso.engine.typing)</a>
+</li>
       <li><a href="api_reference/_autosummary/howso.engine.html#howso.engine.Project.modified_date">modified_date (howso.engine.Project property)</a>
 
       <ul>
         <li><a href="api_reference/_autosummary/howso.engine.html#howso.engine.Session.modified_date">(howso.engine.Session property)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     module
 
@@ -1221,11 +1242,15 @@ document.write(`
 </li>
         <li><a href="api_reference/_autosummary/howso.engine.html#module-howso.engine">howso.engine</a>
 </li>
+        <li><a href="api_reference/_autosummary/howso.engine.typing.html#module-howso.engine.typing">howso.engine.typing</a>
+</li>
         <li><a href="api_reference/_autosummary/howso.scikit.html#module-howso.scikit">howso.scikit</a>
 </li>
         <li><a href="api_reference/_autosummary/howso.utilities.html#module-howso.utilities">howso.utilities</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/_autosummary/howso.client.html#howso.client.AbstractHowsoClient.move_cases">move_cases() (howso.client.AbstractHowsoClient method)</a>
 
       <ul>
@@ -1234,6 +1259,8 @@ document.write(`
         <li><a href="api_reference/_autosummary/howso.direct.html#howso.direct.HowsoDirectClient.move_cases">(howso.direct.HowsoDirectClient method)</a>
 </li>
       </ul></li>
+      <li><a href="api_reference/_autosummary/howso.utilities.html#howso.utilities.MultiTableFeatureAttributes">MultiTableFeatureAttributes (class in howso.utilities)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -1250,9 +1277,13 @@ document.write(`
       </ul></li>
       <li><a href="api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.needs_analyze">needs_analyze (howso.engine.Trainee property)</a>
 </li>
+      <li><a href="api_reference/_autosummary/howso.engine.typing.html#howso.engine.typing.NewCaseThreshold">NewCaseThreshold (in module howso.engine.typing)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="openapi/types/FeatureAttributes.html#howso.openapi.models.FeatureAttributes.non_sensitive">non_sensitive (howso.openapi.models.FeatureAttributes attribute)</a>
+</li>
+      <li><a href="api_reference/_autosummary/howso.engine.typing.html#howso.engine.typing.NormalizeMethod">NormalizeMethod (in module howso.engine.typing)</a>
 </li>
       <li><a href="openapi/types/FeatureAttributes.html#howso.openapi.models.FeatureAttributes.null_is_dependent">null_is_dependent (howso.openapi.models.FeatureAttributes attribute)</a>
 </li>
@@ -1298,6 +1329,8 @@ document.write(`
       </ul></li>
       <li><a href="api_reference/_autosummary/howso.scikit.html#howso.scikit.HowsoEstimator.partial_unfit">partial_unfit() (howso.scikit.HowsoEstimator method)</a>
 </li>
+      <li><a href="api_reference/_autosummary/howso.engine.typing.html#howso.engine.typing.PathLike">PathLike (in module howso.engine.typing)</a>
+</li>
       <li><a href="api_reference/_autosummary/howso.engine.html#howso.engine.Project.permissions">permissions (howso.engine.Project property)</a>
 </li>
       <li><a href="api_reference/_autosummary/howso.direct.html#howso.direct.HowsoCore.persist">persist() (howso.direct.HowsoCore method)</a>
@@ -1312,11 +1345,15 @@ document.write(`
         <li><a href="api_reference/_autosummary/howso.direct.html#howso.direct.HowsoDirectClient.persist_trainee">(howso.direct.HowsoDirectClient method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.persistence">persistence (howso.engine.Trainee property)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/_autosummary/howso.engine.typing.html#howso.engine.typing.Persistence">Persistence (in module howso.engine.typing)</a>
+</li>
       <li><a href="openapi/types/FeatureAttributes.html#howso.openapi.models.FeatureAttributes.post_process">post_process (howso.openapi.models.FeatureAttributes attribute)</a>
+</li>
+      <li><a href="api_reference/_autosummary/howso.engine.typing.html#howso.engine.typing.Precision">Precision (in module howso.engine.typing)</a>
 </li>
       <li><a href="api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.predict">predict() (howso.engine.Trainee method)</a>
 
@@ -1366,6 +1403,12 @@ document.write(`
         <li><a href="api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react_group">(howso.engine.Trainee method)</a>
 </li>
       </ul></li>
+      <li><a href="api_reference/_autosummary/howso.client.html#howso.client.AbstractHowsoClient.react_initial_batch_size">react_initial_batch_size (howso.client.AbstractHowsoClient property)</a>
+
+      <ul>
+        <li><a href="api_reference/_autosummary/howso.direct.html#howso.direct.HowsoDirectClient.react_initial_batch_size">(howso.direct.HowsoDirectClient property)</a>
+</li>
+      </ul></li>
       <li><a href="api_reference/_autosummary/howso.client.html#howso.client.AbstractHowsoClient.react_into_features">react_into_features() (howso.client.AbstractHowsoClient method)</a>
 
       <ul>
@@ -1396,20 +1439,30 @@ document.write(`
         <li><a href="api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react_series">(howso.engine.Trainee method)</a>
 </li>
       </ul></li>
+      <li><a href="api_reference/_autosummary/howso.client.html#howso.client.AbstractHowsoClient.reduce_data">reduce_data() (howso.client.AbstractHowsoClient method)</a>
+
+      <ul>
+        <li><a href="api_reference/_autosummary/howso.direct.html#howso.direct.HowsoCore.reduce_data">(howso.direct.HowsoCore method)</a>
+</li>
+        <li><a href="api_reference/_autosummary/howso.direct.html#howso.direct.HowsoDirectClient.reduce_data">(howso.direct.HowsoDirectClient method)</a>
+</li>
+        <li><a href="api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.reduce_data">(howso.engine.Trainee method)</a>
+</li>
+      </ul></li>
       <li><a href="api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.release_resources">release_resources() (howso.engine.Trainee method)</a>
 
       <ul>
         <li><a href="api_reference/_autosummary/howso.scikit.html#howso.scikit.HowsoEstimator.release_resources">(howso.scikit.HowsoEstimator method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/_autosummary/howso.client.html#howso.client.AbstractHowsoClient.release_trainee_resources">release_trainee_resources() (howso.client.AbstractHowsoClient method)</a>
 
       <ul>
         <li><a href="api_reference/_autosummary/howso.direct.html#howso.direct.HowsoDirectClient.release_trainee_resources">(howso.direct.HowsoDirectClient method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/_autosummary/howso.client.html#howso.client.AbstractHowsoClient.remove_cases">remove_cases() (howso.client.AbstractHowsoClient method)</a>
 
       <ul>
@@ -1486,6 +1539,8 @@ document.write(`
       </ul></li>
       <li><a href="api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.save_location">save_location (howso.engine.Trainee property)</a>
 </li>
+      <li><a href="api_reference/_autosummary/howso.direct.html#howso.direct.HowsoCore.save_subtrainee">save_subtrainee() (howso.direct.HowsoCore method)</a>
+</li>
       <li><a href="api_reference/_autosummary/howso.scikit.html#howso.scikit.HowsoEstimator.score">score() (howso.scikit.HowsoEstimator method)</a>
 </li>
       <li><a href="api_reference/_autosummary/howso.utilities.html#howso.utilities.Timer.seconds">seconds (howso.utilities.Timer property)</a>
@@ -1506,6 +1561,8 @@ document.write(`
         <li><a href="openapi/types/FeatureAutoDeriveOnTrainProgress.html#howso.openapi.models.FeatureAutoDeriveOnTrainProgress.series_id_features">(howso.openapi.models.FeatureAutoDeriveOnTrainProgress attribute)</a>
 </li>
       </ul></li>
+      <li><a href="api_reference/_autosummary/howso.engine.typing.html#howso.engine.typing.SeriesIDTracking">SeriesIDTracking (in module howso.engine.typing)</a>
+</li>
       <li><a href="api_reference/_autosummary/howso.engine.html#howso.engine.Session">Session (class in howso.engine)</a>
 </li>
       <li><a href="api_reference/_autosummary/howso.client.html#howso.client.AbstractHowsoClient.set_auto_ablation_params">set_auto_ablation_params() (howso.client.AbstractHowsoClient method)</a>
@@ -1542,20 +1599,6 @@ document.write(`
         <li><a href="api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.set_feature_attributes">(howso.engine.Trainee method)</a>
 </li>
       </ul></li>
-      <li><a href="api_reference/_autosummary/howso.direct.html#howso.direct.HowsoCore.set_feature_weights">set_feature_weights() (howso.direct.HowsoCore method)</a>
-
-      <ul>
-        <li><a href="api_reference/_autosummary/howso.direct.html#howso.direct.HowsoDirectClient.set_feature_weights">(howso.direct.HowsoDirectClient method)</a>
-</li>
-      </ul></li>
-      <li><a href="api_reference/_autosummary/howso.direct.html#howso.direct.HowsoCore.set_feature_weights_matrix">set_feature_weights_matrix() (howso.direct.HowsoCore method)</a>
-
-      <ul>
-        <li><a href="api_reference/_autosummary/howso.direct.html#howso.direct.HowsoDirectClient.set_feature_weights_matrix">(howso.direct.HowsoDirectClient method)</a>
-</li>
-      </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/_autosummary/howso.scikit.html#howso.scikit.HowsoClassifier.set_fit_request">set_fit_request() (howso.scikit.HowsoClassifier method)</a>
 
       <ul>
@@ -1564,6 +1607,8 @@ document.write(`
         <li><a href="api_reference/_autosummary/howso.scikit.html#howso.scikit.HowsoRegressor.set_fit_request">(howso.scikit.HowsoRegressor method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api_reference/_autosummary/howso.direct.html#howso.direct.HowsoCore.set_internal_parameters">set_internal_parameters() (howso.direct.HowsoCore method)</a>
 </li>
       <li><a href="api_reference/_autosummary/howso.direct.html#howso.direct.HowsoDirectClient.set_label">set_label() (howso.direct.HowsoDirectClient method)</a>
@@ -1610,6 +1655,8 @@ document.write(`
 </li>
       <li><a href="openapi/types/FeatureAttributes.html#howso.openapi.models.FeatureAttributes.significant_digits">significant_digits (howso.openapi.models.FeatureAttributes attribute)</a>
 </li>
+      <li><a href="api_reference/_autosummary/howso.utilities.html#howso.utilities.SingleTableFeatureAttributes">SingleTableFeatureAttributes (class in howso.utilities)</a>
+</li>
       <li><a href="openapi/types/FeatureOriginalType.html#howso.openapi.models.FeatureOriginalType.size">size (howso.openapi.models.FeatureOriginalType attribute)</a>
 </li>
       <li><a href="api_reference/_autosummary/howso.utilities.html#howso.utilities.ProgressTimer.start">start() (howso.utilities.ProgressTimer method)</a>
@@ -1634,6 +1681,12 @@ document.write(`
 <h2 id="T">T</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/_autosummary/howso.engine.typing.html#howso.engine.typing.TabularData2D">TabularData2D (in module howso.engine.typing)</a>
+</li>
+      <li><a href="api_reference/_autosummary/howso.engine.typing.html#howso.engine.typing.TabularData3D">TabularData3D (in module howso.engine.typing)</a>
+</li>
+      <li><a href="api_reference/_autosummary/howso.engine.typing.html#howso.engine.typing.TargetedModel">TargetedModel (in module howso.engine.typing)</a>
+</li>
       <li><a href="api_reference/_autosummary/howso.utilities.html#howso.utilities.ProgressTimer.tick_duration">tick_duration (howso.utilities.ProgressTimer property)</a>
 </li>
       <li><a href="openapi/types/FeatureTimeSeries.html#howso.openapi.models.FeatureTimeSeries.time_feature">time_feature (howso.openapi.models.FeatureTimeSeries attribute)</a>
@@ -1648,6 +1701,10 @@ document.write(`
 </li>
       <li><a href="openapi/types/FeatureOriginalType.html#howso.openapi.models.FeatureOriginalType.timezone">timezone (howso.openapi.models.FeatureOriginalType attribute)</a>
 </li>
+      <li><a href="api_reference/_autosummary/howso.utilities.html#howso.utilities.SingleTableFeatureAttributes.to_dataframe">to_dataframe() (howso.utilities.SingleTableFeatureAttributes method)</a>
+</li>
+      <li><a href="api_reference/_autosummary/howso.utilities.html#howso.utilities.FeatureAttributesBase.to_json">to_json() (howso.utilities.FeatureAttributesBase method)</a>
+</li>
       <li><a href="api_reference/_autosummary/howso.client.html#howso.client.AbstractHowsoClient.train">train() (howso.client.AbstractHowsoClient method)</a>
 
       <ul>
@@ -1660,6 +1717,12 @@ document.write(`
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/_autosummary/howso.client.html#howso.client.AbstractHowsoClient.train_initial_batch_size">train_initial_batch_size (howso.client.AbstractHowsoClient property)</a>
+
+      <ul>
+        <li><a href="api_reference/_autosummary/howso.direct.html#howso.direct.HowsoDirectClient.train_initial_batch_size">(howso.direct.HowsoDirectClient property)</a>
+</li>
+      </ul></li>
       <li><a href="api_reference/_autosummary/howso.engine.html#howso.engine.Trainee">Trainee (class in howso.engine)</a>
 </li>
       <li><a href="api_reference/_autosummary/howso.client.html#howso.client.AbstractHowsoClient.trainee_cache">trainee_cache (howso.client.AbstractHowsoClient property)</a>
@@ -1736,17 +1799,21 @@ document.write(`
 <h2 id="V">V</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api_reference/_autosummary/howso.utilities.html#howso.utilities.validate_case_indices">validate_case_indices() (in module howso.utilities)</a>
+      <li><a href="api_reference/_autosummary/howso.utilities.html#howso.utilities.FeatureAttributesBase.validate">validate() (howso.utilities.FeatureAttributesBase method)</a>
+
+      <ul>
+        <li><a href="api_reference/_autosummary/howso.utilities.html#howso.utilities.SingleTableFeatureAttributes.validate">(howso.utilities.SingleTableFeatureAttributes method)</a>
 </li>
-      <li><a href="api_reference/_autosummary/howso.utilities.html#howso.utilities.validate_datetime_iso8061">validate_datetime_iso8061() (in module howso.utilities)</a>
+      </ul></li>
+      <li><a href="api_reference/_autosummary/howso.utilities.html#howso.utilities.validate_case_indices">validate_case_indices() (in module howso.utilities)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api_reference/_autosummary/howso.utilities.html#howso.utilities.validate_datetime_iso8061">validate_datetime_iso8061() (in module howso.utilities)</a>
+</li>
       <li><a href="api_reference/_autosummary/howso.utilities.html#howso.utilities.validate_features">validate_features() (in module howso.utilities)</a>
 </li>
       <li><a href="api_reference/_autosummary/howso.utilities.html#howso.utilities.validate_list_shape">validate_list_shape() (in module howso.utilities)</a>
-</li>
-      <li><a href="api_reference/_autosummary/howso.direct.html#howso.direct.HowsoCore.version">version() (howso.direct.HowsoCore method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -1803,7 +1870,7 @@ document.write(`
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     <br/>
   </p>
 </div>

@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=402959de" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=be2ede8c" />
@@ -41,11 +41,11 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script src="../../_static/documentation_options.js?v=8a448e45"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
     <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -339,7 +339,10 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Howso Engine Packages</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="howso.engine.html">howso.engine</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="howso.engine.html">howso.engine</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="howso.engine.typing.html">howso.engine.typing</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="howso.utilities.html">howso.utilities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="howso.scikit.html">howso.scikit</a></li>
 </ul>
@@ -349,7 +352,7 @@ document.write(`
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">howso.direct</a></li>
 </ul>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../data_structures.html">OpenAPI Data Structures</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data_structures.html">OpenAPI Data Structures</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../openapi/types/Cases.html">Cases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../openapi/types/FeatureAttributes.html">FeatureAttributes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../openapi/types/FeatureAutoDeriveOnTrain.html">FeatureAutoDeriveOnTrain</a></li>
@@ -433,7 +436,7 @@ document.write(`
 <p id="module-howso.direct">The Python API for the Howso Direct Client.</p>
 <dl class="py class">
 <dt class="sig sig-object sig-wrap py" id="howso.direct.HowsoCore">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">howso.direct.</span></span><span class="sig-name descname"><span class="pre">HowsoCore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">library_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gc_interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">howso_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">PosixPath('/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/howso/howso-engine')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trainee_template_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">PosixPath('/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/howso/howso-engine')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">howso_fname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'howso.caml'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trainee_template_fname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'trainee_template.caml'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">print_log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sbf_datastore_enabled</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_num_threads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoCore" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">howso.direct.</span></span><span class="sig-name descname"><span class="pre">HowsoCore</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">library_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gc_interval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">howso_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">PosixPath('/opt/hostedtoolcache/Python/3.11.9/x64/lib/python3.11/site-packages/howso/howso-engine')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">howso_fname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'howso.caml'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sbf_datastore_enabled</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_num_threads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoCore" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Howso Core API.</p>
 <p>This class is used in conjunction with the Amalgam python interface to
@@ -448,16 +451,12 @@ alphanumeric handle will be assigned.</p></li>
 Lower is better at memory management but compromises performance.
 Higher is better performance but may result in higher memory usage.</p></li>
 <li><p><strong>howso_path</strong> (str, default <cite>DEFAULT_CORE_PATH</cite>) – Directory path to the Howso caml files.</p></li>
-<li><p><strong>trainee_template_path</strong> (str, default <cite>DEFAULT_CORE_PATH</cite>) – Directory path to the trainee_template caml files.</p></li>
 <li><p><strong>howso_fname</strong> (<em>str</em><em>, </em><em>default &quot;howso.caml&quot;</em>) – Name of the Howso caml file with extension.</p></li>
-<li><p><strong>trainee_template_fname</strong> (<em>str</em><em>, </em><em>default &quot;trainee_template.caml&quot;</em>) – Name of the trainee template file with extension.</p></li>
-<li><p><strong>write_log</strong> (<em>str</em><em>, </em><em>optional</em>) – Absolute path to write log file.</p></li>
-<li><p><strong>print_log</strong> (<em>str</em><em>, </em><em>optional</em>) – Absolute path to print log file.</p></li>
 <li><p><strong>trace</strong> (<em>bool</em><em>, </em><em>default False</em>) – If true, sets debug flag for amlg operations. This will generate an
 execution trace useful in debugging with the standard name of
-[HANDLE]_execution.trace.</p></li>
-<li><p><strong>sbf_datastore_enabled</strong> (<em>bool</em><em>, </em><em>default True</em>) – If true, sbf tree structures are enabled.</p></li>
-<li><p><strong>max_num_threads</strong> (<em>int</em><em>, </em><em>default 0</em>) – If a multithreaded Amalgam binary is used, sets the maximum number of
+howso_[random 6 byte hex]_execution.trace.</p></li>
+<li><p><strong>sbf_datastore_enabled</strong> (<em>bool</em><em>, </em><em>default None</em>) – If true, sbf tree structures are enabled.</p></li>
+<li><p><strong>max_num_threads</strong> (<em>int</em><em>, </em><em>default None</em>) – If a multithreaded Amalgam binary is used, sets the maximum number of
 threads to the value specified. If 0, will use the number of visible
 logical cores.</p></li>
 </ul>
@@ -806,7 +805,7 @@ label of the same name.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>trainee_id</strong> (<em>str</em><em>, </em><em>optional</em>) – The identifier of the Trainee to clean.</p></li>
+<li><p><strong>trainee_id</strong> (<em>str</em>) – The identifier of the Trainee to clean.</p></li>
 <li><p><strong>context_features</strong> (<em>list</em><em> of </em><em>str</em><em>, </em><em>optional</em>) – Only remove cases that don’t have specified context features.</p></li>
 <li><p><strong>action_features</strong> (<em>list</em><em> of </em><em>str</em><em>, </em><em>optional</em>) – Only remove cases that don’t have specified action features.</p></li>
 <li><p><strong>remove_duplicates</strong> (<em>bool</em><em>, </em><em>default False</em>) – If true, will remove duplicate cases (cases with identical values).</p></li>
@@ -964,9 +963,30 @@ subtrainee to copy trainee into.</p></li>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object sig-wrap py" id="howso.direct.HowsoCore.create_subtrainee">
+<span class="sig-name descname"><span class="pre">create_subtrainee</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trainee_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subtrainee_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoCore.create_subtrainee" title="Link to this definition">#</a></dt>
+<dd><p>Create a subtrainee.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>trainee_id</strong> (<em>str</em>) – The identifier of the Trainee to be modified.</p></li>
+<li><p><strong>trainee_name</strong> (<em>str</em>) – Name of subtrainee to create.</p></li>
+<li><p><strong>subtrainee_id</strong> (<em>str</em><em>, </em><em>optional</em>) – Unique id for subtrainee.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dict containing the name of the subtrainee that was created.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="howso.direct.HowsoCore.create_trainee">
 <span class="sig-name descname"><span class="pre">create_trainee</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoCore.create_trainee" title="Link to this definition">#</a></dt>
-<dd><p>Create a Trainee using the Trainee Template.</p>
+<dd><p>Create a Trainee.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>trainee_id</strong> (<em>str</em>) – The identifier of the Trainee to create.</p>
@@ -998,6 +1018,23 @@ subtrainee to copy trainee into.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>trainee_id</strong> (<em>str</em>) – The identifier of the Trainee to delete.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="howso.direct.HowsoCore.delete_subtrainee">
+<span class="sig-name descname"><span class="pre">delete_subtrainee</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trainee_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoCore.delete_subtrainee" title="Link to this definition">#</a></dt>
+<dd><p>Delete a child subtrainee.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>trainee_id</strong> (<em>str</em>) – The id of the trainee whose hierarchy is to be modified.</p></li>
+<li><p><strong>trainee_name</strong> (<em>str</em>) – The name of the subtrainee to be deleted.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
@@ -1155,8 +1192,8 @@ derived form the custom code in features_to_code_map.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>method</strong> (<em>str</em><em>, </em><em>name</em><em> of </em><em>method to execute</em>) – </p></li>
-<li><p><strong>payload</strong> (<em>dict</em><em>, </em><em>parameters specific to the method being called</em>) – </p></li>
+<li><p><strong>method</strong> (<em>str</em><em>, </em><em>name</em><em> of </em><em>method to execute</em>)</p></li>
+<li><p><strong>payload</strong> (<em>dict</em><em>, </em><em>parameters specific to the method being called</em>)</p></li>
 <li><p><strong>child_name_path</strong> (<em>list</em><em> of </em><em>str</em><em>, </em><em>optional</em>) – List of strings specifying the user-friendly path of the child
 subtrainee for execution of method.</p></li>
 <li><p><strong>child_id</strong> (<em>str</em><em>, </em><em>optional</em>) – Unique id of child trainee to execute method. Ignored if
@@ -1204,7 +1241,7 @@ when method is ‘load’ and as_external is true.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="howso.direct.HowsoCore.get_auto_ablation_params">
 <span class="sig-name descname"><span class="pre">get_auto_ablation_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoCore.get_auto_ablation_params" title="Link to this definition">#</a></dt>
-<dd><p>Get trainee parameters for auto ablation set by <a class="reference internal" href="#howso.direct.HowsoCore.set_auto_ablation_params" title="howso.direct.HowsoCore.set_auto_ablation_params"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_auto_ablation_params()</span></code></a>.</p>
+<dd><p>Get trainee parameters for auto-ablation set by <a class="reference internal" href="#howso.direct.HowsoCore.set_auto_ablation_params" title="howso.direct.HowsoCore.set_auto_ablation_params"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_auto_ablation_params()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1302,24 +1339,6 @@ If not provided, “exact” will be used.</p></li>
 <div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 1.0.0: </span>Use get_prediction_stats() instead.</p>
 </div>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="howso.direct.HowsoCore.get_feature_weights_matrix">
-<span class="sig-name descname"><span class="pre">get_feature_weights_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoCore.get_feature_weights_matrix" title="Link to this definition">#</a></dt>
-<dd><p>Get the full feature weights matrix.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>trainee_id</strong> (<em>str</em>) – The identifier of the Trainee.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A dictionary of action feature names to dictionary of feature names
-to feature weight.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -1467,7 +1486,7 @@ using this weight_feature.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object sig-wrap py" id="howso.direct.HowsoCore.get_prediction_stats">
-<span class="sig-name descname"><span class="pre">get_prediction_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">condition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cases</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_robust_influence_samples_per_case</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">robust</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">robust_hyperparameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoCore.get_prediction_stats" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_prediction_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_condition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_condition_precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_num_cases</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context_condition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context_condition_precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context_precision_num_cases</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_robust_influence_samples_per_case</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">robust</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">robust_hyperparameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoCore.get_prediction_stats" title="Link to this definition">#</a></dt>
 <dd><p>Get feature prediction stats.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1477,18 +1496,79 @@ using this weight_feature.</p></li>
 were computed for this specified action_feature.
 Note: “.targetless” is the action feature used during targetless
 analysis.</p></li>
-<li><p><strong>condition</strong> (<em>dict</em><em> or </em><em>None</em><em>, </em><em>optional</em>) – A condition map to select which cases to compute prediction stats
-for.</p></li>
-<li><p><strong>num_cases</strong> (<em>int</em><em>, </em><em>default None</em>) – The maximum amount of cases to use to calculate prediction stats.
+<li><p><strong>action_condition</strong> (<em>map</em><em> of </em><em>str -&gt; any</em><em>, </em><em>optional</em>) – <p>A condition map to select the action set, which is the dataset for which
+the prediction stats are for. If both <code class="docutils literal notranslate"><span class="pre">action_condition</span></code> and <code class="docutils literal notranslate"><span class="pre">context_condition</span></code>
+are provided, then all of the action cases selected by the <code class="docutils literal notranslate"><span class="pre">action_condition</span></code>
+will be excluded from the context set, which is the set being queried to make to
+make predictions on the action set, effectively holding them out.
+If only <code class="docutils literal notranslate"><span class="pre">action_condition</span></code> is specified, then only the single predicted case
+will be left out.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The dictionary keys are the feature name and values are one of:</p>
+<blockquote>
+<div><ul>
+<li><p>None</p></li>
+<li><p>A value, must match exactly.</p></li>
+<li><p>An array of two numeric values, specifying an inclusive
+range. Only applicable to continuous and numeric ordinal
+features.</p></li>
+<li><p>An array of string values, must match any of these values
+exactly. Only applicable to nominal and string ordinal
+features.</p></li>
+</ul>
+</div></blockquote>
+</div>
+</p></li>
+<li><p><strong>action_num_cases</strong> (<em>int</em><em>, </em><em>optional</em>) – <p>The maximum amount of cases to use to calculate prediction stats.
 If not specified, the limit will be k cases if precision is
-“similar”, or 1000 cases if precision is “exact”. Only used if
-<cite>condition</cite> is not None.</p></li>
+“similar”, or 1000 cases if precision is “exact”. Works with or
+without <code class="docutils literal notranslate"><span class="pre">action_condition</span></code>.
+-If <code class="docutils literal notranslate"><span class="pre">action_condition</span></code> is set:</p>
+<blockquote>
+<div><p>If None, will be set to k if precision is “similar” or no limit if precision is “exact”.</p>
+</div></blockquote>
+<ul>
+<li><dl class="simple">
+<dt>If <code class="docutils literal notranslate"><span class="pre">action_condition</span></code> is not set:</dt><dd><p>If None, will be set to the Howso default limit of 2000.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p></li>
+<li><p><strong>action_condition_precision</strong> (<em>{&quot;exact&quot;</em><em>, </em><em>&quot;similar&quot;}</em><em>, </em><em>optional</em>) – The precision to use when selecting cases with the <code class="docutils literal notranslate"><span class="pre">action_condition</span></code>.
+If not specified “exact” will be used. Only used if <code class="docutils literal notranslate"><span class="pre">action_condition</span></code>
+is not None.</p></li>
+<li><p><strong>context_condition</strong> (<em>map</em><em> of </em><em>str -&gt; any</em><em>, </em><em>optional</em>) – <p>A condition map to select the context set, which is the set being queried to make
+to make predictions on the action set. If both <code class="docutils literal notranslate"><span class="pre">action_condition</span></code> and <code class="docutils literal notranslate"><span class="pre">context_condition</span></code>
+are provided,  then all of the cases from the action set, which is the dataset for which the
+prediction stats are for, will be excluded from the context set, effectively holding them out.
+If only <code class="docutils literal notranslate"><span class="pre">action_condition</span></code> is specified,  then only the single predicted case will be left out.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The dictionary keys are the feature name and values are one of:</p>
+<blockquote>
+<div><ul>
+<li><p>None</p></li>
+<li><p>A value, must match exactly.</p></li>
+<li><p>An array of two numeric values, specifying an inclusive
+range. Only applicable to continuous and numeric ordinal
+features.</p></li>
+<li><p>An array of string values, must match any of these values
+exactly. Only applicable to nominal and string ordinal
+features.</p></li>
+</ul>
+</div></blockquote>
+</div>
+</p></li>
+<li><p><strong>context_precision_num_cases</strong> (<em>int</em><em>, </em><em>optional</em>) – Limit on the number of context cases when <code class="docutils literal notranslate"><span class="pre">context_condition_precision</span></code> is set to “similar”.
+If None, will be set to k.</p></li>
+<li><p><strong>context_condition_precision</strong> (<em>{&quot;exact&quot;</em><em>, </em><em>&quot;similar&quot;}</em><em>, </em><em>optional</em>) – The precision to use when selecting cases with the <code class="docutils literal notranslate"><span class="pre">context_condition</span></code>.
+If not specified “exact” will be used. Only used if <code class="docutils literal notranslate"><span class="pre">context_condition</span></code>
+is not None.</p></li>
 <li><p><strong>num_robust_influence_samples_per_case</strong> (<em>int</em><em>, </em><em>optional</em>) – Specifies the number of robust samples to use for each case for
 robust contribution computations.
 Defaults to 300 + 2 * (number of features).</p></li>
-<li><p><strong>precision</strong> (<em>str</em><em>, </em><em>default None</em>) – The precision to use when selecting cases with the condition.
-Options are ‘exact’ or ‘similar’. If not specified “exact” will be
-used. Only used if <cite>condition</cite> is not None.</p></li>
 <li><p><strong>robust</strong> (<em>bool</em><em>, </em><em>optional</em>) – When specified, will attempt to return stats that
 were computed with the specified robust or non-robust type.</p></li>
 <li><p><strong>robust_hyperparameters</strong> (<em>bool</em><em>, </em><em>optional</em>) – When specified, will attempt to return stats that were
@@ -1608,15 +1688,11 @@ always included.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="howso.direct.HowsoCore.get_trainee_version">
-<span class="sig-name descname"><span class="pre">get_trainee_version</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trace_version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoCore.get_trainee_version" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_trainee_version</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoCore.get_trainee_version" title="Link to this definition">#</a></dt>
 <dd><p>Return the version of the Trainee Template.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>trainee_id</strong> (<em>str</em>) – The identifier of the Trainee to get the version of.</p></li>
-<li><p><strong>trace_version</strong> (<em>str</em><em>, </em><em>optional</em>) – A version comment to include in the trace file. Useful to capture
-client and amalgam versions.</p></li>
-</ul>
+<dd class="field-odd"><p><strong>trainee_id</strong> (<em>str</em>) – The identifier of the Trainee to get the version of.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span></p>
@@ -1658,6 +1734,29 @@ will be used (see above).</p></li>
 <li><p><strong>trainee_id</strong> (<em>str</em>) – The identifier of the Trainee to load.</p></li>
 <li><p><strong>filename</strong> (<em>str</em><em>, </em><em>optional</em>) – The filename to load.</p></li>
 <li><p><strong>filepath</strong> (<em>str</em><em>, </em><em>optional</em>) – The path containing the filename to load.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dict containing the name of the trainee that was created.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object sig-wrap py" id="howso.direct.HowsoCore.load_subtrainee">
+<span class="sig-name descname"><span class="pre">load_subtrainee</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trainee_name_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoCore.load_subtrainee" title="Link to this definition">#</a></dt>
+<dd><p>Load a persisted Trainee from disk as a subtrainee.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>trainee_id</strong> (<em>str</em>) – The identifier of the Trainee to be modified.</p></li>
+<li><p><strong>filename</strong> (<em>str</em><em>, </em><em>optional</em>) – The filename to load.</p></li>
+<li><p><strong>filepath</strong> (<em>str</em><em>, </em><em>optional</em>) – The path containing the filename to load.</p></li>
+<li><p><strong>trainee_name_path</strong> (<em>list</em><em> of </em><em>str</em><em>, </em><em>optional</em>) – list of strings specifying the user-friendly path of the child
+subtrainee to load.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -1968,8 +2067,8 @@ If specified overrides sample_model_fraction.```</p></li>
 context_features to predict the feature. When True computes and
 caches MAE (mean absolute error), R^2, RMSE (root mean squared
 error), and Spearman Coefficient for continuous features, and
-MAE, accuracy, precision and recall for nominal features.
-False removes cached values.</p></li>
+MAE, accuracy, precision, recall, and Matthews correlation coefficient
+for nominal features. False removes cached values.</p></li>
 <li><p><strong>residuals_robust</strong> (<em>bool</em><em>, </em><em>optional</em>) – For each context_feature, computes and caches the same stats as
 residuals but using the robust (power set/permutations) set of all
 other context_features to predict the feature.
@@ -1988,6 +2087,41 @@ When left unspecified uses the internally managed case weight.</p></li>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object sig-wrap py" id="howso.direct.HowsoCore.reduce_data">
+<span class="sig-name descname"><span class="pre">reduce_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distribute_weight_feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">influence_weight_entropy_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoCore.reduce_data" title="Link to this definition">#</a></dt>
+<dd><p>Smartly reduce the amount of trained cases while accumulating case weights.</p>
+<p>Determines which cases to remove by comparing the influence weight entropy of each trained
+case to the <code class="docutils literal notranslate"><span class="pre">influence_weight_entropy_threshold</span></code> quantile of existing influence weight
+entropies.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All ablation endpoints, including <a class="reference internal" href="#howso.direct.HowsoCore.reduce_data" title="howso.direct.HowsoCore.reduce_data"><code class="xref py py-meth docutils literal notranslate"><span class="pre">reduce_data()</span></code></a> are experimental and may have their
+API changed without deprecation.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>The default <code class="docutils literal notranslate"><span class="pre">distribute_weight_feature</span></code> and <code class="docutils literal notranslate"><span class="pre">influence_weight_entropy_threshold</span></code> are
+pulled from the auto-ablation parameters, which can be set or retrieved with
+<a class="reference internal" href="#howso.direct.HowsoCore.set_auto_ablation_params" title="howso.direct.HowsoCore.set_auto_ablation_params"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_auto_ablation_params()</span></code></a> and <a class="reference internal" href="#howso.direct.HowsoCore.get_auto_ablation_params" title="howso.direct.HowsoCore.get_auto_ablation_params"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_auto_ablation_params()</span></code></a>, respectively.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>trainee_id</strong> (<em>str</em>) – The ID of the Trainee for which to reduce data.</p></li>
+<li><p><strong>features</strong> (<em>list</em><em> of </em><em>str</em><em>, </em><em>optional</em>) – The features which should be used to determine which cases to remove. This defaults to all of
+the trained features (excluding internal features).</p></li>
+<li><p><strong>distribute_weight_feature</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the weight feature to accumulate case weights to as cases are removed. This
+defaults to the value of <code class="docutils literal notranslate"><span class="pre">auto_ablation_weight_feature</span></code> from <a class="reference internal" href="#howso.direct.HowsoCore.set_auto_ablation_params" title="howso.direct.HowsoCore.set_auto_ablation_params"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_auto_ablation_params()</span></code></a>,
+which defaults to “.case_weight”.</p></li>
+<li><p><strong>influence_weight_entropy_threshold</strong> (<em>float</em><em>, </em><em>optional</em>) – The quantile of influence weight entropy above which cases will be removed. This defaults
+to the value of <code class="docutils literal notranslate"><span class="pre">influence_weight_entropy_threshold</span></code> from <a class="reference internal" href="#howso.direct.HowsoCore.set_auto_ablation_params" title="howso.direct.HowsoCore.set_auto_ablation_params"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_auto_ablation_params()</span></code></a>,
+which defaults to 0.6.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -2140,12 +2274,40 @@ subtrainee to rename.</p></li>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object sig-wrap py" id="howso.direct.HowsoCore.save_subtrainee">
+<span class="sig-name descname"><span class="pre">save_subtrainee</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subtrainee_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trainee_name_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoCore.save_subtrainee" title="Link to this definition">#</a></dt>
+<dd><p>Save a subtrainee to disk.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>trainee_id</strong> (<em>str</em>) – The identifier of the Trainee to be modified.</p></li>
+<li><p><strong>filename</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the file to save the Trainee to.</p></li>
+<li><p><strong>filepath</strong> (<em>str</em><em>, </em><em>optional</em>) – The path of the file to save the Trainee to.</p></li>
+<li><p><strong>subtrainee_id</strong> (<em>str</em><em>, </em><em>optional</em>) – Unique id for subtrainee. Must be provided if subtrainee does not
+have one already specified.</p></li>
+<li><p><strong>trainee_name_path</strong> (<em>list</em><em> of </em><em>str</em><em>, </em><em>optional</em>) – list of strings specifying the user-friendly path of the child
+subtrainee to save.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object sig-wrap py" id="howso.direct.HowsoCore.set_auto_ablation_params">
 <span class="sig-name descname"><span class="pre">set_auto_ablation_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_ablation_enabled</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_ablation_weight_feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.case_weight'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conviction_lower_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conviction_upper_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exact_prediction_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">influence_weight_entropy_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minimum_model_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relative_prediction_threshold_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">residual_prediction_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance_prediction_threshold_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoCore.set_auto_ablation_params" title="Link to this definition">#</a></dt>
-<dd><p>Set trainee parameters for auto ablation.</p>
+<dd><p>Set trainee parameters for auto-ablation.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Auto-ablation is experimental and the API may change without deprecation.</p>
+<p>All ablation endpoints, including <a class="reference internal" href="#howso.direct.HowsoCore.set_auto_ablation_params" title="howso.direct.HowsoCore.set_auto_ablation_params"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_auto_ablation_params()</span></code></a> are experimental and may
+have their API changed without deprecation.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>The params <code class="docutils literal notranslate"><span class="pre">influence_weight_entropy_threshold</span></code> and <code class="docutils literal notranslate"><span class="pre">auto_ablation_weight_feature</span></code> that are
+set using this endpoint are used as defaults by <a class="reference internal" href="#howso.direct.HowsoCore.reduce_data" title="howso.direct.HowsoCore.reduce_data"><code class="xref py py-meth docutils literal notranslate"><span class="pre">reduce_data()</span></code></a>.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -2219,47 +2381,6 @@ abs(prediction - case value) / prediction &lt;= relative threshold</p></li>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object sig-wrap py" id="howso.direct.HowsoCore.set_feature_weights">
-<span class="sig-name descname"><span class="pre">set_feature_weights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_feature_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoCore.set_feature_weights" title="Link to this definition">#</a></dt>
-<dd><p>Set the weights for the features in the Trainee.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>trainee_id</strong> (<em>str</em>) – The identifier of the Trainee.</p></li>
-<li><p><strong>action_feature</strong> (<em>str</em><em>, </em><em>optional</em>) – Action feature for which to set the specified feature weights for</p></li>
-<li><p><strong>feature_weights</strong> (<em>dict</em><em>, </em><em>optional</em>) – A dictionary of feature names -&gt; weight values.
-If not set, the feature weights are cleared in the model.</p></li>
-<li><p><strong>use_feature_weights</strong> (<em>bool</em><em>, </em><em>default True</em>) – When set to true, forces the trainee to use the specified feature
-weights.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object sig-wrap py" id="howso.direct.HowsoCore.set_feature_weights_matrix">
-<span class="sig-name descname"><span class="pre">set_feature_weights_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_weights_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_feature_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoCore.set_feature_weights_matrix" title="Link to this definition">#</a></dt>
-<dd><p>Set the feature weights for all the features in the Trainee.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>trainee_id</strong> (<em>str</em>) – The identifier of the Trainee.</p></li>
-<li><p><strong>feature_weights_matrix</strong> (<em>dict</em>) – A dictionary of feature names to a dictionary of feature names to
-weight values.</p></li>
-<li><p><strong>use_feature_weights</strong> (<em>bool</em><em>, </em><em>default True</em>) – When set to true, forces the trainee to use the specified feature
-weights</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
 </dd>
 </dl>
 </dd></dl>
@@ -2422,22 +2543,11 @@ training the cases into the model.</p></li>
 </dl>
 </dd></dl>
 
-<dl class="py method">
-<dt class="sig sig-object py" id="howso.direct.HowsoCore.version">
-<span class="sig-name descname"><span class="pre">version</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoCore.version" title="Link to this definition">#</a></dt>
-<dd><p>Return the version of the Howso Core.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span></p>
-</dd>
-</dl>
-</dd></dl>
-
 </dd></dl>
 
 <dl class="py class">
 <dt class="sig sig-object sig-wrap py" id="howso.direct.HowsoDirectClient">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">howso.direct.</span></span><span class="sig-name descname"><span class="pre">HowsoDirectClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">howso_core</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version_check</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoDirectClient" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">howso.direct.</span></span><span class="sig-name descname"><span class="pre">HowsoDirectClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">howso_core</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">react_initial_batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_initial_batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version_check</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoDirectClient" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="howso.client.html#howso.client.AbstractHowsoClient" title="howso.client.base.AbstractHowsoClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractHowsoClient</span></code></a></p>
 <p>The direct Howso client.</p>
 <p>A client which provides access to the Howso core endpoints
@@ -2446,7 +2556,7 @@ via a direct interface using dynamic libraries.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>howso_core</strong> (<a class="reference internal" href="#howso.direct.HowsoCore" title="howso.direct.HowsoCore"><em>howso.direct.HowsoCore</em></a><em>, </em><em>optional</em>) – <p>A specified howso core direct interface object.</p>
-<p>If None, an interface will be generated using the provided handle.</p>
+<p>If None, a HowsoCore will be initialized.</p>
 </p></li>
 <li><p><strong>config_path</strong> (<em>str</em><em> or </em><em>Path</em><em> or </em><em>None</em><em>, </em><em>optional</em>) – <p>A configuration file in yaml format that specifies Howso engine
 settings.</p>
@@ -2460,9 +2570,10 @@ settings.</p>
 </dl>
 </p></li>
 <li><p><strong>debug</strong> (<em>bool</em><em>, </em><em>default False</em>) – Set debug output.</p></li>
-<li><p><strong>handle</strong> (<em>str</em><em>, </em><em>optional</em>) – <p>The howso core entity handle to use.</p>
-<p>If None, <a class="reference internal" href="#howso.direct.HowsoDirectClient.DEFAULT_HANDLE" title="howso.direct.HowsoDirectClient.DEFAULT_HANDLE"><code class="xref py py-attr docutils literal notranslate"><span class="pre">HowsoDirectClient.DEFAULT_HANDLE</span></code></a> will be used.</p>
-</p></li>
+<li><p><strong>react_initial_batch_size</strong> (<em>int</em><em>, </em><em>default 10</em>) – The default number of cases to react to in the first batch
+for calls to <a class="reference internal" href="#howso.direct.HowsoDirectClient.react" title="howso.direct.HowsoDirectClient.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">HowsoDirectClient.react()</span></code></a>.</p></li>
+<li><p><strong>train_initial_batch_size</strong> (<em>int</em><em>, </em><em>default 100</em>) – The default number of cases to train to in the first batch
+for calls to <a class="reference internal" href="#howso.direct.HowsoDirectClient.train" title="howso.direct.HowsoDirectClient.train"><code class="xref py py-meth docutils literal notranslate"><span class="pre">HowsoDirectClient.train()</span></code></a>.</p></li>
 <li><p><strong>verbose</strong> (<em>bool</em><em>, </em><em>default False</em>) – Set verbose output.</p></li>
 <li><p><strong>version_check</strong> (<em>bool</em><em>, </em><em>default True</em>) – Check if the latest version of Howso engine is installed.</p></li>
 </ul>
@@ -2541,7 +2652,7 @@ specified session id.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object sig-wrap py" id="howso.direct.HowsoDirectClient.analyze">
-<span class="sig-name descname"><span class="pre">analyze</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bypass_calculate_feature_residuals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bypass_calculate_feature_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bypass_hyperparameter_analysis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_case_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inverse_residuals_as_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k_folds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_analysis_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analysis_sub_model_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analyze_level</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targeted_model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_deviations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoDirectClient.analyze" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">analyze</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bypass_calculate_feature_residuals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bypass_calculate_feature_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bypass_hyperparameter_analysis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_case_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inverse_residuals_as_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k_folds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_analysis_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_samples</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analysis_sub_model_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targeted_model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_deviations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoDirectClient.analyze" title="Link to this definition">#</a></dt>
 <dd><p>Analyzes a trainee.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -2558,17 +2669,6 @@ specified session id.</p></li>
 <li><p><strong>k_values</strong> (<em>list</em><em> of </em><em>int</em>) – optional list used in hyperparameter search</p></li>
 <li><p><strong>p_values</strong> (<em>list</em><em> of </em><em>float</em>) – optional list used in hyperparameter search</p></li>
 <li><p><strong>dt_values</strong> (<em>list</em><em> of </em><em>float</em>) – optional list used in hyperparameter search</p></li>
-<li><p><strong>analyze_level</strong> (<em>int</em>) – <p>optional value, if specified, will analyze for the following
-flows:</p>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p>predictions/accuracy (hyperparameters)</p></li>
-<li><p>data synth (cache: global residuals)</p></li>
-<li><p>standard details</p></li>
-<li><p>full analysis</p></li>
-</ol>
-</div></blockquote>
-</p></li>
 <li><p><strong>targeted_model</strong> (<em>{&quot;omni_targeted&quot;</em><em>, </em><em>&quot;single_targeted&quot;</em><em>, </em><em>&quot;targetless&quot;}</em>) – <p>optional, valid values as follows:</p>
 <blockquote>
 <div><dl class="simple">
@@ -2978,7 +3078,7 @@ holds the output of the custom ‘aggregation_code’</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="howso.direct.HowsoDirectClient.get_auto_ablation_params">
 <span class="sig-name descname"><span class="pre">get_auto_ablation_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoDirectClient.get_auto_ablation_params" title="Link to this definition">#</a></dt>
-<dd><p>Get parameters set by <a class="reference internal" href="#howso.direct.HowsoDirectClient.set_auto_ablation_params" title="howso.direct.HowsoDirectClient.set_auto_ablation_params"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_auto_ablation_params()</span></code></a>.</p>
+<dd><p>Get trainee parameters for auto-ablation set by <a class="reference internal" href="#howso.direct.HowsoDirectClient.set_auto_ablation_params" title="howso.direct.HowsoDirectClient.set_auto_ablation_params"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_auto_ablation_params()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -3318,24 +3418,6 @@ were computed using this weight_feature.</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="howso.direct.HowsoDirectClient.get_feature_weights_matrix">
-<span class="sig-name descname"><span class="pre">get_feature_weights_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoDirectClient.get_feature_weights_matrix" title="Link to this definition">#</a></dt>
-<dd><p>Get the full feature weights matrix.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>trainee_id</strong> (<em>str</em>) – The ID of the Trainee.</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>A dictionary of action feature names to dictionary of feature names
-to feature weight.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="howso.direct.HowsoDirectClient.get_hierarchy">
 <span class="sig-name descname"><span class="pre">get_hierarchy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoDirectClient.get_hierarchy" title="Link to this definition">#</a></dt>
 <dd><p>Output the hierarchy for a trainee.</p>
@@ -3527,7 +3609,7 @@ passed parameters.</p>
 
 <dl class="py method">
 <dt class="sig sig-object sig-wrap py" id="howso.direct.HowsoDirectClient.get_prediction_stats">
-<span class="sig-name descname"><span class="pre">get_prediction_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">condition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cases</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_robust_influence_samples_per_case</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">robust</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">robust_hyperparameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoDirectClient.get_prediction_stats" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_prediction_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_condition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_condition_precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_num_cases</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context_condition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context_condition_precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context_precision_num_cases</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_robust_influence_samples_per_case</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">robust</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">robust_hyperparameters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoDirectClient.get_prediction_stats" title="Link to this definition">#</a></dt>
 <dd><p>Get feature prediction stats.</p>
 <p>Gets cached stats when condition is None.
 If condition is not None, then uses the condition to select cases and
@@ -3551,8 +3633,13 @@ the action feature for which the prediction statistics information
 is desired must be specified.</p>
 </div>
 </p></li>
-<li><p><strong>condition</strong> (<em>dict</em><em> or </em><em>None</em><em>, </em><em>optional</em>) – <p>A condition map to select which cases to compute prediction stats
-for.</p>
+<li><p><strong>action_condition</strong> (<em>map</em><em> of </em><em>str -&gt; any</em><em>, </em><em>optional</em>) – <p>A condition map to select the action set, which is the dataset for which
+the prediction stats are for. If both <code class="docutils literal notranslate"><span class="pre">action_condition</span></code> and <code class="docutils literal notranslate"><span class="pre">context_condition</span></code>
+are provided, then all of the action cases selected by the <code class="docutils literal notranslate"><span class="pre">action_condition</span></code>
+will be excluded from the context set, which is the set being queried to make to
+make predictions on the action set, effectively holding them out.
+If only <code class="docutils literal notranslate"><span class="pre">action_condition</span></code> is specified, then only the single predicted case
+will be left out.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The dictionary keys are the feature name and values are one of:</p>
@@ -3570,16 +3657,55 @@ features.</p></li>
 </div></blockquote>
 </div>
 </p></li>
-<li><p><strong>num_cases</strong> (<em>int</em><em>, </em><em>default None</em>) – The maximum amount of cases to use to calculate prediction stats.
+<li><p><strong>action_num_cases</strong> (<em>int</em><em>, </em><em>optional</em>) – <p>The maximum amount of cases to use to calculate prediction stats.
 If not specified, the limit will be k cases if precision is
-“similar”, or 1000 cases if precision is “exact”. Only used if
-<cite>condition</cite> is not None.</p></li>
+“similar”, or 1000 cases if precision is “exact”. Works with or
+without <code class="docutils literal notranslate"><span class="pre">action_condition</span></code>.
+-If <code class="docutils literal notranslate"><span class="pre">action_condition</span></code> is set:</p>
+<blockquote>
+<div><p>If None, will be set to k if precision is “similar” or no limit if precision is “exact”.</p>
+</div></blockquote>
+<ul>
+<li><dl class="simple">
+<dt>If <code class="docutils literal notranslate"><span class="pre">action_condition</span></code> is not set:</dt><dd><p>If None, will be set to the Howso default limit of 2000.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</p></li>
+<li><p><strong>action_condition_precision</strong> (<em>{&quot;exact&quot;</em><em>, </em><em>&quot;similar&quot;}</em><em>, </em><em>optional</em>) – The precision to use when selecting cases with the <code class="docutils literal notranslate"><span class="pre">action_condition</span></code>.
+If not specified “exact” will be used. Only used if <code class="docutils literal notranslate"><span class="pre">action_condition</span></code>
+is not None.</p></li>
+<li><p><strong>context_condition</strong> (<em>map</em><em> of </em><em>str -&gt; any</em><em>, </em><em>optional</em>) – <p>A condition map to select the context set, which is the set being queried to make
+to make predictions on the action set. If both <code class="docutils literal notranslate"><span class="pre">action_condition</span></code> and <code class="docutils literal notranslate"><span class="pre">context_condition</span></code>
+are provided,  then all of the cases from the action set, which is the dataset for which the
+prediction stats are for, will be excluded from the context set, effectively holding them out.
+If only <code class="docutils literal notranslate"><span class="pre">action_condition</span></code> is specified,  then only the single predicted case will be left out.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The dictionary keys are the feature name and values are one of:</p>
+<blockquote>
+<div><ul>
+<li><p>None</p></li>
+<li><p>A value, must match exactly.</p></li>
+<li><p>An array of two numeric values, specifying an inclusive
+range. Only applicable to continuous and numeric ordinal
+features.</p></li>
+<li><p>An array of string values, must match any of these values
+exactly. Only applicable to nominal and string ordinal
+features.</p></li>
+</ul>
+</div></blockquote>
+</div>
+</p></li>
+<li><p><strong>context_precision_num_cases</strong> (<em>int</em><em>, </em><em>optional</em>) – Limit on the number of context cases when <code class="docutils literal notranslate"><span class="pre">context_condition_precision</span></code> is set to “similar”.
+If None, will be set to k.</p></li>
+<li><p><strong>context_condition_precision</strong> (<em>{&quot;exact&quot;</em><em>, </em><em>&quot;similar&quot;}</em><em>, </em><em>optional</em>) – The precision to use when selecting cases with the <code class="docutils literal notranslate"><span class="pre">context_condition</span></code>.
+If not specified “exact” will be used. Only used if <code class="docutils literal notranslate"><span class="pre">context_condition</span></code>
+is not None.</p></li>
 <li><p><strong>num_robust_influence_samples_per_case</strong> (<em>int</em><em>, </em><em>optional</em>) – Specifies the number of robust samples to use for each case for
 robust contribution computations.
 Defaults to 300 + 2 * (number of features).</p></li>
-<li><p><strong>precision</strong> (<em>str</em><em>, </em><em>default None</em>) – The precision to use when selecting cases with the condition.
-Options are ‘exact’ or ‘similar’. If not specified “exact” will be
-used. Only used if <cite>condition</cite> is not None.</p></li>
 <li><p><strong>robust</strong> (<em>bool</em><em>, </em><em>optional</em>) – When specified, will attempt to return stats that
 were computed with the specified robust or non-robust type.</p></li>
 <li><p><strong>robust_hyperparameters</strong> (<em>bool</em><em>, </em><em>optional</em>) – When specified, will attempt to return stats that were
@@ -3619,6 +3745,7 @@ continuous features only.</p></li>
 <li><p>rmse : Root mean squared error, for continuous features only.</p></li>
 <li><p>spearman_coeff : Spearman’s rank correlation coefficient,
 for continuous features only.</p></li>
+<li><p>mcc : Matthews correlation coefficient, for nominal features only.</p></li>
 </ul>
 </div></blockquote>
 </p></li>
@@ -4011,7 +4138,7 @@ target_id are specified, moves cases to the trainee itself.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object sig-wrap py" id="howso.direct.HowsoDirectClient.react">
-<span class="sig-name descname"><span class="pre">react</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_nulls</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">case_indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contexts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">derived_action_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">derived_context_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desired_conviction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_novel_nominals_from_uniqueness_check</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_bounds_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generate_new_cases</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'no'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_is_substituted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">into_series_store</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">leave_case_out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_case_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'min'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cases_to_generate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ordered_by_specified_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_process_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_process_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preserve_feature_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress_callback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">substitute_output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suppress_warning</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_case_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_regional_model_residuals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoDirectClient.react" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">react</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_nulls</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">case_indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contexts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">derived_action_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">derived_context_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desired_conviction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_novel_nominals_from_uniqueness_check</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_bounds_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generate_new_cases</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'no'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_is_substituted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">into_series_store</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">leave_case_out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_case_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'min'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cases_to_generate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ordered_by_specified_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_process_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">post_process_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preserve_feature_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress_callback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">substitute_output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suppress_warning</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_case_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_regional_model_residuals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoDirectClient.react" title="Link to this definition">#</a></dt>
 <dd><p>React to supplied values and cases contained within the Trainee.</p>
 <p>If desired_conviction is not specified, executes a discriminative
 react: provided a list of context values, the trainee reacts to the
@@ -4046,6 +4173,8 @@ details for the given actions. (Discriminative reacts only)</p>
 <li><p><strong>allow_nulls</strong> (<em>bool</em><em>, </em><em>default False</em>) – When true will allow return of null values if there
 are nulls in the local model for the action features, applicable
 only to discriminative reacts.</p></li>
+<li><p><strong>batch_size</strong> (<em>int</em><em>, </em><em>optional</em>) – Define the number of cases to react to at once. If left unspecified,
+the batch size will be determined automatically.</p></li>
 <li><p><strong>context_features</strong> (<em>iterable</em><em> of </em><em>str</em><em>, </em><em>optional</em>) – <p>An iterable of feature names to treat as context features during
 react.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">context_features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;temperature&#39;</span><span class="p">,</span> <span class="s1">&#39;humidity&#39;</span><span class="p">,</span> <span class="s1">&#39;dew_point&#39;</span><span class="p">,</span>
@@ -4273,6 +4402,27 @@ standard or robust computation.</p>
 </dl>
 </li>
 <li><dl class="simple">
+<dt>prediction_stats<span class="classifier">bool, optional</span></dt><dd><p>When true outputs feature prediction stats for all (context
+and action) features locally around the prediction. The stats
+returned  are (“r2”, “rmse”, “spearman_coeff”, “precision”,
+“recall”, “accuracy”, “mcc”). Confusion matrices may also be
+returned by setting ‘confusion_matrices’ to true. Uses only the
+context features of the reacted case to determine that area.
+Relies on ‘robust_residuals’ flag.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>confusion_matrices<span class="classifier">bool, optional</span></dt><dd><p>When true, will automatically set ‘prediction_stats’ to true and
+return the confusion matrices alongside all of the other prediction
+stats from ‘prediction_stats’ for all (context and action) features
+locally around the prediction. Uses only the context features of
+the reacted case to determine that area. Relies on ‘robust_residuals’
+flag.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
 <dt>feature_mda<span class="classifier">bool, optional</span></dt><dd><p>If True outputs each context feature’s mean decrease in
 accuracy of predicting the action feature given the context.
 Uses only the context features of the reacted case to determine
@@ -4400,6 +4550,11 @@ random case.</p></li>
 <li><p><strong>leave_case_out</strong> (<em>bool</em><em>, </em><em>default False</em>) – If set to True and specified along with case_indices,
 each individual react will respectively ignore the corresponding
 case specified by case_indices by leaving it out.</p></li>
+<li><p><strong>initial_batch_size</strong> (<em>int</em><em>, </em><em>optional</em>) – Define the number of cases to react to in the first batch. If
+unspecified, the value of the <code class="docutils literal notranslate"><span class="pre">react_initial_batch_size</span></code> property
+is used. The number of cases in following batches will be
+automatically adjusted. This value is ignored if <code class="docutils literal notranslate"><span class="pre">batch_size</span></code> is
+specified.</p></li>
 <li><p><strong>into_series_store</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of a series store. If specified, will store an internal
 record of all react contexts for this session and series to be used
 later with train series.</p></li>
@@ -4649,8 +4804,8 @@ If specified overrides sample_model_fraction.```</p></li>
 context_features to predict the feature. When True computes and
 caches MAE (mean absolute error), R^2, RMSE (root mean squared
 error), and Spearman Coefficient for continuous features, and
-MAE, accuracy, precision and recall for nominal features.
-False removes cached values.</p></li>
+MAE, accuracy, precision, recall, and Matthews correlation coefficient
+for nominal features. False removes cached values.</p></li>
 <li><p><strong>residuals_robust</strong> (<em>bool</em><em>, </em><em>optional</em>) – For each context_feature, computes and caches the same stats as
 residuals but using the robust (power set/permutations) set of all
 other context_features to predict the feature.
@@ -4675,7 +4830,7 @@ When left unspecified uses the internally managed case weight.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object sig-wrap py" id="howso.direct.HowsoDirectClient.react_series">
-<span class="sig-name descname"><span class="pre">react_series</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">case_indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contexts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">continue_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">continue_series_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">continue_series_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">derived_action_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">derived_context_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desired_conviction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_novel_nominals_from_uniqueness_check</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_bounds_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">final_time_steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generate_new_cases</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'no'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_time_steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_is_substituted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">leave_case_out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_series_lengths</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_case_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'min'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_series_to_generate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ordered_by_specified_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_new_series_ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preserve_feature_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress_callback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">series_context_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">series_context_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">series_id_tracking</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'fixed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">series_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">series_stop_maps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">substitute_output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suppress_warning</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_case_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_regional_model_residuals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoDirectClient.react_series" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">react_series</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">case_indices</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contexts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">continue_series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">continue_series_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">continue_series_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">derived_action_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">derived_context_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">desired_conviction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">details</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exclude_novel_nominals_from_uniqueness_check</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_bounds_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">final_time_steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">generate_new_cases</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'no'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_time_steps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_is_substituted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">leave_case_out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_series_lengths</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_case_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'min'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_series_to_generate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ordered_by_specified_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_new_series_ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preserve_feature_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress_callback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">series_context_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">series_context_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">series_id_tracking</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'fixed'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">series_index</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">series_stop_maps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">substitute_output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suppress_warning</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_case_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_regional_model_residuals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoDirectClient.react_series" title="Link to this definition">#</a></dt>
 <dd><p>React in a series until a series_stop_map condition is met.</p>
 <p>Aggregates rows of data corresponding to the specified context, action,
 derived_context and derived_action features, utilizing previous rows to
@@ -4781,6 +4936,12 @@ If set to None, no column will be added.</p></li>
 batched call to react series and at the end of reacting. The method
 is given a ProgressTimer containing metrics on the progress and
 timing of the react series operation, and the batch result.</p></li>
+<li><p><strong>batch_size</strong> (<em>int</em><em>, </em><em>optional</em>) – Define the number of series to react to at once. If left
+unspecified, the batch size will be determined automatically.</p></li>
+<li><p><strong>initial_batch_size</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of series to react to in the first batch. If unspecified,
+the number will be determined automatically. The number of series
+in following batches will be automatically adjusted. This value is
+ignored if <code class="docutils literal notranslate"><span class="pre">batch_size</span></code> is specified.</p></li>
 <li><p><strong>contexts</strong> (<em>list</em><em> of </em><em>list</em><em> of </em><em>object</em><em> or </em><em>DataFrame</em>) – See parameter <code class="docutils literal notranslate"><span class="pre">contexts</span></code> in <a class="reference internal" href="#howso.direct.HowsoDirectClient.react" title="howso.direct.HowsoDirectClient.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">HowsoDirectClient.react()</span></code></a>.</p></li>
 <li><p><strong>action_features</strong> (<em>iterable</em><em> of </em><em>str</em>) – See parameter <code class="docutils literal notranslate"><span class="pre">action_features</span></code> in <a class="reference internal" href="#howso.direct.HowsoDirectClient.react" title="howso.direct.HowsoDirectClient.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">HowsoDirectClient.react()</span></code></a>.</p></li>
 <li><p><strong>actions</strong> (<em>list</em><em> of </em><em>list</em><em> of </em><em>object</em><em> or </em><em>DataFrame</em>) – See parameter <code class="docutils literal notranslate"><span class="pre">actions</span></code> in <a class="reference internal" href="#howso.direct.HowsoDirectClient.react" title="howso.direct.HowsoDirectClient.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">HowsoDirectClient.react()</span></code></a>.</p></li>
@@ -4830,6 +4991,41 @@ timing of the react series operation, and the batch result.</p></li>
     
     If <cite>new_case_threshold</cite> is not one of {“max”, “min”, “most_similar”}.</p></li>
 <li><p><strong>HowsoError</strong> – If <cite>num_series_to_generate</cite> is not an integer greater than 0.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object sig-wrap py" id="howso.direct.HowsoDirectClient.reduce_data">
+<span class="sig-name descname"><span class="pre">reduce_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distribute_weight_feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">influence_weight_entropy_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoDirectClient.reduce_data" title="Link to this definition">#</a></dt>
+<dd><p>Smartly reduce the amount of trained cases while accumulating case weights.</p>
+<p>Determines which cases to remove by comparing the influence weight entropy of each trained
+case to the <code class="docutils literal notranslate"><span class="pre">influence_weight_entropy_threshold</span></code> quantile of existing influence weight
+entropies.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All ablation endpoints, including <a class="reference internal" href="#howso.direct.HowsoDirectClient.reduce_data" title="howso.direct.HowsoDirectClient.reduce_data"><code class="xref py py-meth docutils literal notranslate"><span class="pre">reduce_data()</span></code></a> are experimental and may have their
+API changed without deprecation.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>The default <code class="docutils literal notranslate"><span class="pre">distribute_weight_feature</span></code> and <code class="docutils literal notranslate"><span class="pre">influence_weight_entropy_threshold</span></code> are
+pulled from the auto-ablation parameters, which can be set or retrieved with
+<a class="reference internal" href="#howso.direct.HowsoDirectClient.set_auto_ablation_params" title="howso.direct.HowsoDirectClient.set_auto_ablation_params"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_auto_ablation_params()</span></code></a> and <a class="reference internal" href="#howso.direct.HowsoDirectClient.get_auto_ablation_params" title="howso.direct.HowsoDirectClient.get_auto_ablation_params"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_auto_ablation_params()</span></code></a>, respectively.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>trainee_id</strong> (<em>str</em>) – The ID of the Trainee for which to reduce data.</p></li>
+<li><p><strong>features</strong> (<em>list</em><em> of </em><em>str</em><em>, </em><em>optional</em>) – The features which should be used to determine which cases to remove. This defaults to all of
+the trained features (excluding internal features).</p></li>
+<li><p><strong>distribute_weight_feature</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the weight feature to accumulate case weights to as cases are removed. This
+defaults to the value of <code class="docutils literal notranslate"><span class="pre">auto_ablation_weight_feature</span></code> from <a class="reference internal" href="#howso.direct.HowsoDirectClient.set_auto_ablation_params" title="howso.direct.HowsoDirectClient.set_auto_ablation_params"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_auto_ablation_params()</span></code></a>,
+which defaults to “.case_weight”.</p></li>
+<li><p><strong>influence_weight_entropy_threshold</strong> (<em>float</em><em>, </em><em>optional</em>) – The quantile of influence weight entropy above which cases will be removed. This defaults
+to the value of <code class="docutils literal notranslate"><span class="pre">influence_weight_entropy_threshold</span></code> from <a class="reference internal" href="#howso.direct.HowsoDirectClient.set_auto_ablation_params" title="howso.direct.HowsoDirectClient.set_auto_ablation_params"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_auto_ablation_params()</span></code></a>,
+which defaults to 0.6.</p></li>
 </ul>
 </dd>
 </dl>
@@ -5014,10 +5210,16 @@ subtrainee to rename.</p></li>
 <dl class="py method">
 <dt class="sig sig-object sig-wrap py" id="howso.direct.HowsoDirectClient.set_auto_ablation_params">
 <span class="sig-name descname"><span class="pre">set_auto_ablation_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_ablation_enabled</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_ablation_weight_feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.case_weight'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conviction_lower_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conviction_upper_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exact_prediction_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">influence_weight_entropy_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minimum_model_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relative_prediction_threshold_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">residual_prediction_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance_prediction_threshold_map</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoDirectClient.set_auto_ablation_params" title="Link to this definition">#</a></dt>
-<dd><p>Set trainee parameters for auto ablation.</p>
+<dd><p>Set trainee parameters for auto-ablation.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Auto-ablation is experimental and the API may change without deprecation.</p>
+<p>All ablation endpoints, including <a class="reference internal" href="#howso.direct.HowsoDirectClient.set_auto_ablation_params" title="howso.direct.HowsoDirectClient.set_auto_ablation_params"><code class="xref py py-meth docutils literal notranslate"><span class="pre">set_auto_ablation_params()</span></code></a> are experimental and may
+have their API changed without deprecation.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>The params <code class="docutils literal notranslate"><span class="pre">influence_weight_entropy_threshold</span></code> and <code class="docutils literal notranslate"><span class="pre">auto_ablation_weight_feature</span></code> that are
+set using this endpoint are used as defaults by <a class="reference internal" href="#howso.direct.HowsoDirectClient.reduce_data" title="howso.direct.HowsoDirectClient.reduce_data"><code class="xref py py-meth docutils literal notranslate"><span class="pre">reduce_data()</span></code></a>.</p>
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -5084,45 +5286,6 @@ will be cached and used during future auto-analysis.</p></li>
 </pre></div>
 </div>
 </p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object sig-wrap py" id="howso.direct.HowsoDirectClient.set_feature_weights">
-<span class="sig-name descname"><span class="pre">set_feature_weights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_feature_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoDirectClient.set_feature_weights" title="Link to this definition">#</a></dt>
-<dd><p>Set the weights for the features in the Trainee.</p>
-<p>If action_feature is not specified, it will set the passed in weights
-as targetless.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>trainee_id</strong> (<em>str</em>) – The ID of the Trainee.</p></li>
-<li><p><strong>action_feature</strong> (<em>str</em><em>, </em><em>optional</em>) – Action feature for which to set the specified feature weights for</p></li>
-<li><p><strong>feature_weights</strong> (<em>dict</em><em>, </em><em>optional</em>) – A dictionary of feature names -&gt; weight values.
-Ex {“a”, 1.0, “b”: 0.1, “c”: 0.5, … , “z”: 1.0}
-If not set, the feature weights are cleared in the model</p></li>
-<li><p><strong>use_feature_weights</strong> (<em>bool</em><em>, </em><em>default True</em>) – When set to true, forces the trainee to use the specified feature
-weights</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object sig-wrap py" id="howso.direct.HowsoDirectClient.set_feature_weights_matrix">
-<span class="sig-name descname"><span class="pre">set_feature_weights_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_weights_matrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_feature_weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoDirectClient.set_feature_weights_matrix" title="Link to this definition">#</a></dt>
-<dd><p>Set the feature weights for all the features in the Trainee.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>trainee_id</strong> (<em>str</em>) – The ID of the Trainee.</p></li>
-<li><p><strong>feature_weights_matrix</strong> (<em>dict</em>) – A dictionary of feature names to a dictionary of feature names to
-weight values.
-i.e. {“a” : {“a”, 1.0, “b”: 0.1, “c”: 0.5, … , “z”: 1.0} }</p></li>
-<li><p><strong>use_feature_weights</strong> (<em>bool</em><em>, </em><em>default True</em>) – When set to true, forces the trainee to use the specified feature
-weights.</p></li>
 </ul>
 </dd>
 </dl>
@@ -5206,7 +5369,7 @@ substitute feature value.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object sig-wrap py" id="howso.direct.HowsoDirectClient.train">
-<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cases</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accumulate_weight_feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">derived_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_is_substituted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress_callback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_auto_analyze</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_weights_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoDirectClient.train" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trainee_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cases</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accumulate_weight_feature</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">derived_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_is_substituted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">progress_callback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">series</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_auto_analyze</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_weights_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.direct.HowsoDirectClient.train" title="Link to this definition">#</a></dt>
 <dd><p>Train one or more cases into a trainee (model).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -5236,6 +5399,11 @@ the ‘auto_derive_on_train’ feature attribute set to True will be
 auto-derived. If provided an empty list, no features are derived.
 Any derived_features that are already in the ‘features’ list will
 not be derived since their values are being explicitly provided.</p></li>
+<li><p><strong>initial_batch_size</strong> (<em>int</em><em>, </em><em>optional</em>) – Define the number of cases to train in the first batch. If
+unspecified, the value of the <code class="docutils literal notranslate"><span class="pre">train_initial_batch_size</span></code> property
+is used. The number of cases in following batches will be
+automatically adjusted. This value is ignored if <code class="docutils literal notranslate"><span class="pre">batch_size</span></code> is
+specified.</p></li>
 <li><p><strong>input_is_substituted</strong> (<em>bool</em><em>, </em><em>default False</em>) – if True assumes provided nominal feature values have
 already been substituted.</p></li>
 <li><p><strong>progress_callback</strong> (<em>callable</em><em>, </em><em>optional</em>) – A callback method that will be called before each
@@ -5354,12 +5522,6 @@ auto-analyze is enabled and the conditions are met.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="howso.direct.HowsoDirectClient.DEFAULT_HANDLE">
-<span class="sig-name descname"><span class="pre">DEFAULT_HANDLE</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'howso'</span></em><a class="headerlink" href="#howso.direct.HowsoDirectClient.DEFAULT_HANDLE" title="Link to this definition">#</a></dt>
-<dd><p>The default Howso core entity handle.</p>
-</dd></dl>
-
-<dl class="py attribute">
 <dt class="sig sig-object py" id="howso.direct.HowsoDirectClient.SUPPORTED_PRECISION_VALUES">
 <span class="sig-name descname"><span class="pre">SUPPORTED_PRECISION_VALUES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['exact',</span> <span class="pre">'similar']</span></em><a class="headerlink" href="#howso.direct.HowsoDirectClient.SUPPORTED_PRECISION_VALUES" title="Link to this definition">#</a></dt>
 <dd><p>The supported values of precision for methods that accept it</p>
@@ -5375,6 +5537,34 @@ auto-analyze is enabled and the conditions are met.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>howso.openapi.models.Session</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="howso.direct.HowsoDirectClient.react_initial_batch_size">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">react_initial_batch_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#howso.direct.HowsoDirectClient.react_initial_batch_size" title="Link to this definition">#</a></dt>
+<dd><p>The default number of cases in the first react batch.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The default number of cases to react to in the first batch.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="howso.direct.HowsoDirectClient.train_initial_batch_size">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">train_initial_batch_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#howso.direct.HowsoDirectClient.train_initial_batch_size" title="Link to this definition">#</a></dt>
+<dd><p>The default number of cases in the first train batch.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The default number of cases to train in the first batch.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
 </dd>
 </dl>
 </dd></dl>
@@ -5460,9 +5650,11 @@ auto-analyze is enabled and the conditions are met.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.compute_feature_weights"><code class="docutils literal notranslate"><span class="pre">HowsoCore.compute_feature_weights()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.copy"><code class="docutils literal notranslate"><span class="pre">HowsoCore.copy()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.copy_subtrainee"><code class="docutils literal notranslate"><span class="pre">HowsoCore.copy_subtrainee()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.create_subtrainee"><code class="docutils literal notranslate"><span class="pre">HowsoCore.create_subtrainee()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.create_trainee"><code class="docutils literal notranslate"><span class="pre">HowsoCore.create_trainee()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.default_library_ext"><code class="docutils literal notranslate"><span class="pre">HowsoCore.default_library_ext()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.delete"><code class="docutils literal notranslate"><span class="pre">HowsoCore.delete()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.delete_subtrainee"><code class="docutils literal notranslate"><span class="pre">HowsoCore.delete_subtrainee()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.distances"><code class="docutils literal notranslate"><span class="pre">HowsoCore.distances()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.download_amlg"><code class="docutils literal notranslate"><span class="pre">HowsoCore.download_amlg()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.download_core"><code class="docutils literal notranslate"><span class="pre">HowsoCore.download_core()</span></code></a></li>
@@ -5478,7 +5670,6 @@ auto-analyze is enabled and the conditions are met.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.get_feature_contributions"><code class="docutils literal notranslate"><span class="pre">HowsoCore.get_feature_contributions()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.get_feature_mda"><code class="docutils literal notranslate"><span class="pre">HowsoCore.get_feature_mda()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.get_feature_residuals"><code class="docutils literal notranslate"><span class="pre">HowsoCore.get_feature_residuals()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.get_feature_weights_matrix"><code class="docutils literal notranslate"><span class="pre">HowsoCore.get_feature_weights_matrix()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.get_hierarchy"><code class="docutils literal notranslate"><span class="pre">HowsoCore.get_hierarchy()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.get_internal_parameters"><code class="docutils literal notranslate"><span class="pre">HowsoCore.get_internal_parameters()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.get_loaded_trainees"><code class="docutils literal notranslate"><span class="pre">HowsoCore.get_loaded_trainees()</span></code></a></li>
@@ -5494,6 +5685,7 @@ auto-analyze is enabled and the conditions are met.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.get_trainee_version"><code class="docutils literal notranslate"><span class="pre">HowsoCore.get_trainee_version()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.impute"><code class="docutils literal notranslate"><span class="pre">HowsoCore.impute()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.load"><code class="docutils literal notranslate"><span class="pre">HowsoCore.load()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.load_subtrainee"><code class="docutils literal notranslate"><span class="pre">HowsoCore.load_subtrainee()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.move_cases"><code class="docutils literal notranslate"><span class="pre">HowsoCore.move_cases()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.pairwise_distances"><code class="docutils literal notranslate"><span class="pre">HowsoCore.pairwise_distances()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.persist"><code class="docutils literal notranslate"><span class="pre">HowsoCore.persist()</span></code></a></li>
@@ -5501,6 +5693,7 @@ auto-analyze is enabled and the conditions are met.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.react"><code class="docutils literal notranslate"><span class="pre">HowsoCore.react()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.react_into_features"><code class="docutils literal notranslate"><span class="pre">HowsoCore.react_into_features()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.react_into_trainee"><code class="docutils literal notranslate"><span class="pre">HowsoCore.react_into_trainee()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.reduce_data"><code class="docutils literal notranslate"><span class="pre">HowsoCore.reduce_data()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.remove_cases"><code class="docutils literal notranslate"><span class="pre">HowsoCore.remove_cases()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.remove_feature"><code class="docutils literal notranslate"><span class="pre">HowsoCore.remove_feature()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.remove_series_store"><code class="docutils literal notranslate"><span class="pre">HowsoCore.remove_series_store()</span></code></a></li>
@@ -5508,12 +5701,11 @@ auto-analyze is enabled and the conditions are met.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.rename_subtrainee"><code class="docutils literal notranslate"><span class="pre">HowsoCore.rename_subtrainee()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.reset_parameter_defaults"><code class="docutils literal notranslate"><span class="pre">HowsoCore.reset_parameter_defaults()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.retrieve_extreme_cases_for_feature"><code class="docutils literal notranslate"><span class="pre">HowsoCore.retrieve_extreme_cases_for_feature()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.save_subtrainee"><code class="docutils literal notranslate"><span class="pre">HowsoCore.save_subtrainee()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.set_auto_ablation_params"><code class="docutils literal notranslate"><span class="pre">HowsoCore.set_auto_ablation_params()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.set_conviction_lower_threshold"><code class="docutils literal notranslate"><span class="pre">HowsoCore.set_conviction_lower_threshold()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.set_conviction_upper_threshold"><code class="docutils literal notranslate"><span class="pre">HowsoCore.set_conviction_upper_threshold()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.set_feature_attributes"><code class="docutils literal notranslate"><span class="pre">HowsoCore.set_feature_attributes()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.set_feature_weights"><code class="docutils literal notranslate"><span class="pre">HowsoCore.set_feature_weights()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.set_feature_weights_matrix"><code class="docutils literal notranslate"><span class="pre">HowsoCore.set_feature_weights_matrix()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.set_internal_parameters"><code class="docutils literal notranslate"><span class="pre">HowsoCore.set_internal_parameters()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.set_metadata"><code class="docutils literal notranslate"><span class="pre">HowsoCore.set_metadata()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.set_random_seed"><code class="docutils literal notranslate"><span class="pre">HowsoCore.set_random_seed()</span></code></a></li>
@@ -5522,7 +5714,6 @@ auto-analyze is enabled and the conditions are met.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.train"><code class="docutils literal notranslate"><span class="pre">HowsoCore.train()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.unescape_filename"><code class="docutils literal notranslate"><span class="pre">HowsoCore.unescape_filename()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.upgrade_trainee"><code class="docutils literal notranslate"><span class="pre">HowsoCore.upgrade_trainee()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoCore.version"><code class="docutils literal notranslate"><span class="pre">HowsoCore.version()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoDirectClient"><code class="docutils literal notranslate"><span class="pre">HowsoDirectClient</span></code></a><ul class="visible nav section-nav flex-column">
@@ -5554,7 +5745,6 @@ auto-analyze is enabled and the conditions are met.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoDirectClient.get_feature_conviction"><code class="docutils literal notranslate"><span class="pre">HowsoDirectClient.get_feature_conviction()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoDirectClient.get_feature_mda"><code class="docutils literal notranslate"><span class="pre">HowsoDirectClient.get_feature_mda()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoDirectClient.get_feature_residuals"><code class="docutils literal notranslate"><span class="pre">HowsoDirectClient.get_feature_residuals()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoDirectClient.get_feature_weights_matrix"><code class="docutils literal notranslate"><span class="pre">HowsoDirectClient.get_feature_weights_matrix()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoDirectClient.get_hierarchy"><code class="docutils literal notranslate"><span class="pre">HowsoDirectClient.get_hierarchy()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoDirectClient.get_label"><code class="docutils literal notranslate"><span class="pre">HowsoDirectClient.get_label()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoDirectClient.get_marginal_stats"><code class="docutils literal notranslate"><span class="pre">HowsoDirectClient.get_marginal_stats()</span></code></a></li>
@@ -5583,6 +5773,7 @@ auto-analyze is enabled and the conditions are met.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoDirectClient.react_into_features"><code class="docutils literal notranslate"><span class="pre">HowsoDirectClient.react_into_features()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoDirectClient.react_into_trainee"><code class="docutils literal notranslate"><span class="pre">HowsoDirectClient.react_into_trainee()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoDirectClient.react_series"><code class="docutils literal notranslate"><span class="pre">HowsoDirectClient.react_series()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoDirectClient.reduce_data"><code class="docutils literal notranslate"><span class="pre">HowsoDirectClient.reduce_data()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoDirectClient.release_trainee_resources"><code class="docutils literal notranslate"><span class="pre">HowsoDirectClient.release_trainee_resources()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoDirectClient.remove_cases"><code class="docutils literal notranslate"><span class="pre">HowsoDirectClient.remove_cases()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoDirectClient.remove_feature"><code class="docutils literal notranslate"><span class="pre">HowsoDirectClient.remove_feature()</span></code></a></li>
@@ -5592,8 +5783,6 @@ auto-analyze is enabled and the conditions are met.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoDirectClient.set_auto_ablation_params"><code class="docutils literal notranslate"><span class="pre">HowsoDirectClient.set_auto_ablation_params()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoDirectClient.set_auto_analyze_params"><code class="docutils literal notranslate"><span class="pre">HowsoDirectClient.set_auto_analyze_params()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoDirectClient.set_feature_attributes"><code class="docutils literal notranslate"><span class="pre">HowsoDirectClient.set_feature_attributes()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoDirectClient.set_feature_weights"><code class="docutils literal notranslate"><span class="pre">HowsoDirectClient.set_feature_weights()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoDirectClient.set_feature_weights_matrix"><code class="docutils literal notranslate"><span class="pre">HowsoDirectClient.set_feature_weights_matrix()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoDirectClient.set_label"><code class="docutils literal notranslate"><span class="pre">HowsoDirectClient.set_label()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoDirectClient.set_params"><code class="docutils literal notranslate"><span class="pre">HowsoDirectClient.set_params()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoDirectClient.set_random_seed"><code class="docutils literal notranslate"><span class="pre">HowsoDirectClient.set_random_seed()</span></code></a></li>
@@ -5604,9 +5793,10 @@ auto-analyze is enabled and the conditions are met.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoDirectClient.update_trainee"><code class="docutils literal notranslate"><span class="pre">HowsoDirectClient.update_trainee()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoDirectClient.upgrade_trainee"><code class="docutils literal notranslate"><span class="pre">HowsoDirectClient.upgrade_trainee()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoDirectClient.BAD_TRAINEE_NAME_CHARS"><code class="docutils literal notranslate"><span class="pre">HowsoDirectClient.BAD_TRAINEE_NAME_CHARS</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoDirectClient.DEFAULT_HANDLE"><code class="docutils literal notranslate"><span class="pre">HowsoDirectClient.DEFAULT_HANDLE</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoDirectClient.SUPPORTED_PRECISION_VALUES"><code class="docutils literal notranslate"><span class="pre">HowsoDirectClient.SUPPORTED_PRECISION_VALUES</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoDirectClient.active_session"><code class="docutils literal notranslate"><span class="pre">HowsoDirectClient.active_session</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoDirectClient.react_initial_batch_size"><code class="docutils literal notranslate"><span class="pre">HowsoDirectClient.react_initial_batch_size</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoDirectClient.train_initial_batch_size"><code class="docutils literal notranslate"><span class="pre">HowsoDirectClient.train_initial_batch_size</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.direct.HowsoDirectClient.trainee_cache"><code class="docutils literal notranslate"><span class="pre">HowsoDirectClient.trainee_cache</span></code></a></li>
 </ul>
 </li>
@@ -5645,7 +5835,7 @@ auto-analyze is enabled and the conditions are met.</p>
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     <br/>
   </p>
 </div>

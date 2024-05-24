@@ -3,6 +3,15 @@
 
 
 
+.. rubric:: Submodules
+
+.. autosummary::
+   :toctree:
+   :template: custom_module_template.rst
+   :recursive:
+
+
+   howso.engine.typing
 
 
 

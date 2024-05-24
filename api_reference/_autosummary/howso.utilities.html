@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/plot_directive.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=402959de" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=be2ede8c" />
@@ -41,11 +41,11 @@
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script src="../../_static/documentation_options.js?v=8a448e45"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
     <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'api_reference/_autosummary/howso.utilities';</script>
@@ -54,7 +54,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="howso.scikit" href="howso.scikit.html" />
-    <link rel="prev" title="howso.engine" href="howso.engine.html" />
+    <link rel="prev" title="howso.engine.typing" href="howso.engine.typing.html" />
     <link rel="icon" type="image/svg+xml" href="/_static/favicon.svg">
     <link rel="mask-icon" href="/_static/favicon.svg">
     <link rel="stylesheet" href="https://cdn.howso.com/fonts/inter/3.19/typeface.css">
@@ -338,7 +338,10 @@ document.write(`
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Howso Engine Packages</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="howso.engine.html">howso.engine</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="howso.engine.html">howso.engine</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="howso.engine.typing.html">howso.engine.typing</a></li>
+</ul>
+</li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">howso.utilities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="howso.scikit.html">howso.scikit</a></li>
 </ul>
@@ -348,7 +351,7 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="howso.direct.html">howso.direct</a></li>
 </ul>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../data_structures.html">OpenAPI Data Structures</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../data_structures.html">OpenAPI Data Structures</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../openapi/types/Cases.html">Cases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../openapi/types/FeatureAttributes.html">FeatureAttributes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../openapi/types/FeatureAutoDeriveOnTrain.html">FeatureAutoDeriveOnTrain</a></li>
@@ -421,19 +424,28 @@ document.write(`
 <p class="rubric">Classes</p>
 <table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.FeatureType" title="howso.utilities.FeatureType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FeatureType</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.FeatureAttributesBase" title="howso.utilities.FeatureAttributesBase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FeatureAttributesBase</span></code></a></p></td>
+<td><p>Provides accessor methods for and dict-like access to inferred feature attributes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.FeatureType" title="howso.utilities.FeatureType"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FeatureType</span></code></a></p></td>
 <td><p>Feature type enum.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.LocaleOverride" title="howso.utilities.LocaleOverride"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LocaleOverride</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.LocaleOverride" title="howso.utilities.LocaleOverride"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LocaleOverride</span></code></a></p></td>
 <td><p>Implements a thread-safe context manager for switching locales temporarily.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.MultiTableFeatureAttributes" title="howso.utilities.MultiTableFeatureAttributes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MultiTableFeatureAttributes</span></code></a></p></td>
+<td><p>A dict-like object containing feature attributes for multiple tables.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.ProgressTimer" title="howso.utilities.ProgressTimer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ProgressTimer</span></code></a></p></td>
 <td><p>Monitor progress of a task.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.Timer" title="howso.utilities.Timer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Timer</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.SingleTableFeatureAttributes" title="howso.utilities.SingleTableFeatureAttributes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SingleTableFeatureAttributes</span></code></a></p></td>
+<td><p>A dict-like object containing feature attributes for a single table or DataFrame.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.Timer" title="howso.utilities.Timer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Timer</span></code></a></p></td>
 <td><p>Simple context manager to capture run duration of the inner context.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.UserFriendlyExit" title="howso.utilities.UserFriendlyExit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UserFriendlyExit</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.UserFriendlyExit" title="howso.utilities.UserFriendlyExit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UserFriendlyExit</span></code></a></p></td>
 <td><p>Return a callable that, when called, simply prints <cite>msg</cite> and cleanly exits.</p></td>
 </tr>
 </tbody>
@@ -456,76 +468,79 @@ document.write(`
 <tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.date_to_epoch" title="howso.utilities.date_to_epoch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">date_to_epoch</span></code></a></p></td>
 <td><p>Convert date into epoch (i.e seconds counted from Jan 1st 1970).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.deserialize_cases" title="howso.utilities.deserialize_cases"><code class="xref py py-obj docutils literal notranslate"><span class="pre">deserialize_cases</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.deep_update" title="howso.utilities.deep_update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">deep_update</span></code></a></p></td>
+<td><p>Update dict <cite>base</cite> with updates from dict <cite>updates</cite> in a &quot;deep&quot; fashion.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.deserialize_cases" title="howso.utilities.deserialize_cases"><code class="xref py py-obj docutils literal notranslate"><span class="pre">deserialize_cases</span></code></a></p></td>
 <td><p>Deserialize case data into a DataFrame.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.determine_iso_format" title="howso.utilities.determine_iso_format"><code class="xref py py-obj docutils literal notranslate"><span class="pre">determine_iso_format</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.determine_iso_format" title="howso.utilities.determine_iso_format"><code class="xref py py-obj docutils literal notranslate"><span class="pre">determine_iso_format</span></code></a></p></td>
 <td><p>Determine which specific ISO8601 format the passed in date is in.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.dprint" title="howso.utilities.dprint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dprint</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.dprint" title="howso.utilities.dprint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dprint</span></code></a></p></td>
 <td><p>Print based on debug levels.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.epoch_to_date" title="howso.utilities.epoch_to_date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">epoch_to_date</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.epoch_to_date" title="howso.utilities.epoch_to_date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">epoch_to_date</span></code></a></p></td>
 <td><p>Convert epoch to date if epoch is not <cite>None</cite> or <cite>nan</cite> else, return as it is.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.format_dataframe" title="howso.utilities.format_dataframe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">format_dataframe</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.format_dataframe" title="howso.utilities.format_dataframe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">format_dataframe</span></code></a></p></td>
 <td><p>Format DataFrame columns to original type using feature attributes.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.get_kwargs" title="howso.utilities.get_kwargs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_kwargs</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.get_kwargs" title="howso.utilities.get_kwargs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_kwargs</span></code></a></p></td>
 <td><p>Decompose kwargs into a tuple of return values.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.get_matrix_diff" title="howso.utilities.get_matrix_diff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_matrix_diff</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.get_matrix_diff" title="howso.utilities.get_matrix_diff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_matrix_diff</span></code></a></p></td>
 <td><p>Calculates the absolute value of a matrix for feature pairs.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.infer_feature_attributes" title="howso.utilities.infer_feature_attributes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">infer_feature_attributes</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.infer_feature_attributes" title="howso.utilities.infer_feature_attributes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">infer_feature_attributes</span></code></a></p></td>
 <td><p>Return a dict-like feature attributes object with useful accessor methods.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.is_valid_uuid" title="howso.utilities.is_valid_uuid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_valid_uuid</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.is_valid_uuid" title="howso.utilities.is_valid_uuid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_valid_uuid</span></code></a></p></td>
 <td><p>Check if a given string is a valid uuid.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.matrix_processing" title="howso.utilities.matrix_processing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matrix_processing</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.matrix_processing" title="howso.utilities.matrix_processing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matrix_processing</span></code></a></p></td>
 <td><p>Preprocess a matrix including options to normalize, take the absolute value, and fill in the diagonals.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.num_list_dimensions" title="howso.utilities.num_list_dimensions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">num_list_dimensions</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.num_list_dimensions" title="howso.utilities.num_list_dimensions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">num_list_dimensions</span></code></a></p></td>
 <td><p>Return number of dimensions for a list.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.replace_doublemax_with_infinity" title="howso.utilities.replace_doublemax_with_infinity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace_doublemax_with_infinity</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.replace_doublemax_with_infinity" title="howso.utilities.replace_doublemax_with_infinity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace_doublemax_with_infinity</span></code></a></p></td>
 <td><p>Replace values of Double.MAX_VALUE (1.79769313486232E+308) with Infinity.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.replace_nan_with_none" title="howso.utilities.replace_nan_with_none"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace_nan_with_none</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.replace_nan_with_none" title="howso.utilities.replace_nan_with_none"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace_nan_with_none</span></code></a></p></td>
 <td><p>Replace None values with NaN values.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.replace_none_with_nan" title="howso.utilities.replace_none_with_nan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace_none_with_nan</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.replace_none_with_nan" title="howso.utilities.replace_none_with_nan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace_none_with_nan</span></code></a></p></td>
 <td><p>Replace None values with NaN values.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.reshape_data" title="howso.utilities.reshape_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reshape_data</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.reshape_data" title="howso.utilities.reshape_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reshape_data</span></code></a></p></td>
 <td><p>Reshapes X as a matrix and y as a vector.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.seconds_to_time" title="howso.utilities.seconds_to_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">seconds_to_time</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.seconds_to_time" title="howso.utilities.seconds_to_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">seconds_to_time</span></code></a></p></td>
 <td><p>Convert seconds to a time object.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.serialize_cases" title="howso.utilities.serialize_cases"><code class="xref py py-obj docutils literal notranslate"><span class="pre">serialize_cases</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.serialize_cases" title="howso.utilities.serialize_cases"><code class="xref py py-obj docutils literal notranslate"><span class="pre">serialize_cases</span></code></a></p></td>
 <td><p>Serialize case data into list of lists.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.serialize_datetimes" title="howso.utilities.serialize_datetimes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">serialize_datetimes</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.serialize_datetimes" title="howso.utilities.serialize_datetimes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">serialize_datetimes</span></code></a></p></td>
 <td><p>Serialize datetimes in the given list of cases, in-place.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.time_to_seconds" title="howso.utilities.time_to_seconds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">time_to_seconds</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.time_to_seconds" title="howso.utilities.time_to_seconds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">time_to_seconds</span></code></a></p></td>
 <td><p>Convert a time object to seconds since midnight.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.trainee_from_df" title="howso.utilities.trainee_from_df"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trainee_from_df</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.trainee_from_df" title="howso.utilities.trainee_from_df"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trainee_from_df</span></code></a></p></td>
 <td><p>Create a Trainee from a dataframe.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.validate_case_indices" title="howso.utilities.validate_case_indices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_case_indices</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.validate_case_indices" title="howso.utilities.validate_case_indices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_case_indices</span></code></a></p></td>
 <td><p>Validate the case_indices parameter to the react() method of a Howso client.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.validate_datetime_iso8061" title="howso.utilities.validate_datetime_iso8061"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_datetime_iso8061</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.validate_datetime_iso8061" title="howso.utilities.validate_datetime_iso8061"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_datetime_iso8061</span></code></a></p></td>
 <td><p>Check that the passed in datetime value adheres to the ISO 8601 format.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.validate_features" title="howso.utilities.validate_features"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_features</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.validate_features" title="howso.utilities.validate_features"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_features</span></code></a></p></td>
 <td><p>Validate the feature types in <cite>features</cite>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.validate_list_shape" title="howso.utilities.validate_list_shape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_list_shape</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.validate_list_shape" title="howso.utilities.validate_list_shape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_list_shape</span></code></a></p></td>
 <td><p>Validate the shape of a list.</p></td>
 </tr>
 </tbody>
@@ -536,6 +551,94 @@ document.write(`
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">howso.utilities.</span></span><span class="sig-name descname"><span class="pre">StopExecution</span></span><a class="headerlink" href="#howso.utilities.StopExecution" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
 <p>Raise a StopExecution as this is a cleaner <cite>exit()</cite> for Notebooks.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object sig-wrap py" id="howso.utilities.FeatureAttributesBase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">howso.utilities.</span></span><span class="sig-name descname"><span class="pre">FeatureAttributesBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_attributes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unsupported</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.utilities.FeatureAttributesBase" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
+<p>Provides accessor methods for and dict-like access to inferred feature attributes.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="howso.utilities.FeatureAttributesBase.get_names">
+<span class="sig-name descname"><span class="pre">get_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">types</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">without</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.utilities.FeatureAttributesBase.get_names" title="Link to this definition">#</a></dt>
+<dd><p>Get feature names associated with this FeatureAttributes object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>types</strong> (<em>String</em><em>, </em><em>Container</em><em> (of </em><em>String</em><em>)</em><em>, </em><em>default None</em>) – (Optional) A feature type as a string (E.g., ‘continuous’) or a
+list of feature types to limit the output feature names.</p></li>
+<li><p><strong>without</strong> (<em>Iterable</em><em> of </em><em>String</em>) – (Optional) An Iterable of feature names to exclude from the return object.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of feature names.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of String</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="howso.utilities.FeatureAttributesBase.get_parameters">
+<span class="sig-name descname"><span class="pre">get_parameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#howso.utilities.FeatureAttributesBase.get_parameters" title="Link to this definition">#</a></dt>
+<dd><p>Get the keyword arguments used with the initial call to infer_feature_attributes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A dictionary containing the kwargs used in the call to <cite>infer_feature_attributes</cite>.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="howso.utilities.FeatureAttributesBase.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#howso.utilities.FeatureAttributesBase.to_json" title="Link to this definition">#</a></dt>
+<dd><p>Get a JSON string representation of this FeatureAttributes object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A JSON representation of the inferred feature attributes.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>String</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object sig-wrap py" id="howso.utilities.FeatureAttributesBase.validate">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coerce</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raise_errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validate_bounds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_missing_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">localize_datetimes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.utilities.FeatureAttributesBase.validate" title="Link to this definition">#</a></dt>
+<dd><p>Validate the given data against this FeatureAttributes object.</p>
+<p>Check that feature bounds and data types loosely describe the data. Optionally
+attempt to coerce the data into conformity.
+:type data: <span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></span>
+:param data: The data to validate
+:type data: Any
+:type coerce: 
+:param coerce: Whether to attempt to coerce DataFrame columns into correct data types. Coerced</p>
+<blockquote>
+<div><p>datetimes will be localized to UTC.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>raise_errors</strong> (<em>bool</em><em> (</em><em>default False</em><em>)</em>) – If True, raises a ValueError if nonconforming columns are found; else issue a warning</p></li>
+<li><p><strong>validate_bounds</strong> (<em>bool</em><em> (</em><em>default True</em><em>)</em>) – Whether to validate the data against the attributes’ inferred bounds</p></li>
+<li><p><strong>allow_missing_features</strong> (<em>bool</em><em> (</em><em>default False</em><em>)</em>) – Allows features that are missing from the DataFrame to be ignored</p></li>
+<li><p><strong>localize_datetimes</strong> (<em>bool</em><em> (</em><em>default True</em><em>)</em>) – Whether to localize datetime features to UTC.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None or the coerced DataFrame if ‘coerce’ is True and there were no errors.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None | DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -641,6 +744,13 @@ class as a context manager.</p>
 </dd></dl>
 
 <dl class="py class">
+<dt class="sig sig-object sig-wrap py" id="howso.utilities.MultiTableFeatureAttributes">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">howso.utilities.</span></span><span class="sig-name descname"><span class="pre">MultiTableFeatureAttributes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_attributes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unsupported</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.utilities.MultiTableFeatureAttributes" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#howso.utilities.FeatureAttributesBase" title="howso.utilities.feature_attributes.base.FeatureAttributesBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureAttributesBase</span></code></a></p>
+<p>A dict-like object containing feature attributes for multiple tables.</p>
+</dd></dl>
+
+<dl class="py class">
 <dt class="sig sig-object sig-wrap py" id="howso.utilities.ProgressTimer">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">howso.utilities.</span></span><span class="sig-name descname"><span class="pre">ProgressTimer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">total_ticks</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_tick</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.utilities.ProgressTimer" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#howso.utilities.Timer" title="howso.utilities.monitors.Timer"><code class="xref py py-class docutils literal notranslate"><span class="pre">Timer</span></code></a></p>
@@ -728,6 +838,75 @@ class as a context manager.</p>
 </dd>
 <dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>ValueError</strong> – If timer not yet started.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object sig-wrap py" id="howso.utilities.SingleTableFeatureAttributes">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">howso.utilities.</span></span><span class="sig-name descname"><span class="pre">SingleTableFeatureAttributes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_attributes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unsupported</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.utilities.SingleTableFeatureAttributes" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#howso.utilities.FeatureAttributesBase" title="howso.utilities.feature_attributes.base.FeatureAttributesBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureAttributesBase</span></code></a></p>
+<p>A dict-like object containing feature attributes for a single table or DataFrame.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="howso.utilities.SingleTableFeatureAttributes.has_unsupported_data">
+<span class="sig-name descname"><span class="pre">has_unsupported_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.utilities.SingleTableFeatureAttributes.has_unsupported_data" title="Link to this definition">#</a></dt>
+<dd><p>Returns whether the given feature has data that is unsupported by Howso Engine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>feature_name</strong> (<em>str</em>) – The feature to check.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Whether feature_name was determined to have unsupported data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="howso.utilities.SingleTableFeatureAttributes.to_dataframe">
+<span class="sig-name descname"><span class="pre">to_dataframe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_all</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.utilities.SingleTableFeatureAttributes.to_dataframe" title="Link to this definition">#</a></dt>
+<dd><p>Return a DataFrame of the feature attributes.</p>
+<p>Among other reasons, this is useful for presenting feature attributes
+in a Jupyter notebook or other medium.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A DataFrame representation of the inferred feature attributes.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="howso.utilities.SingleTableFeatureAttributes.validate">
+<span class="sig-name descname"><span class="pre">validate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.utilities.SingleTableFeatureAttributes.validate" title="Link to this definition">#</a></dt>
+<dd><p>Validate the given single table data against this FeatureAttributes object.</p>
+<p>Check that feature bounds and data types loosely describe the data. Optionally
+attempt to coerce the data into conformity.
+:type data: <span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></span>
+:param data: The data to validate (single table only).
+:type data: Any
+:param coerce: Whether to attempt to coerce DataFrame columns into correct data types.
+:type coerce: bool (default False)
+:param raise_errors: If True, raises a ValueError if nonconforming columns are found; else, issue a warning.
+:type raise_errors: bool (default False)
+:param validate_bounds: Whether to validate the data against the attributes’ inferred bounds.
+:type validate_bounds: bool (default True)
+:param allow_missing_features: Allows features that are missing from the DataFrame to be ignored.
+:type allow_missing_features: bool (default False)
+:param localize_datetimes: Whether to localize datetime features to UTC.
+:type localize_datetimes: bool (default True)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None or the coerced DataFrame if ‘coerce’ is True and there were no errors.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None | DataFrame</p>
 </dd>
 </dl>
 </dd></dl>
@@ -938,6 +1117,28 @@ Ex: <code class="docutils literal notranslate"><span class="pre">%a</span> <span
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Union[str, float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="howso.utilities.deep_update">
+<span class="sig-prename descclassname"><span class="pre">howso.utilities.</span></span><span class="sig-name descname"><span class="pre">deep_update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">updates</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.utilities.deep_update" title="Link to this definition">#</a></dt>
+<dd><p>Update dict <cite>base</cite> with updates from dict <cite>updates</cite> in a “deep” fashion.</p>
+<p>NOTE: This is a recursive function. Care should be taken to ensure that
+neither of the input dictionaries are self-referencing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>base</strong> (<em>dict</em>) – A dictionary</p></li>
+<li><p><strong>updates</strong> (<em>dict</em>) – A dictionary of updates</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>dict</strong></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The updated dictionary.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1200,32 +1401,37 @@ retained as is and the rest of the attributes will be inferred.</p>
 <span class="gp">... </span>        <span class="s1">&#39;bounds&#39;</span><span class="p">:</span> <span class="p">{</span>
 <span class="gp">... </span>            <span class="s1">&#39;allow_null&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">:</span> <span class="mf">2.72</span>
 <span class="gp">... </span>        <span class="p">},</span>
-<span class="gp">... </span>        <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;continuous&#39;</span>
+<span class="gp">... </span>        <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;continuous&#39;</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="s1">&#39;sample&#39;</span><span class="p">:</span> <span class="mf">2.86</span>
 <span class="gp">... </span>    <span class="p">},</span>
 <span class="gp">... </span>    <span class="s1">&#39;sepal-width&#39;</span><span class="p">,</span> <span class="p">{</span>
 <span class="gp">... </span>        <span class="s1">&#39;bounds&#39;</span><span class="p">:</span> <span class="p">{</span>
 <span class="gp">... </span>            <span class="s1">&#39;allow_null&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span> <span class="mf">7.38905609893065</span><span class="p">,</span>
 <span class="gp">... </span>            <span class="s1">&#39;min&#39;</span><span class="p">:</span> <span class="mf">1.0</span>
 <span class="gp">... </span>        <span class="p">},</span>
-<span class="gp">... </span>        <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;continuous&#39;</span>
+<span class="gp">... </span>        <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;continuous&#39;</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="s1">&#39;sample&#39;</span><span class="p">:</span> <span class="mf">4.56</span>
 <span class="gp">... </span>    <span class="p">},</span>
 <span class="gp">... </span>    <span class="s1">&#39;petal-length&#39;</span><span class="p">,</span> <span class="p">{</span>
 <span class="gp">... </span>        <span class="s1">&#39;bounds&#39;</span><span class="p">:</span> <span class="p">{</span>
 <span class="gp">... </span>            <span class="s1">&#39;allow_null&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span> <span class="mf">7.38905609893065</span><span class="p">,</span>
 <span class="gp">... </span>            <span class="s1">&#39;min&#39;</span><span class="p">:</span> <span class="mf">1.0</span>
 <span class="gp">... </span>        <span class="p">},</span>
-<span class="gp">... </span>        <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;continuous&#39;</span>
+<span class="gp">... </span>        <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;continuous&#39;</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="s1">&#39;sample&#39;</span><span class="p">:</span> <span class="mf">5.52</span>
 <span class="gp">... </span>    <span class="p">},</span>
 <span class="gp">... </span>    <span class="s1">&#39;petal-width&#39;</span><span class="p">,</span> <span class="p">{</span>
 <span class="gp">... </span>        <span class="s1">&#39;bounds&#39;</span><span class="p">:</span> <span class="p">{</span>
 <span class="gp">... </span>            <span class="s1">&#39;allow_null&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">:</span> <span class="mf">2.718281828459045</span><span class="p">,</span>
 <span class="gp">... </span>            <span class="s1">&#39;min&#39;</span><span class="p">:</span> <span class="mf">0.049787068367863944</span>
 <span class="gp">... </span>        <span class="p">},</span>
-<span class="gp">... </span>        <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;continuous&#39;</span>
+<span class="gp">... </span>        <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;continuous&#39;</span><span class="p">,</span>
+<span class="gp">... </span>        <span class="s1">&#39;sample&#39;</span><span class="p">:</span> <span class="mf">1.33</span>
 <span class="gp">... </span>    <span class="p">},</span>
 <span class="gp">... </span>    <span class="s1">&#39;target&#39;</span><span class="p">,</span> <span class="p">{</span>
 <span class="gp">... </span>        <span class="s1">&#39;bounds&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;allow_null&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
 <span class="gp">... </span>        <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;nominal&#39;</span>
+<span class="gp">... </span>        <span class="s1">&#39;sample&#39;</span><span class="p">:</span> <span class="mi">1</span>
 <span class="gp">... </span>    <span class="p">}</span>
 <span class="gp">... </span><span class="p">}</span>
 </pre></div>
@@ -1276,6 +1482,7 @@ that should be derived instead of synthesized. For example, for a
 feature with a 3rd order of derivative, setting its derived_orders
 to 2 will synthesize the 3rd order derivative value, and then use
 that synthed value to derive the 2nd and 1st order.</p></li>
+<li><p><strong>include_sample</strong> (<em>bool</em><em>, </em><em>default False</em>) – Set to True to include a sample of each feature’s data in the output.</p></li>
 <li><p><strong>lags</strong> (<em>list</em><em> or </em><em>dict</em><em>, </em><em>default None</em>) – <p>(Optional) A list containing the specific indices of the desired lag
 features to derive for each feature (not including the series time
 feature). Specifying derived lag features for the feature specified by
@@ -1422,6 +1629,8 @@ also work:</p>
 </dd>
 </dl>
 </p></li>
+<li><p><strong>include_sample</strong> – If True, include a <code class="docutils literal notranslate"><span class="pre">sample</span></code> field containing a sample of the data
+from each feature in the output feature attributes dictionary.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -1430,7 +1639,7 @@ that extends <cite>dict</cite>, thus providing dict-like access to feature
 attributes and useful accessor methods.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>FeatureAttributesBase</p>
+<dd class="field-odd"><p><a class="reference internal" href="#howso.utilities.FeatureAttributesBase" title="howso.utilities.FeatureAttributesBase">FeatureAttributesBase</a></p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
@@ -1567,7 +1776,7 @@ or a list of dataframes.</p>
 <p>For use when retrieving data from Howso.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>dat</strong> (<em>A dict</em><em>, </em><em>list</em><em>, </em><em>number</em><em>, or </em><em>string</em>) – </p>
+<dd class="field-odd"><p><strong>dat</strong> (<em>A dict</em><em>, </em><em>list</em><em>, </em><em>number</em><em>, or </em><em>string</em>)</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>A dict, list, number, or string - same as passed in for translation</p>
@@ -1599,7 +1808,7 @@ for the different ways howso and sklearn represent missing values.</p>
 conform to sklearn convention on missing values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>dat</strong> (<em>list</em><em> of </em><em>dict</em><em> of </em><em>key-values</em>) – </p>
+<dd class="field-odd"><p><strong>dat</strong> (<em>list</em><em> of </em><em>dict</em><em> of </em><em>key-values</em>)</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>list[dict]</p>
@@ -1834,12 +2043,12 @@ list will be considered as valid features.</p></li>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="howso.engine.html"
+       href="howso.engine.typing.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">howso.engine</p>
+        <p class="prev-next-title">howso.engine.typing</p>
       </div>
     </a>
     <a class="right-next"
@@ -1870,12 +2079,20 @@ list will be considered as valid features.</p></li>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.StopExecution"><code class="docutils literal notranslate"><span class="pre">StopExecution</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.FeatureAttributesBase"><code class="docutils literal notranslate"><span class="pre">FeatureAttributesBase</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.FeatureAttributesBase.get_names"><code class="docutils literal notranslate"><span class="pre">FeatureAttributesBase.get_names()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.FeatureAttributesBase.get_parameters"><code class="docutils literal notranslate"><span class="pre">FeatureAttributesBase.get_parameters()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.FeatureAttributesBase.to_json"><code class="docutils literal notranslate"><span class="pre">FeatureAttributesBase.to_json()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.FeatureAttributesBase.validate"><code class="docutils literal notranslate"><span class="pre">FeatureAttributesBase.validate()</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.FeatureType"><code class="docutils literal notranslate"><span class="pre">FeatureType</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.LocaleOverride"><code class="docutils literal notranslate"><span class="pre">LocaleOverride</span></code></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.LocaleOverride.restore"><code class="docutils literal notranslate"><span class="pre">LocaleOverride.restore()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.LocaleOverride.setup"><code class="docutils literal notranslate"><span class="pre">LocaleOverride.setup()</span></code></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.MultiTableFeatureAttributes"><code class="docutils literal notranslate"><span class="pre">MultiTableFeatureAttributes</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.ProgressTimer"><code class="docutils literal notranslate"><span class="pre">ProgressTimer</span></code></a><ul class="visible nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.ProgressTimer.reset"><code class="docutils literal notranslate"><span class="pre">ProgressTimer.reset()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.ProgressTimer.start"><code class="docutils literal notranslate"><span class="pre">ProgressTimer.start()</span></code></a></li>
@@ -1884,6 +2101,12 @@ list will be considered as valid features.</p></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.ProgressTimer.progress"><code class="docutils literal notranslate"><span class="pre">ProgressTimer.progress</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.ProgressTimer.tick_duration"><code class="docutils literal notranslate"><span class="pre">ProgressTimer.tick_duration</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.ProgressTimer.time_remaining"><code class="docutils literal notranslate"><span class="pre">ProgressTimer.time_remaining</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.SingleTableFeatureAttributes"><code class="docutils literal notranslate"><span class="pre">SingleTableFeatureAttributes</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.SingleTableFeatureAttributes.has_unsupported_data"><code class="docutils literal notranslate"><span class="pre">SingleTableFeatureAttributes.has_unsupported_data()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.SingleTableFeatureAttributes.to_dataframe"><code class="docutils literal notranslate"><span class="pre">SingleTableFeatureAttributes.to_dataframe()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.SingleTableFeatureAttributes.validate"><code class="docutils literal notranslate"><span class="pre">SingleTableFeatureAttributes.validate()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.Timer"><code class="docutils literal notranslate"><span class="pre">Timer</span></code></a><ul class="visible nav section-nav flex-column">
@@ -1902,6 +2125,7 @@ list will be considered as valid features.</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.check_feature_names"><code class="docutils literal notranslate"><span class="pre">check_feature_names()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.date_format_is_iso"><code class="docutils literal notranslate"><span class="pre">date_format_is_iso()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.date_to_epoch"><code class="docutils literal notranslate"><span class="pre">date_to_epoch()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.deep_update"><code class="docutils literal notranslate"><span class="pre">deep_update()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.deserialize_cases"><code class="docutils literal notranslate"><span class="pre">deserialize_cases()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.determine_iso_format"><code class="docutils literal notranslate"><span class="pre">determine_iso_format()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.dprint"><code class="docutils literal notranslate"><span class="pre">dprint()</span></code></a></li>
@@ -1961,7 +2185,7 @@ list will be considered as valid features.</p></li>
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
     <br/>
   </p>
 </div>
