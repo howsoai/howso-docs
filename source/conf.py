@@ -35,9 +35,9 @@ html_title = 'Howso Engine Documentation'
 
 extensions = [
     'sphinx.ext.napoleon',
-    'sphinx_autodoc_typehints',
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
+    'sphinx_autodoc_typehints',
     'myst_parser',
     'sphinx.ext.doctest',
     'sphinx.ext.ifconfig',
@@ -153,7 +153,8 @@ images_config = {
 autodoc_class_signature = "mixed"
 autodoc_inherit_docstrings = True
 autodoc_member_order = "groupwise"
-autodoc_typehints = "signature"
+autodoc_typehints = "description"
+autodoc_typehints_description_target = "all"
 
 # Napoleon Conf
 # https://www.sphinx-doc.org/en/master/usage/extensions/napoleon.html#configuration
@@ -167,6 +168,13 @@ napoleon_use_keyword = True
 # autosummary_imported_members = True
 autosummary_generate = True
 autosummary_ignore_module_all = False
+
+# Sphinx Autodoc Typestrings
+# https://github.com/tox-dev/sphinx-autodoc-typehints?tab=readme-ov-file
+always_use_bars_union = True
+typehints_defaults = "comma"
+always_document_param_types = True
+simplify_optional_unions = True
 
 # Autosectionlabel
 # https://www.sphinx-doc.org/en/master/usage/extensions/autosectionlabel.html#configuration
@@ -202,6 +210,19 @@ def _wrap_signatures(app, domain, objtype, content) -> None:
                 signature["classes"].append("sig-wrap")
 
 
+def _strip_types(app, what, name, obj, options, lines):
+    """Strip lines which have types defined to force the plugin to generate them."""
+    lines_to_remove = []
+    for line in lines:
+        if ":type" in line and ":sphinx_autodoc_typehints_type:" not in line:
+            lines_to_remove.append(line)
+    
+    for line in lines_to_remove:
+        lines.remove(line)
+
+
 def setup(app):
     app.connect("object-description-transform",
                 _wrap_signatures, priority=1000)
+    app.connect("autodoc-process-docstring",
+                _strip_types, priority=1000)
