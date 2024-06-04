@@ -214,7 +214,7 @@ def _strip_types(app, what, name, obj, options, lines):
     """Strip lines which have types defined to force the plugin to generate them."""
     lines_to_remove = []
     for line in lines:
-        if ":type" in line and ":sphinx_autodoc_typehints_type:" not in line:
+        if (":type" in line or ":rtype" in line) and ":sphinx_autodoc_typehints_type:" not in line:
             lines_to_remove.append(line)
     
     for line in lines_to_remove:
