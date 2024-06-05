@@ -558,6 +558,15 @@ document.write(`
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">howso.utilities.</span></span><span class="sig-name descname"><span class="pre">FeatureAttributesBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_attributes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unsupported</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.utilities.FeatureAttributesBase" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code></p>
 <p>Provides accessor methods for and dict-like access to inferred feature attributes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>feature_attributes</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code></span>)</p></li>
+<li><p><strong>params</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">{}</span></code>)</p></li>
+<li><p><strong>unsupported</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</span>, default: <code class="docutils literal notranslate"><span class="pre">[]</span></code>)</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="howso.utilities.FeatureAttributesBase.get_names">
 <span class="sig-name descname"><span class="pre">get_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">types</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">without</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.utilities.FeatureAttributesBase.get_names" title="Link to this definition">#</a></dt>
@@ -565,16 +574,16 @@ document.write(`
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>types</strong> (<em>String</em><em>, </em><em>Container</em><em> (of </em><em>String</em><em>)</em><em>, </em><em>default None</em>) – (Optional) A feature type as a string (E.g., ‘continuous’) or a
+<li><p><strong>types</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> | <code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – (Optional) A feature type as a string (E.g., ‘continuous’) or a
 list of feature types to limit the output feature names.</p></li>
-<li><p><strong>without</strong> (<em>Iterable</em><em> of </em><em>String</em>) – (Optional) An Iterable of feature names to exclude from the return object.</p></li>
+<li><p><strong>without</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>] | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – (Optional) An Iterable of feature names to exclude from the return object.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A list of feature names.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>List of String</p>
+<dd class="field-odd"><p><em>List</em>[str]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -588,7 +597,7 @@ list of feature types to limit the output feature names.</p></li>
 <dd class="field-odd"><p>A dictionary containing the kwargs used in the call to <cite>infer_feature_attributes</cite>.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>Dict</p>
+<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -602,7 +611,7 @@ list of feature types to limit the output feature names.</p></li>
 <dd class="field-odd"><p>A JSON representation of the inferred feature attributes.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>String</p>
+<dd class="field-even"><p>str</p>
 </dd>
 </dl>
 </dd></dl>
@@ -615,8 +624,6 @@ list of feature types to limit the output feature names.</p></li>
 attempt to coerce the data into conformity.
 :type data: <span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></span>
 :param data: The data to validate
-:type data: Any
-:type coerce: 
 :param coerce: Whether to attempt to coerce DataFrame columns into correct data types. Coerced</p>
 <blockquote>
 <div><p>datetimes will be localized to UTC.</p>
@@ -624,17 +631,15 @@ attempt to coerce the data into conformity.
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>raise_errors</strong> (<em>bool</em><em> (</em><em>default False</em><em>)</em>) – If True, raises a ValueError if nonconforming columns are found; else issue a warning</p></li>
-<li><p><strong>validate_bounds</strong> (<em>bool</em><em> (</em><em>default True</em><em>)</em>) – Whether to validate the data against the attributes’ inferred bounds</p></li>
-<li><p><strong>allow_missing_features</strong> (<em>bool</em><em> (</em><em>default False</em><em>)</em>) – Allows features that are missing from the DataFrame to be ignored</p></li>
-<li><p><strong>localize_datetimes</strong> (<em>bool</em><em> (</em><em>default True</em><em>)</em>) – Whether to localize datetime features to UTC.</p></li>
+<li><p><strong>raise_errors</strong> – If True, raises a ValueError if nonconforming columns are found; else issue a warning</p></li>
+<li><p><strong>validate_bounds</strong> – Whether to validate the data against the attributes’ inferred bounds</p></li>
+<li><p><strong>allow_missing_features</strong> – Allows features that are missing from the DataFrame to be ignored</p></li>
+<li><p><strong>localize_datetimes</strong> – Whether to localize datetime features to UTC.</p></li>
+<li><p><strong>data</strong> (<em>Any</em>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>None or the coerced DataFrame if ‘coerce’ is True and there were no errors.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>None | DataFrame</p>
 </dd>
 </dl>
 </dd></dl>
@@ -681,10 +686,8 @@ important to avoid time-consuming execution inside.</p>
 </pre></div>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">type language_code<span class="colon">:</span></dt>
-<dd class="field-odd"><p></p></dd>
-<dt class="field-even">param language_code<span class="colon">:</span></dt>
-<dd class="field-even"><dl class="simple">
+<dt class="field-odd">param language_code<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
 <dt>A language code /usually/ given as either:</dt><dd><ul class="simple">
 <li><p>2 lower case letters for the base language Ex: <cite>fr</cite> for French.</p></li>
 <li><p>5 characters such as <cite>fr_CA</cite> where the first 2 designate the
@@ -698,30 +701,17 @@ designates the French-Canadian locale.</p></li>
 </dd>
 </dl>
 </dd>
-<dt class="field-odd">type language_code<span class="colon">:</span></dt>
-<dd class="field-odd"><p>str</p>
-</dd>
-<dt class="field-even">type encoding<span class="colon">:</span></dt>
-<dd class="field-even"><p></p></dd>
-<dt class="field-odd">param encoding<span class="colon">:</span></dt>
-<dd class="field-odd"><p>An encoding such as ‘UTF-8’ or ‘ISO8859-1’, etc. If not provided and
+<dt class="field-even">param encoding<span class="colon">:</span></dt>
+<dd class="field-even"><p>An encoding such as ‘UTF-8’ or ‘ISO8859-1’, etc. If not provided and
 there is no embedded encoding within the language_code parameter,
 ‘UTF-8’ is used. If an encoding is embedded in the <cite>language_code</cite>
 parameter and an explicit encoding provided here, the embedded encoding
 is dropped and ignored.</p>
 </dd>
-<dt class="field-even">type encoding<span class="colon">:</span></dt>
-<dd class="field-even"><p>str</p>
-</dd>
-<dt class="field-odd">type category<span class="colon">:</span></dt>
-<dd class="field-odd"><p></p></dd>
-<dt class="field-even">param category<span class="colon">:</span></dt>
-<dd class="field-even"><p>This is one of the constants set within the locale object.
+<dt class="field-odd">param category<span class="colon">:</span></dt>
+<dd class="field-odd"><p>This is one of the constants set within the locale object.
 See: <a class="reference external" href="https://docs.python.org/3.9/library/locale.html">https://docs.python.org/3.9/library/locale.html</a> for details.
 <cite>locale.LC_ALL</cite> is used if nothing provided.</p>
-</dd>
-<dt class="field-odd">type category<span class="colon">:</span></dt>
-<dd class="field-odd"><p>int</p>
 </dd>
 </dl>
 <dl class="py method">
@@ -748,6 +738,15 @@ class as a context manager.</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">howso.utilities.</span></span><span class="sig-name descname"><span class="pre">MultiTableFeatureAttributes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_attributes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unsupported</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.utilities.MultiTableFeatureAttributes" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#howso.utilities.FeatureAttributesBase" title="howso.utilities.feature_attributes.base.FeatureAttributesBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureAttributesBase</span></code></a></p>
 <p>A dict-like object containing feature attributes for multiple tables.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>feature_attributes</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code></span>)</p></li>
+<li><p><strong>params</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">{}</span></code>)</p></li>
+<li><p><strong>unsupported</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</span>, default: <code class="docutils literal notranslate"><span class="pre">[]</span></code>)</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py class">
@@ -758,8 +757,8 @@ class as a context manager.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>total_ticks</strong> (<em>int</em><em>, </em><em>default 100</em>) – The total number of ticks in the progress meter.</p></li>
-<li><p><strong>start_tick</strong> (<em>int</em><em>, </em><em>default 0</em>) – The starting tick.</p></li>
+<li><p><strong>total_ticks</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">100</span></code>) – The total number of ticks in the progress meter.</p></li>
+<li><p><strong>start_tick</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">0</span></code>) – The starting tick.</p></li>
 </ul>
 </dd>
 </dl>
@@ -791,7 +790,7 @@ class as a context manager.</p>
 <dd><p>Update the progress by given ticks.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>ticks</strong> (<em>int</em><em>, </em><em>default 1</em>) – The number of ticks to increment/decrement by.</p>
+<dd class="field-odd"><p><strong>ticks</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">1</span></code>) – The number of ticks to increment/decrement by.</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span></p>
@@ -819,9 +818,6 @@ class as a context manager.</p>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The duration since the last tick, or None if not yet started.</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>timedelta or None</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -833,11 +829,8 @@ class as a context manager.</p>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The time estimated to be remaining.</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>timedelta</p>
-</dd>
-<dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>ValueError</strong> – If timer not yet started.</p>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If timer not yet started.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -849,13 +842,22 @@ class as a context manager.</p>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">howso.utilities.</span></span><span class="sig-name descname"><span class="pre">SingleTableFeatureAttributes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_attributes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unsupported</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.utilities.SingleTableFeatureAttributes" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#howso.utilities.FeatureAttributesBase" title="howso.utilities.feature_attributes.base.FeatureAttributesBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureAttributesBase</span></code></a></p>
 <p>A dict-like object containing feature attributes for a single table or DataFrame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>feature_attributes</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code></span>)</p></li>
+<li><p><strong>params</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">{}</span></code>)</p></li>
+<li><p><strong>unsupported</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</span>, default: <code class="docutils literal notranslate"><span class="pre">[]</span></code>)</p></li>
+</ul>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="howso.utilities.SingleTableFeatureAttributes.has_unsupported_data">
 <span class="sig-name descname"><span class="pre">has_unsupported_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">feature_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.utilities.SingleTableFeatureAttributes.has_unsupported_data" title="Link to this definition">#</a></dt>
 <dd><p>Returns whether the given feature has data that is unsupported by Howso Engine.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>feature_name</strong> (<em>str</em>) – The feature to check.</p>
+<dd class="field-odd"><p><strong>feature_name</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – The feature to check.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Whether feature_name was determined to have unsupported data.</p>
@@ -876,8 +878,11 @@ in a Jupyter notebook or other medium.</p>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A DataFrame representation of the inferred feature attributes.</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>pandas.DataFrame</p>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>include_all</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>DataFrame</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -890,23 +895,17 @@ in a Jupyter notebook or other medium.</p>
 attempt to coerce the data into conformity.
 :type data: <span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></span>
 :param data: The data to validate (single table only).
-:type data: Any
 :param coerce: Whether to attempt to coerce DataFrame columns into correct data types.
-:type coerce: bool (default False)
 :param raise_errors: If True, raises a ValueError if nonconforming columns are found; else, issue a warning.
-:type raise_errors: bool (default False)
 :param validate_bounds: Whether to validate the data against the attributes’ inferred bounds.
-:type validate_bounds: bool (default True)
 :param allow_missing_features: Allows features that are missing from the DataFrame to be ignored.
-:type allow_missing_features: bool (default False)
-:param localize_datetimes: Whether to localize datetime features to UTC.
-:type localize_datetimes: bool (default True)</p>
+:param localize_datetimes: Whether to localize datetime features to UTC.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>None or the coerced DataFrame if ‘coerce’ is True and there were no errors.</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>None | DataFrame</p>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>data</strong> (<em>Any</em>)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -971,9 +970,6 @@ attempt to coerce the data into conformity.
 the duration between now and when the timer started will be
 returned. If the timer has not yet started, returns None.</p>
 </dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>timedelta or None</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -1004,7 +1000,7 @@ returned. If the timer has not yet started, returns None.</p>
 <p>Return a callable that, when called, simply prints <cite>msg</cite> and cleanly exits.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>verbose</strong> (<em>bool</em>) – If True, emit more information</p>
+<dd class="field-odd"><p><strong>verbose</strong> – If True, emit more information</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1017,12 +1013,9 @@ returned. If the timer has not yet started, returns None.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<em>numpy.ndarray</em>) – Feature values ndarray.</p></li>
-<li><p><strong>y</strong> (<em>numpy.ndarray</em><em>, </em><em>default None</em>) – Target values ndarray.</p></li>
+<li><p><strong>x</strong> – Feature values ndarray.</p></li>
+<li><p><strong>y</strong> – Target values ndarray.</p></li>
 </ul>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>numpy.ndarray, numpy.ndarray or numpy.ndarray</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1036,8 +1029,8 @@ as a name for an additional feature that will be the series index.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>react_series_response</strong> (<em>Dictionary</em>) – The response dictionary from a call to react_series.</p></li>
-<li><p><strong>series_index</strong> (<em>String</em>) – The name of the series index feature, which will index each series in
+<li><p><strong>react_series_response</strong> – The response dictionary from a call to react_series.</p></li>
+<li><p><strong>series_index</strong> – The name of the series index feature, which will index each series in
 the form ‘series_&lt;idx&gt;’, e.g., series_1, series_1, …, series_n.
 If None, does not include the series index feature in the returned
 DataFrame.</p></li>
@@ -1046,9 +1039,6 @@ DataFrame.</p></li>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A Pandas DataFrame defined by the action features and series data in
 the react_series response. Optionally includes a series index feature.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>pd.DataFrame</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1060,10 +1050,10 @@ the react_series response. Optionally includes a series index feature.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>features</strong> (<em>Mapping</em>) – A feature dictionary that maps feature names to its attributes.</p></li>
-<li><p><strong>expected_feature_names</strong> (<em>Collection</em>) – A list (or a set) of expected column names in the given <cite>features</cite>
+<li><p><strong>features</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></span>) – A feature dictionary that maps feature names to its attributes.</p></li>
+<li><p><strong>expected_feature_names</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Collection</span></code></span>) – A list (or a set) of expected column names in the given <cite>features</cite>
 dictionary.</p></li>
-<li><p><strong>raise_error</strong> (<em>bool</em><em>, </em><em>defaults to False</em>) – Raise a value error in case the feature names doesn’t match between
+<li><p><strong>raise_error</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">False</span></code>) – Raise a value error in case the feature names doesn’t match between
 <cite>features</cite> and <cite>expected_feature_names</cite>.</p></li>
 </ul>
 </dd>
@@ -1072,15 +1062,15 @@ dictionary.</p></li>
 expected feature names passed via <cite>expected_feature_names</cite>. Otherwise,
 returns <cite>False</cite>.</p>
 </dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-<dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><ul class="simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
 <li><p><strong>If raise_error is True</strong><strong>, </strong><strong>raises ValueError to indicate that</strong> – </p></li>
 <li><p><strong>the feature names in features dict doesn't match the feature names</strong> – </p></li>
 <li><p><strong>expected_feature_names</strong> – </p></li>
 </ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1107,8 +1097,8 @@ but must be consistent.  Leading 0s in dates and times are optional.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>date_obj</strong> (<em>str</em><em> or </em><em>datetime.date</em><em> or </em><em>datetime.time</em><em> or </em><em>datetime.datetime</em>) – Time object.</p></li>
-<li><p><strong>time_format</strong> (<em>str</em>) – Specify format of the time.
+<li><p><strong>date_obj</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">date</span></code> | <code class="xref py py-class docutils literal notranslate"><span class="pre">datetime</span></code> | <code class="xref py py-class docutils literal notranslate"><span class="pre">time</span></code> | <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Time object.</p></li>
+<li><p><strong>time_format</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Specify format of the time.
 Ex: <code class="docutils literal notranslate"><span class="pre">%a</span> <span class="pre">%b</span> <span class="pre">%d</span> <span class="pre">%H:%M:%S</span> <span class="pre">%Y</span></code></p></li>
 </ul>
 </dd>
@@ -1116,7 +1106,7 @@ Ex: <code class="docutils literal notranslate"><span class="pre">%a</span> <span
 <dd class="field-even"><p>The epoch date as a floating point value or ‘np.nan’, et al.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Union[str, float]</p>
+<dd class="field-odd"><p>str | float | None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1130,15 +1120,12 @@ neither of the input dictionaries are self-referencing.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>base</strong> (<em>dict</em>) – A dictionary</p></li>
-<li><p><strong>updates</strong> (<em>dict</em>) – A dictionary of updates</p></li>
+<li><p><strong>base</strong> – A dictionary</p></li>
+<li><p><strong>updates</strong> – A dictionary of updates</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>dict</strong></p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The updated dictionary.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1152,13 +1139,13 @@ will be converted to the same data type as original training cases.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<em>list</em><em> of </em><em>list</em><em> or </em><em>list</em><em> of </em><em>dict</em>) – The context data.</p></li>
-<li><p><strong>columns</strong> (<em>list</em><em> of </em><em>str</em>) – <p>The case column mapping.</p>
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]] | <code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]]</span>) – The context data.</p></li>
+<li><p><strong>columns</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</span>) – <p>The case column mapping.</p>
 <p>The order corresponds to how the data will be mapped to columns in
 the output. Ignored for list of dict where the dict key is the column
 name.</p>
 </p></li>
-<li><p><strong>features</strong> (<em>dict</em><em>, </em><em>default None</em>) – <p>(Optional) The dictionary of feature name to feature attributes.</p>
+<li><p><strong>features</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – <p>(Optional) The dictionary of feature name to feature attributes.</p>
 <p>If not specified, no column typing will be attempted.</p>
 </p></li>
 </ul>
@@ -1167,7 +1154,7 @@ name.</p>
 <dd class="field-even"><p>The deserialized data.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>pandas.DataFrame</p>
+<dd class="field-odd"><p><em>DataFrame</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1181,8 +1168,8 @@ a zone or an offset.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>str_date</strong> (<em>str</em>) – The Date time passed in as a string.</p></li>
-<li><p><strong>fname</strong> (<em>str</em>) – Name of feature to guess bounds for.</p></li>
+<li><p><strong>str_date</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – The Date time passed in as a string.</p></li>
+<li><p><strong>fname</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Name of feature to guess bounds for.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -1201,7 +1188,7 @@ a zone or an offset.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>debug</strong> (<em>bool</em><em> or </em><em>int</em>) – If true, user_debug level would be 1.
+<li><p><strong>debug</strong> – If true, user_debug level would be 1.
 Possible levels: 1, 2, 3 (print all)</p></li>
 <li><p><strong>kwargs</strong> – <dl class="simple">
 <dt>default_priority<span class="classifier">int, default 1</span></dt><dd><p>The message is printed only if the <cite>debug</cite> &gt;= <cite>default_priority</cite>.</p>
@@ -1225,10 +1212,10 @@ Possible levels: 1, 2, 3 (print all)</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>epoch</strong> (<em>Union</em><em>[</em><em>str</em><em>, </em><em>float</em><em>]</em>) – The epoch date as a floating point value (or str if np.nan, et al)</p></li>
-<li><p><strong>time_format</strong> (<em>str</em>) – Specify format of the time.
+<li><p><strong>epoch</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> | <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></span>) – The epoch date as a floating point value (or str if np.nan, et al)</p></li>
+<li><p><strong>time_format</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Specify format of the time.
 Ex: <code class="docutils literal notranslate"><span class="pre">%a</span> <span class="pre">%b</span> <span class="pre">%d</span> <span class="pre">%H:%M:%S</span> <span class="pre">%Y</span></code></p></li>
-<li><p><strong>tzinfo</strong> (<em>datetime.tzinfo</em><em>, </em><em>optional</em>) – Time zone information to include in datetime.</p></li>
+<li><p><strong>tzinfo</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">tzinfo</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – Time zone information to include in datetime.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -1251,15 +1238,15 @@ Ex: <code class="docutils literal notranslate"><span class="pre">%a</span> <span
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>df</strong> (<em>pandas.DataFrame</em>) – The DataFrame to format columns of.</p></li>
-<li><p><strong>features</strong> (<em>Dict</em>) – The dictionary of feature name to feature attributes.</p></li>
+<li><p><strong>df</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></span>) – The DataFrame to format columns of.</p></li>
+<li><p><strong>features</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code></span>) – The dictionary of feature name to feature attributes.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The formatted data.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>pandas.DataFrame</p>
+<dd class="field-odd"><p><em>DataFrame</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1273,7 +1260,7 @@ warning on any items in <cite>kwargs</cite> that are not “consumed” by the d
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>kwargs</strong> (<em>dict</em>) – Mapping of keys and values (kwargs)</p></li>
+<li><p><strong>kwargs</strong> – Mapping of keys and values (kwargs)</p></li>
 <li><p><strong>descriptors</strong> – <p>An iterable of descriptors for how to handle each item in kwargs. Each
 descriptor can be a mapping, another iterable, or a single string.</p>
 <p>If a mapping, it must at least include the key: ‘key’ but can also
@@ -1290,7 +1277,7 @@ a boolean. If False, the ‘default’ value is returned.</p>
 <p>If the ‘default’ provided is an instance of an Exception, then, the
 exception is raised when the ‘key’ is not present, or the ‘test’ fails.</p>
 </p></li>
-<li><p><strong>warn_on_extra</strong> (<em>bool</em>) – If <cite>True</cite>, will issue warnings about any keys provided in kwargs that
+<li><p><strong>warn_on_extra</strong> – If <cite>True</cite>, will issue warnings about any keys provided in kwargs that
 were not consumed by the descriptors. Default is <cite>False</cite></p></li>
 </ul>
 </dd>
@@ -1339,7 +1326,7 @@ provided descriptor.</p>
 <dd><p>Calculates the absolute value of a matrix for feature pairs.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>matrix</strong> (<em>DataFrame</em>) – The matrix in DataFrame format.</p>
+<dd class="field-odd"><p><strong>matrix</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></span>) – The matrix in DataFrame format.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Sorted dictionary of absolute differences between the feature value pairs. The values
@@ -1360,14 +1347,14 @@ provided data type.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<em>Any</em>) – The data source to infer feature attributes from. Must be a supported data type.</p></li>
-<li><p><strong>tables</strong> (<em>Iterable</em><em> of </em><em>TableNameProtocol</em>) – <p>(Optional, required for datastores) An Iterable of table names to
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code> | <code class="xref py py-class docutils literal notranslate"><span class="pre">SQLRelationalDatastoreProtocol</span></code></span>) – The data source to infer feature attributes from. Must be a supported data type.</p></li>
+<li><p><strong>tables</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">TableNameProtocol</span></code>]</span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – <p>(Optional, required for datastores) An Iterable of table names to
 infer feature attributes for.</p>
 <p>If included, feature attributes will be generated in the form
 <code class="docutils literal notranslate"><span class="pre">{table_name:</span> <span class="pre">{feature_attribute:</span> <span class="pre">value}}</span></code>.</p>
 </p></li>
-<li><p><strong>time_feature_name</strong> (<em>str</em><em>, </em><em>default None</em>) – (Optional, required for time series) The name of the time feature.</p></li>
-<li><p><strong>features</strong> (<em>dict</em><em> or </em><em>None</em><em>, </em><em>default None</em>) – <p>(Optional) A partially filled features dict. If partially filled
+<li><p><strong>time_feature_name</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – (Optional, required for time series) The name of the time feature.</p></li>
+<li><p><strong>features</strong> – <p>(Optional) A partially filled features dict. If partially filled
 attributes for a feature are passed in, those parameters will be
 retained as is and the rest of the attributes will be inferred.</p>
 <dl>
@@ -1444,9 +1431,9 @@ The ‘boolean’ data_type is valid only when type is nominal.
 ‘string_mixable’ is valid only when type is continuous (predicted values may result in
 interpolated strings containing a combination of characters from multiple original values).</p>
 </p></li>
-<li><p><strong>infer_bounds</strong> (<em>bool</em><em>, </em><em>default True</em>) – (Optional) If True, bounds will be inferred for the features if the
+<li><p><strong>infer_bounds</strong> – (Optional) If True, bounds will be inferred for the features if the
 feature column has at least one non NaN value</p></li>
-<li><p><strong>datetime_feature_formats</strong> (<em>dict</em><em>, </em><em>default None</em>) – <p>(Optional) Dict defining a custom (non-ISO8601) datetime format and
+<li><p><strong>datetime_feature_formats</strong> – <p>(Optional) Dict defining a custom (non-ISO8601) datetime format and
 an optional locale for features with datetimes.  By default datetime
 features are assumed to be in ISO8601 format.  Non-English datetimes
 must have locales specified.  If locale is omitted, the default
@@ -1460,7 +1447,7 @@ are a tuple of date time format and locale string.</p>
 </pre></div>
 </div>
 </p></li>
-<li><p><strong>delta_boundaries</strong> (<em>dict</em><em>, </em><em>default None</em>) – <p>(Optional) For time series, specify the delta boundaries in the form
+<li><p><strong>delta_boundaries</strong> – <p>(Optional) For time series, specify the delta boundaries in the form
 {“feature” : {“min|max” : {order : value}}}. Works with partial values
 by specifying only particular order of derivatives you would like to
 overwrite. Invalid orders will be ignored.</p>
@@ -1477,13 +1464,13 @@ overwrite. Invalid orders will be ignored.</p>
 </pre></div>
 </div>
 </p></li>
-<li><p><strong>derived_orders</strong> (<em>dict</em><em>, </em><em>default None</em>) – (Optional) Dict of features to the number of orders of derivatives
+<li><p><strong>derived_orders</strong> – (Optional) Dict of features to the number of orders of derivatives
 that should be derived instead of synthesized. For example, for a
 feature with a 3rd order of derivative, setting its derived_orders
 to 2 will synthesize the 3rd order derivative value, and then use
 that synthed value to derive the 2nd and 1st order.</p></li>
-<li><p><strong>include_sample</strong> (<em>bool</em><em>, </em><em>default False</em>) – Set to True to include a sample of each feature’s data in the output.</p></li>
-<li><p><strong>lags</strong> (<em>list</em><em> or </em><em>dict</em><em>, </em><em>default None</em>) – <p>(Optional) A list containing the specific indices of the desired lag
+<li><p><strong>include_sample</strong> – Set to True to include a sample of each feature’s data in the output.</p></li>
+<li><p><strong>lags</strong> – <p>(Optional) A list containing the specific indices of the desired lag
 features to derive for each feature (not including the series time
 feature). Specifying derived lag features for the feature specified by
 time_feature_name must be done using a dictionary. A dictionary can be
@@ -1503,7 +1490,7 @@ case by holding the value of a feature from a previous timestep.
 These lag features allow for cases to hold more temporal information.</p>
 </div>
 </p></li>
-<li><p><strong>num_lags</strong> (<em>int</em><em> or </em><em>dict</em><em>, </em><em>default None</em>) – <p>(Optional) An integer specifying the number of lag features to
+<li><p><strong>num_lags</strong> – <p>(Optional) An integer specifying the number of lag features to
 derive for each feature (not including the series time feature).
 Specifying derived lag features for the feature specified by
 time_feature_name must be done using a dictionary. A dictionary can be
@@ -1515,12 +1502,12 @@ are not specified will default to 1 lag feature.</p>
 feature.</p>
 </div>
 </p></li>
-<li><p><strong>orders_of_derivatives</strong> (<em>dict</em><em>, </em><em>default None</em>) – (Optional) Dict of features and their corresponding order of
+<li><p><strong>orders_of_derivatives</strong> – (Optional) Dict of features and their corresponding order of
 derivatives for the specified type (delta/rate). If provided will
 generate the specified number of derivatives and boundary values. If
 set to 0, will not generate any delta/rate features. By default all
 continuous features have an order value of 1.</p></li>
-<li><p><strong>rate_boundaries</strong> (<em>dict</em><em>, </em><em>default None</em>) – <p>(Optional) For time series, specify the rate boundaries in the form
+<li><p><strong>rate_boundaries</strong> – <p>(Optional) For time series, specify the rate boundaries in the form
 {“feature” : {“min|max” : {order : value}}}. Works with partial values
 by specifying only particular order of derivatives you would like to
 overwrite. Invalid orders will be ignored.</p>
@@ -1537,35 +1524,35 @@ overwrite. Invalid orders will be ignored.</p>
 </pre></div>
 </div>
 </p></li>
-<li><p><strong>tight_bounds</strong> (<em>Iterable</em><em> of </em><em>str</em><em>, </em><em>default None</em>) – (Optional) Set tight min and max bounds for the features
+<li><p><strong>tight_bounds</strong> – (Optional) Set tight min and max bounds for the features
 specified in the Iterable.</p></li>
-<li><p><strong>tight_time_bounds</strong> (<em>bool</em><em>, </em><em>default False</em>) – (optional) If True, will set tight bounds on time_feature.
+<li><p><strong>tight_time_bounds</strong> – (optional) If True, will set tight bounds on time_feature.
 This will cause the bounds for the start and end times set
 to the same bounds as observed in the original data.</p></li>
-<li><p><strong>time_feature_is_universal</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, the time feature will be treated as universal and future data
+<li><p><strong>time_feature_is_universal</strong> – If True, the time feature will be treated as universal and future data
 is excluded while making predictions. If False, the time feature will
 not be treated as universal and only future data within the same series
 is excluded while making predictions. It is recommended to set this
 value to True if there is any possibility of global relevancy of time,
 which is the default behavior.</p></li>
-<li><p><strong>time_series_type_default</strong> (<em>str</em><em>, </em><em>default 'rate'</em>) – (Optional) Type specifying how time series is generated.
+<li><p><strong>time_series_type_default</strong> – (Optional) Type specifying how time series is generated.
 One of ‘rate’ or ‘delta’, default is ‘rate’. If ‘rate’,
 it uses the difference of the current value from its
 previous value divided by the change in time since the
 previous value. When ‘delta’ is specified, just uses
 the difference of the current value from its previous value
 regardless of the elapsed time.</p></li>
-<li><p><strong>time_series_types_override</strong> (<em>dict</em><em>, </em><em>default None</em>) – (Optional) Dict of features and their corresponding time series type,
+<li><p><strong>time_series_types_override</strong> – (Optional) Dict of features and their corresponding time series type,
 one of ‘rate’ or ‘delta’, used to override time_series_type_default
 for the specified features.</p></li>
-<li><p><strong>mode_bound_features</strong> (<em>list</em><em> of </em><em>str</em><em>, </em><em>default None</em>) – (Optional) Explicit list of feature names to use mode bounds for
+<li><p><strong>mode_bound_features</strong> – (Optional) Explicit list of feature names to use mode bounds for
 when inferring loose bounds. If None, assumes all features. A mode
 bound is used instead of a loose bound when the mode for the
 feature is the same as an original bound, as it may represent an
 application-specific min/max.</p></li>
-<li><p><strong>id_feature_name</strong> (<em>str</em><em> or </em><em>list</em><em> of </em><em>str</em><em>, </em><em>default None</em>) – (Optional) The name(s) of the ID feature(s).</p></li>
-<li><p><strong>time_invariant_features</strong> (<em>list</em><em> of </em><em>str</em><em>, </em><em>default None</em>) – (Optional) Names of time-invariant features.</p></li>
-<li><p><strong>attempt_infer_extended_nominals</strong> (<em>bool</em><em>, </em><em>default False</em>) – <p>(Optional) If set to True, detections of extended nominals will be
+<li><p><strong>id_feature_name</strong> – (Optional) The name(s) of the ID feature(s).</p></li>
+<li><p><strong>time_invariant_features</strong> – (Optional) Names of time-invariant features.</p></li>
+<li><p><strong>attempt_infer_extended_nominals</strong> – <p>(Optional) If set to True, detections of extended nominals will be
 attempted. If the detection fails, the categorical variables will
 be set to <cite>int-id</cite> subtype.</p>
 <div class="admonition note">
@@ -1574,9 +1561,9 @@ be set to <cite>int-id</cite> subtype.</p>
 extended nominals.</p>
 </div>
 </p></li>
-<li><p><strong>nominal_substitution_config</strong> (<em>dict</em><em> of </em><em>dicts</em><em>, </em><em>default None</em>) – (Optional) Configuration of the nominal substitution engine
+<li><p><strong>nominal_substitution_config</strong> – (Optional) Configuration of the nominal substitution engine
 and the nominal generators and detectors.</p></li>
-<li><p><strong>include_extended_nominal_probabilities</strong> (<em>bool</em><em>, </em><em>default False</em>) – (Optional) If true, extended nominal probabilities will be appended
+<li><p><strong>include_extended_nominal_probabilities</strong> – (Optional) If true, extended nominal probabilities will be appended
 as metadata into the feature object.</p></li>
 <li><p><strong>datetime_feature_formats</strong> – <p>(optional) Dict defining a custom (non-ISO8601) datetime format and
 an optional locale for columns with datetimes.  By default datetime
@@ -1592,7 +1579,7 @@ are a tuple of date time format and locale string:</p>
 </pre></div>
 </div>
 </p></li>
-<li><p><strong>ordinal_feature_values</strong> (<em>dict</em><em>, </em><em>default None</em>) – <p>(optional) Dict for ordinal string features defining an ordered
+<li><p><strong>ordinal_feature_values</strong> – <p>(optional) Dict for ordinal string features defining an ordered
 list of string values for each feature, ordered low to high. If
 specified will set ‘type’ to be ‘ordinal’ for all features in
 this map.</p>
@@ -1604,7 +1591,7 @@ this map.</p>
 </pre></div>
 </div>
 </p></li>
-<li><p><strong>dependent_features</strong> (<em>dict</em><em>, </em><em>default None</em>) – <p>(Optional) Dict of features with their respective lists of features
+<li><p><strong>dependent_features</strong> – <p>(Optional) Dict of features with their respective lists of features
 that either the feature depends on or are dependent on them. Should
 be used when there are multi-type value features that tightly
 depend on values based on other multi-type value features.</p>
@@ -1639,7 +1626,7 @@ that extends <cite>dict</cite>, thus providing dict-like access to feature
 attributes and useful accessor methods.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#howso.utilities.FeatureAttributesBase" title="howso.utilities.FeatureAttributesBase">FeatureAttributesBase</a></p>
+<dd class="field-odd"><p><a class="reference internal" href="#howso.utilities.FeatureAttributesBase" title="howso.utilities.feature_attributes.base.FeatureAttributesBase"><em>FeatureAttributesBase</em></a></p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
@@ -1693,15 +1680,12 @@ attributes and useful accessor methods.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>value</strong> (<em>str</em><em> or </em><em>UUID</em>) – The value to test</p></li>
-<li><p><strong>version</strong> (<em>int</em><em>, </em><em>optional</em>) – The uuid version (Default: 4)</p></li>
+<li><p><strong>value</strong> – The value to test</p></li>
+<li><p><strong>version</strong> – The uuid version (Default: 4)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>True if <cite>value</cite> is a valid uuid string</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>bool</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1715,9 +1699,9 @@ lastly fills in the diagonals. This method automatically sorts the matrix indexe
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>matrix</strong> (<em>Dataframe</em>) – Matrix in Dataframe form.</p></li>
-<li><p><strong>normalize</strong> (<em>bool</em><em>, </em><em>default False</em>) – Whether to normalize the matrix row wise. Normalization method is set by the <cite>normalize_method</cite> parameter.</p></li>
-<li><p><strong>normalize_method</strong> (<em>Union</em><em>[</em><em>Iterable</em><em>[</em><em>Union</em><em>[</em><em>str</em><em>, </em><em>Callable</em><em>]</em><em>]</em><em>, </em><em>str</em><em>, </em><em>Callable</em><em>]</em><em>, </em><em>default 'relative'</em>) – <p>The normalization method. The method may either one of the strings below that correspond to a
+<li><p><strong>matrix</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code></span>) – Matrix in Dataframe form.</p></li>
+<li><p><strong>normalize</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">False</span></code>) – Whether to normalize the matrix row wise. Normalization method is set by the <cite>normalize_method</cite> parameter.</p></li>
+<li><p><strong>normalize_method</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> | <code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code>] | <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> | <code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">'relative'</span></code>) – <p>The normalization method. The method may either one of the strings below that correspond to a
 default method or a custom Callable.</p>
 <p>These methods may be passed in as an individual string or in a iterable where they will
 be processed sequentially.</p>
@@ -1731,12 +1715,12 @@ be processed sequentially.</p>
 <div><p><cite>matrix.apply(Callable)</cite></p>
 </div></blockquote>
 </p></li>
-<li><p><strong>ignore_diagonals_normalize</strong> (<em>bool</em><em>, </em><em>default True</em>) – Whether to ignore the diagonals when normalizing the matrix. Useful for matrices where the diagonals are a
+<li><p><strong>ignore_diagonals_normalize</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">True</span></code>) – Whether to ignore the diagonals when normalizing the matrix. Useful for matrices where the diagonals are a
 constant value such as correlation matrices.</p></li>
-<li><p><strong>absolute</strong> (<em>bool</em><em>, </em><em>default False</em>) – Whether to transform the matrix values into the absolute values.</p></li>
-<li><p><strong>fill_diagonal</strong> (<em>bool</em><em>, </em><em>default False</em>) – Whether to fill in the diagonals of the matrix. If set to true,
+<li><p><strong>absolute</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">False</span></code>) – Whether to transform the matrix values into the absolute values.</p></li>
+<li><p><strong>fill_diagonal</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">False</span></code>) – Whether to fill in the diagonals of the matrix. If set to true,
 the diagonal values will be filled in based on the <cite>fill_diagonal_value</cite> value.</p></li>
-<li><p><strong>fill_diagonal_value</strong> (<em>bool</em><em>, </em><em>default False</em>) – The value to fill in the diagonals with. <cite>fill_diagonal</cite> must be set to True in order
+<li><p><strong>fill_diagonal_value</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code> | <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">1</span></code>) – The value to fill in the diagonals with. <cite>fill_diagonal</cite> must be set to True in order
 for the diagonal values to be filled in. If <cite>fill_diagonal</cite> is set to false, then this
 parameter will be ignored.</p></li>
 </ul>
@@ -1745,7 +1729,7 @@ parameter will be ignored.</p></li>
 <dd class="field-even"><p>Dataframe of the result.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Dataframe</p>
+<dd class="field-odd"><p><em>DataFrame</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1758,13 +1742,10 @@ parameter will be ignored.</p></li>
 or a list of dataframes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>lst</strong> (<em>list</em>) – The nested list of objects.</p>
+<dd class="field-odd"><p><strong>lst</strong> – The nested list of objects.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The number of dimensions in the passed in list.</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>int</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1776,10 +1757,7 @@ or a list of dataframes.</p>
 <p>For use when retrieving data from Howso.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>dat</strong> (<em>A dict</em><em>, </em><em>list</em><em>, </em><em>number</em><em>, or </em><em>string</em>)</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>A dict, list, number, or string - same as passed in for translation</p>
+<dd class="field-odd"><p><strong>dat</strong></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1792,10 +1770,7 @@ or a list of dataframes.</p>
 for the different ways howso and sklearn represent missing values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>dat</strong> (<em>list</em><em> of </em><em>list</em><em> of </em><em>object</em>) – A 2d list of values.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>list[list[object]]</p>
+<dd class="field-odd"><p><strong>dat</strong> – A 2d list of values.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1808,10 +1783,10 @@ for the different ways howso and sklearn represent missing values.</p>
 conform to sklearn convention on missing values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>dat</strong> (<em>list</em><em> of </em><em>dict</em><em> of </em><em>key-values</em>)</p>
+<dd class="field-odd"><p><strong>dat</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code></span>)</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>list[dict]</p>
+<dd class="field-even"><p><em>List</em>[<em>Dict</em>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1823,15 +1798,12 @@ conform to sklearn convention on missing values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> (<em>np.ndarray</em>) – Feature values ndarray.</p></li>
-<li><p><strong>y</strong> (<em>np.ndarray</em>) – target values ndarray.</p></li>
+<li><p><strong>x</strong> – Feature values ndarray.</p></li>
+<li><p><strong>y</strong> – target values ndarray.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>X, y</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>np.ndarray, np.ndarray</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1843,15 +1815,15 @@ conform to sklearn convention on missing values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>seconds</strong> (<em>int</em><em> or </em><em>float</em>) – The seconds to convert to time.</p></li>
-<li><p><strong>tzinfo</strong> (<em>datetime.tzinfo</em><em>, </em><em>optional</em>) – Time zone to use for resulting time object.</p></li>
+<li><p><strong>seconds</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code> | <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – The seconds to convert to time.</p></li>
+<li><p><strong>tzinfo</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">tzinfo</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – Time zone to use for resulting time object.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The time object.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>datetime.time</p>
+<dd class="field-odd"><p><em>time</em> | None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1863,18 +1835,18 @@ conform to sklearn convention on missing values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<em>pandas.DataFrame</em><em> or </em><em>numpy.ndarray</em><em> or </em><em>list</em><em> of </em><em>list</em>) – The data to serialize.</p></li>
-<li><p><strong>columns</strong> (<em>list</em><em> of </em><em>str</em>) – The case column mapping. The order corresponds to the order of cases
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code> | <code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code> | <code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]</span>) – The data to serialize.</p></li>
+<li><p><strong>columns</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</span>) – The case column mapping. The order corresponds to the order of cases
 in output.</p></li>
-<li><p><strong>features</strong> (<em>dict</em>) – The dictionary of feature name to feature attributes.</p></li>
-<li><p><strong>warn</strong> (<em>bool</em><em>, </em><em>default False</em>) – If warnings should be raised by serializer.</p></li>
+<li><p><strong>features</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code></span>) – The dictionary of feature name to feature attributes.</p></li>
+<li><p><strong>warn</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">False</span></code>) – If warnings should be raised by serializer.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The serialized data from DataFrame.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>list of list or None</p>
+<dd class="field-odd"><p><em>List</em>[<em>List</em>[<em>Any</em>]] | None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1888,10 +1860,10 @@ values according to the specified datetime format in feature attributes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>cases</strong> (<em>list</em><em> of </em><em>list</em>) – A 2d list of case values corresponding to the features of the cases.</p></li>
-<li><p><strong>columns</strong> (<em>list</em><em> of </em><em>str</em>) – A list of feature names.</p></li>
-<li><p><strong>features</strong> (<em>dict</em>) – Dictionary of feature attributes.</p></li>
-<li><p><strong>warn</strong> (<em>bool</em><em>, </em><em>default: False</em>) – If set to true, will warn user when specified datetime format
+<li><p><strong>cases</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>]</span>) – A 2d list of case values corresponding to the features of the cases.</p></li>
+<li><p><strong>columns</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</span>) – A list of feature names.</p></li>
+<li><p><strong>features</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code></span>) – Dictionary of feature attributes.</p></li>
+<li><p><strong>warn</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">False</span></code>) – If set to true, will warn user when specified datetime format
 doesn’t match the datetime strings.</p></li>
 </ul>
 </dd>
@@ -1907,13 +1879,13 @@ doesn’t match the datetime strings.</p></li>
 <dd><p>Convert a time object to seconds since midnight.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>time</strong> (<em>datetime.time</em>) – The time to convert.</p>
+<dd class="field-odd"><p><strong>time</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">time</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – The time to convert.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Seconds since midnight.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
+<dd class="field-odd"><p>float | None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1926,24 +1898,24 @@ doesn’t match the datetime strings.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>df</strong> (<em>pandas.DataFrame</em>) – A pandas Dataframe with column names corresponding to feature
+<li><p><strong>df</strong> – A pandas Dataframe with column names corresponding to feature
 names.Features that are considered to be continuous should have a dtype
 of float.</p></li>
-<li><p><strong>features</strong> (<em>Optional</em><em>[</em><em>Mapping</em><em>[</em><em>str</em><em>, </em><em>Mapping</em><em>]</em><em>]</em>) – (Optional) A dictionary of feature names to a dictionary of parameters.</p></li>
-<li><p><strong>action_features</strong> (<em>List</em><em> of </em><em>String</em><em>, </em><em>Default None</em>) – (Optional) List of action features. Anything that’s not in this list
+<li><p><strong>features</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code>] | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – (Optional) A dictionary of feature names to a dictionary of parameters.</p></li>
+<li><p><strong>action_features</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>] | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – (Optional) List of action features. Anything that’s not in this list
 will be treated as a context feature. For example, if no action feature
 is specified the trainee won’t have a target.</p></li>
-<li><p><strong>name</strong> (<em>str</em><em> or </em><em>None</em><em>, </em><em>defaults to None</em>) – (Optional) The name of the trainee.</p></li>
-<li><p><strong>persistence</strong> (<em>str: default &quot;allow&quot;</em>) – The persistence setting to use for the trainee. Valid values:
+<li><p><strong>name</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – (Optional) The name of the trainee.</p></li>
+<li><p><strong>persistence</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">'allow'</span></code>) – The persistence setting to use for the trainee. Valid values:
 “always”, “allow”, “never”.</p></li>
-<li><p><strong>trainee_metadata</strong> (<em>Mapping</em><em>, </em><em>optional</em>) – (Optional) mapping of key/value pairs of metadata for trainee.</p></li>
+<li><p><strong>trainee_metadata</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – (Optional) mapping of key/value pairs of metadata for trainee.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A trainee object</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>howso.openapi.models.Trainee</p>
+<dd class="field-odd"><p><em>Trainee</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1957,8 +1929,8 @@ data types of (str, int).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>case_indices</strong> (<em>Iterable</em><em> of </em><em>Sequence</em><em>[</em><em>str</em><em>, </em><em>int</em><em>]</em>) – The case_indices argument to validate.</p></li>
-<li><p><strong>thorough</strong> (<em>bool</em><em>, </em><em>default False</em>) – Whether to verify the data types in all sequences or only some (for performance)</p></li>
+<li><p><strong>case_indices</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> | <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>] | <code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> | <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]]</span>) – The case_indices argument to validate.</p></li>
+<li><p><strong>thorough</strong> – Whether to verify the data types in all sequences or only some (for performance)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
@@ -1975,8 +1947,8 @@ data types of (str, int).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>datetime_value</strong> (<em>str</em>) – The date value as a string</p></li>
-<li><p><strong>feature</strong> (<em>str</em>) – Name of feature</p></li>
+<li><p><strong>datetime_value</strong> – The date value as a string</p></li>
+<li><p><strong>feature</strong> – Name of feature</p></li>
 </ul>
 </dd>
 </dl>
@@ -1989,7 +1961,7 @@ data types of (str, int).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>features</strong> (<em>dict</em>) – <p>The dict of feature name to feature attributes.</p>
+<li><p><strong>features</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureAttributes</span></code> | <code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code>]</span>) – <p>The dict of feature name to feature attributes.</p>
 <p>The valid feature names are:</p>
 <ol class="loweralpha simple">
 <li><p>”nominal”</p></li>
@@ -1998,7 +1970,7 @@ data types of (str, int).</p>
 <li><p>along with passed in <cite>extended_feature_types</cite></p></li>
 </ol>
 </p></li>
-<li><p><strong>extended_feature_types</strong> (<em>list</em><em> of </em><em>str</em><em>, </em><em>optional</em>) – (Optional) If a list is passed in, the feature types specified in the
+<li><p><strong>extended_feature_types</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>] | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – (Optional) If a list is passed in, the feature types specified in the
 list will be considered as valid features.</p></li>
 </ul>
 </dd>
@@ -2016,11 +1988,11 @@ list will be considered as valid features.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>values</strong> (<em>Collection</em><em> or </em><em>None</em>) – A single or multidimensional list.</p></li>
-<li><p><strong>dimensions</strong> (<em>int</em>) – The number of dimensions the list should be.</p></li>
-<li><p><strong>variable_name</strong> (<em>str</em>) – The variable name for output.</p></li>
-<li><p><strong>var_types</strong> (<em>str</em>) – The expected type of the data.</p></li>
-<li><p><strong>allow_none</strong> (<em>bool</em><em>, </em><em>default True</em>) – If None should be allowed.</p></li>
+<li><p><strong>values</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Collection</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>) – A single or multidimensional list.</p></li>
+<li><p><strong>dimensions</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span>) – The number of dimensions the list should be.</p></li>
+<li><p><strong>variable_name</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – The variable name for output.</p></li>
+<li><p><strong>var_types</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – The expected type of the data.</p></li>
+<li><p><strong>allow_none</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">True</span></code>) – If None should be allowed.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>

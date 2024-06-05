@@ -444,7 +444,7 @@ document.write(`
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>features</strong> (<em>dict</em><em> of </em><em>str: dict</em><em>, </em><em>default None</em>) – <p>The features that will predict the targets(s). Will be generated
+<li><p><strong>features</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – <p>The features that will predict the targets(s). Will be generated
 automatically if not specified.</p>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -460,7 +460,7 @@ automatically if not specified.</p>
 </pre></div>
 </div>
 </p></li>
-<li><p><strong>targets</strong> (<em>dict</em><em> of </em><em>str: dict</em><em>, </em><em>default None</em>) – <p>The target(s) to be predicted. Will be generated automatically if not
+<li><p><strong>targets</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – <p>The target(s) to be predicted. Will be generated automatically if not
 specified.</p>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -473,13 +473,13 @@ specified.</p>
 </pre></div>
 </div>
 </p></li>
-<li><p><strong>client</strong> (<a class="reference internal" href="howso.client.html#howso.client.AbstractHowsoClient" title="howso.client.AbstractHowsoClient"><em>AbstractHowsoClient</em></a><em>, </em><em>default None</em>) – A subclass of AbstractHowsoClient used to interface with Howso.</p></li>
-<li><p><strong>verbose</strong> (<em>boolean</em><em>, </em><em>default False</em>) – A flag for verbose output.</p></li>
-<li><p><strong>debug</strong> (<em>boolean</em><em>, </em><em>default False</em>) – A flag for debug output.</p></li>
-<li><p><strong>ttl</strong> (<em>int</em><em>, </em><em>in milliseconds</em>) – The maximum time a server should maintain a connection open for a
+<li><p><strong>client</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="howso.client.html#howso.client.AbstractHowsoClient" title="howso.client.base.AbstractHowsoClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractHowsoClient</span></code></a> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – A subclass of AbstractHowsoClient used to interface with Howso.</p></li>
+<li><p><strong>verbose</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">False</span></code>) – A flag for verbose output.</p></li>
+<li><p><strong>debug</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">False</span></code>) – A flag for debug output.</p></li>
+<li><p><strong>ttl</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">43200000</span></code>) – The maximum time a server should maintain a connection open for a
 trainee when processing requests.</p></li>
-<li><p><strong>client_params</strong> (<em>dict</em><em>, </em><em>default None</em>) – The parameters with which to instantiate the client.</p></li>
-<li><p><strong>trainee_params</strong> (<em>dict</em><em>, </em><em>default None</em>) – The parameters with which to instantiate the client. Intended for use by <cite>HowsoEstimator.get_params</cite>.</p></li>
+<li><p><strong>client_params</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – The parameters with which to instantiate the client.</p></li>
+<li><p><strong>trainee_params</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – The parameters with which to instantiate the client. Intended for use by <cite>HowsoEstimator.get_params</cite>.</p></li>
 </ul>
 </dd>
 </dl>
@@ -490,9 +490,9 @@ trainee when processing requests.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>X</strong> (<em>numpy.ndarray</em><em>, </em><em>shape</em><em> (</em><em>n_samples</em><em>, </em><em>n_features</em><em>)</em>) – Data</p></li>
-<li><p><strong>y</strong> (<em>numpy.ndarray</em><em>, </em><em>shape</em><em> (</em><em>n_samples</em><em>,</em><em>)</em>) – Target. Will be cast to X’s dtype if necessary</p></li>
-<li><p><strong>analyze</strong> (<em>bool</em><em>, </em><em>default=True</em>) – <p>(Optional) If trainee should be analyzed.</p>
+<li><p><strong>X</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></span>) – Data</p></li>
+<li><p><strong>y</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></span>) – Target. Will be cast to X’s dtype if necessary</p></li>
+<li><p><strong>analyze</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">True</span></code>) – <p>(Optional) If trainee should be analyzed.</p>
 <blockquote>
 <div><ul>
 <li><p>a user may plan to call analyze themselves after fit() to specify parameters</p></li>
@@ -504,9 +504,6 @@ trainee when processing requests.</p></li>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>self</p>
 </dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#howso.scikit.HowsoEstimator" title="howso.scikit.HowsoEstimator">HowsoEstimator</a></p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -517,7 +514,7 @@ trainee when processing requests.</p></li>
 <p>This is based on the available classes in the loaded trainee.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>trainee_id</strong> (<em>str</em>) – The id of the trainee.</p>
+<dd class="field-odd"><p><strong>trainee_id</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – The id of the trainee.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -529,8 +526,8 @@ trainee when processing requests.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>X</strong> (<em>numpy.ndarray</em><em>, </em><em>shape</em><em> (</em><em>n_samples</em><em>, </em><em>n_features</em><em>)</em>) – Data</p></li>
-<li><p><strong>y</strong> (<em>numpy.ndarray</em><em>, </em><em>shape</em><em> (</em><em>n_samples</em><em>,</em><em>)</em>) – Target. Will be cast to X’s dtype if necessary</p></li>
+<li><p><strong>X</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></span>) – Data</p></li>
+<li><p><strong>y</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></span>) – Target. Will be cast to X’s dtype if necessary</p></li>
 </ul>
 </dd>
 </dl>
@@ -550,20 +547,20 @@ and normalize these values across all the classes.</p>
 <p>NOTE: Only works with single target models at this time.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>X</strong> (<em>numpy.ndarray</em><em>, </em><em>shape</em><em> (</em><em>n_samples</em><em>, </em><em>n_features</em><em>)</em>) – Data</p>
+<dd class="field-odd"><p><strong>X</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></span>) – Data</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The probabilities of the classes for the given prediction.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>numpy.ndarray, shape (n_samples, n_classes)</p>
+<dd class="field-odd"><p><em>ndarray</em></p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object sig-wrap py" id="howso.scikit.HowsoClassifier.set_fit_request">
-<span class="sig-name descname"><span class="pre">set_fit_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analyze</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'$UNCHANGED$'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#howso.scikit.HowsoClassifier" title="howso.scikit.scikit.HowsoClassifier"><span class="pre">HowsoClassifier</span></a></span></span><a class="headerlink" href="#howso.scikit.HowsoClassifier.set_fit_request" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="howso.scikit.HowsoClassifier.set_fit_request">
+<span class="sig-name descname"><span class="pre">set_fit_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analyze</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'$UNCHANGED$'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.scikit.HowsoClassifier.set_fit_request" title="Link to this definition">#</a></dt>
 <dd><p>Request metadata passed to the <code class="docutils literal notranslate"><span class="pre">fit</span></code> method.</p>
 <p>Note that this method is only relevant if
 <code class="docutils literal notranslate"><span class="pre">enable_metadata_routing=True</span></code> (see <code class="xref py py-func docutils literal notranslate"><span class="pre">sklearn.set_config()</span></code>).
@@ -590,13 +587,16 @@ sub-estimator of a meta-estimator, e.g. used inside a
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>analyze</strong> (<em>str</em><em>, </em><em>True</em><em>, </em><em>False</em><em>, or </em><em>None</em><em>,                     </em><em>default=sklearn.utils.metadata_routing.UNCHANGED</em>) – Metadata routing for <code class="docutils literal notranslate"><span class="pre">analyze</span></code> parameter in <code class="docutils literal notranslate"><span class="pre">fit</span></code>.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>analyze</strong> (<em>bool</em><em> | </em><em>None</em><em> | </em><em>str</em>) – Metadata routing for <code class="docutils literal notranslate"><span class="pre">analyze</span></code> parameter in <code class="docutils literal notranslate"><span class="pre">fit</span></code>.</p></li>
+<li><p><strong>self</strong> (<a class="reference internal" href="#howso.scikit.HowsoClassifier" title="howso.scikit.scikit.HowsoClassifier"><em>HowsoClassifier</em></a>)</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>self</strong> – The updated object.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>object</p>
+<dd class="field-odd"><p><a class="reference internal" href="#howso.scikit.HowsoClassifier" title="howso.scikit.scikit.HowsoClassifier"><em>HowsoClassifier</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -614,7 +614,7 @@ howso.client module.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>features</strong> (<em>dict</em><em> of </em><em>str: dict</em><em>, </em><em>default None</em>) – <p>The features that will predict the targets(s). Will be generated
+<li><p><strong>features</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – <p>The features that will predict the targets(s). Will be generated
 automatically if not specified.</p>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -630,7 +630,7 @@ automatically if not specified.</p>
 </pre></div>
 </div>
 </p></li>
-<li><p><strong>targets</strong> (<em>dict</em><em> of </em><em>str: dict</em><em>, </em><em>default None</em>) – <p>The target(s) to be predicted. Will be generated automatically if not
+<li><p><strong>targets</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – <p>The target(s) to be predicted. Will be generated automatically if not
 specified.</p>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -643,14 +643,14 @@ specified.</p>
 </pre></div>
 </div>
 </p></li>
-<li><p><strong>client</strong> (<a class="reference internal" href="howso.client.html#howso.client.AbstractHowsoClient" title="howso.client.AbstractHowsoClient"><em>AbstractHowsoClient</em></a><em>, </em><em>default None</em>) – A subclass of AbstractHowsoClient used to interface with Howso.</p></li>
-<li><p><strong>method</strong> (<em>str</em>) – One of ‘classification’ or ‘regression’.</p></li>
-<li><p><strong>verbose</strong> (<em>boolean</em><em>, </em><em>default False</em>) – A flag for verbose output.</p></li>
-<li><p><strong>debug</strong> (<em>boolean</em><em>, </em><em>default False</em>) – A flag for debug output.</p></li>
-<li><p><strong>ttl</strong> (<em>int</em><em>, </em><em>in milliseconds</em>) – The maximum time a server should maintain a connection open for a
+<li><p><strong>client</strong> (<span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="howso.client.html#howso.client.AbstractHowsoClient" title="howso.client.base.AbstractHowsoClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">AbstractHowsoClient</span></code></a> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – A subclass of AbstractHowsoClient used to interface with Howso.</p></li>
+<li><p><strong>method</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – One of ‘classification’ or ‘regression’.</p></li>
+<li><p><strong>verbose</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">False</span></code>) – A flag for verbose output.</p></li>
+<li><p><strong>debug</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">False</span></code>) – A flag for debug output.</p></li>
+<li><p><strong>ttl</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">43200000</span></code>) – The maximum time a server should maintain a connection open for a
 trainee when processing requests.</p></li>
-<li><p><strong>client_params</strong> (<em>dict</em><em>, </em><em>default None</em>) – The parameters with which to instantiate the client.</p></li>
-<li><p><strong>trainee_params</strong> (<em>dict</em><em>, </em><em>default None</em>) – The parameters with which to instantiate the trainee.</p></li>
+<li><p><strong>client_params</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – The parameters with which to instantiate the client.</p></li>
+<li><p><strong>trainee_params</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – The parameters with which to instantiate the trainee.</p></li>
 </ul>
 </dd>
 </dl>
@@ -690,7 +690,7 @@ trainee when processing requests.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>seed</strong> (<em>int</em><em>, </em><em>optional</em>) – A random seed.</p></li>
+<li><p><strong>seed</strong> – A random seed.</p></li>
 <li><p><strong>**kwargs</strong> – Refer to docstring in howso.client.analyze method for complete
 reference of all parameters</p></li>
 </ul>
@@ -711,8 +711,8 @@ reference of all parameters</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>X</strong> (<em>numpy.ndarray</em>) – Feature values.</p></li>
-<li><p><strong>details</strong> (<em>dict</em><em>, </em><em>default None</em>) – <p>(Optional) If details are specified, the response will
+<li><p><strong>X</strong> – Feature values.</p></li>
+<li><p><strong>details</strong> – <p>(Optional) If details are specified, the response will
 contain the requested explanation data along with the reaction.
 Below are the valid keys and data types for the different audit
 details. Omitted keys, values set to None, or False values for
@@ -1041,7 +1041,7 @@ case. Only applicable when ‘generate_new_cases’ is “always” or
 </p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>dict</p>
+<dd class="field-odd"><p><em>Dict</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1053,9 +1053,9 @@ case. Only applicable when ‘generate_new_cases’ is “always” or
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>feature</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the feature. Will be generated automatically
+<li><p><strong>feature</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – The name of the feature. Will be generated automatically
 if not specified.</p></li>
-<li><p><strong>value</strong> (<em>int</em><em> or </em><em>float</em><em> or </em><em>str</em><em>, </em><em>optional</em>) – The value to populate the feature with.</p></li>
+<li><p><strong>value</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code> | <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code> | <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – The value to populate the feature with.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1067,7 +1067,7 @@ if not specified.</p></li>
 <dd><p>Remove a feature from a trainee.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>feature</strong> (<em>str</em><em>, </em><em>default None</em>) – Optional. The name of the feature to remove. Will quietly do
+<dd class="field-odd"><p><strong>feature</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – Optional. The name of the feature to remove. Will quietly do
 nothing if the feature was not found.</p>
 </dd>
 </dl>
@@ -1080,9 +1080,9 @@ nothing if the feature was not found.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>X</strong> (<em>numpy.ndarray</em><em>, </em><em>shape</em><em> (</em><em>n_samples</em><em>, </em><em>n_features</em><em>)</em>) – Data</p></li>
-<li><p><strong>y</strong> (<em>numpy.ndarray</em><em>, </em><em>shape</em><em> (</em><em>n_samples</em><em>,</em><em>)</em>) – Target. Will be cast to X’s dtype if necessary</p></li>
-<li><p><strong>analyze</strong> (<em>bool</em><em>, </em><em>default=True</em>) – <p>A flag to not analyze the trainee by default</p>
+<li><p><strong>X</strong> – Data</p></li>
+<li><p><strong>y</strong> – Target. Will be cast to X’s dtype if necessary</p></li>
+<li><p><strong>analyze</strong> – <p>A flag to not analyze the trainee by default</p>
 <blockquote>
 <div><ul>
 <li><p>A user may plan to call analyze themselves after fit() to specify parameters</p></li>
@@ -1095,7 +1095,7 @@ nothing if the feature was not found.</p>
 <dd class="field-even"><p>self</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference internal" href="#howso.scikit.HowsoEstimator" title="howso.scikit.HowsoEstimator">HowsoEstimator</a></p>
+<dd class="field-odd"><p><a class="reference internal" href="#howso.scikit.HowsoEstimator" title="howso.scikit.scikit.HowsoEstimator"><em>HowsoEstimator</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1107,15 +1107,15 @@ nothing if the feature was not found.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>X</strong> (<em>numpy.ndarray</em><em>, </em><em>shape</em><em> (</em><em>n_samples</em><em>, </em><em>n_features</em><em>)</em>) – Data</p></li>
-<li><p><strong>features</strong> (<em>str</em><em> or </em><em>list</em><em> of </em><em>str</em>) – A list of feature names to calculate convictions.</p></li>
+<li><p><strong>X</strong> – Data</p></li>
+<li><p><strong>features</strong> – A list of feature names to calculate convictions.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The conviction of the cases. Ex: [1.0, 3.2, 0.4]</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>list</p>
+<dd class="field-odd"><p><em>List</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1126,13 +1126,13 @@ nothing if the feature was not found.</p>
 <dd><p>Gets the conviction of the features in a model.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>features</strong> (<em>str</em><em> or </em><em>list</em><em> of </em><em>str</em>) – Features to return conviction values for.</p>
+<dd class="field-odd"><p><strong>features</strong> – Features to return conviction values for.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>A map of feature convictions and contributions.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>dict</p>
+<dd class="field-odd"><p><em>Dict</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1146,14 +1146,14 @@ lightly modified to avoid calling the <cite>get_params</cite> method
 of <cite>self.trainee</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>deep</strong> (<em>bool</em><em>, </em><em>default=True</em>) – If True, will return the parameters for this estimator and
+<dd class="field-odd"><p><strong>deep</strong> – If True, will return the parameters for this estimator and
 contained subobjects that are estimators.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>params</strong> – Parameter names mapped to their values.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>mapping of string to any</p>
+<dd class="field-odd"><p><em>Dict</em>[str, <em>Any</em>]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1164,7 +1164,7 @@ contained subobjects that are estimators.</p>
 <dd><p>Load a model from the server.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>trainee_id</strong> (<em>str</em>) – Id of the trainee. (can be obtained from this class).</p>
+<dd class="field-odd"><p><strong>trainee_id</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – Id of the trainee. (can be obtained from this class).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1176,8 +1176,8 @@ contained subobjects that are estimators.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>X</strong> (<em>numpy.ndarray</em><em>, </em><em>shape</em><em> (</em><em>n_samples</em><em>, </em><em>n_features</em><em>)</em>) – Data</p></li>
-<li><p><strong>y</strong> (<em>numpy.ndarray</em><em>, </em><em>shape</em><em> (</em><em>n_samples</em><em>,</em><em>)</em>) – Target. Will be cast to X’s dtype if necessary</p></li>
+<li><p><strong>X</strong> – Data</p></li>
+<li><p><strong>y</strong> – Target. Will be cast to X’s dtype if necessary</p></li>
 </ul>
 </dd>
 </dl>
@@ -1193,10 +1193,10 @@ case.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>precision</strong> (<em>str</em>) – The precision to use when removing the case. Options are ‘exact’ or
+<li><p><strong>precision</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>) – The precision to use when removing the case. Options are ‘exact’ or
 ‘similar’.</p></li>
-<li><p><strong>num_cases</strong> (<em>int</em>) – The number of cases to remove; minimum 1 case must be removed.</p></li>
-<li><p><strong>criteria</strong> (<em>dict</em><em>, </em><em>default None</em>) – The condition map to select the cases to remove that meet all the
+<li><p><strong>num_cases</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span>) – The number of cases to remove; minimum 1 case must be removed.</p></li>
+<li><p><strong>criteria</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – The condition map to select the cases to remove that meet all the
 provided conditions. Keys - features, values - one of | null (must
 have the feature) | a value (must match exactly) | an array of two
 values (a range, feature values must be between)</p></li>
@@ -1211,13 +1211,13 @@ values (a range, feature values must be between)</p></li>
 <dd><p>Make predictions using Howso.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>X</strong> (<em>numpy.ndarray</em><em>, </em><em>shape</em><em> (</em><em>n_samples</em><em>, </em><em>n_features</em><em>)</em>) – Data</p>
+<dd class="field-odd"><p><strong>X</strong> – Data</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The predicted values based on the feature values provided.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>numpy.ndarray, shape (n_samples,)</p>
+<dd class="field-odd"><p><em>ndarray</em></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1229,31 +1229,31 @@ values (a range, feature values must be between)</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>features</strong> (<em>list</em><em> of </em><em>str</em>) – A list of the feature names to use when calculating conviction.</p></li>
-<li><p><strong>distance_contribution</strong> (<em>bool</em><em> or </em><em>str</em><em>, </em><em>default False</em>) – The name of the feature to store distance contribution. If set to
+<li><p><strong>features</strong> – A list of the feature names to use when calculating conviction.</p></li>
+<li><p><strong>distance_contribution</strong> – The name of the feature to store distance contribution. If set to
 True the values will be stored to the feature
 ‘distance_contribution’.</p></li>
-<li><p><strong>familiarity_conviction_addition</strong> (<em>bool</em><em> or </em><em>str</em><em>, </em><em>default False</em>) – The name of the feature to store conviction of addition values. If
+<li><p><strong>familiarity_conviction_addition</strong> – The name of the feature to store conviction of addition values. If
 set to True the values will be stored to the feature
 ‘familiarity_conviction_addition’.</p></li>
-<li><p><strong>familiarity_conviction_removal</strong> (<em>bool</em><em> or </em><em>str</em><em>, </em><em>default False</em>) – The name of the feature to store conviction of removal values. If
+<li><p><strong>familiarity_conviction_removal</strong> – The name of the feature to store conviction of removal values. If
 set to True the values will be stored to the feature
 ‘familiarity_conviction_removal’.</p></li>
-<li><p><strong>influence_weight_entropy</strong> (<em>bool</em><em> or </em><em>str</em><em>, </em><em>default False</em>) – The name of the feature to store influence weight entropy values in.
+<li><p><strong>influence_weight_entropy</strong> – The name of the feature to store influence weight entropy values in.
 If set to True, the values will be stored in the feature
 ‘influence_weight_entropy’.</p></li>
-<li><p><strong>p_value_of_addition</strong> (<em>bool</em><em> or </em><em>str</em><em>, </em><em>default False</em>) – The name of the feature to store p value of addition values. If set
+<li><p><strong>p_value_of_addition</strong> – The name of the feature to store p value of addition values. If set
 to True the values will be stored to the feature
 ‘p_value_of_addition’.</p></li>
-<li><p><strong>p_value_of_removal</strong> (<em>bool</em><em> or </em><em>str</em><em>, </em><em>default False</em>) – The name of the feature to store p value of removal values. If set
+<li><p><strong>p_value_of_removal</strong> – The name of the feature to store p value of removal values. If set
 to True the values will be stored to the feature
 ‘p_value_of_removal’.</p></li>
-<li><p><strong>similarity_conviction</strong> (<em>bool</em><em> or </em><em>str</em><em>, </em><em>default False</em>) – The name of the feature to store similarity conviction
+<li><p><strong>similarity_conviction</strong> – The name of the feature to store similarity conviction
 values. If set to True the values will be stored to the feature
 ‘similarity_conviction’.</p></li>
-<li><p><strong>use_case_weights</strong> (<em>bool</em><em>, </em><em>default False</em>) – When True, will scale influence weights by each case’s
+<li><p><strong>use_case_weights</strong> – When True, will scale influence weights by each case’s
 <cite>weight_feature</cite> weight.</p></li>
-<li><p><strong>weight_feature</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of feature whose values to use as case weights.
+<li><p><strong>weight_feature</strong> – Name of feature whose values to use as case weights.
 When left unspecified uses the internally managed case weight.</p></li>
 </ul>
 </dd>
@@ -1273,11 +1273,6 @@ it’s resources. If the data persistence policy forbids this, that call
 will return an error. Upon error, <cite>delete_trainee()</cite> instead.</p>
 <dl class="simple">
 <dt>NOTE: Errors are handled immediately because this is the instance’s</dt><dd><p>destructor. There is no further recourse at this point.</p>
-</dd>
-</dl>
-<dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1313,8 +1308,8 @@ For regressors, R^2 is calculated.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>X</strong> (<em>numpy.ndarray</em><em>, </em><em>shape</em><em> (</em><em>n_samples</em><em>, </em><em>n_features</em><em>)</em>) – Test samples.</p></li>
-<li><p><strong>y</strong> (<em>numpy.ndarray</em><em>, </em><em>shape</em><em> (</em><em>n_samples</em><em>) or </em><em>(</em><em>n_samples</em><em>, </em><em>n_outputs</em><em>)</em>) – True values for X.</p></li>
+<li><p><strong>X</strong> – Test samples.</p></li>
+<li><p><strong>y</strong> – True values for X.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -1327,8 +1322,8 @@ For regressors, R^2 is calculated.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object sig-wrap py" id="howso.scikit.HowsoEstimator.set_fit_request">
-<span class="sig-name descname"><span class="pre">set_fit_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analyze</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'$UNCHANGED$'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#howso.scikit.HowsoEstimator" title="howso.scikit.scikit.HowsoEstimator"><span class="pre">HowsoEstimator</span></a></span></span><a class="headerlink" href="#howso.scikit.HowsoEstimator.set_fit_request" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="howso.scikit.HowsoEstimator.set_fit_request">
+<span class="sig-name descname"><span class="pre">set_fit_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analyze</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'$UNCHANGED$'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.scikit.HowsoEstimator.set_fit_request" title="Link to this definition">#</a></dt>
 <dd><p>Request metadata passed to the <code class="docutils literal notranslate"><span class="pre">fit</span></code> method.</p>
 <p>Note that this method is only relevant if
 <code class="docutils literal notranslate"><span class="pre">enable_metadata_routing=True</span></code> (see <code class="xref py py-func docutils literal notranslate"><span class="pre">sklearn.set_config()</span></code>).
@@ -1355,13 +1350,16 @@ sub-estimator of a meta-estimator, e.g. used inside a
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>analyze</strong> (<em>str</em><em>, </em><em>True</em><em>, </em><em>False</em><em>, or </em><em>None</em><em>,                     </em><em>default=sklearn.utils.metadata_routing.UNCHANGED</em>) – Metadata routing for <code class="docutils literal notranslate"><span class="pre">analyze</span></code> parameter in <code class="docutils literal notranslate"><span class="pre">fit</span></code>.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>analyze</strong> (<em>bool</em><em> | </em><em>None</em><em> | </em><em>str</em>) – Metadata routing for <code class="docutils literal notranslate"><span class="pre">analyze</span></code> parameter in <code class="docutils literal notranslate"><span class="pre">fit</span></code>.</p></li>
+<li><p><strong>self</strong> (<a class="reference internal" href="#howso.scikit.HowsoEstimator" title="howso.scikit.scikit.HowsoEstimator"><em>HowsoEstimator</em></a>)</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>self</strong> – The updated object.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>object</p>
+<dd class="field-odd"><p><a class="reference internal" href="#howso.scikit.HowsoEstimator" title="howso.scikit.scikit.HowsoEstimator"><em>HowsoEstimator</em></a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -1388,7 +1386,7 @@ sub-estimator of a meta-estimator, e.g. used inside a
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>features</strong> (<em>dict</em><em> of </em><em>str: dict</em><em>, </em><em>default None</em>) – <p>The features that will predict the targets(s). Will be generated
+<li><p><strong>features</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – <p>The features that will predict the targets(s). Will be generated
 automatically if not specified.</p>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -1404,7 +1402,7 @@ automatically if not specified.</p>
 </pre></div>
 </div>
 </p></li>
-<li><p><strong>targets</strong> (<em>dict</em><em> of </em><em>str: dict</em><em>, </em><em>default None</em>) – <p>The target(s) to be predicted. Will be generated automatically if not
+<li><p><strong>targets</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – <p>The target(s) to be predicted. Will be generated automatically if not
 specified.</p>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -1417,20 +1415,20 @@ specified.</p>
 </pre></div>
 </div>
 </p></li>
-<li><p><strong>client</strong> (<a class="reference internal" href="howso.client.html#howso.client.AbstractHowsoClient" title="howso.client.AbstractHowsoClient"><em>AbstractHowsoClient</em></a><em>, </em><em>default None</em>) – A subclass of AbstractHowsoClient used to interface with Howso.</p></li>
-<li><p><strong>verbose</strong> (<em>boolean</em><em>, </em><em>default False</em>) – A flag for verbose output.</p></li>
-<li><p><strong>debug</strong> (<em>boolean</em><em>, </em><em>default False</em>) – A flag for debug output.</p></li>
-<li><p><strong>ttl</strong> (<em>int</em><em>, </em><em>in milliseconds</em>) – The maximum time a server should maintain a connection open for a
+<li><p><strong>client</strong> – A subclass of AbstractHowsoClient used to interface with Howso.</p></li>
+<li><p><strong>verbose</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">False</span></code>) – A flag for verbose output.</p></li>
+<li><p><strong>debug</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">False</span></code>) – A flag for debug output.</p></li>
+<li><p><strong>ttl</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">43200000</span></code>) – The maximum time a server should maintain a connection open for a
 trainee when processing requests.</p></li>
-<li><p><strong>client_params</strong> (<em>dict</em><em>, </em><em>default None</em>) – The parameters with which to instantiate the client.</p></li>
-<li><p><strong>trainee_params</strong> (<em>dict</em><em>, </em><em>default None</em>) – The parameters with which to instantiate the client. Intended for use
+<li><p><strong>client_params</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – The parameters with which to instantiate the client.</p></li>
+<li><p><strong>trainee_params</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – The parameters with which to instantiate the client. Intended for use
 by <cite>HowsoEstimator.get_params</cite>.</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="py method">
-<dt class="sig sig-object sig-wrap py" id="howso.scikit.HowsoRegressor.set_fit_request">
-<span class="sig-name descname"><span class="pre">set_fit_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analyze</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'$UNCHANGED$'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#howso.scikit.HowsoRegressor" title="howso.scikit.scikit.HowsoRegressor"><span class="pre">HowsoRegressor</span></a></span></span><a class="headerlink" href="#howso.scikit.HowsoRegressor.set_fit_request" title="Link to this definition">#</a></dt>
+<dt class="sig sig-object py" id="howso.scikit.HowsoRegressor.set_fit_request">
+<span class="sig-name descname"><span class="pre">set_fit_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">analyze</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'$UNCHANGED$'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.scikit.HowsoRegressor.set_fit_request" title="Link to this definition">#</a></dt>
 <dd><p>Request metadata passed to the <code class="docutils literal notranslate"><span class="pre">fit</span></code> method.</p>
 <p>Note that this method is only relevant if
 <code class="docutils literal notranslate"><span class="pre">enable_metadata_routing=True</span></code> (see <code class="xref py py-func docutils literal notranslate"><span class="pre">sklearn.set_config()</span></code>).
@@ -1457,13 +1455,16 @@ sub-estimator of a meta-estimator, e.g. used inside a
 </div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>analyze</strong> (<em>str</em><em>, </em><em>True</em><em>, </em><em>False</em><em>, or </em><em>None</em><em>,                     </em><em>default=sklearn.utils.metadata_routing.UNCHANGED</em>) – Metadata routing for <code class="docutils literal notranslate"><span class="pre">analyze</span></code> parameter in <code class="docutils literal notranslate"><span class="pre">fit</span></code>.</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>analyze</strong> (<em>bool</em><em> | </em><em>None</em><em> | </em><em>str</em>) – Metadata routing for <code class="docutils literal notranslate"><span class="pre">analyze</span></code> parameter in <code class="docutils literal notranslate"><span class="pre">fit</span></code>.</p></li>
+<li><p><strong>self</strong> (<a class="reference internal" href="#howso.scikit.HowsoRegressor" title="howso.scikit.scikit.HowsoRegressor"><em>HowsoRegressor</em></a>)</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>self</strong> – The updated object.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>object</p>
+<dd class="field-odd"><p><a class="reference internal" href="#howso.scikit.HowsoRegressor" title="howso.scikit.scikit.HowsoRegressor"><em>HowsoRegressor</em></a></p>
 </dd>
 </dl>
 </dd></dl>
