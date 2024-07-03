@@ -11,7 +11,7 @@ Feature Importance
 
 Objectives: what you will take away
 -----------------------------------
-- **How-To** Retrieve the different types of feature importance metrics across several different categories: :doc:`global vs local <../concepts/global_vs_local>`, and robust vs non-robust :ref:`Feature Contributions <contribution>` and :ref:`Feature MDA <mda>`.
+- **How-To** Retrieve the different types of feature importance metrics across several different categories: :doc:`global vs local <../concepts/global_vs_local>`, and :ref:`robust` vs non-robust (full) :ref:`Feature Contributions <contribution>` and :ref:`Feature MDA <mda>`.
 
 
 Prerequisites: before you begin
@@ -37,8 +37,8 @@ recommend being familiar with the following concepts:
 
 The two metrics available for feature importance is feature :ref:`contribution` and feature :ref:`mda`.
 
-Robust vs Non-Robust
-^^^^^^^^^^^^^^^^^^^^
+Robust vs Non-Robust (Full)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 :ref:`robust` metrics are recommended as they use a greater variety of feature combinations, and they include a calculation performance boost as the number of features increases.
 
 How-To Guide
@@ -52,7 +52,7 @@ The created :class:`~Trainee` will be referenced as ``trainee`` in the sections 
 Global Feature Importance
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 To get global feature importance metrics, :py:meth:`Trainee.react_aggregate`, is called on a trained and analyzed Trainee. :py:meth:`Trainee.react_aggregate` calls react internally on the cases already trained into the Trainee and calculates the metrics. In this method, the desired metrics can be selected as parameters. These parameters are named individually
-in the ``details`` parameter and setting them to ``True`` will calculate and return the desired metrics. For example, ``feature_mda_robust`` and ``feature_contributions_robust`` will calculate the robust versions of MDA and Feature Contributions, while ``feature_mda_full`` and ``feature_contributions_full`` will calculate the non-robust versions.
+in the ``details`` parameter and setting them to ``True`` will calculate and return the desired metrics. For example, ``feature_mda_robust`` and ``feature_contributions_robust`` will calculate the robust versions of MDA and Feature Contributions, while ``feature_mda_full`` and ``feature_contributions_full`` will calculate the non-robust (full) versions.
 An action feature must be specified. ``feature_influences_action_feature`` is recommended for feature influence metrics such as feature contributions and mda, especially when used in conjuction with retrieving prediction stats, however, ``action_feature`` can be also used as well. ``action_feature`` sets the action feature for both influence metrics and prediction stats. Since often
 only the influence metrics's action feature is intended to be set, ``feature_influences_action_feature`` provides a more precise parameter.
 
@@ -72,12 +72,11 @@ only the influence metrics's action feature is intended to be set, ``feature_inf
 
 Local Feature Importance
 ^^^^^^^^^^^^^^^^^^^^^^^^
-To get local feature importance metrics, :py:meth:`Trainee.react`, is first called on a trained and analyzed Trainee. In this method, the desired metrics, ``feature_contributions`` and ``feature_mda``, can be selected as inputs to the ``details`` parameters as key value pairs from a dictionary. These parameters are named individually
+To get local feature importance metrics, :py:meth:`Trainee.react`, is first called on a trained and analyzed Trainee. In this method, the desired metrics, ``feature_contributions_robust`` and ``feature_mda_robust``, can be selected as inputs to the ``details`` parameters as key value pairs from a dictionary. These parameters are named individually
 and setting them to ``True`` will calculate the desired metrics. Robust calculations are performed by default.
 
 .. code-block:: python
 
-    # Default is robust
     details = {
         'feature_contributions_robust':True,
         'feature_mda_robust':True,
@@ -90,7 +89,7 @@ and setting them to ``True`` will calculate the desired metrics. Robust calculat
         details=details
     )
 
-In order to retrieve the calculated stats, they can be retrieved from the :py:meth:`Trainee.react` output dictionary. They are stored under the ``explanation`` key under the name of the metric. Whether these metrics are robust or non-robust is determined when the metrics
+In order to retrieve the calculated stats, they can be retrieved from the :py:meth:`Trainee.react` output dictionary. They are stored under the ``explanation`` key under the name of the metric. Whether these metrics are :ref:`robust` or non-robust (full) is determined when the metrics
 are calculated in :py:meth:`Trainee.react` from the previous step.
 
 .. code-block:: python

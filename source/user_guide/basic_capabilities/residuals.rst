@@ -40,7 +40,7 @@ The created :class:`~Trainee` will be referenced as ``trainee`` in the sections 
 Local Residuals
 ^^^^^^^^^^^^^^^
 
-Local metrics are retrieved through using :py:meth:`Trainee.react`. Both :ref:`robust` and non-robust versions are available.
+Local metrics are retrieved through using :py:meth:`Trainee.react`. Both :ref:`robust` and non-robust (full) versions are available.
 
 .. code-block:: python
 
@@ -63,7 +63,7 @@ Global Residuals
 ^^^^^^^^^^^^^^^^
 
 Howso has the ability to retrieve both :doc:`local vs global <../concepts//global_vs_local>` metrics.
-Global metrics are retrieved through using :py:meth:`Trainee.react_aggregate`.  Both :ref:`robust` and non-robust versions are also available.
+Global metrics are retrieved through using :py:meth:`Trainee.react_aggregate`.  Both :ref:`robust` and non-robust (full) versions are also available.
 
 .. code-block:: python
 
