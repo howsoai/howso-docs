@@ -48,7 +48,7 @@ Local metrics are retrieved through using :py:meth:`Trainee.react`. Both :ref:`r
     # Get robust residuals
     details = {'feature_residuals_full': True}
 
-    results = t.react(
+    results = trainee.react(
         test_case[context_features],
         context_features=context_features,
         action_features=action_features,
@@ -67,7 +67,7 @@ Global metrics are retrieved through using :py:meth:`Trainee.react_aggregate`.  
 
 .. code-block:: python
 
-    residuals = t.react_aggregate(
+    residuals = trainee.react_react_aggregate(
         action_feature=action_features[0],
         details={"feature_residuals_full": True}
     )
@@ -108,7 +108,7 @@ The code from all of the steps in this guide is combined below:
     # Get local robust residuals
     details = {'feature_residuals_full': True}
 
-    results = t.react(
+    results = trainee.react(
         test_case[context_features],
         context_features=context_features,
         action_features=action_features,
@@ -118,7 +118,7 @@ The code from all of the steps in this guide is combined below:
     residuals = results['details']['feature_residuals_full']
 
     # Get global robust residuals
-    residuals = t.react_aggregate(
+    residuals = trainee.react_react_aggregate(
         action_feature=action_features[0],
         details={"feature_residuals_full": True}
     )

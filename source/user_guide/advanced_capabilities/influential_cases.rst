@@ -93,7 +93,7 @@ details in the sections above may be retrieved all at once as shown below.
         'influential_cases': True,
     }
 
-    results = t.react(
+    results = trainee.react(
         test_case[context_features],
         context_features=context_features,
         action_features=action_features,
@@ -139,7 +139,7 @@ Combined Code
     context_features = features.get_names(without=action_features)
 
     # Create a new Trainee, specify features
-    trainee = Trainee(features=features)
+     trainee = Trainee(features=features)
 
     # Train and analyze
     trainee.train(df)

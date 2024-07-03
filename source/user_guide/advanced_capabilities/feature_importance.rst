@@ -58,13 +58,13 @@ only the influence metrics's action feature is intended to be set, ``feature_inf
 
 .. code-block:: python
 
-    robust_feature_contributions = t.react_aggregate(
+    feature_contributions_robust = trainee.react_aggregate(
         context_features=context_features,
         feature_influences_action_feature=action_features[0],
         details={"feature_contributions_robust" : True}
     )
 
-    robust_feature_mda = t.react_aggregate(
+    feature_mda_robust = trainee.react_aggregate(
         context_features=context_features,
         feature_influences_action_feature=action_features[0],
         details={"feature_mda_robust" : True}
@@ -82,7 +82,7 @@ and setting them to ``True`` will calculate the desired metrics. Robust calculat
         'feature_mda_robust':True,
     }
 
-    results = t.react(
+    results = trainee.react(
         df,
         context_features=context_features,
         action_features=action_features,
@@ -94,8 +94,8 @@ are calculated in :py:meth:`Trainee.react` from the previous step.
 
 .. code-block:: python
 
-    robust_feature_contributions = results['explanation']['feature_contributions_robust']
-    robust_feature_mda = results['explanation']['feature_mda_robust']
+    feature_contributions_robust = results['explanation']['feature_contributions_robust']
+    feature_mda_robust = results['explanation']['feature_mda_robust']
 
 
 .. warning::
@@ -117,8 +117,8 @@ may reveal additional insights. Please see the linked recipe for more informatio
 
 .. code-block:: python
 
-    contrib_matrix = t.get_contribution_matrix()
-    mda_matrix = t.get_mda_matrix()
+    contrib_matrix = trainee.get_contribution_matrix()
+    mda_matrix = trainee.get_mda_matrix()
 
 Combined Code
 ^^^^^^^^^^^^^
@@ -148,19 +148,19 @@ Combined Code
     context_features = features.get_names(without=action_features)
 
     # Create a new Trainee, specify features
-    trainee = Trainee(features=features)
+     trainee = Trainee(features=features)
 
     # Train and analyze
     trainee.train(df)
     trainee.analyze()
 
-    robust_feature_contributions = t.react_aggregate(
+    feature_contributions_robust = trainee.react_aggregate(
         context_features=context_features,
         feature_influences_action_feature=action_features[0],
         details={"feature_contributions_robust" : True}
     )
 
-    robust_feature_mda = t.react_aggregate(
+    feature_mda_robust = trainee.react_aggregate(
         context_features=context_features,
         feature_influences_action_feature=action_features[0],
         details={"feature_mda_robust" : True}
@@ -171,15 +171,15 @@ Combined Code
         'feature_mda_robust':True,
     }
 
-    results = t.react(
+    results = trainee.react(
         df,
         context_features=context_features,
         action_features=action_features,
         details=details
     )
 
-    robust_feature_contributions = results['explanation']['feature_contributions_robust']
-    robust_feature_mda = results['explanation']['feature_mda_robust']
+    feature_contributions_robust = results['explanation']['feature_contributions_robust']
+    feature_mda_robust = results['explanation']['feature_mda_robust']
 
     contrib_matrix = trainee.get_contribution_matrix()
     mda_matrix = trainee.get_mda_matrix()

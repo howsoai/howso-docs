@@ -45,7 +45,7 @@ called by the :meth:`~Trainee.react_aggregate` method.
 .. code-block:: python
 
     # Getting global feature contributions
-    feature_contributions_robust = t.react_aggregate(
+    feature_contributions_robust = trainee.react_react_aggregate(
         action_feature=action_features[0],
         details={"feature_contributions_robust": True}
     )
@@ -61,7 +61,7 @@ Local metrics are controlled through the ``details`` parameter in :py:meth:`Trai
 
     details = {"feature_contributions_robust" : True}
     # Getting global feature contributions
-    results = t.react(
+    results = trainee.react(
         test_case[context_features],
         context_features=context_features,
         action_features=action_features,

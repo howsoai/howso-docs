@@ -63,7 +63,7 @@ Since case importance is a local metric, cases or case indices must be provided 
 
 .. code-block:: python
 
-    results = t.react(
+    results = trainee.react(
         test_case[context_features],
         context_features=context_features,
         action_features=action_features,
@@ -106,7 +106,7 @@ The code from all of the steps in this guide is combined below:
     action_features = ['target']
     context_features = features.get_names(without=action_features)
 
-    trainee = Trainee(features=features)
+     trainee = Trainee(features=features)
 
     trainee.train(df)
 

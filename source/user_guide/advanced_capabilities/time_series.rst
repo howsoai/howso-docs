@@ -80,7 +80,7 @@ Task 2 - Make a time series prediction
 .. code-block:: python
 
     # Create the Trainee
-    t = Trainee(
+    trainee = Trainee(
         features=features,
         overwrite_existing=True
     )
@@ -88,20 +88,20 @@ Task 2 - Make a time series prediction
     session1 = Session('train_session_1', metadata={'data': 'training data'})
 
     # Train
-    t.train(df)
+    trainee.train(df)
 
     # Store actual record data which includes all of the ts information
-    cases_df = t.get_cases(session=session1)
+    cases_df = trainee.get_cases(session=session1)
 
     # Specify Context and Action Features
     action_features = ['target']
     context_features = cases_df.columns.drop(action_features).to_list()
 
     # Targeted Analysis
-    t.analyze(context_features=context_features, action_features=action_features)
+    trainee.analyze(context_features=context_features, action_features=action_features)
 
     # Calculate overall error metrics
-    results = t.react_aggregate(
+    results = trainee.react_react_aggregate(
         action_feature=action_features[0],
         details={"prediction_stats": True}
     )
@@ -114,7 +114,7 @@ Task 3 - Forecast a time-series
 .. code-block:: python
 
     # Use react_series with continue_series_values to forecast a series
-    series_reaction = t.react_series(
+    series_reaction = trainee..react_series(
         action_features=["ID", "date", "value"],
         continue_series=True,
         continue_series_features=["ID", "date", "value"],

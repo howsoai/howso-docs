@@ -54,7 +54,7 @@ performance stats.
 
 .. code-block:: python
 
-    prediction_stats = t.react_aggregate(
+    prediction_stats = trainee.react_react_aggregate(
         details={"prediction_stats": True}
     )
 
@@ -73,7 +73,7 @@ The user from the example would want to do the following:
 
     # Conditions for continuous features take a tuple
     # that represents the range of the condition.
-    performance_stats = t.react_aggregate(
+    performance_stats = trainee.react_react_aggregate(
         details={
             "prediction_stats": True,
             "action_condition": {"age": [40, 9999]}
@@ -89,7 +89,7 @@ on cases that represent individuals over the age of 40, who are also married and
 
     # Conditions for continuous features take a tuple
     # that represents the range of the condition.
-    performance_stats = trainee.react_aggregate(
+    performance_stats = trainee.react_react_aggregate(
         details={
             "prediction_stats": True,
             "action_condition": {

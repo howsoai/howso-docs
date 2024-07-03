@@ -129,10 +129,10 @@ Next we will create a :class:`Trainee` and :meth:`~Trainee.train` based on data 
 .. code-block:: python
 
    # Create a new Trainee, specify features
-   t = Trainee(features=features)
+   trainee = Trainee(features=features)
 
    # Train trainee
-   t.train(df)
+   trainee.train(df)
 
 Step 5 - Analyze Trainee, Set Context & Action Features
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -145,7 +145,7 @@ We know a specific task we want our :class:`Trainee` to :meth:`~Trainee.react` t
    # action_features = ['FuelType']
    context_features = features.get_names(without=action_features)
 
-   t.analyze(context_features=context_features, action_features=action_features)
+   trainee.analyze(context_features=context_features, action_features=action_features)
 
 Step 6 - Generate Accuracy Metrics
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -154,7 +154,7 @@ Review the accuracy of the :class:`Trainee` by using the built-in :meth:`~Traine
 .. code-block:: python
 
    # Recommended metrics
-   stats = t.react_aggreagte(
+   stats = trainee.react_aggregate(
       action_feature=action_features[0],
       details={
          "prediction_stats": True,
@@ -197,7 +197,7 @@ The :class:`Trainee` can :meth:`~Trainee.react` to this new case, and makes a pr
 
    test_case = pd.DataFrame(data)
 
-   result = t.react(
+   result = trainee.react(
        test_case,
        action_features=action_features,
        context_features=context_features
@@ -246,20 +246,20 @@ Combined Code
    features['LuggageVolume']['type'] = 'continuous'
 
    # Create a new Trainee, specify features
-   t = Trainee(features=features)
+   trainee = Trainee(features=features)
 
    # Train trainee
-   t.train(df)
+   trainee.train(df)
 
    action_features = ['HighwayMPG']
    # Code for `FuelType` prediction
    # action_features = ['FuelType']
    context_features = features.get_names(without=action_features)
 
-   t.analyze(context_features=context_features, action_features=action_features)
+   trainee.analyze(context_features=context_features, action_features=action_features)
 
    # Recommended metrics
-   stats = t.react_aggreagte(
+   stats = trainee.react_aggregate(
       action_feature=action_features[0],
       details={
          "prediction_stats": True,
@@ -281,7 +281,7 @@ Combined Code
 
    test_case = pd.DataFrame(data)
 
-   result = t.react(
+   result = trainee.react(
        test_case,
        action_features=action_features,
        context_features=context_features

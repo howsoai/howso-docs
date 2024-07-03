@@ -126,7 +126,7 @@ The code from all of the steps in this guide is combined below:
     action_features = ['target']
     context_features = features.get_names(without=action_features)
 
-    trainee = Trainee(features=features)
+     trainee = Trainee(features=features)
 
     trainee.train(df)
 
