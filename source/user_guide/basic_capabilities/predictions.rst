@@ -157,8 +157,8 @@ Review the accuracy of the :class:`Trainee` by using the built-in :meth:`~Traine
    stats = trainee.react_aggregate(
       action_feature=action_features[0],
       details={
-         "prediction_stats": True,
-         "selected_prediction_stats": ['rmse', 'spearman_coeff', 'r2', 'mae']
+         'prediction_stats': True,
+         'selected_prediction_stats': ['rmse', 'spearman_coeff', 'r2', 'mae']
       }
    )
    stats

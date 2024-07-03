@@ -103,7 +103,7 @@ Task 2 - Make a time series prediction
     # Calculate overall error metrics
     results = trainee.react_react_aggregate(
         action_feature=action_features[0],
-        details={"prediction_stats": True}
+        details={'prediction_stats': True}
     )
     results['target']
 
