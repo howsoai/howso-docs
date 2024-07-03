@@ -293,5 +293,5 @@ API References
 - :py:meth:`Trainee.train`
 - :py:meth:`Trainee.analyze`
 - :py:meth:`Trainee.react`
-- :py:meth:`Trainee.react_aggreagte`
+- :py:meth:`Trainee.react_aggregate`
 - :py:meth:`Trainee.predict`
