@@ -69,7 +69,7 @@ Global metrics are retrieved through using :py:meth:`Trainee.react_aggregate`.  
 
     residuals = trainee.react_react_aggregate(
         action_feature=action_features[0],
-        details={"feature_residuals_full": True}
+        details={'feature_residuals_full': True}
     )
 
 Complete Code
@@ -120,7 +120,7 @@ The code from all of the steps in this guide is combined below:
     # Get global robust residuals
     residuals = trainee.react_react_aggregate(
         action_feature=action_features[0],
-        details={"feature_residuals_full": True}
+        details={'feature_residuals_full': True}
     )
 
 

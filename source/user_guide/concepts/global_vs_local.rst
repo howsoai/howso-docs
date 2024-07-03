@@ -59,7 +59,7 @@ Local metrics are controlled through the ``details`` parameter in :py:meth:`Trai
 
 .. code-block:: python
 
-    details = {"feature_contributions_robust" : True}
+    details = {'feature_contributions_robust' : True}
     # Getting global feature contributions
     results = trainee.react(
         test_case[context_features],

@@ -61,13 +61,13 @@ only the influence metrics's action feature is intended to be set, ``feature_inf
     feature_contributions_robust = trainee.react_aggregate(
         context_features=context_features,
         feature_influences_action_feature=action_features[0],
-        details={"feature_contributions_robust" : True}
+        details={'feature_contributions_robust' : True}
     )
 
     feature_mda_robust = trainee.react_aggregate(
         context_features=context_features,
         feature_influences_action_feature=action_features[0],
-        details={"feature_mda_robust" : True}
+        details={'feature_mda_robust': True}
     )
 
 Local Feature Importance

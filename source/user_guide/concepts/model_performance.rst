@@ -55,7 +55,7 @@ performance stats.
 .. code-block:: python
 
     prediction_stats = trainee.react_react_aggregate(
-        details={"prediction_stats": True}
+        details={'prediction_stats': True}
     )
 
 
@@ -75,8 +75,8 @@ The user from the example would want to do the following:
     # that represents the range of the condition.
     performance_stats = trainee.react_react_aggregate(
         details={
-            "prediction_stats": True,
-            "action_condition": {"age": [40, 9999]}
+            'prediction_stats': True,
+            'action_condition': {'age': [40, 9999]}
         }
     )
 
@@ -91,11 +91,11 @@ on cases that represent individuals over the age of 40, who are also married and
     # that represents the range of the condition.
     performance_stats = trainee.react_react_aggregate(
         details={
-            "prediction_stats": True,
-            "action_condition": {
-                "age": [40, 9999],
-                "marital-status": "married",
-                "job-status": "unemployed",
+            'prediction_stats': True,
+            'action_condition': {
+                'age': [40, 9999],
+                'marital-status': 'married',
+                'job-status': 'unemployed',
         }
     )
 

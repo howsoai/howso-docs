@@ -29,7 +29,7 @@ Concepts & Terminology
 
 How-To Guide
 ------------
-Case importance is similiar to feature importance in that it comprises of two metrics, case mean decrease in accuracy (mda) and case contribution.
+Case importance is similar to feature importance in that it comprises of two metrics, case mean decrease in accuracy (MDA) and case contribution.
 As opposed to influential and similar cases which examines the influence of cases on a single case or prediction, case importance examines how important a case is in regards to the overall predictions on a group of cases. Case importance share the same underlying methodology with  :doc:`Feature Importance <feature_importance>`.
 Unlike feature contributions, case contributions are calculated just locally. Conceptually, local metrics use either a specific subset of the cases that are trained into the Trainee or a set of new cases.
 
@@ -106,7 +106,7 @@ The code from all of the steps in this guide is combined below:
     action_features = ['target']
     context_features = features.get_names(without=action_features)
 
-     trainee = Trainee(features=features)
+    trainee = Trainee(features=features)
 
     trainee.train(df)
 
