@@ -21,7 +21,7 @@ in the prerequisites using the ``fetch_data()`` function.
 Concepts & Terminology
 ----------------------
 Influential cases and most similiar cases represent the cases with the smallest distance to the case of interest. They are closely related,
-as most similar cases can be any of number of cases ranked by distance while influential cases are a subset of most similiar cases comprising 
+as most similar cases can be any of number of cases ranked by distance while influential cases are a subset of most similiar cases comprising
 of cases close enough to influence the case of interest. Boundary cases are the most similiar cases that have a different action value.
 
 - :ref:`influential_cases`
@@ -43,13 +43,13 @@ The ``details`` parameter allows us to select which details to return when using
 
 Influential Cases
 ^^^^^^^^^^^^^^^^^
-Influential cases can be retrieved by setting ``influential_cases`` to ``True``.  
+Influential cases can be retrieved by setting ``influential_cases`` to ``True``.
 
 .. code-block:: python
 
     details = {'influential_cases': True}
 
- 
+
 Most Similiar Cases
 ^^^^^^^^^^^^^^^^^^^
 
@@ -75,14 +75,14 @@ of cases retrieved can be set by configuring the ``num_boundary_cases`` paramete
         'boundary_cases': True,
         'num_boundary_cases': 30,
     }
-            
+
 React
 ^^^^^
 
 Calling :meth:`~Trainee.react` on the test case will retrieve the details for that case. The
 details in the sections above may be retrieved all at once as shown below.
 
-   
+
 .. code-block:: python
 
     details = {
@@ -91,9 +91,9 @@ details in the sections above may be retrieved all at once as shown below.
         'boundary_cases': True,
         'num_boundary_cases': 30,
         'influential_cases': True,
-    } 
+    }
 
-    results = t.react(
+    results = trainee.react(
         test_case[context_features],
         context_features=context_features,
         action_features=action_features,
@@ -139,7 +139,7 @@ Combined Code
     context_features = features.get_names(without=action_features)
 
     # Create a new Trainee, specify features
-    trainee = Trainee(features=features)
+     trainee = Trainee(features=features)
 
     # Train and analyze
     trainee.train(df)
@@ -151,7 +151,7 @@ Combined Code
         'boundary_cases': True,
         'num_boundary_cases': 30,
         'influential_cases': True,
-    } 
+    }
 
     results = trainee.react(
         test_case[context_features],
@@ -171,6 +171,5 @@ API References
 - :meth:`Trainee.train`
 - :meth:`Trainee.analyze`
 - :meth:`Trainee.react`
-- :meth:`Trainee.react_into_trainee`
-- :meth:`Trainee.get_prediction_stats`
+- :meth:`Trainee.react_aggregate`
 - :meth:`Trainee.predict`

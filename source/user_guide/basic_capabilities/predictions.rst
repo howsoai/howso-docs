@@ -11,7 +11,7 @@ Predictions
 
 Objectives: what you will take away
 -----------------------------------
-- **Definitions & an understanding** of basic regression, classification, continuous vs categorical/nominal Action Features, :class:`Trainee`, :meth:`~Trainee.react`,  :meth:`~Trainee.react_into_trainee`, and :meth:`~Trainee.get_prediction_stats`.
+- **Definitions & an understanding** of basic regression, classification, continuous vs categorical/nominal Action Features, :class:`Trainee`, :meth:`~Trainee.react`,  :meth:`~Trainee.react_aggregate`.
 - **How-To** perform a basic regression or classification analysis using the Howso Engine to predict the Highway MPG or Fuel Type based on vehicle Context Features.
 
 Prerequisites: before you begin
@@ -45,11 +45,11 @@ performance of our trainee by defining the specific set of :ref:`context_feature
 that we know we want to use to predict an :ref:`action_features`. The action
 feature in this example will be **Highway MPG**.
 
-**Evaluating the Trainee** - To understand the accuracy of the trainee for our tasks, we can use the built-in :meth:`Trainee.react_into_trainee`.
-Since we are not using a train-test split approach in this example, we will use the :meth:`~Trainee.react_into_trainee` method, which
+**Evaluating the Trainee** - To understand the accuracy of the trainee for our tasks, we can use the built-in :meth:`Trainee.react_aggregate`.
+Since we are not using a train-test split approach in this example, we will use the :meth:`~Trainee.react_aggregate` method, which
 performs a :meth:`~Trainee.react` on each of the cases that is trained into the model using a leave-one-out approach.
 
-That method allows us to use :meth:`~Trainee.get_prediction_stats` to evaluate regression accuracy statistics such as:
+That method allows us to use prediction stats to evaluate regression accuracy statistics such as:
 
 - **R-Squared** - :math:`R^2` is a value that represents how well the predictions fit the data, the closer to 1.0 the better the fit
 - **Mean Absolute Error (MAE)** average absolute error between actual and predicted values over the whole dataset, and relative to the scale of what is being measured
@@ -129,10 +129,10 @@ Next we will create a :class:`Trainee` and :meth:`~Trainee.train` based on data 
 .. code-block:: python
 
    # Create a new Trainee, specify features
-   t = Trainee(features=features)
+   trainee = Trainee(features=features)
 
    # Train trainee
-   t.train(df)
+   trainee.train(df)
 
 Step 5 - Analyze Trainee, Set Context & Action Features
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -145,19 +145,22 @@ We know a specific task we want our :class:`Trainee` to :meth:`~Trainee.react` t
    # action_features = ['FuelType']
    context_features = features.get_names(without=action_features)
 
-   t.analyze(context_features=context_features, action_features=action_features)
+   trainee.analyze(context_features=context_features, action_features=action_features)
 
 Step 6 - Generate Accuracy Metrics
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Review the accuracy of the :class:`Trainee` by using the built-in :meth:`~Trainee.react_into_trainee` method, which performs a :meth:`~Trainee.react` on each of the cases that is trained into the model.  Then we can evaluate accuracy using :meth:`~Trainee.get_prediction_stats` which will give us R-Squared (:math:`R^2`), Mean Absolute Error (MAE) and Root Mean Square Error (RMSE) since this is a regression task.
+Review the accuracy of the :class:`Trainee` by using the built-in :meth:`~Trainee.react_aggregate` method, which performs a :meth:`~Trainee.react` on each of the cases that is trained into the model.  Then we can evaluate accuracy with the returned R-Squared (:math:`R^2`), Mean Absolute Error (MAE) and Root Mean Square Error (RMSE) metrics since this is a regression task.
 
 .. code-block:: python
 
    # Recommended metrics
-   t.react_into_trainee(action_feature=action_features[0], residuals=True)
-   stats = t.get_prediction_stats(stats=['rmse', 'spearman_coeff', 'r2', 'mae'])
-   # Code for `FuelType` metrics
-   # stats = t.get_prediction_stats(stats=['accuracy', 'precision', 'recall', 'mae'])
+   stats = trainee.react_aggregate(
+      action_feature=action_features[0],
+      details={
+         'prediction_stats': True,
+         'selected_prediction_stats': ['rmse', 'spearman_coeff', 'r2', 'mae']
+      }
+   )
    stats
 
 
@@ -194,7 +197,7 @@ The :class:`Trainee` can :meth:`~Trainee.react` to this new case, and makes a pr
 
    test_case = pd.DataFrame(data)
 
-   result = t.react(
+   result = trainee.react(
        test_case,
        action_features=action_features,
        context_features=context_features
@@ -243,17 +246,28 @@ Combined Code
    features['LuggageVolume']['type'] = 'continuous'
 
    # Create a new Trainee, specify features
-   t = Trainee(features=features)
+   trainee = Trainee(features=features)
 
    # Train trainee
-   t.train(df)
+   trainee.train(df)
 
    action_features = ['HighwayMPG']
    # Code for `FuelType` prediction
    # action_features = ['FuelType']
    context_features = features.get_names(without=action_features)
 
-   t.analyze(context_features=context_features, action_features=action_features)
+   trainee.analyze(context_features=context_features, action_features=action_features)
+
+   # Recommended metrics
+   stats = trainee.react_aggregate(
+      action_feature=action_features[0],
+      details={
+         'prediction_stats': True,
+         'selected_prediction_stats': ['rmse', 'spearman_coeff', 'r2', 'mae']
+      }
+   )
+
+   stats
 
    data = {
        'Year': [2022],
@@ -267,7 +281,7 @@ Combined Code
 
    test_case = pd.DataFrame(data)
 
-   result = t.react(
+   result = trainee.react(
        test_case,
        action_features=action_features,
        context_features=context_features
@@ -279,5 +293,5 @@ API References
 - :py:meth:`Trainee.train`
 - :py:meth:`Trainee.analyze`
 - :py:meth:`Trainee.react`
-- :py:meth:`Trainee.get_prediction_stats`
+- :py:meth:`Trainee.react_aggregate`
 - :py:meth:`Trainee.predict`

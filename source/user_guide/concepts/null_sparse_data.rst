@@ -85,9 +85,9 @@ discriminative and generative :meth:`~Trainee.react` s can output missing values
     df,
     features={"Clump_Thickness": {"bounds": {"allow_null": True}}}
   )
-  t = Trainee(features=features)
-  t.train(df)
-  t.react(contexts=contexts, action_features=action_features)
+  trainee = Trainee(features=features)
+  trainee.train(df)
+  trainee.react(contexts=contexts, action_features=action_features)
 
 
 API References
