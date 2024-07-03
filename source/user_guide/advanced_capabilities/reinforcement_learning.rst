@@ -80,7 +80,6 @@ as part of a series.  The parameter ``into_series_store`` allows the user to lab
                 context_features=self.context_features + self.reward_features,
                 action_features=self.action_features,
                 into_series_store=str(round_num),
-                details=details,
             )
     action = react['action']['action'][0]
 

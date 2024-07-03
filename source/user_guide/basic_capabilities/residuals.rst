@@ -46,7 +46,7 @@ Local metrics are retrieved through using :py:meth:`Trainee.react`. Both :ref:`r
 
 
     # Get robust residuals
-    details = {'robust_residuals': True}
+    details = {'feature_residuals_full': True}
 
     results = t.react(
         test_case[context_features],
@@ -55,29 +55,22 @@ Local metrics are retrieved through using :py:meth:`Trainee.react`. Both :ref:`r
         details=details
     )
 
-    residuals = results['details']['robust_residuals']
+    residuals = results['details']['feature_residuals_full']
 
 
 
 Global Residuals
 ^^^^^^^^^^^^^^^^
 
-Howso has the ability to retrieve both :doc:`local vs global <../concepts//global_vs_local>` metrics.  
-Global metrics are retrieved through using :py:meth:`Trainee.react_into_trainee`.  Both :ref:`robust` and non-robust versions are also available.
-For global residuals, they are retrieved by selecting the mean absolute error, ``mae``, stat in :py:meth:`Trainee.get_prediction_stats`.
+Howso has the ability to retrieve both :doc:`local vs global <../concepts//global_vs_local>` metrics.
+Global metrics are retrieved through using :py:meth:`Trainee.react_aggregate`.  Both :ref:`robust` and non-robust versions are also available.
 
 .. code-block:: python
 
-    t.react_into_trainee(
-        context_features=context_features,
+    residuals = t.react_aggregate(
         action_feature=action_features[0],
-        residuals_robust=True
+        details={"feature_residuals_full": True}
     )
-    residuals = t.get_prediction_stats(
-        action_feature=action_features[0],
-        stats=['mae']
-    )
-
 
 Complete Code
 ^^^^^^^^^^^^^
@@ -113,30 +106,23 @@ The code from all of the steps in this guide is combined below:
     trainee.analyze(context_features=context_features, action_features=action_features)
 
     # Get local robust residuals
-    details = {
-        'robust_residuals': True,
-        'feature_residuals': True
-    }
+    details = {'feature_residuals_full': True}
 
-    results = trainee.react(
+    results = t.react(
         test_case[context_features],
         context_features=context_features,
         action_features=action_features,
         details=details
     )
 
-    residuals = results['details']['feature_residuals']
+    residuals = results['details']['feature_residuals_full']
 
     # Get global robust residuals
-    trainee.react_into_trainee(
-        context_features=context_features,
+    residuals = t.react_aggregate(
         action_feature=action_features[0],
-        residuals_robust=True
+        details={"feature_residuals_full": True}
     )
-    residuals = trainee.get_prediction_stats(
-        action_feature=action_features[0],
-        stats=['mae']
-    )
+
 
 API References
 --------------
@@ -145,4 +131,4 @@ API References
 - :py:meth:`Trainee.analyze`
 - :py:meth:`Trainee.react`
 - :py:meth:`Trainee.react_into_features`
-- :py:meth:`Trainee.get_prediction_stats`
+- :py:meth:`Trainee.react_aggregate`

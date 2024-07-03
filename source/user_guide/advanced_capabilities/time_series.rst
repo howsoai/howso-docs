@@ -101,8 +101,10 @@ Task 2 - Make a time series prediction
     t.analyze(context_features=context_features, action_features=action_features)
 
     # Calculate overall error metrics
-    results = t.react_into_trainee(action_feature=action_features[0], residuals=True)
-    results = t.get_prediction_stats()
+    results = t.react_aggregate(
+        action_feature=action_features[0],
+        details={"prediction_stats": True}
+    )
     results['target']
 
 
@@ -136,6 +138,5 @@ API References
 - :py:meth:`Trainee.train`
 - :py:meth:`Trainee.analyze`
 - :py:meth:`Trainee.react_series`
-- :py:meth:`Trainee.react_into_trainee`
-- :py:meth:`Trainee.get_prediction_stats`
+- :py:meth:`Trainee.react_aggregate`
 - :py:meth:`~howso.utilities.infer_feature_attributes`

@@ -29,7 +29,7 @@ Concepts & Terminology
 
 How-To Guide
 ------------
-Case importance is similiar to feature importance in that it comprises of two metrics, case mean decrease in accuracy (mda) and case contribution. 
+Case importance is similiar to feature importance in that it comprises of two metrics, case mean decrease in accuracy (mda) and case contribution.
 As opposed to influential and similar cases which examines the influence of cases on a single case or prediction, case importance examines how important a case is in regards to the overall predictions on a group of cases. Case importance share the same underlying methodology with  :doc:`Feature Importance <feature_importance>`.
 Unlike feature contributions, case contributions are calculated just locally. Conceptually, local metrics use either a specific subset of the cases that are trained into the Trainee or a set of new cases.
 
@@ -41,24 +41,24 @@ The :class:`~Trainee` will be referenced as ``trainee`` in the sections below.
 Case Contributions
 ^^^^^^^^^^^^^^^^^^
 
-Case contributions can be retrieved by setting ``case_contributions`` to ``True``. 
+Case contributions can be retrieved by setting ``case_contributions_robust`` or ``case_contributions_full`` to ``True``.
 
 .. code-block:: python
 
-    details = {'case_contributions': True}
+    details = {'case_contributions_robust': True}
 
 Case MDA
 ^^^^^^^^
-Case MDA can be retrieved by setting ``case_mda`` to ``True``. 
+Case MDA can be retrieved by setting ``case_mda_robust`` or ``case_mda_full`` to ``True``.
 
 .. code-block:: python
 
-    details = {'case_mda': True}
+    details = {'case_mda_robust': True}
 
 
 React
 ^^^^^
-Since case importance is a local metric, cases or case indices must be provided as well as an action feature. 
+Since case importance is a local metric, cases or case indices must be provided as well as an action feature.
 
 
 .. code-block:: python
@@ -67,7 +67,7 @@ Since case importance is a local metric, cases or case indices must be provided 
         test_case[context_features],
         context_features=context_features,
         action_features=action_features,
-    )    
+    )
 
 Results
 ^^^^^^^
@@ -112,16 +112,16 @@ The code from all of the steps in this guide is combined below:
 
     trainee.analyze(context_features=context_features, action_features=action_features)
 
-    details = {'case_contributions': True}
+    details = {'case_contributions_robust': True}
 
     results = trainee.react(
         test_case[context_features],
         context_features=context_features,
         action_features=action_features,
         details=details
-    )    
+    )
 
-    case_contributions = pd.DataFrame(results['details']['case_contributions'][0])
+    case_contributions = pd.DataFrame(results['details']['case_contributions_robust'][0])
 
 API References
 --------------

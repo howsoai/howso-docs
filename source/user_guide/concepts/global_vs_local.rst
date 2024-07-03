@@ -39,15 +39,16 @@ Global metrics
 Global metrics in Howso refers to calculations done using all of the cases available. Sometimes they are sampled for efficiency, however they are still representative of
 the overall Trainee.
 
-Global metrics in Howso are calculated internally using a leave one out approach to the datapoints trained into the trainee that is 
-called by the :meth:`~Trainee.react_in_trainee` method. 
+Global metrics in Howso are calculated internally using a leave one out approach to the datapoints trained into the trainee that is
+called by the :meth:`~Trainee.react_aggregate` method.
 
 .. code-block:: python
 
     # Getting global feature contributions
-    t.react_into_trainee(action_feature=action_features[0], residuals=True)
-    stats = t.get_prediction_stats()
-    feature_contribution = stats["contribution"]
+    feature_contributions_robust = t.react_aggregate(
+        action_feature=action_features[0],
+        details={"feature_contributions_robust": True}
+    )
 
 Local metrics
 ^^^^^^^^^^^^^
@@ -58,16 +59,16 @@ Local metrics are controlled through the ``details`` parameter in :py:meth:`Trai
 
 .. code-block:: python
 
-    details = {"feature_contributions" : True}
+    details = {"feature_contributions_robust" : True}
     # Getting global feature contributions
     results = t.react(
         test_case[context_features],
         context_features=context_features,
         action_features=action_features,
         details=details
-    )    
+    )
 
-    feature_contributions = results['details']['feature_contributions']
+    feature_contributions = results['details']['feature_contributions_robust']
 
 
 API References
@@ -76,5 +77,4 @@ API References
 - :py:meth:`Trainee.train`
 - :py:meth:`Trainee.analyze`
 - :py:meth:`Trainee.react`
-- :py:meth:`Trainee.react_into_trainee`
-- :py:meth:`Trainee.get_prediction_stats`
+- :py:meth:`Trainee.react_aggreagte`

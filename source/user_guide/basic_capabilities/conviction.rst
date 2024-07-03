@@ -83,9 +83,8 @@ specific cases in :py:meth:`Trainee.react`
 .. code-block:: python
 
     details = {
-        'robust_residuals': True,
-        'global_case_feature_residual_convictions': True,
-        'local_case_feature_residual_convictions': True
+        'global_case_feature_residual_convictions_robust': True,
+        'local_case_feature_residual_convictions_robust': True
     }
 
     # React to get the details of each case
@@ -94,13 +93,13 @@ specific cases in :py:meth:`Trainee.react`
         context_features=context_features,
         action_features=action_features,
         details=Details
-    )   
+    )
 
     # Extract the global and local case feature residual convictions
     global_case_feature_residual_convictions = pd.DataFrame(
-        results['details']['global_case_feature_residual_convictions'])[df.columns.tolist()]
+        results['details']['global_case_feature_residual_convictions_robust'])[df.columns.tolist()]
     local_case_feature_residual_convictions = pd.DataFrame(
-        results['details']['local_case_feature_residual_convictions'])[df.columns.tolist()]
+        results['details']['local_case_feature_residual_convictions_robust'])[df.columns.tolist()]
 
 Complete Code
 ^^^^^^^^^^^^^
@@ -128,7 +127,7 @@ The code from all of the steps in this guide is combined below:
     context_features = features.get_names(without=action_features)
 
     trainee = Trainee(features=features)
-    
+
     trainee.train(df)
 
     trainee.analyze(context_features=context_features, action_features=action_features)
@@ -149,9 +148,8 @@ The code from all of the steps in this guide is combined below:
     )
 
     details = {
-        'robust_residuals': True,
-        'global_case_feature_residual_convictions': True,
-        'local_case_feature_residual_convictions': True
+        'global_case_feature_residual_convictions_robust': True,
+        'local_case_feature_residual_convictions_robust': True
     }
 
     results = trainee.react(
@@ -159,10 +157,10 @@ The code from all of the steps in this guide is combined below:
         context_features=context_features,
         action_features=action_features,
         details=details
-    )   
+    )
 
     local_case_feature_residual_convictions = pd.DataFrame(
-        results['details']['local_case_feature_residual_convictions'])
+        results['details']['local_case_feature_residual_convictions_robust'])
 
 
 API References
