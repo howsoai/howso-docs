@@ -508,7 +508,7 @@ computation is used.</p>
 <p>Below are a few code snippets that show how JSON/YAML features can be used in a discriminative react:</p>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-text">Using <code class="docutils literal notranslate"><span class="pre">level</span></code> and <code class="docutils literal notranslate"><span class="pre">class</span></code>, predict <code class="docutils literal notranslate"><span class="pre">inventory</span></code> (a JSON feature).</span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trainee</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
     <span class="n">contexts</span><span class="o">=</span><span class="p">[[</span><span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;Warlock&quot;</span><span class="p">]],</span> <span class="n">context_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;level&quot;</span><span class="p">,</span> <span class="s2">&quot;class&quot;</span><span class="p">],</span>
     <span class="n">action_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;inventory&quot;</span><span class="p">],</span>
 <span class="p">)</span>
@@ -517,7 +517,7 @@ computation is used.</p>
 </div>
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text">Using <code class="docutils literal notranslate"><span class="pre">level</span></code> and <code class="docutils literal notranslate"><span class="pre">class</span></code>, generate <code class="docutils literal notranslate"><span class="pre">inventory</span></code> (a JSON feature).</span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trainee</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
     <span class="n">contexts</span><span class="o">=</span><span class="p">[[</span><span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;Warlock&quot;</span><span class="p">]],</span> <span class="n">context_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;level&quot;</span><span class="p">,</span> <span class="s2">&quot;class&quot;</span><span class="p">],</span>
     <span class="n">action_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;inventory&quot;</span><span class="p">],</span>
     <span class="n">desired_conviction</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
@@ -527,7 +527,7 @@ computation is used.</p>
 </div>
 <div class="literal-block-wrapper docutils container" id="id4">
 <div class="code-block-caption"><span class="caption-text">Using <code class="docutils literal notranslate"><span class="pre">inventory</span></code> (a JSON feature) and <code class="docutils literal notranslate"><span class="pre">level</span></code>, predict <code class="docutils literal notranslate"><span class="pre">class</span></code>.</span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trainee</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
     <span class="n">contexts</span><span class="o">=</span><span class="p">[[</span><span class="s2">&quot;{</span><span class="se">\&quot;</span><span class="s2">sword</span><span class="se">\&quot;</span><span class="s2">: 1, </span><span class="se">\&quot;</span><span class="s2">lute</span><span class="se">\&quot;</span><span class="s2">: 1, </span><span class="se">\&quot;</span><span class="s2">potion</span><span class="se">\&quot;</span><span class="s2">: 2}&quot;</span><span class="p">,</span> <span class="mi">15</span><span class="p">]],</span>
     <span class="n">context_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;inventory&quot;</span><span class="p">,</span> <span class="s2">&quot;level&quot;</span><span class="p">],</span>
     <span class="n">action_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;class&quot;</span><span class="p">],</span>
@@ -548,7 +548,7 @@ differing levels of desired conviction to show more and less surprising examples
 <p>With higher desired conviction, we will see JSON that more closely resembles the training data.</p>
 <div class="literal-block-wrapper docutils container" id="id5">
 <div class="code-block-caption"><span class="caption-text">Using <code class="docutils literal notranslate"><span class="pre">class</span></code> and <code class="docutils literal notranslate"><span class="pre">level</span></code>, predict <code class="docutils literal notranslate"><span class="pre">inventory</span></code> (a JSON feature).</span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">generative_reaction_25</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">generative_reaction_25</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
     <span class="n">contexts</span><span class="o">=</span><span class="p">[[</span><span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;Warlock&quot;</span><span class="p">]],</span> <span class="n">context_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;level&quot;</span><span class="p">,</span> <span class="s2">&quot;class&quot;</span><span class="p">],</span>
     <span class="n">action_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;inventory&quot;</span><span class="p">],</span>
     <span class="n">desired_conviction</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
@@ -577,18 +577,18 @@ differing levels of desired conviction to show more and less surprising examples
 
 <span class="n">features</span> <span class="o">=</span> <span class="n">infer_feature_attributes</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
-<span class="n">t</span> <span class="o">=</span> <span class="n">Trainee</span><span class="p">(</span><span class="n">features</span><span class="o">=</span><span class="n">features</span><span class="p">)</span>
-<span class="n">t</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="n">t</span><span class="o">.</span><span class="n">analyze</span><span class="p">()</span>
+<span class="n">trainee</span> <span class="o">=</span> <span class="n">Trainee</span><span class="p">(</span><span class="n">features</span><span class="o">=</span><span class="n">features</span><span class="p">)</span>
+<span class="n">trainee</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="n">trainee</span><span class="o">.</span><span class="n">analyze</span><span class="p">()</span>
 
-<span class="n">discriminative_action</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
+<span class="n">discriminative_action</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
     <span class="n">contexts</span><span class="o">=</span><span class="p">[[</span><span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;Warlock&quot;</span><span class="p">]],</span> <span class="n">context_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;level&quot;</span><span class="p">,</span> <span class="s2">&quot;class&quot;</span><span class="p">],</span>
     <span class="n">action_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;inventory&quot;</span><span class="p">],</span>
 <span class="p">)[</span><span class="s2">&quot;action&quot;</span><span class="p">]</span>
 
 <span class="n">discriminative_action</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;inventory&quot;</span><span class="p">]</span>
 
-<span class="n">generative_reaction_25</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
+<span class="n">generative_reaction_25</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
     <span class="n">contexts</span><span class="o">=</span><span class="p">[[</span><span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;Warlock&quot;</span><span class="p">]],</span> <span class="n">context_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;level&quot;</span><span class="p">,</span> <span class="s2">&quot;class&quot;</span><span class="p">],</span>
     <span class="n">action_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;inventory&quot;</span><span class="p">],</span>
     <span class="n">desired_conviction</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
@@ -597,7 +597,7 @@ differing levels of desired conviction to show more and less surprising examples
 
 <span class="n">generative_reaction_25</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">&quot;inventory&quot;</span><span class="p">]</span>
 
-<span class="n">t</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+<span class="n">trainee</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>

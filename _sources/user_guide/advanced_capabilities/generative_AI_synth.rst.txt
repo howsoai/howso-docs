@@ -73,7 +73,7 @@ prediction for a test case in a :py:meth:`Trainee.react` call.
 .. code-block:: python
 
     # Perform generative react
-    result =  trainee.react(
+    result = trainee.react(
       contexts=test_case[context_features],
       context_features=context_features,
       action_features=action_feature,
@@ -95,10 +95,10 @@ create.
 .. code-block:: python
 
     # Targetless Analysis
-    t.analyze()
+    trainee.analyze()
 
     # Synthesize
-    synth = t.react(
+    synth = trainee.react(
       action_features=df.columns.tolist(), # What features to generate? In this case, the same features as the original data
       desired_conviction=10, # Set at synthesizer's default desired conviction value
       generate_new_cases='always', # Indicates that we always want to create entirely new cases from the original data
@@ -133,7 +133,7 @@ Complete Code
     action_features = ['target']
     context_features = features.get_names(without=action_features)
 
-    trainee = Trainee(features=features)
+     trainee = Trainee(features=features)
 
     trainee.train(df)
 

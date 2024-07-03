@@ -57,13 +57,13 @@ Saving Trainees to your local file system can be done using the :meth:`Trainee.s
 .. code-block:: python
 
     # Create a Trainee Object.
-    t = Trainee()
+    trainee = Trainee()
 
     # Train Trainee on the data.
-    t.train(df)
+    trainee.train(df)
 
     # Save the Trainee
-    t.save(filepath='example_location/example_trainee.caml')
+    trainee.save(filepath='example_location/example_trainee.caml')
 
 Loading
 ^^^^^^^
@@ -93,7 +93,7 @@ When Trainees are saved, a ``.caml`` file and a ``.txt`` version file is saved. 
 .. code-block:: python
 
     # Deleting
-    t.delete()
+    trainee.delete()
 
 Database Operations
 --------------------
@@ -105,16 +105,16 @@ As explained earlier, database operations is designed to be used with the Howso 
 
     with engine.Trainee(name=trainee_name, features=features) as t:
         # Save the trainee.
-        t.persist()
+        trainee..persist()
 
         # Release the trainee resources.
-        t.release_resources()
+        trainee..release_resources()
 
         # Acquire new trainee resources. (Optional, this will happen automatically if the trainee is unavailable.)
-        t.acquire_resources()
+        trainee..acquire_resources()
 
         # Delete the trainee to cleanup.
-        t.delete()
+        trainee..delete()
 
 These methods can be used locally as well, but you do not have control over the exact naming and location of the saved Trainee. File operations are recommended when loading and saving to disk.
 

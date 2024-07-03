@@ -439,7 +439,7 @@ attributes of the vehicle.</p>
 <section id="objectives-what-you-will-take-away">
 <h2>Objectives: what you will take away<a class="headerlink" href="#objectives-what-you-will-take-away" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Definitions &amp; an understanding</strong> of basic regression, classification, continuous vs categorical/nominal Action Features, <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a>, <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react()</span></code></a>,  <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react_into_trainee()</span></code></a>, and <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.get_prediction_stats" title="howso.engine.Trainee.get_prediction_stats"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_prediction_stats()</span></code></a>.</p></li>
+<li><p><strong>Definitions &amp; an understanding</strong> of basic regression, classification, continuous vs categorical/nominal Action Features, <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a>, <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react()</span></code></a>,  <code class="xref py py-meth docutils literal notranslate"><span class="pre">react_aggregate()</span></code>.</p></li>
 <li><p><strong>How-To</strong> perform a basic regression or classification analysis using the Howso Engine to predict the Highway MPG or Fuel Type based on vehicle Context Features.</p></li>
 </ul>
 </section>
@@ -470,10 +470,10 @@ but because we know exactly what we want to do, we will <a class="reference inte
 performance of our trainee by defining the specific set of <a class="reference internal" href="../../getting_started/terminology.html#context-features"><span class="std std-ref">Context Features</span></a>
 that we know we want to use to predict an <a class="reference internal" href="../../getting_started/terminology.html#action-features"><span class="std std-ref">Action Features</span></a>. The action
 feature in this example will be <strong>Highway MPG</strong>.</p>
-<p><strong>Evaluating the Trainee</strong> - To understand the accuracy of the trainee for our tasks, we can use the built-in <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_into_trainee()</span></code></a>.
-Since we are not using a train-test split approach in this example, we will use the <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react_into_trainee()</span></code></a> method, which
+<p><strong>Evaluating the Trainee</strong> - To understand the accuracy of the trainee for our tasks, we can use the built-in <code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_aggregate()</span></code>.
+Since we are not using a train-test split approach in this example, we will use the <code class="xref py py-meth docutils literal notranslate"><span class="pre">react_aggregate()</span></code> method, which
 performs a <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react()</span></code></a> on each of the cases that is trained into the model using a leave-one-out approach.</p>
-<p>That method allows us to use <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.get_prediction_stats" title="howso.engine.Trainee.get_prediction_stats"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_prediction_stats()</span></code></a> to evaluate regression accuracy statistics such as:</p>
+<p>That method allows us to use prediction stats to evaluate regression accuracy statistics such as:</p>
 <ul class="simple">
 <li><p><strong>R-Squared</strong> - <span class="math notranslate nohighlight">\(R^2\)</span> is a value that represents how well the predictions fit the data, the closer to 1.0 the better the fit</p></li>
 <li><p><strong>Mean Absolute Error (MAE)</strong> average absolute error between actual and predicted values over the whole dataset, and relative to the scale of what is being measured</p></li>
@@ -545,10 +545,10 @@ predict, specifically the feature <cite>type</cite> as shown below, thus it is <
 <h3>Step 4 - Create a Trainee and Train<a class="headerlink" href="#step-4-create-a-trainee-and-train" title="Link to this heading">#</a></h3>
 <p>Next we will create a <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> and <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.train" title="howso.engine.Trainee.train"><code class="xref py py-meth docutils literal notranslate"><span class="pre">train()</span></code></a> based on data we have loaded into the DataFrame from the vehicles.csv.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a new Trainee, specify features</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">Trainee</span><span class="p">(</span><span class="n">features</span><span class="o">=</span><span class="n">features</span><span class="p">)</span>
+<span class="n">trainee</span> <span class="o">=</span> <span class="n">Trainee</span><span class="p">(</span><span class="n">features</span><span class="o">=</span><span class="n">features</span><span class="p">)</span>
 
 <span class="c1"># Train trainee</span>
-<span class="n">t</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">trainee</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -560,18 +560,21 @@ predict, specifically the feature <cite>type</cite> as shown below, thus it is <
 <span class="c1"># action_features = [&#39;FuelType&#39;]</span>
 <span class="n">context_features</span> <span class="o">=</span> <span class="n">features</span><span class="o">.</span><span class="n">get_names</span><span class="p">(</span><span class="n">without</span><span class="o">=</span><span class="n">action_features</span><span class="p">)</span>
 
-<span class="n">t</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">context_features</span><span class="o">=</span><span class="n">context_features</span><span class="p">,</span> <span class="n">action_features</span><span class="o">=</span><span class="n">action_features</span><span class="p">)</span>
+<span class="n">trainee</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">context_features</span><span class="o">=</span><span class="n">context_features</span><span class="p">,</span> <span class="n">action_features</span><span class="o">=</span><span class="n">action_features</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="step-6-generate-accuracy-metrics">
 <h3>Step 6 - Generate Accuracy Metrics<a class="headerlink" href="#step-6-generate-accuracy-metrics" title="Link to this heading">#</a></h3>
-<p>Review the accuracy of the <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> by using the built-in <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react_into_trainee()</span></code></a> method, which performs a <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react()</span></code></a> on each of the cases that is trained into the model.  Then we can evaluate accuracy using <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.get_prediction_stats" title="howso.engine.Trainee.get_prediction_stats"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_prediction_stats()</span></code></a> which will give us R-Squared (<span class="math notranslate nohighlight">\(R^2\)</span>), Mean Absolute Error (MAE) and Root Mean Square Error (RMSE) since this is a regression task.</p>
+<p>Review the accuracy of the <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> by using the built-in <code class="xref py py-meth docutils literal notranslate"><span class="pre">react_aggregate()</span></code> method, which performs a <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react()</span></code></a> on each of the cases that is trained into the model.  Then we can evaluate accuracy with the returned R-Squared (<span class="math notranslate nohighlight">\(R^2\)</span>), Mean Absolute Error (MAE) and Root Mean Square Error (RMSE) metrics since this is a regression task.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Recommended metrics</span>
-<span class="n">t</span><span class="o">.</span><span class="n">react_into_trainee</span><span class="p">(</span><span class="n">action_feature</span><span class="o">=</span><span class="n">action_features</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">residuals</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">stats</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">get_prediction_stats</span><span class="p">(</span><span class="n">stats</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;rmse&#39;</span><span class="p">,</span> <span class="s1">&#39;spearman_coeff&#39;</span><span class="p">,</span> <span class="s1">&#39;r2&#39;</span><span class="p">,</span> <span class="s1">&#39;mae&#39;</span><span class="p">])</span>
-<span class="c1"># Code for `FuelType` metrics</span>
-<span class="c1"># stats = t.get_prediction_stats(stats=[&#39;accuracy&#39;, &#39;precision&#39;, &#39;recall&#39;, &#39;mae&#39;])</span>
+<span class="n">stats</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react_aggregate</span><span class="p">(</span>
+   <span class="n">action_feature</span><span class="o">=</span><span class="n">action_features</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+   <span class="n">details</span><span class="o">=</span><span class="p">{</span>
+      <span class="s1">&#39;prediction_stats&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+      <span class="s1">&#39;selected_prediction_stats&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;rmse&#39;</span><span class="p">,</span> <span class="s1">&#39;spearman_coeff&#39;</span><span class="p">,</span> <span class="s1">&#39;r2&#39;</span><span class="p">,</span> <span class="s1">&#39;mae&#39;</span><span class="p">]</span>
+   <span class="p">}</span>
+<span class="p">)</span>
 <span class="n">stats</span>
 </pre></div>
 </div>
@@ -603,7 +606,7 @@ predict, specifically the feature <cite>type</cite> as shown below, thus it is <
 
 <span class="n">test_case</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
     <span class="n">test_case</span><span class="p">,</span>
     <span class="n">action_features</span><span class="o">=</span><span class="n">action_features</span><span class="p">,</span>
     <span class="n">context_features</span><span class="o">=</span><span class="n">context_features</span>
@@ -652,17 +655,28 @@ predict, specifically the feature <cite>type</cite> as shown below, thus it is <
 <span class="n">features</span><span class="p">[</span><span class="s1">&#39;LuggageVolume&#39;</span><span class="p">][</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;continuous&#39;</span>
 
 <span class="c1"># Create a new Trainee, specify features</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">Trainee</span><span class="p">(</span><span class="n">features</span><span class="o">=</span><span class="n">features</span><span class="p">)</span>
+<span class="n">trainee</span> <span class="o">=</span> <span class="n">Trainee</span><span class="p">(</span><span class="n">features</span><span class="o">=</span><span class="n">features</span><span class="p">)</span>
 
 <span class="c1"># Train trainee</span>
-<span class="n">t</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">trainee</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 
 <span class="n">action_features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;HighwayMPG&#39;</span><span class="p">]</span>
 <span class="c1"># Code for `FuelType` prediction</span>
 <span class="c1"># action_features = [&#39;FuelType&#39;]</span>
 <span class="n">context_features</span> <span class="o">=</span> <span class="n">features</span><span class="o">.</span><span class="n">get_names</span><span class="p">(</span><span class="n">without</span><span class="o">=</span><span class="n">action_features</span><span class="p">)</span>
 
-<span class="n">t</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">context_features</span><span class="o">=</span><span class="n">context_features</span><span class="p">,</span> <span class="n">action_features</span><span class="o">=</span><span class="n">action_features</span><span class="p">)</span>
+<span class="n">trainee</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">context_features</span><span class="o">=</span><span class="n">context_features</span><span class="p">,</span> <span class="n">action_features</span><span class="o">=</span><span class="n">action_features</span><span class="p">)</span>
+
+<span class="c1"># Recommended metrics</span>
+<span class="n">stats</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react_aggregate</span><span class="p">(</span>
+   <span class="n">action_feature</span><span class="o">=</span><span class="n">action_features</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+   <span class="n">details</span><span class="o">=</span><span class="p">{</span>
+      <span class="s1">&#39;prediction_stats&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+      <span class="s1">&#39;selected_prediction_stats&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;rmse&#39;</span><span class="p">,</span> <span class="s1">&#39;spearman_coeff&#39;</span><span class="p">,</span> <span class="s1">&#39;r2&#39;</span><span class="p">,</span> <span class="s1">&#39;mae&#39;</span><span class="p">]</span>
+   <span class="p">}</span>
+<span class="p">)</span>
+
+<span class="n">stats</span>
 
 <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;Year&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2022</span><span class="p">],</span>
@@ -676,7 +690,7 @@ predict, specifically the feature <cite>type</cite> as shown below, thus it is <
 
 <span class="n">test_case</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
     <span class="n">test_case</span><span class="p">,</span>
     <span class="n">action_features</span><span class="o">=</span><span class="n">action_features</span><span class="p">,</span>
     <span class="n">context_features</span><span class="o">=</span><span class="n">context_features</span>
@@ -692,7 +706,7 @@ predict, specifically the feature <cite>type</cite> as shown below, thus it is <
 <li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.train" title="howso.engine.Trainee.train"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.train()</span></code></a></p></li>
 <li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.analyze" title="howso.engine.Trainee.analyze"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.analyze()</span></code></a></p></li>
 <li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a></p></li>
-<li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.get_prediction_stats" title="howso.engine.Trainee.get_prediction_stats"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.get_prediction_stats()</span></code></a></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_aggregate()</span></code></p></li>
 <li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.predict" title="howso.engine.Trainee.predict"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.predict()</span></code></a></p></li>
 </ul>
 </section>

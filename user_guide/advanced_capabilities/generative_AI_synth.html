@@ -494,7 +494,7 @@ very similar to making a discriminative prediction, except the
 <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a>, you can obtain the generative
 prediction for a test case in a <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a> call.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Perform generative react</span>
-<span class="n">result</span> <span class="o">=</span>  <span class="n">trainee</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
   <span class="n">contexts</span><span class="o">=</span><span class="n">test_case</span><span class="p">[</span><span class="n">context_features</span><span class="p">],</span>
   <span class="n">context_features</span><span class="o">=</span><span class="n">context_features</span><span class="p">,</span>
   <span class="n">action_features</span><span class="o">=</span><span class="n">action_feature</span><span class="p">,</span>
@@ -514,10 +514,10 @@ indicates whether a completely new case is or is not generated, and
 <code class="docutils literal notranslate"><span class="pre">num_cases_to_generate</span></code>, which indicates the number of synthetic cases you will
 create.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Targetless Analysis</span>
-<span class="n">t</span><span class="o">.</span><span class="n">analyze</span><span class="p">()</span>
+<span class="n">trainee</span><span class="o">.</span><span class="n">analyze</span><span class="p">()</span>
 
 <span class="c1"># Synthesize</span>
-<span class="n">synth</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
+<span class="n">synth</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
   <span class="n">action_features</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span> <span class="c1"># What features to generate? In this case, the same features as the original data</span>
   <span class="n">desired_conviction</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="c1"># Set at synthesizer&#39;s default desired conviction value</span>
   <span class="n">generate_new_cases</span><span class="o">=</span><span class="s1">&#39;always&#39;</span><span class="p">,</span> <span class="c1"># Indicates that we always want to create entirely new cases from the original data</span>
@@ -551,7 +551,7 @@ create.</p>
 <span class="n">action_features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">]</span>
 <span class="n">context_features</span> <span class="o">=</span> <span class="n">features</span><span class="o">.</span><span class="n">get_names</span><span class="p">(</span><span class="n">without</span><span class="o">=</span><span class="n">action_features</span><span class="p">)</span>
 
-<span class="n">trainee</span> <span class="o">=</span> <span class="n">Trainee</span><span class="p">(</span><span class="n">features</span><span class="o">=</span><span class="n">features</span><span class="p">)</span>
+ <span class="n">trainee</span> <span class="o">=</span> <span class="n">Trainee</span><span class="p">(</span><span class="n">features</span><span class="o">=</span><span class="n">features</span><span class="p">)</span>
 
 <span class="n">trainee</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 

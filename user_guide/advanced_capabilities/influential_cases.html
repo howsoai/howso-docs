@@ -507,7 +507,7 @@ details in the sections above may be retrieved all at once as shown below.</p>
     <span class="s1">&#39;influential_cases&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
 <span class="p">}</span>
 
-<span class="n">results</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
     <span class="n">test_case</span><span class="p">[</span><span class="n">context_features</span><span class="p">],</span>
     <span class="n">context_features</span><span class="o">=</span><span class="n">context_features</span><span class="p">,</span>
     <span class="n">action_features</span><span class="o">=</span><span class="n">action_features</span><span class="p">,</span>
@@ -550,7 +550,7 @@ details in the sections above may be retrieved all at once as shown below.</p>
 <span class="n">context_features</span> <span class="o">=</span> <span class="n">features</span><span class="o">.</span><span class="n">get_names</span><span class="p">(</span><span class="n">without</span><span class="o">=</span><span class="n">action_features</span><span class="p">)</span>
 
 <span class="c1"># Create a new Trainee, specify features</span>
-<span class="n">trainee</span> <span class="o">=</span> <span class="n">Trainee</span><span class="p">(</span><span class="n">features</span><span class="o">=</span><span class="n">features</span><span class="p">)</span>
+ <span class="n">trainee</span> <span class="o">=</span> <span class="n">Trainee</span><span class="p">(</span><span class="n">features</span><span class="o">=</span><span class="n">features</span><span class="p">)</span>
 
 <span class="c1"># Train and analyze</span>
 <span class="n">trainee</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
@@ -584,8 +584,7 @@ details in the sections above may be retrieved all at once as shown below.</p>
 <li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.train" title="howso.engine.Trainee.train"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.train()</span></code></a></p></li>
 <li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.analyze" title="howso.engine.Trainee.analyze"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.analyze()</span></code></a></p></li>
 <li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a></p></li>
-<li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_into_trainee()</span></code></a></p></li>
-<li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.get_prediction_stats" title="howso.engine.Trainee.get_prediction_stats"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.get_prediction_stats()</span></code></a></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_aggregate()</span></code></p></li>
 <li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.predict" title="howso.engine.Trainee.predict"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.predict()</span></code></a></p></li>
 </ul>
 </section>

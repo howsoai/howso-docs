@@ -503,8 +503,8 @@ training.</p>
     <span class="s2">&quot;derived_feature_code&quot;</span><span class="p">:</span> <span class="s2">&quot;(* #hours-per-week 0 52)&quot;</span>
 <span class="p">}</span>
 <span class="n">features</span><span class="p">[</span><span class="s2">&quot;hours-per-year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">hpy_features</span>
-<span class="n">t</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="n">features</span><span class="p">)</span>
-<span class="n">t</span><span class="o">.</span><span class="n">analyze</span><span class="p">()</span>
+<span class="n">trainee</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="n">features</span><span class="p">)</span>
+<span class="n">trainee</span><span class="o">.</span><span class="n">analyze</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>That’s quite a lot of code, so let’s break it down.  After inferring feature attributes, we set up the feature attributes for our derived feature.</p>
@@ -531,7 +531,7 @@ value of hours-per-week (<code class="docutils literal notranslate"><span class=
     <span class="s2">&quot;auto_derive_on_train&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
     <span class="s2">&quot;derived_feature_code&quot;</span><span class="p">:</span> <span class="s2">&quot;(* #hours-per-week 0 52)&quot;</span>
 <span class="p">}</span>
-<span class="n">t</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="s2">&quot;hours-per-year&quot;</span><span class="p">,</span> <span class="n">feature_attributes</span><span class="o">=</span><span class="n">hpy_features</span><span class="p">)</span>
+<span class="n">trainee</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="s2">&quot;hours-per-year&quot;</span><span class="p">,</span> <span class="n">feature_attributes</span><span class="o">=</span><span class="n">hpy_features</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -540,8 +540,8 @@ value of hours-per-week (<code class="docutils literal notranslate"><span class=
 <p>Once a model has one or more derived features, they can be used in reacts:</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">Using a derived feature as an action feature</span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">reaction</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
-    <span class="n">contexts</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">features</span><span class="o">.</span><span class="n">get_names</span><span class="p">(</span><span class="n">without</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;hours-per-week&quot;</span><span class="p">,</span> <span class="s2">&quot;hours-per-year&quot;</span><span class="p">])],</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">reaction</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
+    <span class="n">contexts</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">trainee</span><span class="o">..</span><span class="n">features</span><span class="o">.</span><span class="n">get_names</span><span class="p">(</span><span class="n">without</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;hours-per-week&quot;</span><span class="p">,</span> <span class="s2">&quot;hours-per-year&quot;</span><span class="p">])],</span>
     <span class="n">action_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;hours-per-week&quot;</span><span class="p">,</span> <span class="s2">&quot;hours-per-year&quot;</span><span class="p">],</span>
     <span class="n">derived_action_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;hours-per-year&quot;</span><span class="p">],</span>
 <span class="p">)</span>
@@ -551,8 +551,8 @@ value of hours-per-week (<code class="docutils literal notranslate"><span class=
 </div>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-text">Using a derived feature as a context feature</span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">reaction</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
-    <span class="n">contexts</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">t</span><span class="o">.</span><span class="n">features</span><span class="o">.</span><span class="n">get_names</span><span class="p">(</span><span class="n">without</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">])],</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">reaction</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
+    <span class="n">contexts</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="n">trainee</span><span class="o">..</span><span class="n">features</span><span class="o">.</span><span class="n">get_names</span><span class="p">(</span><span class="n">without</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">])],</span>
     <span class="n">derived_context_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;hours-per-year&quot;</span><span class="p">],</span>
     <span class="n">action_features</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;target&quot;</span><span class="p">]</span>
 <span class="p">)</span>

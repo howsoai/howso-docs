@@ -84,8 +84,8 @@ To add a derived feature to a :class:`~Trainee` before training, simply modify t
        "derived_feature_code": "(* #hours-per-week 0 52)"
    }
    features["hours-per-year"] = hpy_features
-   t.train(df, features=features)
-   t.analyze()
+   trainee.train(df, features=features)
+   trainee.analyze()
 
 
 That's quite a lot of code, so let's break it down.  After inferring feature attributes, we set up the feature attributes for our derived feature.
@@ -119,7 +119,7 @@ The process of adding a derived feature to a :class:`~Trainee` that has already 
        "auto_derive_on_train": True,
        "derived_feature_code": "(* #hours-per-week 0 52)"
    }
-   t.add_feature("hours-per-year", feature_attributes=hpy_features)
+   trainee.add_feature("hours-per-year", feature_attributes=hpy_features)
 
 
 Using Derived Features in Reacts
@@ -129,8 +129,8 @@ Once a model has one or more derived features, they can be used in reacts:
 .. code-block:: python
     :caption: Using a derived feature as an action feature
 
-    reaction = t.react(
-        contexts=df[t.features.get_names(without=["hours-per-week", "hours-per-year"])],
+    reaction = trainee.react(
+        contexts=df[trainee..features.get_names(without=["hours-per-week", "hours-per-year"])],
         action_features=["hours-per-week", "hours-per-year"],
         derived_action_features=["hours-per-year"],
     )
@@ -140,8 +140,8 @@ Once a model has one or more derived features, they can be used in reacts:
 .. code-block:: python
     :caption: Using a derived feature as a context feature
 
-    reaction = t.react(
-        contexts=df[t.features.get_names(without=["target"])],
+    reaction = trainee.react(
+        contexts=df[trainee..features.get_names(without=["target"])],
         derived_context_features=["hours-per-year"],
         action_features=["target"]
     )

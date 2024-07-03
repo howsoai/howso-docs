@@ -530,21 +530,21 @@ document.write(`
 <section id="step-4-create-the-trainee">
 <h3>Step 4 - Create the Trainee<a class="headerlink" href="#step-4-create-the-trainee" title="Link to this heading">#</a></h3>
 <p>To begin the Howso Engine workflow, a Trainee is created to act as a base for all of our ML needs. In all subsequent documentation, we will refer to Howso Engine’s model as Trainee.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">Trainee</span><span class="p">(</span><span class="n">features</span><span class="o">=</span><span class="n">features</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trainee</span> <span class="o">=</span> <span class="n">Trainee</span><span class="p">(</span><span class="n">features</span><span class="o">=</span><span class="n">features</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="step-5-train">
 <h3>Step 5 - Train<a class="headerlink" href="#step-5-train" title="Link to this heading">#</a></h3>
 <p>Exposing a Trainee to a Case which may cause the ML algorithm to update the Trainee. This is a single training step; training may happen at each decision, at a certain sampling rate of observations per second, or at certain events.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trainee</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="step-6-analyze">
 <h3>Step 6 - Analyze<a class="headerlink" href="#step-6-analyze" title="Link to this heading">#</a></h3>
 <p>Tune internal parameters to improve performance and accuracy of predictions and metrics. Analysis may be targeted or targetless. Targetless analysis provides the best balanced set of hyperparameters if an Action Feature is not specified, along with a performance boost while targeted analysis provides a boost to accuracy.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">context_features</span><span class="o">=</span><span class="n">context_features</span><span class="p">,</span> <span class="n">action_features</span><span class="o">=</span><span class="n">action_features</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trainee</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">context_features</span><span class="o">=</span><span class="n">context_features</span><span class="p">,</span> <span class="n">action_features</span><span class="o">=</span><span class="n">action_features</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -552,7 +552,7 @@ document.write(`
 <h3>Step 7 - React<a class="headerlink" href="#step-7-react" title="Link to this heading">#</a></h3>
 <p>React is querying the Trainee for some response, potentially for a given set of context feature values, whether to determine action features, or to determine other details. This is the primary verb that can encompass supervised learning, unsupervised learning, generative outputs, and to determine various interpretations, explanations, and support data for any reaction. In the context of this example, React is used to get an action feature back based on the new Case’s context features. In a traditional ML workflow this is often called predicting or labeling.</p>
 <p>Once Howso Engine is trained and analyzed, it provides the user with a variety of ML capabilities. At this stage in the Howso Engine workflow, a typical use case would be to evaluate the accuracy of the Trainee, which is performed by the <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react()</span></code></a> method. This is equivalent to <code class="docutils literal notranslate"><span class="pre">predict</span></code> in many traditional Machine Learning workflows, although the <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react()</span></code></a> method is not solely used for supervised predictions.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
     <span class="n">test_case</span><span class="p">[</span><span class="n">context_features</span><span class="p">],</span>
     <span class="n">context_features</span><span class="o">=</span><span class="n">context_features</span><span class="p">,</span>
     <span class="n">action_features</span><span class="o">=</span><span class="n">action_features</span><span class="p">,</span>

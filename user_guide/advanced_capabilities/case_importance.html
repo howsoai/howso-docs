@@ -458,7 +458,7 @@ document.write(`
 </section>
 <section id="how-to-guide">
 <h2>How-To Guide<a class="headerlink" href="#how-to-guide" title="Link to this heading">#</a></h2>
-<p>Case importance is similiar to feature importance in that it comprises of two metrics, case mean decrease in accuracy (mda) and case contribution.
+<p>Case importance is similar to feature importance in that it comprises of two metrics, case mean decrease in accuracy (MDA) and case contribution.
 As opposed to influential and similar cases which examines the influence of cases on a single case or prediction, case importance examines how important a case is in regards to the overall predictions on a group of cases. Case importance share the same underlying methodology with  <a class="reference internal" href="feature_importance.html"><span class="doc">Feature Importance</span></a>.
 Unlike feature contributions, case contributions are calculated just locally. Conceptually, local metrics use either a specific subset of the cases that are trained into the Trainee or a set of new cases.</p>
 <section id="setup">
@@ -468,22 +468,22 @@ The <a class="reference internal" href="../../api_reference/_autosummary/howso.e
 </section>
 <section id="case-contributions">
 <h3>Case Contributions<a class="headerlink" href="#case-contributions" title="Link to this heading">#</a></h3>
-<p>Case contributions can be retrieved by setting <code class="docutils literal notranslate"><span class="pre">case_contributions</span></code> to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">details</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;case_contributions&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+<p>Case contributions can be retrieved by setting <code class="docutils literal notranslate"><span class="pre">case_contributions_robust</span></code> or <code class="docutils literal notranslate"><span class="pre">case_contributions_full</span></code> to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">details</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;case_contributions_robust&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
 </pre></div>
 </div>
 </section>
 <section id="case-mda">
 <h3>Case MDA<a class="headerlink" href="#case-mda" title="Link to this heading">#</a></h3>
-<p>Case MDA can be retrieved by setting <code class="docutils literal notranslate"><span class="pre">case_mda</span></code> to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">details</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;case_mda&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+<p>Case MDA can be retrieved by setting <code class="docutils literal notranslate"><span class="pre">case_mda_robust</span></code> or <code class="docutils literal notranslate"><span class="pre">case_mda_full</span></code> to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">details</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;case_mda_robust&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
 </pre></div>
 </div>
 </section>
 <section id="react">
 <h3>React<a class="headerlink" href="#react" title="Link to this heading">#</a></h3>
 <p>Since case importance is a local metric, cases or case indices must be provided as well as an action feature.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
     <span class="n">test_case</span><span class="p">[</span><span class="n">context_features</span><span class="p">],</span>
     <span class="n">context_features</span><span class="o">=</span><span class="n">context_features</span><span class="p">,</span>
     <span class="n">action_features</span><span class="o">=</span><span class="n">action_features</span><span class="p">,</span>
@@ -529,7 +529,7 @@ The <a class="reference internal" href="../../api_reference/_autosummary/howso.e
 
 <span class="n">trainee</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">context_features</span><span class="o">=</span><span class="n">context_features</span><span class="p">,</span> <span class="n">action_features</span><span class="o">=</span><span class="n">action_features</span><span class="p">)</span>
 
-<span class="n">details</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;case_contributions&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+<span class="n">details</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;case_contributions_robust&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
 
 <span class="n">results</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
     <span class="n">test_case</span><span class="p">[</span><span class="n">context_features</span><span class="p">],</span>
@@ -538,7 +538,7 @@ The <a class="reference internal" href="../../api_reference/_autosummary/howso.e
     <span class="n">details</span><span class="o">=</span><span class="n">details</span>
 <span class="p">)</span>
 
-<span class="n">case_contributions</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;details&#39;</span><span class="p">][</span><span class="s1">&#39;case_contributions&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">case_contributions</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;details&#39;</span><span class="p">][</span><span class="s1">&#39;case_contributions_robust&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </section>

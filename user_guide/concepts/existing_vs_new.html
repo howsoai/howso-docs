@@ -472,7 +472,7 @@ The <a class="reference internal" href="../../api_reference/_autosummary/howso.e
 <h3>New Cases<a class="headerlink" href="#new-cases" title="Link to this heading">#</a></h3>
 <p>Using <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a> with new cases is straightfoward and simple. This is often the default use case of most workflows.
 When cases are passed into react, <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a>, it acts upon the cases as if they were new cases.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">results</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
     <span class="n">test_case</span><span class="p">[</span><span class="n">context_features</span><span class="p">],</span>
     <span class="n">context_features</span><span class="o">=</span><span class="n">context_features</span><span class="p">,</span>
     <span class="n">action_features</span><span class="o">=</span><span class="n">action_features</span><span class="p">,</span>
@@ -489,10 +489,10 @@ where the first value is the <code class="docutils literal notranslate"><span cl
 Once you have the <code class="docutils literal notranslate"><span class="pre">session_id</span></code>, using <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.get_cases" title="howso.engine.Trainee.get_cases"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.get_cases()</span></code></a> with the <code class="docutils literal notranslate"><span class="pre">session_id</span></code> allows you to see the <code class="docutils literal notranslate"><span class="pre">session_training_index</span></code>,
 where are the indexes of the returning dataframe.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get data from the first session</span>
-<span class="n">session</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">get_sessions</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+<span class="n">session</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">get_sessions</span><span class="p">()[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
 
 <span class="c1"># See the case indices</span>
-<span class="n">t</span><span class="o">.</span><span class="n">get_cases</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="s1">&#39;db3ebfc0-0bb3-4b33-b475-7ca7d21267e2&#39;</span><span class="p">)</span>
+<span class="n">trainee</span><span class="o">.</span><span class="n">get_cases</span><span class="p">(</span><span class="n">session</span><span class="o">=</span><span class="s1">&#39;db3ebfc0-0bb3-4b33-b475-7ca7d21267e2&#39;</span><span class="p">)</span>
 
 <span class="c1"># React to the first case in this session</span>
 <span class="n">case</span> <span class="o">=</span> <span class="p">[(</span><span class="n">session</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>
@@ -502,7 +502,7 @@ where are the indexes of the returning dataframe.</p>
 Generally, <code class="docutils literal notranslate"><span class="pre">leave_case_out</span></code> is set to <code class="docutils literal notranslate"><span class="pre">True</span></code> to indicate that this case must be excluded when reacting. This is typically
 desired behavior because we don’t want the react to be skewed by an identical case.</p>
 <p><code class="docutils literal notranslate"><span class="pre">preserve_feature_values</span></code> is also generally set to the context features to preserve their values.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_result</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_result</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
     <span class="n">case_indices</span><span class="o">=</span><span class="n">case</span><span class="p">,</span>
     <span class="n">preserve_feature_values</span><span class="o">=</span><span class="n">context_features</span><span class="p">,</span>
     <span class="n">leave_case_out</span><span class="o">=</span><span class="kc">True</span>

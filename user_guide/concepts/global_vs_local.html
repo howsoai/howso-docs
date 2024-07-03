@@ -468,11 +468,12 @@ The <a class="reference internal" href="../../api_reference/_autosummary/howso.e
 <p>Global metrics in Howso refers to calculations done using all of the cases available. Sometimes they are sampled for efficiency, however they are still representative of
 the overall Trainee.</p>
 <p>Global metrics in Howso are calculated internally using a leave one out approach to the datapoints trained into the trainee that is
-called by the <code class="xref py py-meth docutils literal notranslate"><span class="pre">react_in_trainee()</span></code> method.</p>
+called by the <code class="xref py py-meth docutils literal notranslate"><span class="pre">react_aggregate()</span></code> method.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Getting global feature contributions</span>
-<span class="n">t</span><span class="o">.</span><span class="n">react_into_trainee</span><span class="p">(</span><span class="n">action_feature</span><span class="o">=</span><span class="n">action_features</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">residuals</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">stats</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">get_prediction_stats</span><span class="p">()</span>
-<span class="n">feature_contribution</span> <span class="o">=</span> <span class="n">stats</span><span class="p">[</span><span class="s2">&quot;contribution&quot;</span><span class="p">]</span>
+<span class="n">feature_contributions_robust</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react_react_aggregate</span><span class="p">(</span>
+    <span class="n">action_feature</span><span class="o">=</span><span class="n">action_features</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="n">details</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;feature_contributions_robust&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -481,16 +482,16 @@ called by the <code class="xref py py-meth docutils literal notranslate"><span c
 <p>Local metrics in Howso refers to calculations done using all of the cases available. Local metrics are calcluated using the local space of the provided case(s). These cases may either be new cases or existing cases.
 The local space refers to the set of closest cases to the provided case(s). While the exact number of cases that consists of the local space varies depending on several factors, generally it includes at least 30 cases if there is enough cases.</p>
 <p>Local metrics are controlled through the <code class="docutils literal notranslate"><span class="pre">details</span></code> parameter in <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">details</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;feature_contributions&quot;</span> <span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">details</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;feature_contributions_robust&#39;</span> <span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
 <span class="c1"># Getting global feature contributions</span>
-<span class="n">results</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
     <span class="n">test_case</span><span class="p">[</span><span class="n">context_features</span><span class="p">],</span>
     <span class="n">context_features</span><span class="o">=</span><span class="n">context_features</span><span class="p">,</span>
     <span class="n">action_features</span><span class="o">=</span><span class="n">action_features</span><span class="p">,</span>
     <span class="n">details</span><span class="o">=</span><span class="n">details</span>
 <span class="p">)</span>
 
-<span class="n">feature_contributions</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;details&#39;</span><span class="p">][</span><span class="s1">&#39;feature_contributions&#39;</span><span class="p">]</span>
+<span class="n">feature_contributions</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;details&#39;</span><span class="p">][</span><span class="s1">&#39;feature_contributions_robust&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </section>
@@ -502,8 +503,7 @@ The local space refers to the set of closest cases to the provided case(s). Whil
 <li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.train" title="howso.engine.Trainee.train"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.train()</span></code></a></p></li>
 <li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.analyze" title="howso.engine.Trainee.analyze"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.analyze()</span></code></a></p></li>
 <li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a></p></li>
-<li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_into_trainee()</span></code></a></p></li>
-<li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.get_prediction_stats" title="howso.engine.Trainee.get_prediction_stats"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.get_prediction_stats()</span></code></a></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_aggregate()</span></code></p></li>
 </ul>
 </section>
 </section>

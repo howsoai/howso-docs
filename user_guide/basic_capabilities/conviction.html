@@ -501,9 +501,8 @@ through <a class="reference internal" href="../../api_reference/_autosummary/how
 <p>Since <a class="reference internal" href="../../getting_started/terminology.html#prediction-residual-conviction"><span class="std std-ref">Prediction Residual Conviction</span></a> details the conviction around a prediction, this is retrieved by specifying
 specific cases in <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">details</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;robust_residuals&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-    <span class="s1">&#39;global_case_feature_residual_convictions&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-    <span class="s1">&#39;local_case_feature_residual_convictions&#39;</span><span class="p">:</span> <span class="kc">True</span>
+    <span class="s1">&#39;global_case_feature_residual_convictions_robust&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;local_case_feature_residual_convictions_robust&#39;</span><span class="p">:</span> <span class="kc">True</span>
 <span class="p">}</span>
 
 <span class="c1"># React to get the details of each case</span>
@@ -516,9 +515,9 @@ specific cases in <a class="reference internal" href="../../api_reference/_autos
 
 <span class="c1"># Extract the global and local case feature residual convictions</span>
 <span class="n">global_case_feature_residual_convictions</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
-    <span class="n">results</span><span class="p">[</span><span class="s1">&#39;details&#39;</span><span class="p">][</span><span class="s1">&#39;global_case_feature_residual_convictions&#39;</span><span class="p">])[</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()]</span>
+    <span class="n">results</span><span class="p">[</span><span class="s1">&#39;details&#39;</span><span class="p">][</span><span class="s1">&#39;global_case_feature_residual_convictions_robust&#39;</span><span class="p">])[</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()]</span>
 <span class="n">local_case_feature_residual_convictions</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
-    <span class="n">results</span><span class="p">[</span><span class="s1">&#39;details&#39;</span><span class="p">][</span><span class="s1">&#39;local_case_feature_residual_convictions&#39;</span><span class="p">])[</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()]</span>
+    <span class="n">results</span><span class="p">[</span><span class="s1">&#39;details&#39;</span><span class="p">][</span><span class="s1">&#39;local_case_feature_residual_convictions_robust&#39;</span><span class="p">])[</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()]</span>
 </pre></div>
 </div>
 </section>
@@ -544,7 +543,7 @@ specific cases in <a class="reference internal" href="../../api_reference/_autos
 <span class="n">action_features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">]</span>
 <span class="n">context_features</span> <span class="o">=</span> <span class="n">features</span><span class="o">.</span><span class="n">get_names</span><span class="p">(</span><span class="n">without</span><span class="o">=</span><span class="n">action_features</span><span class="p">)</span>
 
-<span class="n">trainee</span> <span class="o">=</span> <span class="n">Trainee</span><span class="p">(</span><span class="n">features</span><span class="o">=</span><span class="n">features</span><span class="p">)</span>
+ <span class="n">trainee</span> <span class="o">=</span> <span class="n">Trainee</span><span class="p">(</span><span class="n">features</span><span class="o">=</span><span class="n">features</span><span class="p">)</span>
 
 <span class="n">trainee</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 
@@ -566,9 +565,8 @@ specific cases in <a class="reference internal" href="../../api_reference/_autos
 <span class="p">)</span>
 
 <span class="n">details</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;robust_residuals&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-    <span class="s1">&#39;global_case_feature_residual_convictions&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-    <span class="s1">&#39;local_case_feature_residual_convictions&#39;</span><span class="p">:</span> <span class="kc">True</span>
+    <span class="s1">&#39;global_case_feature_residual_convictions_robust&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;local_case_feature_residual_convictions_robust&#39;</span><span class="p">:</span> <span class="kc">True</span>
 <span class="p">}</span>
 
 <span class="n">results</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
@@ -579,7 +577,7 @@ specific cases in <a class="reference internal" href="../../api_reference/_autos
 <span class="p">)</span>
 
 <span class="n">local_case_feature_residual_convictions</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
-    <span class="n">results</span><span class="p">[</span><span class="s1">&#39;details&#39;</span><span class="p">][</span><span class="s1">&#39;local_case_feature_residual_convictions&#39;</span><span class="p">])</span>
+    <span class="n">results</span><span class="p">[</span><span class="s1">&#39;details&#39;</span><span class="p">][</span><span class="s1">&#39;local_case_feature_residual_convictions_robust&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </section>

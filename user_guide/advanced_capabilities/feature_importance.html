@@ -436,7 +436,7 @@ provides information about which features are useful for predicting a target or 
 <section id="objectives-what-you-will-take-away">
 <h2>Objectives: what you will take away<a class="headerlink" href="#objectives-what-you-will-take-away" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>How-To</strong> Retrieve the different types of feature importance metrics across several different categories: <a class="reference internal" href="../concepts/global_vs_local.html"><span class="doc">global vs local</span></a>, and robust vs non-robust <a class="reference internal" href="../../getting_started/terminology.html#contribution"><span class="std std-ref">Feature Contributions</span></a> and <a class="reference internal" href="../../getting_started/terminology.html#mda"><span class="std std-ref">Feature MDA</span></a>.</p></li>
+<li><p><strong>How-To</strong> Retrieve the different types of feature importance metrics across several different categories: <a class="reference internal" href="../concepts/global_vs_local.html"><span class="doc">global vs local</span></a>, and <span class="xref std std-ref">robust</span> vs non-robust (full) <a class="reference internal" href="../../getting_started/terminology.html#contribution"><span class="std std-ref">Feature Contributions</span></a> and <a class="reference internal" href="../../getting_started/terminology.html#mda"><span class="std std-ref">Feature MDA</span></a>.</p></li>
 </ul>
 </section>
 <section id="prerequisites-before-you-begin">
@@ -464,8 +464,8 @@ recommend being familiar with the following concepts:</p>
 <li><p><a class="reference internal" href="../../getting_started/terminology.html#mda"><span class="std std-ref">MDA</span></a></p></li>
 </ul>
 <p>The two metrics available for feature importance is feature <a class="reference internal" href="../../getting_started/terminology.html#contribution"><span class="std std-ref">Contribution</span></a> and feature <a class="reference internal" href="../../getting_started/terminology.html#mda"><span class="std std-ref">MDA</span></a>.</p>
-<section id="robust-vs-non-robust">
-<h3>Robust vs Non-Robust<a class="headerlink" href="#robust-vs-non-robust" title="Link to this heading">#</a></h3>
+<section id="robust-vs-non-robust-full">
+<h3>Robust vs Non-Robust (Full)<a class="headerlink" href="#robust-vs-non-robust-full" title="Link to this heading">#</a></h3>
 <p><span class="xref std std-ref">robust</span> metrics are recommended as they use a greater variety of feature combinations, and they include a calculation performance boost as the number of features increases.</p>
 </section>
 </section>
@@ -478,33 +478,34 @@ The created <a class="reference internal" href="../../api_reference/_autosummary
 </section>
 <section id="global-feature-importance">
 <h3>Global Feature Importance<a class="headerlink" href="#global-feature-importance" title="Link to this heading">#</a></h3>
-<p>To get global feature importance metrics, <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_into_trainee()</span></code></a>, is first called on a trained and analyzed Trainee. <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_into_trainee()</span></code></a> calls react internally on the cases already trained into the Trainee and calculates the metrics. In this method, the desired metrics can be selected as parameters. These parameters are named individually
-and setting them to <code class="docutils literal notranslate"><span class="pre">True</span></code> will cache the desired metrics. For example, <code class="docutils literal notranslate"><span class="pre">mda_robust</span></code> and <code class="docutils literal notranslate"><span class="pre">contributions_robust</span></code> will calculate the robust versions of MDA and Feature Contributions, while <code class="docutils literal notranslate"><span class="pre">mda</span></code> and <code class="docutils literal notranslate"><span class="pre">contributions</span></code> will calculate the non-robust versions.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">react_into_trainee</span><span class="p">(</span>
+<p>To get global feature importance metrics, <code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_aggregate()</span></code>, is called on a trained and analyzed Trainee. <code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_aggregate()</span></code> calls react internally on the cases already trained into the Trainee and calculates the metrics. In this method, the desired metrics can be selected as parameters. These parameters are named individually
+in the <code class="docutils literal notranslate"><span class="pre">details</span></code> parameter and setting them to <code class="docutils literal notranslate"><span class="pre">True</span></code> will calculate and return the desired metrics. For example, <code class="docutils literal notranslate"><span class="pre">feature_mda_robust</span></code> and <code class="docutils literal notranslate"><span class="pre">feature_contributions_robust</span></code> will calculate the robust versions of MDA and Feature Contributions, while <code class="docutils literal notranslate"><span class="pre">feature_mda_full</span></code> and <code class="docutils literal notranslate"><span class="pre">feature_contributions_full</span></code> will calculate the non-robust (full) versions.
+An action feature must be specified. <code class="docutils literal notranslate"><span class="pre">feature_influences_action_feature</span></code> is recommended for feature influence metrics such as feature contributions and mda, especially when used in conjuction with retrieving prediction stats, however, <code class="docutils literal notranslate"><span class="pre">action_feature</span></code> can be also used as well. <code class="docutils literal notranslate"><span class="pre">action_feature</span></code> sets the action feature for both influence metrics and prediction stats. Since often
+only the influence metrics’s action feature is intended to be set, <code class="docutils literal notranslate"><span class="pre">feature_influences_action_feature</span></code> provides a more precise parameter.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">feature_contributions_robust</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react_aggregate</span><span class="p">(</span>
     <span class="n">context_features</span><span class="o">=</span><span class="n">context_features</span><span class="p">,</span>
-    <span class="n">action_feature</span><span class="o">=</span><span class="n">action_features</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-    <span class="n">contributions_robust</span><span class="o">=</span><span class="kc">True</span>
+    <span class="n">feature_influences_action_feature</span><span class="o">=</span><span class="n">action_features</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="n">details</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;feature_contributions_robust&#39;</span> <span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
 <span class="p">)</span>
-</pre></div>
-</div>
-<p>In order to extract the metrics, <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.get_prediction_stats" title="howso.engine.Trainee.get_prediction_stats"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.get_prediction_stats()</span></code></a> is called. An action feature must be specified, and the <code class="docutils literal notranslate"><span class="pre">stats</span></code> parameter is used determine which metrics to return. The <code class="docutils literal notranslate"><span class="pre">stats</span></code> parameter takes a list, so multiple
-metrics may be specified together, but for this example they are separated. If robust metrics are calculated, then the <code class="docutils literal notranslate"><span class="pre">robust</span></code> parameter must be set to <code class="docutils literal notranslate"><span class="pre">True</span></code> to retrieve these metrics. If non-robust metrics are calculated, then the <code class="docutils literal notranslate"><span class="pre">robust</span></code> parameter can be set to the default value.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">robust_feature_contributions</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">get_prediction_stats</span><span class="p">(</span><span class="n">action_feature</span><span class="o">=</span><span class="n">action_features</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">robust</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stats</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;contribution&#39;</span><span class="p">])</span>
-<span class="n">robust_feature_mda</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">get_prediction_stats</span><span class="p">(</span><span class="n">action_feature</span><span class="o">=</span><span class="n">action_features</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">robust</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stats</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mda&#39;</span><span class="p">])</span>
+
+<span class="n">feature_mda_robust</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react_aggregate</span><span class="p">(</span>
+    <span class="n">context_features</span><span class="o">=</span><span class="n">context_features</span><span class="p">,</span>
+    <span class="n">feature_influences_action_feature</span><span class="o">=</span><span class="n">action_features</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="n">details</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;feature_mda_robust&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="local-feature-importance">
 <h3>Local Feature Importance<a class="headerlink" href="#local-feature-importance" title="Link to this heading">#</a></h3>
-<p>To get local feature importance metrics, <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a>, is first called on a trained and analyzed Trainee. In this method, the desired metrics, <code class="docutils literal notranslate"><span class="pre">feature_contributions</span></code> and <code class="docutils literal notranslate"><span class="pre">feature_mda</span></code>, can be selected as inputs to the <code class="docutils literal notranslate"><span class="pre">details</span></code> parameters as key value pairs from a dictionary. These parameters are named individually
+<p>To get local feature importance metrics, <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a>, is first called on a trained and analyzed Trainee. In this method, the desired metrics, <code class="docutils literal notranslate"><span class="pre">feature_contributions_robust</span></code> and <code class="docutils literal notranslate"><span class="pre">feature_mda_robust</span></code>, can be selected as inputs to the <code class="docutils literal notranslate"><span class="pre">details</span></code> parameters as key value pairs from a dictionary. These parameters are named individually
 and setting them to <code class="docutils literal notranslate"><span class="pre">True</span></code> will calculate the desired metrics. Robust calculations are performed by default.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Default is robust</span>
-<span class="n">details</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;feature_contributions&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
-    <span class="s1">&#39;feature_mda&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">details</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;feature_contributions_robust&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;feature_mda_robust&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">}</span>
 
-<span class="n">results</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
     <span class="n">df</span><span class="p">,</span>
     <span class="n">context_features</span><span class="o">=</span><span class="n">context_features</span><span class="p">,</span>
     <span class="n">action_features</span><span class="o">=</span><span class="n">action_features</span><span class="p">,</span>
@@ -512,10 +513,10 @@ and setting them to <code class="docutils literal notranslate"><span class="pre"
 <span class="p">)</span>
 </pre></div>
 </div>
-<p>In order to retrieve the calculated stats, they can be retrieved from the <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a> output dictionary. They are stored under the <code class="docutils literal notranslate"><span class="pre">explanation</span></code> key under the name of the metric. Whether these metrics are robust or non-robust is determined when the metrics
+<p>In order to retrieve the calculated stats, they can be retrieved from the <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a> output dictionary. They are stored under the <code class="docutils literal notranslate"><span class="pre">explanation</span></code> key under the name of the metric. Whether these metrics are <span class="xref std std-ref">robust</span> or non-robust (full) is determined when the metrics
 are calculated in <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a> from the previous step.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">robust_feature_contributions</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;explanation&#39;</span><span class="p">][</span><span class="s1">&#39;feature_contributions&#39;</span><span class="p">]</span>
-<span class="n">robust_feature_contributions</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;explanation&#39;</span><span class="p">][</span><span class="s1">&#39;feature_mda&#39;</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">feature_contributions_robust</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;explanation&#39;</span><span class="p">][</span><span class="s1">&#39;feature_contributions_robust&#39;</span><span class="p">]</span>
+<span class="n">feature_mda_robust</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;explanation&#39;</span><span class="p">][</span><span class="s1">&#39;feature_mda_robust&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 <div class="admonition warning">
@@ -533,8 +534,8 @@ may reveal additional insights. Please see the linked recipe for more informatio
 <p class="admonition-title">Warning</p>
 <p>Matrices may be computationally expensive.</p>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">contrib_matrix</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">get_contribution_matrix</span><span class="p">()</span>
-<span class="n">mda_matrix</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">get_mda_matrix</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">contrib_matrix</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">get_contribution_matrix</span><span class="p">()</span>
+<span class="n">mda_matrix</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">get_mda_matrix</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>
@@ -563,37 +564,38 @@ may reveal additional insights. Please see the linked recipe for more informatio
 <span class="n">context_features</span> <span class="o">=</span> <span class="n">features</span><span class="o">.</span><span class="n">get_names</span><span class="p">(</span><span class="n">without</span><span class="o">=</span><span class="n">action_features</span><span class="p">)</span>
 
 <span class="c1"># Create a new Trainee, specify features</span>
-<span class="n">trainee</span> <span class="o">=</span> <span class="n">Trainee</span><span class="p">(</span><span class="n">features</span><span class="o">=</span><span class="n">features</span><span class="p">)</span>
+ <span class="n">trainee</span> <span class="o">=</span> <span class="n">Trainee</span><span class="p">(</span><span class="n">features</span><span class="o">=</span><span class="n">features</span><span class="p">)</span>
 
 <span class="c1"># Train and analyze</span>
 <span class="n">trainee</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 <span class="n">trainee</span><span class="o">.</span><span class="n">analyze</span><span class="p">()</span>
 
-<span class="n">trainee</span><span class="o">.</span><span class="n">react_into_trainee</span><span class="p">(</span>
+<span class="n">feature_contributions_robust</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react_aggregate</span><span class="p">(</span>
     <span class="n">context_features</span><span class="o">=</span><span class="n">context_features</span><span class="p">,</span>
-    <span class="n">action_feature</span><span class="o">=</span><span class="n">action_features</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-    <span class="n">contributions_robust</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">mda_robust</span><span class="o">=</span><span class="kc">True</span>
+    <span class="n">feature_influences_action_feature</span><span class="o">=</span><span class="n">action_features</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="n">details</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;feature_contributions_robust&quot;</span> <span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
 <span class="p">)</span>
 
-<span class="n">robust_feature_contributions</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">get_prediction_stats</span><span class="p">(</span><span class="n">action_feature</span><span class="o">=</span><span class="n">action_features</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">robust</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stats</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;contribution&#39;</span><span class="p">])</span>
-<span class="n">robust_feature_mda</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">get_prediction_stats</span><span class="p">(</span><span class="n">action_feature</span><span class="o">=</span><span class="n">action_features</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">robust</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">stats</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;mda&#39;</span><span class="p">])</span>
+<span class="n">feature_mda_robust</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react_aggregate</span><span class="p">(</span>
+    <span class="n">context_features</span><span class="o">=</span><span class="n">context_features</span><span class="p">,</span>
+    <span class="n">feature_influences_action_feature</span><span class="o">=</span><span class="n">action_features</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+    <span class="n">details</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;feature_mda_robust&quot;</span> <span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+<span class="p">)</span>
 
-<span class="c1"># Default is robust</span>
 <span class="n">details</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;feature_contributions&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
-    <span class="s1">&#39;feature_mda&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;feature_contributions_robust&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;feature_mda_robust&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">}</span>
 
 <span class="n">results</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
-    <span class="n">test_case</span><span class="p">[</span><span class="n">context_features</span><span class="p">],</span>
+    <span class="n">df</span><span class="p">,</span>
     <span class="n">context_features</span><span class="o">=</span><span class="n">context_features</span><span class="p">,</span>
     <span class="n">action_features</span><span class="o">=</span><span class="n">action_features</span><span class="p">,</span>
     <span class="n">details</span><span class="o">=</span><span class="n">details</span>
 <span class="p">)</span>
 
-<span class="n">robust_feature_contributions</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;details&#39;</span><span class="p">][</span><span class="s1">&#39;feature_contributions&#39;</span><span class="p">]</span>
-<span class="n">robust_feature_mda</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;details&#39;</span><span class="p">][</span><span class="s1">&#39;feature_mda&#39;</span><span class="p">]</span>
+<span class="n">feature_contributions_robust</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;explanation&#39;</span><span class="p">][</span><span class="s1">&#39;feature_contributions_robust&#39;</span><span class="p">]</span>
+<span class="n">feature_mda_robust</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;explanation&#39;</span><span class="p">][</span><span class="s1">&#39;feature_mda_robust&#39;</span><span class="p">]</span>
 
 <span class="n">contrib_matrix</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">get_contribution_matrix</span><span class="p">()</span>
 <span class="n">mda_matrix</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">get_mda_matrix</span><span class="p">()</span>
@@ -608,8 +610,7 @@ may reveal additional insights. Please see the linked recipe for more informatio
 <li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.train" title="howso.engine.Trainee.train"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.train()</span></code></a></p></li>
 <li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.analyze" title="howso.engine.Trainee.analyze"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.analyze()</span></code></a></p></li>
 <li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a></p></li>
-<li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_into_trainee()</span></code></a></p></li>
-<li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.get_prediction_stats" title="howso.engine.Trainee.get_prediction_stats"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.get_prediction_stats()</span></code></a></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_aggregate()</span></code></p></li>
 <li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.get_contribution_matrix" title="howso.engine.Trainee.get_contribution_matrix"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.get_contribution_matrix()</span></code></a></p></li>
 <li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.get_mda_matrix" title="howso.engine.Trainee.get_mda_matrix"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.get_mda_matrix()</span></code></a></p></li>
 </ul>
@@ -667,7 +668,7 @@ may reveal additional insights. Please see the linked recipe for more informatio
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites-before-you-begin">Prerequisites: before you begin</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-recipe">Notebook Recipe</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts-terminology">Concepts &amp; Terminology</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robust-vs-non-robust">Robust vs Non-Robust</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robust-vs-non-robust-full">Robust vs Non-Robust (Full)</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-guide">How-To Guide</a><ul class="visible nav section-nav flex-column">

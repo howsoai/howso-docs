@@ -479,13 +479,13 @@ saving and loading functions that is intended for different types of operations.
 <li><p><strong>None</strong> If the <code class="docutils literal notranslate"><span class="pre">filename</span></code> parameter is not used, then the Trainee will be saved to the default location using the Trainee ID.</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a Trainee Object.</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">Trainee</span><span class="p">()</span>
+<span class="n">trainee</span> <span class="o">=</span> <span class="n">Trainee</span><span class="p">()</span>
 
 <span class="c1"># Train Trainee on the data.</span>
-<span class="n">t</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">trainee</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 
 <span class="c1"># Save the Trainee</span>
-<span class="n">t</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">filepath</span><span class="o">=</span><span class="s1">&#39;example_location/example_trainee.caml&#39;</span><span class="p">)</span>
+<span class="n">trainee</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">filepath</span><span class="o">=</span><span class="s1">&#39;example_location/example_trainee.caml&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -510,7 +510,7 @@ saving and loading functions that is intended for different types of operations.
 <p>When deleting a Trainee, the <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.delete" title="howso.engine.Trainee.delete"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.delete()</span></code></a> method deletes the trainee from the last saved or loaded disk location, as well as memory. If the Trainee has not been saved, <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.delete" title="howso.engine.Trainee.delete"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.delete()</span></code></a> can also be used to just remove a Trainee from memory.</p>
 <p>When Trainees are saved, a <code class="docutils literal notranslate"><span class="pre">.caml</span></code> file and a <code class="docutils literal notranslate"><span class="pre">.txt</span></code> version file is saved. The <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.delete" title="howso.engine.Trainee.delete"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.delete()</span></code></a> method assumes that the prefix to the version filename is the same as the <code class="docutils literal notranslate"><span class="pre">.caml</span></code> trainee filename.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Deleting</span>
-<span class="n">t</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+<span class="n">trainee</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>
@@ -521,16 +521,16 @@ saving and loading functions that is intended for different types of operations.
 <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.persist" title="howso.engine.Trainee.persist"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.persist()</span></code></a> saves the trainee while <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.acquire_resources" title="howso.engine.Trainee.acquire_resources"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.acquire_resources()</span></code></a> then loads the trainee resources back. All of this can be handled using the same Trainee, with the Trainee name used as the identifier behind the scenes to save and load.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">engine</span><span class="o">.</span><span class="n">Trainee</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">trainee_name</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="n">features</span><span class="p">)</span> <span class="k">as</span> <span class="n">t</span><span class="p">:</span>
     <span class="c1"># Save the trainee.</span>
-    <span class="n">t</span><span class="o">.</span><span class="n">persist</span><span class="p">()</span>
+    <span class="n">trainee</span><span class="o">..</span><span class="n">persist</span><span class="p">()</span>
 
     <span class="c1"># Release the trainee resources.</span>
-    <span class="n">t</span><span class="o">.</span><span class="n">release_resources</span><span class="p">()</span>
+    <span class="n">trainee</span><span class="o">..</span><span class="n">release_resources</span><span class="p">()</span>
 
     <span class="c1"># Acquire new trainee resources. (Optional, this will happen automatically if the trainee is unavailable.)</span>
-    <span class="n">t</span><span class="o">.</span><span class="n">acquire_resources</span><span class="p">()</span>
+    <span class="n">trainee</span><span class="o">..</span><span class="n">acquire_resources</span><span class="p">()</span>
 
     <span class="c1"># Delete the trainee to cleanup.</span>
-    <span class="n">t</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+    <span class="n">trainee</span><span class="o">..</span><span class="n">delete</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>These methods can be used locally as well, but you do not have control over the exact naming and location of the saved Trainee. File operations are recommended when loading and saving to disk.</p>

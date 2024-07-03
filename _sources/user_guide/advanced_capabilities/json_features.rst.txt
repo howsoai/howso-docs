@@ -10,7 +10,7 @@ JSON/YAML as Features
 .. warning::
 
     JSOM/YAML tools are still in beta development. Please note that while the core features are in place, they are still under development and thus you may encounter bugs or unexpected behavior.
-    If you have any feedback, please share your thoughts at `support@howso.com <support@howso.com>`_. 
+    If you have any feedback, please share your thoughts at `support@howso.com <support@howso.com>`_.
 
 Objectives
 ----------
@@ -89,7 +89,7 @@ Below are a few code snippets that show how JSON/YAML features can be used in a 
 .. code-block:: python
     :caption: Using ``level`` and ``class``, predict ``inventory`` (a JSON feature).
 
-    t.react(
+    trainee.react(
         contexts=[[15, "Warlock"]], context_features=["level", "class"],
         action_features=["inventory"],
     )
@@ -98,7 +98,7 @@ Below are a few code snippets that show how JSON/YAML features can be used in a 
 .. code-block:: python
     :caption: Using ``level`` and ``class``, generate ``inventory`` (a JSON feature).
 
-    t.react(
+    trainee.react(
         contexts=[[15, "Warlock"]], context_features=["level", "class"],
         action_features=["inventory"],
         desired_conviction=25,
@@ -108,7 +108,7 @@ Below are a few code snippets that show how JSON/YAML features can be used in a 
 .. code-block:: python
     :caption: Using ``inventory`` (a JSON feature) and ``level``, predict ``class``.
 
-    t.react(
+    trainee.react(
         contexts=[["{\"sword\": 1, \"lute\": 1, \"potion\": 2}", 15]],
         context_features=["inventory", "level"],
         action_features=["class"],
@@ -120,7 +120,7 @@ Below are a few code snippets that show how JSON/YAML features can be used in a 
 
 Generative Reacts to JSON/YAML Features
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-We can also use a generative  :py:meth:`Trainee.react` to generate any number of more or less surprising inventories. We will do this generative  :py:meth:`Trainee.react` with 
+We can also use a generative  :py:meth:`Trainee.react` to generate any number of more or less surprising inventories. We will do this generative  :py:meth:`Trainee.react` with
 differing levels of desired conviction to show more and less surprising examples.
 
 With higher desired conviction, we will see JSON that more closely resembles the training data.
@@ -128,7 +128,7 @@ With higher desired conviction, we will see JSON that more closely resembles the
 .. code-block:: python
     :caption: Using ``class`` and ``level``, predict ``inventory`` (a JSON feature).
 
-    generative_reaction_25 = t.react(
+    generative_reaction_25 = trainee.react(
         contexts=[[15, "Warlock"]], context_features=["level", "class"],
         action_features=["inventory"],
         desired_conviction=25,
@@ -156,18 +156,18 @@ Complete Code
 
     features = infer_feature_attributes(data)
 
-    t = Trainee(features=features)
-    t.train(data)
-    t.analyze()
+    trainee = Trainee(features=features)
+    trainee.train(data)
+    trainee.analyze()
 
-    discriminative_action = t.react(
+    discriminative_action = trainee.react(
         contexts=[[15, "Warlock"]], context_features=["level", "class"],
         action_features=["inventory"],
     )["action"]
 
     discriminative_action.loc[:, "inventory"]
 
-    generative_reaction_25 = t.react(
+    generative_reaction_25 = trainee.react(
         contexts=[[15, "Warlock"]], context_features=["level", "class"],
         action_features=["inventory"],
         desired_conviction=25,
@@ -176,7 +176,7 @@ Complete Code
 
     generative_reaction_25.loc[:, "inventory"]
 
-    t.delete()
+    trainee.delete()
 
 API References
 --------------

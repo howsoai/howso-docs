@@ -480,10 +480,9 @@ performance stats.</p>
 <p class="admonition-title">Note</p>
 <p>The string representation of each statistic is listed in the parenthesis.</p>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Recommended metrics</span>
-<span class="n">trainee</span><span class="o">.</span><span class="n">react_into_trainee</span><span class="p">(</span><span class="n">action_feature</span><span class="o">=</span><span class="n">action_features</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">residuals</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">stats</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">get_prediction_stats</span><span class="p">()</span>
-<span class="n">accuracy</span> <span class="o">=</span> <span class="n">stats</span><span class="p">[</span><span class="s2">&quot;accuracy&quot;</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">prediction_stats</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react_react_aggregate</span><span class="p">(</span>
+    <span class="n">details</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;prediction_stats&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -491,24 +490,30 @@ performance stats.</p>
 <h3>Conditional Model Performance<a class="headerlink" href="#conditional-model-performance" title="Link to this heading">#</a></h3>
 <p>The Trainee is also able to compute and return performance statistics on subsets of the trained data that match a
 certain set of conditions. For example, a user might want to investigate the performance of their Trainee on
-cases that represent individuals over the age of 40. These conditioned prediction stats are not cached in the
-Trainee, so the call to <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react_into_trainee()</span></code></a> is unnecessary. Instead, the user can directly call
-<a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.get_prediction_stats" title="howso.engine.Trainee.get_prediction_stats"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_prediction_stats()</span></code></a> while passing the <cite>condition</cite> parameter.</p>
+cases that represent individuals over the age of 40. This is calculated through calling <code class="xref py py-meth docutils literal notranslate"><span class="pre">react_aggregate()</span></code>
+while passing in a <cite>action_condition</cite> parameter in the <cite>details</cite> dictionary.</p>
 <p>The user from the example would want to do the following:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Conditions for continuous features take a tuple</span>
 <span class="c1"># that represents the range of the condition.</span>
-<span class="n">performance_stats</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">get_prediction_stats</span><span class="p">(</span><span class="n">condition</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">9999</span><span class="p">]})</span>
+<span class="n">performance_stats</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react_react_aggregate</span><span class="p">(</span>
+    <span class="n">details</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;prediction_stats&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s1">&#39;action_condition&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">9999</span><span class="p">]}</span>
+    <span class="p">}</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 <p>These conditions can even be much more elaborate. For example a user could be interested in the performance
 on cases that represent individuals over the age of 40, who are also married and unemployed.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Conditions for continuous features take a tuple</span>
 <span class="c1"># that represents the range of the condition.</span>
-<span class="n">performance_stats</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">get_prediction_stats</span><span class="p">(</span>
-    <span class="n">condition</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">&quot;age&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">9999</span><span class="p">],</span>
-        <span class="s2">&quot;marital-status&quot;</span><span class="p">:</span> <span class="s2">&quot;married&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;job-status&quot;</span><span class="p">:</span> <span class="s2">&quot;unemployed&quot;</span><span class="p">,</span>
+<span class="n">performance_stats</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react_react_aggregate</span><span class="p">(</span>
+    <span class="n">details</span><span class="o">=</span><span class="p">{</span>
+        <span class="s1">&#39;prediction_stats&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s1">&#39;action_condition&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">9999</span><span class="p">],</span>
+            <span class="s1">&#39;marital-status&#39;</span><span class="p">:</span> <span class="s1">&#39;married&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;job-status&#39;</span><span class="p">:</span> <span class="s1">&#39;unemployed&#39;</span><span class="p">,</span>
     <span class="p">}</span>
 <span class="p">)</span>
 </pre></div>
@@ -521,8 +526,7 @@ on cases that represent individuals over the age of 40, who are also married and
 <li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a></p></li>
 <li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.train" title="howso.engine.Trainee.train"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.train()</span></code></a></p></li>
 <li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.analyze" title="howso.engine.Trainee.analyze"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.analyze()</span></code></a></p></li>
-<li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react_into_trainee" title="howso.engine.Trainee.react_into_trainee"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_into_trainee()</span></code></a></p></li>
-<li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.get_prediction_stats" title="howso.engine.Trainee.get_prediction_stats"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.get_prediction_stats()</span></code></a></p></li>
+<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_aggregate()</span></code></p></li>
 </ul>
 </section>
 </section>

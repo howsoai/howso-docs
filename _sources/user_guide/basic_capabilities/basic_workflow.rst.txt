@@ -117,7 +117,7 @@ To begin the Howso Engine workflow, a Trainee is created to act as a base for al
 
 .. code-block:: python
 
-    t = Trainee(features=features)
+    trainee = Trainee(features=features)
 
 Step 5 - Train
 ^^^^^^^^^^^^^^
@@ -125,7 +125,7 @@ Exposing a Trainee to a Case which may cause the ML algorithm to update the Trai
 
 .. code-block:: python
 
-    t.train(df)
+    trainee.train(df)
 
 Step 6 - Analyze
 ^^^^^^^^^^^^^^^^
@@ -133,7 +133,7 @@ Tune internal parameters to improve performance and accuracy of predictions and 
 
 .. code-block:: python
 
-    t.analyze(context_features=context_features, action_features=action_features)
+    trainee.analyze(context_features=context_features, action_features=action_features)
 
 Step 7 - React
 ^^^^^^^^^^^^^^
@@ -143,11 +143,11 @@ Once Howso Engine is trained and analyzed, it provides the user with a variety o
 
 .. code-block:: python
 
-    results = t.react(
+    results = trainee.react(
         test_case[context_features],
         context_features=context_features,
         action_features=action_features,
-    )    
+    )
     predictions = results['action'][action_features]
 
 Complete Code
@@ -178,7 +178,7 @@ The code from all of the steps in this guide is combined below:
     context_features = features.get_names(without=action_features)
 
     trainee = Trainee(features=features)
-    
+
     trainee.train(df)
 
     trainee.analyze(context_features=context_features, action_features=action_features)
@@ -187,7 +187,7 @@ The code from all of the steps in this guide is combined below:
         test_case[context_features],
         context_features=context_features,
         action_features=action_features,
-    )    
+    )
     predictions = results['action'][action_features]
 
 
