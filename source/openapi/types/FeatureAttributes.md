@@ -15,11 +15,11 @@ The mapping of attributes for a single feature.
 
 The type of the feature.
 
-- continuous: A continuous numeric value. (e.g. Temperature or humidity).
+- continuous: A continuous numeric value. (e.g. Temperature or humidity)
 - nominal: A number or string value with no ordering. (e.g. The name of a fruit)
 - ordinal: A nominal number value with ordering. (e.g. Rating scale, 1-5 stars). Howso assumes ordinals have equal intervals. In the star rating example, this means that the differences between the stars are the same, so a jump from 1 to 2 stars represents the same magnitude as a jump from 4 to 5 stars. If a different magnitude is desired, the feature should be preprocessed to a different scale (e.g 1, 2, 4, 7, 8).
 
-Another data type often used in statistics and machine learning are discrete features, which are generally, but not limited to, feature values such as counts which can only take on certain values, often integers. An example of this could be the number of children a person has. For feature attributes, discrete features may either be mapped as continuous with 0 decimals (if its integer count values) or ordinals. The difference lies in the behavior when the feature is the action feature, or feature being predicted. If the feature is mapped as continuous with 0 decimals, then the feature may be predicted as any integer. If a feature is mapped as nominal, then like nominals, the predicted value only comes from the pool of existing values in the training data. If the feature is only used as a context feature, then there is no distinction between these two mapping options.
+Another data type often used in statistics and machine learning are discrete features, which are generally, but not limited to, feature values such as counts which can only take on certain values, often integers. An example of this could be the number of children a person has or age (if only given in years). For feature attributes, discrete features may either be mapped as continuous with 0 decimals (if its integer count values) or ordinals. The difference lies in the behavior when the feature is the action feature, or feature being predicted. If the feature is mapped as continuous with 0 decimals, then the feature may be predicted as any integer. If a feature is mapped as nominal, then like nominals, the predicted value only comes from the pool of existing values in the training data. If the feature is only used as a context feature, then there is no distinction between these two mapping options.
 ```
 
 ```{py:attribute} auto_derive_on_train
