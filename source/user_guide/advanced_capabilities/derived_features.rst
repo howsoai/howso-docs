@@ -33,6 +33,7 @@ Concepts & Terminology
 ----------------------
 
 - :ref:`case`
+- :ref:`feature`
 - :ref:`derived_features`
 
 
