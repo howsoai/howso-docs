@@ -1029,6 +1029,7 @@ sphinx==7.4.6 \
     #   sphinx-copybutton
     #   sphinx-design
     #   sphinx-gallery
+    #   sphinx-reredirects
     #   sphinxcontrib-images
 sphinx-autodoc-typehints==2.2.3 \
     --hash=sha256:b7058e8c5831e5598afca1a78fda0695d3291388d954464a6e480c36198680c0 \
@@ -1045,6 +1046,10 @@ sphinx-design==0.6.0 \
 sphinx-gallery==0.12.2 \
     --hash=sha256:3aaffb3a9491e3380ee269e05eaa384b7ae9f47b1071a34d2610d4e5ceb34b8b \
     --hash=sha256:eb8afa1f3d0b1d53bb82829559adb2aa14455493d70b025569edb084a0d14ee5
+    # via -r requirements.in
+sphinx-reredirects==0.1.5 \
+    --hash=sha256:444ae1438fba4418242ca76d6a6de3eaee82aaf0d8f2b0cac71a15d32ce6eba2 \
+    --hash=sha256:cfa753b441020a22708ce8eb17d4fd553a28fc87a609330092917ada2a6da0d8
     # via -r requirements.in
 sphinxcontrib-applehelp==1.0.8 \
     --hash=sha256:c40a4f96f3776c4393d933412053962fac2b84f4c99a7982ba42e09576a70619 \
