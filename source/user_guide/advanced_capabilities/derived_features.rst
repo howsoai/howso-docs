@@ -120,7 +120,7 @@ Here we perform a generative react to generate 5 cases.
 
 .. code-block:: python
 
-    reaction = t.react(
+    reaction = trainee.react(
         action_features=['start', 'end', 'duration'],
         derived_action_features=['end'],
         desired_conviction=5,
@@ -165,7 +165,7 @@ The code from all of the steps in this guide is combined below:
     trainee.train(df)
     trainee.analyze()
 
-    reaction = t.react(
+    reaction = trainee.react(
         action_features=['start', 'end', 'duration'],
         derived_action_features=['end'],
         desired_conviction=5,
