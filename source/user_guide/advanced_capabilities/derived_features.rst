@@ -43,7 +43,7 @@ How-To guide
 Here we will define a derived feature and then react to the dataset. This will ensure
 that the features maintain their relationhips.
 
-Step 1 - Load Data
+Load Data
 ^^^^^^^^^^^^^^^^^^
 
 First, we load the data using `Pandas`. Note that the data are stored as a `Parquet` file
@@ -64,8 +64,8 @@ in order to preserve the datetime data types.
     df
 
 
-Step 2 - Define Derived Feature Code
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Define Derived Feature Code
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Derived features use code that is similar to https://github.com/howsoai/amalgam to define a
 relationship. Then, rather than predicting, the feature will be derived according to that code.
 
@@ -87,8 +87,8 @@ The derived feature code that we use, ``(+ #start 0 #duration 0)`` instructs Eng
 and refer to how far back in the time-series to look.
 
 
-Step 3 - Map Data
-^^^^^^^^^^^^^^^^^
+Map Data
+^^^^^^^^
 Now we can use :meth:`~howso.utilities.infer_feature_attributes` to understand the properties
 and characteristics of the data.
 
@@ -101,8 +101,8 @@ By supplying the partial feature attributes we defined in step 2, the derived fe
 be populated for the ``end`` feature.
 
 
-Step 4 - Train and Analyze
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Train and Analyze
+^^^^^^^^^^^^^^^^^
 Here the original data are trained into Howso Engine, so that it understands relationships between all
 data points.
 
@@ -113,8 +113,8 @@ data points.
     trainee.analyze()
 
 
-Step 5 - React
-^^^^^^^^^^^^^^
+React
+^^^^^
 Here we perform a generative react to generate 5 cases.
 
 .. code-block:: python
