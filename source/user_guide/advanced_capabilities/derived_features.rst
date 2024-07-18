@@ -23,7 +23,6 @@ Prerequisite
 
 Data
 ----
-
 The dataset for this recipe highlights one of the common use-cases for derived features
 and can be downloaded :download:`here </_assets/dates_generated.parquet>`. This dataset
 consists of a start time, and end time, and a duration column. We will use derived features
@@ -43,8 +42,9 @@ How-To guide
 Here we will define a derived feature and then react to the dataset. This will ensure
 that the features maintain their relationhips.
 
+
 Load Data
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^
 
 First, we load the data using `Pandas`. Note that the data are stored as a `Parquet` file
 in order to preserve the datetime data types.
