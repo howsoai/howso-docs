@@ -73,7 +73,7 @@ relationship. Then, rather than predicting, the feature will be derived accordin
 To do this, we create a partial `feature attributes` dictionary which will be fed to
 :func:`~howso.utilities.infer_feature_attributes`. In the partial `feature attributes`
 dictionary, we define the derived feature code which instructs Engine in how to derive
-the ``end`` feature as a function of the ``start`` abd ``duration`` features.
+the ``end`` feature as a function of the ``start`` and ``duration`` features.
 
 .. code-block:: python
 
