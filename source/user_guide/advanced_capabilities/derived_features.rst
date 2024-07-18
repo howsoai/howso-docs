@@ -5,7 +5,7 @@ Derived Features
 .. topic:: In this user guide...
     
     You will learn how to specify derived features to maintain feature relationships
-    during Engine operations
+    during Engine operations.
 
 
 Objectives & Takeaways
