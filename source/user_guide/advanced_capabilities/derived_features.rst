@@ -30,6 +30,13 @@ consists of a start time, and end time, and a duration column. We will use deriv
 to ensure that the end time is equal to the start time plus the duration.
 
 
+Concepts & Terminology
+----------------------
+
+- :ref:`case`
+- :ref:`derived_features`
+
+
 How-To guide
 ------------
 
