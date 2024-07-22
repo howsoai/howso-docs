@@ -20,6 +20,14 @@ amalgam-lang==12.1.0 \
     --hash=sha256:86ef7ec4eedf5c45219258530da673c26952453098ca08921ef4dcd95829e0f3 \
     --hash=sha256:b20861da2c129eadd555b135a5e11046ca989011cdb943195c4567ec72ccf5b4 \
     --hash=sha256:cf2a6f27ea0fc5c28670dcf6f2cd37b3e16186d4ca253286da2e304ab3097dd8
+amalgam-lang==12.1.0 \
+    --hash=sha256:066a65d67062bc26ed09322bce05c13688a45f0bf4c48d7a30f2ad2baa56c9a2 \
+    --hash=sha256:5390bdba06438788604aefdb1d761586c51a2391efbeb5f1b88d24d3873807ab \
+    --hash=sha256:56e969f5491cc41ded4d74996761730a0deb32d077e14eba16ede3dab95f14c4 \
+    --hash=sha256:5d2bf0344dfa6ada66a35eb08d9378c7e0eb3a8cce73d0a41173fe1c0d006d29 \
+    --hash=sha256:86ef7ec4eedf5c45219258530da673c26952453098ca08921ef4dcd95829e0f3 \
+    --hash=sha256:b20861da2c129eadd555b135a5e11046ca989011cdb943195c4567ec72ccf5b4 \
+    --hash=sha256:cf2a6f27ea0fc5c28670dcf6f2cd37b3e16186d4ca253286da2e304ab3097dd8
     # via howso-engine
 babel==2.15.0 \
     --hash=sha256:08706bdad8d0a3413266ab61bd6c34d0c28d6e1e7badf40a2cebe67644e2e1fb \
@@ -1098,7 +1106,7 @@ urllib3==2.2.2 \
     #   requests
 
 # The following packages are considered to be unsafe in a requirements file:
-setuptools==71.0.2 \
-    --hash=sha256:ca359bea0cd5c8ce267d7463239107e87f312f2e2a11b6ca6357565d82b6c0d7 \
-    --hash=sha256:f6640114f96be808024fbd1f721161215543796d3a68da4524349de700604ce8
+setuptools==71.0.3 \
+    --hash=sha256:3d8531791a27056f4a38cd3e54084d8b1c4228ff9cf3f2d7dd075ec99f9fd70d \
+    --hash=sha256:f501b6e6db709818dc76882582d9c516bf3b67b948864c5fa1d1624c09a49207
     # via howso-openapi-client
