@@ -115,6 +115,7 @@ MDA
 ---
 
 The *Mean Decrease in Accuracy* (MDA) of an Action Feature is mean decrease in accuracy of removing a feature.  MDA units are on the same scale as the Action feature(s), and will be probabilities for categorical features.
+
 .. _robust:
 
 Robust
