@@ -356,6 +356,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../advanced_capabilities/json_features.html">JSON/YAML as Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../advanced_capabilities/reinforcement_learning.html">Reinforcement Learning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../advanced_capabilities/time_series.html">Time Series and Sequential Data Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced_capabilities/derived_features.html">Derived Features</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Concepts</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -490,7 +491,7 @@ performance stats.</p>
 <h3>Conditional Model Performance<a class="headerlink" href="#conditional-model-performance" title="Link to this heading">#</a></h3>
 <p>The Trainee is also able to compute and return performance statistics on subsets of the trained data that match a
 certain set of conditions. For example, a user might want to investigate the performance of their Trainee on
-cases that represent individuals over the age of 40. This is calculated through calling <code class="xref py py-meth docutils literal notranslate"><span class="pre">react_aggregate()</span></code>
+cases that represent individuals over the age of 40. This is calculated through calling <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react_aggregate" title="howso.engine.Trainee.react_aggregate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react_aggregate()</span></code></a>
 while passing in a <cite>action_condition</cite> parameter in the <cite>details</cite> dictionary.</p>
 <p>The user from the example would want to do the following:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Conditions for continuous features take a tuple</span>
@@ -526,7 +527,7 @@ on cases that represent individuals over the age of 40, who are also married and
 <li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a></p></li>
 <li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.train" title="howso.engine.Trainee.train"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.train()</span></code></a></p></li>
 <li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.analyze" title="howso.engine.Trainee.analyze"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.analyze()</span></code></a></p></li>
-<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_aggregate()</span></code></p></li>
+<li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react_aggregate" title="howso.engine.Trainee.react_aggregate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_aggregate()</span></code></a></p></li>
 </ul>
 </section>
 </section>
@@ -624,7 +625,7 @@ on cases that represent individuals over the age of 40, who are also married and
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
     <br/>
   </p>
 </div>

@@ -356,6 +356,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../advanced_capabilities/json_features.html">JSON/YAML as Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../advanced_capabilities/reinforcement_learning.html">Reinforcement Learning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../advanced_capabilities/time_series.html">Time Series and Sequential Data Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced_capabilities/derived_features.html">Derived Features</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../concepts/index.html">Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -446,7 +447,10 @@ and the feature attributes in general.</p>
 <li><p>In general, IFA is an iterative process:</p>
 <ol class="arabic">
 <li><p>If you’re new to IFA or are not familiar with your data types, just
-pass-in your data and <code class="docutils literal notranslate"><span class="pre">print</span></code> the dictionary:</p>
+pass-in your data and <code class="docutils literal notranslate"><span class="pre">print</span></code> the dictionary. A subset of your data
+may also be provided if not all features’ attributes are intended to be inferred,
+however this is not recommended, as all features that are used with Howso are recommended
+to have a correspending set of feature attributes mappings.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">features</span> <span class="o">=</span> <span class="n">infer_feature_attributes</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -713,7 +717,7 @@ the <code class="docutils literal notranslate"><span class="pre">allow_null</spa
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
     <br/>
   </p>
 </div>

@@ -51,7 +51,7 @@ Trustworthiness
 
 - Remain robust to adversarial attacks that exploit AI in action, and reliably detect them
 
-  Howso outperforms other AI methdos and maintaining the integrity of your data and decisions, even after an attack.
+  Howso outperforms other AI methods and maintaining the integrity of your data and decisions, even after an attack.
 
 Limitations
 -----------

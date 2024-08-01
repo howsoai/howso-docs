@@ -54,7 +54,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="howso.scikit" href="howso.scikit.html" />
-    <link rel="prev" title="howso.engine.typing" href="howso.engine.typing.html" />
+    <link rel="prev" title="typing" href="typing.html" />
     <link rel="icon" type="image/svg+xml" href="/_static/favicon.svg">
     <link rel="mask-icon" href="/_static/favicon.svg">
     <link rel="stylesheet" href="https://cdn.howso.com/fonts/inter/3.19/typeface.css">
@@ -339,7 +339,7 @@ document.write(`
   <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Howso Engine Packages</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="howso.engine.html">howso.engine</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="howso.engine.typing.html">howso.engine.typing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typing.html">typing</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">howso.utilities</a></li>
@@ -462,85 +462,88 @@ document.write(`
 <tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.check_feature_names" title="howso.utilities.check_feature_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_feature_names</span></code></a></p></td>
 <td><p>Check if features in <cite>features</cite> dict matches <cite>expected_feature_names</cite>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.date_format_is_iso" title="howso.utilities.date_format_is_iso"><code class="xref py py-obj docutils literal notranslate"><span class="pre">date_format_is_iso</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.format_confusion_matrix" title="howso.utilities.format_confusion_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">format_confusion_matrix</span></code></a></p></td>
+<td><p>Converts a Howso dict confusion matrix into the same format as <cite>sklearn.metrics.confusion_matrix</cite>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.date_format_is_iso" title="howso.utilities.date_format_is_iso"><code class="xref py py-obj docutils literal notranslate"><span class="pre">date_format_is_iso</span></code></a></p></td>
 <td><p>Check if datetime format is ISO8601.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.date_to_epoch" title="howso.utilities.date_to_epoch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">date_to_epoch</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.date_to_epoch" title="howso.utilities.date_to_epoch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">date_to_epoch</span></code></a></p></td>
 <td><p>Convert date into epoch (i.e seconds counted from Jan 1st 1970).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.deep_update" title="howso.utilities.deep_update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">deep_update</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.deep_update" title="howso.utilities.deep_update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">deep_update</span></code></a></p></td>
 <td><p>Update dict <cite>base</cite> with updates from dict <cite>updates</cite> in a &quot;deep&quot; fashion.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.deserialize_cases" title="howso.utilities.deserialize_cases"><code class="xref py py-obj docutils literal notranslate"><span class="pre">deserialize_cases</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.deserialize_cases" title="howso.utilities.deserialize_cases"><code class="xref py py-obj docutils literal notranslate"><span class="pre">deserialize_cases</span></code></a></p></td>
 <td><p>Deserialize case data into a DataFrame.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.determine_iso_format" title="howso.utilities.determine_iso_format"><code class="xref py py-obj docutils literal notranslate"><span class="pre">determine_iso_format</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.determine_iso_format" title="howso.utilities.determine_iso_format"><code class="xref py py-obj docutils literal notranslate"><span class="pre">determine_iso_format</span></code></a></p></td>
 <td><p>Determine which specific ISO8601 format the passed in date is in.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.dprint" title="howso.utilities.dprint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dprint</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.dprint" title="howso.utilities.dprint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dprint</span></code></a></p></td>
 <td><p>Print based on debug levels.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.epoch_to_date" title="howso.utilities.epoch_to_date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">epoch_to_date</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.epoch_to_date" title="howso.utilities.epoch_to_date"><code class="xref py py-obj docutils literal notranslate"><span class="pre">epoch_to_date</span></code></a></p></td>
 <td><p>Convert epoch to date if epoch is not <cite>None</cite> or <cite>nan</cite> else, return as it is.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.format_dataframe" title="howso.utilities.format_dataframe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">format_dataframe</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.format_dataframe" title="howso.utilities.format_dataframe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">format_dataframe</span></code></a></p></td>
 <td><p>Format DataFrame columns to original type using feature attributes.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.get_kwargs" title="howso.utilities.get_kwargs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_kwargs</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.get_kwargs" title="howso.utilities.get_kwargs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_kwargs</span></code></a></p></td>
 <td><p>Decompose kwargs into a tuple of return values.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.get_matrix_diff" title="howso.utilities.get_matrix_diff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_matrix_diff</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.get_matrix_diff" title="howso.utilities.get_matrix_diff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_matrix_diff</span></code></a></p></td>
 <td><p>Calculates the absolute value of a matrix for feature pairs.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.infer_feature_attributes" title="howso.utilities.infer_feature_attributes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">infer_feature_attributes</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.infer_feature_attributes" title="howso.utilities.infer_feature_attributes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">infer_feature_attributes</span></code></a></p></td>
 <td><p>Return a dict-like feature attributes object with useful accessor methods.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.is_valid_uuid" title="howso.utilities.is_valid_uuid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_valid_uuid</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.is_valid_uuid" title="howso.utilities.is_valid_uuid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_valid_uuid</span></code></a></p></td>
 <td><p>Check if a given string is a valid uuid.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.matrix_processing" title="howso.utilities.matrix_processing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matrix_processing</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.matrix_processing" title="howso.utilities.matrix_processing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matrix_processing</span></code></a></p></td>
 <td><p>Preprocess a matrix including options to normalize, take the absolute value, and fill in the diagonals.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.num_list_dimensions" title="howso.utilities.num_list_dimensions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">num_list_dimensions</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.num_list_dimensions" title="howso.utilities.num_list_dimensions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">num_list_dimensions</span></code></a></p></td>
 <td><p>Return number of dimensions for a list.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.replace_doublemax_with_infinity" title="howso.utilities.replace_doublemax_with_infinity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace_doublemax_with_infinity</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.replace_doublemax_with_infinity" title="howso.utilities.replace_doublemax_with_infinity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace_doublemax_with_infinity</span></code></a></p></td>
 <td><p>Replace values of Double.MAX_VALUE (1.79769313486232E+308) with Infinity.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.replace_nan_with_none" title="howso.utilities.replace_nan_with_none"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace_nan_with_none</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.replace_nan_with_none" title="howso.utilities.replace_nan_with_none"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace_nan_with_none</span></code></a></p></td>
 <td><p>Replace None values with NaN values.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.replace_none_with_nan" title="howso.utilities.replace_none_with_nan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace_none_with_nan</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.replace_none_with_nan" title="howso.utilities.replace_none_with_nan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">replace_none_with_nan</span></code></a></p></td>
 <td><p>Replace None values with NaN values.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.reshape_data" title="howso.utilities.reshape_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reshape_data</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.reshape_data" title="howso.utilities.reshape_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reshape_data</span></code></a></p></td>
 <td><p>Reshapes X as a matrix and y as a vector.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.seconds_to_time" title="howso.utilities.seconds_to_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">seconds_to_time</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.seconds_to_time" title="howso.utilities.seconds_to_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">seconds_to_time</span></code></a></p></td>
 <td><p>Convert seconds to a time object.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.serialize_cases" title="howso.utilities.serialize_cases"><code class="xref py py-obj docutils literal notranslate"><span class="pre">serialize_cases</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.serialize_cases" title="howso.utilities.serialize_cases"><code class="xref py py-obj docutils literal notranslate"><span class="pre">serialize_cases</span></code></a></p></td>
 <td><p>Serialize case data into list of lists.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.serialize_datetimes" title="howso.utilities.serialize_datetimes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">serialize_datetimes</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.serialize_datetimes" title="howso.utilities.serialize_datetimes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">serialize_datetimes</span></code></a></p></td>
 <td><p>Serialize datetimes in the given list of cases, in-place.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.time_to_seconds" title="howso.utilities.time_to_seconds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">time_to_seconds</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.time_to_seconds" title="howso.utilities.time_to_seconds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">time_to_seconds</span></code></a></p></td>
 <td><p>Convert a time object to seconds since midnight.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.trainee_from_df" title="howso.utilities.trainee_from_df"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trainee_from_df</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.trainee_from_df" title="howso.utilities.trainee_from_df"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trainee_from_df</span></code></a></p></td>
 <td><p>Create a Trainee from a dataframe.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.validate_case_indices" title="howso.utilities.validate_case_indices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_case_indices</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.validate_case_indices" title="howso.utilities.validate_case_indices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_case_indices</span></code></a></p></td>
 <td><p>Validate the case_indices parameter to the react() method of a Howso client.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.validate_datetime_iso8061" title="howso.utilities.validate_datetime_iso8061"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_datetime_iso8061</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.validate_datetime_iso8061" title="howso.utilities.validate_datetime_iso8061"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_datetime_iso8061</span></code></a></p></td>
 <td><p>Check that the passed in datetime value adheres to the ISO 8601 format.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.validate_features" title="howso.utilities.validate_features"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_features</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.validate_features" title="howso.utilities.validate_features"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_features</span></code></a></p></td>
 <td><p>Validate the feature types in <cite>features</cite>.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#howso.utilities.validate_list_shape" title="howso.utilities.validate_list_shape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_list_shape</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#howso.utilities.validate_list_shape" title="howso.utilities.validate_list_shape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">validate_list_shape</span></code></a></p></td>
 <td><p>Validate the shape of a list.</p></td>
 </tr>
 </tbody>
@@ -622,7 +625,7 @@ list of feature types to limit the output feature names.</p></li>
 <dd><p>Validate the given data against this FeatureAttributes object.</p>
 <p>Check that feature bounds and data types loosely describe the data. Optionally
 attempt to coerce the data into conformity.
-:type data: <span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></span>
+:type data: <span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="typing.html#typing.Any" title="typing.Any"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a></span>
 :param data: The data to validate
 :param coerce: Whether to attempt to coerce DataFrame columns into correct data types. Coerced</p>
 <blockquote>
@@ -635,7 +638,7 @@ attempt to coerce the data into conformity.
 <li><p><strong>validate_bounds</strong> – Whether to validate the data against the attributes’ inferred bounds</p></li>
 <li><p><strong>allow_missing_features</strong> – Allows features that are missing from the DataFrame to be ignored</p></li>
 <li><p><strong>localize_datetimes</strong> – Whether to localize datetime features to UTC.</p></li>
-<li><p><strong>data</strong> (<em>Any</em>)</p></li>
+<li><p><strong>data</strong> (<a class="reference internal" href="typing.html#typing.Any" title="typing.Any"><em>Any</em></a>)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -893,7 +896,7 @@ in a Jupyter notebook or other medium.</p>
 <dd><p>Validate the given single table data against this FeatureAttributes object.</p>
 <p>Check that feature bounds and data types loosely describe the data. Optionally
 attempt to coerce the data into conformity.
-:type data: <span class="sphinx_autodoc_typehints-type"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></span>
+:type data: <span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="typing.html#typing.Any" title="typing.Any"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a></span>
 :param data: The data to validate (single table only).
 :param coerce: Whether to attempt to coerce DataFrame columns into correct data types.
 :param raise_errors: If True, raises a ValueError if nonconforming columns are found; else, issue a warning.
@@ -905,7 +908,7 @@ attempt to coerce the data into conformity.
 <dd class="field-odd"><p>None or the coerced DataFrame if ‘coerce’ is True and there were no errors.</p>
 </dd>
 <dt class="field-even">Parameters<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>data</strong> (<em>Any</em>)</p>
+<dd class="field-even"><p><strong>data</strong> (<a class="reference internal" href="typing.html#typing.Any" title="typing.Any"><em>Any</em></a>)</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1139,7 +1142,7 @@ will be converted to the same data type as original training cases.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]] | <code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]]</span>) – The context data.</p></li>
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<a class="reference internal" href="typing.html#typing.Any" title="typing.Any"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a>]] | <code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <a class="reference internal" href="typing.html#typing.Any" title="typing.Any"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a>]]</span>) – The context data.</p></li>
 <li><p><strong>columns</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</span>) – <p>The case column mapping.</p>
 <p>The order corresponds to how the data will be mapped to columns in
 the output. Ignored for list of dict where the dict key is the column
@@ -1223,6 +1226,29 @@ Ex: <code class="docutils literal notranslate"><span class="pre">%a</span> <span
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="howso.utilities.format_confusion_matrix">
+<span class="sig-prename descclassname"><span class="pre">howso.utilities.</span></span><span class="sig-name descname"><span class="pre">format_confusion_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">confusion_matrix</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.utilities.format_confusion_matrix" title="Link to this definition">#</a></dt>
+<dd><p>Converts a Howso dict confusion matrix into the same format as <cite>sklearn.metrics.confusion_matrix</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>confusion_matrix</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]]</span>) – Confusion matrix in dictionary form. Standard form of confusion marices returned when retrieving
+Howso’s prediction stats through <a class="reference internal" href="howso.engine.html#howso.engine.Trainee.react_aggregate" title="howso.engine.Trainee.react_aggregate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">howso.engine.Trainee.react_aggregate()</span></code></a>.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]</span></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><ul class="simple">
+<li><p><em>ndarray</em> – The array of the confusion matrix values.</p></li>
+<li><p><em>list of str</em> – List of the confusion matrix row labels. These labels denotes the labels
+of the confusion matrix going top to bottom and left to right.</p></li>
+</ul>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1348,12 +1374,12 @@ provided data type.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code> | <code class="xref py py-class docutils literal notranslate"><span class="pre">SQLRelationalDatastoreProtocol</span></code></span>) – The data source to infer feature attributes from. Must be a supported data type.</p></li>
-<li><p><strong>tables</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">TableNameProtocol</span></code>]</span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – <p>(Optional, required for datastores) An Iterable of table names to
+<li><p><strong>tables</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">TableNameProtocol</span></code>] | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – <p>(Optional, required for datastores) An Iterable of table names to
 infer feature attributes for.</p>
 <p>If included, feature attributes will be generated in the form
 <code class="docutils literal notranslate"><span class="pre">{table_name:</span> <span class="pre">{feature_attribute:</span> <span class="pre">value}}</span></code>.</p>
 </p></li>
-<li><p><strong>time_feature_name</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – (Optional, required for time series) The name of the time feature.</p></li>
+<li><p><strong>time_feature_name</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – (Optional, required for time series) The name of the time feature.</p></li>
 <li><p><strong>features</strong> – <p>(Optional) A partially filled features dict. If partially filled
 attributes for a feature are passed in, those parameters will be
 retained as is and the rest of the attributes will be inferred.</p>
@@ -1591,10 +1617,17 @@ this map.</p>
 </pre></div>
 </div>
 </p></li>
-<li><p><strong>dependent_features</strong> – <p>(Optional) Dict of features with their respective lists of features
-that either the feature depends on or are dependent on them. Should
-be used when there are multi-type value features that tightly
-depend on values based on other multi-type value features.</p>
+<li><p><strong>dependent_features</strong> – <p>Dict mapping a feature to a list of other feature(s) that it depends on or
+that are dependent on it. This restricts the cases that can be selected as
+neighbors (such as in <a class="reference internal" href="howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">react()</span></code></a>) to ones that
+satisfy the dependency, if possible. If this is not possible, either due to
+insufficient data which satisfy the dependency or because dependencies are
+probabilistic, the dependency may not be maintained. Be aware that dependencies
+introduce further constraints to data and so several dependencies or dependencies
+on already constrained datasets may restrict which operations are possible while
+maintaining the dependency. As a rule of thumb, sets of features that have
+dependency relationships should generally not include more than 1 continuous feature,
+unless the continuous features have a small number of values that are commonly used.</p>
 <dl>
 <dt>Examples:</dt><dd><p>If there’s a feature name ‘measurement’ that contains
 measurements such as BMI, heart rate and weight, while the
@@ -1618,6 +1651,14 @@ also work:</p>
 </p></li>
 <li><p><strong>include_sample</strong> – If True, include a <code class="docutils literal notranslate"><span class="pre">sample</span></code> field containing a sample of the data
 from each feature in the output feature attributes dictionary.</p></li>
+<li><p><strong>max_workers</strong> – <p>If unset or set to None (recommended), let the ProcessPoolExecutor
+choose the best maximum number of process pool workers to process
+columns in a multi-process fashion. In this case, if the product of the
+data’s rows and columns &lt; 25,000,000, multiprocessing will not be used.</p>
+<p>If defined with an integer &gt; 0, manually set the number of max workers.
+Otherwise, the feature attributes will be calculated serially. Setting
+this parameter to zero (0) will disable multiprocessing.</p>
+</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -1835,7 +1876,7 @@ conform to sklearn convention on missing values.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code> | <code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code> | <code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code>]</span>) – The data to serialize.</p></li>
+<li><p><strong>data</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataFrame</span></code> | <code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code> | <code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<a class="reference internal" href="typing.html#typing.Any" title="typing.Any"><code class="xref py py-data docutils literal notranslate"><span class="pre">Any</span></code></a>]</span>) – The data to serialize.</p></li>
 <li><p><strong>columns</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</span>) – The case column mapping. The order corresponds to the order of cases
 in output.</p></li>
 <li><p><strong>features</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code></span>) – The dictionary of feature name to feature attributes.</p></li>
@@ -1846,7 +1887,7 @@ in output.</p></li>
 <dd class="field-even"><p>The serialized data from DataFrame.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>List</em>[<em>List</em>[<em>Any</em>]] | None</p>
+<dd class="field-odd"><p><em>List</em>[<em>List</em>[<a class="reference internal" href="typing.html#typing.Any" title="typing.Any"><em>Any</em></a>]] | None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1892,7 +1933,7 @@ doesn’t match the datetime strings.</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object sig-wrap py" id="howso.utilities.trainee_from_df">
-<span class="sig-prename descclassname"><span class="pre">howso.utilities.</span></span><span class="sig-name descname"><span class="pre">trainee_from_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">persistence</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'allow'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trainee_metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.utilities.trainee_from_df" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">howso.utilities.</span></span><span class="sig-name descname"><span class="pre">trainee_from_df</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">persistence</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'allow'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trainee_metadata</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#howso.utilities.trainee_from_df" title="Link to this definition">#</a></dt>
 <dd><p>Create a Trainee from a dataframe.</p>
 <p>Assumes floats are continuous and all other values are nominal.</p>
 <dl class="field-list simple">
@@ -1902,9 +1943,6 @@ doesn’t match the datetime strings.</p></li>
 names.Features that are considered to be continuous should have a dtype
 of float.</p></li>
 <li><p><strong>features</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Mapping</span></code>] | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – (Optional) A dictionary of feature names to a dictionary of parameters.</p></li>
-<li><p><strong>action_features</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">Iterable</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>] | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – (Optional) List of action features. Anything that’s not in this list
-will be treated as a context feature. For example, if no action feature
-is specified the trainee won’t have a target.</p></li>
 <li><p><strong>name</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code> | <code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – (Optional) The name of the trainee.</p></li>
 <li><p><strong>persistence</strong> (<span class="sphinx_autodoc_typehints-type"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></span>, default: <code class="docutils literal notranslate"><span class="pre">'allow'</span></code>) – The persistence setting to use for the trainee. Valid values:
 “always”, “allow”, “never”.</p></li>
@@ -2015,12 +2053,12 @@ list will be considered as valid features.</p></li>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="howso.engine.typing.html"
+       href="typing.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">howso.engine.typing</p>
+        <p class="prev-next-title">typing</p>
       </div>
     </a>
     <a class="right-next"
@@ -2102,6 +2140,7 @@ list will be considered as valid features.</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.determine_iso_format"><code class="docutils literal notranslate"><span class="pre">determine_iso_format()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.dprint"><code class="docutils literal notranslate"><span class="pre">dprint()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.epoch_to_date"><code class="docutils literal notranslate"><span class="pre">epoch_to_date()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.format_confusion_matrix"><code class="docutils literal notranslate"><span class="pre">format_confusion_matrix()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.format_dataframe"><code class="docutils literal notranslate"><span class="pre">format_dataframe()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.get_kwargs"><code class="docutils literal notranslate"><span class="pre">get_kwargs()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#howso.utilities.get_matrix_diff"><code class="docutils literal notranslate"><span class="pre">get_matrix_diff()</span></code></a></li>
@@ -2157,7 +2196,7 @@ list will be considered as valid features.</p></li>
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
     <br/>
   </p>
 </div>

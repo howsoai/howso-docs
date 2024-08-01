@@ -11,7 +11,7 @@
    :recursive:
 
 
-   howso.engine.typing
+   typing
 
 
 

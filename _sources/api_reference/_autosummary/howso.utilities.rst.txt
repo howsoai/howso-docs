@@ -33,6 +33,7 @@
    ~howso.utilities.align_data
    ~howso.utilities.build_react_series_df
    ~howso.utilities.check_feature_names
+   ~howso.utilities.format_confusion_matrix
    ~howso.utilities.date_format_is_iso
    ~howso.utilities.date_to_epoch
    ~howso.utilities.deep_update

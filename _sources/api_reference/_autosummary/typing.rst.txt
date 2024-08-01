@@ -1,0 +1,75 @@
+typing
+======
+
+
+
+
+
+
+
+.. rubric:: Classes
+
+.. autosummary::
+   :nosignatures:
+
+   ~typing.Annotated
+   ~typing.Any
+   ~typing.ForwardRef
+   ~typing.Generic
+   ~typing.ParamSpec
+   ~typing.Protocol
+   ~typing.TypeVar
+   ~typing.TypeVarTuple
+   ~typing.SupportsAbs
+   ~typing.SupportsBytes
+   ~typing.SupportsComplex
+   ~typing.SupportsFloat
+   ~typing.SupportsIndex
+   ~typing.SupportsInt
+   ~typing.SupportsRound
+   ~typing.BinaryIO
+   ~typing.IO
+   ~typing.TextIO
+   ~typing.NewType
+   ~typing.ParamSpecArgs
+   ~typing.ParamSpecKwargs
+   ~typing.Text
+
+
+
+
+
+.. rubric:: Functions
+
+.. autosummary::
+   :nosignatures:
+
+   ~typing.NamedTuple
+   ~typing.TypedDict
+   ~typing.assert_type
+   ~typing.assert_never
+   ~typing.cast
+   ~typing.clear_overloads
+   ~typing.dataclass_transform
+   ~typing.final
+   ~typing.get_args
+   ~typing.get_origin
+   ~typing.get_overloads
+   ~typing.get_type_hints
+   ~typing.is_typeddict
+   ~typing.no_type_check
+   ~typing.no_type_check_decorator
+   ~typing.overload
+   ~typing.reveal_type
+   ~typing.runtime_checkable
+
+
+
+
+
+
+
+.. automodule:: typing
+   :members:
+   :no-undoc-members:
+   :show-inheritance:

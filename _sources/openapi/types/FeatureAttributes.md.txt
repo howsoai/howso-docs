@@ -16,9 +16,12 @@ The mapping of attributes for a single feature.
 The type of the feature.
 
 - continuous: A continuous numeric value. (e.g. Temperature or humidity)
-- nominal: A numeric or string value with no ordering. (e.g. The name of a fruit)
-- ordinal: A nominal numeric value with ordering. (e.g. Rating scale, 1-5 stars)
+- nominal: A number or string value with no ordering. (e.g. The name of a fruit)
+- ordinal: A nominal number value with ordering. (e.g. Rating scale, 1-5 stars). Howso assumes ordinals have equal intervals. In the star rating example, this means that the differences between the stars are the same, so a jump from 1 to 2 stars represents the same magnitude as a jump from 4 to 5 stars. If a different magnitude is desired, the feature should be preprocessed to a different scale (e.g 1, 2, 4, 7, 8).
 
+Discrete features are another type of data often used in statistics and ML. Discrete features are generally, but not limited to, feature values which can only take on certain values (often as integers). Examples of discrete features include age (if only given in years) and the number of children a person has.
+
+You can encode discrete features in Howso's feature attributes diction by mapping them as continuous values with decimals of 0 (if they are integer count values) or as ordinals. The difference in these two mappings lies in the behavior when the feature is the action feature, or feature being predicted. If the feature is mapped as continuous with 0 decimals, then the feature may be predicted as any integer. If a feature is mapped as ordinal, then like nominals, the predicted value only comes from the pool of existing values in the training data. If the feature is only used as a context feature, then there is no distinction between these two mapping options.
 ```
 
 ```{py:attribute} auto_derive_on_train

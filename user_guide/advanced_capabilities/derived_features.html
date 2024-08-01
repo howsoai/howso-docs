@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Reinforcement Learning &#8212; Howso Engine Documentation</title>
+    <title>Derived Features &#8212; Howso Engine Documentation</title>
   
   
   
@@ -48,13 +48,13 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
     <script src="../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/advanced_capabilities/reinforcement_learning';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'user_guide/advanced_capabilities/derived_features';</script>
     <script src="../../_static/js/icon.js?v=88ae6932"></script>
     <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Time Series and Sequential Data Analysis" href="time_series.html" />
-    <link rel="prev" title="JSON/YAML as Features" href="json_features.html" />
+    <link rel="next" title="Concepts" href="../concepts/index.html" />
+    <link rel="prev" title="Time Series and Sequential Data Analysis" href="time_series.html" />
     <link rel="icon" type="image/svg+xml" href="/_static/favicon.svg">
     <link rel="mask-icon" href="/_static/favicon.svg">
     <link rel="stylesheet" href="https://cdn.howso.com/fonts/inter/3.19/typeface.css">
@@ -354,9 +354,9 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="generative_AI_synth.html">Generative Output and Data Synthesis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="influential_cases.html">Influential Cases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="json_features.html">JSON/YAML as Features</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Reinforcement Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reinforcement_learning.html">Reinforcement Learning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="time_series.html">Time Series and Sequential Data Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="derived_features.html">Derived Features</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Derived Features</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../concepts/index.html">Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -410,7 +410,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="index.html" class="nav-link">Advanced Capabilities</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Reinforcement Learning</li>
+    <li class="breadcrumb-item active" aria-current="page">Derived Features</li>
   </ul>
 </nav>
 </div>
@@ -427,125 +427,174 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="reinforcement-learning">
-<h1>Reinforcement Learning<a class="headerlink" href="#reinforcement-learning" title="Link to this heading">#</a></h1>
+  <section id="derived-features">
+<h1>Derived Features<a class="headerlink" href="#derived-features" title="Link to this heading">#</a></h1>
 <aside class="topic">
-<p class="topic-title">What is covered in this user guide</p>
-<p>In this guide, you will learn the basics of how to incorporate Howso Engine into a Reinforcement Learning (RL) framework.</p>
+<p class="topic-title">In this user guide…</p>
+<p>You will learn how to specify derived features to maintain feature relationships
+during Engine operations.</p>
 </aside>
-<section id="objectives-what-you-will-take-away">
-<h2>Objectives: what you will take away<a class="headerlink" href="#objectives-what-you-will-take-away" title="Link to this heading">#</a></h2>
+<section id="objectives-takeaways">
+<h2>Objectives &amp; Takeaways<a class="headerlink" href="#objectives-takeaways" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Definitions &amp; Understanding</strong> How <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> s fits into a RL framework.</p></li>
-<li><p><strong>How-To</strong> train and retrain a <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trainee</span></code></a> during RL.</p></li>
+<li><p><strong>Definitions &amp; an understanding</strong> of how to use derived features as well as
+which situations or data derived features are appropriate for.</p></li>
 </ul>
 </section>
-<section id="prerequisites-before-you-begin">
-<h2>Prerequisites: before you begin<a class="headerlink" href="#prerequisites-before-you-begin" title="Link to this heading">#</a></h2>
+<section id="prerequisite">
+<h2>Prerequisite<a class="headerlink" href="#prerequisite" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>You have successfully <a class="reference internal" href="../../getting_started/installing.html"><span class="doc">installed Howso Engine</span></a></p></li>
-<li><p>You have a understanding of <a class="reference internal" href="../basic_capabilities/basic_workflow.html"><span class="doc">Howso Engine workflow and concepts</span></a></p></li>
-<li><p>You have a basic understanding of the concepts of RL and a python RL framework, preferably <a class="reference external" href="https://gymnasium.farama.org/">Gymnasium</a>.</p></li>
+<li><p>You’ve successfully <a class="reference internal" href="../../getting_started/installing.html"><span class="doc">installed Howso Engine</span></a></p></li>
+<li><p>You have an understanding of Howso’s <span class="xref std std-doc">basic workflow</span></p></li>
 </ul>
 </section>
-<section id="notebook-recipe">
-<h2>Notebook Recipe<a class="headerlink" href="#notebook-recipe" title="Link to this heading">#</a></h2>
-<p>The following recipe will supplement the content this guide will cover and provide a complete example using several RL games:</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/howsoai/howso-engine-rl-recipes">RL recipe</a></p></li>
-</ul>
+<section id="data">
+<h2>Data<a class="headerlink" href="#data" title="Link to this heading">#</a></h2>
+<p>The dataset for this recipe highlights one of the common use-cases for derived features
+and can be downloaded <a class="reference download internal" download="" href="../../_downloads/71db123c249c9bb72a90880f240057db/dates_generated.parquet"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>. This dataset
+consists of a start time, and end time, and a duration column. We will use derived features
+to ensure that the end time is equal to the start time plus the duration.</p>
 </section>
 <section id="concepts-terminology">
 <h2>Concepts &amp; Terminology<a class="headerlink" href="#concepts-terminology" title="Link to this heading">#</a></h2>
-<p>To understand this guide, we recommend being familiar with the following concepts:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="../../getting_started/terminology.html#trainee"><span class="std std-ref">Trainee</span></a></p></li>
-<li><p><a class="reference internal" href="../../getting_started/terminology.html#conviction"><span class="std std-ref">Conviction</span></a></p></li>
-<li><p><a class="reference internal" href="../../getting_started/terminology.html#react"><span class="std std-ref">React</span></a></p></li>
 <li><p><a class="reference internal" href="../../getting_started/terminology.html#case"><span class="std std-ref">Case</span></a></p></li>
 <li><p><a class="reference internal" href="../../getting_started/terminology.html#feature"><span class="std std-ref">Feature</span></a></p></li>
-<li><p><a class="reference internal" href="../../getting_started/terminology.html#action-features"><span class="std std-ref">Action Features</span></a></p></li>
-<li><p><a class="reference internal" href="../../getting_started/terminology.html#context-features"><span class="std std-ref">Context Features</span></a></p></li>
+<li><p><a class="reference internal" href="../../getting_started/terminology.html#derived-features"><span class="std std-ref">Derived Features</span></a></p></li>
 </ul>
-<p>Additional concepts to be familiar with include the <a class="reference external" href="https://gymnasium.farama.org/">Gymnasium RL Framework</a> and the RL games in the recipes,
-<a class="reference external" href="https://gymnasium.farama.org/environments/classic_control/cart_pole/">Cartpole</a> and
-<a class="reference external" href="https://www.aaai.org/ojs/index.php/AIIDE/article/download/5218/5074">Wafer Thin Mints (PDF Download Link)</a>.</p>
 </section>
 <section id="how-to-guide">
-<h2>How-To Guide<a class="headerlink" href="#how-to-guide" title="Link to this heading">#</a></h2>
-<p>In the learning cycle of RL as shown below, Howso Engine acts as the Agent. As an Agent, Howso Engine both outputs an action value as well as intakes the observation and resulting reward.
-Once the reward and observations are processed, the Howso Engine is trained again based on the results and another action is output.</p>
-<a class=""
-               data-lightbox="group-0563dd2e-3492-4017-b1ba-7d0e8e54d185"
-               href="../../_images/RL1.png"
-               title=""
-               data-title=""
-               
-               ><img src="../../_images/RL1.png"
-                     class=""
-                     width="100%"
-                     height="auto"
-                     alt=""/>
-                </a><p>Image Source: <a class="reference external" href="https://gymnasium.farama.org/content/basic_usage/">https://gymnasium.farama.org/content/basic_usage/</a></p>
-<section id="setup">
-<h3>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h3>
-<p>The Howso Engine Trainee must be initialized in the RL framework before the learning loop. As part of the setup process, enabling <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.set_auto_analyze_params" title="howso.engine.Trainee.set_auto_analyze_params"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.set_auto_analyze_params()</span></code></a>
-can help the user analyze the Trainee after all training steps. This methods eliminates the need to manually analyze after training, which can be done.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trainee</span><span class="o">.</span><span class="n">set_auto_analyze_params</span><span class="p">(</span>
-    <span class="n">auto_analyze_enabled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">context_features</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">context_features</span><span class="p">,</span>
-    <span class="n">action_features</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">action_features</span><span class="p">,</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<section id="action">
-<h3>Action<a class="headerlink" href="#action" title="Link to this heading">#</a></h3>
-<p>In the Action phase, a standard <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a> call will provide the resulting action. Most of the parameters have been covered in the other Howso Engine guides,
-however <code class="docutils literal notranslate"><span class="pre">into_series_store</span></code> may be new for most users. Since we are using the Trainee to learn a series of actions, underneath the hood Engine is treating the contexts and cases
-as part of a series.  The parameter <code class="docutils literal notranslate"><span class="pre">into_series_store</span></code> allows the user to label the series store, which in this case, is the round or loop number.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">react</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
-            <span class="n">desired_conviction</span><span class="o">=</span><span class="n">desired_conviction</span><span class="p">,</span>
-            <span class="n">contexts</span><span class="o">=</span><span class="p">[[</span><span class="n">observation</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">desired_score</span><span class="p">]],</span>
-            <span class="n">context_features</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">context_features</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">reward_features</span><span class="p">,</span>
-            <span class="n">action_features</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">action_features</span><span class="p">,</span>
-            <span class="n">into_series_store</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">round_num</span><span class="p">),</span>
-        <span class="p">)</span>
-<span class="n">action</span> <span class="o">=</span> <span class="n">react</span><span class="p">[</span><span class="s1">&#39;action&#39;</span><span class="p">][</span><span class="s1">&#39;action&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<h2>How-To guide<a class="headerlink" href="#how-to-guide" title="Link to this heading">#</a></h2>
+<p>Here we will define a derived feature and then react to the dataset. This will ensure
+that the features maintain their relationhips.</p>
+<section id="load-data">
+<h3>Load Data<a class="headerlink" href="#load-data" title="Link to this heading">#</a></h3>
+<p>First, we load the data using <cite>Pandas</cite>. Note that the data are stored as a <cite>Parquet</cite> file
+in order to preserve the datetime data types.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># These are the necessary imports for this user guide:</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="k">return</span> <span class="n">action</span>
+<span class="kn">from</span> <span class="nn">howso.engine</span> <span class="kn">import</span> <span class="n">Trainee</span>
+<span class="kn">from</span> <span class="nn">howso.utilities</span> <span class="kn">import</span> <span class="n">infer_feature_attributes</span>
+
+<span class="c1"># Load in the data using pandas</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s1">&#39;data/dates_generated.parquet&#39;</span><span class="p">)</span>
+
+<span class="n">df</span>
 </pre></div>
 </div>
 </section>
-<section id="environment-reward-and-observation">
-<h3>Environment, Reward, and Observation<a class="headerlink" href="#environment-reward-and-observation" title="Link to this heading">#</a></h3>
-<p>This step processes the action from Action phase and outputs a observation and reward. The reward and observation is sent back to the Trainee where
-it can be used to train the Trainee. These steps are generally handled by your RL framework.</p>
+<section id="define-derived-feature-code">
+<h3>Define Derived Feature Code<a class="headerlink" href="#define-derived-feature-code" title="Link to this heading">#</a></h3>
+<p>Derived features use code that is similar to <a class="github reference external" href="https://github.com/howsoai/amalgam">howsoai/amalgam</a> to define a
+relationship. Then, rather than predicting, the feature will be derived according to that code.</p>
+<p>To do this, we create a partial <cite>feature attributes</cite> dictionary which will be fed to
+<a class="reference internal" href="../../api_reference/_autosummary/howso.utilities.html#howso.utilities.infer_feature_attributes" title="howso.utilities.infer_feature_attributes"><code class="xref py py-func docutils literal notranslate"><span class="pre">infer_feature_attributes()</span></code></a>. In the partial <cite>feature attributes</cite>
+dictionary, we define the derived feature code which instructs Engine in how to derive
+the <code class="docutils literal notranslate"><span class="pre">end</span></code> feature as a function of the <code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">duration</span></code> features.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">partial_features</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;end&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;derived_feature_code&#39;</span><span class="p">:</span> <span class="s1">&#39;(+ #start 0 #duration 0),</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<p>The derived feature code that we use, <code class="docutils literal notranslate"><span class="pre">(+</span> <span class="pre">#start</span> <span class="pre">0</span> <span class="pre">#duration</span> <span class="pre">0)</span></code> instructs Engine to add
+<code class="docutils literal notranslate"><span class="pre">duration</span></code> to <code class="docutils literal notranslate"><span class="pre">start</span></code>. The zeros are offsets that are only non-zero for time-series operations,
+and refer to how far back in the time-series to look.</p>
 </section>
-<section id="agent">
-<h3>Agent<a class="headerlink" href="#agent" title="Link to this heading">#</a></h3>
-<p>This is the step where Howso Engine learns from the previous loop, by training in the new reward value. The Trainee should be analyzed after every train step, which
-should be automated by the <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.set_auto_analyze_params" title="howso.engine.Trainee.set_auto_analyze_params"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.set_auto_analyze_params()</span></code></a> method.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trainee</span><span class="o">.</span><span class="n">train</span><span class="p">(</span>
-    <span class="n">features</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">reward_features</span><span class="p">,</span>
-    <span class="n">cases</span><span class="o">=</span><span class="p">[[</span><span class="n">score</span><span class="p">]],</span>
-    <span class="n">series</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">round_num</span><span class="p">),</span>
+<section id="map-data">
+<h3>Map Data<a class="headerlink" href="#map-data" title="Link to this heading">#</a></h3>
+<p>Now we can use <a class="reference internal" href="../../api_reference/_autosummary/howso.utilities.html#howso.utilities.infer_feature_attributes" title="howso.utilities.infer_feature_attributes"><code class="xref py py-meth docutils literal notranslate"><span class="pre">infer_feature_attributes()</span></code></a> to understand the properties
+and characteristics of the data.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">features</span> <span class="o">=</span> <span class="n">infer_feature_attributes</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">features</span><span class="o">=</span><span class="n">partial_features</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>By supplying the partial feature attributes we defined in step 2, the derived feature code will
+be populated for the <code class="docutils literal notranslate"><span class="pre">end</span></code> feature.</p>
+</section>
+<section id="train-and-analyze">
+<h3>Train and Analyze<a class="headerlink" href="#train-and-analyze" title="Link to this heading">#</a></h3>
+<p>Here the original data are trained into Howso Engine, so that it understands relationships between all
+data points.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">trainee</span> <span class="o">=</span> <span class="n">Trainee</span><span class="p">(</span><span class="n">features</span><span class="o">=</span><span class="n">features</span><span class="p">)</span>
+<span class="n">trainee</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">trainee</span><span class="o">.</span><span class="n">analyze</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="react">
+<h3>React<a class="headerlink" href="#react" title="Link to this heading">#</a></h3>
+<p>Here we perform a generative react to generate 5 cases.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">reaction</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
+    <span class="n">action_features</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;duration&#39;</span><span class="p">],</span>
+    <span class="n">derived_action_features</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">],</span>
+    <span class="n">desired_conviction</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">generate_new_cases</span><span class="o">=</span><span class="s1">&#39;no&#39;</span><span class="p">,</span>
+    <span class="n">num_cases_to_generate</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">synth_df</span> <span class="o">=</span> <span class="n">reaction</span><span class="p">[</span><span class="s1">&#39;action&#39;</span><span class="p">]</span>
+<span class="n">synth_df</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">synth_df</span><span class="o">.</span><span class="n">end</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="p">)</span>
 </pre></div>
 </div>
+<p>The <code class="docutils literal notranslate"><span class="pre">derived_action_features</span></code> parameter instructs Engine to derive the <code class="docutils literal notranslate"><span class="pre">end</span></code> feature rather than generating it.</p>
+<p>Finally, we can validate that the derivation behaved as expected:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">synth_df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">assert</span> <span class="n">row</span><span class="o">.</span><span class="n">start</span> <span class="o">+</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_timedelta</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">duration</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">row</span><span class="o">.</span><span class="n">end</span>
+</pre></div>
+</div>
 </section>
-<section id="completion">
-<h3>Completion<a class="headerlink" href="#completion" title="Link to this heading">#</a></h3>
-<p>The RL learning phase is repeated until the desired stop condition, whether it is a termination due to result or a truncation such as a limited number of steps. The Trainee
-has now been trained and analyzed using Reinforcement Learning.</p>
+<section id="complete-code">
+<h3>Complete Code<a class="headerlink" href="#complete-code" title="Link to this heading">#</a></h3>
+<p>The code from all of the steps in this guide is combined below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># These are the necessary imports for this user guide:</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">howso.engine</span> <span class="kn">import</span> <span class="n">Trainee</span>
+<span class="kn">from</span> <span class="nn">howso.utilities</span> <span class="kn">import</span> <span class="n">infer_feature_attributes</span>
+
+<span class="c1"># Load in the data using pandas</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s1">&#39;data/dates_generated.parquet&#39;</span><span class="p">)</span>
+
+<span class="n">df</span>
+
+<span class="n">trainee</span> <span class="o">=</span> <span class="n">Trainee</span><span class="p">(</span><span class="n">features</span><span class="o">=</span><span class="n">features</span><span class="p">)</span>
+<span class="n">trainee</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="n">trainee</span><span class="o">.</span><span class="n">analyze</span><span class="p">()</span>
+
+<span class="n">reaction</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react</span><span class="p">(</span>
+    <span class="n">action_features</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;duration&#39;</span><span class="p">],</span>
+    <span class="n">derived_action_features</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">],</span>
+    <span class="n">desired_conviction</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">generate_new_cases</span><span class="o">=</span><span class="s1">&#39;no&#39;</span><span class="p">,</span>
+    <span class="n">num_cases_to_generate</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">synth_df</span> <span class="o">=</span> <span class="n">reaction</span><span class="p">[</span><span class="s1">&#39;action&#39;</span><span class="p">]</span>
+<span class="n">synth_df</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">synth_df</span><span class="o">.</span><span class="n">end</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">fromtimestamp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">synth_df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">assert</span> <span class="n">row</span><span class="o">.</span><span class="n">start</span> <span class="o">+</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_timedelta</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">duration</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;s&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="n">row</span><span class="o">.</span><span class="n">end</span>
+</pre></div>
+</div>
 </section>
 </section>
 <section id="api-references">
 <h2>API References<a class="headerlink" href="#api-references" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.set_auto_analyze_params" title="howso.engine.Trainee.set_auto_analyze_params"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.set_auto_analyze_params()</span></code></a></p></li>
-<li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a></p></li>
-<li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.train" title="howso.engine.Trainee.train"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.train()</span></code></a></p></li>
+<li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.utilities.html#howso.utilities.infer_feature_attributes" title="howso.utilities.infer_feature_attributes"><code class="xref py py-func docutils literal notranslate"><span class="pre">howso.utilities.infer_feature_attributes()</span></code></a></p></li>
+<li><dl class="simple">
+<dt><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee" title="howso.engine.Trainee"><code class="xref py py-class docutils literal notranslate"><span class="pre">howso.engine.Trainee</span></code></a></dt><dd><ul>
+<li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.train" title="howso.engine.Trainee.train"><code class="xref py py-meth docutils literal notranslate"><span class="pre">howso.engine.Trainee.train()</span></code></a></p></li>
+<li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">howso.engine.Trainee.react()</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
 </ul>
 </section>
 </section>
@@ -562,20 +611,20 @@ has now been trained and analyzed using Reinforcement Learning.</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="json_features.html"
+       href="time_series.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">JSON/YAML as Features</p>
+        <p class="prev-next-title">Time Series and Sequential Data Analysis</p>
       </div>
     </a>
     <a class="right-next"
-       href="time_series.html"
+       href="../concepts/index.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Time Series and Sequential Data Analysis</p>
+        <p class="prev-next-title">Concepts</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -597,16 +646,17 @@ has now been trained and analyzed using Reinforcement Learning.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives-what-you-will-take-away">Objectives: what you will take away</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites-before-you-begin">Prerequisites: before you begin</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notebook-recipe">Notebook Recipe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives-takeaways">Objectives &amp; Takeaways</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisite">Prerequisite</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data">Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts-terminology">Concepts &amp; Terminology</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-guide">How-To Guide</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#action">Action</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-reward-and-observation">Environment, Reward, and Observation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#agent">Agent</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#completion">Completion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-guide">How-To guide</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data">Load Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#define-derived-feature-code">Define Derived Feature Code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#map-data">Map Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#train-and-analyze">Train and Analyze</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#react">React</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-code">Complete Code</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#api-references">API References</a></li>

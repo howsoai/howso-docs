@@ -356,6 +356,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../advanced_capabilities/json_features.html">JSON/YAML as Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../advanced_capabilities/reinforcement_learning.html">Reinforcement Learning</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../advanced_capabilities/time_series.html">Time Series and Sequential Data Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced_capabilities/derived_features.html">Derived Features</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../concepts/index.html">Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -454,7 +455,7 @@ role in Howso, from determining uncertainties to gauging the accuracy of the pre
 <h2>Concepts &amp; Terminology<a class="headerlink" href="#concepts-terminology" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="../../getting_started/terminology.html#residual"><span class="std std-ref">Residual</span></a></p></li>
-<li><p><span class="xref std std-ref">robust</span></p></li>
+<li><p><a class="reference internal" href="../../getting_started/terminology.html#robust"><span class="std std-ref">Robust</span></a></p></li>
 </ul>
 </section>
 <section id="how-to-guide">
@@ -466,7 +467,7 @@ The created <a class="reference internal" href="../../api_reference/_autosummary
 </section>
 <section id="local-residuals">
 <h3>Local Residuals<a class="headerlink" href="#local-residuals" title="Link to this heading">#</a></h3>
-<p>Local metrics are retrieved through using <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a>. Both <span class="xref std std-ref">robust</span> and non-robust (full) versions are available.</p>
+<p>Local metrics are retrieved through using <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a>. Both <a class="reference internal" href="../../getting_started/terminology.html#robust"><span class="std std-ref">Robust</span></a> and non-robust (full) versions are available.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get robust residuals</span>
 <span class="n">details</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;feature_residuals_full&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
 
@@ -484,7 +485,7 @@ The created <a class="reference internal" href="../../api_reference/_autosummary
 <section id="global-residuals">
 <h3>Global Residuals<a class="headerlink" href="#global-residuals" title="Link to this heading">#</a></h3>
 <p>Howso has the ability to retrieve both <a class="reference internal" href="../concepts/global_vs_local.html"><span class="doc">local vs global</span></a> metrics.
-Global metrics are retrieved through using <code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_aggregate()</span></code>.  Both <span class="xref std std-ref">robust</span> and non-robust (full) versions are also available.</p>
+Global metrics are retrieved through using <a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react_aggregate" title="howso.engine.Trainee.react_aggregate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_aggregate()</span></code></a>.  Both <a class="reference internal" href="../../getting_started/terminology.html#robust"><span class="std std-ref">Robust</span></a> and non-robust (full) versions are also available.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">residuals</span> <span class="o">=</span> <span class="n">trainee</span><span class="o">.</span><span class="n">react_react_aggregate</span><span class="p">(</span>
     <span class="n">action_feature</span><span class="o">=</span><span class="n">action_features</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
     <span class="n">details</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;feature_residuals_full&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
@@ -551,7 +552,7 @@ Global metrics are retrieved through using <code class="xref py py-meth docutils
 <li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.analyze" title="howso.engine.Trainee.analyze"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.analyze()</span></code></a></p></li>
 <li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react" title="howso.engine.Trainee.react"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react()</span></code></a></p></li>
 <li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react_into_features" title="howso.engine.Trainee.react_into_features"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_into_features()</span></code></a></p></li>
-<li><p><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_aggregate()</span></code></p></li>
+<li><p><a class="reference internal" href="../../api_reference/_autosummary/howso.engine.html#howso.engine.Trainee.react_aggregate" title="howso.engine.Trainee.react_aggregate"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trainee.react_aggregate()</span></code></a></p></li>
 </ul>
 </section>
 </section>
@@ -650,7 +651,7 @@ Global metrics are retrieved through using <code class="xref py py-meth docutils
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.3.7.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.7.
     <br/>
   </p>
 </div>
