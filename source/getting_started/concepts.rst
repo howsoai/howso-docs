@@ -13,7 +13,7 @@ This is very different from today's typical AI workflows. Most AI today, such as
 By nature, these models are not human interpretable (“black box”), and their predictions cannot be mapped back to original data, making them inherently unexplainable.
 
 To compete with the speed and performance of today's AI, Howso utilizes cutting edge advances in spatial query systems and information probability theory to make IBL practical and accurate. These technological
-advances enable all of Engine's insight and analysis capabilites, including state-of-the-art understandability, reliability, and control.
+advances enable all of Engine's insight and analysis capabilities, including state-of-the-art understandability, reliability, and control.
 
 - Rank order which data points contributed the most to your decisions.
 

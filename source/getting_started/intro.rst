@@ -1,5 +1,5 @@
-Overview of Howso's Trustworthy AI
-==================================
+Overview of Howso's Understandable AI®
+======================================
 
 Key Features of the Howso Engine
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
