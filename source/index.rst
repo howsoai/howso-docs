@@ -5,12 +5,12 @@ Whether you are an individual or a large enterprise, AI has likely already impac
 heard stories of AI generating "hallucinations" and grossly biased predictions. You might have a nagging suspicion that the AI available today is unreliable or misleading.
 And because it is inherently “black box”, you cannot understand, trust, or control why its decisions were made, the data it used, or its reliability.
 
-Enter **Howso™**. Howso is the result of years of research and innovation to solve the problem of trustworthy AI.
+Enter **Howso™**. Howso is the result of years of research and innovation to solve the problem of Understandable AI®.
 Howso is rooted in instance-based learning (IBL), so all of its decisions are made directly from the data. Howso stores information in memory and makes predictions from the
 similarities and differences between data points, not an underlying black box model, leading to fully transparent decisions with perfect attribution back to the source data.
 Howso utilizes cutting edge advances in the fields of statistics, physics, game theory, and information theory to make IBL understandable, performant, versatile, and trustworthy.
 
-In the spirit of providing trustworthy AI to all, Howso has open sourced its **Engine™** platform. Engine enables you to...
+In the spirit of providing undderstandable AI to all, Howso has open sourced its **Engine™** platform. Engine enables you to...
 
 - Make accurate predictions and avoid hallucinations
 
