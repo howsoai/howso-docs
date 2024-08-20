@@ -10,7 +10,7 @@ Howso is rooted in instance-based learning (IBL), so all of its decisions are ma
 similarities and differences between data points, not an underlying black box model, leading to fully transparent decisions with perfect attribution back to the source data.
 Howso utilizes cutting edge advances in the fields of statistics, physics, game theory, and information theory to make IBL understandable, performant, versatile, and trustworthy.
 
-In the spirit of providing undderstandable AI to all, Howso has open sourced its **Engine™** platform. Engine enables you to...
+In the spirit of providing understandable AI to all, Howso has open sourced its **Engine™** platform. Engine enables you to...
 
 - Make accurate predictions and avoid hallucinations
 
