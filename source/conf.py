@@ -51,6 +51,12 @@ language = "en"
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
+# Define the canonical URL if you are using a custom domain on Read the Docs
+html_baseurl = os.environ.get("READTHEDOCS_CANONICAL_URL", "")
+html_context = {"howso_home_url": os.environ.get("HOWSO_HOME_URL")}
+# Tell Jinja2 templates the build is running on Read the Docs
+if os.environ.get("READTHEDOCS", "") == "True":
+    html_context["READTHEDOCS"] = True
 html_theme = "pydata_sphinx_theme"
 html_favicon = "_static/favicon.ico"
 html_logo = "_static/howso_logo_icon.svg"
@@ -72,7 +78,6 @@ html_theme_options = {
     ],
     "show_toc_level": 2,
 }
-html_context = {"howso_home_url": os.environ.get("HOWSO_HOME_URL")}
 html_static_path = [
     "_static",
 ]
