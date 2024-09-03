@@ -1,45 +1,59 @@
 html {
-    --pst-font-family-base: "Inter", var(--pst-font-family-base-system);
-    --pst-font-family-heading: "Inter", var(--pst-font-family-base-system);
-    --pst-font-weight-heading: 300;
+  --pst-font-family-base: "Inter", var(--pst-font-family-base-system);
+  --pst-font-family-heading: "Inter", var(--pst-font-family-base-system);
+  --pst-font-weight-heading: 300;
 }
 
 html[data-theme="light"] {
-    --pst-color-primary: #3E63DD;
-    --pst-color-secondary: #0091FF;
-    --pst-color-info: #3F83F8;
-    --pst-color-warning: #F05252;
-    --pst-color-success: #0E9F6E;
-    --pst-color-attention: #FACA15;
-    --pst-color-danger: #E02424;
-    --pst-color-text-base: #111928;
-    --pst-color-text-muted: #374151;
-    --pst-color-shadow: #D1D5DB;
-    --pst-color-border: #E5E7EB;
-    --pst-color-inline-code: #D61F69;
-    --pst-color-target: #FCE96A;
-    --pst-color-background: #FFFFFF;
-    --pst-color-on-background: #FFFFFF;
-    --pst-color-surface: #F9FAFB;
-    --pst-color-on-surface: #D1D5DB;
+  --palette-primary-main: #3e63dd;
+  --palette-primary-dark: #2e53cd;
+
+  --pst-color-primary: var(--palette-primary-main);
+  --pst-color-secondary: #0091ff;
+  --pst-color-info: #3f83f8;
+  --pst-color-warning: #f05252;
+  --pst-color-success: #0e9f6e;
+  --pst-color-attention: #faca15;
+  --pst-color-danger: #e02424;
+  --pst-color-text-base: #111928;
+  --pst-color-text-muted: #374151;
+  --pst-color-shadow: #d1d5db;
+  --pst-color-border: #e5e7eb;
+  --pst-color-inline-code: #d61f69;
+  --pst-color-link: var(--palette-primary-main);
+  --pst-color-link-visited: var(--palette-primary-dark);
+  --pst-color-target: #fce96a;
+  --pst-color-background: #ffffff;
+  --pst-color-on-background: #ffffff;
+  --pst-color-surface: #f9fafb;
+  --pst-color-on-surface: #d1d5db;
 }
 
 html[data-theme="dark"] {
-    --pst-color-primary: #3E63DD;
-    --pst-color-secondary: #0091FF;
-    --pst-color-info: #3F83F8;
-    --pst-color-warning: #F05252;
-    --pst-color-success: #31C48D;
-    --pst-color-attention: #FCE96A;
-    --pst-color-danger: #F05252;
-    --pst-color-text-base: #9CA3AF;
-    --pst-color-text-muted: #D1D5DB;
-    --pst-color-shadow: #374151;
-    --pst-color-border: #9CA3AF;
-    --pst-color-inline-code: #F8B4D9;
-    --pst-color-target: #99154B;
-    --pst-color-background: #1F2A37;
-    --pst-color-on-background: #1F2A37;
-    --pst-color-surface: #1F2A37;
-    --pst-color-on-surface: #1F2A37;
+  --palette-primary-main: #7ea3ff;
+  --palette-primary-dark: #5e83fd;
+
+  --pst-color-primary: var(--palette-primary-main);
+  --pst-color-secondary: #0091ff;
+  --pst-color-info: #3f83f8;
+  --pst-color-warning: #f05252;
+  --pst-color-success: #31c48d;
+  --pst-color-attention: #fce96a;
+  --pst-color-danger: #f05252;
+  --pst-color-text-base: #9ca3af;
+  --pst-color-text-muted: #d1d5db;
+  --pst-color-shadow: #374151;
+  --pst-color-border: #9ca3af;
+  --pst-color-inline-code: #f8b4d9;
+  --pst-color-link: var(--palette-primary-main);
+  --pst-color-link-visited: var(--palette-primary-dark);
+  --pst-color-target: #99154b;
+  --pst-color-background: #0f1a27;
+  --pst-color-on-background: #0f1a27;
+  --pst-color-surface: #1f2a37;
+  --pst-color-on-surface: #1f2a37;
+}
+
+a:visited {
+  color: var(--pst-color-link-visited);
 }
