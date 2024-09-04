@@ -53,7 +53,7 @@ Global Feature Importance
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 To get global feature importance metrics, :py:meth:`Trainee.react_aggregate`, is called on a trained and analyzed Trainee. :py:meth:`Trainee.react_aggregate` calls react internally on the cases already trained into the Trainee and calculates the metrics. In this method, the desired metrics can be selected as parameters. These parameters are named individually
 in the ``details`` parameter and setting them to ``True`` will calculate and return the desired metrics. For example, ``feature_mda_robust`` and ``feature_contributions_robust`` will calculate the robust versions of MDA and Feature Contributions, while ``feature_mda_full`` and ``feature_contributions_full`` will calculate the non-robust (full) versions.
-An action feature must be specified. ``feature_influences_action_feature`` is recommended for feature influence metrics such as feature contributions and mda, especially when used in conjuction with retrieving prediction stats, however, ``action_feature`` can be also used as well. ``action_feature`` sets the action feature for both influence metrics and prediction stats. Since often
+An action feature must be specified. ``feature_influences_action_feature`` is recommended for feature influence metrics such as feature contributions and mda, especially when used in conjunction with retrieving prediction stats, however, ``action_feature`` can be also used as well. ``action_feature`` sets the action feature for both influence metrics and prediction stats. Since often
 only the influence metrics's action feature is intended to be set, ``feature_influences_action_feature`` provides a more precise parameter.
 
 .. code-block:: python
