@@ -40,7 +40,7 @@ The :class:`~Trainee` will be referenced as ``trainee`` in the sections below.
 
 New Cases
 ^^^^^^^^^
-Using :py:meth:`Trainee.react` with new cases is straightfoward and simple. This is often the default use case of most workflows.
+Using :py:meth:`Trainee.react` with new cases is straightforward and simple. This is often the default use case of most workflows.
 When cases are passed into react, :py:meth:`Trainee.react`, it acts upon the cases as if they were new cases.
 
 .. code-block:: python
