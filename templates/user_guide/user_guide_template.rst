@@ -4,7 +4,7 @@ Classification
 ==============
 .. topic:: What is covered in this user guide.
 
-   In this guide, you will learn the basics of using the Howso Engine for **Classification** in order to predict categorical outcomes such as whether a credit card transaction is fradulant, an email is spam, or whether a customer will churn or not based on their demographic and transactional data, or as in this example, whether a person is suffering from a disease or not based on their symptoms and test results.
+   In this guide, you will learn the basics of using the Howso Engine for **Classification** in order to predict categorical outcomes such as whether a credit card transaction is fraudulent, an email is spam, or whether a customer will churn or not based on their demographic and transactional data, or as in this example, whether a person is suffering from a disease or not based on their symptoms and test results.
 
 Objectives: what you will take away
 -----------------------------------
