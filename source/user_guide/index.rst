@@ -4,7 +4,7 @@ User Guides
 
 User guides are designed to help you get started working with Howso Engine. These guides teach the basics of setting up the Engine for
 a variety of data science tasks, explore Howso's understandability toolkit, and demonstrate advanced capabilities useful for particular applications
-of Howso Engine. Additionaly, they teach you terminology that is unique to Howso, provide insight into how Howso approaches data science
+of Howso Engine. Additionally, they teach you terminology that is unique to Howso, provide insight into how Howso approaches data science
 problems, and identify key API references. They also contain examples for using each Howso tool within a data science workflow. To help you decide which user guide
 is best for you, we have grouped them into three categories:
 
