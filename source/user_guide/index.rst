@@ -31,7 +31,7 @@ With these guides, you will learn how to use Howso's unique tools for understand
 to identify the data that directly influenced your decisions, counterfactuals, and Engine's uncertainty.
 
 - :doc:`Case Importance <advanced_capabilities/case_importance>`
-- :doc:`Feature Imprtance <advanced_capabilities/feature_importance>`
+- :doc:`Feature Importance <advanced_capabilities/feature_importance>`
 - :doc:`Generative AI/Synth <advanced_capabilities/generative_AI_synth>`
 - :doc:`Influential Cases <advanced_capabilities/influential_cases>`
 - :doc:`JSON/YAML as features <advanced_capabilities/json_features>`
