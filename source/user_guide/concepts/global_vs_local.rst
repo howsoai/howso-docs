@@ -52,7 +52,7 @@ called by the :meth:`~Trainee.react_aggregate` method.
 
 Local metrics
 ^^^^^^^^^^^^^
-Local metrics in Howso refers to calculations done using all of the cases available. Local metrics are calcluated using the local space of the provided case(s). These cases may either be new cases or existing cases.
+Local metrics in Howso refers to calculations done using all of the cases available. Local metrics are calculated using the local space of the provided case(s). These cases may either be new cases or existing cases.
 The local space refers to the set of closest cases to the provided case(s). While the exact number of cases that consists of the local space varies depending on several factors, generally it includes at least 30 cases if there is enough cases.
 
 Local metrics are controlled through the ``details`` parameter in :py:meth:`Trainee.react`.

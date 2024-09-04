@@ -23,7 +23,7 @@ How do I use Infer Feature Attributes?
      pass-in your data and ``print`` the dictionary. A subset of your data
      may also be provided if not all features' attributes are intended to be inferred,
      however this is not recommended, as all features that are used with Howso are recommended
-     to have a correspending set of feature attributes mappings.
+     to have a corresponding set of feature attributes mappings.
 
      .. code-block:: python
 

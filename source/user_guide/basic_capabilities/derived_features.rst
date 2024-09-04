@@ -29,7 +29,7 @@ Concepts & Terminology
 ----------------------
 This guide will explain the concept of :ref:`derived_features`, which include both **derived action features** and **derived context
 features**. Derived features allow you extra control to create additional features based on existing features. This provides additional
-feature engineering flexiblity. To follow along, you should be familiar with the following concepts:
+feature engineering flexibility. To follow along, you should be familiar with the following concepts:
 
 - :ref:`trainee`
 - :ref:`derived_features`

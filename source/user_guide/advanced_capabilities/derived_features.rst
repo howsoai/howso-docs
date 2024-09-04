@@ -41,7 +41,7 @@ How-To guide
 ------------
 
 Here we will define a derived feature and then react to the dataset. This will ensure
-that the features maintain their relationhips.
+that the features maintain their relationships.
 
 
 Load Data

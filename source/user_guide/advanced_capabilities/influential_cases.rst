@@ -4,7 +4,7 @@ Influential Cases
 =================
 .. topic:: What is covered in this user guide.
 
-   In this guide, you will learn the basics of using Howso Engine to query influential, similiar, and boundary cases.
+   In this guide, you will learn the basics of using Howso Engine to query influential, similar, and boundary cases.
 
 
 Prerequisites: before you begin
@@ -20,9 +20,9 @@ in the prerequisites using the ``fetch_data()`` function.
 
 Concepts & Terminology
 ----------------------
-Influential cases and most similiar cases represent the cases with the smallest distance to the case of interest. They are closely related,
-as most similar cases can be any of number of cases ranked by distance while influential cases are a subset of most similiar cases comprising
-of cases close enough to influence the case of interest. Boundary cases are the most similiar cases that have a different action value.
+Influential cases and most similar cases represent the cases with the smallest distance to the case of interest. They are closely related,
+as most similar cases can be any of number of cases ranked by distance while influential cases are a subset of most similar cases comprising
+of cases close enough to influence the case of interest. Boundary cases are the most similar cases that have a different action value.
 
 - :ref:`influential_cases`
 - :ref:`most_similar_cases`
@@ -50,10 +50,10 @@ Influential cases can be retrieved by setting ``influential_cases`` to ``True``.
     details = {'influential_cases': True}
 
 
-Most Similiar Cases
+Most similar Cases
 ^^^^^^^^^^^^^^^^^^^
 
-The most similiar cases can be retrieved by setting ``most_similar_cases`` to ``True``. The number
+The most similar cases can be retrieved by setting ``most_similar_cases`` to ``True``. The number
 of cases retrieved can be set by configuring the ``num_most_similar_cases`` parameter.
 
 .. code-block:: python
@@ -108,7 +108,7 @@ Review the results of the details retrieved.
 .. code-block:: python
 
     influential_cases = pd.DataFrame(results['details']['influential_cases'][0])
-    similiar_cases = pd.DataFrame(results['details']['similiar_cases'][0])
+    similar_cases = pd.DataFrame(results['details']['similar_cases'][0])
     boundary_cases = pd.DataFrame(results['details']['boundary_cases'][0])
 
 Combined Code
@@ -161,7 +161,7 @@ Combined Code
     )
 
     influential_cases = pd.DataFrame(results['details']['influential_cases'][0])
-    similiar_cases = pd.DataFrame(results['details']['most_similar_cases'][0])
+    similar_cases = pd.DataFrame(results['details']['most_similar_cases'][0])
     boundary_cases = pd.DataFrame(results['details']['boundary_cases'][0])
 
 

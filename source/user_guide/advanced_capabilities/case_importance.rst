@@ -8,7 +8,7 @@ Case Importance
 
 Objectives: what you will take away
 -----------------------------------
-- **Definitions & an understanding** of case importance and the situtations in which they can be retrieved.
+- **Definitions & an understanding** of case importance and the situations in which they can be retrieved.
 
 Prerequisites: before you begin
 -------------------------------

@@ -4,7 +4,7 @@ User Guides
 
 User guides are designed to help you get started working with Howso Engine. These guides teach the basics of setting up the Engine for
 a variety of data science tasks, explore Howso's understandability toolkit, and demonstrate advanced capabilities useful for particular applications
-of Howso Engine. Additionaly, they teach you terminology that is unique to Howso, provide insight into how Howso approaches data science
+of Howso Engine. Additionally, they teach you terminology that is unique to Howso, provide insight into how Howso approaches data science
 problems, and identify key API references. They also contain examples for using each Howso tool within a data science workflow. To help you decide which user guide
 is best for you, we have grouped them into three categories:
 
@@ -31,7 +31,7 @@ With these guides, you will learn how to use Howso's unique tools for understand
 to identify the data that directly influenced your decisions, counterfactuals, and Engine's uncertainty.
 
 - :doc:`Case Importance <advanced_capabilities/case_importance>`
-- :doc:`Feature Imprtance <advanced_capabilities/feature_importance>`
+- :doc:`Feature Importance <advanced_capabilities/feature_importance>`
 - :doc:`Generative AI/Synth <advanced_capabilities/generative_AI_synth>`
 - :doc:`Influential Cases <advanced_capabilities/influential_cases>`
 - :doc:`JSON/YAML as features <advanced_capabilities/json_features>`

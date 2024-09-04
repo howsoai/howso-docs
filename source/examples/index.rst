@@ -14,7 +14,7 @@ Section 1-Insights
 ^^^^^^^^^^^^^^^^^^
 Explores the different types of insights that can be attained using Howso.
 
-**Noteable Recipes**
+**Notable Recipes**
 
 1. :download:`Engine-Insights <https://github.com/howsoai/howso-engine-recipes/tree/main/recipes/1-Insights>`
     - See an introduction to many of the insights that can be gained through Howso Engine.
@@ -23,7 +23,7 @@ Section 2-Workflows
 ^^^^^^^^^^^^^^^^^^^
 Example use cases that combine different Howso insights and capabilities into practical workflows.
 
-**Noteable Recipes**
+**Notable Recipes**
 
 1. :download:`Anomaly Detection <https://github.com/howsoai/howso-engine-recipes/blob/main/recipes/2-Workflows/anomaly_detection/anomaly_detection.ipynb>`
     - Build your fraud and rare-events use-cases from this example using `Surprisal`!
@@ -67,7 +67,7 @@ Section 5-Technical_Validation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Demonstrations of certain Howso technical capabilities.
 
-**Noteable Recipes**
+**Notable Recipes**
 
 1. :download:`Residuals Validation <https://github.com/howsoai/howso-engine-recipes/blob/main/recipes/5-Technical_Validation/residuals_validation.ipynb>`
     - You may have noticed we don't use the traditional ML approach of `train-test-split <https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html>`_ in our example workflows. There are use-cases, especially in small datasets, where a user cannot afford to further cut their data away from training the model. Use this example as proof for why train-test-splits are no longer needed when using Howso™ !
