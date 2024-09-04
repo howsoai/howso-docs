@@ -12,7 +12,7 @@ adapted to your specific dataset or application.
 - :doc:`Editing Trainees and Case Weighting <editing_case_weighting>`
 - :doc:`Feature Importance <feature_importance>`
 - :doc:`Generative AI and Data Synthesis <generative_AI_synth>`
-- :doc:`Influential, Similiar, and Boundary Cases <influential_cases>`
+- :doc:`Influential, similar, and Boundary Cases <influential_cases>`
 - :doc:`Reinforcement Learning <reinforcement_learning>`
 - :doc:`Time Series and Sequential Data Analysis <time_series>`
 - :doc:`JSON Features <json_features>`
