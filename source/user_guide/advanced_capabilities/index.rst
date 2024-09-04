@@ -16,7 +16,7 @@ adapted to your specific dataset or application.
 - :doc:`Reinforcement Learning <reinforcement_learning>`
 - :doc:`Time Series and Sequential Data Analysis <time_series>`
 - :doc:`JSON Features <json_features>`
-- :doc:`Derived Fetaures <derived_features>`
+- :doc:`Derived Features <derived_features>`
 
 .. toctree::
     :maxdepth: 2
