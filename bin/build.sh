@@ -55,7 +55,6 @@ gen_licenses() {
   # Removing our own - since they aren't 3rd party
   pip uninstall -y howso-engine
   pip uninstall -y amalgam-lang
-  pip uninstall -y howso-openapi-client
   pip install pip-licenses
   pip-licenses --with-authors --with-urls --with-license-file --with-description --format=plain-vertical  > ./LICENSE-3RD-PARTY.txt
   # Include any additional non-generated licenses
