@@ -1,5 +1,7 @@
 {{ fullname | escape | underline }}
 
+.. currentmodule:: {{ fullname }}
+
 {% block modules %}
 {% if modules %}
 .. rubric:: Submodules
