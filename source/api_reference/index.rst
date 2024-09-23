@@ -34,10 +34,10 @@ These packages are for internal use and are not recommended for inexperienced us
     howso.direct
 
 
-Other Packages
---------------
+Feature Attributes
+------------------
 
 .. toctree::
     :maxdepth: 2
 
-    data_structures
+    feature_attributes

@@ -2,8 +2,6 @@
 
 # FeatureAttributes
 
-`````{py:module} howso.openapi.models
-:noindex:
 
 ````{py:class} FeatureAttributes
 
@@ -186,4 +184,3 @@ Flag feature as only having unique values. Only applicable to nominals features.
 ```
 
 ````
-`````

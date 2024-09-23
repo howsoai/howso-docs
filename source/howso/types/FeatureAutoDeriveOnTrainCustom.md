@@ -1,8 +1,6 @@
 <!-- Auto-generated do not edit -->
 # FeatureAutoDeriveOnTrainCustom
 
-`````{py:module} howso.openapi.models
-:noindex:
 
 ````{py:class} FeatureAutoDeriveOnTrainCustom
 
@@ -40,4 +38,3 @@ Feature name(s) by which to order the series specified by `series_id_features`. 
 ```
 
 ````
-`````

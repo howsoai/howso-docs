@@ -1,8 +1,6 @@
 <!-- Auto-generated do not edit -->
 # FeatureOriginalType
 
-`````{py:module} howso.openapi.models
-:noindex:
 
 ````{py:class} FeatureOriginalType
 
@@ -57,4 +55,3 @@ The unit of the time delta.
 ```
 
 ````
-`````

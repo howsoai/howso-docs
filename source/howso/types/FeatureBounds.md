@@ -1,8 +1,6 @@
 <!-- Auto-generated do not edit -->
 # FeatureBounds
 
-`````{py:module} howso.openapi.models
-:noindex:
 
 ````{py:class} FeatureBounds
 
@@ -33,4 +31,3 @@ Allow nulls to be output, per their distribution in the data. Defaults to true.
 ```
 
 ````
-`````
