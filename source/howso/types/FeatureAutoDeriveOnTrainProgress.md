@@ -1,8 +1,6 @@
 <!-- Auto-generated do not edit -->
 # FeatureAutoDeriveOnTrainProgress
 
-`````{py:module} howso.openapi.models
-:noindex:
 
 ````{py:class} FeatureAutoDeriveOnTrainProgress
 
@@ -23,4 +21,3 @@ Feature name(s) of series for which to derive this feature. A series is the conj
 ```
 
 ````
-`````

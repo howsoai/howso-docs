@@ -2,8 +2,6 @@
 
 # FeatureTimeSeries
 
-`````{py:module} howso.openapi.models
-:noindex:
 
 ````{py:class} FeatureTimeSeries
 
@@ -95,4 +93,3 @@ When true, the feature will be treated as the time feature for time series model
 ```
 
 ````
-`````
