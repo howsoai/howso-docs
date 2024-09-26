@@ -16,8 +16,14 @@ Explores the different types of insights that can be attained using Howso.
 
 **Notable Recipes**
 
-1. :download:`Engine-Insights <https://github.com/howsoai/howso-engine-recipes/tree/main/recipes/1-Insights>`
+1. :download:`Engine-Insights <https://github.com/howsoai/howso-engine-recipes/blob/main/recipes/1-Insights/engine-insights.ipynb>`
     - See an introduction to many of the insights that can be gained through Howso Engine.
+
+2. :download:`Conditioned-Insights <https://github.com/howsoai/howso-engine-recipes/blob/main/recipes/1-Insights/conditioned-insights.ipynb>`
+    - See how your dataset's predictability changes under a variety of conditions providing out of the box insights on your data without the need to build multiple machine learning models.
+
+3. :download:`Predition-Insights <https://github.com/howsoai/howso-engine-recipes/blob/main/recipes/1-Insights/prediction-insights.ipynb>`
+    - See how Predictive insights with complete attribution and detailed explanations can be gained through Howso Engine.
 
 Section 2-Workflows
 ^^^^^^^^^^^^^^^^^^^
