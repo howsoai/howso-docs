@@ -74,6 +74,17 @@ To view the built docs in a web browser, you can run a python http server over t
 python -m http.server 8080 --directory ./build/html
 ```
 
+## Publishing the Docs
+
+For most individuals, in most cases, no action is needed to publish the docs.
+Once a PR is merged to `main`, the docs built from that commit will be viewable on Read the Docs under version [latest](https://docs.howso.com/en/latest/).
+
+**Note**: the default behavior of our Read the Docs webpage is to display the docs built from the commit with the `release-latest` tag applied.
+This will appear on Read the Docs as `release-latest` and not `latest`.
+The `release-latest` tag is applied manually to the intended Git commit in conjunction with our curated release schedule.
+The Read the Docs build of the same name will need to be run from the Read the Docs admin page each time the `release-latest` tag is applied to a different commit,
+else the content on the webpage under version `release-latest` will not reflect the new commit.
+
 ## License
 
 [License](LICENSE.txt)
