@@ -102,5 +102,6 @@ Place this supplemental ``windowsZones.xml`` alongside the previously downloaded
     :maxdepth: 1
     :hidden:
 
+    pypi_install
     dev_container
     client_configuration
