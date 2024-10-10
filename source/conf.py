@@ -200,6 +200,7 @@ simplify_optional_unions = True
 # https://documatt.com/sphinx-reredirects/usage.html
 redirects = {
     # "foo": "/bar.html" # Creates a redirect from "/foo.html" to "/bar.html"
+    "user_guide/index.html": "/en/release-latest/user_guide/index.html"
 }
 
 # -- Documentation Setup -----------------------------------------------------
