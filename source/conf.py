@@ -85,7 +85,7 @@ html_css_files = [
     "css/theme.css",
     "css/custom.css",
 ]
-html_js_files = ["js/icon.js", "js/page-toc.js"]
+html_js_files = ["js/html-js-class.js", "js/icon.js", "js/page-sidebar-secondary.js"]
 
 master_doc = "index"
 

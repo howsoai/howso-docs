@@ -1,5 +1,6 @@
 "use strict";
-(() => {
+
+document.addEventListener("DOMContentLoaded", () => {
   const sidebarSecondaryItems = document.querySelector(
     ".sidebar-secondary-items"
   );
@@ -33,4 +34,6 @@
       }
     });
   })();
-})();
+
+  sidebarSecondaryItems.classList.add("opacity-100");
+});
