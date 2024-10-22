@@ -202,6 +202,7 @@ redirects = {
     # "foo": "/bar.html" # Creates a redirect from "/foo.html" to "/bar.html"
     "user_guide/index.html": "/en/release-latest/user_guide/index.html",
     "user_guide/basic_capabilities/predictions.html": "/en/release-latest/user_guide/basic_capabilities/predictions.html",
+    "getting_started/concepts.html": "https://docs.howso.com/en/release-latest/getting_started/concepts.html",
 }
 
 # -- Documentation Setup -----------------------------------------------------
