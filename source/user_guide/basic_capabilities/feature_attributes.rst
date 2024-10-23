@@ -76,13 +76,20 @@ to a different range, modify the ``min`` and ``max`` ``bounds`` feature attribut
 - Specify the ``type`` as `continuous` inside IFA.
 - Specify the maximum value (exclusive) as the ``cycle_length`` feature attribute.
 
-How do I specify dates?
+How do I specify dates or times?
 -----------------------
-- Often, IFA can intuit the proper date format especially if the dates are a
+- Often, IFA can intuit the proper date/time format, especially if they are a
   Python ``datetime`` object.
 - They can also be specified by passing a dictionary to IFA using the
-  ``datetime_feature_formats`` argument.
-  - An example is: ``{ "end_date" : "%Y-%m-%d" }``
+  ``datetime_feature_formats`` argument. For example:
+  
+  .. code-block:: python
+
+    datetime_feature_formats={
+      "end_date": "%Y-%m-%d",
+      "start_time": "%H:%M:%S.%f",
+      "end_time": "%I:%M:%S %p",
+    }
 
 What are **partial features**?
 ------------------------------
