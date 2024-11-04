@@ -59,10 +59,39 @@ What is the difference between **nominal**, **ordinal**, and **continuous** feat
 How do I map **ordinal** features?
 ----------------------------------
 - If the feature is `numeric`, all you must do is specify the ``type`` as
-  `ordinal` inside IFA.
+  `ordinal` in the feature attributes dictionary.
 - If the feature is `ordinal` but not `numeric`, pass a dictionary specifying
   the order to IFA using the ``ordinal_feature_values`` argument. - An example
   is: ``{ "size" : [ "small", "medium", "large", "huge" ] }``
+
+How can I preset **nominal** and **continuous** feature types?
+------------------------------
+- Use the ``types`` parameter to ensure that ``infer_feature_attributes`` treats certain features
+  as either `nominal` or `continuous`.
+
+- This is important because IFA may not correctly specify the bounds if the feature type is
+  ambiguous. For example, imagine a `nominal` feature of US zip codes (90016,
+  91334, etc.). IFA may infer these values to be `continuous` and the resulting
+  dictionary will include ``min`` and ``max`` bounds. You can edit the `type` to be
+  `nominal` post calling IFA, but the `continuous` bounds may cause an issue
+  when reacting to the model. This is why it's often better to use ``types``.
+
+  .. code-block:: python
+
+    # Ensure that potentially ambiguous types are preset.
+    # Keys can be feature names that map to a particular type,
+    # or a type mapping to a list of feature names.
+    types = {
+      "zip_code": "nominal",
+      "continuous": ["fatalities", "num_occupants"]
+    }
+
+    # Pass in the types to infer_feature_attributes.
+    features = infer_feature_attributes(
+        df,
+        types=types
+    )
+
 
 How do I map **cyclic** features?
 ---------------------------------
@@ -91,26 +120,6 @@ How do I specify dates or times?
       "end_time": "%I:%M:%S %p",
     }
 
-What are **partial features**?
-------------------------------
-- **Partial features** is a term used to describe a partial dictionary from
-  which IFA builds the rest of the feature mapping. It is also a variable-name
-  passed to the ``features`` argument inside IFA. Below is an example:
-
-  .. code-block:: python
-
-    # Infer features using DataFrame format
-    partial_features = {'education-num':{'type':'nominal'}, 'age':{'type':'continuous'}}
-    features = infer_feature_attributes(df, features=partial_features)
-
-- ``partial_features`` are important because they allow IFA to correctly specify
-  the bounds. For example, imagine a `nominal` feature of US zip codes (90016,
-  91334, etc.). IFA may infer these values to be `continuous` and the resulting
-  dictionary will include ``min`` and ``max`` bounds. You can edit the ``type`` to be
-  `nominal` post calling IFA, but the `continuous` bounds may cause an issue
-  when reacting to the model. This is why it's often better to use
-  ``partial_features`` as a core to pass into IFA.
-
 What are **dependent features**?
 --------------------------------
 - Dependent features are those features which depend on each other. These
@@ -130,7 +139,6 @@ What are **dependent features**?
     features = infer_feature_attributes(
         df,
         dependent_features=dependent_features,
-        features=features
     )
 
 Derivation Attributes
