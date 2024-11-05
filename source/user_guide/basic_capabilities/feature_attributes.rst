@@ -141,6 +141,21 @@ What are **dependent features**?
         dependent_features=dependent_features,
     )
 
+What are **partial features**?
+------------------------------
+- **Partial features** is a term used to describe a partial dictionary from
+  which IFA builds the rest of the feature mapping. It is also a variable-name
+  passed to the ``features`` argument inside IFA. Below is an example:
+
+  .. code-block:: python
+    # Infer features using DataFrame format
+    partial_features = {'education-num':{'type':'nominal'}, 'age':{'type':'continuous'}}
+    features = infer_feature_attributes(df, features=partial_features)
+
+  **Note:** As of release `2024.10.0`, the ``features`` paramter is deprecated and will be removed
+  in a future release. Please preset feature types with the ``types`` parameter and make other
+  changes directly to the resultant feature attributes dictionary.
+
 Derivation Attributes
 ---------------------
 Derived during-training features should have a feature attribute of
