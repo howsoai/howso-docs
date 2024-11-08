@@ -40,7 +40,7 @@ it can reveal information such as why a case was anomalous. For example, if a NB
 Setup
 ^^^^^
 The user guide assumes you have created and setup a :class:`~Trainee` as demonstrated in :doc:`basic workflow <../basic_capabilities/basic_workflow>`.
-The created :class:`~Trainee` will be referenced as ``trainee`` in the sections below.
+The created :class:`~Trainee` will be referenced as ``trainee`` in the sections below. This guide also assumes you have installed the `pmlb` python library for the dataset used.
 
 :ref:`familiarity_conviction`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -54,11 +54,14 @@ through :py:meth:`Trainee.get_cases`
 
     trainee.react_into_features(
         familiarity_conviction_addition=True,
-        familiarity_conviction_remove=True
+        familiarity_conviction_removal=True
     )
     familiarity_conviction_addition = trainee.get_cases(
         session=trainee.active_session,
-        features=['familiarity_conviction_addition', 'familiarity_conviction_removal']
+        features=[
+            'familiarity_conviction_addition',
+            'familiarity_conviction_removal'
+        ]
     )
 
 :ref:`similarity_conviction`
@@ -83,23 +86,15 @@ specific cases in :py:meth:`Trainee.react`
 .. code-block:: python
 
     details = {
-        'global_case_feature_residual_convictions_robust': True,
-        'local_case_feature_residual_convictions_robust': True
+        'feature_residuals_robust': True
     }
 
-    # React to get the details of each case
     results = trainee.react(
         test_case[context_features],
         context_features=context_features,
         action_features=action_features,
-        details=Details
+        details=details
     )
-
-    # Extract the global and local case feature residual convictions
-    global_case_feature_residual_convictions = pd.DataFrame(
-        results['details']['global_case_feature_residual_convictions_robust'])[df.columns.tolist()]
-    local_case_feature_residual_convictions = pd.DataFrame(
-        results['details']['local_case_feature_residual_convictions_robust'])[df.columns.tolist()]
 
 Complete Code
 ^^^^^^^^^^^^^
@@ -126,7 +121,7 @@ The code from all of the steps in this guide is combined below:
     action_features = ['target']
     context_features = features.get_names(without=action_features)
 
-     trainee = Trainee(features=features)
+    trainee = Trainee(features=features)
 
     trainee.train(df)
 
@@ -134,22 +129,23 @@ The code from all of the steps in this guide is combined below:
 
     trainee.react_into_features(
         familiarity_conviction_addition=True,
-        familiarity_conviction_remove=True,
-        similarity_conviction = True
+        familiarity_conviction_removal=True,
+        similarity_conviction=True
     )
 
-    convictions = trainee.get_cases(
+    familiarity_conviction_addition = trainee.get_cases(
         session=trainee.active_session,
         features=[
             'familiarity_conviction_addition',
-            'familiarity_conviction_removal',
-            'similarity_conviction'
+            'familiarity_conviction_removal'
         ]
     )
 
+    print(familiarity_conviction_addition)
+
     details = {
-        'global_case_feature_residual_convictions_robust': True,
-        'local_case_feature_residual_convictions_robust': True
+        'feature_residuals_robust': True,
+        'similarity_conviction': True
     }
 
     results = trainee.react(
@@ -158,10 +154,46 @@ The code from all of the steps in this guide is combined below:
         action_features=action_features,
         details=details
     )
+    print(results)
 
-    local_case_feature_residual_convictions = pd.DataFrame(
-        results['details']['local_case_feature_residual_convictions_robust'])
+Below is an example of expected output from this sample code:
 
+.. code-block:: bash
+
+    $ python conviction_example.py 
+        familiarity_conviction_addition  familiarity_conviction_removal
+    0                            0.424315                        0.481610
+    1                           24.344436                       24.373889
+    2                            0.495148                        0.555847
+    3                            0.463858                        0.523487
+    4                            0.288355                        0.248439
+    ...                               ...                             ...
+    1994                         6.460913                        6.248667
+    1995                        46.903956                       46.594968
+    1996                         2.195260                        2.305391
+    1997                        24.788612                       24.992936
+    1998                         0.740464                        0.812168
+
+    [1999 rows x 2 columns]
+    target
+    0       1
+    {'action_features': ['target'],
+    'feature_residuals_robust': [{'age': 8.888516681825308,
+                                'capital-gain': 416.7392605164004,
+                                'capital-loss': 59.906358535804515,
+                                'education': 0.4523004291045252,
+                                'education-num': 0.4655826176126248,
+                                'fnlwgt': 65946.6678484109,
+                                'hours-per-week': 6.298493661647657,
+                                'marital-status': 0.512476275479471,
+                                'native-country': 0.07145970131801563,
+                                'occupation': 0.8772108612524578,
+                                'race': 0.16017621174491645,
+                                'relationship': 0.7104566198137716,
+                                'sex': 0.3580994265834227,
+                                'target': 0.09681983534852417,
+                                'workclass': 0.18761097169888336}],
+    'similarity_conviction': [0.9699384581322016]}
 
 API References
 --------------
