@@ -166,11 +166,11 @@ Round to the specified significant digits, default is no rounding.
 ```
 
 ```{py:attribute} shared_deviations
-:type: Optional[list[str]]
+:type: Optional[list[str] | bool]
 
 A list of feature names that will share deviations with this feature. In analysis, the predictions computed for this feature
 and the features specified are combined to create deviations that are used for all of the included features. If a time series
-feature, then child lag features will automatically share deviations. If 'shared_deviations' is specified as False, then
+feature, then child lag features will automatically share deviations by default. If 'shared_deviations' is specified as False, then
 automatically created lag features will not automatically share deviations.
 
 ```
