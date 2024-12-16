@@ -11,4 +11,4 @@ See the full definition of all feature attributes in the pages below.
     :glob:
     :maxdepth: 1
 
-    ../howso/types/*
+    /howso/types/*

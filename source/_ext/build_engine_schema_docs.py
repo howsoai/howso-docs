@@ -40,7 +40,7 @@ def setup(app):
             # THIS WILL NOT WORK IF HOWSO-ENGINE-PY IS INSTALLED EDITABLY
             # (unless you have the .caml in your local repo too)
             schema_map = get_api()['schemas']
-            os.makedirs("source/howso/types", exist_ok=True)
+            os.makedirs("howso/types", exist_ok=True)
             for schema_name in needed_schemas:
                 schema = schema_map[schema_name]
                 if schema is None:
@@ -53,7 +53,7 @@ def setup(app):
                     print(schema)
                     print(e)
                     continue
-                with open(f'source/howso/types/{schema_name}.rst', 'w') as f:
+                with open(f'howso/types/{schema_name}.rst', 'w') as f:
                     f.write(rst_output)
 
             logger.info('Successfully generated RST files from JSON data')
