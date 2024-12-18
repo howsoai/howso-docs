@@ -40,7 +40,10 @@ def setup(app):
             # THIS WILL NOT WORK IF HOWSO-ENGINE-PY IS INSTALLED EDITABLY
             # (unless you have the .caml in your local repo too)
             schema_map = get_api()['schemas']
-            os.makedirs("howso/types", exist_ok=True)
+            os.makedirs(
+                os.path.join(app.srcdir, 'howso', 'types'),
+                exist_ok=True
+            )
             for schema_name in needed_schemas:
                 schema = schema_map[schema_name]
                 if schema is None:
@@ -53,10 +56,21 @@ def setup(app):
                     print(schema)
                     print(e)
                     continue
-                with open(f'howso/types/{schema_name}.rst', 'w') as f:
+                with open(
+                    os.path.join(
+                        app.srcdir,
+                        'howso',
+                        'types',
+                        f'{schema_name}.rst'
+                    ),
+                    'w'
+                ) as f:
                     f.write(rst_output)
 
-            logger.info('Successfully generated RST files from JSON data')
+            logger.info((
+                'Successfully generated Howso Engine Feature Attributes '
+                'RST files from JSON data'
+            ))
         except Exception as e:
             logger.error(f'Error generating RST files: {str(e)}')
             raise
@@ -78,6 +92,7 @@ BASE_TEMPLATE = """
 
 .. contents:: Table of Contents
    :depth: 3
+   :backlinks: none
 
 {% if 'description' in json_spec %}
 Overview
@@ -86,12 +101,17 @@ Overview
 {% endif %}
 
 {% if 'type' in json_spec %}
-:type: {{ 'object' if json_spec.type == 'assoc' else json_spec.type }}
+{% if is_list(json_spec.type) %}
+:type: {{" | ".join(json_spec.type)}}
+{% else %}
+:type: {{"object" if json_spec.type == "assoc" else json_spec.type}}
+{% endif %}
 {% endif %}
 
 
 {% if 'any_of' in json_spec %}
 :One of:
+
 {% for option in json_spec.any_of %}
 - :doc:`{{ option.ref }}`
 {% endfor %}
@@ -99,7 +119,7 @@ Overview
 
 {% for k, v in json_spec.items() %}
 {% if k not in ['indices', 'any_of', 'type', 'description', 'additional_indices'] %}
-:{{ k }}: {{ v }}
+:{{ k }}: {{ v if not is_list(v) else " | ".join(v) }}
 {% endif %}
 {% endfor %}
 
@@ -107,7 +127,7 @@ Overview
 Properties
 ----------
 
-{% for prop_name, prop_data in json_spec.indices.items() %}
+{% for prop_name, prop_data in json_spec.indices | dictsort %}
 {{ render_property(prop_name, prop_data, 1) }}
 {% endfor %}
 {% endif %}
@@ -137,7 +157,11 @@ PROPERTY_TEMPLATE = """
 {% endif %}
 
 {% if 'type' in data %}
+{% if is_list(data.type) %}
+:type: {{" | ".join(data.type)}}
+{% else %}
 :type: {{"object" if data.type == "assoc" else data.type}}
+{% endif %}
 {% endif %}
 
 {% if 'ref' in data %}
@@ -145,14 +169,14 @@ PROPERTY_TEMPLATE = """
 {% endif %}
 
 {% for key, value in data.items() if key not in ['description', 'type', 'indices', 'ref', 'additional_indices'] %}
-:{{ key }}: {{ value }}
+:{{ key }}: {{ value if not is_list(value) else " | ".join(value) }}
 {% endfor %}
 
 {% if data.indices %}
 Nested Properties:
 {{ header_chars[depth + 2] * 'Nested Properties:'|length }}
 
-{% for prop_name, prop_data in data.indices.items() %}
+{% for prop_name, prop_data in data.indices | dictsort %}
 {{ render_property(prop_name, prop_data, depth + 1) }}
 {% endfor %}
 
@@ -179,6 +203,7 @@ def generate_sphinx_doc(json_spec: Dict[str, Any], title: str) -> str:
         lstrip_blocks=True,
         keep_trailing_newline=True
     )
+    env.globals['is_list'] = lambda x: isinstance(x, list)
 
     # First register the property rendering macro
     env.from_string(PROPERTY_TEMPLATE)
