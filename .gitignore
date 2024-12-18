@@ -10,7 +10,7 @@ local/**
 **/*.trace
 node_modules
 
-**/_autosummary/** 
+**/_autosummary/**
 
 # Editor directories and files
 # VSCode
@@ -106,3 +106,9 @@ fabric.properties
 
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
+
+# Doc pages built from howso-engine types
+source/howso/types/*
+
+# pycache
+**/**/__pycache__

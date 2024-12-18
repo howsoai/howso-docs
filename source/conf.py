@@ -11,6 +11,7 @@
 
 import datetime
 import os
+import sys
 
 from sphinx.addnodes import desc_signature
 
@@ -25,7 +26,10 @@ html_title = "Howso Engine Documentation"
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
+# add local _ext dir for custom extensions
+sys.path.insert(0, os.path.abspath('_ext'))
 extensions = [
+    "build_engine_schema_docs",
     "sphinx.ext.napoleon",
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
