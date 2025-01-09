@@ -204,11 +204,6 @@ simplify_optional_unions = True
 # https://documatt.com/sphinx-reredirects/usage.html
 redirects = {
     # "foo": "/bar.html" # Creates a redirect from "/foo.html" to "/bar.html"
-    "getting_started/concepts.html": "/en/release-latest/getting_started/concepts.html",
-    "user_guide/index.html": "/en/release-latest/user_guide/index.html",
-    "user_guide/basic_capabilities/feature_attributes.html": "/en/release-latest/user_guide/basic_capabilities/feature_attributes.html",
-    "user_guide/basic_capabilities/predictions.html": "/en/release-latest/user_guide/basic_capabilities/predictions.html",
-    "user_guide/concepts/null_sparse_data.html": "/en/release-latest/user_guide/concepts/null_sparse_data.html",
 }
 
 # -- Documentation Setup -----------------------------------------------------
