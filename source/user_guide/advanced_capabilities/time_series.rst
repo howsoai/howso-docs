@@ -113,12 +113,12 @@ Task 3 - Forecast a time-series
 
 .. code-block:: python
 
-    # Use react_series with continue_series_values to forecast a series
-    series_reaction = trainee..react_series(
+    # Use react_series with continue_series and series_context_values to forecast a series
+    series_reaction = trainee.react_series(
         action_features=["ID", "date", "value"],
         continue_series=True,
-        continue_series_features=["ID", "date", "value"],
-        continue_series_values=[
+        series_context_features=["ID", "date", "value"],
+        series_context_values=[
             [
                 # A set of cases making up a series
                 ["A", "2000-07-30", 100.0],
