@@ -41,19 +41,19 @@ The :class:`~Trainee` will be referenced as ``trainee`` in the sections below.
 Case Contributions
 ^^^^^^^^^^^^^^^^^^
 
-Case contributions can be retrieved by setting ``case_contributions_robust`` or ``case_contributions_full`` to ``True``.
+Case contributions can be retrieved by setting ``case_robust_prediction_contributions`` or ``case_full_prediction_contributions`` to ``True``.
 
 .. code-block:: python
 
-    details = {'case_contributions_robust': True}
+    details = {'case_robust_prediction_contributions': True}
 
 Case MDA
 ^^^^^^^^
-Case MDA can be retrieved by setting ``case_mda_robust`` or ``case_mda_full`` to ``True``.
+Case MDA can be retrieved by setting ``case_robust_accuracy_contributions`` or ``case_full_accuracy_contributions`` to ``True``.
 
 .. code-block:: python
 
-    details = {'case_mda_robust': True}
+    details = {'case_robust_accuracy_contributions': True}
 
 
 React
@@ -112,7 +112,7 @@ The code from all of the steps in this guide is combined below:
 
     trainee.analyze(context_features=context_features, action_features=action_features)
 
-    details = {'case_contributions_robust': True}
+    details = {'case_robust_prediction_contributions': True}
 
     results = trainee.react(
         test_case[context_features],
@@ -121,7 +121,7 @@ The code from all of the steps in this guide is combined below:
         details=details
     )
 
-    case_contributions = pd.DataFrame(results['details']['case_contributions_robust'][0])
+    case_contributions = pd.DataFrame(results['details']['case_robust_prediction_contributions'][0])
 
 API References
 --------------

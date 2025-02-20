@@ -86,7 +86,7 @@ specific cases in :py:meth:`Trainee.react`
 .. code-block:: python
 
     details = {
-        'feature_residuals_robust': True
+        'feature_robust_residuals': True
     }
 
     results = trainee.react(
@@ -144,7 +144,7 @@ The code from all of the steps in this guide is combined below:
     print(familiarity_conviction_addition)
 
     details = {
-        'feature_residuals_robust': True,
+        'feature_robust_residuals': True,
         'similarity_conviction': True
     }
 
@@ -178,7 +178,7 @@ Below is an example of expected output from this sample code:
     target
     0       1
     {'action_features': ['target'],
-    'feature_residuals_robust': [{'age': 8.888516681825308,
+    'feature_robust_residuals': [{'age': 8.888516681825308,
                                 'capital-gain': 416.7392605164004,
                                 'capital-loss': 59.906358535804515,
                                 'education': 0.4523004291045252,
