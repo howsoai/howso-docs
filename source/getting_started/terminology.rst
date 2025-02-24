@@ -109,20 +109,19 @@ a robust fashion, this is an approximation of the commonly used SHAP feature imp
 that SHAP is an exact value of a model (which itself is just an approximation of the data) whereas robust contribution is an
 approximation of the feature importance of the relationships expressed in the data.
 
-.. _mda:
+.. _cac:
 
-MDA
+Case Accuracy Contributions (CAC)
 ---
-
-The *Mean Decrease in Accuracy* (MDA) of an Action Feature is mean decrease in accuracy of removing a feature.  MDA units are on the same scale as the Action feature(s), and will be probabilities for categorical features.
+The *Case Accuracy Contributions* (CAC) of an Action Feature is mean decrease in accuracy of removing a feature.  CAC units are on the same scale as the Action feature(s), and will be probabilities for catego
 
 .. _robust:
 
 Robust
 ------
 
-A feature or case contribution or MDA that is robust means that it is computed over the power set of possible
-combinations of features or cases, as approximated by a uniform distribution. For feature contributions, robust means
+A feature or case contribution that is robust means that it is computed over the power set of possible
+combinations of features or cases, as approximated by a uniform distribution. For prediction contributions, robust means
 it is an approximation to the well-known SHAP values.
 
 .. _relavant_features:
@@ -130,8 +129,7 @@ it is an approximation to the well-known SHAP values.
 Relevant Features
 -----------------
 
-Features whose values were important in determining prediction value(s). Generally, this refers to feature MDA or
-contribution, which yield similar but complementary insights.
+Features whose values were important in determining prediction value(s). Generally, this refers to feature or case accuracy contribution, which yield similar but complementary insights.
 
 .. _contexts:
 

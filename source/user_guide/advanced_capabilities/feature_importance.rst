@@ -5,13 +5,13 @@ Feature Importance
 ==================
 .. topic:: What is covered in this user guide
 
-    In this guide, you will learn how to compute the feature importance metrics, :ref:`Feature Contributions <contribution>` and :ref:`Feature Mean Decrease in Accuracy (MDA) <mda>` from a Trainee. Feature importance metrics
+    In this guide, you will learn how to compute the feature importance metrics, :ref:`Prediction Contributions <contribution>` and :ref:`Case Accuracy Contributions (CAC) <cac>` from a Trainee. Feature importance metrics
     provides information about which features are useful for predicting a target or :ref:`action <action_features>` feature. In addition to learning informative metrics about the data and the model, these insights can be used as guidance for further action such as feature selection or feature engineering.
 
 
 Objectives: what you will take away
 -----------------------------------
-- **How-To** Retrieve the different types of feature importance metrics across several different categories: :doc:`global vs local <../concepts/global_vs_local>`, and :ref:`robust` vs non-robust (full) :ref:`Feature Contributions <contribution>` and :ref:`Feature MDA <mda>`.
+- **How-To** Retrieve the different types of feature importance metrics across several different categories: :doc:`global vs local <../concepts/global_vs_local>`, and :ref:`robust` vs non-robust (full) :ref:`Prediction Contributions <contribution>` and :ref:`Case Accuracy Contributions <cac>`.
 
 
 Prerequisites: before you begin
@@ -33,9 +33,9 @@ recommend being familiar with the following concepts:
 - :ref:`residual`
 - :ref:`robust`
 - :ref:`contribution`
-- :ref:`mda`
+- :ref:`cac`
 
-The two metrics available for feature importance is feature :ref:`contribution` and feature :ref:`mda`.
+The two metrics available for feature importance is feature :ref:`contribution` and feature :ref:`cac`.
 
 Robust vs Non-Robust (Full)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -52,8 +52,8 @@ The created :class:`~Trainee` will be referenced as ``trainee`` in the sections 
 Global Feature Importance
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 To get global feature importance metrics, :py:meth:`Trainee.react_aggregate`, is called on a trained and analyzed Trainee. :py:meth:`Trainee.react_aggregate` calls react internally on the cases already trained into the Trainee and calculates the metrics. In this method, the desired metrics can be selected as parameters. These parameters are named individually
-in the ``details`` parameter and setting them to ``True`` will calculate and return the desired metrics. For example, ``feature_robust_accuracy_contributions`` and ``feature_robust_prediction_contributions`` will calculate the robust versions of MDA and Feature Contributions, while ``feature_full_accuracy_contributions`` and ``feature_full_prediction_contributions`` will calculate the non-robust (full) versions.
-An action feature must be specified. ``feature_influences_action_feature`` is recommended for feature influence metrics such as feature contributions and mda, especially when used in conjunction with retrieving prediction stats, however, ``action_feature`` can be also used as well. ``action_feature`` sets the action feature for both influence metrics and prediction stats. Since often
+in the ``details`` parameter and setting them to ``True`` will calculate and return the desired metrics. For example, ``feature_robust_accuracy_contributions`` and ``feature_robust_prediction_contributions`` will calculate the robust versions of CAC and Prediction Contributions, while ``feature_full_accuracy_contributions`` and ``feature_full_prediction_contributions`` will calculate the non-robust (full) versions.
+An action feature must be specified. ``feature_influences_action_feature`` is recommended for feature influence metrics such as prediction contributions and cac, especially when used in conjunction with retrieving prediction stats, however, ``action_feature`` can be also used as well. ``action_feature`` sets the action feature for both influence metrics and prediction stats. Since often
 only the influence metrics's action feature is intended to be set, ``feature_influences_action_feature`` provides a more precise parameter.
 
 .. code-block:: python
@@ -100,9 +100,9 @@ are calculated in :py:meth:`Trainee.react` from the previous step.
 
 .. warning::
 
-    Contributions and MDA are also metrics for cases and not just features, so please be aware when reading other guides that may use those terms.
+    Contributions and CAC are also metrics for cases and not just features, so please be aware when reading other guides that may use those terms.
 
-Contribution and MDA matrices
+Contribution and CAC matrices
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Howso also provides the two metrics in a matrix view, where for each row which represent the action feature, you can identify the contributions of all
