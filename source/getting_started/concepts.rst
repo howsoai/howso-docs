@@ -24,7 +24,7 @@ advances enable all of Engine's insight and analysis capabilities, including sta
 
 - Outperform other commonly used feature importance metrics, including SHAP.
 
-  Howso quantifies individual feature contributions to a prediction, i.e., how much an individual feature impacts a prediction. The concept of feature contribution is similar to the data science concept of "feature importance". However,
+  Howso quantifies individual prediction contributions to a prediction, i.e., how much an individual feature impacts a prediction. The concept of prediction contributions is similar to the data science concept of "feature importance". However,
   Howso is robust against several common challenges (correlated features, redundant features, difference in scale between features, and multiple distinguishing features) faced by other feature importance tools,
   including the SHAP metric, which often lead to misleading results.
 

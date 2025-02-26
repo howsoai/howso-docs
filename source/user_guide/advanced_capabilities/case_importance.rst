@@ -29,9 +29,8 @@ Concepts & Terminology
 
 How-To Guide
 ------------
-Case importance is similar to feature importance in that it comprises of two metrics, case mean decrease in accuracy (MDA) and case contribution.
-As opposed to influential and similar cases which examines the influence of cases on a single case or prediction, case importance examines how important a case is in regards to the overall predictions on a group of cases. Case importance share the same underlying methodology with  :doc:`Feature Importance <feature_importance>`.
-Unlike feature contributions, case contributions are calculated just locally. Conceptually, local metrics use either a specific subset of the cases that are trained into the Trainee or a set of new cases.
+Case importance is similar to feature importance in that it comprises of two metrics, Accuracy Contributions for Case and Prediction Contributions for Case.
+Unlike global feature importance metrics, case contributions are calculated just locally. Conceptually, local metrics use either a specific subset of the cases that are trained into the Trainee or a set of new cases.
 
 Setup
 ^^^^^
@@ -41,19 +40,19 @@ The :class:`~Trainee` will be referenced as ``trainee`` in the sections below.
 Case Contributions
 ^^^^^^^^^^^^^^^^^^
 
-Case contributions can be retrieved by setting ``case_contributions_robust`` or ``case_contributions_full`` to ``True``.
+Case contributions can be retrieved by setting ``case_robust_prediction_contributions`` or ``case_full_prediction_contributions`` to ``True``.
 
 .. code-block:: python
 
-    details = {'case_contributions_robust': True}
+    details = {'case_robust_prediction_contributions': True}
 
-Case MDA
-^^^^^^^^
-Case MDA can be retrieved by setting ``case_mda_robust`` or ``case_mda_full`` to ``True``.
+Case Accuracy Contributions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Case Accuracy Contributions can be retrieved by setting ``case_robust_accuracy_contributions`` or ``case_full_accuracy_contributions`` to ``True``.
 
 .. code-block:: python
 
-    details = {'case_mda_robust': True}
+    details = {'case_robust_accuracy_contributions': True}
 
 
 React
@@ -75,8 +74,8 @@ The results can be retrieved in the ``details`` section of the results.
 
 .. code-block:: python
 
-    case_contributions = pd.DataFrame(results['details']['case_contributions'][0])
-    case_mda = pd.DataFrame(results['details']['case_mda'][0])
+    case_prediction_contributions = pd.DataFrame(results['details']['prediction_contributions'][0])
+    case_accuracy_contributions = pd.DataFrame(results['details']['accuracy_contributions'][0])
 
 
 Complete Code
@@ -112,7 +111,7 @@ The code from all of the steps in this guide is combined below:
 
     trainee.analyze(context_features=context_features, action_features=action_features)
 
-    details = {'case_contributions_robust': True}
+    details = {'case_robust_prediction_contributions': True}
 
     results = trainee.react(
         test_case[context_features],
@@ -121,7 +120,7 @@ The code from all of the steps in this guide is combined below:
         details=details
     )
 
-    case_contributions = pd.DataFrame(results['details']['case_contributions_robust'][0])
+    case_contributions = pd.DataFrame(results['details']['case_robust_prediction_contributions'][0])
 
 API References
 --------------

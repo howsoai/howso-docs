@@ -98,31 +98,31 @@ The mean absolute error between a predicted value and actual value for a predict
 uncertainty. Residuals may be for a given prediction, and expected Residuals may be for a given feature, either
 globally across the entire model or for a particular prediction.
 
-.. _contribution:
+.. _pc:
 
-Contribution
-------------
+Prediction Contributions (PC)
+-----------------------------
 
-Feature contribution is the difference between a prediction in an action feature when each feature or case is
-considered versus not considered. Case contribution is the same but for a case rather than a feature. When applied in
+Prediction contributions is the measured difference between a prediction in an action feature when each feature (Feature Prediction Contributions)
+or case (Case Prediction Contributions) is considered versus not considered. When Feature Prediction Contributions is applied in
 a robust fashion, this is an approximation of the commonly used SHAP feature importance measure. The difference being
 that SHAP is an exact value of a model (which itself is just an approximation of the data) whereas robust contribution is an
 approximation of the feature importance of the relationships expressed in the data.
 
-.. _mda:
+.. _ac:
 
-MDA
----
-
-The *Mean Decrease in Accuracy* (MDA) of an Action Feature is mean decrease in accuracy of removing a feature.  MDA units are on the same scale as the Action feature(s), and will be probabilities for categorical features.
+Accuracy Contributions (AC)
+---------------------------
+Accuracy contributions is the accuracy difference in an action feature when each feature (Feature Accuracy Contributions)
+or case (Case Accuracy Contributions) is considered versus not considered.
 
 .. _robust:
 
 Robust
 ------
 
-A feature or case contribution or MDA that is robust means that it is computed over the power set of possible
-combinations of features or cases, as approximated by a uniform distribution. For feature contributions, robust means
+A feature or case contribution that is robust means that it is computed over the power set of possible
+combinations of features or cases, as approximated by a uniform distribution. For prediction contributions, robust means
 it is an approximation to the well-known SHAP values.
 
 .. _relavant_features:
@@ -130,8 +130,7 @@ it is an approximation to the well-known SHAP values.
 Relevant Features
 -----------------
 
-Features whose values were important in determining prediction value(s). Generally, this refers to feature MDA or
-contribution, which yield similar but complementary insights.
+Features whose values were important in determining prediction value(s). Generally, this refers to prediction or accuracy contributions, which yield similar but complementary insights.
 
 .. _contexts:
 
@@ -313,8 +312,8 @@ Influential Cases
 
 The cases which were identified as most influential during a prediction, along with their weights when predicting the
 expected value or drawing a value from the distribution of expected values for generative outputs. The influential
-cases are a subset of the :ref:`most_similar_cases`, returning only those cases whose cumulative influence weights added in 
-descending order is below the influential weight threshold. 
+cases are a subset of the :ref:`most_similar_cases`, returning only those cases whose cumulative influence weights added in
+descending order is below the influential weight threshold.
 
 .. _boundary_cases:
 
