@@ -98,13 +98,13 @@ The mean absolute error between a predicted value and actual value for a predict
 uncertainty. Residuals may be for a given prediction, and expected Residuals may be for a given feature, either
 globally across the entire model or for a particular prediction.
 
-.. _contribution:
+.. _pc:
 
-Contribution
-------------
+Prediction Contributions (PC)
+-----------------------------
 
-Feature contribution is the difference between a prediction in an action feature when each feature or case is
-considered versus not considered. Case contribution is the same but for a case rather than a feature. When applied in
+Prediction contributions is the measured difference between a prediction in an action feature when each feature (Feature Prediction Contributions)
+or case (Case Prediction Contributions) is considered versus not considered. When Feature Prediction Contributions is applied in
 a robust fashion, this is an approximation of the commonly used SHAP feature importance measure. The difference being
 that SHAP is an exact value of a model (which itself is just an approximation of the data) whereas robust contribution is an
 approximation of the feature importance of the relationships expressed in the data.
@@ -112,10 +112,9 @@ approximation of the feature importance of the relationships expressed in the da
 .. _ac:
 
 Accuracy Contributions (AC)
----
-Currently we have two general forms of accuracy contributions/prediction contributions. Case accuracy contributions and feature accuracy contributions. 
-You can think of Case AC as how a case impacts your results, and you can think of Feature AC as how a feature impacts your results, basically row vs column. 
-Feature AC is more of our standard use case, so generally when we say AC/MDA, we mean Feature MDA.
+---------------------------
+Accuracy contributions is the accuracy difference in an action feature when each feature (Feature Accuracy Contributions)
+or case (Case Accuracy Contributions) is considered versus not considered.
 
 .. _robust:
 
@@ -131,7 +130,7 @@ it is an approximation to the well-known SHAP values.
 Relevant Features
 -----------------
 
-Features whose values were important in determining prediction value(s). Generally, this refers to feature or case accuracy contribution, which yield similar but complementary insights.
+Features whose values were important in determining prediction value(s). Generally, this refers to prediction or accuracy contributions, which yield similar but complementary insights.
 
 .. _contexts:
 
@@ -313,8 +312,8 @@ Influential Cases
 
 The cases which were identified as most influential during a prediction, along with their weights when predicting the
 expected value or drawing a value from the distribution of expected values for generative outputs. The influential
-cases are a subset of the :ref:`most_similar_cases`, returning only those cases whose cumulative influence weights added in 
-descending order is below the influential weight threshold. 
+cases are a subset of the :ref:`most_similar_cases`, returning only those cases whose cumulative influence weights added in
+descending order is below the influential weight threshold.
 
 .. _boundary_cases:
 

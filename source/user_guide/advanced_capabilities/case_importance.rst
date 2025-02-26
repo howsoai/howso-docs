@@ -29,9 +29,8 @@ Concepts & Terminology
 
 How-To Guide
 ------------
-Case importance is similar to feature importance in that it comprises of two metrics, Case Accuracy Contributions and case contribution.
-As opposed to influential and similar cases which examines the influence of cases on a single case or prediction, case importance examines how important a case is in regards to the overall predictions on a group of cases. Case importance share the same underlying methodology with  :doc:`Feature Importance <feature_importance>`.
-Unlike prediction contributions, case contributions are calculated just locally. Conceptually, local metrics use either a specific subset of the cases that are trained into the Trainee or a set of new cases.
+Case importance is similar to feature importance in that it comprises of two metrics, Accuracy Contributions for Case and Prediction Contributions for Case.
+Unlike global feature importance metrics, case contributions are calculated just locally. Conceptually, local metrics use either a specific subset of the cases that are trained into the Trainee or a set of new cases.
 
 Setup
 ^^^^^
@@ -75,8 +74,8 @@ The results can be retrieved in the ``details`` section of the results.
 
 .. code-block:: python
 
-    case_contributions = pd.DataFrame(results['details']['case_contributions'][0])
-    case_mda = pd.DataFrame(results['details']['case_mda'][0])
+    case_prediction_contributions = pd.DataFrame(results['details']['prediction_contributions'][0])
+    case_accuracy_contributions = pd.DataFrame(results['details']['accuracy_contributions'][0])
 
 
 Complete Code

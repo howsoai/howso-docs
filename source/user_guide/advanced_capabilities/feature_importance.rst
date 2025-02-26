@@ -5,13 +5,13 @@ Feature Importance
 ==================
 .. topic:: What is covered in this user guide
 
-    In this guide, you will learn how to compute the feature importance metrics, :ref:`Prediction Contributions <contribution>` and :ref:`Accuracy Contributions (AC) <ac>` from a Trainee. Feature importance metrics
+    In this guide, you will learn how to compute the feature importance metrics, :ref:`Prediction Contributions (PC) <pc>` and :ref:`Accuracy Contributions (AC) <ac>` from a Trainee. Feature importance metrics
     provides information about which features are useful for predicting a target or :ref:`action <action_features>` feature. In addition to learning informative metrics about the data and the model, these insights can be used as guidance for further action such as feature selection or feature engineering.
 
 
 Objectives: what you will take away
 -----------------------------------
-- **How-To** Retrieve the different types of feature importance metrics across several different categories: :doc:`global vs local <../concepts/global_vs_local>`, and :ref:`robust` vs non-robust (full) :ref:`Prediction Contributions <contribution>` and :ref:`Accuracy Contributions <ac>`.
+- **How-To** Retrieve the different types of feature importance metrics across several different categories: :doc:`global vs local <../concepts/global_vs_local>`, and :ref:`robust` vs non-robust (full) :ref:`Prediction Contributions <pc>` and :ref:`Accuracy Contributions <ac>`.
 
 
 Prerequisites: before you begin
@@ -94,31 +94,14 @@ are calculated in :py:meth:`Trainee.react` from the previous step.
 
 .. code-block:: python
 
-    feature_robust_prediction_contributions = results['explanation']['feature_robust_prediction_contributions']
-    feature_robust_accuracy_contributions = results['explanation']['feature_robust_accuracy_contributions']
+    feature_robust_prediction_contributions = results['details']['feature_robust_prediction_contributions']
+    feature_robust_accuracy_contributions = results['details']['feature_robust_accuracy_contributions']
 
 
 .. warning::
 
-    Accuracy Contributions are also metrics for cases and not just features, so please be aware when reading other guides that may use those terms.
+    Accuracy and Prediction Contributions are also metrics for cases and not just features, so please be aware when reading other guides that may use those terms.
 
-Accuracy Contribution matrices
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Howso also provides the two metrics in a matrix view, where for each row which represent the action feature, you can identify the contributions of all
-the other context features to that prediction. Since these matrices may not be symmetrical, examining the differences between the upper and lower triangular matrices
-may reveal additional insights. Please see the linked recipe for more information.
-
-:meth:`Trainee.get_contribution_matrix` and :meth:`Trainee.get_mda_matrix` gets these matrices respectively.
-
-.. warning::
-
-    Matrices may be computationally expensive.
-
-.. code-block:: python
-
-    contrib_matrix = trainee.get_contribution_matrix()
-    mda_matrix = trainee.get_mda_matrix()
 
 Combined Code
 ^^^^^^^^^^^^^
@@ -181,10 +164,6 @@ Combined Code
     feature_robust_prediction_contributions = results['explanation']['feature_robust_prediction_contributions']
     feature_robust_accuracy_contributions = results['explanation']['feature_robust_accuracy_contributions']
 
-    contrib_matrix = trainee.get_contribution_matrix()
-    mda_matrix = trainee.get_mda_matrix()
-
-
 API References
 --------------
 - :py:class:`~Trainee`
@@ -192,6 +171,4 @@ API References
 - :py:meth:`Trainee.analyze`
 - :py:meth:`Trainee.react`
 - :py:meth:`Trainee.react_aggregate`
-- :py:meth:`Trainee.get_contribution_matrix`
-- :py:meth:`Trainee.get_mda_matrix`
 
