@@ -109,11 +109,13 @@ a robust fashion, this is an approximation of the commonly used SHAP feature imp
 that SHAP is an exact value of a model (which itself is just an approximation of the data) whereas robust contribution is an
 approximation of the feature importance of the relationships expressed in the data.
 
-.. _cac:
+.. _ac:
 
-Case Accuracy Contributions (CAC)
+Accuracy Contributions (AC)
 ---
-The *Case Accuracy Contributions* (CAC) of an Action Feature is mean decrease in accuracy of removing a feature.  CAC units are on the same scale as the Action feature(s), and will be probabilities for catego
+Currently we have two general forms of accuracy contributions/prediction contributions. Case accuracy contributions and feature accuracy contributions. 
+You can think of Case AC as how a case impacts your results, and you can think of Feature AC as how a feature impacts your results, basically row vs column. 
+Feature AC is more of our standard use case, so generally when we say AC/MDA, we mean Feature MDA.
 
 .. _robust:
 
