@@ -1,6 +1,6 @@
 .. _user_guide_template:
 
-Classification
+Classifications
 ==============
 .. topic:: What is covered in this user guide.
 
