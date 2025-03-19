@@ -130,7 +130,7 @@ Once a model has one or more derived features, they can be used in reacts:
     :caption: Using a derived feature as an action feature
 
     reaction = trainee.react(
-        contexts=df[trainee..features.get_names(without=["hours-per-week", "hours-per-year"])],
+        contexts=df[trainee.features.get_names(without=["hours-per-week", "hours-per-year"])],
         action_features=["hours-per-week", "hours-per-year"],
         derived_action_features=["hours-per-year"],
     )
@@ -141,7 +141,7 @@ Once a model has one or more derived features, they can be used in reacts:
     :caption: Using a derived feature as a context feature
 
     reaction = trainee.react(
-        contexts=df[trainee..features.get_names(without=["target"])],
+        contexts=df[trainee.features.get_names(without=["target"])],
         derived_context_features=["hours-per-year"],
         action_features=["target"]
     )
