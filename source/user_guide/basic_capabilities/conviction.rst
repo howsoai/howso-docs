@@ -100,6 +100,7 @@ to the expected level of noise for that feature.
         details=details,
     )
     residual_conviction = reaction["details"]["feature_full_residual_convictions_for_case"]
+    print(residual_conviction)
 
 
 Complete Code
@@ -152,6 +153,7 @@ The code from all of the steps in this guide is combined below:
         details=details,
     )
     residual_conviction = reaction["details"]["feature_full_residual_convictions_for_case"]
+    print(residual_conviction)
 
 
 Below is an example of expected output from this sample code:
