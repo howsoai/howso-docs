@@ -33,9 +33,11 @@ Concepts & Terminology
 How-To Guide
 ------------
 
-:ref:`familiarity_conviction` and :ref:`similarity_conviction` are measurements of how surprising a case is. This can be useful for tasks such as anomaly detection.
-:ref:`prediction_residual_conviction` can be used to drill down into a specific case and examine its features. It measures how surprising each cases feature values is, thus
-it can reveal information such as why a case was anomalous. For example, if a NBA player's height was 3 foot tall, that value would be very surprising since most NBA players are very tall.
+:ref:`familiarity_conviction` and :ref:`similarity_conviction` are measurements of how surprising a case is. 
+This can be useful for tasks such as anomaly detection. :ref:`prediction_residual_conviction` can be used to 
+drill down into a specific case and examine its features. It measures how surprising each cases feature values is, thus
+it can reveal information such as why a case was anomalous. For example, if a NBA player's height was 3 foot tall, that 
+value would be very surprising since most NBA players are very tall.
 
 Setup
 ^^^^^
@@ -45,10 +47,11 @@ The created :class:`~Trainee` will be referenced as ``trainee`` in the sections 
 :ref:`familiarity_conviction`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-There are two types of :ref:`familiarity_conviction` available, both accessible when :py:meth:`Trainee.react_into_features` is called.
-``familiarity_conviction_addition`` is the familiarity conviction of adding the specified case and ``familiarity_conviction_removal`` is
-the familiarity conviction of removing the specified case. :py:meth:`Trainee.react_into_features` stores these convictions which can be retrieved
-through :py:meth:`Trainee.get_cases`
+There are two types of :ref:`familiarity_conviction` available, both accessible when
+:py:meth:`Trainee.react_into_features` is called.  ``familiarity_conviction_addition`` 
+is the familiarity conviction of adding the specified case and ``familiarity_conviction_removal`` is 
+the familiarity conviction of removing the specified case. :py:meth:`Trainee.react_into_features` 
+stores these convictions which can be retrieved through :py:meth:`Trainee.get_cases`
 
 .. code-block:: python
 
@@ -56,7 +59,7 @@ through :py:meth:`Trainee.get_cases`
         familiarity_conviction_addition=True,
         familiarity_conviction_removal=True
     )
-    familiarity_conviction_addition = trainee.get_cases(
+    familiarity_conviction = trainee.get_cases(
         session=trainee.active_session,
         features=[
             'familiarity_conviction_addition',
@@ -64,37 +67,40 @@ through :py:meth:`Trainee.get_cases`
         ]
     )
 
+
 :ref:`similarity_conviction`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-:ref:`similarity_conviction` is a singular metric that is also accessible when :py:meth:`Trainee.react_into_features` is called.
+:ref:`similarity_conviction` is a singular metric that is also accessible when
+:py:meth:`Trainee.react_into_features` is called.
 
 .. code-block:: python
 
-    trainee.react_into_features(similarity_conviction = True)
-    familiarity_conviction_addition = trainee.get_cases(
+    trainee.react_into_features(similarity_conviction=True)
+    saimilarity_conviction = trainee.get_cases(
         session=trainee.active_session,
         features=['similarity_conviction']
     )
 
-:ref:`prediction_residual_conviction`
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Since :ref:`prediction_residual_conviction` details the conviction around a prediction, this is retrieved by specifying
-specific cases in :py:meth:`Trainee.react`
+:ref:`residual_conviction`
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+:ref:`residual_conviction` is accessed through :py:meth:`Trainee.react` and measures how noisy a feature is relative 
+to the expected level of noise for that feature.
 
 .. code-block:: python
 
-    details = {
-        'feature_robust_residuals': True
-    }
-
-    results = trainee.react(
-        test_case[context_features],
-        context_features=context_features,
-        action_features=action_features,
-        details=details
+    details = {'feature_full_residual_convictions_for_case': True}
+    session_training_indices = trainee.get_session_training_indices(trainee.active_session)
+    session_training_indices = [(trainee.active_session.id, session_training_indices[0])]
+    reaction = trainee.react(
+        case_indices=session_training_indices,
+        preserve_feature_values=features.get_names(),
+        details=details,
     )
+    residual_conviction = reaction["details"]["feature_full_residual_convictions_for_case"]
+
 
 Complete Code
 ^^^^^^^^^^^^^
@@ -108,92 +114,100 @@ The code from all of the steps in this guide is combined below:
     from howso.engine import Trainee
     from howso.utilities import infer_feature_attributes
 
-    # import data
-    df = fetch_data('adult')
-
-    # Subsample the data to ensure the example runs quickly
-    df = df.sample(2000)
-    test_case = df.iloc[[-1]].copy()
-    df.drop(df.index[-1], inplace=True)
-
+    df = fetch_data('adult').sample(1_000)
     features = infer_feature_attributes(df)
 
-    action_features = ['target']
-    context_features = features.get_names(without=action_features)
+    print(features.to_dataframe())
 
     trainee = Trainee(features=features)
-
     trainee.train(df)
+    trainee.analyze()
 
-    trainee.analyze(context_features=context_features, action_features=action_features)
-
-    trainee.react_into_features(
+   trainee.react_into_features(
         familiarity_conviction_addition=True,
-        familiarity_conviction_removal=True,
-        similarity_conviction=True
+        familiarity_conviction_removal=True
     )
-
-    familiarity_conviction_addition = trainee.get_cases(
+    familiarity_conviction = trainee.get_cases(
         session=trainee.active_session,
         features=[
             'familiarity_conviction_addition',
             'familiarity_conviction_removal'
         ]
     )
+    print(familiarity_conviction)
 
-    print(familiarity_conviction_addition)
-
-    details = {
-        'feature_robust_residuals': True,
-        'similarity_conviction': True
-    }
-
-    results = trainee.react(
-        test_case[context_features],
-        context_features=context_features,
-        action_features=action_features,
-        details=details
+    trainee.react_into_features(similarity_conviction=True)
+    similarity_conviction = trainee.get_cases(
+        session=trainee.active_session,
+        features=['similarity_conviction']
     )
-    print(results)
+    print(similarity_conviction)
+
+    details = {'feature_full_residual_convictions_for_case': True}
+    session_training_indices = trainee.get_session_training_indices(trainee.active_session)
+    session_training_indices = [(trainee.active_session.id, session_training_indices[0])]
+    reaction = trainee.react(
+        case_indices=session_training_indices,
+        preserve_feature_values=features.get_names(),
+        details=details,
+    )
+    residual_conviction = reaction["details"]["feature_full_residual_convictions_for_case"]
+
 
 Below is an example of expected output from this sample code:
 
 .. code-block:: bash
 
     $ python conviction_example.py 
-        familiarity_conviction_addition  familiarity_conviction_removal
-    0                            0.424315                        0.481610
-    1                           24.344436                       24.373889
-    2                            0.495148                        0.555847
-    3                            0.463858                        0.523487
-    4                            0.288355                        0.248439
-    ...                               ...                             ...
-    1994                         6.460913                        6.248667
-    1995                        46.903956                       46.594968
-    1996                         2.195260                        2.305391
-    1997                        24.788612                       24.992936
-    1998                         0.740464                        0.812168
+                        type decimal_places bounds  ... data_type original_type     
+                                                min  ...               data_type size
+    age             continuous              0    0.0  ...    number       numeric    8
+    workclass          nominal              0    NaN  ...    number       integer    8
+    fnlwgt          continuous              0    0.0  ...    number       numeric    8
+    education          nominal              0    NaN  ...    number       integer    8
+    education-num   continuous              0    0.0  ...    number       numeric    8
+    marital-status     nominal              0    NaN  ...    number       integer    8
+    occupation         nominal              0    NaN  ...    number       integer    8
+    relationship       nominal              0    NaN  ...    number       integer    8
+    race               nominal              0    NaN  ...    number       integer    8
+    sex                nominal              0    NaN  ...    number       integer    8
+    capital-gain    continuous              0    0.0  ...    number       numeric    8
+    capital-loss    continuous              0    0.0  ...    number       numeric    8
+    hours-per-week  continuous              0    0.0  ...    number       numeric    8
+    native-country     nominal              0    NaN  ...    number       integer    8
+    target             nominal              0    NaN  ...    number       integer    8
 
-    [1999 rows x 2 columns]
-    target
-    0       1
-    {'action_features': ['target'],
-    'feature_robust_residuals': [{'age': 8.888516681825308,
-                                'capital-gain': 416.7392605164004,
-                                'capital-loss': 59.906358535804515,
-                                'education': 0.4523004291045252,
-                                'education-num': 0.4655826176126248,
-                                'fnlwgt': 65946.6678484109,
-                                'hours-per-week': 6.298493661647657,
-                                'marital-status': 0.512476275479471,
-                                'native-country': 0.07145970131801563,
-                                'occupation': 0.8772108612524578,
-                                'race': 0.16017621174491645,
-                                'relationship': 0.7104566198137716,
-                                'sex': 0.3580994265834227,
-                                'target': 0.09681983534852417,
-                                'workclass': 0.18761097169888336}],
-    'similarity_conviction': [0.9699384581322016]}
+    [15 rows x 10 columns]
+        familiarity_conviction_addition  familiarity_conviction_removal
+    0                           2.036422                        1.424936
+    1                           7.239347                        6.785857
+    2                           0.796667                        1.103851
+    3                           0.499284                        0.293830
+    4                           0.486247                        0.727024
+    ..                               ...                             ...
+    995                         3.315124                        3.537327
+    996                         2.741911                        1.970860
+    997                       133.074640                      118.813386
+    998                         8.028792                        7.916007
+    999                         0.691341                        0.819138
+
+    [1000 rows x 2 columns]
+        similarity_conviction
+    0                 0.294567
+    1                 0.561961
+    2                 3.656589
+    3                 0.326939
+    4                 1.786323
+    ..                     ...
+    995               0.496362
+    996               0.504448
+    997               0.612071
+    998               0.960858
+    999               1.065963
+
+    [1000 rows x 1 columns]
+    [{'marital-status': 1.2677661102272322, 'race': 268.342074, 'target': 2.106858563940631, 'fnlwgt': 3.3412368323793595, 'education': 1, 'age': 0.6401583699403189, 'education-num': 1, 'sex': 1.3191579118090324, 'occupation': 1.4279943800852224, 'capital-loss': 1016.0995061247426, 'relationship': 1.6248012684002686, 'workclass': 0.218840321217643, 'hours-per-week': 0.7026121145303584, 'capital-gain': 2.528308627762195, 'native-country': 2.4681265907924397}]
+
 
 API References
 --------------
