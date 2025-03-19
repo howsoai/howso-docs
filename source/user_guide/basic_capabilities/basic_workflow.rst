@@ -69,7 +69,7 @@ inspected to ensure their correctness.
 
 .. code-block:: python
 
-    df = fetch_data('adult')
+    df = fetch_data('adult').sample(1_000)
     features = infer_feature_attributes(df)
 
     print(features.to_dataframe())
@@ -134,7 +134,7 @@ The code from all of the steps in this guide is combined below:
     from howso.engine import Trainee
     from howso.utilities import infer_feature_attributes
 
-    df = fetch_data('adult')
+    df = fetch_data('adult').sample(1_000)
     features = infer_feature_attributes(df)
 
     print(features.to_dataframe())
