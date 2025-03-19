@@ -59,96 +59,68 @@ Here we will walk through the steps of what a basic workflow might look like whe
     from howso.engine import Trainee
     from howso.utilities import infer_feature_attributes
 
-Step 1 - Load Data
-^^^^^^^^^^^^^^^^^^
-This dataset consists of 14 Context Features and 1 Action Feature. The Action Feature in this version of the ``Adult`` dataset has been renamed to ``target`` and it takes the form of a binary indicator for whether a person in the data makes more than $50,000/year (target=1) or less (target=0).
+
+Step 1 - Load Data and Infer Feature Attributes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+First, we load the ``adult`` dataset from the PMLB repository.  This dataset consists of 15 features, which will have their 
+attributes inferred by :func:`~howso.utilities.infer_feature_attributes`.  This will determine attributes about each feature 
+including bounds, allowed values, and feature type.  Before the following steps, the inferred feature attributes should be 
+inspected to ensure their correctness.
 
 .. code-block:: python
 
     df = fetch_data('adult')
-
-    # Subsample the data to ensure the example runs quickly
-    df = df.sample(1001)
-
-    # Split out the last row for a test case and drop the Action Feature
-    test_case = df.iloc[[-1]].copy()
-    df.drop(df.index[-1], inplace=True)
-    test_case = test_case.drop('target', axis=1)
-
-
-Step 2 - Map Data
-^^^^^^^^^^^^^^^^^
-Typically, an exploratory analysis is done on the data to get a general feel of the descriptive statistics and data attributes.
-
-Methods like ``describe`` from a Pandas DataFrame often automatically present these types of information of interest to a user, as shown below. While informative, these descriptive statistics are often used as a sanity check pre- and post-modeling and a model typically doesn't actually use any of these feature attributes.
-
-.. code-block:: python
-
-    df.describe()
-
-
-In the Howso Engine workflow, feature attributes are an essential part of model building and usage. By incorporating certain feature attributes into training process itself, Howso Engine gains another layer of information that will help in fine-tuning the results.
-
-In order to assist the user with defining the feature attributes, Howso has an :py:meth:`~howso.utilities.infer_feature_attributes` tool that automatically processes the dataset for the user.
-
-In Howso Engine , these feature attributes are model infrastructure feature parameters that are based on the existing data, rather than exact descriptive statistics. This is why, for example, the min and max bounds on continuous features are not the exact min and max values of the dataset, but rather an expanded version of those min and max values to allow for some variation.
-
-.. code-block:: python
-
     features = infer_feature_attributes(df)
 
-Step 3 - Specify Context and Action Features
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Context Features are a set of features that is used to describe values being used for input, observation, or other computation. In traditional ML this is often referred to as input features, or sometimes just features.
-
-Action Features are a set of features that is used as to describe values for output of a Trainee when it reacts, which is often as a response to input Context Features. In traditional supervised ML this is often referred to as targets, target features, or labels, and in generative ML, Action Features are the resulting data.
-
-Assuming our data set includes a feature named "target" that represents the desired output of a trainee when it reacts, we can specify context and action features like so:
-
-.. code-block:: python
-
-    action_features = ['target']
-    context_features = features.get_names(without=action_features)
+    print(features.to_dataframe())
 
 
-Step 4 - Create the Trainee
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-To begin the Howso Engine workflow, a Trainee is created to act as a base for all of our ML needs. In all subsequent documentation, we will refer to Howso Engine's model as Trainee.
+Step 2 - Create the `Trainee`, Train, and Analyze
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+A `Trainee` is similar in function to a model in other machine learning paradigms, but is not locked to any particular use-case 
+or to predicting a particular feature.  Note that both the data and the feature attributes are supplied at this time.  Since the 
+feature attributes are essentially a part of the training data it is extremely important to ensure they are correct.
 
 .. code-block:: python
 
     trainee = Trainee(features=features)
-
-Step 5 - Train
-^^^^^^^^^^^^^^
-Exposing a Trainee to a Case which may cause the ML algorithm to update the Trainee. This is a single training step; training may happen at each decision, at a certain sampling rate of observations per second, or at certain events.
-
-.. code-block:: python
-
     trainee.train(df)
 
-Step 6 - Analyze
-^^^^^^^^^^^^^^^^
-Tune internal parameters to improve performance and accuracy of predictions and metrics. Analysis may be targeted or targetless. Targetless analysis provides the best balanced set of hyperparameters if an Action Feature is not specified, along with a performance boost while targeted analysis provides a boost to accuracy.
+
+After the data are trained, we can :meth:`Trainee.analyze` the `Trainee`.  This method will determine the best 
+hyperparameters for the data and cache some important values that are used to ensure the highest model performance.  By default, 
+:meth:`Trainee.analyze` will optimize the `Trainee`'s parameters for any possible target feature.
 
 .. code-block:: python
+    
+    trainee.analyze()
 
-    trainee.analyze(context_features=context_features, action_features=action_features)
 
-Step 7 - React
+Step 3 - React
 ^^^^^^^^^^^^^^
-React is querying the Trainee for some response, potentially for a given set of context feature values, whether to determine action features, or to determine other details. This is the primary verb that can encompass supervised learning, unsupervised learning, generative outputs, and to determine various interpretations, explanations, and support data for any reaction. In the context of this example, React is used to get an action feature back based on the new Case's context features. In a traditional ML workflow this is often called predicting or labeling.
-
-Once Howso Engine is trained and analyzed, it provides the user with a variety of ML capabilities. At this stage in the Howso Engine workflow, a typical use case would be to evaluate the accuracy of the Trainee, which is performed by the :py:meth:`~Trainee.react` method. This is equivalent to ``predict`` in many traditional Machine Learning workflows, although the :py:meth:`~Trainee.react` method is not solely used for supervised predictions.
+Now that the `Trainee` has been prepared, it is ready for use.  A common use-case, determining how well a model performs when 
+predicting the dataset, can be done with a single call to the `Trainee`:
 
 .. code-block:: python
 
-    results = trainee.react(
-        test_case[context_features],
-        context_features=context_features,
-        action_features=action_features,
+    prediction_stats = trainee.get_prediction_stats(
+        action_feature="target",
+        details={"prediction_stats": True},
     )
-    predictions = results['action'][action_features]
+    print(prediction_stats)
+
+
+An `action_feature` is the same as a target feature or dependent variable.  This call will compute a number of different statistics, 
+including accuracy, precision, recall, :math:`R^2`, and others.  Rather than performing a train-test split, which is common with 
+other machine learning techniques, the `Trainee` uses leave-one-out to provide a more comprehensive understanding of the data.  
+More traditional approaches can still be used with the :meth:`Trainee.react` method.
+
+Additional analyses can be performed on data contained within a `Trainee` using various methods, including:
+
+- :meth:`Trainee.react_aggregate`
+- :meth:`Trainee.react`
+- :meth:`Trainee.react_into_features`
+    
 
 Complete Code
 ^^^^^^^^^^^^^
@@ -162,39 +134,28 @@ The code from all of the steps in this guide is combined below:
     from howso.engine import Trainee
     from howso.utilities import infer_feature_attributes
 
-    # import data
     df = fetch_data('adult')
-
-    # Subsample the data to ensure the example runs quickly
-    df = df.sample(1001)
-    # Split out the last row for a test case and drop the Action Feature
-    test_case = df.iloc[[-1]].copy()
-    df.drop(df.index[-1], inplace=True)
-    test_case = test_case.drop('target', axis=1)
-
     features = infer_feature_attributes(df)
 
-    action_features = ['target']
-    context_features = features.get_names(without=action_features)
+    print(features.to_dataframe())
 
     trainee = Trainee(features=features)
-
     trainee.train(df)
+    trainee.analyze()
 
-    trainee.analyze(context_features=context_features, action_features=action_features)
-
-    results = trainee.react(
-        test_case[context_features],
-        context_features=context_features,
-        action_features=action_features,
+    prediction_stats = trainee.get_prediction_stats(
+        action_feature="target",
+        details={"prediction_stats": True},
     )
-    predictions = results['action'][action_features]
+    print(prediction_stats)
 
 
 API References
 --------------
-- :py:meth:`~howso.utilities.infer_feature_attributes`
+- :py:func:`~howso.utilities.infer_feature_attributes`
 - :py:class:`~Trainee`
-- :py:meth:`Trainee.train`
-- :py:meth:`Trainee.analyze`
-- :py:meth:`Trainee.react`
+    - :py:meth:`Trainee.train`
+    - :py:meth:`Trainee.analyze`
+    - :py:meth:`Trainee.react_aggregate`
+    - :py:meth:`Trainee.react`
+    - :py:meth:`Trainee.react_into_features`
