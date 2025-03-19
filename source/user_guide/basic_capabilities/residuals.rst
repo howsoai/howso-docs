@@ -40,23 +40,23 @@ The created :class:`~Trainee` will be referenced as ``trainee`` in the sections 
 Local Residuals
 ^^^^^^^^^^^^^^^
 
-Local metrics are retrieved through using :py:meth:`Trainee.react`. Both :ref:`robust` and non-robust (full) versions are available.
+Local metrics are retrieved through using :py:meth:`Trainee.react`.
+Both :ref:`robust` and non-robust (full) versions are available, although full
+is recommended for residuals.
 
 .. code-block:: python
 
-
-    # Get robust residuals
-    details = {'feature_full_residuals': True}
-
+    # Get local full residuals
+    details = {'case_feature_residuals_full': True}
     results = trainee.react(
-        test_case[context_features],
-        context_features=context_features,
-        action_features=action_features,
+        df.iloc[[-1]],
+        context_features=features.get_names(without=["target"]),
+        action_features=["target"],
         details=details
     )
 
-    residuals = results['details']['feature_full_residuals']
-
+    residuals = results['details']['case_feature_residuals_full']
+    print(residuals)
 
 
 Global Residuals
@@ -67,10 +67,14 @@ Global metrics are retrieved through using :py:meth:`Trainee.react_aggregate`.  
 
 .. code-block:: python
 
-    residuals = trainee.react_react_aggregate(
-        action_feature=action_features[0],
-        details={'feature_full_residuals': True}
+    # Get global full residuals
+    residuals = trainee.react_aggregate(
+        action_feature="target",
+        details={'feature_residuals_full': True},
+        residuals_hyperparameter_feature='',
     )
+    print(residuals)
+
 
 Complete Code
 ^^^^^^^^^^^^^
@@ -78,50 +82,40 @@ The code from all of the steps in this guide is combined below:
 
 .. code-block:: python
 
+    import pandas as pd
     from pmlb import fetch_data
 
     from howso.engine import Trainee
     from howso.utilities import infer_feature_attributes
 
-    # import data
-    df = fetch_data('adult')
-
-    # Subsample the data to ensure the example runs quickly
-    df = df.sample(1001)
-    # Split out the last row for a test case and drop the Action Feature
-    test_case = df.iloc[[-1]].copy()
-    df.drop(df.index[-1], inplace=True)
-    test_case = test_case.drop('target', axis=1)
-
-
+    df = fetch_data('adult').sample(1_000)
     features = infer_feature_attributes(df)
 
-    action_features = ['target']
-    context_features = features.get_names(without=action_features)
+    print(features.to_dataframe())
 
     trainee = Trainee(features=features)
-
     trainee.train(df)
+    trainee.analyze()
 
-    trainee.analyze(context_features=context_features, action_features=action_features)
-
-    # Get local robust residuals
-    details = {'feature_full_residuals': True}
-
+    # Get local full residuals
+    details = {'case_feature_residuals_full': True}
     results = trainee.react(
-        test_case[context_features],
-        context_features=context_features,
-        action_features=action_features,
+        df.iloc[[-1]],
+        context_features=features.get_names(without=["target"]),
+        action_features=["target"],
         details=details
     )
 
-    residuals = results['details']['feature_full_residuals']
+    residuals = results['details']['case_feature_residuals_full']
+    print(residuals)
 
-    # Get global robust residuals
-    residuals = trainee.react_react_aggregate(
-        action_feature=action_features[0],
-        details={'feature_full_residuals': True}
+    # Get global full residuals
+    residuals = trainee.react_aggregate(
+        action_feature="target",
+        details={'feature_residuals_full': True},
+        residuals_hyperparameter_feature='',
     )
+    print(residuals)
 
 
 API References
