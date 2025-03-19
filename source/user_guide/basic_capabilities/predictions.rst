@@ -122,8 +122,8 @@ Howso can auto-detect features from data, using :meth:`~howso.utilities.infer_fe
     features['LuggageVolume']['type'] = 'continuous'
 
 
-Step 4 - Create a Trainee and Train
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step 4 - Create a Trainee, Train, and Analyze
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Next we will create a :class:`Trainee` and :meth:`~Trainee.train` based on data we have loaded into the DataFrame from the vehicles.csv.
 
 .. code-block:: python
@@ -133,21 +133,9 @@ Next we will create a :class:`Trainee` and :meth:`~Trainee.train` based on data 
 
    # Train trainee
    trainee.train(df)
+   trainee.analyze()
 
-Step 5 - Analyze Trainee, Set Context & Action Features
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-We know a specific task we want our :class:`Trainee` to :meth:`~Trainee.react` to, that is, to predict **Highway MPG** (the action feature) - using the context features: Year, DriveType, FuelType, CityMPG, PassengerVolume, LuggageVolume, and VehicleClass.  We can use :meth:`~Trainee.analyze` to improve performance of our model by analyzing for this specific target.
-
-.. code-block:: python
-
-   action_features = ['HighwayMPG']
-   # Code for `FuelType` prediction
-   # action_features = ['FuelType']
-   context_features = features.get_names(without=action_features)
-
-   trainee.analyze(context_features=context_features, action_features=action_features)
-
-Step 6 - Generate Accuracy Metrics
+Step 5 - Generate Accuracy Metrics
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Review the accuracy of the :class:`Trainee` by using the built-in :meth:`~Trainee.react_aggregate` method, which performs a :meth:`~Trainee.react` on each of the cases that is trained into the model.  Then we can evaluate accuracy with the returned R-Squared (:math:`R^2`), Mean Absolute Error (MAE) and Root Mean Square Error (RMSE) metrics since this is a regression task.
 
@@ -164,7 +152,7 @@ Review the accuracy of the :class:`Trainee` by using the built-in :meth:`~Traine
    stats
 
 
-Step 7 - Review Accuracy Metrics
+Step 6 - Review Accuracy Metrics
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 We see the :class:`Trainee` has a very good fit for predicting **Highway MPG** with an :math:`R^2` of 0.99, which shows the :class:`Trainee` should be effective at predicting new cases of **Highway MPG**.
 
@@ -177,8 +165,8 @@ We see the :class:`Trainee` has a very good fit for predicting **Highway MPG** w
    Name: HighwayMPG, dtype: float64
 
 
-Step 8 - React to New Case
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Step 7 - React to New Case(s)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 We have a new vehicle we want to predict **Highway MPG** for. The test case is a 2022, All Wheel Drive, Mid-Sized Car, using Premium fuel, with a PassengerVolume of 95, LuggageVolume of 23 and  gets City MPG of 21.
 
 The :class:`Trainee` can :meth:`~Trainee.react` to this new case, and makes a prediction.
@@ -205,7 +193,7 @@ The :class:`Trainee` can :meth:`~Trainee.react` to this new case, and makes a pr
 
 .. note:: The method :meth:`Trainee.predict` can also be used for predictions instead of :meth:`Trainee.react`. :meth:`Trainee.predict` serves as a convenience function that eliminates the extra output if all you want is the prediction.
 
-Step 9 - Review Prediction
+Step 8 - Review Prediction
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Reviewing the prediction shows **HighwayMPG** of 29.
 
@@ -250,13 +238,7 @@ Combined Code
 
    # Train trainee
    trainee.train(df)
-
-   action_features = ['HighwayMPG']
-   # Code for `FuelType` prediction
-   # action_features = ['FuelType']
-   context_features = features.get_names(without=action_features)
-
-   trainee.analyze(context_features=context_features, action_features=action_features)
+   trainee.analyze()
 
    # Recommended metrics
    stats = trainee.react_aggregate(
