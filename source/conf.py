@@ -207,6 +207,9 @@ redirects = {
     # "foo": "/bar.html" # Creates a redirect from "/foo.html" to "/bar.html"
 }
 
+# nbsphinx
+nbsphinx_allow_errors = False
+
 # -- Documentation Setup -----------------------------------------------------
 
 
