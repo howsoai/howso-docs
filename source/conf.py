@@ -42,6 +42,7 @@ extensions = [
     "sphinxcontrib.images",
     "sphinx_reredirects",
     "matplotlib.sphinxext.plot_directive",
+    "nbsphinx",
 ]
 
 templates_path = ["_templates"]
