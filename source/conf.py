@@ -209,6 +209,7 @@ redirects = {
 
 # nbsphinx
 nbsphinx_allow_errors = False
+nbsphinx_timeout = -1
 
 # -- Documentation Setup -----------------------------------------------------
 
