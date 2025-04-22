@@ -38,6 +38,7 @@ To understand this guide, we recommend being familiar with the following concept
 - :ref:`feature`
 - :ref:`action_features`
 - :ref:`context_features`
+- :ref:'goal_features_map`
 
 Additional concepts to be familiar with include the `Gymnasium RL Framework <https://gymnasium.farama.org/>`_ and the RL games in the recipes,
 `Cartpole <https://gymnasium.farama.org/environments/classic_control/cart_pole/>`_ and
@@ -46,7 +47,7 @@ Additional concepts to be familiar with include the `Gymnasium RL Framework <htt
 How-To Guide
 ------------
 In the learning cycle of RL as shown below, Howso Engine acts as the Agent. As an Agent, Howso Engine both outputs an action value as well as intakes the observation and resulting reward.
-Once the reward and observations are processed, the Howso Engine is trained again based on the results and another action is output.
+Once the reward (goal) and observations are processed, the Howso Engine is trained again based on the results and another action is output.
 
 .. image:: /_images/RL.png
 
@@ -61,8 +62,8 @@ can help the user analyze the Trainee after all training steps. This methods eli
 
     trainee.set_auto_analyze_params(
         auto_analyze_enabled=True,
-        context_features=self.context_features,
-        action_features=self.action_features,
+        context_features=self.context_features + self.action_features,
+        rebalance_features=self.goal_features
     )
 
 
@@ -70,15 +71,17 @@ Action
 ^^^^^^
 In the Action phase, a standard :meth:`Trainee.react` call will provide the resulting action. Most of the parameters have been covered in the other Howso Engine guides,
 however ``into_series_store`` may be new for most users. Since we are using the Trainee to learn a series of actions, underneath the hood Engine is treating the contexts and cases
-as part of a series.  The parameter ``into_series_store`` allows the user to label the series store, which in this case, is the round or loop number.
+as part of a series.  The parameter ``into_series_store`` allows the user to label the series store, which in this case, is the round or loop number.  The parameter ``goal_features_map```
+conditions the results towards the specified goal, which is typically to maximize a score.
 
 .. code-block:: python
 
     react = trainee.react(
                 desired_conviction=desired_conviction,
-                contexts=[[observation, self.desired_score]],
-                context_features=self.context_features + self.reward_features,
+                contexts=[[observation]],
+                context_features=self.context_features,
                 action_features=self.action_features,
+                goal_features_map=self.goal_features_map,
                 into_series_store=str(round_num),
             )
     action = react['action']['action'][0]
@@ -92,13 +95,13 @@ it can be used to train the Trainee. These steps are generally handled by your R
 
 Agent
 ^^^^^
-This is the step where Howso Engine learns from the previous loop, by training in the new reward value. The Trainee should be analyzed after every train step, which
+This is the step where Howso Engine learns from the previous loop, by training in the new reward value as a goal. The Trainee should be analyzed after every train step, which
 should be automated by the :py:meth:`Trainee.set_auto_analyze_params` method.
 
 .. code-block:: python
 
     trainee.train(
-        features=self.reward_features,
+        features=self.goal_features,
         cases=[[score]],
         series=str(round_num),
     )
