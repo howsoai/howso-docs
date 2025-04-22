@@ -38,7 +38,6 @@ To understand this guide, we recommend being familiar with the following concept
 - :ref:`feature`
 - :ref:`action_features`
 - :ref:`context_features`
-- :ref:'goal_features_map`
 
 Additional concepts to be familiar with include the `Gymnasium RL Framework <https://gymnasium.farama.org/>`_ and the RL games in the recipes,
 `Cartpole <https://gymnasium.farama.org/environments/classic_control/cart_pole/>`_ and
