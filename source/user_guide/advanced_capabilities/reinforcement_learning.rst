@@ -55,7 +55,8 @@ Image Source: `https://gymnasium.farama.org/content/basic_usage/ <https://gymnas
 Setup
 ^^^^^
 The Howso Engine Trainee must be initialized in the RL framework before the learning loop. As part of the setup process, enabling :py:meth:`Trainee.set_auto_analyze_params`
-can help the user analyze the Trainee after all training steps. This methods eliminates the need to manually analyze after training, which can be done.
+can help the user analyze the Trainee after all training steps. Rebalance features are specified to be goal features (e.g., high score) to increase the influence of data 
+trained with scores closer to the goal. This methods eliminates the need to manually analyze after training, which can be done.
 
 .. code-block:: python
 
