@@ -114,7 +114,7 @@ As explained earlier, database operations is designed to be used with the Howso 
         trainee..acquire_resources()
 
         # Delete the trainee to cleanup.
-        trainee..delete()
+        trainee.delete()
 
 These methods can be used locally as well, but you do not have control over the exact naming and location of the saved Trainee. File operations are recommended when loading and saving to disk.
 

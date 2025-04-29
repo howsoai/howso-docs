@@ -42,6 +42,7 @@ extensions = [
     "sphinxcontrib.images",
     "sphinx_reredirects",
     "matplotlib.sphinxext.plot_directive",
+    "nbsphinx",
 ]
 
 templates_path = ["_templates"]
@@ -205,6 +206,11 @@ simplify_optional_unions = True
 redirects = {
     # "foo": "/bar.html" # Creates a redirect from "/foo.html" to "/bar.html"
 }
+
+# nbsphinx
+nbsphinx_allow_errors = False
+nbsphinx_timeout = -1
+nbsphinx_execute = "always"
 
 # -- Documentation Setup -----------------------------------------------------
 

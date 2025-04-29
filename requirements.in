@@ -15,3 +15,6 @@ sphinxcontrib-images~=0.0
 matplotlib
 seaborn
 numpy
+nbsphinx
+ipykernel
+pmlb
