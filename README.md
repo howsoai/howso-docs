@@ -44,10 +44,10 @@ you change the requirements, rerun the command shown in the top of
 the `requirements-<python version>.txt` file.
 
 ```bash
-pip-compile --allow-unsafe --generate-hashes --no-emit-index-url --output-file=requirements-3.8.txt
-pip-compile --allow-unsafe --generate-hashes --no-emit-index-url --output-file=requirements-3.9.txt
 pip-compile --allow-unsafe --generate-hashes --no-emit-index-url --output-file=requirements-3.10.txt
 pip-compile --allow-unsafe --generate-hashes --no-emit-index-url --output-file=requirements-3.11.txt
+pip-compile --allow-unsafe --generate-hashes --no-emit-index-url --output-file=requirements-3.12.txt
+pip-compile --allow-unsafe --generate-hashes --no-emit-index-url --output-file=requirements-3.13.txt
 ```
 
 ## Building the Project
