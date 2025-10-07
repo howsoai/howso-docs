@@ -3,7 +3,7 @@ Derived Features
 ================
 
 .. topic:: In this user guide...
-    
+
     You will learn how to specify derived features to maintain feature relationships
     during Engine operations.
 
@@ -55,7 +55,7 @@ in order to preserve the datetime data types.
     # These are the necessary imports for this user guide:
     import datetime
     import pandas as pd
-    
+
     from howso.engine import Trainee
     from howso.utilities import infer_feature_attributes
 
@@ -79,13 +79,12 @@ the ``end`` feature as a function of the ``start`` and ``duration`` features.
 
     partial_features = {
         'end': {
-            'derived_feature_code': '(+ #start 0 #duration 0),
+            'derived_feature_code': "(+ (call value {feature \"start\"}) (call value {feature \"duration\"}))",
         }
 
 
-The derived feature code that we use, ``(+ #start 0 #duration 0)`` instructs Engine to add
-``duration`` to ``start``. The zeros are offsets that are only non-zero for time-series operations,
-and refer to how far back in the time-series to look.
+The derived feature code that we use, ``(+ (call value {feature "start"}) (call value {feature "duration"}))``
+instructs Engine to add feature values of ``duration`` to ``start``.
 
 
 Map Data
@@ -108,7 +107,7 @@ Here the original data are trained into Howso Engine, so that it understands rel
 data points.
 
 .. code-block:: python
-    
+
     trainee = Trainee(features=features)
     trainee.train(df)
     trainee.analyze()
@@ -152,7 +151,7 @@ The code from all of the steps in this guide is combined below:
     # These are the necessary imports for this user guide:
     import datetime
     import pandas as pd
-    
+
     from howso.engine import Trainee
     from howso.utilities import infer_feature_attributes
 
