@@ -8,6 +8,7 @@ Howso introduces many concepts that may be different compared to standard machin
 - :doc:`Global vs Local <global_vs_local>`
 - :doc:`Model Performance <model_performance>`
 - :doc:`Handling Sparse Data <null_sparse_data>`
+- :doc:`Time Series Types <time_series_types>`
 
 .. toctree::
     :maxdepth: 2
@@ -17,4 +18,4 @@ Howso introduces many concepts that may be different compared to standard machin
     existing_vs_new
     global_vs_local
     model_performance
-
+    time_series_types
