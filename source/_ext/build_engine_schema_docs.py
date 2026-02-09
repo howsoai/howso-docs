@@ -27,6 +27,7 @@ def setup(app):
                 "FeatureDataType",
                 "FeatureOriginalType",
                 "FeatureOriginalTypeBoolean",
+                "FeatureOriginalTypeContainer",
                 "FeatureOriginalTypeDate",
                 "FeatureOriginalTypeDatetime",
                 "FeatureOriginalTypeInteger",
@@ -35,6 +36,7 @@ def setup(app):
                 "FeatureOriginalTypeString",
                 "FeatureOriginalTypeTime",
                 "FeatureOriginalTypeTimedelta",
+                "FeatureOriginalTypeTokenizableString",
                 "FeatureTimeSeries",
                 "FeatureType",
             ]
