@@ -22,6 +22,7 @@ def setup(app):
         try:
             needed_schemas = [
                 "FeatureAttributes",
+                "FeatureAutoDeriveOnTrain",
                 "FeatureBounds",
                 "FeatureDataType",
                 "FeatureOriginalType",
@@ -34,6 +35,7 @@ def setup(app):
                 "FeatureOriginalTypeString",
                 "FeatureOriginalTypeTime",
                 "FeatureOriginalTypeTimedelta",
+                "FeatureTimeSeries",
                 "FeatureType",
             ]
 
