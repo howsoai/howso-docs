@@ -17,6 +17,7 @@ adapted to your specific dataset or application.
 - :doc:`Time Series and Sequential Data Analysis <time_series>`
 - :doc:`JSON Features <json_features>`
 - :doc:`Derived Features <derived_features>`
+- :doc:`Fan-out Features <fanout_features>`
 
 .. toctree::
     :maxdepth: 2
@@ -31,3 +32,4 @@ adapted to your specific dataset or application.
     reinforcement_learning
     time_series
     derived_features
+    fanout_features
