@@ -88,5 +88,7 @@ when predicting the values for fan-out features.
 API References
 --------------
 - :py:meth:`~howso.utilities.infer_feature_attributes`
+- :py:meth:`Trainee.react`
+- :py:meth:`Trainee.react_series`
 - :py:meth:`Trainee.react_aggregate`
 
