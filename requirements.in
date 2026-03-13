@@ -19,3 +19,4 @@ numpy
 nbsphinx
 ipykernel
 pmlb
+tornado>=6.5.5
