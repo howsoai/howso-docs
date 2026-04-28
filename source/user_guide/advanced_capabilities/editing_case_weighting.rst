@@ -100,7 +100,7 @@ Adding features to a :class:`~Trainee` can be done with a single call to :meth:`
 
 .. code-block:: python
 
-    trainee.add_feature("gender", feature_value="nb", feature_attributes={"type": "nominal"})
+    trainee.add_feature("gender", default_value="nb", feature_attributes={"type": "nominal"})
 
 
 In this example, we use it to add a nominal feature to each case in the model with a default value of ``"nb"``.  In addition,
@@ -114,7 +114,7 @@ Adding & Using Case Weights
 
 .. code-block:: python
 
-    trainee.add_feature("my_case_weight", feature_value=1.0)
+    trainee.add_feature("my_case_weight", default_value=1.0)
 
 
 Note that we do not add any feature attributes here, since they are assumed to be continuous by default.  Once added, the case
