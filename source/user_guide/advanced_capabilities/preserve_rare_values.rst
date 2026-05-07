@@ -45,6 +45,7 @@ For example:
     features = infer_feature_attributes(
         data,
         preserve_rare_values_map={
+            # Protects the "FAIL" value of the "result" feature.
             "result": ["FAIL"],
         }
     )
@@ -58,7 +59,8 @@ masses.
 
     features = infer_feature_attributes(
         data,
-        preserve_rare_values_map={
+        preserve_rare_values_config={
+            # The feature name to protect the results of
             "result": {
                 "protected_values_multipliers": [
                     {
@@ -67,6 +69,7 @@ masses.
                         # The scalar value to multiply probability mass by
                         "multiplier": 4.0
                     },
+                    # Other protected values...
                 ]
             }
         }
