@@ -61,17 +61,15 @@ values that need protection as well as the exact multipliers to use when scaling
         data,
         preserve_rare_values_config={
             # The feature whose values should be protected
-            "result": {
-                "protected_values_multipliers": [
-                    {
-                        # The feature value to increase probability mass of
-                        "value": "FAIL",
-                        # The scalar value to multiply probability mass by
-                        "multiplier": 4.0
-                    },
-                    # Other protected values...
-                ]
-            }
+            "result": [
+                {
+                    # The feature value to increase probability mass of
+                    "value": "FAIL",
+                    # The scalar value to multiply probability mass by
+                    "multiplier": 4.0
+                },
+                # Other protected values...
+            ]
         }
     )
 
