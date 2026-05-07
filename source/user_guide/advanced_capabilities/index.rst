@@ -18,6 +18,7 @@ adapted to your specific dataset or application.
 - :doc:`JSON Features <json_features>`
 - :doc:`Derived Features <derived_features>`
 - :doc:`Fan-out Features <fanout_features>`
+- :doc:`Rare Value Preservation <preserve_rare_values>`
 
 .. toctree::
     :maxdepth: 2
@@ -33,3 +34,4 @@ adapted to your specific dataset or application.
     time_series
     derived_features
     fanout_features
+    preserve_rare_values
