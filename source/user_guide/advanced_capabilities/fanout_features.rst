@@ -69,7 +69,7 @@ and have the ability to more fairly measure uncertainty on these fan-out feature
 Using Configured Fan-out Features
 ----------------------------------
 Once fan-out features are configured, you as the user need to indicate to the Engine if a particular
-operation should filter out the cases with duplicated values while predicitng fan-out feature values.
+operation should filter out the cases with duplicated values while predicting fan-out feature values.
 
 To do this, many Engine endpoints such as ``react``, ``react_series``, and ``react_aggregate`` support the
 ``filter_fanout_values`` flag. This flag defaults to ``False``, but when specified as ``True`` the Engine
