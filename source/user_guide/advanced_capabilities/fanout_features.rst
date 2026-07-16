@@ -45,7 +45,7 @@ product at a given store. The remaining features, ``transaction_id`` and ``quant
 Configuring Fan-out Features
 ----------------------------
 When calling :py:meth:`~howso.utilities.infer_feature_attributes`, features can be configured as fan-out features by
-specifying the ``fanout_features_map`` parameter.
+specifying the ``fanout_feature_map`` parameter.
 
 The parameter accepts a value of ``dict[str | tuple[str], list[str]]`` where the key is either a single feature name
 or a tuple of feature names describing the features whose values select cases with the same values for the associated
@@ -55,7 +55,7 @@ fan-out features, which are the list of feature names the key maps to.
 
     features = infer_feature_attributes(
         data,
-        fanout_features_map={
+        fanout_feature_map={
             "product_id": ["product_weight", "product_color", ...],
             # Or if data was joined on multiple features
             ("product_id", "store_id"): ["product_price", "store_supply"]
@@ -69,7 +69,7 @@ and have the ability to more fairly measure uncertainty on these fan-out feature
 Using Configured Fan-out Features
 ----------------------------------
 Once fan-out features are configured, you as the user need to indicate to the Engine if a particular
-operation should filter out the cases with duplicated values while predicitng fan-out feature values.
+operation should filter out the cases with duplicated values while predicting fan-out feature values.
 
 To do this, many Engine endpoints such as ``react``, ``react_series``, and ``react_aggregate`` support the
 ``filter_fanout_values`` flag. This flag defaults to ``False``, but when specified as ``True`` the Engine
