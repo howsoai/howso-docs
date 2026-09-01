@@ -33,10 +33,10 @@ Concepts & Terminology
 How-To Guide
 ------------
 
-:ref:`familiarity_conviction` and :ref:`similarity_conviction` are measurements of how surprising a case is. 
-This can be useful for tasks such as anomaly detection. :ref:`prediction_residual_conviction` can be used to 
+:ref:`familiarity_conviction` and :ref:`similarity_conviction` are measurements of how surprising a case is.
+This can be useful for tasks such as anomaly detection. :ref:`prediction_residual_conviction` can be used to
 drill down into a specific case and examine its features. It measures how surprising each cases feature values is, thus
-it can reveal information such as why a case was anomalous. For example, if a NBA player's height was 3 foot tall, that 
+it can reveal information such as why a case was anomalous. For example, if a NBA player's height was 3 foot tall, that
 value would be very surprising since most NBA players are very tall.
 
 Setup
@@ -48,10 +48,11 @@ The created :class:`~Trainee` will be referenced as ``trainee`` in the sections 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 There are two types of :ref:`familiarity_conviction` available, both accessible when
-:py:meth:`Trainee.react_into_features` is called.  ``familiarity_conviction_addition`` 
-is the familiarity conviction of adding the specified case and ``familiarity_conviction_removal`` is 
-the familiarity conviction of removing the specified case. :py:meth:`Trainee.react_into_features` 
-stores these convictions which can be retrieved through :py:meth:`Trainee.get_cases`
+:py:meth:`Trainee.react_into_features` is called.  ``familiarity_conviction_addition``
+is the familiarity conviction of adding the specified case and ``familiarity_conviction_removal`` is
+the familiarity conviction of removing the specified case. :py:meth:`Trainee.react_into_features`
+stores these convictions which can be retrieved through :py:meth:`Trainee.get_cases`. Internally
+computed and created features are prepended with . to separate them from originally trained features.
 
 .. code-block:: python
 
@@ -62,8 +63,8 @@ stores these convictions which can be retrieved through :py:meth:`Trainee.get_ca
     familiarity_conviction = trainee.get_cases(
         session=trainee.active_session,
         features=[
-            'familiarity_conviction_addition',
-            'familiarity_conviction_removal'
+            '.familiarity_conviction_addition',
+            '.familiarity_conviction_removal'
         ]
     )
 
@@ -79,14 +80,14 @@ stores these convictions which can be retrieved through :py:meth:`Trainee.get_ca
     trainee.react_into_features(similarity_conviction=True)
     saimilarity_conviction = trainee.get_cases(
         session=trainee.active_session,
-        features=['similarity_conviction']
+        features=['.similarity_conviction']
     )
 
 
 :ref:`residual_conviction`
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-:ref:`residual_conviction` is accessed through :py:meth:`Trainee.react` and measures how noisy a feature is relative 
+:ref:`residual_conviction` is accessed through :py:meth:`Trainee.react` and measures how noisy a feature is relative
 to the expected level of noise for that feature.
 
 .. code-block:: python
@@ -131,8 +132,8 @@ The code from all of the steps in this guide is combined below:
     familiarity_conviction = trainee.get_cases(
         session=trainee.active_session,
         features=[
-            'familiarity_conviction_addition',
-            'familiarity_conviction_removal'
+            '.familiarity_conviction_addition',
+            '.familiarity_conviction_removal'
         ]
     )
     print(familiarity_conviction)
@@ -140,7 +141,7 @@ The code from all of the steps in this guide is combined below:
     trainee.react_into_features(similarity_conviction=True)
     similarity_conviction = trainee.get_cases(
         session=trainee.active_session,
-        features=['similarity_conviction']
+        features=['.similarity_conviction']
     )
     print(similarity_conviction)
 
@@ -160,8 +161,8 @@ Below is an example of expected output from this sample code:
 
 .. code-block:: bash
 
-    $ python conviction_example.py 
-                        type decimal_places bounds  ... data_type original_type     
+    $ python conviction_example.py
+                        type decimal_places bounds  ... data_type original_type
                                                 min  ...               data_type size
     age             continuous              0    0.0  ...    number       numeric    8
     workclass          nominal              0    NaN  ...    number       integer    8
