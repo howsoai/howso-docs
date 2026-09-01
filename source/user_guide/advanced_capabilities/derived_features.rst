@@ -100,6 +100,9 @@ and characteristics of the data.
 By supplying the partial feature attributes we defined in step 2, the derived feature code will
 be populated for the ``end`` feature.
 
+Note: all derived features will have a feature attribute of ``computed`` set to true automatically to
+denote that the feature was computed internally and not explicitly trained.
+
 
 Train and Analyze
 ^^^^^^^^^^^^^^^^^
